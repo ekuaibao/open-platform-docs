@@ -9,7 +9,7 @@ const config = {
   title: "My Site",
   tagline: "Dinosaurs are cool",
   url: "https://ekuaibao.github.io/open-platform-docs/",
-  baseUrl: "/",
+  baseUrl: "/open-platform-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
