@@ -1,0 +1,150 @@
+---
+sidebar_position: 1
+---
+
+import Control from "../components/Control";
+
+# Tutorial Intro
+
+<Control
+  method="POST"
+  url="/pet/{petId}/uploadImage"
+  description="uploads an image"
+/>
+
+<Control
+  method="GET"
+  url="/pet/{petId}/uploadImage"
+  description="uploads an image"
+/>
+
+<Control
+  method="PUT"
+  url="/pet/{petId}/uploadImage"
+  description="uploads an image"
+/>
+
+<Control
+  method="DELETE"
+  url="/pet/{petId}/uploadImage"
+  description="uploads an image"
+/>
+
+### 参数
+
+| Name           | Type   | In     | Description                                                                                                                                                                                                                                                                                                                                                          |
+| -------------- | ------ | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accept`       | string | header | Setting to `application/vnd.github.v3+json` is recommended.                                                                                                                                                                                                                                                                                                          |
+| `petId`        | string | path   | petId                                                                                                                                                                                                                                                                                                                                                                |
+| `package_type` | string | query  | The type of supported package. Can be one of `npm`, `maven`, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com) |
+| `visibility`   | string | query  |                                                                                                                                                                                                                                                                                                                                                                      |
+| `body`         | object | body   | The description of the project.                                                                                                                                                                                                                                                                                                                                      |
+
+<details>
+  <summary>body 参数</summary>
+  <table>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>The description of the key</td>
+    </tr>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>The description of the key</td>
+    </tr>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>The description of the key</td>
+    </tr>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>The description of the key</td>
+    </tr>
+  </table>
+</details>
+
+### 代码示例
+
+#### shell
+
+```shell
+curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/orgs/ORG/packages
+```
+
+#### Response
+
+```shell
+Status: 200 OK
+```
+
+```json
+[
+  {
+    "id": 197,
+    "name": "hello_docker",
+    "package_type": "container",
+    "owner": {
+      "login": "github",
+      "id": 9919,
+      "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/github",
+      "html_url": "https://github.com/github",
+      "followers_url": "https://api.github.com/users/github/followers",
+      "following_url": "https://api.github.com/users/github/following{/other_user}",
+      "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+      "organizations_url": "https://api.github.com/users/github/orgs",
+      "repos_url": "https://api.github.com/users/github/repos",
+      "events_url": "https://api.github.com/users/github/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/github/received_events",
+      "type": "Organization",
+      "site_admin": false
+    },
+    "version_count": 1,
+    "visibility": "private",
+    "url": "https://api.github.com/orgs/github/packages/container/hello_docker",
+    "created_at": "2020-05-19T22:19:11Z",
+    "updated_at": "2020-05-19T22:19:11Z",
+    "html_url": "https://github.com/orgs/github/packages/container/package/hello_docker"
+  },
+  {
+    "id": 198,
+    "name": "goodbye_docker",
+    "package_type": "container",
+    "owner": {
+      "login": "github",
+      "id": 9919,
+      "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/github",
+      "html_url": "https://github.com/github",
+      "followers_url": "https://api.github.com/users/github/followers",
+      "following_url": "https://api.github.com/users/github/following{/other_user}",
+      "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+      "organizations_url": "https://api.github.com/users/github/orgs",
+      "repos_url": "https://api.github.com/users/github/repos",
+      "events_url": "https://api.github.com/users/github/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/github/received_events",
+      "type": "Organization",
+      "site_admin": false
+    },
+    "version_count": 2,
+    "visibility": "private",
+    "url": "https://api.github.com/orgs/github/packages/container/goodbye_docker",
+    "created_at": "2020-05-20T22:19:11Z",
+    "updated_at": "2020-05-20T22:19:11Z",
+    "html_url": "https://github.com/orgs/github/packages/container/package/goodbye_docker"
+  }
+]
+```
