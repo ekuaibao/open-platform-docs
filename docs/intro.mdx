@@ -32,39 +32,13 @@ import Control from "../components/Control";
 
 ### 参数
 
-| Name           | Type   | In     | Description                                                                                                                                                                                                                                                                                                                                                          |
-| -------------- | ------ | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `accept`       | string | header | Setting to `application/vnd.github.v3+json` is recommended.                                                                                                                                                                                                                                                                                                          |
-| `petId`        | string | path   | petId                                                                                                                                                                                                                                                                                                                                                                |
-| `package_type` | string | query  | The type of supported package. Can be one of `npm`, `maven`, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com) |
-| `visibility`   | string | query  |                                                                                                                                                                                                                                                                                                                                                                      |
-| `body`         | object | body   | The description of the project.                                                                                                                                                                                                                                                                                                                                      |
-
-<details>
-  <summary>body 参数</summary>
-  <table>
-    <tr>
-      <td>key</td>
-      <td>string</td>
-      <td>The description of the key</td>
-    </tr>
-    <tr>
-      <td>key</td>
-      <td>string</td>
-      <td>The description of the key</td>
-    </tr>
-    <tr>
-      <td>key</td>
-      <td>string</td>
-      <td>The description of the key</td>
-    </tr>
-    <tr>
-      <td>key</td>
-      <td>string</td>
-      <td>The description of the key</td>
-    </tr>
-  </table>
-</details>
+| Name                         | Type   | In     | Description                     |
+| ---------------------------- | ------ | ------ | ------------------------------- |
+| `accept`                     | string | header | Setting to                      |
+| `petId`                      | string | path   | petId                           |
+| &emsp; ∟ `package_type`      | string | query  | The type of supported package.  |
+| &emsp; &emsp; ∟ `visibility` | string | query  |                                 |
+| `body`                       | object | body   | The description of the project. |
 
 ### 代码示例
 
