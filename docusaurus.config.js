@@ -17,7 +17,6 @@ const config = {
   projectName: "open-platform-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
   trailingSlash: false,
-  // staticDirectories: ["open-platform-docs", "img"],
 
   presets: [
     [
@@ -60,7 +59,7 @@ const config = {
         title: "文档中心",
         logo: {
           alt: "开放平台文档中心 Logo",
-          src: "../img/logo.svg",
+          src: "img/logo.svg",
         },
         items: [
           {
