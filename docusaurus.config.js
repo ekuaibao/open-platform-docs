@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "文档中心",
+  tagline: "开放平台文档中心",
   url: "https://ekuaibao.github.io/open-platform-docs/",
   baseUrl: "/open-platform-docs/",
   onBrokenLinks: "throw",
@@ -57,17 +57,18 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "开放平台文档中心",
+        title: "文档中心",
         logo: {
           alt: "开放平台文档中心 Logo",
-          src: "img/logo.svg",
+          src: "../img/logo.svg",
         },
         items: [
           {
             type: "doc",
-            docId: "intro",
+            docId: "open-api/getting-started/getting-started",
+            activeBasePath: 'open-api',
             position: "left",
-            label: "Open Api",
+            label: "Open API",
           },
           {
             to: "/community/support",
