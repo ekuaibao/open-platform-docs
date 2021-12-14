@@ -8,8 +8,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "文档中心",
   tagline: "开放平台文档中心",
-  url: "https://ekuaibao.github.io/open-platform-docs/",
-  baseUrl: "/",
+  url: "https://ekuaibao.github.io",
+  baseUrl: "/open-platform-docs/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
