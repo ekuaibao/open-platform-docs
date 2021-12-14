@@ -20,3 +20,15 @@ import Control from "../components/Control";
 ### 如何添加文档到侧边栏?
 
 在`sidebar.js`中`tutorialSidebar`添加
+
+### 如何在表格中展示字段层级？
+
+使用：`&emsp; ∟ `标识，例如：
+
+| Name                         | Type   | In     | Description                     |
+| ---------------------------- | ------ | ------ | ------------------------------- |
+| `accept`                     | string | header | Setting to                      |
+| `petId`                      | string | path   | petId                           |
+| &emsp; ∟ `package_type`      | string | query  | The type of supported package.  |
+| &emsp; &emsp; ∟ `visibility` | string | query  |                                 |
+| `body`                       | object | body   | The description of the project. |
