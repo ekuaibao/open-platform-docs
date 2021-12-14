@@ -9,7 +9,7 @@ const config = {
   title: "文档中心",
   tagline: "开放平台文档中心",
   url: "https://ekuaibao.github.io/open-platform-docs/",
-  baseUrl: "/open-platform-docs/",
+  baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -17,6 +17,7 @@ const config = {
   projectName: "open-platform-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
   trailingSlash: false,
+  // staticDirectories: ["open-platform-docs", "img"],
 
   presets: [
     [
@@ -31,8 +32,7 @@ const config = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/ekuaibao/open-platform-docs/blob/main/",
+          editUrl: "https://github.com/ekuaibao/open-platform-docs/blob/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -66,7 +66,7 @@ const config = {
           {
             type: "doc",
             docId: "open-api/getting-started/getting-started",
-            activeBasePath: 'open-api',
+            activeBasePath: "open-api",
             position: "left",
             label: "Open API",
           },

@@ -15,9 +15,9 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.9",
-    "@docusaurus/plugin-ideal-image": "^2.0.0-beta.9",
-    "@docusaurus/preset-classic": "2.0.0-beta.9",
+    "@docusaurus/core": "2.0.0-beta.13",
+    "@docusaurus/plugin-ideal-image": "^2.0.0-beta.13",
+    "@docusaurus/preset-classic": "2.0.0-beta.13",
     "@mdx-js/react": "^1.6.21",
     "@saucelabs/theme-github-codeblock": "^0.1.1",
     "@svgr/webpack": "^5.5.0",
@@ -29,8 +29,9 @@
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.9",
-    "@docusaurus/plugin-content-docs": "^2.0.0-beta.9",
+    "@docusaurus/module-type-aliases": "2.0.0-beta.13",
+    "@docusaurus/plugin-content-docs": "^2.0.0-beta.13",
+    "@docusaurus/types": "^2.0.0-beta.13",
     "@tsconfig/docusaurus": "^1.0.4",
     "coa": "2.0.2",
     "typescript": "^4.3.5"
