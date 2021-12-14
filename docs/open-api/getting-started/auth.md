@@ -10,12 +10,10 @@ import Control from "../../../components/Control";
 
 #### Body Parameters:
 
-| 名称             | 类型     | 描述        | 是否必填      | 默认值 | 备注                                         |
-| :---------      | :------  | :------    | :------- |:---------| :------------------------------------------  |
-| **appKey** | String   | 接入账号  | 必填      | - |  请查看问题一，[了解如何获取账号](question-answer.md)  |
-| **appSecurity** | String   | 接入密码  | 必填      | - |  请查看问题一，[了解如何获取密码](question-answer.md)  |
-
-
+| 名称            | 类型   | 描述     | 是否必填 | 默认值 | 备注                                                 |
+| :-------------- | :----- | :------- | :------- | :----- | :--------------------------------------------------- |
+| **appKey**      | String | 接入账号 | 必填     | -      | 请查看问题一，[了解如何获取账号](question-answer.md) |
+| **appSecurity** | String | 接入密码 | 必填     | -      | 请查看问题一，[了解如何获取密码](question-answer.md) |
 
 <br/>
 
@@ -29,8 +27,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/auth/get
   "appSecurity": "xxxxx-xxxx-xxx-xxx"
 }'
 ```
-<br/>
 
+<br/>
 
 #### 成功响应:
 
@@ -46,15 +44,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/auth/get
 ```
 
 #### 失败响应:
+
 请确保接入账号和密码的正确性，否则返回以下结果：
 
 ```json
 {
   "value": {
-      "errorCode": 403,
-      "errorMessage": "密钥无效",
-      "errorDetail": null
+    "errorCode": 403,
+    "errorMessage": "密钥无效",
+    "errorDetail": null
   }
 }
 ```
-

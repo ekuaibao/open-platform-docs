@@ -19,11 +19,12 @@ const sidebars = {
   // But you can create a sidebar manually
   tutorialSidebar: [
     {
-      type: 'category',
-      label: '开始使用',
+      type: "category",
+      label: "开始使用",
       items: [
-        'open-api/getting-started/getting-started',
-        'open-api/getting-started/auth'
+        "open-api/getting-started/getting-started",
+        "open-api/getting-started/auth",
+        "open-api/getting-started/postman-use",
       ],
     },
   ],
