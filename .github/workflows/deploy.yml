@@ -25,6 +25,7 @@ jobs:
       # Install and build Docusaurus website
       - name: Build Docusaurus website
         run: |
+          ls -lsh
           cd website
           npm install 
           npm run build
