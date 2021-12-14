@@ -10,7 +10,7 @@ const config = {
   tagline: "开放平台文档中心",
   url: "https://ekuaibao.github.io/open-platform-docs/",
   baseUrl: "/open-platform-docs/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "ekuaibao", // Usually your GitHub org/user name.
