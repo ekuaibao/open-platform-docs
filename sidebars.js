@@ -25,6 +25,7 @@ const sidebars = {
         "open-api/getting-started/getting-started",
         "open-api/getting-started/auth",
         "open-api/getting-started/postman-use",
+        "open-api/getting-started/temp-auth",
       ],
     },
   ],

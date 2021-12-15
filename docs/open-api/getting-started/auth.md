@@ -10,10 +10,12 @@ import Control from "../../../components/Control";
 
 #### Body Parameters:
 
-| 名称            | 类型   | 描述     | 是否必填 | 默认值 | 备注                                                 |
-| :-------------- | :----- | :------- | :------- | :----- | :--------------------------------------------------- |
-| **appKey**      | String | 接入账号 | 必填     | -      | 请查看问题一，[了解如何获取账号](question-answer.md) |
-| **appSecurity** | String | 接入密码 | 必填     | -      | 请查看问题一，[了解如何获取密码](question-answer.md) |
+| 名称                         | 类型   | 描述     | 是否必填                       | 默认值 | 备注                                                 |
+| :--------------------------- | :----- | :------- | :----------------------------- | :----- | :--------------------------------------------------- |
+| **appKey**                   | String | 接入账号 | 必填                           | -      | 请查看问题一，[了解如何获取账号](question-answer.md) |
+| **appSecurity**              | String | 接入密码 | 必填                           | -      | 请查看问题一，[了解如何获取密码](question-answer.md) |
+| &emsp; ∟ `package_type`      | string | query    | The type of supported package. |
+| &emsp; &emsp; ∟ `visibility` | string | query    |                                |
 
 <br/>
 

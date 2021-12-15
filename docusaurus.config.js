@@ -43,9 +43,9 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "community",
-        path: "community",
-        routeBasePath: "community",
+        id: "block-ui",
+        path: "block-ui",
+        routeBasePath: "block-ui",
         sidebarPath: require.resolve("./sidebarsCommunity.js"),
       },
     ],
@@ -70,10 +70,10 @@ const config = {
             label: "Open API",
           },
           {
-            to: "/community/support",
+            to: "/block-ui/support",
             label: "Block UI",
             position: "left",
-            activeBaseRegex: "/community/",
+            activeBaseRegex: "/block-ui/",
           },
           { to: "/blog", label: "Blog", position: "left" },
         ],
