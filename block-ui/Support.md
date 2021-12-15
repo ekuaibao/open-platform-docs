@@ -109,3 +109,121 @@ code=key
 ### WebHook 鉴权
 
 在自建应用创建时会自动生成应用凭证，凭证包括 App ID、App Secret 两部分。在互联卡片中请求第三方服务，或第三方服务请求易快报开放接口时，都会使用 App ID、App Secret 生成 jwtToken 或者解析验证 jwtToken 是否正确。下面介绍第三方服务调用易快报和易快报调用第三方服务的步骤：
+
+### 第三方服务调用易快报开放接口，鉴权使用方式
+
+在调用开发接口之前，根据应用凭证中的 App ID（对应请求参数 appKey），App Secret（对应请求参数 appSecret)，获取 accessToken，以便调用接口时鉴权。
+
+**请求示例：**
+
+```shell
+curl --location --request POST 'https://unity.ekuaibao.com/api/realms/auth/' \
+--header 'cache-control: no-cache' \
+--header 'content-type: application/json' \
+--data-raw '{
+        "appKey":"bkwHYtOOabROJ905ChCjf26YPca0UH7U",
+        "appSecret":"SMvswAFzoySRJeEjjGk3yPsCTw00Vt7C"
+}'
+
+```
+
+**响应示例：**
+
+```json
+{
+  "value": {
+    "accessToken": "CfxhApWajSZAMNJKTHkIbWdebcDTCVec",
+    "timeout": 7200
+  }
+}
+```
+
+#### 调用开放接口
+
+获取授权后，第三方服务即可以访问开发接口。
+**请求示例：**
+
+```json
+curl --location -g --request GET 'https://unity.ekuaibao.com/api/openapi/v1/approveStates/[ID_3mwGw71md1M2,1]?corporationId=FDgbMN7S4coM00' \
+--header 'Authorization: Bearer qMuqnLtLvlGvGGCoMdUehhisXUrDmKYi' \
+```
+
+:::tip
+
+1. header 下 Authorization 格式为：Bearer+空格+jwtToken, 其中 jwtToken 为调用获取授权接口后应用中心返回的。
+2. corporationId： 企业 Id
+3. 无需区分环境，统一调用应用中心（<https://unity.ekuaibao.com>）地址，由应用中心转发调用开放接口。
+
+:::
+
+**响应示例：**
+
+```json
+{
+  "items": [
+    {
+      "flowId": "xxx", // 单据id
+      "stageName": "出纳支付", // 审批节点名称
+      "operators": [
+        {
+          // 审批人列表，来自员工信息
+          "id": "xxx", // 审批人id
+          "name": "王大锤", // 审批人姓名
+          "code": "15091" // 审批人工号
+        }
+      ]
+    }
+  ]
+}
+```
+
+#### 易快报调用第三方服务，服务方鉴权验证实现方式
+
+##### 获取 token
+
+获取 header 下的 Authorization，去掉字符前缀 Bearer+空格，剩余字符串即 jwtToken。
+header 下 Authorization 格式与上个步骤介绍生成一样：Bearer+空格+jwtToken, 其中 jwtToken 即为需要验签的 token。
+
+##### token 验签
+
+使用应用凭证中的 App Secret 进行验签，可结合自身编程语言提供的 jwtToken 函数库进行解析，下面提供 Kotlin 语言和 Java 语言示例：
+
+##### Kotlin 语言验签 jwtToken 示例
+
+```kotlin
+import io.jsonwebtoken.Jwts
+import io.jsonwebtoken.security.Keys
+import javax.crypto.SecretKey
+
+//token为上一步中获取字符串
+fun verifyJwtToken(token: String) {
+    val appSecret = "tlWobWzfGzwVNOJQHXTmQNxmMandTt" //对应应用凭证中的App Secret
+    val key: SecretKey = Keys.hmacShaKeyFor(appSecret.toByteArray(StandardCharsets.UTF_8))
+    Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token)
+}
+```
+
+##### Java 语言验签 jwtToken 示例
+
+```java
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+import javax.crypto.SecretKey;
+
+//token为上一步中获取字符串
+private void verifyJwtToken(String token) {
+    String appSecret = "tlWobWzfGzwVNOJQHXTmQNxmMandTt"; //对应应用凭证中的App Secret
+    SecretKey key = Keys.hmacShaKeyFor(appSecret.getBytes(StandardCharsets.UTF_8));
+    Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
+}
+```
+
+## 编辑器在开发阶段如何调试？
+
+互联卡片在编辑过程中，提供可调试链接
+
+![image](/img/block-ui/互联卡片-8.png)
+
+进入调试链接之后
+
+![image](/img/block-ui/互联卡片-9.png)
