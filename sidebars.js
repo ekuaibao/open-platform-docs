@@ -20,12 +20,23 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: "category",
+      label: "通知",
+      items: [
+        "open-api/notice/TLS",
+        "open-api/notice/update-log",
+      ],
+    },
+    {
+      type: "category",
       label: "开始使用",
       items: [
         "open-api/getting-started/getting-started",
-        "open-api/getting-started/auth",
         "open-api/getting-started/postman-use",
+        "open-api/getting-started/origin",
+        "open-api/getting-started/auth",
+        "open-api/getting-started/refresh-auth",
         "open-api/getting-started/temp-auth",
+        "open-api/getting-started/question-answer",
       ],
     },
   ],

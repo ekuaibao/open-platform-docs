@@ -1,27 +1,21 @@
-import Control from "../../../components/Control";
-
 # 获取授权
+
+import Control from "../../../components/Control";
 
 <Control
   method="POST"
   url="/api/openapi/v1/auth/getAccessToken"
-  description="获取授权"
 />
 
-#### Body Parameters:
+## Body Parameters
 
-| 名称                         | 类型   | 描述     | 是否必填                       | 默认值 | 备注                                                 |
-| :--------------------------- | :----- | :------- | :----------------------------- | :----- | :--------------------------------------------------- |
-| **appKey**                   | String | 接入账号 | 必填                           | -      | 请查看问题一，[了解如何获取账号](question-answer.md) |
-| **appSecurity**              | String | 接入密码 | 必填                           | -      | 请查看问题一，[了解如何获取密码](question-answer.md) |
-| &emsp; ∟ `package_type`      | string | query    | The type of supported package. |
-| &emsp; &emsp; ∟ `visibility` | string | query    |                                |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **appKey**       | String | 接入账号 | 必填 | - | 请查看问题一，[了解如何获取账号](question-answer.md) |
+| **appSecurity**  | String | 接入密码 | 必填 | - | 请查看问题一，[了解如何获取密码](question-answer.md) |
 
-<br/>
-
-### CURL:
-
-```json
+## CURL
+```
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/auth/getAccessToken' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -30,25 +24,21 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/auth/get
 }'
 ```
 
-<br/>
-
-#### 成功响应:
+## 成功响应
 
 ```json
 {
   "value": {
-    "accessToken": "u-E4PVy28Q0400", // 授权码，后续所有模块开发需要依赖此返回值
+    "accessToken": "u-E4PVy28Q0400",  // 授权码，后续所有模块开发需要依赖此返回值
     "refreshToken": "asg4PVy28Q0800", // 只有调用刷新有效期接口时需要传的token
-    "expireTime": 1531046137469, // 授权码过期日期时间戳(默认2小时后到期)
+    "expireTime": 1531046137469,      // 授权码过期日期时间戳(默认2小时后到期)
     "corporationId": "34A73EyI8A0w00" // 企业id
   }
 }
 ```
 
-#### 失败响应:
-
+## 失败响应
 请确保接入账号和密码的正确性，否则返回以下结果：
-
 ```json
 {
   "value": {

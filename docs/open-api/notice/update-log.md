@@ -1,3 +1,10 @@
+---
+slug: update-log
+title: API更新日志
+authors: [冯继成]
+tags: [v2]
+---
+
 # 易快报openAPI更新日志
 
 | 更新日期 | 所属模块 | 变更方式 | 接口名称 | 说明 |
@@ -50,27 +57,4 @@
 | 2020-12-25 | 基础数据 |  新增   |  [获取城市数据](/basedata/get-basedata-city.html)   |   城市数据-全量查询接口	|
 | 2020-12-17 | 自定义扩展 | 新增   |  [获取行程管理订单列表](/datalink/get-tripManager-order.html)   |   新增行程管理全量搜索功能	|
 
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-	table th:nth-of-type(2) { 
-		width: 230px;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(3) {
-		width: 100px;
-		white-space: nowrap;
-	}
-</style>
+
