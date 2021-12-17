@@ -23,7 +23,7 @@ const sidebars = {
       label: "通知",
       items: [
         "open-api/notice/TLS",
-        "open-api/notice/update-log",
+        "open-api/notice/update-log"
       ],
     },
     {
@@ -36,9 +36,31 @@ const sidebars = {
         "open-api/getting-started/auth",
         "open-api/getting-started/refresh-auth",
         "open-api/getting-started/temp-auth",
-        "open-api/getting-started/question-answer",
+        "open-api/getting-started/question-answer"
       ],
     },
+    {
+      type: "category",
+      label: "企业通讯录",
+      items: [
+        "open-api/corporation/info",
+        "open-api/corporation/corporation-info",
+        "open-api/corporation/get-departments",
+        "open-api/corporation/get-all-staffs",
+        "open-api/corporation/get-staff-ids",
+        "open-api/corporation/get-staff-backLog",
+        "open-api/corporation/get-roles-group",
+        "open-api/corporation/get-roles",
+        "open-api/corporation/update-roles",
+        "open-api/corporation/question-answer"
+      ],
+    },
+
+
+
+
+
+
   ],
 };
 

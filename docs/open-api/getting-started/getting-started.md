@@ -7,8 +7,8 @@
 在调用接口之前，您需要先确认以下操作：
 
 1. 确保企业已经开启了`开放接口(新)`功能。您可以联系您的实施顾问来开通此功能。
-2. 取得[地址前缀](getting-started/origin)。开放接口地址会随着易快报系统升级而变化。因此要确保每次调用使用的都是最新的地址前缀。
-3. 通过[授权](getting-started/auth)取得`accessToken`。开放接口均使用`accessToken`鉴权，请妥善保管。
+2. 取得[地址前缀](/docs/open-api/getting-started/origin)。开放接口地址会随着易快报系统升级而变化。因此要确保每次调用使用的都是最新的地址前缀。
+3. 通过[授权](/docs/open-api/getting-started/auth)取得`accessToken`。开放接口均使用`accessToken`鉴权，请妥善保管。
 
 以上完成后，即可开始使用易快报开放平台。祝体验愉快。
 
@@ -42,6 +42,4 @@
 > 
 > - 请注意接口分页的传参数据。例如 `count=10&start=0` 代表每页10条数据，第一页数据开始于 `start = 0`，则第二页数据开始于 `start = 10`。
 
-
-
-[易快报关于TLS协议版本支持的通知](notice/TLS)
+[易快报关于TLS协议版本支持的通知](/docs/open-api/notice/TLS)

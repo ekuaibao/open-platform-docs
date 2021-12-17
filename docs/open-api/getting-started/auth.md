@@ -11,8 +11,8 @@ import Control from "../../../components/Control";
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **appKey**       | String | 接入账号 | 必填 | - | 请查看问题一，[了解如何获取账号](question-answer.md) |
-| **appSecurity**  | String | 接入密码 | 必填 | - | 请查看问题一，[了解如何获取密码](question-answer.md) |
+| **appKey**       | String | 接入账号 | 必填 | - | 请查看问题一，[了解如何获取账号](/docs/open-api/getting-started/question-answer) |
+| **appSecurity**  | String | 接入密码 | 必填 | - | 请查看问题一，[了解如何获取密码](/docs/open-api/getting-started/question-answer) |
 
 ## CURL
 ```
