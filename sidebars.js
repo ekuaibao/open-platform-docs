@@ -261,42 +261,42 @@ const sidebars = {
     //     "open-api/datalink/question-answer2"
     //   ],
     // },
-    // {
-    //   type: "category",
-    //   label: "出站消息",
-    //   items: [
-    //     "open-api/outbound-message/outbound-introduction",
-    //     "open-api/outbound-message/outbound-new",
-    //     "open-api/outbound-message/outbound-callback",
-    //     "open-api/outbound-message/call-failed-log-list",
-    //     "open-api/outbound-message/question-answer"
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "附件",
-    //   items: [
-    //     "open-api/attachment/info",
-    //     "open-api/attachment/attachment-upload",
-    //     "open-api/attachment/attachment-download",
-    //     "open-api/attachment/question-answer"
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "城市管理",
-    //   items: [
-    //     "open-api/city/info",
-    //     "open-api/city/get-city-group",
-    //     "open-api/city/create-city-group",
-    //     "open-api/city/update-city-group",
-    //     "open-api/city/update-city-group-status",
-    //     "open-api/city/get-city-group-details",
-    //     "open-api/city/update-city-group-details",
-    //     "open-api/city/delete-city-group-details",
-    //     "open-api/city/question-answer"
-    //   ],
-    // },
+    {
+      type: "category",
+      label: "出站消息",
+      items: [
+        "open-api/outbound-message/outbound-introduction",
+        "open-api/outbound-message/outbound-new",
+        "open-api/outbound-message/outbound-callback",
+        "open-api/outbound-message/call-failed-log-list",
+        "open-api/outbound-message/question-answer"
+      ],
+    },
+    {
+      type: "category",
+      label: "附件",
+      items: [
+        "open-api/attachment/info",
+        "open-api/attachment/attachment-upload",
+        "open-api/attachment/attachment-download",
+        "open-api/attachment/question-answer"
+      ],
+    },
+    {
+      type: "category",
+      label: "城市管理",
+      items: [
+        "open-api/city/info",
+        "open-api/city/get-city-group",
+        "open-api/city/create-city-group",
+        "open-api/city/update-city-group",
+        "open-api/city/update-city-group-status",
+        "open-api/city/get-city-group-details",
+        "open-api/city/update-city-group-details",
+        "open-api/city/delete-city-group-details",
+        "open-api/city/question-answer"
+      ],
+    },
     {
       type: "category",
       label: "币种汇率",

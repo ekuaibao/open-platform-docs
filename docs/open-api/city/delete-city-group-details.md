@@ -1,26 +1,28 @@
 # 删除城市组详情
 
-{% httpverb "post" %}  /api/openapi/v1/cityGroup/detail/delete {% endhttpverb %}
+import Control from "../../../components/Control";
 
+<Control
+method="POST"
+url="/api/openapi/v1/cityGroup/detail/delete"
+/>
 
-#### Query Parameters:
+## Query Parameters
 
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **accessToken** | String  |通过授权接口获取。      |必填   | - |  [通过授权接口获取](/getting-started/auth.html)  |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 通过授权接口获取 | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth)  |
 
+## Body Parameters
 
-#### Body Parameters:
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **roleIds** | String []  | 角色id列表	      | 非必填	   | - | [通过查询角色组和角色获取](/corporation/get-roles-group.md) |
-| **staffIds** | String []  | 人员id列表      | 非必填 | - | [通过获取员工列表获取](/corporation/get-all-staffs.md) |
-| **cityGroupId** | String  | 城市组id	      | 必填 | - | - |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **roleIds**     | String[] | 角色id列表 | 非必填 | - | [通过查询角色组和角色获取](/docs/open-api/corporation/get-roles-group) |
+| **staffIds**    | String[] | 人员id列表 | 非必填 | - | [通过获取员工列表获取](/docs/open-apicorporation/get-all-staffs) |
+| **cityGroupId** | String   | 城市组id   | 必填  | - | - |
 
-
-<br/>
-#### CURL:
-```json
+## CURL
+```
 curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup/detail/delete?accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
@@ -30,13 +32,11 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup
     "cityGroupId": "wC0cPu1DNY1400"
 }'
 ```
-<br/>
-
 
 #### 成功响应:
 ```json
 {
-  "success": true,
-  "message": "ok"
+    "success": true,
+    "message": "ok"
 }
 ```

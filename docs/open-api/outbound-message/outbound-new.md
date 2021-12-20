@@ -1,9 +1,6 @@
 # 配置出站消息
 
-<!-- toc --> 
-
----
-### 定义
+## 定义
 
 ```text
 1.出站消息的定义：能够自动执行业务流程的一种触发器，以实现自动化传递信息（如通知消息、业务数据等）；
@@ -11,48 +8,47 @@
 3.行为：当满足某种订阅事件时，执行调用接口传递信息的动作。
 ```
 
-### 出站消息的触发方式
+## 出站消息的触发方式
 
 | 订阅事件 | 满足某种条件 | 触发方式 |
-| :--- | :--- | :--- |
+|:--- |:--- |:--- |
 | **审批事件**        | 触发配置的审批事件动作<br/> 审批事件类型：【待审批】、【待寄送】、【待收单】、【待支付】、【被驳回】、【已支付/审批完成】、【催办】、【超时提醒】、【审批通过（已开通【差旅管理】的用户）】、【抄送】、【评论】、【被@】、【打印提醒】、【单据撤回】、【待办已处理】| 触发出站消息 |
 | **业务对象数据变更** | 新增或修改 | 触发出站消息 |
 | **EBot**          | 到达此节点 | 触发出站消息，可触发调用失败后配置 |
 | **借款相关**        | 触发配置的还款事件<br/>还款事件类型：【发起手动还款】、【手动还款被确认收款】、【手动还款驳回】、【还款提醒】 | 触发出站消息 |
 
-### 界面交互
+## 界面交互
 
-#### （1）出站消息展示与管理界面
+### （1）出站消息展示与管理界面
 
-![image](/outbound-message/images/ebotManage.png)
+![image](images/ebotManage.png)
 
-#### （2）新建出站消息界面
+### （2）新建出站消息界面
 
-![image](/outbound-message/images/新建出站消息界面.png)
+![image](images/新建出站消息界面.png)
 
-#### （3）新建/编辑出站消息--审批事件（审批事件支持多选，但每个事件只能被选择一次）
+### （3）新建/编辑出站消息--审批事件（审批事件支持多选，但每个事件只能被选择一次）
 
-![image](/outbound-message/images/approvalEvent.png)
+![image](images/approvalEvent.png)
 
-#### （4）新建/编辑出站消息--业务对象数据变更
+### （4）新建/编辑出站消息--业务对象数据变更
 
-![image](/outbound-message/images/datalinkChange.png)
+![image](images/datalinkChange.png)
 
-#### （5）新建/编辑出站消息--Ebot（在审批流Ebot节点上新建此类型）
+### （5）新建/编辑出站消息--Ebot（在审批流Ebot节点上新建此类型）
 
-![image](/outbound-message/images/ebot.png)
+![image](images/ebot.png)
 
-#### （6）新建/编辑出站消息--借款相关
+### （6）新建/编辑出站消息--借款相关
 
-![image](/outbound-message/images/loan.png)
+![image](images/loan.png)
 
-
-### 配置说明
+## 配置说明
 
 出站消息的属性说明：
 
 | 属性 | 说明 |
-| :--- | :--- |
+|:--- |:--- |
 | **名称**       | 企业内唯一，20字以内，中文数字字母组合 |
 | **描述**       | 出站消息描述信息 |
 | **是否启用**    | 是否启用 |
@@ -66,13 +62,12 @@
 | **网络间隔时长** | 默认为0秒，可在1-10秒内做选择。<br/>用户设置等待间隔后出站消息失败后不会立即重试，会按照这里的间隔时间进行等待。 |
 | **测试并保存**   | 点击「测试并保存」，测试成功后将保存该出站消息。 <br/> 注意：测试时易快报将调用该接口，并传送示例数据，目标服务器响应配置的成功状态码，例如:204，方认为测试通过。|
 
-
-### 支持字段
+## 支持字段
 
 目前支持的字段类型有：
 
 | 字段类型 | Body预览示例 | 说明 |
-| :--- | :--- | :--- |
+|:--- |:--- |:--- |
 | **文本**                |  "字段名": "xxxx" |   |
 | **日期**                |  "字段名": 1484498318241 | 毫秒时间戳 |
 | **日期范围**             |  "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"from": 1484498318241, <br/>&nbsp;&nbsp;&nbsp;&nbsp;"to": 1484498318398 <br/>} | 毫秒时间戳 |
@@ -88,17 +83,16 @@
 | **收款信息_其他**         | "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"sort": "OTHER",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "杨平",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"type": "PERSONAL",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"cardNo":"13900001111",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"nameSpell": "YANGPING" <br/>&nbsp;&nbsp;&nbsp;&nbsp;"certificateType":"03",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"certificateNo":"134322222343"<br/>} |  |
 | **通知类出站消息类别**	  |  "action": "flow.rejected"   |  注意：通知类出站消息才会有的固定字段，流程中没有。<br/>类别:<br/>&nbsp;&nbsp;&nbsp;&nbsp;flow.rejected 被驳回<br/>&nbsp;&nbsp;&nbsp;&nbsp;freeflow.ticketReserve 审批通过（已开通【差旅管理】的用户）<br/>&nbsp;&nbsp;&nbsp;&nbsp;backlog.sending 待寄送<br/>&nbsp;&nbsp;&nbsp;&nbsp;backlog.receiving 待收单<br/>&nbsp;&nbsp;&nbsp;&nbsp;flow.paid 已支付/审批完成<br/>&nbsp;&nbsp;&nbsp;&nbsp;urgent.remind 加急审批<br/>&nbsp;&nbsp;&nbsp;&nbsp;freeflow.mention 被@<br/>&nbsp;&nbsp;&nbsp;&nbsp;freeflow.print 打印提醒<br/>&nbsp;&nbsp;&nbsp;&nbsp;backlog.paying 待支付<br/>&nbsp;&nbsp;&nbsp;&nbsp;freeflow.comment 评论<br/>&nbsp;&nbsp;&nbsp;&nbsp;backlog.approving 待审批<br/>&nbsp;&nbsp;&nbsp;&nbsp;freeflow.remind 催办<br/>&nbsp;&nbsp;&nbsp;&nbsp;timeout.remind 超时提醒<br/>&nbsp;&nbsp;&nbsp;&nbsp;freeflow.carbonCopy 抄送|
 | **通知类出站消息类别名称**  |  "actionName": "被驳回"  | 注意：通知类出站消息才会有的固定字段，流程中没有。 |
-| **通知类出站消息消息接收人** |  "userInfo": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"id": "7hw8MheAgo0g00:I6A8MlHIQM0000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "张三",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"cellphone": "13111111111",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"email": "123@qq.com"<br/>}&nbsp;&nbsp;&nbsp;&nbsp;| 注意：通知类出站消息才会有的固定字段，流程中没有。 |
+| **通知类出站消息消息接收人** |  "userInfo": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"id": "7hw8MheAgo0g00:I6A8MlHIQM0000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "张三",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"cellphone": "13111111111",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"email": "123456@163.com"<br/>}&nbsp;&nbsp;&nbsp;&nbsp;| 注意：通知类出站消息才会有的固定字段，流程中没有。 |
 
+## 出站消息日志
 
-### 出站消息日志
-
-#### （1）审批事件
+### （1）审批事件
 
 审批事件消息日志字段如下：
 
 | 字段 | 描述 |
-| :--- | :--- |
+|:--- |:--- |
 | **名称**    | 出站消息配置名称 |
 | **消息类型** | 出站消息类型，消息通知 |
 | **日志类型** | 日志类型，出战消息调用外部服务、外部服务调用出站消息 |
@@ -108,14 +102,14 @@
 | **时间**    | 出站消息调用时间 |
 | **操作**    | 参数：出站消息报文信息，request和response<br/>重试：无论出站消息成功与否，均可点击手动触发一次出站消息 |
 
-![image](/outbound-message/images/审批事件.png)
+![image](images/审批事件.png)
 
-#### （2）业务对象变更
+### （2）业务对象变更
 
 业务对象变更消息日志字段如下：
 
 | 字段 | 描述 |
-| :--- | :--- |
+|:--- |:--- |
 | **名称**       | 出站消息配置名称 |
 | **消息类型**    | 出站消息类型，业务对象变更 |
 | **日志类型**    | 日志类型，出战消息调用外部服务、外部服务调用出站消息 |
@@ -124,14 +118,14 @@
 | **时间**       | 出站消息调用时间 |
 | **操作**       | 参数：出站消息报文信息，request和response<br/>重试：无论出站消息成功与否，均可点击手动触发一次出站消息 |
 
-![image](/outbound-message/images/业务对象变更.png)
+![image](images/业务对象变更.png)
 
-#### （3）借款事件
+### （3）借款事件
 
 借款事件消息日志字段如下：
 
 | 字段 | 描述 |
-| :--- | :--- |
+|:--- |:--- |
 | **名称**    | 出站消息配置名称 |
 | **消息类型** | 出站消息类型，借款相关 |
 | **日志类型** | 日志类型，出战消息调用外部服务、外部服务调用出站消息 |
@@ -141,14 +135,14 @@
 | **时间**    | 出站消息调用时间 |
 | **操作**    | 参数：出站消息报文信息，request和response<br/>重试：无论出站消息成功与否，均可点击手动触发一次出站消息 |
 
-![image](/outbound-message/images/借款事件.png)
+![image](images/借款事件.png)
 
-#### （4）EBot事件
+### （4）EBot事件
 
 EBot事件消息日志字段如下：
 
 | 字段 | 描述 |
-| :--- | :--- |
+|:--- |:--- |
 | **名称**    | 出站消息配置名称 |
 | **消息类型** | 出站消息类型，EBOT事件 |
 | **日志类型** | 日志类型，出战消息调用外部服务、外部服务调用出站消息 |
@@ -157,34 +151,4 @@ EBot事件消息日志字段如下：
 | **时间**    | 出站消息调用时间 |
 | **操作**    | 参数：出站消息报文信息，request和response<br/>重试：无论出站消息成功与否，均可点击手动触发一次出站消息 |
 
-![image](/outbound-message/images/EBot事件.png)
-
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-    table th:nth-of-type(1) {
-		width: 20%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(2) {
-		width: 40%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(3) {
-		width: 40%;
-		white-space: nowrap;
-	}
-
-</style>
+![image](images/EBot事件.png)

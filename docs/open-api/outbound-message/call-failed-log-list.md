@@ -1,32 +1,30 @@
 # 调用失败日志列表
-
 如果Ebot出站消息调用失败，则会生成失败日志。外部服务器可以根据自身需求获取失败日志(如定时、定期获取)。
 
-{% httpverb "get" %}  /api/openapi/v1/outboundMessageLogs {% endhttpverb %}
+import Control from "../../../components/Control";
 
+<Control
+method="GET"
+url="/api/openapi/v1/outboundMessageLogs"
+/>
 
-#### Query Parameters:
+## Query Parameters
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken** | String  | 认证token	| 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
-| **messageType** | String  |flow(流程)/message(通知)/dataLink        | 非必填 | flow | - |
-| **startDate** | Long |  开始时间（毫秒） | 必填 | - | - |
-| **endDate** | Long |  结束时间（毫秒） | 必填 | - | - |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token	                      | 必填  | -    | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **messageType** | String | flow(流程)/message(通知)/dataLink | 非必填 | flow | - |
+| **startDate**   | Long   | 开始时间（毫秒）                    | 必填  | -    | - |
+| **endDate**     | Long   | 结束时间（毫秒）                    | 必填  | -    | - |
 
-
-
-<br/>
-#### CURL:
-```json
+## CURL
+```
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/outboundMessageLogs?accessToken=yI8byd_xTQ2s00&messageType=flow&startDate=1598417222510&endDate=1598417222510' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
-<br/>
 
-
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items": [

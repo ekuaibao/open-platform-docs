@@ -21,9 +21,9 @@ url="/api/openapi/v1/city/getCityList"
 | **code**     | String | 编码    | 非必填 | - | 省市县编码，国标 |
 | **parentId** | String | 父级编号 | 非必填 | - | 省市县的父级编号，易快报系统中定义，非国标 |
 
-> ⚠️ 注意：
->
->  `name`、`code`、`parentId`三个参数是并且的关系， 查询时任选其一填写即可。
+:::tip
+`name`、`code`、`parentId`三个参数是并且的关系， 查询时任选其一填写即可
+:::
 
 ## CURL
 ```

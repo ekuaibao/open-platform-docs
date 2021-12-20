@@ -1,24 +1,29 @@
 # 附件下载
 通过附件的id,key去获取附件的下载链接
-{% httpverb "post" %} /api/openapi/v2/attachment/downloadurls {% endhttpverb %}
 
-#### Query Parameters:
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **accessToken** | String  |通过授权接口获取。      |必填   | - |  [通过授权接口获取](/getting-started/auth.html)  |
+import Control from "../../../components/Control";
 
+<Control
+method="POST"
+url="/api/openapi/v2/attachment/downloadurls"
+/>
 
-#### Body Parameters:
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **id** | String  |通过获取单据详情获取      |必填   | - |  对应单据详情中的attachments字段的fileId|
-| **key** | String  |通过获取单据详情获取       |必填   | - |  对应单据详情中的attachments字段的key|
-| **expiration** | Number  |下载链接过期时间     |必填   | - |  用户自定义，指获取到的url的过期时间，单位：秒|
+## Query Parameters
 
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 通过授权接口获取 | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-<br/>
-#### CURL:
-```json
+## Body Parameters
+
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **id**         | String | 通过获取单据详情获取 | 必填 | - | 对应单据详情中的attachments字段的fileId |
+| **key**        | String | 通过获取单据详情获取 | 必填 | - | 对应单据详情中的attachments字段的key |
+| **expiration** | Number | 下载链接过期时间    | 必填 | - | 用户自定义，指获取到的url的过期时间，单位：秒 |
+
+## CURL
+```
 curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachment/downloadurls?accessToken=UvsbtOEHTsk000' \
 --header 'Content-Type: application/json' \
 --data-raw '[
@@ -29,11 +34,10 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachmen
     }
 ]'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
- [
+[
     {
         "id": "61sbwX3DEAgk00",
         "key": "openapi0306c2d1-7a5b-4e96-8172-60c5ee0f971e-kotlin简介.docx",
@@ -42,12 +46,12 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachmen
     }
 ]
 ```
->⚠️ 注意：
 
->url是下载的路径，thumbUrl是指缩略图的下载路径
+:::tip
+url是下载的路径，thumbUrl是指缩略图的下载路径
+:::
 
-
-#### 失败响应:
+## 失败响应
 ```
 如果返回：Error 405 Method Not Allowed  //请检查请求的方式正确的Method是POST方式
 如果返回：[]   //表示根据您所提供的附件查询信息没有找到对应的附件
