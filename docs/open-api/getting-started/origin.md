@@ -21,9 +21,9 @@ url="/api/openapi/v2/location"
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/location?corpId=-yQbjbywbc640011'
 ```
 
-> ⚠️注意：
-> 
->不同平台获取前缀的方式不同。
+:::tip
+- 不同平台获取前缀的方式不同。
+:::
 
 | 平台 | 地址 |
 | :--- | :--- |

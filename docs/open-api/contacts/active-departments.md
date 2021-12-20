@@ -7,10 +7,11 @@ method="PUT"
 url="/api/openapi/v1/departments/disableOrEnableDepartment/$`departmentId`"
 />
 
-> ⚠️ 注意：
->  * 当停用部门时，其子孙部门也会被一并停用。
->  * 启用一个部门时并不会一并启用其所有子孙部门。
->  * 停用部门前，需要先确保没有任何员工属于该部门，否则调用接口失败。
+:::tip
+- 当停用部门时，其子孙部门也会被一并停用。
+- 启用一个部门时并不会一并启用其所有子孙部门。
+- 停用部门前，需要先确保没有任何员工属于该部门，否则调用接口失败。
+:::
 
 ## Path Parameters
 
@@ -26,7 +27,7 @@ url="/api/openapi/v1/departments/disableOrEnableDepartment/$`departmentId`"
 | **active**      | Boolean | 停用或启用标识	| 必填  | - | `true`:启用<br/>`false`:停用 |
 
 ## CURL
-```
+```json
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/departments/disableOrEnableDepartment/$JOYbpjPP-E2Q00:Ef0bwJTotQho00?accessToken=rv0bwKeAks4Y00&active=false' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

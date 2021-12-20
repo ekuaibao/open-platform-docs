@@ -2,7 +2,6 @@
 slug: tls
 title: TSL支持通知
 authors: [冯继成]
-tags: [v2]
 ---
 
 # 易快报关于TLS协议版本支持的通知

@@ -15,7 +15,7 @@ import Control from "../../../components/Control";
 | **appSecurity**  | String | 接入密码 | 必填 | - | 请查看问题一，[了解如何获取密码](/docs/open-api/getting-started/question-answer) |
 
 ## CURL
-```
+```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/auth/getAccessToken' \
 --header 'Content-Type: application/json' \
 --data-raw '{

@@ -28,22 +28,20 @@ url="/api/openapi/v1/provisional/getProvisionalAuth"
 | **pathname**                | String  | 授权路径         | 非必填 | - |  当`pageType`=`new`时，填值(/web/billentry.html)或者(/applet/thirdparty.html),视平台而定 |
 | **specificationOriginalId** | String  | 单据模板ID       | 非必填 | - |  当`pageType`=`new`(新增单据)时该值必填 |
 
-> ⚠️注意：
-> 
-> - `uid`与`userId`只需要填写一个即可，若都填写，以`uid`为准进行操作。
-> - 当`pageType`=`form`时，`flowId`参数必填；
-> - 当`pageType`=`new`时，`pathname`、`specificationOriginalId`参数必填。
-> - 当`pageType`=`mall`时，用户必须已开通商城，否则该接口会返回错误提示。<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;且只需要传递`uid`（或者`userId`）、`isApplet`和`expireDate`3个参数即可，其他均可忽略不传。
-> - 当`pageType`=`backlogDetail`时，`isApplet`=`false`（不支持移动端）,`flowId`参数必填，`action`参数选填（不传显示默认的审批按钮），多个值用“,”分隔。
->
-> ![image](images/审批按钮显示效果.png)
-> 
-> ![image](images/不传action时.png)
+:::tip
+ - `uid`与`userId`只需要填写一个即可，若都填写，以`uid`为准进行操作。
+ - 当`pageType`=`form`时，`flowId`参数必填；
+ - 当`pageType`=`new`时，`pathname`、`specificationOriginalId`参数必填。
+ - 当`pageType`=`mall`时，用户必须已开通商城，否则该接口会返回错误提示。<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;且只需要传递`uid`（或者`userId`）、`isApplet`和`expireDate`3个参数即可，其他均可忽略不传。
+ - 当`pageType`=`backlogDetail`时，`isApplet`=`false`（不支持移动端）,`flowId`参数必填，`action`参数选填（不传显示默认的审批按钮），多个值用“,”分隔。
 
-<br/>
+ ![image](images/审批按钮显示效果.png)
+ 
+ ![image](images/不传action时.png)
+:::
 
-审批按钮类型`action`的值如下（不支持移动端）:
+### 审批按钮类型`action`的值如下（不支持移动端）:
 
 | action | 说明 |
 | :--- | :--- |
@@ -65,7 +63,7 @@ url="/api/openapi/v1/provisional/getProvisionalAuth"
 | **freeflow.addSignNode**  | 加签审批    |
 
 ## CURL
-```
+```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/provisional/getProvisionalAuth?accessToken=cxEbrzNJSA3A00' \
 --header 'Content-Type: application/json' \
 --data-raw '{

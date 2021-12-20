@@ -2,7 +2,6 @@
 slug: corporation
 title: 概述
 authors: [冯继成]
-tags: [v2]
 ---
 
 # 开始使用企业通讯录
@@ -23,6 +22,8 @@ tags: [v2]
 ![image](images/role2.png)
 
 ![image](images/role3.png)
+
+----
 
 
 

@@ -1,47 +1,50 @@
 # 根据部门id或编码获取部门信息
 
-{% httpverb "get" %} /api/openapi/v1/departments/$`idOrCode` {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Path Parameters:
+<Control
+method="GET"
+url="/api/openapi/v1/departments/$`idOrCode`"
+/>
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **idOrCode** | String  | `部门id` 或 `部门编码`| 必填 | - | 参数为 `部门id` 或 `部门编码` | 
+## Path Parameters
 
-#### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **idOrCode** | String | `部门id` 或 `部门编码`| 必填 | - | 参数为 `部门id` 或 `部门编码` | 
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken**   | String  | 认证token  | 必填   | -  | [通过授权接口获取](/getting-started/auth.html) |
-| **departmentBy**  | String  | 查询方式    | 非必填 | id | 固定值:`id` 或者 `code`,与idOrCode参数对应 |
+## Query Parameters
 
-<br/>
-#### CURL:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken**  | String | 认证token  | 必填   | -  | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **departmentBy** | String | 查询方式    | 非必填 | id | 固定值:`id` 或者 `code`,与idOrCode参数对应 |
+
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departments/$JOYbpjPP-E2Q00:pAwbwH_W7sec00?accessToken=z0wbwXPo6sf400&departmentBy=id' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
         "id": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", // 部门ID
-        "name": "财务部", // 部门名称
-        "parentId": "JOYbpjPP-E2Q00", // 上级部门ID
-        "active": true, // 是否启用
-        "code": "1003" // 部门编码
-        "form":{//部门关联法人实体id和成本中心id
-            "costCenter":"NzMcynfBJ43M00",//成本中心ID
-            "legalEntity":"11YcypdGzoEo00"//法人实体ID
+        "name": "财务部",                       // 部门名称
+        "parentId": "JOYbpjPP-E2Q00",          // 上级部门ID
+        "active": true,                        // 是否启用
+        "code": "1003"                         // 部门编码
+        "form":{                               //部门关联法人实体id和成本中心id
+            "costCenter":"NzMcynfBJ43M00",     //成本中心ID
+            "legalEntity":"11YcypdGzoEo00"     //法人实体ID
         }
     }
 }
 ```
 
-#### 失败响应:
+## 失败响应
 ```json
 {
     "errorCode": 400,
