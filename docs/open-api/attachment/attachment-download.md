@@ -23,7 +23,7 @@ url="/api/openapi/v2/attachment/downloadurls"
 | **expiration** | Number | 下载链接过期时间    | 必填 | - | 用户自定义，指获取到的url的过期时间，单位：秒 |
 
 ## CURL
-```
+```json
 curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachment/downloadurls?accessToken=UvsbtOEHTsk000' \
 --header 'Content-Type: application/json' \
 --data-raw '[

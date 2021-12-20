@@ -22,7 +22,7 @@ url="/api/openapi/v1/cityGroup/detail/delete"
 | **cityGroupId** | String   | 城市组id   | 必填  | - | - |
 
 ## CURL
-```
+```json
 curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup/detail/delete?accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \

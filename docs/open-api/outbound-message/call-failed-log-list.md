@@ -18,7 +18,7 @@ url="/api/openapi/v1/outboundMessageLogs"
 | **endDate**     | Long   | 结束时间（毫秒）                    | 必填  | -    | - |
 
 ## CURL
-```
+```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/outboundMessageLogs?accessToken=yI8byd_xTQ2s00&messageType=flow&startDate=1598417222510&endDate=1598417222510' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

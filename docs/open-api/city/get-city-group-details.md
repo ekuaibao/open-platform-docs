@@ -22,7 +22,7 @@ url="/api/openapi/v1/cityGroup/detail/search"
 | **keyword**     | String | 搜索关键字 | 非必填 | - | 人员名称或角色名称 |
 
 ## CURL
-```
+```json
 curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup/detail/search?accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \

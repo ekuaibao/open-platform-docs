@@ -21,7 +21,7 @@ url="/api/openapi/v1/cityGroup/create"
 | **desc** | String | 描述 | 非必填 | - | - |
 
 ## CURL
-```
+```json
 curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup/create?accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \

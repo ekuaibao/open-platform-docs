@@ -26,7 +26,7 @@ url="/api/openapi/v1/cityGroup/updateStatus/$`id`"
 | **status** | Boolean | 状态 | 必填 | - | - |
 
 ## CURL
-```
+```json
 curl --location --request PUT 'http://app.ekuaibao.com/api/openapi/v1/cityGroup/updateStatus/$wC0cPu1DNY1400?accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \

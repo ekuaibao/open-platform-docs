@@ -25,7 +25,7 @@ url="/api/outbound/v1/approval"
 :::
 
 ## CURL
-```
+```json
 curl --location --request POST 'https://app.ekuaibao.com/api/outbound/v1/approval?accessToken=Un0bxmbZ0w8c00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
