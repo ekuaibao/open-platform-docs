@@ -297,25 +297,25 @@ const sidebars = {
     //     "open-api/city/question-answer"
     //   ],
     // },
-    // {
-    //   type: "category",
-    //   label: "币种汇率",
-    //   items: [
-    //     "open-api/currency/info",
-    //     "open-api/currency/get-currency",
-    //     "open-api/currency/update-currency-rate",
-    //     "open-api/currency/question-answer",
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "基础数据",
-    //   items: [
-    //     "open-api/basedata/info",
-    //     "open-api/basedata/get-basedata-city",
-    //     "open-api/basedata/question-answer"
-    //   ],
-    // },
+    {
+      type: "category",
+      label: "币种汇率",
+      items: [
+        "open-api/currency/info",
+        "open-api/currency/get-currency",
+        "open-api/currency/update-currency-rate",
+        "open-api/currency/question-answer",
+      ],
+    },
+    {
+      type: "category",
+      label: "基础数据",
+      items: [
+        "open-api/basedata/info",
+        "open-api/basedata/get-basedata-city",
+        "open-api/basedata/question-answer"
+      ],
+    },
   ],
 };
 
