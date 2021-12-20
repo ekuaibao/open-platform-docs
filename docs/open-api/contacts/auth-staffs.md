@@ -1,0 +1,56 @@
+# 授权员工
+
+批量激活/解除员工，可以通过指定员工的`id`或`工号`或`手机号`来进行
+
+> ⚠️ 注意：
+> 
+>  如果超过企业购买人数，则激活不会成功
+
+{% httpverb "post" %} /api/openapi/v1/charge/powers/authStaff {% endhttpverb %}
+
+#### Query Parameters:
+
+|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
+| :--------- | :------ | :---------| :------| :------|:------|
+| **accessToken** | String  | 认证token	| 必填  | - | [通过授权接口获取](/getting-started/auth.html) |
+
+#### Body Parameters:
+
+|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
+| :--------- | :------ | :---------| :------| :------|:------|
+| **type**      | String | 员工标识类型	| 必填  | - | `id`:员工id `code`:工号 `cellphone`:手机号  |
+| **addStaff**  | Array  | 激活的员工	    | 必填  | - | 可以为[]，如果type是id，此处应传员工id，以此类推 |
+| **delStaff**  | Array  | 解除激活的员工	| 必填  | - | 可以为[]，如果type是id，此处应传员工id，以此类推 |
+
+<br/>
+
+#### CURL:
+```json
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/charge/powers/authStaff?accessToken=PlocOoVT4FwM00' \
+--header 'content-type: application/json' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "type":"code",
+    "delStaff":[],
+    "addStaff":["code1","code2"]
+}'
+```
+<br/>
+
+#### 成功响应:
+```json
+{
+    "value": true 
+}
+```
+
+#### 失败响应:
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "未知的type类型",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```

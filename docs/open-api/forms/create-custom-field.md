@@ -1,0 +1,162 @@
+# 创建自定义字段（全局字段）
+
+{% httpverb "post" %} /api/openapi/v1/property/addPropertySet {% endhttpverb %}
+
+#### Query Parameters:
+
+|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
+| :--------- | :------ | :---------| :------| :------|:------|
+| **accessToken** | String  | 认证token	| 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+
+#### Body Parameters:
+
+|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
+| :--------- | :------ | :---------| :------| :------|:------|
+|**properties**                   | Array   | 字段信息      | 必填  | - | 字段信息 | 
+|**properties/label**             | String  | 字段名称      | 必填  | - | 字段名称 | 
+|**properties/canAsDimension**    | Boolean | 是否自定义档案 | 非必填 | false | 是否自定义档案 | 
+|**properties/dataType**          | Object  | 数据类型      | 必填  | - | 数据类型 | 
+|**properties/dataType/type**     | String  | 字段类别      | 必填  | - | 可参考"示例" | 
+|**properties/dataType/entity**   | String  | 引用对象      | 非必填 | - | `type`为`ref`时必填，可参考"示例" | 
+|**properties/dataType/elemType** | Object  | 附件信息      | 非必填 | - | `type`为`list`时必填，可参考"示例" | 
+|**properties/dataType/unit**     | String  | 单位         | 非必填 | - | `type`为`number`时填写，非必填<br>可参考"示例"，如：`kg``cm`等 | 
+|**properties/dataType/scale**    | Number  | 小数位数      | 非必填 | - | `type`为`number`时必填，可参考"示例" | 
+
+>⚠️ 注意：
+
+> 数据类型有多种情况，注意甄别， 可参考"示例"。
+
+<br/>
+
+#### CURL:
+
+```json
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/property/addPropertySet?accessToken=f8QbuH2hwQ5E00' \
+--header 'content-type: application/json' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "properties":[
+        {
+            "label":"自定义扩展测试",
+            "canAsDimension":false,
+            "dataType":{
+                "type":"ref",
+                "entity":"datalink.DataLinkEntity.99280b7abde4c9c19800" //自定义扩展
+            }
+        },
+        {
+            "label":"档案项目",
+            "canAsDimension":true,
+            "dataType":{
+                "type":"ref",
+                "entity":"basedata.Dimension.项目" //自定义档案
+            }
+        },
+        {
+            "label":"文本1",
+            "canAsDimension":false,
+            "dataType":{
+                "type":"text"  //文本
+            }
+        },
+        {
+            "label":"数字1",
+            "canAsDimension":false,
+            "dataType":{
+                "type":"number",//数字
+                "unit":"kg", //单位
+                "scale": 3 //小数位数
+            }
+        },
+        {
+            "label":"金额1",
+            "canAsDimension":false,
+            "dataType":{
+                "type":"money" //金额
+            }
+        },
+        {
+            "label":"日期1",
+            "canAsDimension":false,
+            "dataType":{
+                "type":"date" //日期
+            }
+        },
+        {
+            "label":"日期范围1",
+            "canAsDimension":false,
+            "dataType":{
+                "type":"dateRange" //日期范围
+            }
+        },
+        {
+            "label":"开关1",
+            "canAsDimension":false,
+            "dataType":{
+                "type":"boolean" //开关
+            }
+        },
+        {
+            "label":"附件1",
+            "canAsDimension":false,
+            "dataType":{
+                "type":"list",
+                "elemType":{
+                    "type":"attachment" //附件
+                }
+            }
+        },
+        {
+            "label":"部门1",
+            "canAsDimension":true,
+            "dataType":{
+                "type":"ref",
+                "entity":"organization.Department" //部门
+            }
+        },
+        {
+            "label":"员工1",
+            "canAsDimension":true,
+            "dataType":{
+                "type":"ref",
+                "entity":"organization.Staff" //员工
+            }
+        },
+        {
+            "label":"城市1",
+            "canAsDimension":false,
+            "dataType":{
+                "type":"ref",
+                "entity":"basedata.city" //城市
+            }
+        },
+        {
+            "label":"枚举1",
+            "canAsDimension":false,
+            "dataType":{
+                "type":"ref",
+                "entity":"basedata.Enum.CabinType" //枚举
+            }
+        }
+    ]
+}'
+```
+
+<br/>
+
+#### 成功响应:
+```text
+code 204
+```
+
+#### 失败响应:
+type参数值所对应的其他必填参数未填写或填写错误时，返回类似响应数据
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "[ref]为不支持的数据类型",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
