@@ -68,12 +68,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/provisio
 --header 'Content-Type: application/json' \
 --data-raw '{
     "uid": "34A73EyI8A0w00:Kh0bnmDTrU9g00",
-    "userId": "",
+    //"userId": "",
     "pageType": "home",
-    "flowId": "",
+    //"flowId": "",
     "expireDate": "120",
     "isApplet": true,
-    "action": "",
+    //"action": "",
     "overdueTokenRedirect": "https://www.ekuaibao.com"
 }'
 ```

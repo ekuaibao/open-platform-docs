@@ -21,10 +21,10 @@ url="/api/openapi/v1/roledefs/$`roledefId`"
 | **accessToken** | String | 认证token	      | 必填   | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **staffBy**     | String | 查询员工信息显示类型 | 非必填 | id | `id`: 显示完整员工ID，格式：企业id : userId<br/>`sourceId`: 只显示userId |
 
-> ⚠️ 注意：
-> 
-> - 角色ID获取如下所示
-> ![image](images/角色ID.png)
+:::tip
+- 角色ID获取如下所示
+![image](images/角色ID.png)
+:::
 
 ## CURL
 ```

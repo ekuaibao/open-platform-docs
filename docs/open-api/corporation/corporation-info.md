@@ -25,7 +25,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/corporati
 {
 	"value": {
 		"id": "JOYbpjPP-E2Q00", // 企业id
-		"name": "恒达"           // 企业名称
+		"name": "恒达"          // 企业名称
 	}
 }
 ```

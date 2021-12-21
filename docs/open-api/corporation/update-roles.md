@@ -1,15 +1,15 @@
 # 更新角色下员工信息
 
-> ⚠️ 注意：
-> 
->  只有数据来源为【API导入】的角色才能使用此接口更新角色。
-
 import Control from "../../../components/Control";
 
 <Control
 method="PUT"
 url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 />
+
+:::danger
+- 只有数据来源为【API导入】的角色才能使用此接口更新角色。
+:::
 
 ## Path Parameters
 
@@ -33,15 +33,14 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 | **contents/path**     | Array  | 部门或自定义档案值 | 非必填 | - | 传入内容参考pathType，[注意事项](/docs/open-api/corporation/question-answer) |
 | **contents/staffs**   | Array  | 员工集	      | 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 
-> ⚠️ 注意：
-> 
->  - 当staffs为空时，则删除此部门/自定义档案值对应的角色下所有员工
-> 
->  - 在系统上新建角色时，角色类型可按【部门】和【档案类别】划分，此接口中的`path`参数就传这个角色对应的类型值。
-> ![image](images/新建角色.png)
+:::tip
+- 当staffs为空时，则删除此部门/自定义档案值对应的角色下所有员工。
+- 在系统上新建角色时，角色类型可按【部门】和【档案类别】划分，此接口中的`path`参数就传这个角色对应的类型值。
+![image](images/新建角色.png)
+:::
 
 ## CURL
-```
+```json
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$7FQbuoqQBA9U00/staffs?accessToken=RCIbwHcnF0kg00&staffBy=id' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \

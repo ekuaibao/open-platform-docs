@@ -22,13 +22,13 @@ url="/api/openapi/v1/staffs/getStaffIds"
 | **type**         | String | 查询方式    | 必填 | - | `STAFFID`:员工ID<br/>`CODE`:工号<br/>`CELLPHONE`:手机号<br/>`MAIL`:邮箱<br/>`USERID`:第三方ID |
 | **conditionIds** | Array  | 要查询条件值 | 必填 | - | 支持多个 |
 
-> ⚠️ 注意：
-> 
-> - 第三方ID指钉钉ID、企业微信open ID、云之家ID等;
-> - 该接口只能查询到未停用的员工信息，如果需要查询已停用员工信息，请通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)查询到全部已停用的员工列表，再进行匹配
+:::tip
+- 第三方ID指钉钉ID、企业微信open ID、云之家ID等。
+- 该接口只能查询到未停用的员工信息，如果需要查询已停用员工信息，请通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)查询到全部已停用的员工列表，再进行匹配。
+:::
 
 ## CURL
-```
+```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/getStaffIds?accessToken=RCIbwHcnF0kg00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
