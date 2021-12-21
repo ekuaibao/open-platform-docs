@@ -1,44 +1,48 @@
 # 增删业务对象字段
 
-{% httpverb "post" %}  /api/openapi/v2/datalink/editEntityFields/$`platformId`/$`entityId` {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Path Parameters:
+<Control
+method="POST"
+url="/api/openapi/v2/datalink/editEntityFields/$`platformId`/$`entityId`"
+/>
 
-| 名称            | 类型     | 描述    | 是否必填      | 默认值 |  备注 |
-| :---------     | :------ |:------   | :-------   | :---- | :-------    |
-| **platformId** | String  | 扩展ID    | 必填        | -   | 请查看问题一，[了解如何获取](question-answer.md)  |
-| **entityId**   | String  | 业务对象ID | 必填        |  -  | 请查看问题一，[了解如何获取](question-answer.md)  |
+## Path Parameters
 
-#### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **platformId** | String | 扩展ID    | 必填 | - | 请查看问题一，[了解如何获取](/docs/open-api/question-answer) |
+| **entityId**   | String | 业务对象ID | 必填 | - | 请查看问题一，[了解如何获取](/docs/open-api/question-answer) |
 
-| 名称             | 类型     |  描述     | 是否必填      | 默认值  | 备注                                         |
-| :---------      | :------  | :------  | :------- |  -     | :------------------------------------------  |
-| **accessToken** | String |  认证token  | 必填      |   -    | [通过授权接口获取](/getting-started/auth.html)  |
+## Query Parameters
 
-#### Body Parameters:
-| 名称                    |  类型  | 描述 | 是否必填  | 默认值  | 备注                                         |
-| :---------             | :------  | :------  | :------- |  -     | :------------------------------------------  |
-| **delfields**          | Array  | 删除的数据 |  非必填  | - | 数组为要删除的字段label列表 |
-| **addfields**          | Array  | 添加的数据 |  非必填  | - | 数组为要添加的字段label列表 |
-| **addfields/label**    | String | 字段名称   | 必填    | - | 字段名称 |
-| **addfields/type**     | String | 字段类型   | 必填    | - | `text`:文本<br>`number`:数字<br>`autoNumber`:自动编码<br>`date`:日期<br>`dateRange`:日期范围<br>`money`:金额<br>`switcher`:开关<br>`ref`:关联业务对象<br>`list`:多选 |
-| **addfields/optional** | Boolean | 字段是否必填 | 必填  | true | `false`:必填<br>`true`:选填 |
-| **addfields/scale**           | Number  | 小数位数         | 非必填 | - | `type` 为 `number` 时必填 |
-| **addfields/unit**            | String  | 单位            | 非必填 | - | `type` 为 `number` 时必填 |
-| **addfields/rule**            | String  | 自动编号生成规则   | 非必填 | - | `type` 为 `autoNumber` 时必填。 请查看问题四，[了解具体编码规则](/datalink/question-answer.md) |
-| **addfields/withTime**        | Boolean | 是否包含时间      | 非必填 | false | `type` 为 `date`或`dateRange` 时必填<br>`true`:包含<br>`false`:不包含|
-| **addfields/entity**          | String  | 业务对象取值范围   | 非必填 | - | `type` 为 `ref` 时必填 |
-| **addfields/formula**         | Boolean | 是否是自动计算类型 | 非必填 | false | `type` 为 `number`或`money`时有效<br>`true`:是<br>`false`:否 |
-| **addfields/defaultValue**    | String  | 计算公式         | 非必填 | - | `formula` 为 `true` 时必填，计算公式内容 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
->⚠️ 注意：
+## Body Parameters
 
-> `addfields.entity` 暂不支持调用接口获取，如果不知道准确的取值，可以通过问题五[获取目标字段值](question-answer.md)类似方式查看请求取得。
-> 
-> `delfields`和`addfields`二者不能同时为空。
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **delfields**                 | Array   | 删除的数据       | 非必填 | -     | 数组为要删除的字段label列表 |
+| **addfields**                 | Array   | 添加的数据       | 非必填 | -     | 数组为要添加的字段label列表 |
+| **addfields/label**           | String  | 字段名称         | 必填  | -     | 字段名称 |
+| **addfields/type**            | String  | 字段类型         | 必填  | -     | `text`:文本 `number`:数字 `autoNumber`:自动编码<br/>`date`:日期 `dateRange`:日期范围 `money`:金额<br/>`switcher`:开关  `list`:多选 `ref`:关联业务对象 |
+| **addfields/optional**        | Boolean | 字段是否必填      | 必填  | true  | `false`:必填 `true`:选填 |
+| **addfields/scale**           | Number  | 小数位数         | 非必填 | -     | `type` 为 `number` 时必填 |
+| **addfields/unit**            | String  | 单位            | 非必填 | -     | `type` 为 `number` 时必填 |
+| **addfields/rule**            | String  | 自动编号生成规则   | 非必填 | -     | `type` 为 `autoNumber` 时必填。 请查看问题四，[了解具体编码规则](/docs/open-api/datalink/question-answer) |
+| **addfields/withTime**        | Boolean | 是否包含时间      | 非必填 | false | `type` 为 `date`或`dateRange` 时必填<br/>`true`:包含 `false`:不包含|
+| **addfields/entity**          | String  | 业务对象取值范围   | 非必填 | -     | `type` 为 `ref` 时必填 |
+| **addfields/formula**         | Boolean | 是否是自动计算类型 | 非必填 | false | `type` 为 `number`或`money`时有效<br/>`true`:是 `false`:否 |
+| **addfields/defaultValue**    | String  | 计算公式         | 非必填 | -     | `formula` 为 `true` 时必填，计算公式内容 |
 
-<br/>
-#### CURL:
+:::caution
+ - `addfields.entity` 暂不支持调用接口获取，如果不知道准确的取值，可以通过问题五[获取目标字段值](/docs/open-api/question-answer)类似方式查看请求取得。
+ - `delfields`和`addfields`二者不能同时为空。
+:::
+
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/editEntityFields/$ID_3rGmfE$cfo0/$f90dc12bc889cd11e000?accessToken=ID_3s9EkyX3nuw:djg8LshfUkfM00' \
 --header 'Content-Type: application/json' \
@@ -158,8 +162,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 }'
 ```
 
-<br/>
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
@@ -507,7 +510,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 }
 ```
 
-#### 失败响应:
+## 失败响应
 
 `addfields`列表中的字段以`label`为关键字，需要保证其唯一性，否则会返回如下响应：
 ```text
@@ -518,44 +521,3 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 ```text
 删除的字段label不存在[名称, 编码]，请输入有效字段名称
 ```
-
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-	table th:nth-of-type(1) { 
-		width: 20%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(2) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(3) {
-		width: 15% !important;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(4) {
-		width: 8%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(5) {
-		width: 7%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(6) {
-		width: 40% !important;
-		white-space: nowrap;
-	}
-</style>
