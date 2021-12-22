@@ -31,46 +31,46 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
 ## 成功响应
 ```json
 {
-      "count": 14,
-      "items": [
-            {
-                  "id": "PCx3rwm3aA00qM:ID_3rAZNCY2V$g",
-                  "name": "李四",
-                  "code": "",
-                  "departments": [
-                    "PCx3rwm3aA00qM:ID_3rw$2RXc5lM"
-                  ],
-                  "defaultDepartment": "PCx3rwm3aA00qM:ID_3rw$2RXc5lM",
-                  "cellphone": "",
-                  "active": true,
-                  "userId": "ID_3rAZNCY2U$g",
-                  "email": "17777777777@163.com",
-                  "external": false,
-                  "note": "notea",
-                  "staffCustomForm": {
-                    "base": "[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",
-                    "u_数字字段": "1"
-                  }
-            },
-            {
-                  "id": "PCx3rwm3aA00qM:ID_3rAZNCY2X$g",
-                  "name": "王五",
-                  "code": "00008",
-                  "departments": [
-                    "PCx3rwm3aA00qM:ID_3rw$2RXc5lM"
-                  ],
-                  "defaultDepartment": "PCx3rwm3aA00qM:ID_3rw$2RXc5lM",
-                  "cellphone": "18888888888",
-                  "active": true,
-                  "userId": "ID_3rAZNCY2W$g",
-                  "email": "18888888888@163.com",
-                  "external": false,
-                  "note": null,
-                  "staffCustomForm": {
-                    "u_爱好": ""
-                  }
+    "count": 14,
+    "items": [
+        {
+            "id": "PCx3rwm3aA00qM:ID_3rAZNCY2V$g",
+            "name": "李四",
+            "code": "",
+            "departments": [
+              "PCx3rwm3aA00qM:ID_3rw$2RXc5lM"
+            ],
+            "defaultDepartment": "PCx3rwm3aA00qM:ID_3rw$2RXc5lM",
+            "cellphone": "",
+            "active": true,
+            "userId": "ID_3rAZNCY2U$g",
+            "email": "17777777777@163.com",
+            "external": false,
+            "note": "notea",
+            "staffCustomForm": {
+              "base": "[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",
+              "u_数字字段": "1"
             }
-      ]
+        },
+        {
+            "id": "PCx3rwm3aA00qM:ID_3rAZNCY2X$g",
+            "name": "王五",
+            "code": "00008",
+            "departments": [
+              "PCx3rwm3aA00qM:ID_3rw$2RXc5lM"
+            ],
+            "defaultDepartment": "PCx3rwm3aA00qM:ID_3rw$2RXc5lM",
+            "cellphone": "18888888888",
+            "active": true,
+            "userId": "ID_3rAZNCY2W$g",
+            "email": "18888888888@163.com",
+            "external": false,
+            "note": null,
+            "staffCustomForm": {
+              "u_爱好": ""
+            }
+        }
+    ]
 }
 ```
 

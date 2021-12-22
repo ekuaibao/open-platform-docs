@@ -22,8 +22,7 @@ const sidebars = {
       type: "category",
       label: "通知",
       items: [
-        "open-api/notice/TLS",
-        "open-api/notice/update-log"
+        "open-api/notice/TLS"
       ],
     },
     {
@@ -78,25 +77,25 @@ const sidebars = {
         "open-api/contacts/question-answer"
       ],
     },
-    // {
-    //   type: "category",
-    //   label: "自定义档案",
-    //   items: [
-    //     "open-api/dimensions/info",
-    //     "open-api/dimensions/create-dimensions",
-    //     "open-api/dimensions/get-dimensions",
-    //     "open-api/dimensions/creat-dimension-items",
-    //     "open-api/dimensions/batch-creat-dimension-items",
-    //     "open-api/dimensions/get-dimension-items",
-    //     "open-api/dimensions/get-dimension-items-visibility",
-    //     "open-api/dimensions/get-dimension-items-byCode",
-    //     "open-api/dimensions/get-dimension-items-byName",
-    //     "open-api/dimensions/update-dimension-items",
-    //     "open-api/dimensions/disable-dimension-items",
-    //     "open-api/dimensions/enable-dimension-items",
-    //     "open-api/dimensions/question-answer"
-    //   ],
-    // },
+    {
+      type: "category",
+      label: "自定义档案",
+      items: [
+        "open-api/dimensions/info",
+        "open-api/dimensions/create-dimensions",
+        "open-api/dimensions/get-dimensions",
+        "open-api/dimensions/creat-dimension-items",
+        "open-api/dimensions/batch-creat-dimension-items",
+        "open-api/dimensions/get-dimension-items",
+        "open-api/dimensions/get-dimension-items-visibility",
+        "open-api/dimensions/get-dimension-items-byCode",
+        "open-api/dimensions/get-dimension-items-byName",
+        "open-api/dimensions/update-dimension-items",
+        "open-api/dimensions/disable-dimension-items",
+        "open-api/dimensions/enable-dimension-items",
+        "open-api/dimensions/question-answer"
+      ],
+    },
     // {
     //   type: "category",
     //   label: "档案关系",

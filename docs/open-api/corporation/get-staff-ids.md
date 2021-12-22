@@ -49,9 +49,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
             "name": "二号员工",                      //员工名称
             "code": "1002",                         //员工编码
             "departments": [                        //所属部门ID集合
-                    "JOYbpjPP-E2Q00:ZNEbwH_W7sc000",
-                    "JOYbpjPP-E2Q00:pAwbwH_W7sec00",
-                    "JOYbpjPP-E2Q00"
+                "JOYbpjPP-E2Q00:ZNEbwH_W7sc000",
+                "JOYbpjPP-E2Q00:pAwbwH_W7sec00",
+                "JOYbpjPP-E2Q00"
             ],
             "defaultDepartment": "JOYbpjPP-E2Q00:ZNEbwH_W7sc000", //默认部门ID
             "cellphone": "18603000748",                           //手机号

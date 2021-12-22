@@ -1,31 +1,34 @@
 # 批量新建自定义档案项
 
-{% httpverb "post" %} /api/openapi/v1/dimensions/items/batch {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="POST"
+url="/api/openapi/v1/dimensions/items/batch"
+/>
 
-| 名称 |类型 |描述 |是否必填 |默认值 | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken** | String | 认证token	| 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+## Query Parameters
 
-#### Body Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-| 名称 |类型 |描述 |是否必填 |默认值 | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **dimensionId**                            | String  | 档案类别id  | 必填  | - | 可通过[获取档案类别](/dimensions/get-dimensions.html)来获取 |
-| **itemListRequest**                        | Array   | 档案项集合   | 必填  | - | 新增的档案项集合 |
-| **itemListRequest/name**                   | String  | 档案值名称	| 必填  | - | 档案值名称,最大不能超过300个字 |
-| **itemListRequest/code**                   | String  | 档案值编码	| 必填  | - | 档案值编码 |
-| **itemListRequest/visibility**             | Object  | 可见范围	    | 非必填 | - | 可见范围 |
-| **itemListRequest/visibility/fullVisible** | Boolean | 是否全部可见 | 非必填 | true | `true`:全部可见 `false`:非全部可见,此时白名单必填。在非全部可见的情况下，仅白名单内的员工可见 |
-| **itemListRequest/visibility/staffs**      | Array   | 员工白名单	| 非必填 | - | 值为[员工id](/corporation/get-all-staffs.html) |
-| **itemListRequest/visibility/roles**       | Array   | 角色白名单   | 非必填 | - | 值为[角色id](/corporation/get-roles-group.html) |
-| **itemListRequest/visibility/departments** | Array   | 部门白名单   | 非必填 | - | 值为[部门id](/corporation/get-departments.html) |
-| **itemListRequest/parentId**               | String  | 档案值父级id	| 必填   | - | 可通过[获取档案值](/dimensions/get-dimension-items.html)来获取。根节点请填写`""`<br>同一档案类别下至多可以有99个根节点。 |
+## Body Parameters
 
-<br/>
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **dimensionId**                 | String  | 档案类别id  | 必填  | - | 可通过[获取档案类别](/docs/open-api/dimensions/get-dimensions)来获取 |
+| **itemListRequest**             | Array   | 档案项集合   | 必填  | - | 新增的档案项集合 |
+| **&emsp; ∟ name**              | String  | 档案值名称	| 必填  | - | 档案值名称,最大不能超过300个字 |
+| **&emsp; ∟ code**              | String  | 档案值编码	| 必填  | - | 档案值编码 |
+| **&emsp; ∟ visibility**        | Object  | 可见范围	    | 非必填 | - | 可见范围 |
+| **&emsp;&emsp; ∟ fullVisible** | Boolean | 是否全部可见 | 非必填 | true | `true`:全部可见 &emsp; `false`:非全部可见，此时白名单必填。<br/>在非全部可见的情况下，仅白名单内的员工可见 |
+| **&emsp;&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp;&emsp; ∟ roles**       | Array   | 角色白名单   | 非必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
+| **&emsp;&emsp; ∟ departments** | Array   | 部门白名单   | 非必填 | - | 值为[部门id](/docs/open-api/corporation/get-departments) |
+| **&emsp; ∟ parentId**          | String  | 档案值父级id	| 必填   | - | 可通过[获取档案值](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写`""` |
 
-#### CURL:
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensions/items/batch?accessToken=hQgbxfJnlElc00' \
 --header 'content-type: application/json' \
@@ -90,9 +93,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
     ]
 }'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items":[
@@ -166,7 +168,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 }
 ```
 
-#### 失败响应:
+## 失败响应
 ```json
 {
     "errorCode": 500,
@@ -176,55 +178,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
     "data": null
 }
 ```
-
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-	table td:nth-child(2) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-    table th:nth-of-type(3) {
-		width: 15%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(4) {
-		width: 8%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(5) {
-		width: 7%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(6) {
-		width: 35%;
-		white-space: nowrap;
-	}
-
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

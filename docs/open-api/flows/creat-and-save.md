@@ -555,33 +555,33 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 ```
 
 #####l) 发票(发票形式)字段
-字段的「type」为【invoice】时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件，暂不支持统一开票<br>
+字段的「type」为【invoice】时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件<br>
+```json
+"invoiceForm":{
+    "type":"exist",  //已有发票
+    "attachments": [  //如果没有附件,不传此字段(附件先通过“上传附件”接口上传数据)
+        {
+            "key": "openapi04d91616-c6d0-4e98-a784-0b95c0c03a93-发票2.pdf",
+            "fileId": "ID_3tcjusD0qHg",
+            "fileName": "发票2.pdf"
+        }
+    ]
+}
 ```
-    "invoiceForm":{
-        "type":"exist",  //已有发票
-        "attachments": [  //如果没有附件,不传此字段(附件先通过“上传附件”接口上传数据)
-            {
-                "key": "openapi04d91616-c6d0-4e98-a784-0b95c0c03a93-发票2.pdf",
-                "fileId": "ID_3tcjusD0qHg",
-                "fileName": "发票2.pdf"
-            }
-        ]
-    }
+\*type可选值:`unify`:统一开票 `wait`:待开发票 `exist`:已有发票 `noExist`:无发票 `noWrite`:无需填写(当费用类型 发票字段设置的不可编辑时，默认为此项)
+
+"**统一开票**"类型示例
+```json
+"invoiceForm":{
+    "type":"unify",  //统一开票
+    "invoices":[],
+    "invoiceCorporationId":"H50cghSyeQxw00"  //开票方企业id
+},
 ```
-\*type可选值:`wait`:待开发票 `exist`:已有发票 `noExist`:无发票 `noWrite`:无需填写(当费用类型 发票字段设置的不可编辑时，默认为此项)
 
 \*attachments 为发票文件，发票可通过[上传附件](/attachment/attachment-upload.html)接口，先上传文件到服务器上后，请求回应中获取单据中要上传附件的文件key等信息
 
 \*当 invoiceForm 整个对象都不传入时，会附默认值「无需填写」(noWrite)
-
-"统一开票"类型示例
-```
- "invoiceForm":{
-                        "type":"unify",  //统一开票
-                        "invoices":[],
-                        "invoiceCorporationId":"H50cghSyeQxw00"  //开票方企业id
-                    },
-```
 
 #####m) 收款信息字段
 字段的「type」为【select】，且「valueFrom」为【pay.PayeeInfo】的，为收款信息字段，收款信息字段需传入收款信息的 ID ,可通过[获取收款账号信息](/pay/get-payeeInfos.html)接口，获取收款信息 ID ，支持全量查询

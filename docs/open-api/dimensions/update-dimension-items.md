@@ -1,41 +1,43 @@
 # 更新自定义档案项
+用于修改自定义档案项。
 
-用于修改自定义档案项
+import Control from "../../../components/Control";
 
-{% httpverb "put" %} /api/openapi/v1/dimensions/items/$`id` {% endhttpverb %}
+<Control
+method="PUT"
+url="/api/openapi/v1/dimensions/items/$`id`"
+/>
 
-#### Path Parameters:
+## Path Parameters
 
-| 名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **id** | String  | 档案项id | 必填| - | 可通过[获取自定义档案项](/dimensions/get-dimension-items.html)获取 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **id** | String  | 档案项id | 必填| - | 可通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)获取 |
 
-#### Query Parameters:
+## Query Parameters
 
-| 名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken** | String  | 认证token	| 必填  | - | [通过授权接口获取](/getting-started/auth.html) |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-#### Body Parameters:
+## Body Parameters
 
-| 名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
 | **name**                   | String  | 档案项名称	| 非必填  | -     | 档案项名称 |
 | **code**                   | String  | 档案项编码	| 非必填  | -     | 档案项编码 |
 | **visibility**             | Object  | 可见范围	    | 非必填  | -     | 可见范围  |
-| **visibility/fullVisible** | Boolean | 是否全部可见	| 非必填  | false | 在非全部可见的情况下，仅白名单内的员工可见。 |
-| **visibility/staffs**      | Array   | 员工白名单	| 非必填  | -     | 值为[员工id](/corporation/get-all-staffs.html) |
-| **visibility/roles**       | Array   | 角色白名单	| 非必填  | -     | 值为[角色id](/corporation/get-roles-group.html) |
-| **visibility/departments** | Array   | 部门白名单	| 非必填  | -     | 值为[部门id](/corporation/get-departments.html) |
-| **parentId**               | String  | 父节点id    | 非必填  | -     | 可通过[获取自定义档案项](/dimensions/get-dimension-items.html)来获取。根节点请填写`""` |
+| **&emsp; ∟ fullVisible** | Boolean | 是否全部可见	| 非必填  | false | 在非全部可见的情况下，仅白名单内的员工可见。 |
+| **&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填  | -     | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp; ∟ roles**       | Array   | 角色白名单	| 非必填  | -     | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
+| **&emsp; ∟ departments** | Array   | 部门白名单	| 非必填  | -     | 值为[部门id](/docs/open-api/corporation/get-departments) |
+| **parentId**               | String  | 父节点id    | 非必填  | -     | 通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写`""` |
 
->⚠️ 注意：
+:::tip
+- 系统预置档案有一些额外字段，详细字段传参见CURL里面的注释。
+:::
 
-> 系统预置档案有一些额外字段，详细字段传参见CURL里面的注释。
-
-<br/>
-
-#### CURL:
+## CURL
 ```json
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/dimensions/items/$XBUbxhnP5k8w00?accessToken=hQgbxfJnlElc00' \
 --header 'content-type: application/json' \
@@ -76,18 +78,16 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/dimension
 }'
 ```
 
-> ⚠️ 注意事项：
+:::danger
+- 响应需要判断状态码来确定是否成功。
+:::
 
-> 返回需要判断状态码来确定是否成功
-
-<br/>
-
-#### 成功响应:
-```json
-code 204
+## 成功响应
+```text
+    code 204
 ```
 
-#### 失败响应:
+## 失败响应
 ```json
 {
     "errorCode": 412,
