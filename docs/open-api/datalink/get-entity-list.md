@@ -1,33 +1,35 @@
 # 获取业务对象
+获取某个扩展的所有业务对象
 
-获取某个扩展的所有业务对象。
+import Control from "../../../components/Control";
 
-{% httpverb "get" %}  /api/openapi/v2/datalink/entity/$`platformId` {% endhttpverb %}
+<Control
+method="GET"
+url="/api/openapi/v2/datalink/entity/$`platformId`"
+/>
 
-#### Path Parameters:
+## Path Parameters
 
-| 名称       | 类型    | 描述           | 是否必填     | 默认值  | 备注                                         |
-| :--------- | :------ | :------------ |:-------- |:---- |:------------ |
-| **platformId** | String  | 扩展id  | 必填     | - | 自定义扩展id |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **platformId** | String | 扩展id | 必填 | - | 自定义扩展id |
 
-#### Query Parameters:
+## Query Parameters
 
-| 名称             | 类型     |  描述     | 必填      | 默认值  | 备注                                         |
-| :---------      | :------  | :------  | :------- |  :-     | :------------------------------------------  |
-| **accessToken** | String |  认证token  | 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-> ⚠️ 注意：
->
->  ![image](/datalink/images/自定义扩展id.png)
+:::tip
+![image](images/自定义扩展id.png)
+:::
 
-<br/>
-#### CURL:
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/entity/$PgQbrAHda85Y00?accessToken=cxEbrzNJSA3A00'
 ```
 
-<br/>
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items": [
@@ -104,10 +106,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 }
 ```
 
-#### 失败响应:
-
+## 失败响应
 请确保获取的扩展 platformId 是真实存在的，否则会返回如下响应：
-
 ```text
 该扩展不存在
 ```

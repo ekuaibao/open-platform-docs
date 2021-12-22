@@ -1,47 +1,52 @@
 # 创建业务对象
 
-{% httpverb "put" %}  /api/openapi/v2/datalink/createDataLinkEntity {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="PUT"
+url="/api/openapi/v2/datalink/createDataLinkEntity"
+/>
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **accessToken** | String | 认证token  | 必填 | - | [通过授权接口获取](/getting-started/auth.html)  |
+## Query Parameters
 
-#### Body Parameters:
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **dataLinkEntityReq**                        | Object  | 业务对象数据                 | 必填  | -     | 业务对象字段配置数据 |
-| **dataLinkEntityReq/platformId**             | String  | 所属扩展ID                  | 必填  | -     | 所属的自定义扩展ID |
-| **dataLinkEntityReq/name**                   | String  | 业务对象名称                 | 必填  | -     | 业务对象名称 |
-| **dataLinkEntityReq/scoped**                 | Boolean | 参与人配置                   | 必填  | false | `false`:全员参与<br>`true`:部分人员参与 |
-| **dataLinkEntityReq/ownerDepts**             | Boolean | 参与人是否默认为负责人的所在部门 | 非必填 | false | `false`:否 `true`:是<br>业务对象”参与人配置“为”部分人员参与“时此参数才有效 |
-| **dataLinkEntityReq/visibility**             | Object  | 参与人白名单                 | 非必填 | -     | 业务对象”参与人配置“为”部分人员参与“时此参数才有效 |
-| **dataLinkEntityReq/visibility/fullVisible** | Boolean | 是否开启参与人白名单           | 非必填 | false | `true`:开启<br>`false`:关闭 |
-| **dataLinkEntityReq/visibility/staffs**      | Array   | 员工白名单                   | 非必填 | -     | 值为[员工id](/corporation/get-all-staffs.html) |
-| **dataLinkEntityReq/visibility/roles**       | Array   | 角色白名单                   | 非必填 | -     | 值为[角色id](/corporation/get-roles-group.html) |
-| **dataLinkEntityReq/visibility/departments** | Array   | 部门白名单                   | 非必填 | -     | 值为[部门id](/corporation/get-departments.html) |
-| **dataLinkEntityReq/visibility/<br>departmentsIncludeChildren** | Boolean | 子部门是否可见 | 非必填 | true | `true`:可见<br>`false`:不可见 |
-| **dataLinkEntityReq/type**                   | String  | 业务对象类型                 | 必填   | -     | `DIMENSION`:基础档案<br>`BILL`:单据<br>`ORDER`:订单 |
-| **dataLinkEntityReq/disableStrategy**        | String | 停用方式                     | 必填   | -     | `MANUAL_ADMIN`:管理员停启用<br>`LIMIT_COUNT`:限制引用次数 |
-| **dataLinkEntityReq/maxUsageCount**          | Number | 最大引用次数                  | 非必填 | 0     | 该参数不可省略，可传""。仅当“限制引用次数”时有效 |
-| **dataLinkEntityReq/importMethod**           | Array  | 导入方式                     | 必填   | -     | `excel`:Excel<br>`api`:API<br>`ebot`:EBot<br>`flow`:单据写入<br>`directly`:直接写入 |
-| **dataLinkEntityReq/fieldMapping**           | Object | 业务对象赋值规则               | 必填   | -     | 设置业务对象字段赋值给单据字段的规则，参数格式见CURL示例 |
-| **dataLinkEntityReq/fields**                 | Array  | 业务对象字段配置               | 必填   | -     | 业务对象字段配置信息 |
-| **dataLinkEntityReq/fields/name**            | String  | 字段实际名称      | 非必填 | - | 字段实际名称，“名称”、“编码”两个系统字段此参数必填 |
-| **dataLinkEntityReq/fields/label**           | String  | 字段显示名称      | 必填   | - | 字段显示名称 |
-| **dataLinkEntityReq/fields/type**            | String  | 字段类型         | 必填   | - | `text`:文本<br>`number`:数字<br>`autoNumber`:自动编码<br>`date`:日期<br>`dateRange`:日期范围<br>`money`:金额<br>`switcher`:开关<br>`ref`:关联业务对象<br>`list`:多选 |
-| **dataLinkEntityReq/fields/optional**        | Boolean | 字段是否必填      | 必填   | true | `false`:必填<br>`true`:选填 |
-| **dataLinkEntityReq/fields/scale**           | Number  | 小数位数         | 非必填 | - | `type` 为 `number` 时必填 |
-| **dataLinkEntityReq/fields/unit**            | String  | 单位            | 非必填 | - | `type` 为 `number` 时必填 |
-| **dataLinkEntityReq/fields/rule**            | String  | 自动编号生成规则   | 非必填 | - | `type` 为 `autoNumber` 时必填。 请查看问题四，[了解具体编码规则](/datalink/question-answer.md) |
-| **dataLinkEntityReq/fields/withTime**        | Boolean | 是否包含时间      | 非必填 | false | `type` 为 `date`或`dateRange` 时必填<br>`true`:包含<br>`false`:不包含|
-| **dataLinkEntityReq/fields/entity**          | String  | 业务对象取值范围   | 非必填 | - | `type` 为 `ref` 时必填 |
-| **dataLinkEntityReq/fields/formula**         | Boolean | 是否是自动计算类型 | 非必填 | false | `type` 为 `number`或`money`时有效<br>`true`:是<br>`false`:否 |
-| **dataLinkEntityReq/fields/defaultValue**    | String  | 计算公式         | 非必填 | - | `formula` 为 `true` 时必填，计算公式内容 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-<br/>
-#### CURL:
+## Body Parameters
+
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **dataLinkEntityReq**               | Object  | 业务对象数据                 | 必填  | -     | 业务对象字段配置数据 |
+| **&emsp; ∟ platformId**             | String  | 所属扩展ID                  | 必填  | -     | 所属的自定义扩展ID |
+| **&emsp; ∟ name**                   | String  | 业务对象名称                 | 必填  | -     | 业务对象名称 |
+| **&emsp; ∟ scoped**                 | Boolean | 参与人配置                   | 必填  | false | `true`:部分人员参与&emsp; `false`:全员参与 |
+| **&emsp; ∟ ownerDepts**             | Boolean | 参与人是否默认为负责人的所在部门 | 非必填 | false | `true`:是&emsp; `false`:否<br/>业务对象”参与人配置“为”部分人员参与“时此参数才有效 |
+| **&emsp; ∟ visibility**             | Object  | 参与人白名单                 | 非必填 | -     | 业务对象”参与人配置“为”部分人员参与“时此参数才有效 |
+| **&emsp; &emsp; ∟ fullVisible**     | Boolean | 是否开启参与人白名单           | 非必填 | false | `true`:开启&emsp; `false`:关闭 |
+| **&emsp; &emsp; ∟ staffs**          | Array   | 员工白名单                   | 非必填 | -     | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp; &emsp; ∟ roles**           | Array   | 角色白名单                   | 非必填 | -     | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
+| **&emsp; &emsp; ∟ departments**     | Array   | 部门白名单                   | 非必填 | -     | 值为[部门id](/docs/open-api/corporation/get-departments) |
+| **&emsp; &emsp; ∟ departmentsIncludeChildren** | Boolean | 子部门是否可见     | 非必填 | true  | `true`:可见&emsp; `false`:不可见 |
+| **&emsp; ∟ type**                   | String  | 业务对象类型                 | 必填   | -     | `DIMENSION`:基础档案<br/>`BILL`:单据&emsp; `ORDER`:订单 |
+| **&emsp; ∟ disableStrategy**        | String  | 停用方式                    | 必填   | -     | `MANUAL_ADMIN`:管理员停启用<br/>`LIMIT_COUNT`:限制引用次数 |
+| **&emsp; ∟ maxUsageCount**          | Number  | 最大引用次数                 | 非必填 | 0     | 该参数不可省略，可传""。仅当“限制引用次数”时有效 |
+| **&emsp; ∟ importMethod**           | Array   | 导入方式                    | 必填   | -     | `excel`:Excel&emsp; `api`:API&emsp; `ebot`:EBot<br/>`flow`:单据写入&emsp; `directly`:直接写入 |
+| **&emsp; ∟ fieldMapping**           | Object  | 业务对象赋值规则              | 必填   | -     | 设置业务对象字段赋值给单据字段的规则，参数格式见CURL示例 |
+| **&emsp; ∟ fields**                 | Array   | 业务对象字段配置              | 必填   | -     | 业务对象字段配置信息 |
+| **&emsp; &emsp; ∟ name**            | String  | 字段实际名称                 | 非必填 | -      | 字段实际名称，“名称”、“编码”两个系统字段此参数必填 |
+| **&emsp; &emsp; ∟ label**           | String  | 字段显示名称                 | 必填   | -     | 字段显示名称 |
+| **&emsp; &emsp; ∟ type**            | String  | 字段类型                    | 必填   | -     | `text`:文本&emsp; `number`:数字<br/>`date`:日期 &emsp; `dateRange`:日期范围<br/>`money`:金额&emsp; `switcher`:开关<br/>`list`:多选&emsp; `ref`:关联业务对象<br/>`autoNumber`:自动编码 |
+| **&emsp; &emsp; ∟ optional**        | Boolean | 字段是否必填                 | 必填   | true  | `false`:必填&emsp; `true`:选填 |
+| **&emsp; &emsp; ∟ scale**           | Number  | 小数位数                    | 非必填 | -      | `type` 为 `number` 时必填 |
+| **&emsp; &emsp; ∟ unit**            | String  | 单位                       | 非必填 | -      | `type` 为 `number` 时必填 |
+| **&emsp; &emsp; ∟ rule**            | String  | 自动编号生成规则             | 非必填 | -      | `type` 为 `autoNumber` 时必填。 请查看问题四，[了解具体编码规则](/docs/open-api/datalink/question-answer) |
+| **&emsp; &emsp; ∟ withTime**        | Boolean | 是否包含时间                | 非必填 | false  | `type` 为 `date`或`dateRange` 时必填<br/>`true`:包含&emsp; `false`:不包含|
+| **&emsp; &emsp; ∟ entity**          | String  | 业务对象取值范围             | 非必填 | -      | `type` 为 `ref` 时必填 |
+| **&emsp; &emsp; ∟ formula**         | Boolean | 是否是自动计算类型            | 非必填 | false | `type` 为 `number`或`money`时有效<br/>`true`:是&emsp; `false`:否 |
+| **&emsp; &emsp; ∟ defaultValue**    | String  | 计算公式                    | 非必填 | -     | `formula` 为 `true` 时必填，计算公式内容 |
+
+## CURL
 ```json
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/createDataLinkEntity?accessToken=ID_3s4wXvSfYiw:djg8LshfUkfM00' \
 --header 'Content-Type: application/json' \
@@ -210,8 +215,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 }'
 ```
 
-<br/>
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
@@ -622,49 +626,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 }
 ```
 
-#### 失败响应:
+## 失败响应
 业务对象的 name 值需要保证其唯一性，否则会返回如下响应：
 ```text
 业务对象名称重复，请修改！
 ```
-
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-	table th:nth-of-type(1) { 
-		width: 30%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(2) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(3) {
-		width: 15% !important;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(4) {
-		width: 8%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(5) {
-		width: 7%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(6) {
-		width: 20% !important;
-		white-space: nowrap;
-	}
-</style>

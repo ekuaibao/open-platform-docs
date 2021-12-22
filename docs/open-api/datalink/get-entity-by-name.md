@@ -1,22 +1,25 @@
 # 根据名称查询自建应用(自定义扩展)
 
-{% httpverb "post" %}  /api/openapi/v2/datalink/getPlatformByName {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="POST"
+url="/api/openapi/v2/datalink/getPlatformByName"
+/>
 
-| 名称             | 类型     | 描述        | 是否必填      | 默认值 | 备注                                         |
-| :---------      | :------  | :------    | :------- |:---------| :------------------------------------------  |
-| **accessToken** | String   | 认证token  | 必填      | - |  [通过授权接口获取](/getting-started/auth.html)  |
+## Query Parameters
 
-#### Body Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-| 名称             | 类型     | 描述        | 是否必填      | 默认值 | 备注                                         |
-| :---------      | :------  | :------    | :------- |:---------| :------------------------------------------ |
-| **name** | String | 应用名称/扩展名称  | 必填 | - | 自建应用（自定义扩展）名称 |
+## Body Parameters
 
-<br/>
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **name** | String | 应用名称/扩展名称 | 必填 | - | 自建应用（自定义扩展）名称 |
 
-### CURL:
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/getPlatformByName?accessToken=cxEbrzNJSA3A00' \
 --header 'Content-Type: application/json' \
@@ -25,9 +28,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 }'
 ```
 
-<br/>
-
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {

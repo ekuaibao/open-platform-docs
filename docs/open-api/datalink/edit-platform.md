@@ -1,34 +1,31 @@
 # 编辑自定义扩展
 
+import Control from "../../../components/Control";
 
-{% httpverb "put" %}  /api/openapi/v2/datalink/editPlatform {% endhttpverb %}
+<Control
+method="PUT"
+url="/api/openapi/v2/datalink/editPlatform"
+/>
 
-#### Query Parameters:
+## Query Parameters
 
-| 名称             | 类型     |  描述     | 是否必填      | 默认值  | 备注                                         |
-| :---------      | :------  | :------  | :------- |  -     | :------------------------------------------  |
-| **accessToken** | String |  认证token  | 必填      |   -    | [通过授权接口获取](/getting-started/auth.html)  |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth)  |
 
+## Body Parameters
 
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **id**       | 平台id  | String | 必填 | - | - |
+| **name**     | 平台名称 | String | 必填 | - | - |
+| **adminIds** | 管理员id | Array | 必填 | - | - |
 
+:::danger
+由于历史迭代遗留问题，该接口暂时只支持编辑管理员，但是参数`name`依然必填。
+:::
 
-#### Body Parameters:
-| 名称             | 描述     | 类型      | 是否必填      | 默认值  | 备注                                         |
-| :---------      | :------  | :------  | :------- | :---     | :------------------------------------------  |
-| **id** | 平台id | String    | 必填      |   -    | -  |
-| **name** | 平台名称 | String   | 必填      |   -    |  -  |
-| **adminIds** | 管理员id | Array<String>   | 必填      |   -    | - |
-
-
->⚠️ 注意：
-
->由于历史迭代遗留问题，该接口暂时只支持编辑管理员，但是参数`name`依然必填。
-
-
-
-
-<br/>
-#### CURL:
+## CURL
 ```json
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/editPlatform?accessToken=cxEbrzNJSA3A00' \
 --header 'Content-Type: application/json' \
@@ -39,8 +36,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 }'
 ```
 
-<br/>
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
@@ -70,11 +66,9 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ```
 
 
-#### 失败响应:
-
+## 失败响应
 请确保编辑的平台 id 是真实存在的，否则会返回如下响应：
-
-```json
+```text
 无效的平台id
 ```
 

@@ -1,24 +1,36 @@
-# 获取行程管理订单列表
+# 获取行程管理业务对象列表
 
 {% httpverb "post" %}  /api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders {% endhttpverb %}
 
 #### Query Parameters:
 
-| 名称       | 类型    | 描述                  | 是否必填      | 默认值 |  备注 |
-| :--------- | :------ | :------------------ | :------ |:------ |:------ |
-| **accessToken** | String   | 认证token  | 必填     | - | [通过授权接口获取](/getting-started/auth.html)  |
-
-
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/getting-started/auth.html)  |
 
 #### Body Parameters:
 
-| 名称             | 类型     | 描述        | 是否必填      | 默认值 | 备注                                         |
-| :---------      | :------  | :------    | :------- |:---------| :------------------------------------------  |
-| **entityId** | String   | 订单业务对象ID  | 必填      | - |  [通过获取业务对象获取](/datalink/get-entity-list.html)   |
-| **start** | Int   | 起始值  | 必填      | - |  从0开始搜索  |
-| **count** | Int   | 查询总数  | 必填      | - |  每批次查询总数不可大于100条  |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **entityId** | String | 行程管理的业务对象ID  | 必填 | - | 行程管理的业务对象ID |
+| **start**    | Int    | 起始值              | 必填 | - |  从0开始搜索  |
+| **count**    | Int    | 查询总数            | 必填  | - |  每批次查询总数不可大于100条  |
 
-
+> ⚠️ 注意：
+> - 行程管理业务对象ID获取见下图
+> 
+> ![image](/datalink/images/行程管理业务对象获取1.png)
+> 
+> ![image](/datalink/images/行程管理业务对象获取2.png)
+> 
+> - 【行程管理】中行程、订单、对账单模块下为什么都有飞机、酒店这种分类？
+> 
+> ![image](/datalink/images/行程管理业务对象释义.png)
+> 
+> 3个飞机的entityId不一样，里面的字段也不一样。
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;1.行程里的飞机是申请单审批通过之后生成，然后传给商城。
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;2.商城根据行程下完单后，会推送订单信息给费控，生成订单业务对象，一般来说报销单中需要关联的就是订单业务对象，订单中会有具体的订单信息，例如订单金额、改签费、服务费之类的字段。
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;3.费控接收订单的时候，同时保存成订单和对账单，其数据大部分一致，飞机退改签时，会生成同一条订单，但是对账单是多个。
 
 #### CURL:
 ```json
@@ -33,7 +45,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 ```
 <br/>
 
-
 #### 成功响应:
 ```json
 {
@@ -46,14 +57,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
                               "useCount": 0,          
                               "totalCount": 1,        
                               "ownerId": null,        
-                              "visibility": {         //可见范围信息
-                                    "fullVisible": false,   //是否全员可见(true=全部； false=部分)
-                                    "staff": [],      //员工ID集
-                                    "department": [], //部门ID集
-                                    "role": []        //角色ID集
+                              "visibility": {            //可见范围信息
+                                    "fullVisible": false,//是否全员可见(true=全部； false=部分)
+                                    "staff": [],         //员工ID集
+                                    "department": [],    //部门ID集
+                                    "role": []           //角色ID集
                               },
                               "E_79180b9ed9cade87e000_code": "14057744457",   //对象编码
-                              "E_79180b9ed9cade87e000_name": "北京-北京站",         //对象名称
+                              "E_79180b9ed9cade87e000_name": "北京-北京站",    //对象名称
                               "E_79180b9ed9cade87e000_票号": "",
                               "E_79180b9ed9cade87e000_车型": "经济型",
                               "E_79180b9ed9cade87e000_出发地": "[{\"key\":\"1\",\"label\":\"北京市\"}]",
@@ -215,7 +226,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
       }
 }
 ```
-
 
 #### 失败响应:
 ```json

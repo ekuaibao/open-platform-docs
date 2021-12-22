@@ -1,32 +1,37 @@
 # 创建自建应用（自定义扩展）
 
-{% httpverb "put" %}  /api/openapi/v2/datalink/createPlatform {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="PUT"
+url="/api/openapi/v2/datalink/createPlatform"
+/>
 
-| 名称             | 类型     |  描述     | 必填      | 默认值  | 备注                                         |
-| :---------      | :------  | :------  | :------- | :--- | :------------------------------------------  |
-| **accessToken** | String |  认证token  | 必填      |   -    | [通过授权接口获取](/getting-started/auth.html)  |
+## Query Parameters
 
-#### Body Parameters:
-| 名称             | 类型     | 描述      | 必填      | 默认值  | 备注                                         |
-| :---------      | :------  | :------  | :------- |  :---  | :------------------------------------------  |
-| **name**          | String | 扩展名称   | 必填   | - | 不能超过20个字  |
-| **icon**          | Object | 扩展图标   | 非必填 | - | 已上传到服务器的图标参数 |
-| **icon/key**      | String | 文件key   | 非必填  | - | 文件key，可通过[上传附件](/attachment/attachment-upload.md)获取 |
-| **icon/fileId**   | String | 文件id    | 非必填  | - | 文件id，可通过[上传附件](/attachment/attachment-upload.md)获取 |
-| **icon/fileName** | String | 文件名称   | 非必填  | - | 文件名称，可通过[上传附件](/attachment/attachment-upload.md)获取 |
-| **type**          | String | 扩展类别   | 非必填  | DATA_LINK | `DATA_LINK`:业务对象<br>`IKCRM`:爱客CRM(爱客只能创建一个，name统一为爱客CRM) |
-| **adminIds**      | Array  | 管理员id   | 非必填  | - | 管理员可以导入导出该扩展的所有业务对象数据、修改每条数据的停启用状态、修改每条数据的信息以及负责人和参与人，值为[员工ID](/corporation/get-all-staffs.md) |
-| **iconUrl**       | String | 网络图片   | 非必填  | - | 如果填写则优先使用此图标。132*132px，大小不超过2M。格式可为jpg、jpeg、png |
-| **importMethod**  | Array  | 数据导入方式 | 必填   | - | `excel`:Excel<br>`api`:API<br>`ebot`:EBot<br>`flow`:单据写入<br>`directly`:直接写入 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
->⚠️ 注意：
+## Body Parameters
 
-> 目前 `importMethod` 为无效字段，即设置后返回为空。此处为历史迭代遗留问题，目前依然需要填写且不为空。
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **name**               | String | 扩展名称   | 必填   | - | 不能超过20个字  |
+| **icon**               | Object | 扩展图标   | 非必填 | - | 已上传到服务器的图标参数 |
+| **&emsp; ∟ key**      | String | 文件key   | 非必填  | - | 文件key，可通过[上传附件](/docs/open-api/attachment/attachment-upload)获取 |
+| **&emsp; ∟ fileId**   | String | 文件id    | 非必填  | - | 文件id，可通过[上传附件](/docs/open-api/attachment/attachment-upload)获取 |
+| **&emsp; ∟ fileName** | String | 文件名称   | 非必填  | - | 文件名称，可通过[上传附件](/docs/open-api/attachment/attachment-upload)获取 |
+| **type**               | String | 扩展类别   | 非必填  | DATA_LINK | `DATA_LINK`:业务对象<br/>`IKCRM`:爱客CRM(爱客只能创建一个，name统一为爱客CRM) |
+| **adminIds**           | Array  | 管理员id   | 非必填  | - | 管理员可以导入导出该扩展的所有业务对象数据、修改每条数据的停启用状态、修改每条数据的信息以及负责人和参与人，值为[员工ID](/docs/open-apicorporation/get-all-staffs) |
+| **iconUrl**            | String | 网络图片    | 非必填  | - | 如果填写则优先使用此图标。132*132px，大小不超过2M。格式可为jpg、jpeg、png |
+| **importMethod**       | Array  | 数据导入方式 | 必填   | - | `excel`:Excel &emsp; `api`:API &emsp; `ebot`:EBot <br/> `flow`:单据写入 &emsp; `directly`:直接写入 |
 
-<br/>
-#### CURL:
+:::danger
+目前 `importMethod` 为无效字段，即设置后返回为空。此处为历史迭代遗留问题，目前依然需要填写且不为空。
+:::
+
+## CURL
 ```json
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/createPlatform?accessToken=cxEbrzNJSA3A00' \
 --header 'Content-Type: application/json' \
@@ -44,8 +49,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 }'
 ```
 
-<br/>
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
@@ -73,51 +77,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 }
 ```
 
-#### 失败响应:
-
+## 失败响应
 互联扩展的`name`值需要保证其唯一性，否则会返回如下响应：
 ```text
 扩展名称不能重复
 ```
-
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-	table th:nth-of-type(1) { 
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(2) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(3) {
-		width: 20% !important;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(4) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(5) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(6) {
-		width: 40% !important;
-		white-space: nowrap;
-	}
-</style>
-

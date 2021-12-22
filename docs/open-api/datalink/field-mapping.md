@@ -1,34 +1,35 @@
 # 配置自定义扩展自动赋值
 
+import Control from "../../../components/Control";
 
-{% httpverb "post" %}  /api/openapi/v2/fieldMapping/dataLink {% endhttpverb %}
+<Control
+method="POST"
+url="/api/openapi/v2/fieldMapping/dataLink"
+/>
 
-#### Query Parameters:
+## Query Parameters
 
-| 名称             | 类型     | 描述        | 是否必填      | 备注                                         |
-| :---------      | :------  | :------    | :------- | :------------------------------------------  |
-| **accessToken** | String   | 认证token  | 必填      | [通过授权接口获取](/getting-started/auth.html)  |
-
-
-#### Body Parameters:
-
-| 名称             | 类型     | 描述        | 是否必填      | 备注                                         |
-| :---------      | :------  | :------    | :------- | :------------------------------------------  |
-| **name** | String   | 赋值规则名称  | 必填      | -  |
-| **remark** | String   | 备注  | 非必填      | - |
-| **sourceEntityId** | String   | 业务对象id  | 必填      | -  |
-| **fields** | Object   | 赋值字段  | 必填      | -  |
-| **fields/sourceField** | Object   | 赋值源字段  | 必填      | 为实体字段 `name` 值。 [了解如何获取实体字段](/datalink/get-entity-list.html)  |
-| **fields/targetField** | Object   | 赋值目标字段  | 必填      | 请查看问题五，[了解如何获取目标字段](/datalink/question-answer.html)  |
-
->⚠️ 注意：
-
->赋值源字段为该业务对象实体字段，该字段以 name 值唯一标识，所以配置默认赋值规则时也以此作为 sourceField 参数。
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth)  |
 
 
+## Body Parameters
 
-<br/>
-#### CURL:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **name**                  | String | 赋值规则名称  | 必填 | -  |- |
+| **remark**                | String | 备注        | 非必填 | - |- |
+| **sourceEntityId**        | String | 业务对象id   | 必填 | -  |- |
+| **fields**                | Object | 赋值字段     | 必填 | -  | - |
+| **&emsp; ∟ sourceField** | Object | 赋值源字段    | 必填 | -  | 为实体字段 `name` 值,[了解如何获取实体字段](/docs/open-api/datalink/get-entity-list)  |
+| **&emsp; ∟ targetField** | Object | 赋值目标字段  | 必填 | -  | 请查看问题五,[了解如何获取目标字段](/docs/open-api/datalink/question-answer)  |
+
+:::tip
+赋值源字段为该业务对象实体字段，该字段以 name 值唯一标识，所以配置默认赋值规则时也以此作为 sourceField 参数。
+:::
+
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/fieldMapping/dataLink?accessToken=cxEbrzNJSA3A00' \
 --header 'Content-Type: application/json' \
@@ -45,9 +46,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/fieldMap
 }'
 ```
 
-
-<br/>
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
@@ -58,11 +57,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/fieldMap
 }
 ```
 
-
-#### 失败响应:
-
+## 失败响应
 注意规则设置中的源字段或目标字段的真实性，否则会返回如下响应：
-
 ```json
 {
     "value": {

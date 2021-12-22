@@ -1,169 +1,167 @@
-# 获取行程管理订单业务对象实例
+# 获取行程管理业务对象实例
 
 {% httpverb "get" %}  /api/openapi/v2/datalink/TRAVEL_MANAGEMENT/byDataLinkIds {% endhttpverb %}
 
 #### Query Parameters:
 
-| 名称       | 类型    | 描述                  | 是否必填      | 默认值 |  备注 |
-| :--------- | :------ | :------------------ | :------ |:------ |:------ |
-| **accessToken** | String   | 认证token  | 必填     | - | [通过授权接口获取](/getting-started/auth.html)  |
-
-
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
 
 #### Body Parameters:
 
-| 名称             | 类型     | 描述        | 是否必填      | 默认值 | 备注                                         |
-| :---------      | :------  | :------    | :------- |:---------| :------------------------------------------  |
-| **ids** | Array   | 行程订单ID  | 必填      | - |  -  |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **ids** | Array | 业务对象实例ID | 必填 | - | 可通过[获取行程管理业务对象列表](/datalink/get-tripManager-order.md)获取 |
 
-
+> ⚠️ 注意：
+> - 例如：“行程管理”-“行程”分类的业务对象ID可以在单据详情里面获取到。
+> 
+> ![image](/datalink/images/行程业务对象ID获取.png)
 
 #### CURL:
 ```json
-    curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/byDataLinkIds?accessToken=NegbQ-IpSM6g00' \
-    --header 'content-type: application/json' \
-    --header 'Accept: application/json' \
-    --data-raw '//分页查询
-    {
-        "ids":["gyMbDPToxUnQ00", "sNsbE5ikQ0n800"]
-    }'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/byDataLinkIds?accessToken=NegbQ-IpSM6g00' \
+--header 'content-type: application/json' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "ids":["gyMbDPToxUnQ00", "sNsbE5ikQ0n800"]
+}'
 ```
 <br/>
-
 
 #### 成功响应:
 ```json
 {
-      "items": [
-            {
-                  "id": "gyMbDPToxUnQ00",   //业务对象ID
-                  "version": 2, 
-                  "active": true,
-                  "createTime": 1600942574851,
-                  "updateTime": 1600942574851,
-                  "name": "广东省/广州市/广州市区",
-                  "nameSpell": "GUANGDONGSHENG/GUANGZHOUSHI/GUANGZHOUSHIQU",
-                  "code": "TRIP202009240000000002",
-                  "corporationId": "kRsbl5WsyMmg00",
-                  "form": {
-                        "E_0ee20b9ed9cade87bc00_code": "TRIP202009240000000002", //业务对象编码
-                        "E_0ee20b9ed9cade87bc00_name": "广东省/广州市/广州市区", //业务对象名称
-                        "E_0ee20b9ed9cade87bc00_住宿地": "[{\"key\":\"2123\",\"label\":\"广州市区\"}]",
-                        "E_0ee20b9ed9cade87bc00_出行人": [
-                              "kRsbl5WsyMmg00:pgEbDN7NbIg000"
-                        ],
-                        "E_0ee20b9ed9cade87bc00_申请人": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
-                        "E_0ee20b9ed9cade87bc00_订票人": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
-                        "E_0ee20b9ed9cade87bc00_入住日期": 1600942541371,
-                        "E_0ee20b9ed9cade87bc00_原始单据": "MCAbDPTiSA2w00",
-                        "E_0ee20b9ed9cade87bc00_离店日期": 1601028941371,
-                        "E_0ee20b9ed9cade87bc00_订购状态": "待订购",
-                        "E_0ee20b9ed9cade87bc00_申请单标题": "北京申请单",
-                        "E_0ee20b9ed9cade87bc00_申请单编码": "S20000002",
-                        "E_0ee20b9ed9cade87bc00_申请单预算金额": {
-                              "standard": "88.00",
-                              "standardUnit": "元",
-                              "standardScale": 2,
-                              "standardSymbol": "¥",
-                              "standardNumCode": "156",
-                              "standardStrCode": "CNY"
-                        }
-                  },
-                  "ledgerAmount": null,
-                  "ledgerAmountModel": null,
-                  "totalCount": 0,
-                  "useCount": 0,
-                  "entityId": "7cea0b9edcc64ec06400", //业务实体对象ID
-                  "platformId": "5NgbDJDaTEuQ00",   //业务扩渣平台ID
-                  "source": "FLOW",
-                  "masterId": null,
-                  "index": 0,
-                  "visibility": {
-                        "fullVisible": false,
-                        "staffs": [
-                              "kRsbl5WsyMmg00:pgEbDN7NbIg000"
-                        ],
-                        "roles": null,
-                        "departments": null,
-                        "departmentsIncludeChildren": false
-                  },
-                  "visible": true,
-                  "ownerId": "kRsbl5WsyMmg00:pgEbDN7NbIg000",   //员工ID
-                  "operatorId": "kRsbl5WsyMmg00:pgEbDN7NbIg000",    //操作者ID
-                  "sourceId": "MCAbDPTiSA2w00",
-                  "flowCounts": {}
-            },
-            {
-                  "id": "sNsbE5ikQ0n800",
-                  "version": 2,
-                  "active": true,
-                  "createTime": 1601015636403,
-                  "updateTime": 1601015636403,
-                  "name": "北京市/海淀区",
-                  "nameSpell": "BEIJINGSHI/HAIDIANQU",
-                  "code": "TRIP202009250000000009",
-                  "corporationId": "kRsbl5WsyMmg00",
-                  "form": {
-                        "E_0ee20b9ed9cade87bc00_code": "TRIP202009250000000009",
-                        "E_0ee20b9ed9cade87bc00_name": "北京市/海淀区",
-                        "E_0ee20b9ed9cade87bc00_住宿地": "[{\"key\":\"8\",\"label\":\"海淀区\"}]",
-                        "E_0ee20b9ed9cade87bc00_出行人": [
-                              "kRsbl5WsyMmg00:pgEbDN7NbIg000"
-                        ],
-                        "E_0ee20b9ed9cade87bc00_申请人": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
-                        "E_0ee20b9ed9cade87bc00_订票人": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
-                        "E_0ee20b9ed9cade87bc00_入住日期": 1601015611002,
-                        "E_0ee20b9ed9cade87bc00_原始单据": "shgbE5hCz46s00",
-                        "E_0ee20b9ed9cade87bc00_离店日期": 1601102011002,
-                        "E_0ee20b9ed9cade87bc00_订购状态": "待订购",
-                        "E_0ee20b9ed9cade87bc00_申请单标题": "没有费用承担部门",
-                        "E_0ee20b9ed9cade87bc00_申请单编码": "S20000015",
-                        "E_0ee20b9ed9cade87bc00_申请单预算金额": {
-                              "standard": "12.00",
-                              "standardUnit": "元",
-                              "standardScale": 2,
-                              "standardSymbol": "¥",
-                              "standardNumCode": "156",
-                              "standardStrCode": "CNY"
-                        }
-                  },
-                  "ledgerAmount": null,
-                  "ledgerAmountModel": null,
-                  "totalCount": 0,
-                  "useCount": 0,
-                  "entityId": "7cea0b9edcc64ec06400",
-                  "platformId": "5NgbDJDaTEuQ00",
-                  "source": "FLOW",
-                  "masterId": null,
-                  "index": 0,
-                  "visibility": {
-                        "fullVisible": false,
-                        "staffs": [
-                              "kRsbl5WsyMmg00:pgEbDN7NbIg000"
-                        ],
-                        "roles": null,
-                        "departments": null,
-                        "departmentsIncludeChildren": false
-                  },
-                  "visible": true,
-                  "ownerId": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
-                  "operatorId": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
-                  "sourceId": "shgbE5hCz46s00",
-                  "flowCounts": {}
-            }
-      ]
+	"items": [
+        {
+			"id": "gyMbDPToxUnQ00", //业务对象ID
+			"version": 2,
+			"active": true,
+			"createTime": 1600942574851,
+			"updateTime": 1600942574851,
+			"name": "广东省/广州市/广州市区",
+			"nameSpell": "GUANGDONGSHENG/GUANGZHOUSHI/GUANGZHOUSHIQU",
+			"code": "TRIP202009240000000002",
+			"corporationId": "kRsbl5WsyMmg00",
+			"form": {
+				"E_0ee20b9ed9cade87bc00_code": "TRIP202009240000000002", //业务对象编码
+				"E_0ee20b9ed9cade87bc00_name": "广东省/广州市/广州市区",     //业务对象名称
+				"E_0ee20b9ed9cade87bc00_住宿地": "[{\"key\":\"2123\",\"label\":\"广州市区\"}]",
+				"E_0ee20b9ed9cade87bc00_出行人": [
+					"kRsbl5WsyMmg00:pgEbDN7NbIg000"
+				],
+				"E_0ee20b9ed9cade87bc00_申请人": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
+				"E_0ee20b9ed9cade87bc00_订票人": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
+				"E_0ee20b9ed9cade87bc00_入住日期": 1600942541371,
+				"E_0ee20b9ed9cade87bc00_原始单据": "MCAbDPTiSA2w00",
+				"E_0ee20b9ed9cade87bc00_离店日期": 1601028941371,
+				"E_0ee20b9ed9cade87bc00_订购状态": "待订购",
+				"E_0ee20b9ed9cade87bc00_申请单标题": "北京申请单",
+				"E_0ee20b9ed9cade87bc00_申请单编码": "S20000002",
+				"E_0ee20b9ed9cade87bc00_申请单预算金额": {
+					"standard": "88.00",
+					"standardUnit": "元",
+					"standardScale": 2,
+					"standardSymbol": "¥",
+					"standardNumCode": "156",
+					"standardStrCode": "CNY"
+				}
+			},
+			"ledgerAmount": null,
+			"ledgerAmountModel": null,
+			"totalCount": 0,
+			"useCount": 0,
+			"entityId": "7cea0b9edcc64ec06400", //业务实体对象ID
+			"platformId": "5NgbDJDaTEuQ00", //业务扩渣平台ID
+			"source": "FLOW",
+			"masterId": null,
+			"index": 0,
+			"visibility": {
+				"fullVisible": false,
+				"staffs": [
+					"kRsbl5WsyMmg00:pgEbDN7NbIg000"
+				],
+				"roles": null,
+				"departments": null,
+				"departmentsIncludeChildren": false
+			},
+			"visible": true,
+			"ownerId": "kRsbl5WsyMmg00:pgEbDN7NbIg000", //员工ID
+			"operatorId": "kRsbl5WsyMmg00:pgEbDN7NbIg000", //操作者ID
+			"sourceId": "MCAbDPTiSA2w00",
+			"flowCounts": {}
+		},
+		{
+			"id": "sNsbE5ikQ0n800",
+			"version": 2,
+			"active": true,
+			"createTime": 1601015636403,
+			"updateTime": 1601015636403,
+			"name": "北京市/海淀区",
+			"nameSpell": "BEIJINGSHI/HAIDIANQU",
+			"code": "TRIP202009250000000009",
+			"corporationId": "kRsbl5WsyMmg00",
+			"form": {
+				"E_0ee20b9ed9cade87bc00_code": "TRIP202009250000000009",
+				"E_0ee20b9ed9cade87bc00_name": "北京市/海淀区",
+				"E_0ee20b9ed9cade87bc00_住宿地": "[{\"key\":\"8\",\"label\":\"海淀区\"}]",
+				"E_0ee20b9ed9cade87bc00_出行人": [
+					"kRsbl5WsyMmg00:pgEbDN7NbIg000"
+				],
+				"E_0ee20b9ed9cade87bc00_申请人": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
+				"E_0ee20b9ed9cade87bc00_订票人": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
+				"E_0ee20b9ed9cade87bc00_入住日期": 1601015611002,
+				"E_0ee20b9ed9cade87bc00_原始单据": "shgbE5hCz46s00",
+				"E_0ee20b9ed9cade87bc00_离店日期": 1601102011002,
+				"E_0ee20b9ed9cade87bc00_订购状态": "待订购",
+				"E_0ee20b9ed9cade87bc00_申请单标题": "没有费用承担部门",
+				"E_0ee20b9ed9cade87bc00_申请单编码": "S20000015",
+				"E_0ee20b9ed9cade87bc00_申请单预算金额": {
+					"standard": "12.00",
+					"standardUnit": "元",
+					"standardScale": 2,
+					"standardSymbol": "¥",
+					"standardNumCode": "156",
+					"standardStrCode": "CNY"
+				}
+			},
+			"ledgerAmount": null,
+			"ledgerAmountModel": null,
+			"totalCount": 0,
+			"useCount": 0,
+			"entityId": "7cea0b9edcc64ec06400",
+			"platformId": "5NgbDJDaTEuQ00",
+			"source": "FLOW",
+			"masterId": null,
+			"index": 0,
+			"visibility": {
+				"fullVisible": false,
+				"staffs": [
+					"kRsbl5WsyMmg00:pgEbDN7NbIg000"
+				],
+				"roles": null,
+				"departments": null,
+				"departmentsIncludeChildren": false
+			},
+			"visible": true,
+			"ownerId": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
+			"operatorId": "kRsbl5WsyMmg00:pgEbDN7NbIg000",
+			"sourceId": "shgbE5hCz46s00",
+			"flowCounts": {}
+		}
+	]
 }
 ```
-
 
 #### 失败响应:
 ```json
 {
-      "errorCode": 400,
-      "errorMessage": "不支持的业务对象「TRAVEL」",
-      "errorDetails": null,
-      "code": null,
-      "data": null
+    "errorCode": 400,
+    "errorMessage": "不支持的业务对象「TRAVEL」",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```
 
