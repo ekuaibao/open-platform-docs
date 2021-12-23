@@ -1704,13 +1704,25 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
 ```
 
 #### 失败响应：
-```text
-未开通功能，无权访问    //请检查powerCode参数是否正确：219902或219904
+```json
+{
+    "errorCode": 403,
+    "errorMessage": "未开通功能，无权访问",  //请检查powerCode参数是否正确：219902或219904
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
 ```
 
 当过滤字段中包含不可过滤的字段时报错如下，请检查过滤字段：
-```text
-fields过滤字段解析出错,请参照文档设置可过滤字段
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "fields过滤字段解析出错,请参照文档设置可过滤字段",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
 ```
 
 <style>

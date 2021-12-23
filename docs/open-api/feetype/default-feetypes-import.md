@@ -1,105 +1,97 @@
 # 默认费用类型导入项
-
 用于企业默认费用类型的导入列表，通过API增加导入项。
 
+import Control from "../../../components/Control";
 
-{% httpverb "post" %} /api/openapi/v1/feeTypeImportRule/defaultRule {% endhttpverb %}
+<Control
+method="POST"
+url="/api/openapi/v1/feeTypeImportRule/defaultRule"
+/>
 
+## Query Parameters
 
-#### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken** | String  | 认证token	| 必填  | - | [通过授权接口获取](/getting-started/auth.html) |
+## Body Parameters
 
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **sourceId** | String | 增加的项目id  | 必填 | - | 格式为:dataLink_加业务对象id，[业务对象id获取](/docs/open-api/datalink/question-answer)<br/>例如:dataLink_b41a0b811ce2ef06ac00 |
+| **title**    | String | 显示的项目名称 | 必填 | - | 为了方便区分，尽量不要与已导入的项目重名 |
 
-
-#### Body Parameters:
-
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **sourceId** | String  | 增加的项目id  | 必填 | - | 格式为:dataLink_加业务对象id，[业务对象id获取](/datalink/question-answer.md)<br>(例:dataLink_b41a0b811ce2ef06ac00) |
-| **title**    | String  | 显示的项目名称 | 必填 | - |  为了方便区分，尽量不要与已导入的项目重名 |
-
-<br/>
-
-#### CURL:
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/feeTypeImportRule/defaultRule?accessToken=cCMbw_mKUs8c00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-      "sourceId": "dataLink_b41a0b811ce2ef06ac00",
-      "title": "岸边项目测试"
+    "sourceId": "dataLink_b41a0b811ce2ef06ac00",
+    "title": "岸边项目测试"
 }'
 ```
 
-> ⚠️ 注意：
-> 
-> 同一个业务对象id只能添加一次，多次添加返回：该业务对象导入已存在:dataLink_xx
+:::tip
+- 同一个业务对象id只能添加一次，多次添加返回：该业务对象导入已存在:dataLink_xx。
+:::
 
-<br/>
-
-#### 成功响应:
-
+## 成功响应
 ```json
 {
-      "value": {
-            "version": 1,     //版本
-            "active": true,   //是否停用
-            "createTime": 1599115678472,
-            "updateTime": 1599115678472,
-            "corporationId": "JOYbpjPP-E2Q00", //企业ID
-            "name": "费用类型默认导入列表", //名称
-            "id": "DEFAULT_ID_JOYbpjPP-E2Q00", //ID
-            "allowEdit": false, //是否可编辑
-            "formType": "expense", //单据类型(expense=报销单; requisition=申请单)
-            "ruleItems": [    //规则集
-                  {
-                        "sourceId": "invoiceScan",
-                        "viewTitle": "(仅移动端)扫描发票",
-                        "filterId": null
-                  },
-                  {
-                        "sourceId": "invoiceWeChat",
-                        "viewTitle": "(仅移动端)微信发票",
-                        "filterId": null
-                  },
-                  {
-                        "sourceId": "invoiceManual",
-                        "viewTitle": "手录发票",
-                        "filterId": null
-                  },
-                  {
-                        "sourceId": "invoicePdf",
-                        "viewTitle": "(仅网页端)PDF发票",
-                        "filterId": null
-                  },
-                  {
-                        "sourceId": "excel",
-                        "viewTitle": "(仅网页端)EXCEL",
-                        "filterId": null
-                  },
-                  {
-                        "sourceId": "dataLink_b41a0b811ce2ef06ac00",
-                        "viewTitle": "岸边项目测试",
-                        "filterId": null
-                  }
-            ]
-      }
+    "value": {
+        "version": 1,                     //版本
+        "active": true,                   //是否停用
+        "createTime": 1599115678472,
+        "updateTime": 1599115678472,
+        "corporationId": "JOYbpjPP-E2Q00", //企业ID
+        "name": "费用类型默认导入列表",      //名称
+        "id": "DEFAULT_ID_JOYbpjPP-E2Q00", //ID
+        "allowEdit": false,                //是否可编辑
+        "formType": "expense",             //单据类型(expense：报销单; requisition：申请单)
+        "ruleItems": [                     //规则集
+            {
+                "sourceId": "invoiceScan",
+                "viewTitle": "(仅移动端)扫描发票",
+                "filterId": null
+            },
+            {
+                "sourceId": "invoiceWeChat",
+                "viewTitle": "(仅移动端)微信发票",
+                "filterId": null
+            },
+            {
+                "sourceId": "invoiceManual",
+                "viewTitle": "手录发票",
+                "filterId": null
+            },
+            {
+                "sourceId": "invoicePdf",
+                "viewTitle": "(仅网页端)PDF发票",
+                "filterId": null
+            },
+            {
+                "sourceId": "excel",
+                "viewTitle": "(仅网页端)EXCEL",
+                "filterId": null
+            },
+            {
+                "sourceId": "dataLink_b41a0b811ce2ef06ac00",
+                "viewTitle": "岸边项目测试",
+                "filterId": null
+            }
+        ]
+    }
 }
 ```
 
-#### 失败响应:
-
+## 失败响应
 ```json
-
 {
-      "errorCode": 400,
-      "errorMessage": "无效的业务对象Id:dataLink_b e2ef06ac00",
-      "errorDetails": null,
-      "code": null,
-      "data": null
+    "errorCode": 400,
+    "errorMessage": "无效的业务对象Id:dataLink_b e2ef06ac00",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
-
 ```

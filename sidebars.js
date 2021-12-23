@@ -88,6 +88,7 @@ const sidebars = {
         "open-api/dimensions/batch-creat-dimension-items",
         "open-api/dimensions/get-dimension-items",
         "open-api/dimensions/get-dimension-items-visibility",
+        "open-api/dimensions/get-dimension-items-byId",
         "open-api/dimensions/get-dimension-items-byCode",
         "open-api/dimensions/get-dimension-items-byName",
         "open-api/dimensions/update-dimension-items",
@@ -96,32 +97,32 @@ const sidebars = {
         "open-api/dimensions/question-answer"
       ],
     },
-    // {
-    //   type: "category",
-    //   label: "档案关系",
-    //   items: [
-    //     "open-api/recordLink/info",
-    //     "open-api/recordLink/get-dimension-relation",
-    //     "open-api/recordLink/query-all-relation-items",
-    //     "open-api/recordLink/get-dimension-relation-items",
-    //     "open-api/recordLink/creat-dimension-relation-items",
-    //     "open-api/recordLink/delete-dimension-relation-items",
-    //     "open-api/recordLink/update-dimension-relation-items",
-    //     "open-api/recordLink/edit-dimension-relation-items",
-    //     "open-api/recordLink/question-answer"
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "费用类型",
-    //   items: [
-    //     "open-api/feetype/info",
-    //     "open-api/feetype/get-feetypes",
-    //     "open-api/feetype/get-feetypes-list",
-    //     "open-api/feetype/default-feetypes-import",
-    //     "open-api/feetype/question-answer"
-    //   ],
-    // },
+    {
+      type: "category",
+      label: "档案关系",
+      items: [
+        "open-api/recordLink/info",
+        "open-api/recordLink/get-dimension-relation",
+        "open-api/recordLink/query-all-relation-items",
+        "open-api/recordLink/get-dimension-relation-items",
+        "open-api/recordLink/creat-dimension-relation-items",
+        "open-api/recordLink/delete-dimension-relation-items",
+        "open-api/recordLink/update-dimension-relation-items",
+        "open-api/recordLink/edit-dimension-relation-items",
+        "open-api/recordLink/question-answer"
+      ],
+    },
+    {
+      type: "category",
+      label: "费用类型",
+      items: [
+        "open-api/feetype/info",
+        "open-api/feetype/get-feetypes-list",
+        "open-api/feetype/get-feetypes",
+        "open-api/feetype/default-feetypes-import",
+        "open-api/feetype/question-answer"
+      ],
+    },
     // {
     //   type: "category",
     //   label: "单据模板",

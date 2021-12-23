@@ -1809,12 +1809,25 @@ curl --location -g --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/[
 ```
 
 #### 失败响应：
-```text
-未开通功能，无权访问"  //请检查powerCode是否传正确的219902
+```json
+{
+    "errorCode": 403,
+    "errorMessage": "未开通功能，无权访问",  //请检查powerCode参数是否正确：219902或219904
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
 ```
 
-```text
-type参数错误"   //请检查单据类型
+当单据类型错误时：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "type参数错误",  //请检查单据类型
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
 ```
 
 <style>
