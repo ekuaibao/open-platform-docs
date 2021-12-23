@@ -2,37 +2,43 @@
 
 获取单据上的发票主体信息
 
-{% httpverb "post" %}  /api/openapi/v2/extension/INVOICE/object/`objectId`/search {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Path Parameters:
+<Control
+method="POST"
+url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
+/>
+
+## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **objectId** | String | 发票类型 | 必填 | - | 见下面的发票类型表格 | 
 
-#### Query Parameters:
+## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - |  [通过授权接口获取](/getting-started/auth.html) |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-#### Body Parameters:（Body不能为空）
+## Body Parameters（Body不能为空）
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids**   | Array  |  业务对象实例id数组   | 非必填 | - | 按照[业务对象实例的id(发票ID)](/datalink/get-flow-invoice.md)查询详情，<br>发票实体保存在系统预置业务对象里 |
-| **codes** | Array  |  业务对象实例code数组 | 非必填 | - | 按照业务对象实例的code查询详情，<br>发票实体保存在系统预置业务对象里 |
-| **index** | Number |  当前页    | 非必填   | - | 当前页 |
-| **count** | Number |  查询数    | 非必填   | - | 每页查询数据量，最大不能超过`1000` |
+| **ids**   | Array  |  业务对象实例id数组   | 非必填 | - | 按照[业务对象实例的id(发票ID)](/docs/open-api/datalink/get-flow-invoice)查询详情，<br/>发票实体保存在系统预置业务对象里 |
+| **codes** | Array  |  业务对象实例code数组 | 非必填 | - | 按照业务对象实例的code查询详情，<br/>发票实体保存在系统预置业务对象里 |
+| **index** | Number |  当前页             | 非必填 | - | 当前页 |
+| **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过`1000` |
 
-> ⚠️ 注意：
-> -  业务对象实例id（即发票ID）可以通过[获取单据详情](/flows/get-forms-details.md)接口或[根据单据编号或单据ID查询发票和其明细ID](/datalink/get-flow-invoice.md)接口获取。
-> -  参数优先级 `ids`>`codes`>`index`和`count`，多组参数均传值时，按优先级最高的开始生效。
-> - `ids`、`codes`参数，接口没有校验参数是否在系统中存在，获取不到数据时，请检查参数的准确性。
-> - `ids`、`codes`不填时，`index`和`count`两个参数必填，只要传了index和count参数，成功响应中的“count”表示总数。
-> - `index`和`count`不填时，`ids`或`codes`参数必填，任意填写其一时，成功响应中的“count”表示有效参数量，而非总数。
+:::tip
+ - 业务对象实例id（即发票ID）可以通过[获取单据详情](/docs/open-api/flows/get-forms-details)接口或[根据单据编号或单据ID查询发票和其明细ID](/docs/open-api/datalink/get-flow-invoice)接口获取。
+ - 参数优先级 `ids`>`codes`>`index`和`count`，多组参数均传值时，按优先级最高的开始生效。
+ - `ids`、`codes`参数，接口没有校验参数是否在系统中存在，获取不到数据时，请检查参数的准确性。
+ - `ids`、`codes`不填时，`index`和`count`两个参数必填，只要传了index和count参数，成功响应中的“count”表示总数。
+ - `index`和`count`不填时，`ids`或`codes`参数必填，任意填写其一时，成功响应中的“count”表示有效参数量，而非总数。
+:::
 
-#### objectId发票类型:
+### objectId发票类型
 
 | objectId       | 发票类型    | 
 | :--------- | :------ |
@@ -45,21 +51,7 @@
 | **tolls**           | 过路费发票 |
 | **fixed**           | 定额发票 |
 
-<br/>
-
-### CURL:
-```json
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension/INVOICE/object/invoice/search?accessToken=ID_3tm4Nah54dg:djg8LshfUkfM00' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "ids":["djg8LshfUkfM00:044031900111:69872971"],  //发票id
-    "codes":[],  
-    "index":1,
-    "count":10
-}'
-```
-
-#### 发票类别（E_system_发票主体_发票类别）介绍如下
+### 发票类别（E_system_发票主体_发票类别）介绍如下
 | 字段名 | 对应发票类型 |
 | :---  | :---      |
 | **DIGITAL_NORMAL**  | 增值税电子普票 |
@@ -72,11 +64,27 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
 | **BLOCK_CHAIN**     | 区块链发票    |
 | **SECOND_CAR**      | 二手车发票    |
 
-<br/>
+## CURL
+```json
+curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension/INVOICE/object/invoice/search?accessToken=ID_3tm4Nah54dg:djg8LshfUkfM00' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "ids":["djg8LshfUkfM00:044031900111:69872971"],  //发票id
+    "codes":[],  
+    "index":1,
+    "count":10
+}'
+```
 
-#### 成功响应:
+## 成功响应
 
-{% codetabs name="invoice", type="json" -%}
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="invoice" label="invoice" default>
+
+```json
 {
     "count":7,
     "items":[
@@ -453,7 +461,11 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
         }
     ]
 }
-{%- language name="taxi", type="json" -%}
+```
+</TabItem>
+<TabItem value="taxi" label="taxi">
+
+```json
 {
     "count": 31,
     "items": [
@@ -497,7 +509,11 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
         }
     ]
 }
-{%- language name="passengerCar", type="json" -%}
+```
+</TabItem>
+<TabItem value="passengerCar" label="passengerCar">
+
+```json
 {
     "count": 3,
     "items": [
@@ -557,7 +573,11 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
         }
     ]
 }
-{%- language name="train", type="json" -%}
+```
+</TabItem>
+<TabItem value="train" label="train">
+
+```json
 {
     "count": 50,
     "items": [
@@ -619,7 +639,11 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
         }
     ]
 }
-{%- language name="flightItinerary", type="json" -%}
+```
+</TabItem>
+<TabItem value="flightItinerary" label="flightItinerary">
+
+```json
 {
     "count": 24,
     "items": [
@@ -726,7 +750,11 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
         }
     ]
 }
-{%- language name="tolls", type="json" -%}
+```
+</TabItem>
+<TabItem value="tolls" label="tolls">
+
+```json
 {
     "count": 7,
     "items": [
@@ -768,7 +796,12 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
         }
     ]
 }
-{%- language name="fixed", type="json" -%}
+
+```
+</TabItem>
+<TabItem value="fixed" label="fixed">
+
+```json
 {
     "count": 14,
     "items": [
@@ -807,9 +840,11 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
         }
     ]
 }
-{%- endcodetabs %}
+```
+</TabItem>
+</Tabs>
 
-#### 失败响应:
+## 失败响应
 当index为0时
 ```json
 {

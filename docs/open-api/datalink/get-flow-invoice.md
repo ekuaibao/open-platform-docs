@@ -1,23 +1,26 @@
 # 根据单据编号或单据ID查询发票ID和其明细ID
 
-{% httpverb "post" %} /api/openapi/v2/extension/flow/INVOICE/search {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="POST"
+url="/api/openapi/v2/extension/flow/INVOICE/search"
+/>
+
+## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-#### Body Parameters:
+## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **type**      | String | 查询参数类型 | 必填 | - | `code`:单据编号 `id`:单据ID     |
 | **codeOrIds** | Array  | 查询参数    | 必填 | - | 传对应参数类型值，单据编号或者单据ID |
 
-<br/>
-
-#### CURL:
+## CURL
 ```json
 curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension/flow/INVOICE/search?accessToken=ZyEbyCA-_Auk00' \
 --header 'Content-Type: application/json' \
@@ -26,9 +29,8 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
     "codeOrIds":["j7sbyDMhYUpU00"]  //单据id
 }'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
@@ -56,7 +58,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
 }
 ```
 
-#### 失败响应:
+## 失败响应
 如果type值不是为`id`或`code`，则报以下错
 ```json
  {

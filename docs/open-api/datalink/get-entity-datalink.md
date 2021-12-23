@@ -1,25 +1,30 @@
 # 获取行程管理业务对象实例
 
-{% httpverb "get" %}  /api/openapi/v2/datalink/TRAVEL_MANAGEMENT/byDataLinkIds {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="GET"
+url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/byDataLinkIds"
+/>
+
+## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-#### Body Parameters:
+## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 业务对象实例ID | 必填 | - | 可通过[获取行程管理业务对象列表](/datalink/get-tripManager-order.md)获取 |
+| **ids** | Array | 业务对象实例ID | 必填 | - | 可通过[获取行程管理业务对象列表](/docs/open-api/datalink/get-tripManager-order)获取 |
 
-> ⚠️ 注意：
-> - 例如：“行程管理”-“行程”分类的业务对象ID可以在单据详情里面获取到。
-> 
-> ![image](/datalink/images/行程业务对象ID获取.png)
+:::tip
+ - 例如：“行程管理”-“行程”分类的业务对象ID可以在单据详情里面获取到。
+ ![image](images/行程业务对象ID获取.png)
+:::
 
-#### CURL:
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/byDataLinkIds?accessToken=NegbQ-IpSM6g00' \
 --header 'content-type: application/json' \
@@ -28,9 +33,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
     "ids":["gyMbDPToxUnQ00", "sNsbE5ikQ0n800"]
 }'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
 	"items": [
@@ -154,7 +158,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 }
 ```
 
-#### 失败响应:
+## 失败响应
 ```json
 {
     "errorCode": 400,

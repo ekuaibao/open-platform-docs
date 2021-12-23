@@ -1,32 +1,30 @@
 # 获取单据风险标签
 
-{% httpverb "get" %}  /api/openapi/v2/invoice/risk/label/`ids` {% endhttpverb %}
+import Control from "../../../components/Control";
 
+<Control
+method="GET"
+url="/api/openapi/v2/invoice/risk/label/[`ids`]"
+/>
 
+## Path Parameters
 
-#### Path Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **ids** | Array&lt;String&gt; | 单据集合 | 必填 | - | - |
 
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **ids** | Array<String>   | 单据集合   | 必填      | - | - |
+## Query Parameters
 
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-
-#### Query Parameters:
-
-| 名称             | 类型     | 描述        | 是否必填      | 默认值 | 备注                                         |
-| :---------      | :------  | :------    | :------- |:---------| :------------------------------------------  |
-| **accessToken** | String   | 认证token  | 必填      | - |  [通过授权接口获取](/getting-started/auth.html)  |
-
-
-<br/>
-#### CURL:
+## CURL
 ```json
 curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v2/invoice/risk/label/[j7sbyDMhYUpU00]?accessToken=ZyEbyCA-_Auk00'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items": [
@@ -55,15 +53,14 @@ curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v2/invoice/ri
 }
 ```
 
-#### 失败响应:
+## 失败响应
 参数`ids`为必填项，不可为空，否则请求无效，返回状态码为404
-
 ```json
 {
-      "servlet": "org.glassfish.jersey.servlet.ServletContainer-23df29c6",
-      "message": "Not Found",
-      "url": "/api/openapi/v2/invoice/risk/label/[]",
-      "status": "404"
+    "servlet": "org.glassfish.jersey.servlet.ServletContainer-23df29c6",
+    "message": "Not Found",
+    "url": "/api/openapi/v2/invoice/risk/label/[]",
+    "status": "404"
 }
 ```
 

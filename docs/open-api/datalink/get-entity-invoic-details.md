@@ -1,28 +1,30 @@
 # 获取发票明细信息
 
-{% httpverb "post" %}  /api/openapi/v2/extension/INVOICE/object/invoice/`invoiceId`/detail {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Path Parameters:
+<Control
+method="POST"
+url="/api/openapi/v2/extension/INVOICE/object/invoice/`invoiceId`/detail"
+/>
+
+## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **invoiceId** | String | 发票ID | 必填 | - | 可以通过[获取单据详情](/flows/get-forms-details.md)接口<br>或[根据单据编号或单据ID查询发票和其明细ID](/datalink/get-flow-invoice.md)接口获取 |
+| **invoiceId** | String | 发票ID | 必填 | - | 可以通过[获取单据详情](/docs/open-api/flows/get-forms-details)接口<br/>或[根据单据编号或单据ID查询发票和其明细ID](/docs/open-api/datalink/get-flow-invoice)接口获取 |
 
-#### Query Parameters:
+## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-<br/>
-
-#### CURL:
+## CURL
 ```json
 curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension/INVOICE/object/invoice/0aM9AbvdhI0400:011001900111:07517347/detail?accessToken=w3UbyyG1Xsfc00'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items": [
@@ -263,7 +265,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
 }
 ```
 
-#### 失败响应:
+## 失败响应
 当`invoiceId`发票ID传值错误时，返回为空：
 ```json
 {

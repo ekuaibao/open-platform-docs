@@ -1,35 +1,36 @@
 # 获取业务对象实例列表
 
-{% httpverb "get" %}  /api/openapi/v2/datalink {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="GET"
+url="/api/openapi/v2/datalink"
+/>
 
-| 名称       | 类型    | 描述                  | 是否必填      | 默认值 |  备注 |
-| :--------- | :------ | :------------------ | :------ |:------ |:------ |
-| **entityId** | String  | 业务对象ID |  必填 | - | 通过[获取业务对象](/datalink/get-entity-list.md)接口获取 |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/getting-started/auth.html)  |
-| **start** | Number | 数据开始数 | 必填 | 0 | 数据开始数 |
-| **count** | Number | 每页总数 | 必填 | 0 | 最大不能超过`1000` |
-| **startDate** | String | 查询开始时间 |  非必填 | - | 按业务对象实例更新时间查询，格式：yyyy-MM-dd HH:mm:ss |
-| **endDate** | String | 查询结束时间 | 非必填 | - | 按业务对象实例更新时间查询，格式：yyyy-MM-dd HH:mm:ss |
+## Query Parameters
 
->说明：
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token  | 必填   | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **entityId**    | String | 业务对象ID  |  必填  | - | 通过[获取业务对象](/docs/open-api/datalink/get-entity-list)接口获取 |
+| **start**       | Number | 数据开始数  | 必填   | 0 | 数据开始数 |
+| **count**       | Number | 每页总数    | 必填   | 0 | 最大不能超过`1000` |
+| **startDate**   | String | 查询开始时间 | 非必填 | - | 按业务对象实例更新时间查询，格式：yyyy-MM-dd HH:mm:ss |
+| **endDate**     | String | 查询结束时间 | 非必填 | - | 按业务对象实例更新时间查询，格式：yyyy-MM-dd HH:mm:ss |
 
-> - 只返回未停用的业务对象，如果业务对象已停用，则不返回。
-> - `startDate`查询规则是”大于等于“，`endDate`查询规则是“小于等于”（”毫秒级时间戳“与“日期”转换的影响，导致取值结果往往是”小于“，没有等于）。
-> - `start=0&count=10` 代表每页10条数据，第一页数据开始于 start = 0 开始，则第二页数据开始于 start = 10。
+:::tip
+ - 只返回未停用的业务对象，如果业务对象已停用，则不返回。
+ - `startDate`查询规则是”大于等于“，`endDate`查询规则是“小于等于”（”毫秒级时间戳“与“日期”转换的影响，导致取值结果往往是”小于“，没有等于）。
+ - `start=0&count=10` 代表每页10条数据，第一页数据开始于 start = 0 开始，则第二页数据开始于 start = 10。
+:::
 
-<br/>
-#### CURL:
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?accessToken=cxEbrzNJSA3A00&entityId=26d60b5d6dd47f435000&count=10&start=0'
 ```
-<br/>
 
-
-#### 成功响应:
+## 成功响应
 ```json
-
 {
     "count": 2,// 总记录数
     "items": [
@@ -131,7 +132,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
 }
 ```
 
-#### 失败响应:
+## 失败响应
 请确保业务对象id真实存在，否则会返回如下响应：
 ```text
 26d60b5d6dd47f4350100 对应的业务对象不存在

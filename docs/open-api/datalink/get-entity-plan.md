@@ -1,27 +1,30 @@
 # 获取业务对象执行计划
 
-{% httpverb "get" %} /api/openapi/v2/datalink/plan/getPlan/$`dataId` {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Path Parameters:
+<Control
+method="GET"
+url="/api/openapi/v2/datalink/plan/getPlan/$`dataId`"
+/>
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 |备注 |
-| :--- | :--- | :--- |:--- |:--- | :--- |
-| **dataId** | String  | 配置了台账和计划的业务对象的实例数据ID | 必填 | - | 可通过[获取业务对象实例列表](/datalink/get-entity-info.md)获取 |
+## Path Parameters
 
-#### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **dataId** | String | 配置了台账和计划的业务对象的实例数据ID | 必填 | - | 可通过[获取业务对象实例列表](/docs/open-api/datalink/get-entity-info)获取 |
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 |备注 |
-| :--- | :--- | :--- |:--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+## Query Parameters
 
-<br/>
-### CURL:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/plan/getPlan/$ID_3mcOcKEYUeM?accessToken=ID_3qolNHi0KF0:Urf3lsFgBp00gw'
 ```
 
-<br/>
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items": [
@@ -63,7 +66,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 }
 ```
 
-#### 失败响应:
+## 失败响应
 `dataId`不存在时，报500错误，返回报文如下：
 ```text
 服务器内部错误：查询返回结果过少

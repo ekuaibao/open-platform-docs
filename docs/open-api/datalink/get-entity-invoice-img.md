@@ -1,28 +1,29 @@
 # 发票图片
 
-{% httpverb "post" %} /api/openapi/v2/extension/INVOICE/url {% endhttpverb %}
+import Control from "../../../components/Control";
 
->⚠️ 注意：
+<Control
+method="POST"
+url="/api/openapi/v2/extension/INVOICE/url"
+/>
 
->图片链接是临时的，请勿永久保存
+:::danger
+图片链接是临时的，请勿永久保存
+:::
 
+## Query Parameters
 
-#### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-| 名称             | 类型     | 描述        | 是否必填      | 默认值 | 备注                                         |
-| :---------      | :------  | :------    | :------- |:---------| :------------------------------------------  |
-| **accessToken** | String   | 认证token  | 必填      | - |  [通过授权接口获取](/getting-started/auth.html)  |
+## Body Parameters
 
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **invoiceId** | Array&lt;String&gt; | 发票id集合 | 必填 | - | - |
 
-#### Body Parameters:
-
-| 名称             | 类型     | 描述        | 是否必填      | 默认值 | 备注                                         |
-| :---------      | :------  | :------    | :------- |:---------| :------------------------------------------  |
-| **invoiceId** | Array<String>   | 发票id集合  | 必填      | - |  - |
-
-
-<br/>
-#### CURL:
+## CURL
 ```json
 curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension/INVOICE/url?accessToken=ZyEbyCA-_Auk00' \
 --header 'Content-Type: application/json' \
@@ -30,10 +31,8 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
     "invoiceId":["5-sbyDJSOI0800"]
 }'
 ```
-<br/>
 
-
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items": [
