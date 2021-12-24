@@ -171,19 +171,19 @@ const sidebars = {
     //     "open-api/flows/question-answer"
     //   ],
     // },
-    // {
-    //   type: "category",
-    //   label: "委托授权关系",
-    //   items: [
-    //     "open-api/delegate/info",
-    //     "open-api/delegate/get-delegate-list",
-    //     "open-api/delegate/get-delegate-byStaffId",
-    //     "open-api/delegate/create-delegate",
-    //     "open-api/delegate/update-delegate",
-    //     "open-api/delegate/delete-delegate",
-    //     "open-api/delegate/question-answer"
-    //   ],
-    // },
+    {
+      type: "category",
+      label: "委托授权关系",
+      items: [
+        "open-api/delegate/info",
+        "open-api/delegate/get-delegate-list",
+        "open-api/delegate/get-delegate-byStaffId",
+        "open-api/delegate/create-delegate",
+        "open-api/delegate/update-delegate",
+        "open-api/delegate/delete-delegate",
+        "open-api/delegate/question-answer"
+      ],
+    },
     // {
     //   type: "category",
     //   label: "企业收付款账户",

@@ -18,14 +18,14 @@ url="/api/openapi/v1/property/addPropertySet"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 |**properties**                   | Array   | 字段信息      | 必填  | - | 字段信息 | 
-|**properties/label**             | String  | 字段名称      | 必填  | - | 字段名称 | 
-|**properties/canAsDimension**    | Boolean | 是否自定义档案 | 非必填 | false | 是否自定义档案 | 
-|**properties/dataType**          | Object  | 数据类型      | 必填  | - | 数据类型 | 
-|**properties/dataType/type**     | String  | 字段类别      | 必填  | - | 可参考"示例" | 
-|**properties/dataType/entity**   | String  | 引用对象      | 非必填 | - | `type`为`ref`时必填，可参考"示例" | 
-|**properties/dataType/elemType** | Object  | 附件信息      | 非必填 | - | `type`为`list`时必填，可参考"示例" | 
-|**properties/dataType/unit**     | String  | 单位         | 非必填 | - | `type`为`number`时填写，非必填<br/>可参考"示例"，如：`kg``cm`等 | 
-|**properties/dataType/scale**    | Number  | 小数位数      | 非必填 | - | `type`为`number`时必填，可参考"示例" | 
+|**&emsp; ∟ label**             | String  | 字段名称      | 必填  | - | 字段名称 | 
+|**&emsp; ∟ canAsDimension**    | Boolean | 是否自定义档案 | 非必填 | false | 是否自定义档案 | 
+|**&emsp; ∟ dataType**          | Object  | 数据类型      | 必填  | - | 数据类型 | 
+|**&emsp;&emsp; ∟ type**     | String  | 字段类别      | 必填  | - | 可参考"示例" | 
+|**&emsp;&emsp; ∟ entity**   | String  | 引用对象      | 非必填 | - | `type`为`ref`时必填，可参考"示例" | 
+|**&emsp;&emsp; ∟ elemType** | Object  | 附件信息      | 非必填 | - | `type`为`list`时必填，可参考"示例" | 
+|**&emsp;&emsp; ∟ unit**     | String  | 单位         | 非必填 | - | `type`为`number`时填写，非必填<br/>可参考"示例"，如：`kg``cm`等 | 
+|**&emsp;&emsp; ∟ scale**    | Number  | 小数位数      | 非必填 | - | `type`为`number`时必填，可参考"示例" | 
 
 :::tip
 - 数据类型有多种情况，注意甄别，可参考"示例"。
