@@ -1,34 +1,36 @@
 # 获取预算异步执行结果
 
-> ⚠️ 注意：
->
->  调用预算接口时报错“**预算[XXX预算]未计算完成，请稍等**”的话，可以先调用本接口，获取预算状态，为**`DONE(预算计算完成)`**后再调用接口更新预算信息。
+:::caution
+调用预算接口时报错“**预算[XXX预算]未计算完成，请稍等**”的话，可以先调用本接口，获取预算状态，为**`DONE(预算计算完成)`**后再调用接口更新预算信息
+:::
 
-{% httpverb "get" %} /api/openapi/v2/budgets/$`budgetId`/async {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Path Parameters:
+<Control
+method="GET"
+url="/api/openapi/v2/budgets/$`budgetId`/async"
+/>
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **budgetId** | String | 预算树id | 必填 | - | [预算树id获取](/budget/get-budget-list.html) |
+## Path Parameters
 
-#### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **budgetId** | String | 预算树id | 必填 | - | [预算树id获取](/docs/open-api/budget/get-budget-list) |
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken** | String  | 认证token	| 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+## Query Parameters
 
-<br/>
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-#### CURL:
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$u6wbqiMW0Yqo00/async?accessToken=KS4btJTf3o5o00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
@@ -63,9 +65,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 }
 ```
 
-#### 失败响应:
+## 失败响应
 预算异步执行完，发生错误，返回此响应数据
-
 ```json
 {
     "value": {

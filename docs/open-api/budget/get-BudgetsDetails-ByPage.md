@@ -2,31 +2,36 @@
 
 返回查询的预算节点和其子节点信息，包括预算执行情况。
 
-{% httpverb "get" %} /api/openapi/v2/budgets/$`budgetId`/query {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Path Parameters:
+<Control
+method="GET"
+url="/api/openapi/v2/budgets/$`budgetId`/query"
+/>
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **budgetId** | String  | 预算树id | 必填 | - | [预算树id获取](/budget/get-budget-list.html) |
+## Path Parameters
 
-#### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **budgetId** | String  | 预算树id | 必填 | - | [预算树id获取](/docs/open-api/budget/get-budget-list) |
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken**  | String    | 认证token	     | 必填   | -   | [通过授权接口获取](/getting-started/auth.html) |
-| **nodeId**       | String    | 指定查询的节点ID   | 非必填 | -   | [预算节点id获取](/budget/get-budget-details.html),为空就是查询根节点 |
-| **start**        | Number    | 查询开始位置       | 必填   | 0   | - |
-| **count**        | Number    | 查询数量          | 必填   | 100 | 不可超过100 |
+## Query Parameters
 
-#### CURL:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken**  | String | 认证token      | 必填  | -   | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **nodeId**       | String | 指定查询的节点ID | 非必填 | -   | [预算节点id获取](/docs/open-api/budget/get-budget-details),为空就是查询根节点 |
+| **start**        | Number | 查询开始位置     | 必填  | 0   | - |
+| **count**        | Number | 查询数量        | 必填  | 100 | 不可超过100 |
+
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$u6wbqiMW0Yqo00/query?accessToken=f_kbtOJVVwdo00&start=1&count=100' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
@@ -140,9 +145,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 }
 ```
 
-
-#### 失败响应:
-
+## 失败响应
 `budgetId` 不存在时， 返回此响应数据。
 ```json
 {
@@ -153,7 +156,6 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
     "data": null
 }
 ```
-
 
 程序内部错误， 返回此响应数据， 可尝试再次请求获取数据。
 ```json

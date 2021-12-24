@@ -197,25 +197,25 @@ const sidebars = {
     //     "open-api/pay/question-answer"
     //   ],
     // },
-    // {
-    //   type: "category",
-    //   label: "预算",
-    //   items: [
-    //     "open-api/budget/budget-introduction",
-    //     "open-api/budget/add-budget",
-    //     "open-api/budget/get-budget-list",
-    //     "open-api/budget/get-BudgetsDetails-ByPage",
-    //     "open-api/budget/get-BudgetsDetails-ByStaff",
-    //     "open-api/budget/get-BudgetInfo-State",
-    //     "open-api/budget/get-budget-details",
-    //     "open-api/budget/add-budget-node",
-    //     "open-api/budget/delete-budget-node",
-    //     "open-api/budget/update-budget-node",
-    //     "open-api/budget/batch-pdate-budget-node",
-    //     "open-api/budget/search-budget-node",
-    //     "open-api/budget/question-answer"
-    //   ],
-    // },
+    {
+      type: "category",
+      label: "预算",
+      items: [
+        "open-api/budget/budget-introduction",
+        "open-api/budget/add-budget",
+        "open-api/budget/get-budget-list",
+        "open-api/budget/get-BudgetsDetails-ByPage",
+        "open-api/budget/get-BudgetsDetails-ByStaff",
+        "open-api/budget/get-BudgetInfo-State",
+        "open-api/budget/get-budget-details",
+        "open-api/budget/add-budget-node",
+        "open-api/budget/delete-budget-node",
+        "open-api/budget/update-budget-node",
+        "open-api/budget/batch-pdate-budget-node",
+        "open-api/budget/search-budget-node",
+        "open-api/budget/question-answer"
+      ],
+    },
     {
       type: "category",
       label: "自建应用(原自定义扩展/数据互联)",

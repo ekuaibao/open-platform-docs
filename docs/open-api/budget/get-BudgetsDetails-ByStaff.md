@@ -2,28 +2,33 @@
 
 根据传入的预算树id、员工id、节点id，判断员工是否有权限访问此节点，返回有权限访问的节点id。
 
-{% httpverb "post" %} /api/openapi/v2/budgets/$`budgetId`/staff/$`staffId` {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Path Parameters:
+<Control
+method="POST"
+url="/api/openapi/v2/budgets/$`budgetId`/staff/$`staffId`"
+/>
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **budgetId** | String  | 预算树id | 必填 | - | [预算树id获取](/budget/get-budget-list.html) |
-| **staffId** | String  | 员工id | 必填 | - | [查询员工id](/corporation/get-staff-ids.md) |
+## Path Parameters
 
-#### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **budgetId** | String | 预算树id | 必填 | - | [预算树id获取](/docs/open-api/budget/get-budget-list) |
+| **staffId**  | String | 员工id   | 必填 | - | [查询员工id](/docs/open-api/corporation/get-staff-ids) |
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken**  | String    | 认证token	     | 必填    | -  | [通过授权接口获取](/getting-started/auth.html) |
+## Query Parameters
 
-#### Body Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-|名称 |描述 |类型 |是否必填 |默认值 |备注 |
-|:------ |:--------- |:-----------|:-------|:-----------|:-------------|
-| **nodeIds** | Array     | 指定查询的节点id（可多个）   | 必填     | -   | [节点id获取](/budget/get-BudgetsDetails-ByPage.md) |
+## Body Parameters
 
-#### CURL:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **nodeIds** | Array | 指定查询的节点id（可多个） | 必填 | - | [节点id获取](/docs/open-api/budget/get-BudgetsDetails-ByPage) |
+
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/$ID_3o_V3Um0XZ0/staff/$Urf3lsFgBp00gw:AvT3lntT8zzpWw?accessToken=ID_3rg$H9i0dTM:Urf3lsFgBp00gw' \
 --header 'Content-Type: application/json' \
@@ -34,33 +39,33 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 }'
 ```
 
-#### 成功响应:
+## 成功响应
 ```json
 {
-  "items": [
-    "1634112670000",
-    "1635907908830002",
-    "1635907908830001"
-  ]
+    "items": [
+        "1634112670000",
+        "1635907908830002",
+        "1635907908830001"
+    ]
 }
 ```
 
-#### 失败响应:
+## 失败响应
 传入的节点id均无权限时，响应如下：
 ```json
 {
-  "items": []
+    "items": []
 }
 ```
 
 不传`nodeIds`参数时，响应如下：
 ```json
 {
-  "errorCode": 400,
-  "errorMessage": "输入存在错误:\n- 缺少预算参数",
-  "errorDetails": null,
-  "code": null,
-  "data": null
+    "errorCode": 400,
+    "errorMessage": "输入存在错误:\n- 缺少预算参数",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```
 

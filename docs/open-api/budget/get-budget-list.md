@@ -1,26 +1,28 @@
 # 获取预算树列表
 
-返回企业全部预算树信息，对于草稿状态的也会返回记录。开发者需要判断预算包所处的状态。
+返回企业全部预算树信息，对于草稿状态的也会返回记录。开发者需要判断预算包所处的状态
 
-{% httpverb "get" %} /api/openapi/v2/budgets {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="GET"
+url="/api/openapi/v2/budgets"
+/>
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken** | String  | 认证token	| 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+## Query Parameters
 
-<br/>
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-#### CURL:
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets?accessToken=KS4btJTf3o5o00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items": [

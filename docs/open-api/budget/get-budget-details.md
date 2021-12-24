@@ -1,36 +1,37 @@
 # 获取预算树详细信息
+返回单个预算树的全部信息，包括预算执行情况
 
-> ⚠️注意：
->
-> 不推荐使用，本接口依赖于服务的性能，当后台判定要查询的预算树超过2000个节点时此接口就会报错
+:::caution
+不推荐使用，本接口依赖于服务的性能，当后台判定要查询的预算树超过2000个节点时此接口就会报错
+:::
 
-返回单个预算树的全部信息，包括预算执行情况。
+import Control from "../../../components/Control";
 
-{% httpverb "get" %}  /api/openapi/v2/budgets/$`budgetId` {% endhttpverb %}
+<Control
+method="GET"
+url="/api/openapi/v2/budgets/$`budgetId`"
+/>
 
-#### Path Parameters:
+## Path Parameters
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **budgetId** | String  |预算树id| 必填 | - | [预算树id获取](/budget/get-budget-list.html) |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **budgetId** | String  |预算树id| 必填 | - | [预算树id获取](/docs/open-api/budget/get-budget-list) |
 
-#### Query Parameters:
+## Query Parameters
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken** | String  | 认证token	| 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-
-<br/>
-#### CURL:
+## CURL
 ```json
  curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$u6wbqiMW0Yqo00?accessToken=f_kbtOJVVwdo00' \
  --header 'content-type: application/json' \
  --header 'Accept: application/json'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
