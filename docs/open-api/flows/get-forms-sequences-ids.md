@@ -8,7 +8,7 @@
 
 | 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
 | :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **ids** | Array<String>  | 单据的id集合 |必填| - |  通过其他api接口获取或者出站消息<br>示例：[zKIbl2WX4I8I00,I8I00zKIbl2WX4,zKIbI00l2WX4I8]|
+| **ids** | Array<String>  | 单据的id集合 |必填| - |  通过其他api接口获取或者出站消息<br/>示例：[zKIbl2WX4I8I00,I8I00zKIbl2WX4,zKIbI00l2WX4I8]|
 
 >⚠️ 注意：
 
@@ -27,7 +27,7 @@
 curl --location -g --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/[ID_3lztYYX7DJg]?accessToken=ID_3mMbt0x01LM:Urf3lsFgBp00gw&powerCode=219902&type=expense'
 ```
 
-<br>
+<br/>
 
 #### 成功响应:
 

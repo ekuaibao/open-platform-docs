@@ -33,17 +33,17 @@
 
 - `isUrgent`字段表达是否加急；`urgentReason`字段为加急原因； 仅当流程配置允许加急时，`isUrgent`才可为"true"；
 
-- 在上一步获取的流程实例中，<br>&nbsp;&nbsp;若某节点的 type="normal"时，对应传入参数为`approverId`；
-<br>&nbsp;&nbsp;若某节点的 type="countersign"时，对应传入参数为`signerId`；
+- 在上一步获取的流程实例中，<br/>&nbsp;&nbsp;若某节点的 type="normal"时，对应传入参数为`approverId`；
+<br/>&nbsp;&nbsp;若某节点的 type="countersign"时，对应传入参数为`signerId`；
 
-- 在上一步获取的流程实例中，<br>&nbsp;&nbsp;若某节点的 type="normal"，且 allStaffs="true" 时，可传入企业内任意员工 ID，仅 允许传入一个；
-<br>&nbsp;&nbsp;若某节点的 type="countersign"，且 allStaffs="true" 时，可传入企业内任意员工 ID，允许传入 多个；
+- 在上一步获取的流程实例中，<br/>&nbsp;&nbsp;若某节点的 type="normal"，且 allStaffs="true" 时，可传入企业内任意员工 ID，仅 允许传入一个；
+<br/>&nbsp;&nbsp;若某节点的 type="countersign"，且 allStaffs="true" 时，可传入企业内任意员工 ID，允许传入 多个；
 
-- 在上一步获取的流程实例中，若某节点的 allstaffs="false"，且 isauto="false"：<br>&nbsp;&nbsp;当其 type="normal"时，需传入 staffIds 数组中的任意一个员工 ID；
-<br>&nbsp;&nbsp;当其 type="countersign"时，需传入 staffIds 数组中的任意员工 ID，允许传入 多个；
+- 在上一步获取的流程实例中，若某节点的 allstaffs="false"，且 isauto="false"：<br/>&nbsp;&nbsp;当其 type="normal"时，需传入 staffIds 数组中的任意一个员工 ID；
+<br/>&nbsp;&nbsp;当其 type="countersign"时，需传入 staffIds 数组中的任意员工 ID，允许传入 多个；
 
-- 在上一步获取的流程实例中，若某节点的 allstaffs="false"，且 isauto="true"：<br>&nbsp;&nbsp;当其 type="normal"时，需传入 staffIds 数组中的任意一个员工 ID；
-<br>&nbsp;&nbsp;当其 type="countersign"时，需传入 staffIds 数组中的所有员工 ID
+- 在上一步获取的流程实例中，若某节点的 allstaffs="false"，且 isauto="true"：<br/>&nbsp;&nbsp;当其 type="normal"时，需传入 staffIds 数组中的任意一个员工 ID；
+<br/>&nbsp;&nbsp;当其 type="countersign"时，需传入 staffIds 数组中的所有员工 ID
 
 <br/>
 

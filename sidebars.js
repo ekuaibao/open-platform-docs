@@ -123,23 +123,23 @@ const sidebars = {
         "open-api/feetype/question-answer"
       ],
     },
-    // {
-    //   type: "category",
-    //   label: "单据模板",
-    //   items: [
-    //     "open-api/forms/info",
-    //     "open-api/forms/get-specifications-latest",
-    //     "open-api/forms/get-specifications-versioned",
-    //     "open-api/forms/get-specifications-details",
-    //     "open-api/forms/get-template-byid",
-    //     "open-api/forms/get-template-list",
-    //     "open-api/forms/get-apportion-template-list",
-    //     "open-api/forms/create-custom-field",
-    //     "open-api/forms/add-global-field",
-    //     "open-api/forms/get-customs-param",
-    //     "open-api/forms/question-answer"
-    //   ],
-    // },
+    {
+      type: "category",
+      label: "单据模板",
+      items: [
+        "open-api/forms/info",
+        "open-api/forms/get-specifications-latest",
+        "open-api/forms/get-specifications-versioned",
+        "open-api/forms/get-specifications-details",
+        "open-api/forms/get-template-byId",
+        "open-api/forms/get-template-list",
+        "open-api/forms/get-apportion-template-list",
+        "open-api/forms/create-custom-field",
+        "open-api/forms/add-global-field",
+        "open-api/forms/get-customs-param",
+        "open-api/forms/question-answer"
+      ],
+    },
     // {
     //   type: "category",
     //   label: "单据",

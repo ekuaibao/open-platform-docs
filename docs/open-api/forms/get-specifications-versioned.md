@@ -1,38 +1,40 @@
 # 获取历史版本单据模板列表
 
->⚠️ 注意：
+import Control from "../../../components/Control";
 
->单据模板最后一次修改保存后的版本为当前版本，最后一次修改之前的版本都为历史版本。
+<Control
+method="GET"
+url="/api/openapi/v1/specifications/versionedByType"
+/>
 
-{% httpverb "get" %} /api/openapi/v1/specifications/versionedByType {% endhttpverb %}
+:::tip
+- 单据模板最后一次修改保存后的版本为当前版本，最后一次修改之前的版本都为历史版本。
+:::
 
-#### Query Parameters:
+## Query Parameters
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken**          | String  | 认证token	  | 必填   | - | [通过授权接口获取](/getting-started/auth.html) |
-| **type**                 | String  | 单据类型	  | 必填   | - |  `expense`:报销单 `loan`:借款单 `requisition`:申请单 `payment`:付款单 `custom`:通用审批单(基础单据)  |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken**          | String  | 认证token	  | 必填   | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **type**                 | String  | 单据类型	  | 必填   | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`requisition` : 申请单<br/>`payment` : 付款单<br/>`custom` : 通用审批单(基础单据) |
 | **specificationGroupId** | String  | 单据模板组ID | 非必填 | - | 单据模板组ID |
 
-<br/>
-#### CURL:
-
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifications/versionedByType?accessToken=qUMbutefrU8U00&type=expense&specificationGroupId' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items": [
         {
-            "id": "C20bu2n6osbc00:ebd338960d9053892b3fd86dfa6f31690d014de7",  //现在模板ID
-            "name": "差旅报销单",  //模板名称
-            "originalId": "C20bu2n6osbc00", //原模板ID
-            "active": true  //是否启用
+            "id": "C20bu2n6osbc00:ebd338960d9053892b3fd86dfa6f31690d014de7",  //单据模板版本ID
+            "name": "差旅报销单",                                              //单据模板名称
+            "originalId": "C20bu2n6osbc00",                                   //单据模板ID
+            "active": true                                                    //是否启用
         },
         {
             "id": "GQgbu2n6osbI00:55d73bf2a46a1e4d0c9c0e728ab6c36c68484b01",
@@ -50,44 +52,3 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifica
 }
 ```
 
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-	table th:nth-of-type(1) { 
-		width: 20%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(2) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(3) {
-		width: 20%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(4) {
-		width: 8%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(5) {
-		width: 7%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(6) {
-		width: 35%;
-		white-space: nowrap;
-	}
-
-</style>

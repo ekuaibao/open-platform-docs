@@ -27,9 +27,9 @@
 | **approveId**             | String  | 审批人ID | 必填  | - | 通过[获取员工列表](/corporation/get-all-staffs.html)获取 |
 | **action**                | Object  | 审批动作 | 必填  | - | 审批动作 |
 | **action/comment**        | String  | 备注    | 非必填 | - | 备注信息 |
-| **action/name**           | String  | 执行动作 | 必填  | - |  `freeflow.agree`:同意<br>`freeflow.reject`:驳回 |
-| **action/rejectTo**       | String  | 驳回目标节点 | 非必填 | NULL | 节点实例id，可通过[获取单据详情](/flows/get-forms-details.md)接口获取。<br>如果忽略此参数，则驳回给提交人 |
-| **action/resubmitMethod** | String  | 驳回后再次提交送审方式 | 非必填 | - | 驳回时必填<br>`FROM_START`:从头开始走审批流程<br>`TO_REJECTOR`:直接提交给驳回者 |
+| **action/name**           | String  | 执行动作 | 必填  | - |  `freeflow.agree`:同意<br/>`freeflow.reject`:驳回 |
+| **action/rejectTo**       | String  | 驳回目标节点 | 非必填 | NULL | 节点实例id，可通过[获取单据详情](/flows/get-forms-details.md)接口获取。<br/>如果忽略此参数，则驳回给提交人 |
+| **action/resubmitMethod** | String  | 驳回后再次提交送审方式 | 非必填 | - | 驳回时必填<br/>`FROM_START`:从头开始走审批流程<br/>`TO_REJECTOR`:直接提交给驳回者 |
 
 ### CURL:
 ```json

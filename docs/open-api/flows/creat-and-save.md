@@ -14,7 +14,7 @@
 | :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
 | **accessToken** | String  | 通过授权接口获取           | 必填   | -     |  [通过授权接口获取](/getting-started/auth.html)  |
 | **isCommit**    | Boolean | 单据是否直接提审           | 非必填  | false |  `true`:单据直接提审 `false`:单据保存草稿  |
-| **isUpdate**    | Boolean | 直接提审失败时是否保存单据草稿 | 非必填  | false | `isCommit`参数为`true`时该参数有效<br>`true`:提审失败时保存草稿<br>`false`: 提审失败时不保存草稿 |
+| **isUpdate**    | Boolean | 直接提审失败时是否保存单据草稿 | 非必填  | false | `isCommit`参数为`true`时该参数有效<br/>`true`:提审失败时保存草稿<br/>`false`: 提审失败时不保存草稿 |
 
 >⚠️ 注意：
 >- 与业务画面上的保存单据功能一样，按格式组织数据，保存单据信息。
@@ -31,7 +31,7 @@
 | :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
 |**form**                                             | Object | 单据信息                     | 必填  | - | 单据信息数据 |
 |**form/title**                                       | String | 单据标题                     | 必填  | - | 单据标题 |
-|**form/submitterId**                                 | String | 单据提交人ID<br>(员工staffId) | 必填  | - | 通过[获取员工列表](/corporation/get-all-staffs.html)获取 |
+|**form/submitterId**                                 | String | 单据提交人ID<br/>(员工staffId) | 必填  | - | 通过[获取员工列表](/corporation/get-all-staffs.html)获取 |
 |**form/expenseDate**                                 | String | 报销日期                     | 非必填 | 当前日期 | 毫秒级时间戳 |
 |**form/expenseDepartment**                           | String | 报销部门ID                   | 非必填 | 提交人的默认部门 | 通过[获取部门列表](/corporation/get-departments.html)获取 |
 |**form/description**                                 | String | 描述                        | 非必填 | - | 描述 |
@@ -45,8 +45,8 @@
 |**form/details/feeTypeForm/amount**                  | Object | 报销金额                     | 必填  | - | 报销金额 |
 |**form/details/feeTypeForm/feeDate**                 | String | 费用日期                     | 必填  | - | 毫秒级时间戳 |
 |**form/details/feeTypeForm/invoiceForm**             | Object | 发票相关信息                  | 非必填  | - | 根据单据模板决定 |
-|**form/details/feeTypeForm/invoiceForm/type**        | String | 发票开票类型                  | 必填  | - | `发票相关信息`参数存在时有效<br>`unify`:统一开票<br>`wait`:待开发票<br>`exist`:已有发票<br>`noExist`:无发票<br>`noWrite`:无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
-|**form/details/feeTypeForm/invoiceForm/attachments** | Array  | 发票附件                     | 非必填 | - | **无法对发票附件进行验真查重**。<br>需要先通过[上传附件](/attachment/attachment-upload.html)上传数据,然后使用接口返回值为参数 |
+|**form/details/feeTypeForm/invoiceForm/type**        | String | 发票开票类型                  | 必填  | - | `发票相关信息`参数存在时有效<br/>`unify`:统一开票<br/>`wait`:待开发票<br/>`exist`:已有发票<br/>`noExist`:无发票<br/>`noWrite`:无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
+|**form/details/feeTypeForm/invoiceForm/attachments** | Array  | 发票附件                     | 非必填 | - | **无法对发票附件进行验真查重**。<br/>需要先通过[上传附件](/attachment/attachment-upload.html)上传数据,然后使用接口返回值为参数 |
 |**form/details/feeTypeForm/consumptionReasons**      | String | 消费事由                     | 非必填 | - | 消费事由 |
 |**form/details/feeTypeForm/apportions**              | Array  | 分摊明细                     | 非必填 | - | 根据单据模板决定 |
 |**form/details/feeTypeForm/apportions/apportionForm**|	Object | 分摊明细具体信息               | 非必填 | - | 分摊明细具体信息 |
@@ -455,7 +455,7 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 
 #####b) 金额类型字段
 
-字段的「type」为【money】的，为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服<br>
+字段的「type」为【money】的，为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服<br/>
 除「standard」外，其他参数请与示例保持一致，参考示例如下:
 ```json
 "amount": {
@@ -497,7 +497,7 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 
 #####d) 日期范围类型字段
 
-字段的「type」为【dateRange】的，为日期范围类型字段，以 Unix timestamp 对象格式传入; <br>
+字段的「type」为【dateRange】的，为日期范围类型字段，以 Unix timestamp 对象格式传入; <br/>
 ```json
 "u_日期范围": {
     "start": 1562036426574,
@@ -555,7 +555,7 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 ```
 
 #####l) 发票(发票形式)字段
-字段的「type」为【invoice】时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件<br>
+字段的「type」为【invoice】时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件<br/>
 ```json
 "invoiceForm":{
     "type":"exist",  //已有发票
@@ -635,7 +635,7 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
    }
 ]
 ```
-\*apportionMoney：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服<br>
+\*apportionMoney：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服<br/>
 除「standard」外，其他内容请与示例保持一致。
 
 \*项目：是自定义档案-项目中的档案项ID，即[获取自定义档案项（不带可见范围）](/dimensions/get-dimension-items.html)中返回的 id

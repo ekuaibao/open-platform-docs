@@ -1,36 +1,37 @@
 # 根据企业ID获取单据模版列表
 
-{% httpverb "get" %} /api/openapi/v2/specifications {% endhttpverb %}
+import Control from "../../../components/Control";
 
-> ⚠️ 注意：
+<Control
+method="GET"
+url="/api/openapi/v2/specifications"
+/>
 
-> 只返回未停用、未删除的模版信息
+:::tip
+- 只返回未停用、未删除的模版信息。
+:::
 
-#### Query Parameters:
+## Query Parameters
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken** | String  | 认证token	| 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-<br/>
-
-#### CURL:
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifications?accessToken=f8QbuH2hwQ5E00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
 
-<br/>
-
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items": [
         {
-            "id": "Kk09lCDmlg3Q00", // 单据模版ID
-            "name": "日常报销单", // 单据模版名称
-            "type": "expense" // 单据类型：requisition：申请单、 expense：报销单、 loan：借款单、 custom：通用审批单(基础单据)、 payment：付款单
+            "id": "Kk09lCDmlg3Q00",  //单据模版ID
+            "name": "日常报销单",     //单据模版名称
+            "type": "expense"        //单据类型：requisition：申请单、 expense：报销单、 loan：借款单、 custom：通用审批单(基础单据)、 payment：付款单
         },
         {
             "id": "MZU9pMXIVQ8M00",

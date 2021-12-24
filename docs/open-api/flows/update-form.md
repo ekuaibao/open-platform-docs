@@ -22,7 +22,7 @@
 | :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
 |**form**| Object | 单据信息 | 必填 | - | 单据信息数据 |
 |**form/title**| String | 单据标题 | 必填 | - | 单据标题 |
-|**form/submitterId**| String | 单据提交人ID<br>(员工staffId) | 必填 | - | 通过[获取员工列表](/corporation/get-all-staffs.html)获取 |
+|**form/submitterId**| String | 单据提交人ID<br/>(员工staffId) | 必填 | - | 通过[获取员工列表](/corporation/get-all-staffs.html)获取 |
 |**form/expenseDate**| String | 报销日期 | 必填 | - | 毫秒级时间戳 |
 |**form/expenseDepartment**| String | 报销部门ID | 必填 | - | 通过[获取部门列表](/corporation/get-departments.html)获取 |
 |**form/description**| String | 描述 | 非必填 | - | 描述 |
@@ -35,7 +35,7 @@
 |**form/details/feeTypeForm/amount**| Object | 报销金额 | 必填 | - | 报销金额 |
 |**form/details/feeTypeForm/feeDate**| String | 费用日期 | 必填 | - | 毫秒级时间戳 |
 |**form/details/feeTypeForm/invoiceForm**| Object | 发票相关信息 | 必填 | - | 根据单据模板决定 |
-|**form/details/feeTypeForm/type**| String | 发票开票类型 | 必填 | - | `wait`:待开发票<br>`exist`:已有发票<br>`noExist`:无发票<br>`noWrite`:无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
+|**form/details/feeTypeForm/type**| String | 发票开票类型 | 必填 | - | `wait`:待开发票<br/>`exist`:已有发票<br/>`noExist`:无发票<br/>`noWrite`:无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
 |**form/details/feeTypeForm/attachments**| Array | 发票附件 | 非必填 | - | 需要先通过[上传附件](/attachment/attachment-upload.html)上传数据,然后使用接口返回值为参数 |
 |**form/details/feeTypeForm/consumptionReasons**| String | 消费事由 | 非必填 | - | 消费事由 |
 |**form/details/feeTypeForm/apportions**| Array | 分摊明细 | 非必填 | - | 根据单据模板决定 |

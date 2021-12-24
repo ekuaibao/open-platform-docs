@@ -1,17 +1,22 @@
-# 创建自定义字段（全局字段）
+# 创建自定义字段(全局字段)
 
-{% httpverb "post" %} /api/openapi/v1/property/addPropertySet {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="POST"
+url="/api/openapi/v1/property/addPropertySet"
+/>
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken** | String  | 认证token	| 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+## Query Parameters
+
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 #### Body Parameters:
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
 |**properties**                   | Array   | 字段信息      | 必填  | - | 字段信息 | 
 |**properties/label**             | String  | 字段名称      | 必填  | - | 字段名称 | 
 |**properties/canAsDimension**    | Boolean | 是否自定义档案 | 非必填 | false | 是否自定义档案 | 
@@ -19,17 +24,14 @@
 |**properties/dataType/type**     | String  | 字段类别      | 必填  | - | 可参考"示例" | 
 |**properties/dataType/entity**   | String  | 引用对象      | 非必填 | - | `type`为`ref`时必填，可参考"示例" | 
 |**properties/dataType/elemType** | Object  | 附件信息      | 非必填 | - | `type`为`list`时必填，可参考"示例" | 
-|**properties/dataType/unit**     | String  | 单位         | 非必填 | - | `type`为`number`时填写，非必填<br>可参考"示例"，如：`kg``cm`等 | 
+|**properties/dataType/unit**     | String  | 单位         | 非必填 | - | `type`为`number`时填写，非必填<br/>可参考"示例"，如：`kg``cm`等 | 
 |**properties/dataType/scale**    | Number  | 小数位数      | 非必填 | - | `type`为`number`时必填，可参考"示例" | 
 
->⚠️ 注意：
+:::tip
+- 数据类型有多种情况，注意甄别，可参考"示例"。
+:::
 
-> 数据类型有多种情况，注意甄别， 可参考"示例"。
-
-<br/>
-
-#### CURL:
-
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/property/addPropertySet?accessToken=f8QbuH2hwQ5E00' \
 --header 'content-type: application/json' \
@@ -64,8 +66,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/property
             "canAsDimension":false,
             "dataType":{
                 "type":"number",//数字
-                "unit":"kg", //单位
-                "scale": 3 //小数位数
+                "unit":"kg",    //单位
+                "scale": 3      //小数位数
             }
         },
         {
@@ -142,15 +144,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/property
 }'
 ```
 
-<br/>
-
-#### 成功响应:
+## 成功响应
 ```text
-code 204
+    code 204
 ```
 
-#### 失败响应:
-type参数值所对应的其他必填参数未填写或填写错误时，返回类似响应数据
+## 失败响应
+`type` 参数值所对应的其他必填参数未填写或填写错误时，返回类似响应数据
 ```json
 {
     "errorCode": 400,
