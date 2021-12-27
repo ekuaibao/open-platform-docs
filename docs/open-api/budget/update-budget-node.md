@@ -1,40 +1,46 @@
+---
+slug: update-budget-node
+title: 更新预算节点(废弃)
+authors: [张国阳]
+---
+
 # ~~更新预算节点~~
+更新指定预算节点的预算金额或负责人
 
-> ⚠️注意：
->
-> 不推荐使用，接口废弃，不再更新。推荐使用【批量更新(新增/修改/删除)预算节点】接口。
+:::danger
+不推荐使用，接口废弃，不再更新。推荐使用【批量更新(新增/修改/删除)预算节点】接口
+:::
 
-更新指定预算节点的预算金额或负责人。
+import Control from "../../../components/Control";
 
-{% httpverb "put" %}  /api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/update {% endhttpverb %}
+<Control
+method="PUT"
+url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/update"
+/>
 
-#### Path Parameters:
+## Path Parameters
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **budgetId** | String | 预算树id | 必填 |  - | [预算树id获取](/budget/get-budget-list.html) |
-| **nodeId** | String | 要更新的预算节点id | 必填 | - | [预算节点id获取](/budget/get-budget-details.html) |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **budgetId** | String | 预算树id | 必填 |  - | [预算树id获取](/docs/open-api/budget/get-budget-list) |
+| **nodeId** | String | 要更新的预算节点id | 必填 | - | [预算节点id获取](/docs/open-api/budget/get-budget-details) |
 
-#### Query Parameters:
+## Query Parameters
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/getting-started/auth.html) |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
+## Body Parameters
 
-#### Body Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+|**moneys**              | Object | 预算节点信息 | 必填   | - | 第N个[周期](/docs/open-api/budget/question-answer)的预算总额 | 
+|**visibility**          | Object | 节点的负责人 | 必填   | - | 负责人能在相关报销单和预算报表中查看该预算节点的进度 |
+|**&emsp; ∟ staffIds**  | Array  | 人员ID      | 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
+|**&emsp; ∟ roleDefIds**| Array  | 角色ID      | 非必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
 
-|名称  |类型    |描述   |是否必填   |默认值  | 备注 |
-| :--------- | :------ | :---------| :------| :------|:------|
-|**moneys**| Object | 预算节点信息 | 必填 | - | 第N个[周期](/budget/question-answer.html)的预算总额 | 
-|**visibility**| Object | 节点的负责人 | 必填 |- | 负责人能在相关报销单和预算报表中查看该预算节点的进度 |
-|**visibility/staffIds**| Array | 人员ID | 非必填  |- | 值为[员工id](/corporation/get-all-staffs.html) |
-|**visibility/roleDefIds**| Array | 角色ID | 非必填  |- | 值为[角色id](/corporation/get-roles-group.html) |
-
-
-
-<br/>
-#### CURL:
+## CURL
 ```json
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$u6wbqiMW0Yqo00/node/$1597314291146001/update?accessToken=f_kbtOJVVwdo00' \
 --header 'content-type: application/json' \
@@ -52,9 +58,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
     }
 }'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 
 ```json
 {
@@ -65,11 +70,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 } 
 ```
 
-
-
-#### 失败响应:
-`budgetId` 不存在时， 返回此响应数据。
-
+## 失败响应
+`budgetId` 不存在时， 返回此响应数据
 ```json
 {
     "value": {
@@ -78,46 +80,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
     }
 }
 ```
-
-
-
-
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-	table td:nth-child(2) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-    table th:nth-of-type(3) {
-		width: 20%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(4) {
-		width: 8%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(5) {
-		width: 7%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(6) {
-		width: 25%;
-		white-space: nowrap;
-	}
-
-</style>
 
 
 
