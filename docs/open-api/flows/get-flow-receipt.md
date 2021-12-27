@@ -1,26 +1,31 @@
 # 获取回单下载链接地址
 根据单据id获取回单下载链接地址
 
-{% httpverb "get" %} /api/openapi/v1/flowDetails/getReceipt/$flowId {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Path Parameters:
+<Control
+method="GET"
+url="/api/openapi/v1/flowDetails/getReceipt/$flowId"
+/>
 
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **flowId** | String  |单据的id|必填| - |  通过其他api接口获取或者出站消息|
+## Path Parameters
 
-#### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **flowId** | String | 单据的id | 必填 | - | 通过其他api接口获取或者出站消息 |
 
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **accessToken** | String  |认证token      |必填    | - |  [通过授权接口获取](/getting-started/auth.html)  |
+## Query Parameters
 
-#### 示例:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken**    | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+
+## CURL
 ```json
-http://app.ekuaibao.com/api/openapi/v1/flowDetails/getReceipt/$oYo9niZxz4po00?accessToken=8f09lEj3rc0o00
+curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/flowDetails/getReceipt/$Udscc9A3o8H800?accessToken=ID_3uUVAxi01Zw:PCx3rwm3aA00qM'
 ```
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value": {

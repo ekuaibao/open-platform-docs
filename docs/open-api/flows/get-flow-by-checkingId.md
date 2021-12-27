@@ -1,30 +1,32 @@
 # 获取企业对账单管理的子对账单
 根据对账单ID获取该对账单所管理的子对账单详情，子对账单就是一个个的报销单
 
->⚠️ 注意：
-> 
-> 【对账结算中心】模块需要开通【对账结算管理】功能！
+:::tip
+【对账结算中心】模块需要开通【对账结算管理】功能！
+:::
 
-{% httpverb "get" %}  /api/openapi/v1/getFlowByCheckingId {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="GET"
+url="/api/openapi/v1/getFlowByCheckingId"
+/>
 
-| 名称               | 类型   | 描述               | 是否必填 | 默认值 | 备注                                           |
-| :----------------- | :----- | :----------------- | :------- | :----- | :--------------------------------------------- |
-| **accessToken**    | String | 通过授权接口获取 | 必填     | - | [通过授权接口获取](/getting-started/auth.html) |
-| **checkingBillId** | String | 对账单ID    | 必填     | - | 对账结算中心-对账结算中每条数据对应的ID,详见下方截图位置 |
+## Query Parameters
 
-<br/>
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken**    | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **checkingBillId** | String | 对账单ID  | 必填 | - | 对账结算中心-对账结算中每条数据对应的ID,详见下方截图位置 |
 
-#### CURL:
+## CURL
 ```json
 curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/getFlowByCheckingId?checkingBillId=ID_3hCyl5N02eI&accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "items": [
@@ -180,7 +182,7 @@ curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/getFlowByC
 }
 ```
 
-#### 失败响应:
+## 失败响应
 对账单ID错误或者不存在时，返回空数据，请检查对账单ID是否正确
 ```json
 {
@@ -188,17 +190,12 @@ curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/getFlowByC
 }
 ```
 
-#### 下图为系统中对账单所在位置
+## 下图为系统中对账单所在位置
+- 企业对账单
+ ![企业对账单](images/企业对账单.png)
 
-企业对账单
-![企业对账单](/flows/images/企业对账单.png)
+- 子对账单概览
+ ![子对账单概览](images/子对账单概览.png)
 
-<br/>
-
-子对账单概览
-![子对账单概览](/flows/images/子对账单概览.png)
-
-<br/>
-
-子对账单详情
-![子对账单详情](/flows/images/子对账单详情.png)
+- 子对账单详情
+ ![子对账单详情](images/子对账单详情.png)

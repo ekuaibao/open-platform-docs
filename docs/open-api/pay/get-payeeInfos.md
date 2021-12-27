@@ -1,5 +1,5 @@
 # 获取收款账号
-根据银行账号、账户名称、账户id来获取未停用的账号信息（支持翻页）。
+可以根据`银行账号`或者`账户名称`或者`账户id`来获取收款账号信息（支持翻页）
 
 import Control from "../../../components/Control";
 
@@ -12,23 +12,23 @@ url="/api/openapi/v2/payeeInfos"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token  | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **count**       | Number  | 每页总数    | 必填 | 0 | 最大不能超过`1000` |
-| **start**       | Number  | 开始查询索引 | 必填 | 0 | 从`0`开始 |
-| **names**       | String  | 账户名称    | 非必填 | - | 多个值用英文逗号进行分割 |
-| **cardNos**     | String  | 银行卡号    | 非必填 | - | 多个值用英文逗号进行分割 |
-| **ids**         | String  | 账号id     | 非必填 | - | 多个值用英文逗号进行分割 |
+| **accessToken** | String  | 认证token           | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **count**       | Number  | 每页总数             | 必填  | 0 | 最大不能超过`1000` |
+| **start**       | Number  | 开始查询索引          | 必填  | 0 | 从`0`开始 |
+| **names**       | String  | 账户名称             | 非必填 | - | 多个值用英文逗号进行分割 |
+| **cardNos**     | String  | 银行卡号             | 非必填 | - | 多个值用英文逗号进行分割 |
+| **ids**         | String  | 账号id              | 非必填 | - | 多个值用英文逗号进行分割 |
+| **active**      | Boolean | 查询条件：账户是否停用 | 非必填 | true | `true`:未停用`false`:已停用 |
 
 :::tip
-- 所有的请求参数都需要传，即使参数值为空也要带上参数。
+- 除`avtive`参数外，其他的请求参数都需要传，即使参数值为空也要带上参数。
 - 如果`names`、`cardNos`和`ids`都有值，则优先查询顺序为`ids` > `names` > `cardNos`，如果都没有值，则默认查询全部。
-- 该接口只返回企业未停用的账户信息。
-- 每页`10`条数据，那么第一页对应的参数为`start` = `0` 、`count` = `10` ，第二页为`start` = `10` 、 `count` = `10`；
+- 每页`10`条数据，那么第一页对应的参数为`start` = `0` 、`count` = `10` ，第二页为`start` = `10` 、 `count` = `10`。
 :::
 
 ## CURL
 ```json
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfos?accessToken=nGsbyxO8kgpE00&count=100&start=0&names&cardNos&ids' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfos?accessToken=ID_3uUlNBK01fM:PCx3rwm3aA00qM&count=100&start=0&names=&cardNos=&ids=&active=true' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
@@ -101,7 +101,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
 ```
 
 ## 失败响应
-请求链接中参数未完全填写， 则可能报以下错误。
+请求参数未完全填写， 则可能报以下错误。
 ```json
 {
     "servlet": "org.glassfish.jersey.servlet.ServletContainer-500d9427",

@@ -149,6 +149,7 @@ const sidebars = {
         "open-api/flows/get-forms-sequences",
         "open-api/flows/get-forms-sequences-ids",
         "open-api/flows/get-forms-details",
+        "open-api/flows/get-forms-details-byCode",
         "open-api/flows/get-loanInfo-ByFlowId",
         "open-api/flows/get-approve-state",
         "open-api/flows/get-approve",
