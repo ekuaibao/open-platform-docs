@@ -15,6 +15,7 @@
 企业收款账户对应的页面位置如下：
 
 ![image](images/account.png)
+
 ---
 
 

@@ -45,27 +45,26 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-  "id": "u4k7vw4bJwe400",
-  "contents": [
-    {
-      "path": [  
-        "企业名称","财务部","北京财务部"
-      ],
-      "staffs": [
-        "EAQbauUqXweI00:YCgbc2y8_Ivg00"
-      ]
-    },
-      {
-          "pathType": "code",
-          "path": [
+    "contents": [
+        {
+            "path": [  
+                "企业名称","财务部","北京财务部"
+            ],
+            "staffs": [
+                "EAQbauUqXweI00:YCgbc2y8_Ivg00"
+            ]
+        },
+        {
+            "pathType": "code",
+            "path": [
               "code1",
               "code2"
-          ],
-          "staffs": [
+            ],
+            "staffs": [
               "EAQbauUqXweI00:YCgbc2y8_Ivg00"
-          ]
-      }
-  ]
+            ]
+        }
+    ]
 }'
 ```
 

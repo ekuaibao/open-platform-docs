@@ -1,68 +1,68 @@
-### 新增收款账户
-
+# 新增收款账户
 添加一个新的收款账户。
 
-{% httpverb "post" %} /api/openapi/v2/payeeInfos {% endhttpverb %}
+import Control from "../../../components/Control";
 
+<Control
+method="POST"
+url="/api/openapi/v2/payeeInfos"
+/>
 
-#### Query Parameters:
+## Query Parameters
 
-| 名称       | 类型    | 描述                  | 是否必填      | 默认值 |  备注 |
-| :--------- | :------ | :------------------ | :------ |:------ |:------ |
-| **accessToken** | String   | 认证token  | 必填     | - | [通过授权接口获取](/getting-started/auth.html)  |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
+## Body Parameters
 
-#### Body Parameters:
-| 名称       | 类型     | 描述       | 是否必填     | 默认值   | 备注    |
-| :--------- | :------ | :---------| :--------- | :--------|:--------|
-| **staffId** | String   | 所有者id | 非必填  |  -  | 当`owner`=`INDIVIDUAL`时,所有者id必填。可以通过[获取员工列表](/corporation/get-all-staffs.html)获取 |
-| **type** | String   | 账户类型 | 必填 |  - | `PUBLIC`:对公账户 `PERSONAL`:个人账户 |
-| **name** | String   | 账户名 | 必填 |  -  |  账户名称 |
-| **cardNo** | String  | 银行卡号 | 必填 |  -  | 银行卡号 |
-| **bank** | String   | 银行名称 | 必填 |  -  | 银行名称 |
-| **branch** | String   | 支行名称 | 必填 |  -  | 支行名称 |
-| **owner** | String   | 所属类型 | 必填 |  -  | `INDIVIDUAL`:个人 `CORPORATION`:企业 |
-| **city** | String   | 银行所在城市 | 非必填 | -|  银行所在城市  |
-| **province** | String   | 银行所在省 | 非必填 |  -  | 银行所在省 |
-| **bankLinkNo** | String   | 银联号 | 非必填 |  -  | 当支行名称与易快报系统不匹配时，可通过银联号匹配 |
-| **certificateType** | String   | 证件类型 | 非必填 |  -  | 详细信息见下方【证件类型对照表】|
-| **certificateNo** | String   | 证件号 | 非必填 | -  | 证件号 |
-| **remark** | String   | 备注 | 非必填 | -  | 备注信息 |
-| **visibility** | Object  | 可见范围 | 非必填 | - | 可见范围对象 |
-| **visibility/fullVisible** | Boolean  | 是否全员可见 | 必填 | - | `true`:全员可见<br>`false`:部分可见<br>部分可见则仅有白名单中可见 |
-| **visibility/roles** | Array  | 角色白名单 | 必填 | - | 值为[角色id](/corporation/get-roles-group.html) |
-| **visibility/staffs** | Array  | 员工白名单 | 必填 | - | 值为[员工id](/corporation/get-all-staffs.html) |
-| **visibility/departments** | Array  | 部门白名单 | 必填 | - | 值为[部门id](/corporation/get-departments.html) |
-| **visibility/departmentsIncludeChildren** | Boolean  | 下属部门是否可见 | 必填 | - | `true`:可见<br>`false`:不可见 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **staffId**         | String | 所有者id    | 非必填 | - | 当`owner` = `INDIVIDUAL`时必填；<br/>当`owner` = `CORPORATION`时非必填;<br/>可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 |
+| **type**            | String | 账户类型    | 必填 | -| `PUBLIC` : 对公账户<br/>`PERSONAL` : 个人账户 |
+| **name**            | String | 账户名      | 必填 | - | 账户名称 |
+| **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |
+| **bank**            | String | 银行名称    | 必填 | - | 银行名称 |
+| **branch**          | String | 支行名称    | 必填 | - | 支行名称 |
+| **owner**           | String | 所属类型    | 必填 | - | `INDIVIDUAL` : 个人<br/>`CORPORATION` : 企业 |
+| **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
+| **province**        | String | 银行所在省   | 非必填 | - | 银行所在省 |
+| **bankLinkNo**      | String | 银联号      | 非必填 | - | 当支行名称与易快报系统不匹配时，可通过银联号匹配 |
+| **certificateType** | String | 证件类型    | 非必填 | - | 详细信息见下方【证件类型对照表】|
+| **certificateNo**   | String | 证件号     | 非必填 | - | 证件号 |
+| **remark**          | String | 备注       | 非必填 | - | 备注信息 |
+| **visibility**                          | Object   | 可见范围       | 非必填 | - | 可见范围对象 |
+| **&emsp; ∟ fullVisible**                | Boolean | 是否全员可见    | 必填 | - | `true` : 全员可见<br/>`false` : 部分可见<br/>部分可见则仅有白名单中可见 |
+| **&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
+| **&emsp; ∟ staffs**                     | Array   | 员工白名单      | 必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp; ∟ departments**                | Array   | 部门白名单      | 必填 | - | 值为[部门id](/docs/open-api/corporation/get-departments) |
+| **&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属部门是否可见 | 必填 | - | `true` : 可见<br/>`false` : 不可见 |
 
-> ⚠️说明：
+:::tip
+- 当`branch`支行名称不确定时，可填写”1“（branch必填且不可为null），并保证`bankLinkNo`银联号正确，系统会根据银联号自动回填支行名称。
+:::
 
-> 当`branch`支行名称不确定时，可填写”1“（branch必填且不可为null），并保证`bankLinkNo`银联号正确，系统会根据银联号自动回填支行名称。
-
-<br/>
-##### 证件类型对照表:
+### 证件类型对照表
 
 | 证件类型 | code |
 | :--- | :--- |
-| 居民身份证 | 01 |
-| 临时身份证 | 02 |
-| 护照 | 03 |
-| 户口簿 | 04 |
-| 军人身份证 | 05 |
-| 武装警察身份证 | 06 |
-| 港澳台居民往来内地通行证 | 07 |
-| 外交人员身份证 | 08 |
-| 外国人居留许可证 | 09 |
-| 边民出入境通行证 | 10 |
-| 其它 | 11 |
-| 澳居民来往内地通行证(香港) | 47 |
+| 居民身份证                | 01 |
+| 临时身份证                | 02 |
+| 护照                     | 03 |
+| 户口簿                   | 04 |
+| 军人身份证                | 05 |
+| 武装警察身份证             | 06 |
+| 港澳台居民往来内地通行证     | 07 |
+| 外交人员身份证             | 08 |
+| 外国人居留许可证            | 09 |
+| 边民出入境通行证            | 10 |
+| 其它                     | 11 |
+| 澳居民来往内地通行证(香港)   | 47 |
 | 港澳居民来往内地通行证(澳门) | 48 |
-| 湾居民来往大陆通行证 | 49 |
-| 纳税人识别号(TIN) | 54 |
+| 湾居民来往大陆通行证        | 49 |
+| 纳税人识别号(TIN)         | 54 |
 
-
-<br/>
-#### CURL:
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/payeeInfos?accessToken=cxEbrzNJSA3A00' \
 --header 'Content-Type: application/json' \
@@ -90,61 +90,23 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/payeeInf
       }
 }'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "id": "wfo9tKSDNc0000"
 }
 ```
 
-#### 失败响应:
-
+## 失败响应
 请勿重复添加同一相同账号，否则返回以下内容：
 ```json
 {
-      "errorCode": 412,
-      "errorMessage": "该账户已存在，无法创建",
-      "errorDetails": null,
-      "code": null,
-      "data": null
+    "errorCode": 412,
+    "errorMessage": "该账户已存在，无法创建",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```
 
-
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-	table td:nth-child(2) {
-		white-space: nowrap;
-	}
-	table td:nth-child(3) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-    table th:nth-of-type(4) {
-		width: 8%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(5) {
-		width: 7%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(6) {
-		width: 20%;
-		white-space: nowrap;
-	}
-
-</style>
