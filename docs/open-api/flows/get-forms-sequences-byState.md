@@ -1,24 +1,29 @@
 # 获取指定状态的单据列表(包含已删除单据)
 通过指定单据状态（`REJECTED`:已驳回 `PAYING`:待支付 `PROCESSING`:支付中 `PAID`:已支付）过滤单据列表（包含已删除单据），并且可以通过过滤字段把不需要的参数置空来缩小回应数据。
 
-{% httpverb "post" %} /api/openapi/v1/docSequences {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Query Parameters:
+<Control
+method="POST"
+url="/api/openapi/v1/docSequences"
+/>
+
+## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token          | 必填 | - |  [通过授权接口获取](/getting-started/auth.html)  |
-| **powerCode**   | String  | 如无特殊说明，传入219902或者219904即可  |必填    | - | `219902`:开放接口 `219904`:开放接口(新) |       
-| **type**        | String  | 单据类型            | 必填 | - | `expense`:报销单 `loan`:借款单 `repayment`:还款记录 `payment`:付款单 `requisition`:申请单 `custom`:通用审批单 `receipt`:收款单 |
-| **index**       | Number  | 分页查询的起始索引序号 | 必填 | - | 例如:当index=1484498318240时，会查询所有index>1484498318240的单据。在分页查询时，获取上一页的单据后，取所有单据中index的最大值作为下一次分页请求的index值即可。|
+| **accessToken** | String  | 认证token          | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **powerCode**   | String  | 功能授权码，传入<br/>219902或者219904即可 | 必填 | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |       
+| **type**        | String  | 单据类型            | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`repayment` : 还款记录<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单 |
+| **index**       | Number  | 分页查询的起始索引序号 | 必填 | - | 例如 : 当`index` = `1484498318240`时，会查询所有<br/>`index` > `1484498318240的`单据。<br/>在分页查询时，获取上一页的单据后，取所有单据中<br/>最大的`index`作为下一次分页请求的`index`值即可。 |
 | **count**       | Number  | 查询数据条数         | 必填 | - | 最大不能超过`1000` |
-| **state**       | Number  | 单据状态            | 非必填 | - | `REJECTED`:已驳回<br/>`PAYING`:待支付<br/>`PROCESSING`:支付中<br/>`PAID`:已支付<br/>不传值时，查询四种状态单据 |
+| **state**       | String  | 单据状态            | 非必填 | - | `REJECTED` : 已驳回<br/>`PAYING` : 待支付<br/>`PROCESSING` : 支付中<br/>`PAID` : 已支付<br/>不传值时，查询四种状态单据 |
 
-####  Body Parameters:（部分示例参数仅供参考）
+## Body Parameters(以下为部分示例参数仅供参考)
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**fields**                     | Object | 过滤字段            | 非必填  | - | 指定过滤掉的字段返回空值，从而缩小响应数据 |
+|**fields**                     | Object | 过滤字段            | 非必填  | - | 指定过滤掉的字段返回空值，<br/>从而缩小响应数据 |
 |**fields/docData**             | Object | 单据数据            | 非必填  | - | 包含所有单据数据 |
 |**fields/docData/code**        | String | 单据编号            | 非必填 | -  | 单据编号 |
 |**fields/docData/title**       | String | 单据标题            | 非必填 | -  | 单据标题 |
@@ -32,15 +37,13 @@
 |**fields/docData/logs**        | Object | 审批日志            | 非必填 | -  | 审批日志 |
 |**fields/docData/flowPlane**   | Object | 审批流信息          | 非必填 | -  | 审批流信息 |
 
-> ⚠️ 注意：
+:::tip
+- index这个值实际是一个时间戳（毫秒级），是单据状态改变的时间，即审批流审批后单据进入`rejected`已驳回、`paying`待支付、`PROCESSING`支付中、`paid`已支付，四种状态中任意一种的时间。最开始查询可以根据自己需求设定的"时间范围"查询，大概从什么时间开始，会返回对应大于等于该时间的单据。
+- 分页这块的实际操作：根据你查的最后一条单据数据的index值作为第二次分页查询的index值，即返回的就是第二页的值。
+- `body`参数可根据`response`回应数据层级自行设置，绝大部分参数都可以置空，一些特殊参数不允许置空会有错误提示。
+:::
 
-> - index这个值实际是一个时间戳（毫秒级），是单据状态改变的时间，即审批流审批后单据进入`rejected`已驳回、`paying`待支付、`PROCESSING`支付中、`paid`已支付，四种状态中任意一种的时间。最开始查询可以根据自己需求设定的"时间范围"查询，大概从什么时间开始，会返回对应大于等于该时间的单据。
-
-> - 分页这块的实际操作：根据你查的最后一条单据数据的index值作为第二次分页查询的index值，即返回的就是第二页的值。
-
-> - `body`参数可根据`response`回应数据层级自行设置，绝大部分参数都可以置空，一些特殊参数不允许置空会有错误提示。
-
-#### CURL
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSequences?accessToken=ID_3upGgPxN7Aw:djg8LshfUkfM00&powerCode=219902&type=expense&index=1600000000000&count=1&state=REJECTED' \
 --header 'Content-Type: application/json' \
@@ -94,9 +97,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
 }'
 ```
 
-#### 成功响应:
+## 成功响应
 
-{% codetabs name="expense", type="json" -%}
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="expense" label="报销单" default>
+
+```json
 {
     "count": 304,  //大于传入index的单据总量
     "items": [
@@ -344,7 +353,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
         }
     ]
 }
-{%- language name="loan", type="json" -%}
+```
+</TabItem>
+<TabItem value="loan" label="借款单">
+
+```json
 {
     "count": 17,
     "items": [
@@ -575,7 +588,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
         }
     ]
 }
-{%- language name="repayment", type="json" -%}
+```
+</TabItem>
+<TabItem value="repayment" label="还款记录">
+
+```json
 {
     "count": 14,
     "items": [
@@ -780,7 +797,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
         }
     ]
 }
-{%- language name="requisition", type="json" -%}
+```
+</TabItem>
+<TabItem value="requisition" label="申请单">
+
+```json
 {
     "count": 2035,
     "items": [
@@ -996,7 +1017,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
         }
     ]
 }
-{%- language name="payment", type="json" -%}
+```
+</TabItem>
+<TabItem value="payment" label="付款单">
+
+```json
 {
     "count": 1,
     "items": [
@@ -1279,7 +1304,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
         }
     ]
 }
-{%- language name="custom", type="json" -%}
+```
+</TabItem>
+<TabItem value="custom" label="通用审批单">
+
+```json
 {
     "count": 331,
     "items": [
@@ -1477,7 +1506,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
         }
     ]
 }
-{%- language name="receipt", type="json" -%}
+```
+</TabItem>
+<TabItem value="receipt" label="收款单">
+
+```json
 {
     "count": 1,
     "items": [
@@ -1693,7 +1726,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
         }
     ]
 }
-{%- endcodetabs %}
+```
+</TabItem>
+</Tabs>
 
 查询不到数据时返回如下：
 ```json
@@ -1703,7 +1738,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
 }
 ```
 
-#### 失败响应：
+## 失败响应
 ```json
 {
     "errorCode": 403,
@@ -1713,7 +1748,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
     "data": null
 }
 ```
-
 当过滤字段中包含不可过滤的字段时报错如下，请检查过滤字段：
 ```json
 {
@@ -1724,48 +1758,3 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
     "data": null
 }
 ```
-
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-	table td:nth-child(2) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-    table th:nth-of-type(1) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(2) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(3) {
-		width: 15%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(4) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(5) {
-		width: 8%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(6) {
-		width: 50%;
-		white-space: nowrap;
-	}
-
-</style>

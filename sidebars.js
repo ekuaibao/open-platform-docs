@@ -147,6 +147,7 @@ const sidebars = {
         "open-api/flows/introduce",
         "open-api/flows/forms-state",
         "open-api/flows/get-forms-sequences",
+        "open-api/flows/get-forms-sequences-byState",
         "open-api/flows/get-forms-sequences-ids",
         "open-api/flows/get-forms-details",
         "open-api/flows/get-forms-details-byCode",

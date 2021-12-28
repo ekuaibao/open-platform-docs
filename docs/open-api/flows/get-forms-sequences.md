@@ -1,55 +1,64 @@
 # 获取单据列表(包含已删除单据)
 
->⚠️ 注意：
+import Control from "../../../components/Control";
 
->此接口只能获取单据状态为`rejected`已驳回、`paying`待支付、`PROCESSING`支付中、`paid`已支付的单据（包含已删除的单据）。
+<Control
+method="GET"
+url="/api/openapi/v1/docSequences"
+/>
 
-{% httpverb "get" %} /api/openapi/v1/docSequences {% endhttpverb %}
+:::tip
+- 此接口只能获取单据状态为`rejected`已驳回、`paying`待支付、`PROCESSING`支付中、`paid`已支付的单据（包含已删除的单据）。
+:::
 
+## Query Parameters
 
-#### Query Parameters:
-
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **accessToken** | String  | 认证token          | 必填 | - |  [通过授权接口获取](/getting-started/auth.html)  |
-| **powerCode**   | String  | 如无特殊说明，传入219902或者219904即可  |必填    | - | `219902`:开放接口 `219904`:开放接口(新) |       
-| **type**        | String  | 单据类型            | 必填 | - | `expense`:报销单 `loan`:借款单 `repayment`:还款记录 `payment`:付款单 `requisition`:申请单 `custom`:通用审批单 `receipt`:收款单 |
-| **index**       | Number  | 分页查询的起始索引序号 | 必填 | - | 例如:当index=1484498318240时，会查询所有index>1484498318240的单据。在分页查询时，获取上一页的单据后，取所有单据中index的最大值作为下一次分页请求的index值即可。|
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String  | 认证token          | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **powerCode**   | String  | 功能授权码，传入<br/>219902或者219904即可 | 必填 | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |       
+| **type**        | String  | 单据类型            | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`repayment` : 还款记录<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单 |
+| **index**       | Number  | 分页查询的起始索引序号 | 必填 | - | 例如 : 当`index` = `1484498318240`时，会查询所有<br/>`index` > `1484498318240的`单据。<br/>在分页查询时，获取上一页的单据后，取所有单据中<br/>最大的`index`作为下一次分页请求的`index`值即可。 |
 | **count**       | Number  | 查询数据条数         | 必填 | - | 最大不能超过`1000` |
 
-> ⚠️ 注意：
+:::tip
+- index这个值实际是一个时间戳（毫秒级），是单据状态改变的时间，即审批流审批后单据进入`rejected`已驳回、`paying`待支付、`PROCESSING`支付中、`paid`已支付，四种状态中任意一种的时间。最开始查询可以根据自己需求设定的"时间范围"查询，大概从什么时间开始，会返回对应大于等于该时间的单据。
+- 分页这块的实际操作：根据你查的最后一条单据数据的index值作为第二次分页查询的index值，即返回的就是第二页的值。
+:::
 
->- index这个值实际是一个时间戳（毫秒级），是单据状态改变的时间，即审批流审批后单据进入`rejected`已驳回、`paying`待支付、`PROCESSING`支付中、`paid`已支付，四种状态中任意一种的时间。最开始查询可以根据自己需求设定的"时间范围"查询，大概从什么时间开始，会返回对应大于等于该时间的单据。
-
->- 分页这块的实际操作：根据你查的最后一条单据数据的index值作为第二次分页查询的index值，即返回的就是第二页的值
-
-#### CURL
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequences?accessToken=UvsbtOEHTsk000&powerCode=219902&type=expense&index=1551156015357&count=10'
 ```
 
-#### 成功响应:
+## 成功响应
 
-{% codetabs name="expense", type="json" -%}
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="expense" label="报销单" default>
+
+```json
 {
     "count":6345,
     "items":[
         {
             "index":1545640356544,
             "docData":{
-                "type":"expense",//单据类型
-                "id":"gps8pNvlUAvA00",//单据id 对应其他api的flowId
-                "corporationId":"e4A8oQS29g0w00",//企业id
-                "ownerId":"e4A8oQS29g0w00:C3I8oQCy9c4I00",//单据提交人id
+                "type":"expense",                           //单据类型
+                "id":"gps8pNvlUAvA00",                      //单据id 对应其他api的flowId
+                "corporationId":"e4A8oQS29g0w00",           //企业id
+                "ownerId":"e4A8oQS29g0w00:C3I8oQCy9c4I00",  //单据提交人id
                 "dataType":"expense",
-                "remark":null,//备注
-                "title":"差旅申请单00",//标题
-                "updateTime":1545640356200,//更新日期时间戳
-                "specificationId":"fIk8oQye68e000:37b805c6c4ddabbbaf6d08635bef057d7d7cef92",//模板ID
-                "owner":{//提交人信息
-                    "id":"e4A8oQS29g0w00:C3I8oQCy9c4I00",//员工id
-                    "name":"悟空",//姓名
-                    "departments":[//所属部门信息
+                "remark":null,               //备注
+                "title":"差旅申请单00",       //标题
+                "updateTime":1545640356200,  //更新日期时间戳
+                "specificationId":"fIk8oQye68e000:37b805c6c4ddabbbaf6d08635bef057d7d7cef92",  //模板ID
+                "owner":{                                  //提交人信息
+                    "id":"e4A8oQS29g0w00:C3I8oQCy9c4I00",  //员工id
+                    "name":"悟空",    //姓名
+                    "departments":[  //所属部门信息
                         {
                             "id":"e4A8oQS29g0w00",
                             "name":"西游记",
@@ -62,9 +71,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
                     "id":"e4A8oQS29g0w00",
                     "name":"西游记",
                     "code":""
-                },//报销部门信息
-                "code":"B18000003",//单据code
-                "userProps":{//单据字段信息
+                },                    //报销部门信息
+                "code":"B18000003",   //单据code
+                "userProps":{         //单据字段信息
                     "payeeId":{
                         "id":"p448pNvlUA4g00",
                         "code":"",
@@ -97,13 +106,13 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
                     "companyRealPay_standardNumCode":"156",
                     "companyRealPay_standardStrCode":"CNY"
                 },
-                "state":"PAYING",//单据状态
-                "project":null,//项目信息
+                "state":"PAYING",    //单据状态
+                "project":null,      //项目信息
                 "logs":null,
                 "flowPlan":null,
-                "sumAmount":280,//报销总金额
-                "writeOffAmount":0,//核销总金额
-                "expenseDate":1545640124664,//报销日期时间戳(毫秒级)
+                "sumAmount":280,     //报销总金额
+                "writeOffAmount":0,  //核销总金额
+                "expenseDate":1545640124664,  //报销日期时间戳(毫秒级)
                 "details":[
                     {
                         "amount":"80.00",
@@ -130,14 +139,14 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
                             "amount_rate":"1",
                             "attachments":"[]",
                             "expenseDate":"1545640124664",
-                            "invoiceForm":"{"type":"noWrite"}",
+                            "invoiceForm":"{\"type\":\"noWrite\"}",
                             "expenseMoney":"280.00",
-                            "feeDatePeriod":"{"end":1545640162379,"start":1545640162379}",
+                            "feeDatePeriod":"{\"end\":1545640162379,\"start\":1545640162379}",
                             "payMoney_rate":"1",
                             "amount_foreign":"",
                             "apportionMoney":"80.00",
                             "companyRealPay":"0.00",
-                            "u_日期范围":"{"end":1545640162399,"start":1545640162399}",
+                            "u_日期范围":"{\"end\":1545640162399,\"start\":1545640162399}",
                             "writtenOffMoney":"0.00",
                             "apportionPercent":"100",
                             "payMoney_foreign":"",
@@ -230,14 +239,14 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
                             "amount_rate":"1",
                             "attachments":"[]",
                             "expenseDate":"1545640124664",
-                            "invoiceForm":"{"type":"noWrite"}",
+                            "invoiceForm":"{\"type\":\"noWrite\"}",
                             "expenseMoney":"280.00",
-                            "feeDatePeriod":"{"end":1545640192814,"start":1545640192814}",
+                            "feeDatePeriod":"{\"end\":1545640192814,\"start\":1545640192814}",
                             "payMoney_rate":"1",
                             "amount_foreign":"",
                             "apportionMoney":"200.00",
                             "companyRealPay":"0.00",
-                            "u_日期范围":"{"end":1545640192865,"start":1545640192865}",
+                            "u_日期范围":"{\"end\":1545640192865,\"start\":1545640192865}",
                             "writtenOffMoney":"0.00",
                             "apportionPercent":"100",
                             "payMoney_foreign":"",
@@ -308,7 +317,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
                 ],
                 "writtenOffRecords":[],
                 "submitTime":1545640199568,
-                "payeeInfo": {//收款信息快照，单据审批后更新数据
+                "payeeInfo": {  //收款信息快照，单据审批后更新数据
                     "bank": "海外",
                     "city": "",
                     "name": "海外1",
@@ -324,19 +333,23 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
                     "branchCode": "BranchCode001",
                     "certificateNo": "",
                     "certificateType": "",
-                    "remark": "remark" //备注
+                    "remark": "remark"  //备注
                 },
-                "payorId":"p448pNvlUA4g00",//收款信息id
-                "paymentChannel":null,//付款渠道（方式），出纳进行支付操作才会有
-                "paymentAccountId":null,//付款账号，出纳进行支付操作才会有
+                "payorId":"p448pNvlUA4g00",  //收款信息id
+                "paymentChannel":null,       //付款渠道（方式），出纳进行支付操作才会有
+                "paymentAccountId":null,     //付款账号，出纳进行支付操作才会有
                 "payTime":null,
                 "multiplePayeesMode":null,
-                "channelTradeNo": null//批次号
+                "channelTradeNo": null       //批次号
             }
         }
     ]
 }
-{%- language name="loan", type="json" -%}
+```
+</TabItem>
+<TabItem value="loan" label="借款单">
+
+```json
 {
     "count":13,
     "items":[
@@ -419,7 +432,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
                 "money_foreign":null,
                 "money_foreignSymbol":null,
                 "money_foreignUnit":null,
-                "payeeInfo": {//收款信息快照，单据审批后更新数据
+                "payeeInfo": {  //收款信息快照，单据审批后更新数据
                      "bank": "招商银行",
                      "city": "北京市",
                      "name": "招商卡001",
@@ -435,18 +448,22 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
                      "branchCode": "",
                      "certificateNo": null,
                      "certificateType": null,
-                     "remark": "remark" //备注
+                     "remark": "remark"      //备注
                 },
-                "payorId":"p448pNvlUA4g00",//收款信息id
+                "payorId":"p448pNvlUA4g00",  //收款信息id
                 "paymentChannel":null,
                 "paymentAccountId":null,
                 "payTime":null,
-                "channelTradeNo": null//批次号
+                "channelTradeNo": null       //批次号
             }
         }
     ]
 }
-{%- language name="repayment", type="json" -%}
+```
+</TabItem>
+<TabItem value="repayment" label="还款记录">
+
+```json
 {
     "count": 1,
     "items": [
@@ -803,7 +820,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
         }
     ]
 }
-{%- language name="requisition", type="json" -%}
+```
+</TabItem>
+<TabItem value="requisition" label="申请单">
+
+```json
 {
     "count":1,
     "items":[
@@ -1064,12 +1085,12 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
                     "certificateType":"11",
                     "certificateNo":"12312",
                     "bankLinkNo":null,
-                    "remark": "remark" //备注
+                    "remark": "remark"   //备注
                 },
                 "payorId":"Gp09ebn1Ds8800",
                 "paymentChannel":"OFFLINE",
                 "paymentAccountId":"DA08B7ufk8cs00",
-                "payTime":1574152167547，
+                "payTime":1574152167547,
                 "loanMoney": null,
                 "repaymentDate": null,
                 "channelTradeNo": null
@@ -1077,7 +1098,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
         }
     ]
 }
-{%- language name="payment", type="json" -%}
+```
+</TabItem>
+<TabItem value="payment" label="付款单">
+
+```json
 {
     "count":1,
     "items":[
@@ -1336,8 +1361,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
         }
     ]
 }
+```
+</TabItem>
+<TabItem value="custom" label="通用审批单">
 
-{%- language name="custom", type="json" -%}
+```json
 {
     "count": 1,
     "items": [
@@ -1560,8 +1588,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
         }
     ]
 }
+```
+</TabItem>
+<TabItem value="receipt" label="收款单">
 
-{%- language name="receipt", type="json" -%}
+```json
 {
     "count": 1,
     "items": [
@@ -1971,8 +2002,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
         }
     ]
 }
-
-{%- endcodetabs %}
+```
+</TabItem>
+</Tabs>
 
 查询不到数据时返回如下：
 ```json
@@ -1982,7 +2014,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
 }
 ```
 
-#### 失败响应：
+## 失败响应
 ```json
 {
     "errorCode": 403,
@@ -1992,59 +2024,13 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequen
     "data": null
 }
 ```
-
 当单据类型错误时：
 ```json
 {
     "errorCode": 400,
-    "errorMessage": "type参数错误",  //请检查单据类型
+    "errorMessage": "type参数错误",      //请检查单据类型
     "errorDetails": null,
     "code": null,
     "data": null
 }
 ```
-
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-	table td:nth-child(2) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-    table th:nth-of-type(1) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(2) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(3) {
-		width: 15%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(4) {
-		width: 10%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(5) {
-		width: 8%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(6) {
-		width: 50%;
-		white-space: nowrap;
-	}
-
-</style>
