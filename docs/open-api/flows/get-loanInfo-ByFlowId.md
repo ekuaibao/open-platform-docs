@@ -7,7 +7,7 @@ method="GET"
 url="/api/openapi/v1/loans/getLoanInfoByFlowId/$`flowId`"
 />
 
-:::tip
+:::caution
 - 此接口是支持借款单以及包含开通借款权限的申请单，只要是单据中有借款的单据都会有借款包。
 :::
 

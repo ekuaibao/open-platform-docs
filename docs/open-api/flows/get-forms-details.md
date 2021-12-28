@@ -7,8 +7,8 @@ method="GET"
 url="/api/openapi/v1/flowDetails"
 />
 
-:::tip
-- 单据编号是面向企业唯一，单据的Id是面向系统唯一。
+:::caution
+- 单据状态为“**已删除**”的单据无法被查询到。
 :::
 
 ## Query Parameters
@@ -18,14 +18,14 @@ url="/api/openapi/v1/flowDetails"
 | **accessToken** | String  | 认证token | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **flowId**      | String  | 单据ID    | 必填 | - |  [一般通过出站消息获取单据Id信息](/docs/open-api/outbound-message/outbound-new) |
 
+:::tip
+- 单据编号是面向企业唯一，单据的Id是面向系统唯一。
+:::
+
 ## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetails?flowId=8ZAbsRr6_QfA00&accessToken=TNQbsyYQV80I00'
 ```
-
-:::tip
-- 单据状态为“**已删除**”的单据无法被查询到。
-:::
 
 ## 成功响应
 

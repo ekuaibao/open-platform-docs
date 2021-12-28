@@ -7,7 +7,7 @@ method="GET"
 url="/api/openapi/v1/docSequences"
 />
 
-:::tip
+:::caution
 - 此接口只能获取单据状态为`rejected`已驳回、`paying`待支付、`PROCESSING`支付中、`paid`已支付的单据（包含已删除的单据）。
 :::
 

@@ -8,6 +8,10 @@ method="GET"
 url="/api/openapi/v1/docs/[`ids`]"
 />
 
+:::caution
+- 单据状态为“**draft（草稿）**”的单据无法被查询到。
+:::
+
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
@@ -21,10 +25,6 @@ url="/api/openapi/v1/docs/[`ids`]"
 | **accessToken** | String  | 认证token          | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **powerCode**   | String  | 功能授权码，传入<br/>219902或者219904即可 | 必填 | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |       
 | **type**        | String  | 单据类型            | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`permit` : 授权单(商城超标审批申请单)<br/>`receipt` : 收款单 |
-
-:::tip
-- 单据状态为“**draft（草稿）**”的单据无法被查询到。
-:::
 
 ##  CURL
 ```json

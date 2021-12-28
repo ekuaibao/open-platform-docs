@@ -1,5 +1,5 @@
 # 获取指定状态的单据列表(包含已删除单据)
-通过指定单据状态（`REJECTED`:已驳回 `PAYING`:待支付 `PROCESSING`:支付中 `PAID`:已支付）过滤单据列表（包含已删除单据），并且可以通过过滤字段把不需要的参数置空来缩小回应数据。
+通过指定单据状态（ `REJECTED` : 已驳回 `PAYING` : 待支付 `PROCESSING` : 支付中 `PAID` : 已支付 ）过滤单据列表（包含已删除单据），并且可以通过过滤字段把不需要的参数置空来缩小回应数据。
 
 import Control from "../../../components/Control";
 
