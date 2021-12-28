@@ -1,5 +1,5 @@
 # 简单单据事件处理
-提供**撤销单据**和**删除单据**操作
+提供【**撤销单据**】和【**删除单据**】操作
 
 import Control from "../../../components/Control";
 
@@ -13,7 +13,7 @@ url="/api/openapi/v2/flow/data/$`flowId`/`action`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **flowId** | String  | 单据ID          | 必填 | - | [一般通过出站消息获取单据ID](/docs/open-api/outbound-message/outbound-new)|
-| **action** | String  | 单据的action操作 | 必填 | - | `retract`: 撤销操作 &emsp; `delete`: 删除操作 |
+| **action** | String  | 单据的action操作 | 必填 | - | `retract` : 撤销操作 &emsp; `delete` : 删除操作 |
 
 ## Query Parameters
 

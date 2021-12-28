@@ -1,10 +1,4 @@
-# 填写单据审批流程（单据提交）
-
-:::tip
-- 经由[创建单据]接口，正确保存数据后，配置审批人，调用此接口提交单据
-- 与业务画面上的提交单据功能一样，需要按格式组织审批流程节点信息数据，提交单据信息
-- 程序会对请求参数、body数据格式以及流程节点进行完整性与合法性校验
-:::
+# 填写单据审批流程(单据提交)
 
 import Control from "../../../components/Control";
 
@@ -12,6 +6,12 @@ import Control from "../../../components/Control";
 method="POST"
 url="/api/openapi/v2/flow/data/submitFlow"
 />
+
+:::tip
+- 经由[创建单据]接口，正确保存数据后，配置审批人，调用此接口提交单据
+- 与业务画面上的提交单据功能一样，需要按格式组织审批流程节点信息数据，提交单据信息
+- 程序会对请求参数、body数据格式以及流程节点进行完整性与合法性校验
+:::
 
 ## Query Parameters
 
@@ -24,7 +24,7 @@ url="/api/openapi/v2/flow/data/submitFlow"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**isUrgent**                  | Boolean | 是否加急      | 必填   | - | `true`:加急 &emsp; `false`:不加急 |
+|**isUrgent**                  | Boolean | 是否加急      | 必填   | - | `true` : 加急 &emsp; `false` : 不加急 |
 |**urgentReason**              | String  | 加急原因      | 非必填 | - | 加急原因 |
 |**nodes**                     | Array   | 节点信息      | 必填   | - | 至少一个节点信息 |
 |**&emsp; ∟ configNodeId**    | String  | 配置节点ID    | 必填   | - | 配置节点ID |
