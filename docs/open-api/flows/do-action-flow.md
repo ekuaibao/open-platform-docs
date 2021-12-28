@@ -1,36 +1,37 @@
 # 简单单据事件处理
-
 提供**撤销单据**和**删除单据**操作
 
-{% httpverb "post" %} /api/openapi/v2/flow/data/$`flowId`/`action` {% endhttpverb %}
+import Control from "../../../components/Control";
 
-#### Path Parameters:
+<Control
+method="POST"
+url="/api/openapi/v2/flow/data/$`flowId`/`action`"
+/>
 
-| 名称  | 类型  | 描述 | 是否必填 | 默认值 | 备注  |
-| :--- | :--- | :--- |:---    |:---   | :--- |
-| **flowId** | String  | 单据ID          | 必填 | - | [一般通过出站消息获取单据ID](/outbound-message/outbound-new.html)|
-| **action** | String  | 单据的action操作 | 必填 | - | `retract`: 撤销操作 `delete`: 删除操作 |
+## Path Parameters
 
-#### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **flowId** | String  | 单据ID          | 必填 | - | [一般通过出站消息获取单据ID](/docs/open-api/outbound-message/outbound-new)|
+| **action** | String  | 单据的action操作 | 必填 | - | `retract`: 撤销操作 &emsp; `delete`: 删除操作 |
 
-| 名称  | 类型  | 描述 | 是否必填 | 默认值 | 备注  |
-| :--- | :--- | :--- |:---    |:---   | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/getting-started/auth.html)  |
+## Query Parameters
 
-> ⚠️注意：
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-> - 删除操作，只能是驳回状态和草稿状态的单据
-> - 撤销操作，只能是审批中状态的单据（审批流需要配置允许撤回单据）
+:::caution
+- 删除操作，只能是驳回状态和草稿状态的单据
+- 撤销操作，只能是审批中状态的单据（审批流需要配置允许撤回单据）
+:::
 
-<br/>
-
-#### CURL:
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/data/$PQIbuN0nmYc800/retract?accessToken=cWEbn1cA0kjU00'
 ```
-<br/>
 
-#### 成功响应:
+## 成功响应
 ```json
 {
     "value":"",
@@ -124,7 +125,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/dat
 }
 ```
 
-#### 失败响应:
+## 失败响应
 
 ```json
 {

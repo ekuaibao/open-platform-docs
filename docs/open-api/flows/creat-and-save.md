@@ -1,57 +1,64 @@
 # 创建单据
 
-根据获取的单据模板和费用模板，按格式组织数据后，调用此接口保存单据信息
+:::tip
+- 根据获取的单据模板和费用模板，按格式组织数据后，调用此接口保存单据信息
+- 单据的编号是面向企业唯一，单据的ID是面向系统唯一
+:::
 
->⚠️ 注意：
+import Control from "../../../components/Control";
 
->单据的编号是面向企业唯一，单据的ID是面向系统唯一
+<Control
+method="POST"
+url="/api/openapi/v2/flow/data"
+/>
 
-{% httpverb "post" %} /api/openapi/v2/flow/data {% endhttpverb %}
+## Query Parameters
 
-#### Query Parameters:
-
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **accessToken** | String  | 通过授权接口获取           | 必填   | -     |  [通过授权接口获取](/getting-started/auth.html)  |
-| **isCommit**    | Boolean | 单据是否直接提审           | 非必填  | false |  `true`:单据直接提审 `false`:单据保存草稿  |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String  | 认证token                 | 必填   | -     | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **isCommit**    | Boolean | 单据是否直接提审            | 非必填  | false | `true`:单据直接提审 &emsp; `false`:单据保存草稿  |
 | **isUpdate**    | Boolean | 直接提审失败时是否保存单据草稿 | 非必填  | false | `isCommit`参数为`true`时该参数有效<br/>`true`:提审失败时保存草稿<br/>`false`: 提审失败时不保存草稿 |
 
->⚠️ 注意：
->- 与业务画面上的保存单据功能一样，按格式组织数据，保存单据信息。
->- 保存成功后，会返回该实例。
->- 程序会校验请求参数及body数据格式是否正确。
->- 传递参数支持计算公式自动计算，如果某个字段参数可以根据配置的计算公式在现有传参基础上计算出来结果参数，那么该字段可以不传值。
->- 传递参数支持求和公式自动计算，如果某个金额字段参数可以根据配置的求和公式在现有金额参数上计算结果，那么该字段可以不传值。
->- 传递参数支持档案关系关联参数，如果某个字段参数可以根据配置的档案关系在现有传参基础上查询出关联结果参数，那么该字段可以不传值。
->- 报销单传递参数支持关联申请单自动赋值，如果某个字段参数配置根据关联申请单自动赋值，那么该字段可以不传值。
+:::tip
+- 与业务画面上的保存单据功能一样，按格式组织数据，保存单据信息
+- 保存成功后，会返回该实例
+- 程序会校验请求参数及body数据格式是否正确
+- 传递参数支持计算公式自动计算，如果某个字段参数可以根据配置的计算公式在现有传参基础上计算出来结果参数，那么该字段可以不传值
+- 传递参数支持求和公式自动计算，如果某个金额字段参数可以根据配置的求和公式在现有金额参数上计算结果，那么该字段可以不传值
+- 传递参数支持档案关系关联参数，如果某个字段参数可以根据配置的档案关系在现有传参基础上查询出关联结果参数，那么该字段可以不传值
+- 报销单传递参数支持关联申请单自动赋值，如果某个字段参数配置根据关联申请单自动赋值，那么该字段可以不传值
+:::
 
-####  Body Parameters:（不同表单类型参数各不相同，以下仅为示例，详见单据模板）
+##  Body Parameters
+不同表单类型参数各不相同，以下仅为示例，详见单据模板
 
-| 名称       | 类型    | 描述            | 是否必填 | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-|**form**                                             | Object | 单据信息                     | 必填  | - | 单据信息数据 |
-|**form/title**                                       | String | 单据标题                     | 必填  | - | 单据标题 |
-|**form/submitterId**                                 | String | 单据提交人ID<br/>(员工staffId) | 必填  | - | 通过[获取员工列表](/corporation/get-all-staffs.html)获取 |
-|**form/expenseDate**                                 | String | 报销日期                     | 非必填 | 当前日期 | 毫秒级时间戳 |
-|**form/expenseDepartment**                           | String | 报销部门ID                   | 非必填 | 提交人的默认部门 | 通过[获取部门列表](/corporation/get-departments.html)获取 |
-|**form/description**                                 | String | 描述                        | 非必填 | - | 描述 |
-|**form/payeeId**                                     | String | 收款人信息ID                 | 必填  | - | 通过[获取收款账号信息](/pay/get-payeeInfos.html)获取 |
-|**form/specificationId**                             | String | 单据模板ID                   | 必填  | - | 通过[获取当前版本单据模板列表](/forms/get-specifications-latest.html)获取 |
-|**form/expenseLink**                                 | String | 关联申请                     | 非必填 | - | 需要关联的申请单ID |
-|**form/details**                                     | Array  | 费用明细                     | 必填  | - | 费用明细 |
-|**form/details/feeTypeId**                           | String | 费用类型ID                   | 必填  | - | 通过[获取费用类型](/feetype/get-feetypes.html)获取 |
-|**form/details/specificationId**                     | String | 费用类型模板ID                | 必填  | - | 通过[根据费用类型ids获取费用模板信息](/feetype/get-feetypes-list.html)获取 |
-|**form/details/feeTypeForm**                         | Object | 费用信息                     | 必填  | - | 费用信息,具体传参请见获取费用模板接口返回值 |
-|**form/details/feeTypeForm/amount**                  | Object | 报销金额                     | 必填  | - | 报销金额 |
-|**form/details/feeTypeForm/feeDate**                 | String | 费用日期                     | 必填  | - | 毫秒级时间戳 |
-|**form/details/feeTypeForm/invoiceForm**             | Object | 发票相关信息                  | 非必填  | - | 根据单据模板决定 |
-|**form/details/feeTypeForm/invoiceForm/type**        | String | 发票开票类型                  | 必填  | - | `发票相关信息`参数存在时有效<br/>`unify`:统一开票<br/>`wait`:待开发票<br/>`exist`:已有发票<br/>`noExist`:无发票<br/>`noWrite`:无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
-|**form/details/feeTypeForm/invoiceForm/attachments** | Array  | 发票附件                     | 非必填 | - | **无法对发票附件进行验真查重**。<br/>需要先通过[上传附件](/attachment/attachment-upload.html)上传数据,然后使用接口返回值为参数 |
-|**form/details/feeTypeForm/consumptionReasons**      | String | 消费事由                     | 非必填 | - | 消费事由 |
-|**form/details/feeTypeForm/apportions**              | Array  | 分摊明细                     | 非必填 | - | 根据单据模板决定 |
-|**form/details/feeTypeForm/apportions/apportionForm**|	Object | 分摊明细具体信息               | 非必填 | - | 分摊明细具体信息 |
-|**params**                                           | Object | 核销借款信息                  | 非必填 | - | 详细参数见下方示例 |
-#### CURL:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+|**form**                                        | Object | 单据信息         | 必填  | - | 单据信息数据 |
+|**&emsp; ∟ title**                              | String | 单据标题        | 必填   | - | 单据标题 |
+|**&emsp; ∟ submitterId**                        | String | 单据提交人ID    | 必填   | - | 通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 |
+|**&emsp; ∟ expenseDate**                        | String | 报销日期        | 非必填 | 当前日期 | 毫秒级时间戳 |
+|**&emsp; ∟ expenseDepartment**                  | String | 报销部门ID      | 非必填 | 提交人的默认部门 | 通过[获取部门列表](/docs/open-api/corporation/get-departments)获取 |
+|**&emsp; ∟ description**                        | String | 描述           | 非必填 | - | 描述 |
+|**&emsp; ∟ payeeId**                            | String | 收款人信息ID    | 必填   | - | 通过[获取收款账号信息](/docs/open-api/pay/get-payeeInfos)获取 |
+|**&emsp; ∟ specificationId**                    | String | 单据模板ID      | 必填  | - | 通过[获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)获取 |
+|**&emsp; ∟ expenseLink**                        | String | 关联申请        | 非必填 | - | 需要关联的申请单ID |
+|**&emsp; ∟ details**                            | Array  | 费用明细        | 必填  | - | 费用明细 |
+|**&emsp; &emsp; ∟ feeTypeId**                   | String | 费用类型ID      | 必填  | - | 通过[获取费用类型](/docs/open-api/feetype/get-feetypes)获取 |
+|**&emsp; &emsp; ∟ specificationId**             | String | 费用类型模板ID   | 必填  | - | 通过[根据费用类型ids获取费用模板信息](/docs/open-api/feetype/get-feetypes-list)获取 |
+|**&emsp; &emsp; ∟ feeTypeForm**                 | Object | 费用信息        | 必填  | - | 费用信息,具体传参请见获取费用模板接口返回值 |
+|**&emsp; &emsp; &emsp; ∟ amount**               | Object | 报销金额        | 必填  | - | 报销金额 |
+|**&emsp; &emsp; &emsp; ∟ feeDate**              | String | 费用日期        | 必填  | - | 毫秒级时间戳 |
+|**&emsp; &emsp; &emsp; ∟ invoiceForm**          | Object | 发票相关信息     | 非必填 | - | 根据单据模板决定 |
+|**&emsp; &emsp; &emsp; &emsp; ∟ type**          | String | 发票开票类型     | 必填  | - | 发票相关信息参数存在时有效<br/>`unify`:统一开票 &emsp; `wait`:待开发票<br/>`exist`:已有发票 &emsp; `noExist`:无发票<br/>`noWrite`:无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
+|**&emsp; &emsp; &emsp; &emsp; ∟ attachments**   | Array  | 发票附件        | 非必填 | - | **无法对发票附件进行验真查重**<br/>需要先通过[上传附件](/docs/open-api/attachment/attachment-upload)上传数据,然后使用接口返回值为参数 |
+|**&emsp; &emsp; &emsp; ∟ consumptionReasons**   | String | 消费事由        | 非必填 | - | 消费事由 |
+|**&emsp; &emsp; &emsp; ∟ apportions**           | Array  | 分摊明细        | 非必填 | - | 根据单据模板决定 |
+|**&emsp; &emsp; &emsp; &emsp; ∟ apportionForm** |	Object | 分摊明细具体信息 | 非必填 | - | 分摊明细具体信息 |
+|**params**                                      | Object | 核销借款信息     | 非必填 | - | 详细参数见下方示例 |
+
+## CURL
 报销单示例
 ```json
 curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/data?accessToken=ID_3tLWHTx0B8g:PCx3rwm3aA00qM' \
@@ -176,12 +183,12 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 }'
 ```
 
-*`expenseLink` 为关联申请字段，如单据无需关联申请，可不在 form 对象中添加该字段
+:::tip
+- `expenseLink` 为关联申请字段，如单据无需关联申请，可不在 form 对象中添加该字段
+- `specificationId` 为启用版本的单据模板 ID，即[获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)中返回的id
+:::
 
-*`specificationId` 为启用版本的单据模板 ID，即[获取当前版本单据模板列表](/forms/get-specifications-latest.html)中返回的 id
-
-#### 成功响应:
-
+## 成功响应
 ```json
 {
     "value": "",
@@ -361,8 +368,7 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 }
 ```
 
-#### 失败响应:
-
+## 失败响应
 单据模板错误，返回单据模板不存在，需要确认单据模板，对应字段`specificationId`值
 ```json
 {
@@ -374,9 +380,9 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 }
 ```
 
-### 字段填写规则
+## 字段填写规则
 
-#####a) 消费类型字段(details):
+### a) 消费类型字段(details):
 单据中的 details，表达的是「费用明细」，是一个数组，支持多条，参考如下:
 ```json
 "details": [
@@ -449,12 +455,10 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
     },
 ]
 ```
-\*`feeTypeId`:填入费用模板的 ID，即[获取当前版本单据模板列表](/forms/get-specifications-latest.html)中返回的 id
+- `feeTypeId`:填入费用模板的 ID，即[获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)中返回的 id
+- `specificationId`:填入启用版本的费用报销(或申请)模板 ID，即[根据费用类型ids获取费用模板信息](/docs/open-api/feetype/get-feetypes-list)中返回的 `expenseSpecificationId` 或 `requisitionSpecificationId`
 
-\*`specificationId`:填入启用版本的费用报销(或申请)模板 ID，即[根据费用类型ids获取费用模板信息](/feetype/get-feetypes-list.html)中返回的 `expenseSpecificationId` 或 `requisitionSpecificationId`
-
-#####b) 金额类型字段
-
+### b) 金额类型字段
 字段的「type」为【money】的，为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服<br/>
 除「standard」外，其他参数请与示例保持一致，参考示例如下:
 ```json
@@ -468,7 +472,7 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 }
 ```
 
-外币金额参数示例(所有参数均必填，且务必保证正确)：
+外币金额参数示例(所有参数均必填，且务必保证正确):
 ```json
 "amount": {
     "foreign": "100",         //外币金额值
@@ -488,16 +492,14 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 }
 ```
 
-#####c) 日期类型字段
-
-字段的「type」为【date】的，为日期类型字段，以 Unix timestamp 格式传入
+### c) 日期类型字段
+字段的「type」为[date]的，为日期类型字段，以 Unix timestamp 格式传入
 ```json
- "u_Z日期": 1639324800000
+   "u_Z日期": 1639324800000
 ```
 
-#####d) 日期范围类型字段
-
-字段的「type」为【dateRange】的，为日期范围类型字段，以 Unix timestamp 对象格式传入; <br/>
+### d) 日期范围类型字段
+字段的「type」为[dateRange]的，为日期范围类型字段，以 Unix timestamp 对象格式传入;
 ```json
 "u_日期范围": {
     "start": 1562036426574,
@@ -505,9 +507,8 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 }
 ```
 
-#####e) 附件类型字段
-
-字段的「type」为【select】，且「valueFrom」为【attachment】的，为附件类型字段，附件可通过[上传附件](/attachment/attachment-upload.html)接口，先上传文件到服务器上后，请求回应中获取单据中要上传附件的文件key等信息
+### e) 附件类型字段
+字段的「type」为[select]，且「valueFrom」为[attachment]的，为附件类型字段，附件可通过[上传附件](/docs/open-api/attachment/attachment-upload)接口，先上传文件到服务器上后，请求回应中获取单据中要上传附件的文件key等信息
 ```json
 "attachments":[
     {
@@ -518,44 +519,44 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 ]
 ```
 
-#####f) 部门类型字段
-字段的「type」为【select】，且「valueFrom」为【organization.Department】 的，为部门类型字段，部门字段需传入部门的 id ，部门 id 可通过[获取部门列表](/corporation/get-departments.html)接口获取
+### f) 部门类型字段
+字段的「type」为[select]，且「valueFrom」为[organization.Department]的，为部门类型字段，部门字段需传入部门的 id ，部门 id 可通过[获取部门列表](/docs/open-api/corporation/get-departments)接口获取
 ```json
     "u_Z部门":"PCx3rwm3aA00qM"
 ```
 
-#####g) 员工类型字段
-字段的「type」为【select】，且「valueFrom」为【organization.Staff】的，为 员工类型字段,员工字段需传入员工的 id ，员工 id 可通过[获取员工列表](/corporation/get-all-staffs.html)接口获取
+### g) 员工类型字段
+字段的「type」为[select]，且「valueFrom」为[organization.Staff]的，为 员工类型字段,员工字段需传入员工的 id ，员工 id 可通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)接口获取
 ```json
     "u_Z员工":"PCx3rwm3aA00qM:SUv3rzY$rz02t0"
 ```
 
-#####h) 城市类型字段
-字段的「type」为【select】，且「valueFrom」为【basedata. city】的，为城市类型字段
+### h) 城市类型字段
+字段的「type」为[select]，且「valueFrom」为[basedata. city]的，为城市类型字段
 ```json
     "u_测试城市":"[{\"key\":\"3\",\"label\":\"北京市/东城区\"}]"
 ```
 
-#####i) 枚举类型字段
-字段的「type」为【select】，且「valueFrom」为【basedata.Enum.CabinType】 或【basedata.Enum.TrainSeatType】或【basedata.Enum.CruiseCabinType】的，为枚举类型字段
+### i) 枚举类型字段
+字段的「type」为[select]，且「valueFrom」为[basedata.Enum.CabinType]或[basedata.Enum.TrainSeatType]或[basedata.Enum.CruiseCabinType]的，为枚举类型字段
 ```json
     "u_测试枚举":"ECONOMY"  //经济舱
 ```
 
-#####j) 自定义档案类型字段
-字段的「type」为【select】，且「valueFrom」为【basedata.Dimension.\*\*】的(\*\*为自定义档案名称)，为自定义档案类型字段，自定义档案字段需传入档案值的 ID ，档案值的 ID 可通过[获取自定义档案项](/dimensions/get-dimension-items.html)接口获取
+### j) 自定义档案类型字段
+字段的「type」为[select]，且「valueFrom」为[basedata.Dimension.\*\*]的(\*\*为自定义档案名称)，为自定义档案类型字段，自定义档案字段需传入档案值的 ID ，档案值的 ID 可通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)接口获取
 ```json
     "u_Z档案":"ID_3tLfV301eDw"
 ```
 
-#####k) 业务对象类型字段
-字段的「type」为【select】，且「valueFrom」为【datalink.DataLinkEntity.\*\*\*】 的(\*\*\*为业务对象实例 ID)，为扩展类型字段，扩展类型字段，需传入业务对象实例的 ID ，业务对象实例 id 可通过[获取业务对象实例列表](/datalink/get-entity-info.html)接口获取
+### k) 业务对象类型字段
+字段的「type」为[select]，且「valueFrom」为[datalink.DataLinkEntity.\*\*\*]的(\*\*\*为业务对象实例 ID)，为扩展类型字段，扩展类型字段，需传入业务对象实例的 ID ，业务对象实例 id 可通过[获取业务对象实例列表](/docs/open-api/datalink/get-entity-info)接口获取
 ```json
     "u_Z业务对象":"ID_3tLfV302QDw"
 ```
 
-#####l) 发票(发票形式)字段
-字段的「type」为【invoice】时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件<br/>
+### l) 发票(发票形式)字段
+字段的「type」为[invoice]时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件
 ```json
 "invoiceForm":{
     "type":"exist",  //已有发票
@@ -568,9 +569,9 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
     ]
 }
 ```
-\*type可选值:`unify`:统一开票 `wait`:待开发票 `exist`:已有发票 `noExist`:无发票 `noWrite`:无需填写(当费用类型 发票字段设置的不可编辑时，默认为此项)
+- type可选值:`unify`:统一开票 `wait`:待开发票 `exist`:已有发票 `noExist`:无发票 `noWrite`:无需填写(当费用类型 发票字段设置的不可编辑时，默认为此项)
 
-"**统一开票**"类型示例
+[**统一开票**]类型示例
 ```json
 "invoiceForm":{
     "type":"unify",  //统一开票
@@ -579,23 +580,22 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 },
 ```
 
-\*attachments 为发票文件，发票可通过[上传附件](/attachment/attachment-upload.html)接口，先上传文件到服务器上后，请求回应中获取单据中要上传附件的文件key等信息
+- attachments 为发票文件，发票可通过[上传附件](/docs/open-api/attachment/attachment-upload)接口，先上传文件到服务器上后，请求回应中获取单据中要上传附件的文件key等信息
+- 当 invoiceForm 整个对象都不传入时，会附默认值「无需填写」(noWrite)
 
-\*当 invoiceForm 整个对象都不传入时，会附默认值「无需填写」(noWrite)
-
-#####m) 收款信息字段
-字段的「type」为【select】，且「valueFrom」为【pay.PayeeInfo】的，为收款信息字段，收款信息字段需传入收款信息的 ID ,可通过[获取收款账号信息](/pay/get-payeeInfos.html)接口，获取收款信息 ID ，支持全量查询
+### m) 收款信息字段
+字段的「type」为[select]，且「valueFrom」为[pay.PayeeInfo]的，为收款信息字段，收款信息字段需传入收款信息的 ID ,可通过[获取收款账号信息](/docs/open-api/pay/get-payeeInfos)接口，获取收款信息 ID ，支持全量查询
 ```json
     "payeeId":"ID_3s4PKc13U$g"
 ```
 
-#####n) 关联申请字段
-字段的「type」为【select】，且「valueFrom」为【requisition.RequisitionInfo】 的，为关联申请字段，关联申请字段需传入申请事项(申请单)的 ID
+### n) 关联申请字段
+字段的「type」为[select]，且「valueFrom」为[requisition.RequisitionInfo]的，为关联申请字段，关联申请字段需传入申请事项(申请单)的id
 ```json
     "expenseLink":"ID_3twRddlb0$w"
 ```
 
-#####o) 核销借款字段
+### o) 核销借款字段
 字段的params里的loanWrittenOff为核销借款字段
 ```json
 "params":{
@@ -613,7 +613,7 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 }
 ```
 
-#####p) 费用分摊字段
+### p) 费用分摊字段
 单据中的 apportions，表达的是「费用分摊」，是一个数组，支持多条，参考如下:
 ```json
 "apportions": [
@@ -635,47 +635,7 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
    }
 ]
 ```
-\*apportionMoney：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服<br/>
-除「standard」外，其他内容请与示例保持一致。
-
-\*项目：是自定义档案-项目中的档案项ID，即[获取自定义档案项（不带可见范围）](/dimensions/get-dimension-items.html)中返回的 id
-
-\*specificationId：填入费用分摊模板的 ID，即[根据企业ID获取分摊模版列表](/forms/get-apportion-template-list.html)中返回的 id
-
-
-<style>
-    table {
-		width: 100%; /*表格宽度*/
-		border-collapse: collapse; /*使用单一线条的边框*/
-		empty-cells: show; /*单元格无内容依旧绘制边框*/
-		}
-    /* 悬浮变色 */
-	table tr:hover {
-		background: #B2B2B2 !important;
-		}
-    /* 首列不换行 */
-	table td:nth-child(1) {
-		white-space: nowrap;
-	}
-	table td:nth-child(2) {
-		white-space: nowrap;
-	}
-    /* 指定列宽度 */
-    table th:nth-of-type(3) {
-		width: 20%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(4) {
-		width: 8%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(5) {
-		width: 7%;
-		white-space: nowrap;
-	}
-    table th:nth-of-type(6) {
-		width: 35%;
-		white-space: nowrap;
-	}
-
-</style>
+- apportionMoney：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服
+- 除「standard」外，其他内容请与示例保持一致。
+- 项目：是自定义档案-项目中的档案项ID，即[获取自定义档案项（不带可见范围）](/docs/open-api/dimensions/get-dimension-items)中返回的id
+- specificationId：填入费用分摊模板的 ID，即[根据企业ID获取分摊模版列表](/docs/open-api/forms/get-apportion-template-list)中返回的id

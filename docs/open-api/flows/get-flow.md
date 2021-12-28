@@ -1,31 +1,35 @@
 # 获取流程实例
-
 根据单据id获取审批流的流程实例，就是单据模板的审批流设置的审批流数据，返回对应审批流所有节点的内容详情
 
-{% httpverb "get" %} /api/openapi/v2/flow/plan/computed/$`flowId` {% endhttpverb %}
+import Control from "../../../components/Control";
 
-### Path Parameters:
+<Control
+method="GET"
+url="/api/openapi/v2/flow/plan/computed/$`flowId`"
+/>
 
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **flowId** | String  | 单据的id |必填| - |  通过其他api接口获取或者出站消息获取 |
+## Path Parameters
 
-### Query Parameters:
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **flowId** | String | 单据的id | 必填 | - | 通过其他api接口获取或者出站消息获取 |
 
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **accessToken** | String  | 授权token     |必填   | - |  [通过授权接口获取](/getting-started/auth.html)  |
+## Query Parameters
 
->⚠️ 注意：
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-> 只有单据处于未提交的情况下才能获取审批流实例，例如：草稿和驳回状态的单据才能查询到，不然会提示没有权限获取该单据的流程实例
+:::tip
+只有单据处于未提交的情况下才能获取审批流实例，例如：草稿和驳回状态的单据才能查询到，不然会提示没有权限获取该单据的流程实例
+:::
 
-### CURL:
+## CURL
 ```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/flow/plan/computed/$PQIbuN0nmYc800?accessToken=UvsbtOEHTsk000'
 ```
 
-### 成功响应:
+## 成功响应
 ```json
 {
     "value": {
@@ -124,9 +128,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/flow/plan
 }
 ```
 
-### 失败响应:
+## 失败响应
+出现以下信息，请检查单据id是存在的
 ```json
-请确保单据id是存在的。
 {
     "errorCode": 412,
     "errorMessage": "单据不存在",
@@ -136,8 +140,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/flow/plan
 }
 ```
 
+目前只有草稿和驳回的单据才能被查询到
 ```json
-目前只有草稿和驳回的单据才能被查询到。
 {
     "errorCode": 412,
     "errorMessage": "您没有权限获取该单据的流程实例",

@@ -1,53 +1,58 @@
 # 填写单据审批流程（单据提交）
 
-{% httpverb "post" %} /api/openapi/v2/flow/data/submitFlow {% endhttpverb %}
+:::tip
+- 经由[创建单据]接口，正确保存数据后，配置审批人，调用此接口提交单据
+- 与业务画面上的提交单据功能一样，需要按格式组织审批流程节点信息数据，提交单据信息
+- 程序会对请求参数、body数据格式以及流程节点进行完整性与合法性校验
+:::
 
-#### Query Parameters:
+import Control from "../../../components/Control";
 
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **accessToken** | String  | 认证token | 必填 | - | [通过授权接口获取](/getting-started/auth.html)  |
-| **flowId**      | String  | 单据ID    | 必填 | - | [一般通过出站消息获取单据Id信息](/outbound-message/outbound-new.html)|
+<Control
+method="POST"
+url="/api/openapi/v2/flow/data/submitFlow"
+/>
 
->⚠️ 注意：
+## Query Parameters
 
->- 经由[创建单据]接口，正确保存数据后，配置审批人，调用此接口提交单据。  
->- 与业务画面上的提交单据功能一样，需要按格式组织审批流程节点信息数据，提交单据信息。  
->- 程序会对请求参数、body数据格式以及流程节点进行完整性与合法性校验。
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **flowId**      | String | 单据ID    | 必填 | - | [一般通过出站消息获取单据Id信息](/docs/open-api/outbound-message/outbound-new)|
 
-#### Body Parameters:
+## Body Parameters
 
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-|**isUrgent**                     | Boolean | 是否加急      | 必填   | - | `false`:不加急 `true`:加急 |
-|**urgentReason**                 | String  | 加急原因      | 非必填 | - | 加急原因 |
-|**nodes**                        | Array   | 节点信息      | 必填   | - | 至少一个节点信息 |
-|**nodes/configNodeId**           | String  | 配置节点ID    | 必填   | - | 配置节点ID |
-|**nodes/approverId**             | String  | 审批人Id     | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
-|**nodes/counterSigners**         | Array   | 会签审批人列表 | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
-|**nodes/counterSigners/signerId**| String  | 会签审批人ID  | 非必填  | - | 当设置会签审批人列表时候必填|
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+|**isUrgent**                  | Boolean | 是否加急      | 必填   | - | `true`:加急 &emsp; `false`:不加急 |
+|**urgentReason**              | String  | 加急原因      | 非必填 | - | 加急原因 |
+|**nodes**                     | Array   | 节点信息      | 必填   | - | 至少一个节点信息 |
+|**&emsp; ∟ configNodeId**    | String  | 配置节点ID    | 必填   | - | 配置节点ID |
+|**&emsp; ∟ approverId**      | String  | 审批人Id     | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
+|**&emsp; ∟ counterSigners**  | Array   | 会签审批人列表 | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
+|**&emsp; &emsp; ∟ signerId** | String  | 会签审批人ID  | 非必填  | - | 当设置会签审批人列表时候必填|
 
-<br/>
-
-#### 附加说明
+## 附加说明
 
 - `isUrgent`字段表达是否加急；`urgentReason`字段为加急原因； 仅当流程配置允许加急时，`isUrgent`才可为"true"；
 
-- 在上一步获取的流程实例中，<br/>&nbsp;&nbsp;若某节点的 type="normal"时，对应传入参数为`approverId`；
-<br/>&nbsp;&nbsp;若某节点的 type="countersign"时，对应传入参数为`signerId`；
+- 在上一步获取的流程实例中，<br/>
+  &emsp; 若某节点的 type="normal"时，对应传入参数为`approverId`；<br/>
+  &emsp; 若某节点的 type="countersign"时，对应传入参数为`signerId`；
 
-- 在上一步获取的流程实例中，<br/>&nbsp;&nbsp;若某节点的 type="normal"，且 allStaffs="true" 时，可传入企业内任意员工 ID，仅 允许传入一个；
-<br/>&nbsp;&nbsp;若某节点的 type="countersign"，且 allStaffs="true" 时，可传入企业内任意员工 ID，允许传入 多个；
+- 在上一步获取的流程实例中，<br/>
+  &emsp; 若某节点的 type="normal"，且 allStaffs="true" 时，可传入企业内任意员工 ID，仅 允许传入一个；<br/>
+  &emsp; 若某节点的 type="countersign"，且 allStaffs="true" 时，可传入企业内任意员工 ID，允许传入 多个；
 
-- 在上一步获取的流程实例中，若某节点的 allstaffs="false"，且 isauto="false"：<br/>&nbsp;&nbsp;当其 type="normal"时，需传入 staffIds 数组中的任意一个员工 ID；
-<br/>&nbsp;&nbsp;当其 type="countersign"时，需传入 staffIds 数组中的任意员工 ID，允许传入 多个；
+- 在上一步获取的流程实例中，若某节点的 allstaffs="false"，且 isauto="false"：<br/>
+  &emsp; 当其 type="normal"时，需传入 staffIds 数组中的任意一个员工 ID；<br/>
+  &emsp; 当其 type="countersign"时，需传入 staffIds 数组中的任意员工 ID，允许传入 多个；
 
-- 在上一步获取的流程实例中，若某节点的 allstaffs="false"，且 isauto="true"：<br/>&nbsp;&nbsp;当其 type="normal"时，需传入 staffIds 数组中的任意一个员工 ID；
-<br/>&nbsp;&nbsp;当其 type="countersign"时，需传入 staffIds 数组中的所有员工 ID
+- 在上一步获取的流程实例中，若某节点的 allstaffs="false"，且 isauto="true"：<br/>
+  &emsp; 当其 type="normal"时，需传入 staffIds 数组中的任意一个员工 ID；<br/>
+  &emsp; 当其 type="countersign"时，需传入 staffIds 数组中的所有员工 ID；
 
-<br/>
-
-#### CURL:
+## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/data/submitFlow?accessToken=cWEbn1cA0kjU00&flowId=PQIbuN0nmYc800' \
 --header 'Content-Type: application/json' \
@@ -85,8 +90,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/dat
 }'
 ```
 
-#### 成功响应:
-
+## 成功响应
 ```json
 {
     "value":"",
@@ -176,14 +180,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/dat
 }
 ```
 
-#### 确认提交结果
+## 确认提交结果
+- 提交单据后，易快报预置的「费用标准检查」节点，会检查单据中的预算、费用标准等费控指标是否合规
+- 如存在不合规，需要驳回的情况时，该节点会自动驳回单据。 此时需调用「获取单据详情」接口
+- 根据返回数据中的【state】，判断该单据是否被 驳回，如返回 state!=“draft” 且 state!=“rejected”，则该单据提交成功
 
-提交单据后，易快报预置的「费用标准检查」节点，会检查单据中的预算、费用标准等费控指标是否合规；  
-如存在不合规，需要驳回的情况时，该节点会自动驳回单据。 此时需调用「获取单据详情」接口，  
-根据返回数据中的【state】，判断该单据是否被 驳回，如返回 state!=“draft” 且 state!=“rejected”，则该单据提交成功。
-
-#### 失败响应:
-
+## 失败响应
 ```json
 {
     "errorCode": 400,
