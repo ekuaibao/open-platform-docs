@@ -36,4 +36,4 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
 
  例如下图：
 
-![单据pdf流](images\单据pdf流返回.png)
+![单据pdf流](images/单据pdf流返回.png)
