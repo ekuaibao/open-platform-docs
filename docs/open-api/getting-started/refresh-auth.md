@@ -14,7 +14,7 @@ url="/api/openapi/v2/auth/refreshToken"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**  | String | 即将过期的授权码 | 必填 | - | 通过上次获取`accessToken`时返回的值 |
 | **refreshToken** | String | 刷新的授权码    | 必填 | - |  通过上次获取`accessToken`时返回的值 |
-| **powerCode**    | String | 商品授权码      | 必填 | - |  传入`219904`即可   |
+| **powerCode**    | String | 功能授权码      | 必填 | - |  传入`219904`即可   |
 
 :::tip
 - 刷新后 `accessToken` 和 `refreshToken` 的值都会变化。

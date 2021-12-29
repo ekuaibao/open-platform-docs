@@ -12,7 +12,7 @@ url="/api/openapi/v1/staffs/getBacklogCount/$`type`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **type** | String | 查询方式 | 必填 | - | `id`:员工ID<br/>`code`:员工工号<br/>`cellphone`:员工手机号 |
+| **type** | String | 查询方式 | 必填 | - | `id` : 员工ID<br/>`code` : 员工工号<br/>`cellphone` : 员工手机号 |
 
 ## Query Parameters
 
@@ -22,7 +22,7 @@ url="/api/openapi/v1/staffs/getBacklogCount/$`type`"
 | **staffParam**  | String  | 查询的员工参数  | 必填 | - | 员工信息中的 staffID、code、cellphone 任意一个即可 | 
 
 ## CURL
-```
+```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/getBacklogCount/$id?accessToken=RCIbwHcnF0kg00&staffParam=JOYbpjPP-E2Q00:y8gbpjP9OsnI00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

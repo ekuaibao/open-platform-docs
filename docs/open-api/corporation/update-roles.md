@@ -7,7 +7,7 @@ method="PUT"
 url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 />
 
-:::danger
+:::caution
 - 只有数据来源为【API导入】的角色才能使用此接口更新角色。
 :::
 
@@ -22,14 +22,14 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token	  | 必填  | -  | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **staffBy**     | String | 员工id参数格式 | 非必填 | id | `id`: 传入完整员工ID，格式：企业id : userId<br/>`sourceId`: 只传入userId即可 |
+| **staffBy**     | String | 员工id参数格式 | 非必填 | id | `id` : 传入完整员工ID，格式：企业id : userId<br/>`sourceId` : 只传入userId即可 |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **contents**          | Array  | 角色配置情况     | 必填   | - | 每一个元素对应「角色管理」界面右侧列表的一行 |
-| **contents/pathType** | String | name或code	  | 非必填 | name | 当pathType不传或者传`name`时 : path传入部门名称或者自定义档案值名称；<br/>当pathType传`code`时 : path传入部门编码或者自定义档案值编码 |
+| **contents/pathType** | String | name或code	  | 非必填 | name | 当pathType不传或者传 `name` 时 : path传入部门名称或者自定义档案值名称；<br/>当pathType传 `code` 时 : path传入部门编码或者自定义档案值编码 |
 | **contents/path**     | Array  | 部门或自定义档案值 | 非必填 | - | 传入内容参考pathType，[注意事项](/docs/open-api/corporation/question-answer) |
 | **contents/staffs**   | Array  | 员工集	      | 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 
@@ -70,7 +70,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
 
 ## 成功响应
 ```text
-    code 204
+code 204
 ```
 
 ## 失败响应

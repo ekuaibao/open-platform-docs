@@ -22,6 +22,7 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/byDataLinkIds"
 :::tip
 - 例如：“行程管理”-“行程”分类的业务对象ID可以在单据详情里面获取到。
 
+![image](images/行程业务对象ID获取.png)
 :::
 
 ## CURL

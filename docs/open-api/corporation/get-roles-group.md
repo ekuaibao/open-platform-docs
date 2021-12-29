@@ -14,7 +14,7 @@ url="/api/openapi/v1/roleDefGroups"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```
+```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/roleDefGroups?accessToken=RCIbwHcnF0kg00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

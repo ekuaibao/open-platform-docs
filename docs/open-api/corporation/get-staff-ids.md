@@ -1,6 +1,5 @@
 # 查询员工
 通过员工的 `员工ID`、`工号`、`手机号`、`邮箱`、`第三方ID` 查询员工信息。<br/>
-第三方ID根据平台不同而不同，例如企业微信轻应用的第三方ID为企业微信里的员工ID。易快报原生版本没有第三方ID。
 
 import Control from "../../../components/Control";
 
@@ -19,11 +18,11 @@ url="/api/openapi/v1/staffs/getStaffIds"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **type**         | String | 查询方式    | 必填 | - | `STAFFID`:员工ID<br/>`CODE`:工号<br/>`CELLPHONE`:手机号<br/>`MAIL`:邮箱<br/>`USERID`:第三方ID |
+| **type**         | String | 查询方式    | 必填 | - | `STAFFID` : 员工ID<br/>`CODE` : 工号<br/>`CELLPHONE` : 手机号<br/>`MAIL` : 邮箱<br/>`USERID` : 第三方ID |
 | **conditionIds** | Array  | 要查询条件值 | 必填 | - | 支持多个 |
 
 :::tip
-- 第三方ID指钉钉ID、企业微信open ID、云之家ID等。
+- 第三方ID指钉钉ID、企业微信open ID、云之家ID等，易快报原生版本没有第三方ID。
 - 该接口只能查询到未停用的员工信息，如果需要查询已停用员工信息，请通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)查询到全部已停用的员工列表，再进行匹配。
 :::
 

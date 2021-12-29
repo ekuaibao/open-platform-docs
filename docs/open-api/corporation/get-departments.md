@@ -12,15 +12,15 @@ url="/api/openapi/v1/departments"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token	                       | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **start**       | Number | 分页查询的起始序号,即从第几条数据开始查询 | 必填 | - | 从0开始 |
-| **count**       | Number | 查询数据条数                         | 必填 | - | 最大不能超过1000 |
+| **start**       | Number | 分页查询的起始序号,即从第几条数据开始查询 | 必填 | - | 从`0`开始 |
+| **count**       | Number | 查询数据条数                         | 必填 | - | 最大不能超过`1000` |
 
 :::tip
 - 分页的起始值是从0开始， 而不是传统的1开始。
 :::
 
 ## CURL
-```
+```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departments?accessToken=RCIbwHcnF0kg00&start=0&count=200' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

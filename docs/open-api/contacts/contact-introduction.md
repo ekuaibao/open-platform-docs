@@ -1,5 +1,5 @@
 ---
-slug: contacts
+slug: info
 title: 概述
 authors: [冯继成]
 ---

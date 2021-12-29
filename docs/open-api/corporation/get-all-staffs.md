@@ -12,17 +12,17 @@ url="/api/openapi/v1/staffs"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token	                         | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **start**       | Number  | 分页查询的起始序号，即从第几条数据开始查询 | 必填   | - | 从0开始 |
-| **count**       | Number  | 查询数据条数                         | 必填   | - | 最大不能超过1000 |
-| **active**      | Boolean | 查询条件：员工是否启用                 | 非必填 | true | `true`:启用<br/>`false`:停用 |
+| **start**       | Number  | 分页查询的起始序号，即从第几条数据开始查询 | 必填   | - | 从`0`开始 |
+| **count**       | Number  | 查询数据条数                         | 必填   | - | 最大不能超过`1000` |
+| **active**      | Boolean | 查询条件：员工是否启用                 | 非必填 | true | `true` : 启用<br/>`false` : 停用 |
 
 :::tip
 - 分页的起始值是从0开始， 而不是传统的1开始。
-- 默认查询未停用的员工，不是全部员工。
+- 默认查询启用的员工，不是全部员工。
 :::
 
 ## CURL
-```
+```json
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?accessToken=RCIbwHcnF0kg00&start=0&count=20&active=true' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
