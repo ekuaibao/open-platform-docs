@@ -7,8 +7,8 @@ method="PUT"
 url="/api/openapi/v1/staffs/update/$`staffId`"
 />
 
-:::tip
-- 使用此接口更新的员工（包括在系统上创建的），更新后您将**无法在易快报界面上维护其通讯录**，只能通过接口更新信息和删除。
+:::caution
+- 使用此接口更新的员工（包括在系统上创建的），更新后您将 **无法在易快报界面上维护其通讯录**，只能通过接口更新信息和删除。
 :::
 
 ## Path Parameters
@@ -29,18 +29,18 @@ url="/api/openapi/v1/staffs/update/$`staffId`"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **name**                      | String  | 员工姓名          | 必填   | - | 员工姓名 |
 | **code**                      | String  | 工号             | 非必填  | - | 工号 |
-| **cellphone**                 | String  | 手机号           | 非必填  | - | 如果手机号为国外手机号，那么应为:"(区号)手机号" |
-| **email**                     | String  | 邮箱	            | 非必填  | - | 可以不传，但是不可以传空字符串 |
+| **cellphone**                 | String  | 手机号           | 非必填  | - | 如果手机号为国外手机号，那么应为 : "(区号)手机号" |
+| **email**                     | String  | 邮箱	            | 非必填  | - | 可以不传，但是不可以传 `""` |
 | **note**                      | String  | 备注	            | 非必填  | - | 备注 |
 | **defaultDepartment**         | String  | 默认部门id        | 非必填  | - | 默认部门id |
-| **departments**               | Array   | 所在部门,至少1个	| 非必填  | - | 请确保默认部门在departments里。如果不在,系统会自动将departments的第一个元素视为默认部门 |
-| **modifyAccountPhone**        | Boolean | 是否修改登录手机号	| 非必填  | false | `true`:修改登录手机号,修改的手机号为cellphone,不可修改成已注册企业的手机号 |
-| **modifyAccountEmail**        | Boolean | 是否修改邮箱	    | 非必填  | false | `true`:修改邮箱 |
+| **departments**               | Array   | 所在部门,至少1个	| 非必填  | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
+| **modifyAccountPhone**        | Boolean | 是否修改登录手机号	| 非必填  | false | `true` : 修改登录手机号，修改的手机号为 `cellphone`，不可修改成已注册企业的手机号 |
+| **modifyAccountEmail**        | Boolean | 是否修改邮箱	    | 非必填  | false | `true` : 修改邮箱 |
 | **staffCustomForm**           | Object  | 自定义字段	    | 非必填  | - | 自定义字段 |
 | **&emsp; ∟ rankType**  | String  | 职级	            | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
 | **&emsp; ∟ postType**  | String  | 岗位	            | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
-| **&emsp; ∟ base**      | String  | 常驻地              | 非必填  | - | 参考格式:"[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
-| **&emsp; ∟ u_字段名**   | String  | 自定义字段	        | 非必填  | - | 自定义字段,格式为"u\_字段名",例如:u\_项目 |
+| **&emsp; ∟ base**      | String  | 常驻地              | 非必填  | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
+| **&emsp; ∟ u_字段名**   | String  | 自定义字段	        | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目 |
 
 ## CURL
 ```json
@@ -48,22 +48,22 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/staffs/up
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-    "name": "李四",// 员工姓名
-    "code": "",// 员工工号
-    "cellphone": "",//手机号
-    "email": "2777481917@qq.com",//邮箱
-    "note": "notea",//备注
-    "defaultDepartment": "JOYbpjPP-E2Q00:pAwbwH_W7sec00",// 默认部门
-    "departments":[// 所在部门
+    "name": "李四",                    //员工姓名
+    "code": "",                        //员工工号
+    "cellphone": "",                   //手机号
+    "email": "2777481917@qq.com",      //邮箱
+    "note": "notea",                   //备注
+    "defaultDepartment": "JOYbpjPP-E2Q00:pAwbwH_W7sec00",//默认部门
+    "departments":[                    //所在部门
       "JOYbpjPP-E2Q00:pAwbwH_W7sec00"
     ],
-    "modifyAccountPhone": false,//是否修改员工手机号
-    "modifyAccountEmail": false,//是否修改员工邮箱
-    "staffCustomForm": {//员工自定义字段集合
-        "rankType":"lUcctXntW82A00",//职级
-        "postType":"ltUcxNyWSQ1o00",//岗位
+    "modifyAccountPhone": false,       //是否修改员工手机号
+    "modifyAccountEmail": false,       //是否修改员工邮箱
+    "staffCustomForm": {               //员工自定义字段集合
+        "rankType":"lUcctXntW82A00",   //职级
+        "postType":"ltUcxNyWSQ1o00",   //岗位
         "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
-        "u_数字字段":"1"//员工自定义字段
+        "u_数字字段":"1"                //员工自定义字段
     }
 }'
 ```
@@ -87,7 +87,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/staffs/up
             "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
             "postType":"ltUcxNyWSQ1o00",                      //岗位
             "rankType":"lUcctXntW82A00",                      //职级
-            "u_数字字段":"1"                                    //员工自定义字段
+            "u_数字字段":"1"                                   //员工自定义字段
         },
         "external": false                                     // 是否外部员工
     }

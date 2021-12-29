@@ -7,7 +7,7 @@ method="PUT"
 url="/api/openapi/v1/dimensions/items/$`id`/disable"
 />
 
-:::tip
+:::caution
 - 所有子级档案项也会被一并停用。
 :::
 
@@ -30,13 +30,13 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/dimension
 --header 'Accept: application/json'
 ```
 
-:::danger
+## 成功响应
+:::caution
 - 响应需要判断状态码来确定是否成功。
 :::
 
-## 成功响应
 ```text
-    code 204 
+code 204 
 ```
 
 ## 失败响应

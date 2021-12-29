@@ -12,9 +12,9 @@ url="/api/openapi/v2/auth/refreshToken"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**  | String | 即将过期的授权码 | 必填 | - | 通过上次获取`accessToken`时返回的值 |
-| **refreshToken** | String | 刷新的授权码    | 必填 | - |  通过上次获取`accessToken`时返回的值 |
-| **powerCode**    | String | 功能授权码      | 必填 | - |  传入`219904`即可   |
+| **accessToken**  | String | 即将过期的授权码 | 必填 | - | 通过上次获取 `accessToken` 时返回的值 |
+| **refreshToken** | String | 刷新的授权码    | 必填 | - |  通过上次获取 `accessToken` 时返回的值 |
+| **powerCode**    | String | 功能授权码      | 必填 | - |  传入 `219904` 即可   |
 
 :::tip
 - 刷新后 `accessToken` 和 `refreshToken` 的值都会变化。
@@ -37,7 +37,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/auth/ref
 ```
 
 ## 失败响应
-请确保`accessToken`仍在有效使用时间之内，否则返回以下结果：
+请确保 `accessToken` 仍在有效使用时间之内，否则返回以下结果：
 ```text
 未授权
 ```

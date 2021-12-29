@@ -29,13 +29,13 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **contents**          | Array  | 角色配置情况     | 必填   | - | 每一个元素对应「角色管理」界面右侧列表的一行 |
-| **contents/pathType** | String | name或code	  | 非必填 | name | 当pathType不传或者传 `name` 时 : path传入部门名称或者自定义档案值名称；<br/>当pathType传 `code` 时 : path传入部门编码或者自定义档案值编码 |
-| **contents/path**     | Array  | 部门或自定义档案值 | 非必填 | - | 传入内容参考pathType，[注意事项](/docs/open-api/corporation/question-answer) |
-| **contents/staffs**   | Array  | 员工集	      | 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp; ∟ pathType** | String | name或code	  | 非必填 | name | 当 `pathType` = `name` 或不传时，`path` 传入部门名称<br/>或自定义档案值名称；<br/>当 `pathType` = `code` 时，`path` 传入部门编码或自定<br/>义档案值编码 |
+| **&emsp; ∟ path**     | Array  | 部门或自定义档案值 | 非必填 | - | 传入内容参考pathType，[注意事项](/docs/open-api/corporation/question-answer) |
+| **&emsp; ∟ staffs**   | Array  | 员工集	      | 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 
 :::tip
-- 当staffs为空时，则删除此部门/自定义档案值对应的角色下所有员工。
-- 在系统上新建角色时，角色类型可按【部门】和【档案类别】划分，此接口中的`path`参数就传这个角色对应的类型值。
+- 当 `staffs` 为空时，则删除此部门/自定义档案值对应的角色下所有员工。
+- 在系统上新建角色时，角色类型可按【部门】和【档案类别】划分，此接口中的 `path` 参数就传这个角色对应的类型值。
 ![image](images/新建角色.png)
 :::
 

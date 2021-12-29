@@ -4,7 +4,7 @@
 ## 什么是Postman？
 
 Postman 是一个用于构建和使用 API 的 API 平台。Postman 简化了 API 生命周期的每个步骤并简化了协作，因此您可以更快地创建更好的 API。<br/>
-下载地址：https://www.postman.com/
+下载地址：https://www.postman.com
 
 ![image](images/postman/下载地址.png)
 

@@ -11,7 +11,7 @@ authors: [冯继成]
 通过该模块下接口可查询企业与员工基本数据。
 
 :::caution
-- 只有数据来源为【API导入】的角色才能使用[更新角色](/docs/open-api/corporation/update-roles)接口。
+- 只有数据来源为【**API导入**】的角色才能使用[更新角色](/docs/open-api/corporation/update-roles)接口。
 :::
 
 ---

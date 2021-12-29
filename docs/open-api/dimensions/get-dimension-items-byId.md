@@ -1,5 +1,5 @@
 # 根据ID获取自定义档案项
-通过档案项的`id`来获取对应的档案项信息。
+通过档案项的 `id` 来获取对应的档案项信息。
 
 import Control from "../../../components/Control";
 
@@ -64,7 +64,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
 }
 ```
 
-**如果出现以下信息，表示没有对应`id`的档案项信息:**
+**如果出现以下信息，表示没有对应 `id` 的档案项信息:**
 ```json
 {
     "value": null

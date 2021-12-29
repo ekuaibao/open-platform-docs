@@ -18,7 +18,7 @@ url="/api/openapi/v1/departments/$`idOrCode`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**  | String | 认证token  | 必填   | -  | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **departmentBy** | String | 查询方式    | 非必填 | id | 固定值:`id` 或者 `code`,与idOrCode参数对应 |
+| **departmentBy** | String | 查询方式    | 非必填 | id | 固定值 : `id` 或者 `code`，与 `idOrCode` 参数对应 |
 
 ## CURL
 ```json
@@ -32,7 +32,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
 {
     "value": {
         "id": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", // 部门ID
-        "name": "财务部",                       // 部门名称
+        "name": "财务部",                      // 部门名称
         "parentId": "JOYbpjPP-E2Q00",          // 上级部门ID
         "active": true,                        // 是否启用
         "code": "1003"                         // 部门编码

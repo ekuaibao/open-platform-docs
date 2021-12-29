@@ -12,7 +12,7 @@ url="/api/openapi/v1/staffs/getBacklogCount/$`type`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **type** | String | 查询方式 | 必填 | - | `id` : 员工ID<br/>`code` : 员工工号<br/>`cellphone` : 员工手机号 |
+| **type** | String | 查询方式 | 必填 | - | `id` : 员工ID &emsp; `code` : 员工工号 &emsp; `cellphone` : 员工手机号 |
 
 ## Query Parameters
 

@@ -1,5 +1,5 @@
 # 员工离职交接
-同系统中的“离职交接”功能。离职交接：即在员工离职前，为需要他审批的单据指定新的审批人
+同系统中的【**离职交接**】功能。即在员工离职前，为需要他审批的单据指定新的审批人。
 
 import Control from "../../../components/Control";
 
@@ -8,8 +8,8 @@ method="POST"
 url="/api/openapi/v2/flows/relay"
 />
 
-:::tip
-- 本接口只是实现离职前的交接工作，交接后还是需要通过【停启用员工】接口移除员工。
+:::caution
+- 本接口只是实现离职前的交接工作，交接后还是需要通过【**停启用员工**】接口移除员工。
 :::
 
 ## Query Parameters
@@ -24,9 +24,9 @@ url="/api/openapi/v2/flows/relay"
 | **staffId**             | String  | 操作人ID | 必填 | - | 可通过[查询员工](/docs/open-api/corporation/get-staff-ids)接口获取 |
 | **originApproverId**    | String  | 离职人ID | 必填 | - | 可通过[查询员工](/docs/open-api/corporation/get-staff-ids)接口获取 |
 | **relayApproverId**     | String  | 交接人ID | 必填 | - | 可通过[查询员工](/docs/open-api/corporation/get-staff-ids)接口获取 |
-| **unboundInvoice**      | Boolean | 将待离职员工草稿及被驳回的单据<br/>删除、关联的发票解除关联 | 必填 | - | 必填为`true` |
-| **shareWaitingInvoice** | Boolean | 将待开发票共享给新交接人                              | 必填 | - | 必填为`true` |
-| **dataLinkFlag**        | Boolean | 如果是业务对象负责人或者管理员，<br/>交接到新交接人下面    | 必填 | - | 必填为`true` |
+| **unboundInvoice**      | Boolean | 将待离职员工草稿及被驳回的单据<br/>删除、关联的发票解除关联 | 必填 | - | 必填为 `true` |
+| **shareWaitingInvoice** | Boolean | 将待开发票共享给新交接人                              | 必填 | - | 必填为 `true` |
+| **dataLinkFlag**        | Boolean | 如果是业务对象负责人或者管理员，<br/>交接到新交接人下面    | 必填 | - | 必填为 `true` |
 
 ## CURL
 ```json
@@ -63,7 +63,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flows/re
     "data": null
 }
 ```
-`staffId(操作人)`不是“系统管理”员的话，报如下错误：
+`staffId(操作人)` 不是“系统管理”员的话，报如下错误：
 ```json
 {
     "errorCode": 403,

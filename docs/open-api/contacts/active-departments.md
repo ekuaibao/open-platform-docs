@@ -7,7 +7,7 @@ method="PUT"
 url="/api/openapi/v1/departments/disableOrEnableDepartment/$`departmentId`"
 />
 
-:::tip
+:::caution
 - 当停用部门时，其子孙部门也会被一并停用。
 - 启用一个部门时并不会一并启用其所有子孙部门。
 - 停用部门前，需要先确保没有任何员工属于该部门，否则调用接口失败。
@@ -24,7 +24,7 @@ url="/api/openapi/v1/departments/disableOrEnableDepartment/$`departmentId`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token	    | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) | 
-| **active**      | Boolean | 停用或启用标识	| 必填  | - | `true`:启用<br/>`false`:停用 |
+| **active**      | Boolean | 停用或启用标识	| 必填  | - | `true` : 启用 &emsp; `false` : 停用 |
 
 ## CURL
 ```json

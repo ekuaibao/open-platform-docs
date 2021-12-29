@@ -8,9 +8,9 @@ method="PUT"
 url="/api/openapi/v1/staffs/disableOrEnableStaff/[`ids`]"
 />
 
-:::tip
+:::caution
 - 返回数据中员工信息数不正确时，请检查输入的对应员工id参数是否正确。
-- 员工**停用**后重新**启用**，需要经过**【授权员工】**接口，账号才可用。
+- 员工 **停用** 后重新 **启用**，需要经过**【授权员工】**接口，账号才可用。
 :::
 
 ## Path Parameters
@@ -24,8 +24,8 @@ url="/api/openapi/v1/staffs/disableOrEnableStaff/[`ids`]"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**   | String   | 认证token	                 | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **active**        | Boolean  | 停用或启用标识                 | 必填  | - | `true`:启用<br/>`false`:停用，停用即表示已离职 | 
-| **doCheck**       | Boolean  | 停用时是否校验该员工名下有代办事项 | 非必填 | true | `true`:校验<br/>`false`:不校验 |
+| **active**        | Boolean  | 停用或启用标识                 | 必填  | - | `true` : 启用<br/>`false` : 停用，停用即表示已离职 | 
+| **doCheck**       | Boolean  | 停用时是否校验该员工名下有代办事项 | 非必填 | true | `true` : 校验 &emsp; `false` : 不校验 |
 
 ## CURL
 ```json

@@ -25,7 +25,7 @@ curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/staffs/get
     "items": [
         {
             "name": "rankType",    //字段名称
-            "label": "职级",        //字段显示名称
+            "label": "职级",       //字段显示名称
             "active": true,        //是否停用
             "canAsDimension": false,
             "ability": "rank",     //所属自定义档案编码

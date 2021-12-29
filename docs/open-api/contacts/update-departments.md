@@ -23,10 +23,10 @@ url="/api/openapi/v1/departments/update/$`departmentId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **code**      | String  | 部门编码        | 必填  | - | 可传""，不可传重复的值 |
-| **name**      | String  | 部门名称        | 必填  | - | 不可传""，不可传重复的值 |
-| **parentId**  | String  | 上级部门ID      | 必填  | - | 根部门为"" |
-| **order**     | Number  | 排序           | 非必填 | 0 | code为空,order相同时,按创建时间排序<br/>code为空,order不同时,按order排序<br/>code不为空时,按code排序 |
+| **code**      | String  | 部门编码        | 必填  | - | 可传 `""`，不可传重复的值 |
+| **name**      | String  | 部门名称        | 必填  | - | 不可传 `""`，不可传重复的值 |
+| **parentId**  | String  | 上级部门ID      | 必填  | - | 根部门为 `""` |
+| **order**     | Number  | 排序           | 非必填 | 0 | code为空，order相同时，按创建时间排序<br/>code为空，order不同时，按order排序<br/>code不为空时，按code排序 |
 
 ## CURL
 ```json

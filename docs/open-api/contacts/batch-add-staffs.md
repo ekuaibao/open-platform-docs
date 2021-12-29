@@ -1,5 +1,5 @@
 # 批量新增员工
-当员工新增到企业里后，该员工可通过 `快捷登录` （短信验证码登录）的方式进入易快报。或者也可通过 `忘记密码` 来设置密码。
+当员工新增到企业后，该员工可通过 `快捷登录`（短信验证码登录）的方式进入易快报，或者通过 `忘记密码` 来设置密码。
 
 import Control from "../../../components/Control";
 
@@ -8,9 +8,9 @@ method="POST"
 url="/api/openapi/v1/staffs/batch/create"
 />
 
-:::tip
+:::caution
 - 当新增员工的手机号与一个已停用的员工相同，那么系统将启用已停用的员工并更新其员工信息，而不会创建一个新员工。
-- 使用此接口新增的员工，您将**无法在易快报界面上维护其通讯录**，只能通过接口更新信息和删除。
+- 使用此接口新增的员工，您将 **无法在易快报界面上维护其通讯录**，只能通过接口更新信息和删除。
 :::
 
 ## Query Parameters
@@ -26,18 +26,18 @@ url="/api/openapi/v1/staffs/batch/create"
 | **staffList**                    | Array  | 批量新增的员工     | 必填  | - | 员工信息数组 |
 | **&emsp; ∟ name**               | String | 员工姓名          | 必填  | - | 员工姓名 |
 | **&emsp; ∟ code**               | String | 工号             | 非必填 | - | 工号 |
-| **&emsp; ∟ cellphone**          | String | 手机号           | 必填   | - | 如果手机号为国外手机号，那么应为:"(区号)手机号" |
-| **&emsp; ∟ email**              | String | 邮箱             | 非必填 | - | 可以不传，但是不可以传空字符串 |
+| **&emsp; ∟ cellphone**          | String | 手机号           | 必填   | - | 如果手机号为国外手机号，那么应为 : "(区号)手机号" |
+| **&emsp; ∟ email**              | String | 邮箱             | 非必填 | - | 可以不传，但是不可以传 `""` |
 | **&emsp; ∟ note**               | String | 备注             | 非必填 | - | 备注 |
-| **&emsp; ∟ defaultDepartment**  | String | 默认部门id        | 必填  | - | 请确保默认部门在departments里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
+| **&emsp; ∟ defaultDepartment**  | String | 默认部门id        | 必填  | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
 | **&emsp; ∟ departments**        | Array  | 所在部门，至少1个	  | 必填  | - | 兼职部门，请确保至少包含默认部门 |
-| **&emsp; ∟ userid**             | String | 第三方平台的id     | 非必填 | - | 如需要同步钉钉，企业微信等第三方平台人员，需要加上此参数 |
-| **&emsp; ∟ useSendEmail**       | Boolean| 是否禁止发送邮件通知	| 非必填 | false | `true`:禁止<br/>`false`:不禁止 |
+| **&emsp; ∟ userid**             | String | 第三方平台的id     | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数 |
+| **&emsp; ∟ useSendEmail**       | Boolean| 是否禁止发送邮件通知	| 非必填 | false | `true` : 禁止 &emsp; `false` : 不禁止 |
 | **&emsp; ∟ staffCustomForm**    | Object    | 自定义字段         | 非必填  | - | 自定义字段 |
 | **&emsp;&emsp; ∟ rankType**  | String    | 职级档案项id       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
 | **&emsp;&emsp; ∟ postType**  | String    | 岗位档案项id       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
-| **&emsp;&emsp; ∟ base**      | String    | 常驻地            | 非必填  | - | 参考格式:"[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
-| **&emsp;&emsp; ∟ u_字段名**   | String    | 自定义字段         | 非必填  | - | 自定义字段,格式为"u\_字段名",例如:u\_项目 |
+| **&emsp;&emsp; ∟ base**      | String    | 常驻地            | 非必填  | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
+| **&emsp;&emsp; ∟ u_字段名**   | String    | 自定义字段         | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目 |
 
 ## CURL
 ```json
@@ -95,7 +95,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
     "items": [
         {
             "id": "Tdk3tgber501v0:P1005",  //员工id
-            "name": "批量新增-5",           //员工姓名
+            "name": "批量新增-5",          //员工姓名
             "code": "P1005",              //员工工号
             "departments": [              //部门集合
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"
@@ -106,7 +106,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
             "userId": "P1005",                                     //第三方id
             "email": "18888881005@163.com",                        //邮箱
             "external": false,                                     //是否外部人员
-            "note": "批量新增",                                      //备注
+            "note": "批量新增",                                     //备注
             "staffCustomForm": {                                   //员工自定义字段
                 "rankType": "ID_3tqvxwgjK6w",                      //职级
                 "postType": "ID_3tqvxwgjF6w",                      //岗位

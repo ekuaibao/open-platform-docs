@@ -25,8 +25,8 @@ url="/api/openapi/v1/staffs/$`staffId`/customFields"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **rankType** | String | 职级	    | 非必填 | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
 | **postType** | String | 岗位	    | 非必填 | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
-| **base**     | String | 常驻地     | 非必填 | - | 参考格式:"[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
-| **u_字段名**  | String | 自定义字段	| 非必填 | - | 自定义字段,格式为"u\_字段名",例如:u\_项目 |
+| **base**     | String | 常驻地     | 非必填 | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
+| **u_字段名**  | String | 自定义字段	| 非必填 | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目 |
 
 :::tip
 - 员工自定义字段为“员工基础字段设置”里面的字段。
@@ -38,10 +38,10 @@ url="/api/openapi/v1/staffs/$`staffId`/customFields"
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/staffs/$djg8LshfUkfM00:ID_3kpneISgylw/customFields?accessToken=ID_3pp881GQaxM:djg8LshfUkfM00' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "rankType": "ID_3jO67GBsl3I",//职级
-    "postType": "ID_3pp9B5CUgPg",//岗位
+    "rankType": "ID_3jO67GBsl3I",  //职级
+    "postType": "ID_3pp9B5CUgPg",  //岗位
     "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",//常驻地
-    "u_测试": "测试修改"//员工自定义字段
+    "u_测试": "测试修改"            //员工自定义字段
 }'
 ```
 
@@ -50,7 +50,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/staffs/$d
 {
     "value": {
         "id": "djg8LshfUkfM00:ID_3kpneISgylw",  //员工ID
-        "name": "冯继成",                        //员工姓名
+        "name": "冯继成",                       //员工姓名
         "code": "",                             //员工工号
         "departments": [                        //所在部门
             "djg8LshfUkfM00"

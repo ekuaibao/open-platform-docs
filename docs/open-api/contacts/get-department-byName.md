@@ -7,8 +7,8 @@ method="GET"
 url="/api/openapi/v1/departments/getDepartmentByName"
 />
 
-:::tip
-由于不同路径存在重名，所以可返回多个
+:::caution
+- 由于不同路径存在重名部门，所以可返回多个。
 :::
 
 ## Query Parameters
@@ -31,7 +31,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
     "items": [
         {
             "id": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", // 部门ID
-            "name": "财务部",                       // 部门名称
+            "name": "财务部",                      // 部门名称
             "parentId": "JOYbpjPP-E2Q00",          // 上级部门ID
             "active": true,                        // 是否启用
             "code": "1003",                        // 部门编码

@@ -12,8 +12,8 @@ url="/api/openapi/v1/staffs"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token	                         | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **start**       | Number  | 分页查询的起始序号，即从第几条数据开始查询 | 必填   | - | 从`0`开始 |
-| **count**       | Number  | 查询数据条数                         | 必填   | - | 最大不能超过`1000` |
+| **start**       | Number  | 分页查询的起始序号，即从第几条数据开始查询 | 必填   | - | 从 `0` 开始 |
+| **count**       | Number  | 查询数据条数                         | 必填   | - | 最大不能超过 `1000` |
 | **active**      | Boolean | 查询条件：员工是否启用                 | 非必填 | true | `true` : 启用<br/>`false` : 停用 |
 
 :::tip
@@ -75,14 +75,14 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
 ```
 
 ## 失败响应
-`start`传参大于等于实际员工总数据量时，会得到如下响应，只显示总数据量“count“，不显示员工信息
+`start` 传参大于等于实际员工总数据量时，会得到如下响应，只显示总数据量“count“，不显示员工信息
 ```json
 {
     "count": 2,
     "items": []
 }
 ```
-当`accessToken`失效时，得到如下回应
+当 `accessToken` 失效时，得到如下回应
 ```json
 {
     "errorCode": 403,

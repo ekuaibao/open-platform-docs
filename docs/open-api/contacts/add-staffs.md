@@ -1,5 +1,5 @@
 # 新增员工
-当员工新增到企业里后，该员工可通过 `快捷登录` （短信验证码登录）的方式进入易快报。或者也可通过 `忘记密码` 来设置密码。
+当员工新增到企业后，该员工可通过 `快捷登录`（短信验证码登录）的方式进入易快报，或者通过 `忘记密码` 来设置密码。
 
 import Control from "../../../components/Control";
 
@@ -8,9 +8,9 @@ method="POST"
 url="/api/openapi/v1/staffs"
 />
 
-:::tip
+:::caution
 - 当新增员工的手机号与一个已停用的员工相同，那么系统将启用已停用的员工并更新其员工信息，而不会创建一个新员工。
-- 使用此接口新增的员工，您将**无法在易快报界面上维护其通讯录**，只能通过接口更新信息和删除。
+- 使用此接口新增的员工，您将 **无法在易快报界面上维护其通讯录**，只能通过接口更新信息和删除。
 :::
 
 ## Query Parameters
@@ -25,19 +25,19 @@ url="/api/openapi/v1/staffs"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **name**                      | String    | 员工姓名           | 必填  | - | 员工姓名 |
 | **code**                      | String    | 工号              | 非必填 | - | 工号 |
-| **cellphone**                 | String    | 手机号            | 非必填 | - | 如果手机号为国外手机号,那么应为:"(区号)手机号",原生环境手机号和邮箱必须至少填一个|
-| **email**                     | String    | 邮箱              | 非必填 | - | 可以不传,但是不可以传空字符串,原生环境手机号和邮箱必须至少填一个 |
+| **cellphone**                 | String    | 手机号            | 非必填 | - | 如果手机号为国外手机号,那么应为 : "(区号)手机号"，原生环境手机号和邮箱必须至少填一个|
+| **email**                     | String    | 邮箱              | 非必填 | - | 可以不传，但是不可以传 `""`，原生环境手机号和邮箱必须至少填一个 |
 | **note**                      | String    | 备注              | 非必填 | - | 备注 |
-| **defaultDepartment**         | String    | 默认部门id         | 必填   | - | 请确保默认部门在departments里。如果不在,系统会自动将departments的第一个元素视为默认部门 |
+| **defaultDepartment**         | String    | 默认部门id         | 必填   | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
 | **departments**               | Array     | 所在部门，至少1个    | 必填  | - | 兼职部门，请确保至少包含默认部门 |
-| **userid**                    | String    | 第三方平台的id      | 非必填 | - | 如需要同步钉钉，企业微信等第三方平台人员，需要加上此参数 |
-| **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | `true`:启用<br/>`false`:不启用 |
-| **useSendEmail**              | Boolean   | 是否禁止发送邮件通知 | 非必填  | false | `true`:禁止<br/>`false`:不禁止 |
+| **userid**                    | String    | 第三方平台的id      | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数 |
+| **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | `true` : 启用 &emsp; `false` : 不启用 |
+| **useSendEmail**              | Boolean   | 是否禁止发送邮件通知 | 非必填  | false | `true` : 禁止 &emsp; `false` : 不禁止 |
 | **staffCustomForm**           | Object    | 自定义字段         | 非必填  | - | 自定义字段 |
 | **&emsp; ∟ rankType**  | String    | 职级档案项id       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
 | **&emsp; ∟ postType**  | String    | 岗位档案项id       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
-| **&emsp; ∟ base**      | String    | 常驻地            | 非必填  | - | 参考格式:"[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
-| **&emsp; ∟ u_字段名**   | String    | 自定义字段         | 非必填  | - | 自定义字段,格式为"u\_字段名",例如:u\_项目 |
+| **&emsp; ∟ base**      | String    | 常驻地            | 非必填  | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
+| **&emsp; ∟ u_字段名**   | String    | 自定义字段         | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目 |
 
 ## CURL
 ```json
@@ -50,11 +50,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs?a
     "cellphone":"15070403486",
     "email":"2777481917@163.com",
     "note":"备注",
-    "defaultDepartment":"JOYbpjPP-E2Q00:pAwbwH_W7sec00",// 默认部门
-    "departments":[//所在部门
+    "defaultDepartment":"JOYbpjPP-E2Q00:pAwbwH_W7sec00",  // 默认部门
+    "departments":[                                       //所在部门
         "JOYbpjPP-E2Q00:pAwbwH_W7sec00"
     ],
-    "staffCustomForm":{//员工自定义字段
+    "staffCustomForm":{                                   //员工自定义字段
         "rankType":"lUcctXntW82A00",   
         "postType":"ltUcxNyWSQ1o00",
         "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",
@@ -84,7 +84,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs?a
             "departments": [                        //所在部门
                   "JOYbpjPP-E2Q00:pAwbwH_W7sec00"
             ],
-            "defaultDepartment": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", // 默认部门
+            "defaultDepartment": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", //默认部门
             "cellphone": "15070403486",             //手机号
             "staffCustomForm":null,                 //员工自定义字段
             "active": true,                         //true：在职，false：已离职

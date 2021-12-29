@@ -1,5 +1,5 @@
 # 根据名称获取自定义档案项
-通过档案项的名称来获取对应的档案项信息列表。
+通过档案项的 `名称` 来获取对应的档案项信息列表。
 
 import Control from "../../../components/Control";
 
@@ -8,9 +8,8 @@ method="GET"
 url="/api/openapi/v1/dimensions/getDimensionByName"
 />
 
-:::tip
-- 此接口并不区分档案类别，需要在获取到本地后再进行分类。
-- 通过dimensionId和[获取自定义档案类别](/docs/open-api/dimensions/get-dimensions)接口返回的id关联。
+:::caution
+- 此接口并不区分档案类别，需要在获取到本地后再进行分类，通过 `dimensionId` 和[获取自定义档案类别](/docs/open-api/dimensions/get-dimensions)接口返回的id关联。
 :::
 
 ## Query Parameters
@@ -65,7 +64,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
 }
 ```
 
-**如果出现以下信息，表示没有对应名称的档案项信息**
+**如果出现以下信息，表示没有对应 `名称` 的档案项信息**
 ```json
 {
     "count": 0,

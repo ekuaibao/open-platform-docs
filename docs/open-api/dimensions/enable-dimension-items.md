@@ -23,10 +23,10 @@ url="/api/openapi/v1/dimensions/items/$`id`/enable"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **applyToSubtree** | Boolean | 是否一并启用所有子级档案项 | 非必填 | false | `true`:启用 &emsp; `false`:不启用 |
+| **applyToSubtree** | Boolean | 是否一并启用所有子级档案项 | 非必填 | false | `true` : 启用 &emsp; `false` : 不启用 |
 
 :::tip
-- `applyToSubtree`参数可以不填，但是body体`{}`必须存在。
+- `applyToSubtree` 参数可以不填，但是body体 `{}` 必须存在。
 :::
 
 ## CURL
@@ -39,13 +39,13 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/dimension
 }'
 ```
 
-:::danger
+## 成功响应
+:::caution
 - 响应需要判断状态码来确定是否成功。
 :::
 
-## 成功响应
 ```text
-    code 204
+code 204
 ```
 
 ## 失败响应

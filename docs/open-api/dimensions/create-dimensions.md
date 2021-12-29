@@ -19,10 +19,10 @@ url="/api/openapi/v1/dimensions"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **name**              | String  | 档案类别名称	    | 必填  | - | 档案类别名称不能重复 |
 | **code**              | String  | 档案类别编码	    | 非必填 | - | 档案类别编码可为空，但不能重复 |
-| **mustLeafInBusness** | boolean | 是否必选叶子节点	| 必填  | - | `true`:必选 &emsp; `false`:非必选 |
+| **mustLeafInBusness** | boolean | 是否必选叶子节点	| 必填  | - | `true` : 必选 &emsp; `false` : 非必选 |
 
 :::tip
-- 当填写的`name`字段在系统中已存在，会忽略code参数，返回系统中已存在的档案类别id。
+- 当填写的 `name` 字段在系统中已存在，会忽略 `code` 参数，返回系统中已存在的档案类别id。
 :::
 
 ## CURL
@@ -37,7 +37,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 ```
 
 ## 成功响应
-当`code` 编码和`name`名称在系统中已存在时，也会返回已创建的档案值id：
+当 `code` 编码和 `name` 名称在系统中已存在时，会返回已创建的档案值id：
 ```json
 {
   "id": "Urf3lsFgBp00gw:档案名称"   //档案值id

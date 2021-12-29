@@ -1,5 +1,4 @@
 # 更新自定义档案项
-用于修改自定义档案项。
 
 import Control from "../../../components/Control";
 
@@ -31,7 +30,7 @@ url="/api/openapi/v1/dimensions/items/$`id`"
 | **&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填  | -     | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 | **&emsp; ∟ roles**       | Array   | 角色白名单	| 非必填  | -     | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
 | **&emsp; ∟ departments** | Array   | 部门白名单	| 非必填  | -     | 值为[部门id](/docs/open-api/corporation/get-departments) |
-| **parentId**               | String  | 父节点id    | 非必填  | -     | 通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写`""` |
+| **parentId**               | String  | 父节点id    | 非必填  | -     | 通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写 `""` |
 
 :::tip
 - 系统预置档案有一些额外字段，详细字段传参见CURL里面的注释。
@@ -78,13 +77,13 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/dimension
 }'
 ```
 
-:::danger
+## 成功响应
+:::caution
 - 响应需要判断状态码来确定是否成功。
 :::
 
-## 成功响应
 ```text
-    code 204
+code 204
 ```
 
 ## 失败响应

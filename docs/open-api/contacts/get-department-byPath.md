@@ -26,7 +26,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
 {
       "value": {
             "id": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", // 部门ID
-            "name": "财务部",                       // 部门名称
+            "name": "财务部",                      // 部门名称
             "parentId": "JOYbpjPP-E2Q00",          // 上级部门ID
             "active": true,                        // 是否启用
             "code": "1003",                        // 部门编码
