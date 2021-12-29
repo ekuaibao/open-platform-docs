@@ -1,5 +1,5 @@
 # 查询预算节点配置和节点路径信息
-通过传递的查询参数（名称、编码）来查询符合条件的预算节点配置信息和节点路径信息（从根节点到查询节点之间的路径节点信息）
+通过传递的查询参数（名称、编码）来查询符合条件的预算节点配置信息和节点路径信息（从根节点到查询节点之间的路径节点信息）。
 
 import Control from "../../../components/Control";
 
@@ -20,7 +20,7 @@ url="/api/openapi/v2/budgets/searchBudgetNode/$`budgetInfoId`/$`budgetInfoVersio
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token  | 必填   | -   | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **start**       | Number | 查询开始位置 | 非必填 | 0   | - |
+| **start**       | Number | 查询开始位置 | 非必填 | 0   | 查询开始位置 |
 | **count**       | Number | 查询数量    | 非必填 | 100 | 不可超过100 |
 
 ## Body Parameters
@@ -141,7 +141,7 @@ curl --location --request POST 'http://460mix.ekuaibao.net/api/openapi/v2/budget
 ```
 
 ## 失败响应
-参数传输错误， 返回此响应数据
+参数传输错误， 返回此响应数据：
 ```json
 {
     "errorCode": 400,

@@ -1,9 +1,5 @@
 # 获取预算树详细信息
-返回单个预算树的全部信息，包括预算执行情况
-
-:::caution
-不推荐使用，本接口依赖于服务的性能，当后台判定要查询的预算树超过2000个节点时此接口就会报错
-:::
+返回单个预算树的全部信息，包括预算执行情况。
 
 import Control from "../../../components/Control";
 
@@ -11,6 +7,10 @@ import Control from "../../../components/Control";
 method="GET"
 url="/api/openapi/v2/budgets/$`budgetId`"
 />
+
+:::caution
+不推荐使用，本接口依赖于服务的性能，当后台判定要查询的预算树超过2000个节点时此接口就会报错。****
+:::
 
 ## Path Parameters
 

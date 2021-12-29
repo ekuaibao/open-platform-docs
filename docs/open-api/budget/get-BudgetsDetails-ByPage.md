@@ -21,7 +21,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/query"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**  | String | 认证token      | 必填  | -   | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **nodeId**       | String | 指定查询的节点ID | 非必填 | -   | [预算节点id获取](/docs/open-api/budget/get-budget-details),为空就是查询根节点 |
-| **start**        | Number | 查询开始位置     | 必填  | 0   | - |
+| **start**        | Number | 查询开始位置     | 必填  | 0   | 查询开始位置 |
 | **count**        | Number | 查询数量        | 必填  | 100 | 不可超过100 |
 
 ## CURL
@@ -146,7 +146,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 ```
 
 ## 失败响应
-`budgetId` 不存在时， 返回此响应数据。
+`budgetId` 不存在时， 返回此响应数据：
 ```json
 {
     "errorCode": 400,
@@ -157,7 +157,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 }
 ```
 
-程序内部错误， 返回此响应数据， 可尝试再次请求获取数据。
+程序内部错误， 返回此响应数据， 可尝试再次请求获取数据：
 ```json
 {
     "errorCode": 500,

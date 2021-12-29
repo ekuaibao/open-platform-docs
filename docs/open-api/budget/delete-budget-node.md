@@ -5,11 +5,7 @@ authors: [张国阳]
 ---
 
 # ~~删除预算节点~~
-删除指定的预算节点
-
-:::danger
-不推荐使用，接口废弃，不再更新。推荐使用【批量更新(新增/修改/删除)预算节点】接口
-:::
+删除指定的预算节点。
 
 import Control from "../../../components/Control";
 
@@ -17,6 +13,10 @@ import Control from "../../../components/Control";
 method="POST"
 url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/del"
 />
+
+:::caution
+不推荐使用，接口废弃，不再更新。推荐使用【批量更新(新增/修改/删除)预算节点】接口。
+:::
 
 ## Path Parameters
 
@@ -51,7 +51,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 
 
 ## 失败响应
-`budgetId` 不存在时，返回此响应数据
+`budgetId` 不存在时，返回此响应数据：
 ```json
 {
     "value": {

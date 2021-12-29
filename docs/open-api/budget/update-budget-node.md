@@ -5,11 +5,7 @@ authors: [张国阳]
 ---
 
 # ~~更新预算节点~~
-更新指定预算节点的预算金额或负责人
-
-:::danger
-不推荐使用，接口废弃，不再更新。推荐使用【批量更新(新增/修改/删除)预算节点】接口
-:::
+更新指定预算节点的预算金额或负责人。
 
 import Control from "../../../components/Control";
 
@@ -17,6 +13,10 @@ import Control from "../../../components/Control";
 method="PUT"
 url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/update"
 />
+
+:::caution
+不推荐使用，接口废弃，不再更新。推荐使用【批量更新(新增/修改/删除)预算节点】接口。
+:::
 
 ## Path Parameters
 
@@ -60,7 +60,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 ```
 
 ## 成功响应
-
 ```json
 {
     "value": {
@@ -71,7 +70,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 ```
 
 ## 失败响应
-`budgetId` 不存在时， 返回此响应数据
+`budgetId` 不存在时， 返回此响应数据：
 ```json
 {
     "value": {
