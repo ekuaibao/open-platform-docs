@@ -18,10 +18,10 @@ url="/api/openapi/v2/fieldMapping/dataLink"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **name**                  | String | 赋值规则名称  | 必填 | -  |- |
-| **remark**                | String | 备注        | 非必填 | - |- |
-| **sourceEntityId**        | String | 业务对象id   | 必填 | -  |- |
-| **fields**                | Object | 赋值字段     | 必填 | -  | - |
+| **name**                  | String | 赋值规则名称  | 必填 | -  | 赋值规则名称 |
+| **remark**                | String | 备注        | 非必填 | - | 备注 |
+| **sourceEntityId**        | String | 业务对象id   | 必填 | -  | 业务对象id |
+| **fields**                | Object | 赋值字段     | 必填 | -  | 赋值字段  |
 | **&emsp; ∟ sourceField** | Object | 赋值源字段    | 必填 | -  | 为实体字段 `name` 值,[了解如何获取实体字段](/docs/open-api/datalink/get-entity-list)  |
 | **&emsp; ∟ targetField** | Object | 赋值目标字段  | 必填 | -  | 请查看问题五,[了解如何获取目标字段](/docs/open-api/datalink/question-answer)  |
 

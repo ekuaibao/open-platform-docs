@@ -11,7 +11,7 @@ url="/api/openapi/v2/extension/IKCRM/object/`objectId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **objectId** | String  |  扩展类型(business=商机、contract=合同、client=客户)  | 必填 | - | - |
+| **objectId** | String  | 扩展类型 | 必填 | - | `business` : 商机 &emsp; `contract` : 合同 &emsp; `client` : 客户 |
 
 ## Query Parameters
 
@@ -24,9 +24,9 @@ url="/api/openapi/v2/extension/IKCRM/object/`objectId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **index** | Number | 当前页                   | 必填  | - | - |
-| **count** | Number | 查询数                   | 必填  | - | - |
-| **ids**   | Array  | 按照业务对象实例的id查询详情 | 非必填 | - | - |
+| **index** | Number | 当前页        | 必填  | - | 当前页 |
+| **count** | Number | 查询数        | 必填  | - | 查询数 |
+| **ids**   | Array  | 业务对象实例id | 非必填 | - | 按照业务对象实例的id查询详情 |
 
 ## CURL
 ```json

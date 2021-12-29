@@ -17,7 +17,7 @@ url="/api/openapi/v2/extension/flow/INVOICE/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **type**      | String | 查询参数类型 | 必填 | - | `code`:单据编号 `id`:单据ID     |
+| **type**      | String | 查询参数类型 | 必填 | - | `code` :单据编号 `id` :单据ID     |
 | **codeOrIds** | Array  | 查询参数    | 必填 | - | 传对应参数类型值，单据编号或者单据ID |
 
 ## CURL

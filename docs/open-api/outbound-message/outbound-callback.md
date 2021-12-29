@@ -15,7 +15,7 @@ url="/api/outbound/v1/approval"
 | **signKey**  | String | 签名秘钥(系统分配) | 必填  | - | 通过出站消息配置上获取 |
 | **flowId**   | String | 单据ID	          | 必填  | - | 通过出站消息获取 |
 | **nodeId**   | String | 节点ID	          | 必填  | - | 通过出站消息获取 |
-| **action**   | String | 审批动作	      | 必填  | - | `accept`:同意 `refuse`:驳回 |
+| **action**   | String | 审批动作	      | 必填  | - | `accept` : 同意 &emsp; `refuse` : 驳回 |
 | **comment**  | String | 审批意见          | 必填  | - | 审批意见 |
 | **rejectTo** | String | 驳回的节点ID      | 非必填 | - | 填写需要驳回的节点ID，可根据单据ID<br/>通过[获取单据详情](/docs/open-api/flows/get-forms-details)中的logs审批日志获取 |
 

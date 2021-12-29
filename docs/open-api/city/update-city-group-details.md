@@ -21,7 +21,7 @@ url="/api/openapi/v1/cityGroup/detail/save"
 | **roleIds**     | String[] | 角色id列表 | 非必填 | - | [通过查询角色组和角色获取](/docs/open-api/corporation/get-roles-group) |
 | **staffIds**    | String[] | 人员id列表 | 非必填 | - | [通过获取员工列表获取](/docs/open-api/corporation/get-all-staffs) |
 | **cityIds**     | String[] | 城市id列表 | 必填   | - | [通过获取城市列表数据获取](/docs/open-api/basedata/get-basedata-city) |
-| **cityGroupId** | String   | 城市组id	| 必填   | - | - |
+| **cityGroupId** | String   | 城市组id	| 必填   | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
 
 ## CURL
 ```json

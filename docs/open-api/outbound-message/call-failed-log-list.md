@@ -12,10 +12,10 @@ url="/api/openapi/v1/outboundMessageLogs"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token	                      | 必填  | -    | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **messageType** | String | flow(流程)/message(通知)/dataLink | 非必填 | flow | - |
-| **startDate**   | Long   | 开始时间（毫秒）                    | 必填  | -    | - |
-| **endDate**     | Long   | 结束时间（毫秒）                    | 必填  | -    | - |
+| **accessToken** | String | 认证token	  | 必填   | -    | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **messageType** | String | 消息类型       | 非必填 | flow | flow(流程)/message(通知)/dataLink |
+| **startDate**   | Long   | 开始时间（毫秒） | 必填   | -    | 开始时间（毫秒） |
+| **endDate**     | Long   | 结束时间（毫秒） | 必填   | -    | 结束时间（毫秒） |
 
 ## CURL
 ```json

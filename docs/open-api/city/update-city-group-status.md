@@ -11,7 +11,7 @@ url="/api/openapi/v1/cityGroup/updateStatus/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String | 城市组id | 必填 | - |  -  |
+| **id** | String | 城市组id | 必填 | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
 
 ## Query Parameters
 

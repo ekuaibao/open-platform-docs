@@ -11,7 +11,7 @@ url="/api/openapi/v2/invoice/risk/label/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array&lt;String&gt; | 单据集合 | 必填 | - | - |
+| **ids** | Array&lt;String&gt; | 单据集合 | 必填 | - | 单据集合 |
 
 ## Query Parameters
 

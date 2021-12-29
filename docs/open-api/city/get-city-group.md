@@ -11,8 +11,8 @@ url="/api/openapi/v1/cityGroup/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 通过授权接口获取 | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **keyword**     | String | 按城市组名称搜索 | 非必填 | - |  -  |
+| **accessToken** | String | 通过授权接口获取 | 必填   | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **keyword**     | String | 查询关键字      | 非必填 | - | 按城市组名称搜索 |
 
 ## CURL
 ```json

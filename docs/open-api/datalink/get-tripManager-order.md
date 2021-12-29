@@ -19,14 +19,18 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **entityId** | String | 行程管理的业务对象ID  | 必填 | - | 行程管理的业务对象ID |
 | **start**    | Int    | 起始值              | 必填 | - |  从0开始搜索  |
-| **count**    | Int    | 查询总数            | 必填  | - |  每批次查询总数不可大于100条  |
+| **count**    | Int    | 查询总数            | 必填 | - |  每批次查询总数不可大于100条  |
 
 :::tip
- - 行程管理业务对象ID获取见下图
- ![image](images/行程管理业务对象获取1.png)
- ![image](images/行程管理业务对象获取2.png)
- - 【行程管理】中行程、订单、对账单模块下为什么都有飞机、酒店这种分类？
- ![image](images/行程管理业务对象释义.png)
+- 行程管理业务对象ID获取见下图
+
+  ![image](images/行程管理业务对象获取1.png)
+
+  ![image](images/行程管理业务对象获取2.png)
+
+- 【行程管理】中行程、订单、对账单模块下为什么都有飞机、酒店这种分类？
+
+  ![image](images/行程管理业务对象释义.png)
 :::
 
 :::tip

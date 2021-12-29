@@ -1,6 +1,6 @@
 # 获取发票主体信息
 
-获取单据上的发票主体信息
+获取单据上的发票主体信息。
 
 import Control from "../../../components/Control";
 
@@ -37,32 +37,6 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
  - `ids`、`codes`不填时，`index`和`count`两个参数必填，只要传了index和count参数，成功响应中的“count”表示总数。
  - `index`和`count`不填时，`ids`或`codes`参数必填，任意填写其一时，成功响应中的“count”表示有效参数量，而非总数。
 :::
-
-### objectId发票类型
-
-| objectId       | 发票类型    | 
-| :--------- | :------ |
-| **invoice**         | 发票（包含：增值税发票、增值税普通发票/卷票、二手车销售统一发票、机动车销售统一发票）|
-| **other**           | 其它 |
-| **taxi**            | 出租车票 |
-| **passengerCar**    | 客运汽车发票 |
-| **train**           | 火车票 |
-| **flightItinerary** | 航空运输电子客票行程单 |
-| **tolls**           | 过路费发票 |
-| **fixed**           | 定额发票 |
-
-### 发票类别（E_system_发票主体_发票类别）介绍如下
-| 字段名 | 对应发票类型 |
-| :---  | :---      |
-| **DIGITAL_NORMAL**  | 增值税电子普票 |
-| **DIGITAL_SPECIAL** | 增值税电子专票 |
-| **PAPER_NORMAL**    | 增值税纸质普票 |
-| **PAPER_SPECIAL**   | 增值税纸质专票 |
-| **PAPER_CAR**       | 机动车专用发票 |
-| **PAPER_ROLL**      | 卷式发票      |
-| **PAPER_FEE**       | 通行费发票    |
-| **BLOCK_CHAIN**     | 区块链发票    |
-| **SECOND_CAR**      | 二手车发票    |
 
 ## CURL
 ```json
@@ -855,6 +829,32 @@ import TabItem from '@theme/TabItem';
     "data": null
 }
 ```
+
+## objectId发票类型
+
+| objectId       | 发票类型    | 
+| :--------- | :------ |
+| **invoice**         | 发票（包含：增值税发票、增值税普通发票/卷票、二手车销售统一发票、机动车销售统一发票）|
+| **other**           | 其它 |
+| **taxi**            | 出租车票 |
+| **passengerCar**    | 客运汽车发票 |
+| **train**           | 火车票 |
+| **flightItinerary** | 航空运输电子客票行程单 |
+| **tolls**           | 过路费发票 |
+| **fixed**           | 定额发票 |
+
+## 发票类别（E_system_发票主体_发票类别）介绍如下
+| 字段名 | 对应发票类型 |
+| :---  | :---      |
+| **DIGITAL_NORMAL**  | 增值税电子普票 |
+| **DIGITAL_SPECIAL** | 增值税电子专票 |
+| **PAPER_NORMAL**    | 增值税纸质普票 |
+| **PAPER_SPECIAL**   | 增值税纸质专票 |
+| **PAPER_CAR**       | 机动车专用发票 |
+| **PAPER_ROLL**      | 卷式发票      |
+| **PAPER_FEE**       | 通行费发票    |
+| **BLOCK_CHAIN**     | 区块链发票    |
+| **SECOND_CAR**      | 二手车发票    |
 
 
 

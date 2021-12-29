@@ -9,9 +9,9 @@ url="/api/openapi/v1/cityGroup/update/$`id`"
 
 ## Path Parameters
 
-| 名称       | 类型    | 描述            | 是否必填   | 默认值  |备注                                         |
-| :--------- | :------ | :------------- |:--------- |:------ | :------------------------------------------  |
-| **id** | String  |城市组id      |必填   | - |  -  |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **id** | String  | 城市组id |必填   | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
 
 ## Query Parameters
 
@@ -23,8 +23,8 @@ url="/api/openapi/v1/cityGroup/update/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **name** | String | 名称 | 必填  | - | - |
-| **desc** | String | 描述 | 非必填 | - | - |
+| **name** | String | 名称 | 必填  | - | 名称 |
+| **desc** | String | 描述 | 非必填 | - | 描述 |
 
 ## CURL
 ```json

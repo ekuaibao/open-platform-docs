@@ -27,18 +27,18 @@ url="/api/openapi/v2/datalink/editEntityFields/$`platformId`/$`entityId`"
 | **delfields**                 | Array   | 删除的数据       | 非必填 | -     | 数组为要删除的字段label列表 |
 | **addfields**                 | Array   | 添加的数据       | 非必填 | -     | 数组为要添加的字段label列表 |
 | **&emsp; ∟ label**           | String  | 字段名称         | 必填  | -     | 字段名称 |
-| **&emsp; ∟ type**            | String  | 字段类型         | 必填  | -     | `text`:文本 `number`:数字 `autoNumber`:自动编码<br/>`date`:日期 `dateRange`:日期范围 `money`:金额<br/>`switcher`:开关  `list`:多选 `ref`:关联业务对象 |
-| **&emsp; ∟ optional**        | Boolean | 字段是否必填      | 必填  | true  | `false`:必填 `true`:选填 |
+| **&emsp; ∟ type**            | String  | 字段类型         | 必填  | -     | `text` : 文本 &emsp; `number` : 数字 &emsp; `autoNumber` : 自动编码<br/>`date` : 日期 &emsp; `dateRange` : 日期范围 &emsp; `money` : 金额<br/>`switcher` : 开关 &emsp; `list` : 多选 &emsp; `ref` : 关联业务对象 |
+| **&emsp; ∟ optional**        | Boolean | 字段是否必填      | 必填  | true  | `true` : 选填 &emsp; `false` : 必填 |
 | **&emsp; ∟ scale**           | Number  | 小数位数         | 非必填 | -     | `type` 为 `number` 时必填 |
 | **&emsp; ∟ unit**            | String  | 单位            | 非必填 | -     | `type` 为 `number` 时必填 |
 | **&emsp; ∟ rule**            | String  | 自动编号生成规则   | 非必填 | -     | `type` 为 `autoNumber` 时必填。 请查看问题四，[了解具体编码规则](/docs/open-api/datalink/question-answer) |
-| **&emsp; ∟ withTime**        | Boolean | 是否包含时间      | 非必填 | false | `type` 为 `date`或`dateRange` 时必填<br/>`true`:包含 `false`:不包含|
+| **&emsp; ∟ withTime**        | Boolean | 是否包含时间      | 非必填 | false | `type` 为 `date`或`dateRange` 时必填<br/>`true` : 包含 &emsp; `false` : 不包含|
 | **&emsp; ∟ entity**          | String  | 业务对象取值范围   | 非必填 | -     | `type` 为 `ref` 时必填 |
-| **&emsp; ∟ formula**         | Boolean | 是否是自动计算类型 | 非必填 | false | `type` 为 `number`或`money`时有效<br/>`true`:是 `false`:否 |
+| **&emsp; ∟ formula**         | Boolean | 是否是自动计算类型 | 非必填 | false | `type` 为 `number`或`money`时有效<br/>`true` : 是 &emsp; `false` : 否 |
 | **&emsp; ∟ defaultValue**    | String  | 计算公式         | 非必填 | -     | `formula` 为 `true` 时必填，计算公式内容 |
 
 :::caution
- - `addfields.entity` 暂不支持调用接口获取，如果不知道准确的取值，可以通过问题五[获取目标字段值](/docs/open-api/question-answer)类似方式查看请求取得。
+ - `addfields.entity` 暂不支持调用接口获取，如果不知道准确的取值，可以通过问题五[获取目标字段值](/docs/open-api/datalink/question-answer)类似方式查看请求取得。
  - `delfields`和`addfields`二者不能同时为空。
 :::
 

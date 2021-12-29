@@ -1,5 +1,5 @@
 # 获取业务对象实例信息
-根据业务对象实例的id或者code查询对应数据
+根据业务对象实例的id或者code查询对应数据。
 
 import Control from "../../../components/Control";
 
@@ -29,7 +29,7 @@ url="/api/openapi/v2/extension/DATA_LINK/object/`entityId`"
 | **index** | Number | 当前页                     | 非必填 | - | 当前页 |
 | **count** | Number | 查询数                     | 非必填 | - | 每页查询数据量，最大不能超过`1000` |
 
-:::info
+:::tip
  - 参数优先级 `ids`>`codes`>`index`和`count`，多组参数均传值时，按优先级最高的开始生效。
  - `ids`、`codes`参数，接口没有校验参数是否在系统中存在，获取不到数据时，请检查参数的准确性。
  - `ids`、`codes`不填时，`index`和`count`两个参数必填，只要传了index和count参数，成功响应中的“count”表示总数。

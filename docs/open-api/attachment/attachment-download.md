@@ -1,5 +1,5 @@
 # 附件下载
-通过附件的id,key去获取附件的下载链接
+通过附件的`id`,`key`去获取附件的下载链接
 
 import Control from "../../../components/Control";
 
@@ -52,10 +52,14 @@ url是下载的路径，thumbUrl是指缩略图的下载路径
 :::
 
 ## 失败响应
-```
-如果返回：Error 405 Method Not Allowed  //请检查请求的方式正确的Method是POST方式
-如果返回：[]   //表示根据您所提供的附件查询信息没有找到对应的附件
+请检查请求的方式正确的Method是POST方式
+```text
+Error 405 Method Not Allowed  
 ```
 
+为空表示根据您所提供的附件查询信息没有找到对应的附件
+```text
+[]
+```
 
 

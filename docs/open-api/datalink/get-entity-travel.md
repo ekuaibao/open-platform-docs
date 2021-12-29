@@ -11,7 +11,7 @@ url="/api/openapi/v2/extension/TRAVEL/object/`objectId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **objectId** | String | 行程类型(travel=所有行程、train=火车行程、taxi=打车行程、hotel=酒店行程、flight=机票行程) | 必填 | - | - |
+| **objectId** | String | 行程类型 | 必填 | - | `travel` : 所有行程&emsp; `train` : 火车行程&emsp; `taxi` : 打车行程<br/>`hotel` : 酒店行程&emsp; `flight` : 机票行程 |
 
 ## Query Parameters
 
@@ -23,9 +23,9 @@ url="/api/openapi/v2/extension/TRAVEL/object/`objectId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **index** | Number | 当前页                   | 必填  | - | - |
-| **count** | Number | 查询数                   | 必填  | - | - |
-| **ids**   | Array  | 按照业务对象实例的id查询详情 | 非必填 | - | - |
+| **index** | Number | 当前页        | 必填  | - | 当前页 |
+| **count** | Number | 查询数        | 必填  | - | 查询数 |
+| **ids**   | Array  | 业务对象实例id | 非必填 | - | 按照业务对象实例的id查询详情 |
 
 ## CURL
 ```json
