@@ -26,22 +26,27 @@
 
 ![image](images/ebotManage.png)
 
+---
 ### （2）新建出站消息界面
 
 ![image](images/新建出站消息界面.png)
 
+---
 ### （3）新建/编辑出站消息--审批事件（审批事件支持多选，但每个事件只能被选择一次）
 
 ![image](images/approvalEvent.png)
 
+---
 ### （4）新建/编辑出站消息--业务对象数据变更
 
 ![image](images/datalinkChange.png)
 
+---
 ### （5）新建/编辑出站消息--Ebot（在审批流Ebot节点上新建此类型）
 
 ![image](images/ebot.png)
 
+---
 ### （6）新建/编辑出站消息--借款相关
 
 ![image](images/loan.png)
@@ -110,6 +115,7 @@
 
 ![image](images/审批事件.png)
 
+---
 ### （2）业务对象变更
 
 业务对象变更消息日志字段如下：
@@ -126,6 +132,7 @@
 
 ![image](images/业务对象变更.png)
 
+---
 ### （3）借款事件
 
 借款事件消息日志字段如下：
@@ -143,6 +150,7 @@
 
 ![image](images/借款事件.png)
 
+---
 ### （4）EBot事件
 
 EBot事件消息日志字段如下：
@@ -158,3 +166,5 @@ EBot事件消息日志字段如下：
 | **操作**    | 参数：出站消息报文信息，request和response<br/>重试：无论出站消息成功与否，均可点击手动触发一次出站消息 |
 
 ![image](images/EBot事件.png)
+
+---

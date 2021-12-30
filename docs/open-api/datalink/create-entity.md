@@ -627,7 +627,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ```
 
 ## 失败响应
-业务对象的 name 值需要保证其唯一性，否则会返回如下响应：
+业务对象的 `name` 值需要保证其唯一性，否则会返回如下响应：
 ```text
 业务对象名称重复，请修改！
 ```

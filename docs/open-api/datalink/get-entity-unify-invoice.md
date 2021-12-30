@@ -13,7 +13,7 @@ url="api/openapi/v1/invoice/unify"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**               | String | 认证token    | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **unifyInvoiceCorporationId** | String | 开票方id     | 必填 | - | [获取开票方](/docs/open-api/datalink/get-entity-unify-corporation) |
-| **index**                     | Number | 确认开票时间戳 | 必填 | - | 例如当index=1612344239976时，会查询所有index>1612344239976的开票信息 |
+| **index**                     | Number | 确认开票时间戳 | 必填 | - | 例如：当index=1612344239976时，会查询所有index>1612344239976的开票信息 |
 | **count**                     | Number | 查询数据条数  | 必填 | - | 不可超过10 |
 
 ## CURL

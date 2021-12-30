@@ -13,7 +13,7 @@ url="/api/openapi/v1/outboundMessageLogs"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token	  | 必填   | -    | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **messageType** | String | 消息类型       | 非必填 | flow | flow(流程)/message(通知)/dataLink |
+| **messageType** | String | 消息类型       | 非必填 | flow | `message` : 审批事件 &emsp; `flow` : 流程(EBOT) <br/> `repayment` : 还款事件 &emsp; `dataLink` : 业务对象变更事件 |
 | **startDate**   | Long   | 开始时间（毫秒） | 必填   | -    | 开始时间（毫秒） |
 | **endDate**     | Long   | 结束时间（毫秒） | 必填   | -    | 结束时间（毫秒） |
 

@@ -58,7 +58,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 }
 ```
 
-不传`nodeIds`参数时，响应如下：
+不传 `nodeIds` 参数时，响应如下：
 ```json
 {
     "errorCode": 400,

@@ -11,7 +11,7 @@ url="/api/openapi/v2/invoice/risk/label/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array&lt;String&gt; | 单据集合 | 必填 | - | 单据集合 |
+| **ids** | Array | 单据集合 | 必填 | - | 单据集合 |
 
 ## Query Parameters
 
@@ -54,7 +54,7 @@ curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v2/invoice/ri
 ```
 
 ## 失败响应
-参数`ids`为必填项，不可为空，否则请求无效，返回状态码为404
+参数 `ids` 为必填项，不可为空，否则请求无效，返回以下报错：
 ```json
 {
     "servlet": "org.glassfish.jersey.servlet.ServletContainer-23df29c6",

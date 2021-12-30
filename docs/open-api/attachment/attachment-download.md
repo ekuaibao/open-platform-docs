@@ -1,5 +1,5 @@
 # 附件下载
-通过附件的`id`,`key`去获取附件的下载链接
+通过附件的 `id` ， `key` 去获取附件的下载链接
 
 import Control from "../../../components/Control";
 
@@ -18,8 +18,8 @@ url="/api/openapi/v2/attachment/downloadurls"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id**         | String | 通过获取单据详情获取 | 必填 | - | 对应单据详情中的attachments字段的fileId |
-| **key**        | String | 通过获取单据详情获取 | 必填 | - | 对应单据详情中的attachments字段的key |
+| **id**         | String | 通过获取单据详情获取 | 必填 | - | 对应单据详情中的 `attachments` 字段的 `fileId` |
+| **key**        | String | 通过获取单据详情获取 | 必填 | - | 对应单据详情中的 `attachments` 字段的 `key` |
 | **expiration** | Number | 下载链接过期时间    | 必填 | - | 用户自定义，指获取到的url的过期时间，单位：秒 |
 
 ## CURL
@@ -48,16 +48,16 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachmen
 ```
 
 :::tip
-url是下载的路径，thumbUrl是指缩略图的下载路径
+url是下载的路径，thumbUrl是指缩略图的下载路径。
 :::
 
 ## 失败响应
-请检查请求的方式正确的Method是POST方式
+请检查请求的方式正确的Method是POST方式：
 ```text
 Error 405 Method Not Allowed  
 ```
 
-为空表示根据您所提供的附件查询信息没有找到对应的附件
+为空表示根据您所提供的附件查询信息没有找到对应的附件：
 ```text
 []
 ```

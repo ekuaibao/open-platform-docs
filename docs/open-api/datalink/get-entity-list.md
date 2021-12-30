@@ -1,5 +1,5 @@
 # 获取业务对象
-获取某个扩展的所有业务对象
+获取某个扩展的所有业务对象。
 
 import Control from "../../../components/Control";
 
@@ -107,7 +107,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ```
 
 ## 失败响应
-请确保获取的扩展 platformId 是真实存在的，否则会返回如下响应：
+请确保获取的 `扩展id` 是真实存在的，否则会返回如下响应：
 ```text
 该扩展不存在
 ```

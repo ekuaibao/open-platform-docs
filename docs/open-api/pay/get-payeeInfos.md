@@ -1,5 +1,5 @@
-# 获取收款账号
-可以根据`银行账号`或者`账户名称`或者`账户id`来获取收款账号信息（支持翻页）
+# 获取收款账户
+可以根据`银行账号`或者`账户名称`或者`账户id`来获取收款账号信息（支持翻页）。
 
 import Control from "../../../components/Control";
 
@@ -18,7 +18,7 @@ url="/api/openapi/v2/payeeInfos"
 | **names**       | String  | 账户名称             | 非必填 | - | 多个值用英文逗号进行分割 |
 | **cardNos**     | String  | 银行卡号             | 非必填 | - | 多个值用英文逗号进行分割 |
 | **ids**         | String  | 账号id              | 非必填 | - | 多个值用英文逗号进行分割 |
-| **active**      | Boolean | 查询条件：账户是否停用 | 非必填 | true | `true`:未停用`false`:已停用 |
+| **active**      | Boolean | 查询条件：账户是否停用 | 非必填 | true | `true` : 未停用 &emsp; `false` : 已停用 |
 
 :::tip
 - 除`avtive`参数外，其他的请求参数都需要传，即使参数值为空也要带上参数。
@@ -101,7 +101,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
 ```
 
 ## 失败响应
-请求参数未完全填写， 则可能报以下错误。
+请求参数未完全填写， 则可能报以下错误：
 ```json
 {
     "servlet": "org.glassfish.jersey.servlet.ServletContainer-500d9427",

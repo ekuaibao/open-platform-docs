@@ -32,14 +32,14 @@ url="/api/openapi/v2/datalink/editEntityFields/$`platformId`/$`entityId`"
 | **&emsp; ∟ scale**           | Number  | 小数位数         | 非必填 | -     | `type` 为 `number` 时必填 |
 | **&emsp; ∟ unit**            | String  | 单位            | 非必填 | -     | `type` 为 `number` 时必填 |
 | **&emsp; ∟ rule**            | String  | 自动编号生成规则   | 非必填 | -     | `type` 为 `autoNumber` 时必填。 请查看问题四，[了解具体编码规则](/docs/open-api/datalink/question-answer) |
-| **&emsp; ∟ withTime**        | Boolean | 是否包含时间      | 非必填 | false | `type` 为 `date`或`dateRange` 时必填<br/>`true` : 包含 &emsp; `false` : 不包含|
+| **&emsp; ∟ withTime**        | Boolean | 是否包含时间      | 非必填 | false | `type` 为 `date` 或 `dateRange` 时必填<br/> `true` : 包含 &emsp; `false` : 不包含|
 | **&emsp; ∟ entity**          | String  | 业务对象取值范围   | 非必填 | -     | `type` 为 `ref` 时必填 |
-| **&emsp; ∟ formula**         | Boolean | 是否是自动计算类型 | 非必填 | false | `type` 为 `number`或`money`时有效<br/>`true` : 是 &emsp; `false` : 否 |
+| **&emsp; ∟ formula**         | Boolean | 是否是自动计算类型 | 非必填 | false | `type` 为 `number` 或`money`时有效<br/>`true` : 是 &emsp; `false` : 否 |
 | **&emsp; ∟ defaultValue**    | String  | 计算公式         | 非必填 | -     | `formula` 为 `true` 时必填，计算公式内容 |
 
 :::caution
  - `addfields.entity` 暂不支持调用接口获取，如果不知道准确的取值，可以通过问题五[获取目标字段值](/docs/open-api/datalink/question-answer)类似方式查看请求取得。
- - `delfields`和`addfields`二者不能同时为空。
+ - `delfields` 和 `addfields` 二者不能同时为空。
 :::
 
 ## CURL

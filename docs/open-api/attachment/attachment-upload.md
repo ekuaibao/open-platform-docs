@@ -9,7 +9,7 @@ url="/api/openapi/v2/attachment/upload"
 />
 
 :::danger
-附件最大不能超过30MB，否则会报错“**上传附件大小不可超过30Mb**”
+附件最大不能超过30MB，否则会报错“**上传附件大小不可超过30Mb**”。
 :::
 
 ## Query Parameters
@@ -26,7 +26,7 @@ url="/api/openapi/v2/attachment/upload"
 | **file** | file   | 文件内容 | 必填 | - | 此处保存的是文件流 |
 
 :::tip
-body的格式是form-data，file字段是文件类型，如下面
+body的格式是form-data，file字段是文件类型，如下所示：
 ```text
 form-data {
    name
@@ -55,18 +55,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachmen
 ```
 
 ## 失败响应
-目前遇到的就是token未授权(token错误或者过期失效)
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "未授权",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-附件最大不能超过30MB，否则报如下错误
+附件最大不能超过30MB，否则报如下错误：
 ```text
 上传附件大小不可超过30Mb
 ```

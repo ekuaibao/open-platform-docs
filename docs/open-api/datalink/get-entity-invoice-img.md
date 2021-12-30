@@ -8,7 +8,7 @@ url="/api/openapi/v2/extension/INVOICE/url"
 />
 
 :::danger
-图片链接是临时的，请勿永久保存
+图片链接是临时的，请勿永久保存。
 :::
 
 ## Query Parameters
@@ -21,7 +21,7 @@ url="/api/openapi/v2/extension/INVOICE/url"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **invoiceId** | Array&lt;String&gt; | 发票id集合 | 必填 | - | 发票id集合 |
+| **invoiceId** | Array | 发票id集合 | 必填 | - | 发票id集合 |
 
 ## CURL
 ```json

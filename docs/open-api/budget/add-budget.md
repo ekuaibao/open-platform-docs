@@ -21,56 +21,56 @@ url="/api/openapi/v2/budgets/create"
 |**&emsp; ∟ active**               | Boolean | 是否激活                 | 必填   | false | `true` : 发布 &emsp; `false` : 草稿 | 
 |**&emsp; ∟ name**                 | String  | 预算树名称               | 必填   | - | 预算树名称 | 
 |**&emsp; ∟ corporationId**        | String  | 企业ID                  | 必填   | - | [企业ID获取](/docs/open-api/getting-started/origin) | 
-|**&emsp; ∟ isCustom**             | Boolean | 是否自定义区间            | 必填   | false | `true` : 自定义时间区间(需要`控制周期period`参数设置`null`)<br/>`false` : 周期控制,周期累计控制均为false | 
+|**&emsp; ∟ isCustom**             | Boolean | 是否自定义区间            | 必填   | false | `true` : 自定义时间区间(需要 `控制周期period` 参数设置 `null` )<br/> `false` : 周期控制，周期累计控制均为false | 
 |**&emsp; ∟ isRollCalc**           | Boolean | 是否滚动预算             | 必填   | false | `true` : 周期累计控制 &emsp; `false` : 周期控制 | 
 |**&emsp; ∟ period**               | Object  | 预算年度                | 必填   | - | 预算年度 | 
 |**&emsp; &emsp; ∟ annual**        | String  | 年份                   | 必填   | - | 例如:2021 | 
-|**&emsp; &emsp; ∟ period**        | String  | 控制周期                | 必填   | - | 年度内分割方式<br/>`YEAR` : 年度 &emsp; `HALF_YEAR` : 半年度 &emsp; `SEASON` : 季度<br/>`MONTH` : 月度 &emsp; `null` : 非周期控制 | 
-|**&emsp; &emsp; ∟ startTime**     | Long    | 非周期控制开始时间        | 非必填 | 毫秒级时间戳 | 是否自定义区间参数`isCustom`为`true`时必填,为`false`时传`null` | 
-|**&emsp; &emsp; ∟ endTime**       | Long    | 非周期控制结束时间        | 非必填 | 毫秒级时间戳 | 是否自定义区间参数`isCustom`为`true`时必填,为`false`时传`null` | 
+|**&emsp; &emsp; ∟ period**        | String  | 控制周期                | 必填   | - | 年度内分割方式：<br/> `YEAR` : 年度 &emsp; `HALF_YEAR` : 半年度 &emsp; `SEASON` : 季度<br/> `MONTH` : 月度 &emsp; `null` : 非周期控制 | 
+|**&emsp; &emsp; ∟ startTime**     | Long    | 非周期控制开始时间        | 非必填 | 毫秒级时间戳 | 是否自定义区间参数：<br/> `isCustom` 为 `true` 时必填,为 `false` 时传 `null` | 
+|**&emsp; &emsp; ∟ endTime**       | Long    | 非周期控制结束时间        | 非必填 | 毫秒级时间戳 | 是否自定义区间参数：<br/> `isCustom` 为 `true` 时必填,为 `false` 时传 `null` | 
 |**addNodes**                       | Array   | 追加节点信息            | 必填   | - | 添加预算包下子预算项 | 
-|**&emsp; ∟ id**                   | String  | 预算节点ID              | 必填   | - | 不重复的唯一id,例如:可用毫秒级时间戳作为节点ID | 
+|**&emsp; ∟ id**                   | String  | 预算节点ID              | 必填   | - | 不重复的唯一id，例如：可用毫秒级时间戳作为节点ID | 
 |**&emsp; ∟ code**                 | String  | 节点编码                | 必填   | - | 子预算编码 | 
-|**&emsp; ∟ content**              | Array   | 节点维度                | 必填   | - | 预算分解依据,例如根据"费用类型","部门"分解 | 
-|**&emsp; &emsp; ∟ dimensionType** | String  | 维度种类                | 必填   | - | `DEPART` : 费用承担部门 &emsp; `PROJECT` : 扩展档案<br/>`FEE_TYPE` : 费用类型 &emsp; `STAFF` : 员工 | 
-|**&emsp; &emsp; ∟ dimensionId**   | String  | 维度种类的标识ID         | 必填   | - | 参数为冒号之后的部分<br/>DEPART : `expenseDepartment` &emsp; FEE_TYPE : `feeTypeId`<br/>PROJECT : `项目`(档案名称,例如:项目) &emsp; STAFF : `submitterId` | 
+|**&emsp; ∟ content**              | Array   | 节点维度                | 必填   | - | 预算分解依据，例如根据"费用类型"，"部门"分解 | 
+|**&emsp; &emsp; ∟ dimensionType** | String  | 维度种类                | 必填   | - | `DEPART` : 费用承担部门 &emsp; `PROJECT` : 扩展档案<br/> `FEE_TYPE` : 费用类型 &emsp; `STAFF` : 员工 | 
+|**&emsp; &emsp; ∟ dimensionId**   | String  | 维度种类的标识ID         | 必填   | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment` &emsp; FEE_TYPE : `feeTypeId` <br/>PROJECT : `项目` (档案名称，例如：项目) &emsp; STAFF : `submitterId` | 
 |**&emsp; &emsp; ∟ mustLeaf**      | Boolean | 维度是否必定为叶节点(本部) | 必填   | false | `true` : 非本级 &emsp; `false` : 本级<br/>[表示维度类别是否为其子预算节点](/docs/open-api/budget/question-answer) | 
-|**&emsp; &emsp; ∟ contentId**     | String  | 维度内容ID              | 必填   | - | 对应维度种类下的项id,例如:部门维度就是`部门id`,扩展档案维度就是`档案项id` | 
+|**&emsp; &emsp; ∟ contentId**     | String  | 维度内容ID              | 必填   | - | 对应维度种类下的项id，例如：部门维度就是 `部门id` ，扩展档案维度就是 `档案项id` | 
 |**&emsp; ∟ moneys**               | Array   | 节点金额信息             | 必填   | - | 子预算项对应的预算金额 | 
-|**&emsp; &emsp; ∟ budgetMoney**   | String  | 预算金额                | 必填   | - | 预算金额,非最末级节点传`null`即可，由系统自动累加此维度下子预算额度求和 | 
-|**&emsp; &emsp; ∟ nodeId**        | String  | 预算节点id              | 必填   | - | 与上面预算节点id保持一致,即一个预算节点下包含`节点信息`和`预算金额`两部分属性 | 
-|**&emsp; &emsp; ∟ periodTime**    | String  | 第几个周期               | 必填   | - | 年度和自定义区间:`1` 半年度:`1`,`2` 季度:`1`,`2`,`3`,`4` 月度:`1~12` <br/>根据控制周期类型填写,例如:预算树控制周期是按季度类型,每个子预算节点的`moneys`数组数据,就包含4个对象,表示每个季度对应的预算金额 | 
-|**&emsp; ∟ control**              | String  | 节点控制方式             | 必填   | ALLOW | 当预算超额时的控制方式<br/>`ALLOW` : 允许提交单据 &emsp; `FORBID` : 禁止提交单据<br/>`IGNORED` : 什么都不做 | 
+|**&emsp; &emsp; ∟ budgetMoney**   | String  | 预算金额                | 必填   | - | 预算金额，非最末级节点传 `null` 即可，由系统自动累加此维度下子预算额度求和 | 
+|**&emsp; &emsp; ∟ nodeId**        | String  | 预算节点id              | 必填   | - | 与上面预算节点id保持一致，即一个预算节点下包含 `节点信息` 和 `预算金额` 两部分属性 | 
+|**&emsp; &emsp; ∟ periodTime**    | String  | 第几个周期               | 必填   | - | 年度和自定义区间: `1` 半年度: `1`,`2` 季度: `1`,`2`,`3`,`4` 月度: `1~12` <br/>根据控制周期类型填写,例如：预算树控制周期是按季度类型，每个子预算节点的 `moneys` 数组数据,就包含4个对象，表示每个季度对应的预算金额 | 
+|**&emsp; ∟ control**              | String  | 节点控制方式             | 必填   | ALLOW | 当预算超额时的控制方式<br/> `ALLOW` : 允许提交单据 &emsp; `FORBID` : 禁止提交单据<br/>`IGNORED` : 什么都不做 | 
 |**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 必填   | - | 与上面预算节点id保持一致 | 
-|**&emsp; ∟ parentId**             | String  | 父节点id                | 非必填 | - | 父节点id,为空表示根节点 | 
+|**&emsp; ∟ parentId**             | String  | 父节点id                | 非必填 | - | 父节点id，为空表示根节点 | 
 |**visibilities**                   | Array   | 节点负责人              | 非必填 | - | 负责人能在相关报销单和预算报表中查看该预算节点的进度 |
 |**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 非必填 | - | 与上面预算节点id保持一致 |
 |**&emsp; ∟ staffIds**             | Array   | 人员ID                 | 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 |**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
-|**editInChargers**                 | Array   | 预算编制负责人           | 非必填 | - | 负责该节点的预算编制。如不填写则默认与上级节点相同,需开通`预算编制`功能方可见此字段 |
+|**editInChargers**                 | Array   | 预算编制负责人           | 非必填 | - | 负责该节点的预算编制，如不填写则默认与上级节点相同。<br/>需开通 `预算编制` 功能方可见此字段 |
 |**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 非必填 | - | 与上面预算节点id保持一致 |
 |**&emsp; ∟ staffIds**             | Array   | 人员ID                 | 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 |**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
-|**version**                       | Long    | 预算包版本               | 非必填 | - | 不填写此参数默认为`1` |
+|**version**                       | Long    | 预算包版本               | 非必填 | - | 不填写此参数默认为 `1` |
 
 :::tip
  - “节点维度”如下图所示，是预算节点的划分依据<br/>
  &emsp; `dimensionType(维度种类)` 传参见参数介绍，四种类型固定；<br/>
- &emsp; `dimensionId(维度种类的标识ID)`传参为对应维度种类的[全局字段名称](/docs/open-api/forms/get-customs-param)；例如：<br/>
- &emsp; &emsp; - 职级预置: `E_system_rank`<br/>
- &emsp; &emsp; - 岗位预置: `E_system_post`<br/>
- &emsp; &emsp; - 成本中心预置: `E_system_costcenter`<br/>
- &emsp; &emsp; - 品类: `品类`<br/>
- &emsp; &emsp; - 法人实体: `法人实体`<br/>
- &emsp; &emsp; - 项目: `项目`<br/>
- &emsp; &emsp; - 提交人: `submitterId`<br/>
- &emsp; &emsp; - 费用承担部门: `expenseDepartment`<br/>
- &emsp; &emsp; - 费用类型: `feeTypeId`<br/>
- &emsp; &emsp; - 自建的扩展档案字段，例如“国家”，传参为`u_国家`<br/>
+ &emsp; `dimensionId(维度种类的标识ID)` 传参为对应维度种类的[全局字段名称](/docs/open-api/forms/get-customs-param)；例如：<br/>
+ &emsp; &emsp; - 职级预置 : `E_system_rank` <br/>
+ &emsp; &emsp; - 岗位预置 : `E_system_post` <br/>
+ &emsp; &emsp; - 成本中心预置 : `E_system_costcenter `<br/>
+ &emsp; &emsp; - 品类 : `品类` <br/>
+ &emsp; &emsp; - 法人实体 : `法人实体` <br/>
+ &emsp; &emsp; - 项目 : `项目` <br/>
+ &emsp; &emsp; - 提交人 : `submitterId` <br/>
+ &emsp; &emsp; - 费用承担部门 : `expenseDepartment` <br/>
+ &emsp; &emsp; - 费用类型 : `feeTypeId` <br/>
+ &emsp; &emsp; - 自建的扩展档案字段，例如“国家”，传参为 `u_国家` <br/>
 
   ![image](images/节点维度信息.png)
 
- - 如果只是创建预算树，不增加预算节点`addNodes`对象参数可不传，系统自动创建预算树根节点。
+ - 如果只是创建预算树，不增加预算节点 `addNodes` 对象参数可不传，系统自动创建预算树根节点。
  - 系统中新建预算时“添加预算控制条件”表示预算树根节点的节点维度信息。示例见请求CURL。
 
  ![image](images/添加预算控制条件.png)

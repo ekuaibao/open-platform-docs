@@ -67,7 +67,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ```
 
 ## 失败响应
-`dataId`不存在时，报500错误，返回报文如下：
+ `dataId` 不存在时，报500错误，返回报文如下：
 ```text
 服务器内部错误：查询返回结果过少
 ```

@@ -17,7 +17,7 @@ url="/api/openapi/v2/currency/updateCurrencyRate"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **strCode** | String | 货币字母代码 | 必填 | - | 例如美元：USD 可通过[获取企业当前生效的币种信息](/docs/open-api/currency/get-currency)获取 |
+| **strCode** | String | 货币字母代码 | 必填 | - | 可通过[获取企业当前生效的币种信息](/docs/open-api/currency/get-currency)获取，例如：<br/>美元 : `USD`  |
 | **rate**    | String | 汇率       | 必填 | - | 汇率是基于人民币的 |
 
 ## CURL

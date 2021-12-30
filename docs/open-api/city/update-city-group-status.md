@@ -23,7 +23,7 @@ url="/api/openapi/v1/cityGroup/updateStatus/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **status** | Boolean | 状态 | 必填 | - | - |
+| **status** | Boolean | 城市组状态 | 必填 | - | 城市组状态 |
 
 ## CURL
 ```json

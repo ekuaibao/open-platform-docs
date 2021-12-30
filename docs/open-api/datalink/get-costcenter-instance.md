@@ -55,8 +55,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/travel/co
 }
 ```
 
-##失败响应
-当该配置关闭或者无实例数据时，返回以下内容
+## 失败响应
+当该配置关闭或者无实例数据时，返回以下内容：
 ```json
 {
     "count": 0,

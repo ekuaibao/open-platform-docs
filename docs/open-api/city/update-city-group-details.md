@@ -41,7 +41,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup
 ```
 
 :::tip
-选择城市末级时需要把其父级直到顶级id传递过来, 如: 石家庄市区->石家庄市->河北省
+选择城市末级时需要把其父级直到顶级id传递过来, 如: 石家庄市区->石家庄市->河北省。
 :::
 
 ## 成功响应

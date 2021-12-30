@@ -891,7 +891,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 ```
 
 ## 失败响应
-当`invoiceIds`发票ID传值错误时，返回为空：
+当 `invoiceIds` 发票ID传值错误时，返回为空：
 ```json
 {
     "items": []

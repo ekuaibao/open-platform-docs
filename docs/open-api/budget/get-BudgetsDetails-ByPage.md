@@ -20,7 +20,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/query"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**  | String | 认证token      | 必填  | -   | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **nodeId**       | String | 指定查询的节点ID | 非必填 | -   | [预算节点id获取](/docs/open-api/budget/get-budget-details),为空就是查询根节点 |
+| **nodeId**       | String | 指定查询的节点ID | 非必填 | -   | [预算节点id获取](/docs/open-api/budget/get-budget-details)，为空就是查询根节点 |
 | **start**        | Number | 查询开始位置     | 必填  | 0   | 查询开始位置 |
 | **count**        | Number | 查询数量        | 必填  | 100 | 不可超过100 |
 

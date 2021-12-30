@@ -18,7 +18,7 @@ url="/api/openapi/v1/cityGroup/detail/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **cityGroupId** | String | 城市组id  | -	  | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
+| **cityGroupId** | String | 城市组id  | 必填  | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
 | **keyword**     | String | 搜索关键字 | 非必填 | - | 人员名称或角色名称 |
 
 ## CURL

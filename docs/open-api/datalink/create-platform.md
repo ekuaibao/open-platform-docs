@@ -24,7 +24,7 @@ url="/api/openapi/v2/datalink/createPlatform"
 | **&emsp; ∟ fileName** | String | 文件名称   | 非必填  | - | 文件名称，可通过[上传附件](/docs/open-api/attachment/attachment-upload)获取 |
 | **type**               | String | 扩展类别   | 非必填  | DATA_LINK | `DATA_LINK` : 业务对象<br/>`IKCRM` : 爱客CRM(爱客只能创建一个，name统一为爱客CRM) |
 | **adminIds**           | Array  | 管理员id   | 非必填  | - | 管理员可以导入导出该扩展的所有业务对象数据、修改每条数据的停启用状态、修改每条数据的信息以及负责人和参与人，值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
-| **iconUrl**            | String | 网络图片    | 非必填  | - | 如果填写则优先使用此图标。132*132px，大小不超过2M。格式可为jpg、jpeg、png |
+| **iconUrl**            | String | 网络图片    | 非必填  | - | 如果填写则优先使用此图标。132*132px，大小不超过2M，格式可为jpg、jpeg、png |
 | **importMethod**       | Array  | 数据导入方式 | 必填   | - | `excel` : Excel &emsp; &emsp; `api` : API &emsp; `ebot` : EBot <br/> `flow` : 单据写入 &emsp; `directly` : 直接写入 |
 
 :::danger
@@ -78,7 +78,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ```
 
 ## 失败响应
-互联扩展的`name`值需要保证其唯一性，否则会返回如下响应：
+互联扩展的 `name` 值需要保证其唯一性，否则会返回如下响应：
 ```text
 扩展名称不能重复
 ```

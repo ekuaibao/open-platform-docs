@@ -17,12 +17,12 @@ url="/api/openapi/v2/datalink/editPlatform"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id**       | 平台id  | String              | 必填 | - | 平台id |
-| **name**     | 平台名称 | String              | 必填 | - | 平台名称 |
-| **adminIds** | 管理员id | Array&lt;String&gt; | 必填 | - | 管理员id |
+| **id**       | 平台id  | String | 必填 | - | 平台id |
+| **name**     | 平台名称 | String | 必填 | - | 平台名称 |
+| **adminIds** | 管理员id | Array  | 必填 | - | 管理员id |
 
 :::danger
-由于历史迭代遗留问题，该接口暂时只支持编辑管理员，但是参数`name`依然必填。
+由于历史迭代遗留问题，该接口暂时只支持编辑管理员，但是参数 `name` 依然必填。
 :::
 
 ## CURL
@@ -67,7 +67,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 
 
 ## 失败响应
-请确保编辑的平台 id 是真实存在的，否则会返回如下响应：
+请确保编辑的 `平台id` 是真实存在的，否则会返回如下响应：
 ```text
 无效的平台id
 ```
