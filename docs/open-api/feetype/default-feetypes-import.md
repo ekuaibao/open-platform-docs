@@ -84,7 +84,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/feeTypeI
 ## 失败响应
 
 :::caution
-- 同一个业务对象id只能添加一次，多次添加返回：该业务对象导入已存在:dataLink_xx。
+- 同一个业务对象id只能添加一次，多次添加返回**“该业务对象导入已存在 : dataLink_xx”**。
 :::
 
 ```json
