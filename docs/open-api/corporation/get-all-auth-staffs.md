@@ -1,38 +1,35 @@
-# 获取员工列表
+# 获取已激活员工列表
 
 import Control from "../../../components/Control";
-
 <Control
 method="GET"
-url="/api/openapi/v1/staffs"
+url="/api/openapi/v1/staffs/authorized"
 />
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token	        | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **start**       | Number  | 分页查询的起始序号    | 必填   | - | 从第几条数据开始查询 |
-| **count**       | Number  | 查询数据条数         | 必填   | - | 最大不能超过 `1000` |
-| **active**      | Boolean | 查询条件：员工是否启用 | 非必填 | true | `true` : 启用 &emsp; `false` : 停用 |
+| **accessToken** | String  | 认证token	     | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **start**       | Number  | 分页查询的起始序号 | 必填 | - | 从第几条数据开始查询 |
+| **count**       | Number  | 查询数据条数      | 必填 | - | 最大不能超过 `1000` |
 
 :::tip
-- 分页的起始值是从0开始， 而不是传统的1开始。
-- 默认查询启用的员工，不是全部员工。
+- 分页的起始值是从0开始， 而不是传统的1开始；
+- 系统上获取已激活的员工人数页面如下：
+![image](images/获取激活员工人数.png)
 :::
 
 ## CURL
 ```json
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?accessToken=RCIbwHcnF0kg00&start=0&count=20&active=true' \
---header 'content-type: application/json' \
---header 'Accept: application/json'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/authorized?accessToken=ID_3v7kdsVUWhg:djg8LshfUkfM00&start=0&count=100'
 ```
 
 ## 成功响应
 ```json
 {
-    "count": 14,
-    "items": [
+    "count": 14,  //已激活员工总数
+    "items": [    //已激活员工信息
         {
             "id": "PCx3rwm3aA00qM:ID_3rAZNCY2V$g",
             "name": "李四",
@@ -75,7 +72,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
 ```
 
 ## 失败响应
-`start` 传参大于等于实际员工总数据量时，会得到如下响应，只显示总数据量“count“，不显示员工信息：
+`start` 传参大于等于实际员工总数据量时，会得到如下响应，只显示总数据量 “count“，不显示员工信息：
 ```json
 {
     "count": 2,

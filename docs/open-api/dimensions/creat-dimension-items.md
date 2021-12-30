@@ -81,7 +81,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 ```
 
 ## 失败响应
-当档案值父级id参数错误时
+当档案值父级id参数错误时：
 ```json
 {
     "errorCode": 412,
@@ -92,7 +92,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 }
 ```
 
-当重复导入时
+当重复导入时：
 ```json
 {
     "errorCode": 412,
@@ -103,7 +103,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 }
 ```
 
-当档案值编码已存在时
+当档案值编码已存在时：
 ```json
 {
     "errorCode": 412,

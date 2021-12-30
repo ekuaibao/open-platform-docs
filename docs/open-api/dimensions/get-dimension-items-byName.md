@@ -64,7 +64,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
 }
 ```
 
-**如果出现以下信息，表示没有对应 `名称` 的档案项信息**
+**如果出现以下信息，表示没有对应 `名称` 的档案项信息：**
 ```json
 {
     "count": 0,

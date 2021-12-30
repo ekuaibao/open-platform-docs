@@ -46,6 +46,7 @@ const sidebars = {
         "open-api/corporation/corporation-info",
         "open-api/corporation/get-departments",
         "open-api/corporation/get-all-staffs",
+        "open-api/corporation/get-all-auth-staffs",
         "open-api/corporation/get-staff-ids",
         "open-api/corporation/get-staff-backLog",
         "open-api/corporation/get-roles-group",
