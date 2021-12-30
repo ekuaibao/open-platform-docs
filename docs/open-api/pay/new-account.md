@@ -1,5 +1,4 @@
 # 新增收款账户
-添加一个新的收款账户。
 
 import Control from "../../../components/Control";
 
@@ -18,7 +17,7 @@ url="/api/openapi/v2/payeeInfos"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **staffId**         | String | 所有者id    | 非必填 | - | 当`owner` = `INDIVIDUAL`时必填；<br/>当`owner` = `CORPORATION`时非必填;<br/>可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 |
+| **staffId**         | String | 所有者id    | 非必填 | - | 当 `owner` = `INDIVIDUAL` 时必填；<br/>当 `owner` = `CORPORATION` 时非必填；<br/>可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 |
 | **type**            | String | 账户类型    | 必填 | -| `PUBLIC` : 对公账户<br/>`PERSONAL` : 个人账户 |
 | **name**            | String | 账户名      | 必填 | - | 账户名称 |
 | **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |
@@ -27,7 +26,7 @@ url="/api/openapi/v2/payeeInfos"
 | **owner**           | String | 所属类型    | 必填 | - | `INDIVIDUAL` : 个人<br/>`CORPORATION` : 企业 |
 | **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
 | **province**        | String | 银行所在省   | 非必填 | - | 银行所在省 |
-| **bankLinkNo**      | String | 银联号      | 非必填 | - | 当支行名称与易快报系统不匹配时，可通过银联号匹配 |
+| **bankLinkNo**      | String | 银联号      | 非必填 | - | 当支行名称与易快报系统不匹配时，<br/>可通过银联号匹配 |
 | **certificateType** | String | 证件类型    | 非必填 | - | 详细信息见下方【证件类型对照表】|
 | **certificateNo**   | String | 证件号     | 非必填 | - | 证件号 |
 | **remark**          | String | 备注       | 非必填 | - | 备注信息 |
@@ -36,10 +35,10 @@ url="/api/openapi/v2/payeeInfos"
 | **&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
 | **&emsp; ∟ staffs**                     | Array   | 员工白名单      | 必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 | **&emsp; ∟ departments**                | Array   | 部门白名单      | 必填 | - | 值为[部门id](/docs/open-api/corporation/get-departments) |
-| **&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属部门是否可见 | 必填 | - | `true` : 可见<br/>`false` : 不可见 |
+| **&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属部门是否可见 | 必填 | - | `true` : 可见 &emsp; `false` : 不可见 |
 
 :::tip
-- 当`branch`支行名称不确定时，可填写”1“（branch必填且不可为null），并保证`bankLinkNo`银联号正确，系统会根据银联号自动回填支行名称。
+- 当 `branch` 支行名称不确定时，可填写 ”1“（branch必填且不可为null），并保证 `bankLinkNo` 银联号正确，系统会根据银联号自动回填支行名称。
 :::
 
 ### 证件类型对照表
@@ -99,7 +98,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/payeeInf
 ```
 
 ## 失败响应
-请勿重复添加同一相同账号，否则返回以下内容：
+请勿重复添加同一账户，否则返回以下内容：
 ```json
 {
     "errorCode": 412,

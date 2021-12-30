@@ -176,7 +176,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "委托授权关系",
+      label: "委托授权",
       items: [
         "open-api/delegate/info",
         "open-api/delegate/get-delegate-list",

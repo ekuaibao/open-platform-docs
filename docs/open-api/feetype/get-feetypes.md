@@ -1,4 +1,4 @@
-# 根据费用类型id或code获取费用类型模板信息
+# 根据费用类型id或code获取模板信息
 
 此接口用于获取费用类型详情。
 
@@ -18,8 +18,8 @@ url="/api/openapi/v2/specifications/feeType/byIdsAndCodes"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids**   | Array | 费用类型id      | 非必填 | - | 和 `codes` 至少有一个必填，可以传入多个id |
-| **codes** | Array | 费用类型编码code | 非必填 | - | 和 `ids` 至少有一个必填，可以传入多个code |
+| **ids**   | Array | 费用类型id      | 非必填 | - | 和 `codes` 至少有一个必填，可以传入多个 id |
+| **codes** | Array | 费用类型编码code | 非必填 | - | 和 `ids` 至少有一个必填，可以传入多个 code |
 
 ## CURL
 

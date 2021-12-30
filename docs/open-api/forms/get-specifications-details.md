@@ -1,5 +1,4 @@
-# 根据模版ID获取历史模板信息
-根据模板类型和模板id获取历史模板信息
+# 根据模版类型和ID获取历史模板信息
 
 import Control from "../../../components/Control";
 
@@ -8,7 +7,7 @@ method="GET"
 url="/api/openapi/v1/specifications/$`id`"
 />
 
-:::tip
+:::caution
 - 该接口只是提供历史版本模板信息。
 :::
 
@@ -17,7 +16,7 @@ url="/api/openapi/v1/specifications/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String | 模板ID | 必填 | - | 如果类型为bill，则传[获取单据列表](/docs/open-api/flows/get-forms-sequences)中，单据信息里的docData.specificationId的值 |
+| **id** | String | 模板ID | 必填 | - | 如果类型为 bill，则传[获取单据列表](/docs/open-api/flows/get-forms-sequences)中单据信息里 `docData.specificationId` 的值 |
 
 ## Query Parameters
 
@@ -46,7 +45,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifica
 ```
 
 ## 失败响应
-模板ID参数错误的情况下， 返回此响应数据。
+模板ID参数错误的情况下， 返回此响应数据：
 ```json
 {
     "errorCode": 412,
@@ -57,7 +56,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifica
 }
 ```
 
-`type` 传值错误， 暂时只支持 `bill` 一种类型， 返回此响应数据:
+`type` 传值错误， 暂时只支持 `bill` 一种类型， 返回此响应数据：
 ```json
 {
     "errorCode": 412,

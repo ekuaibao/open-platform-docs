@@ -12,7 +12,7 @@ url="/api/openapi/v2/payeeInfos/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String | 账户ID | 必填 | - | 通过[获取收款账号](/docs/open-api/pay/get-payeeInfos)获取 |   
+| **id** | String | 账户ID | 必填 | - | 通过[获取收款账户](/docs/open-api/pay/get-payeeInfos)获取 |   
 
 ## Query Parameters
 
@@ -23,7 +23,7 @@ url="/api/openapi/v2/payeeInfos/$`id`"
 ## Body Parameters
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **staffId**         | String | 所有者id    | 非必填 | - | 当`owner` = `INDIVIDUAL`时必填；<br/>当`owner` = `CORPORATION`时非必填;<br/>可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)接口获取 |
+| **staffId**         | String | 所有者id    | 非必填 | - | 当 `owner` = `INDIVIDUAL` 时必填；<br/>当 `owner` = `CORPORATION` 时非必填；<br/>可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)接口获取 |
 | **type**            | String | 账户类型    | 必填 | -| `PUBLIC` : 对公账户<br/>`PERSONAL` : 个人账户 |
 | **name**            | String | 账户名      | 必填 | - | 账户名称 |
 | **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |
@@ -32,7 +32,7 @@ url="/api/openapi/v2/payeeInfos/$`id`"
 | **owner**           | String | 所属类型    | 必填 | - | `INDIVIDUAL` : 个人<br/>`CORPORATION` : 企业 |
 | **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
 | **province**        | String | 银行所在省   | 非必填 | - | 银行所在省 |
-| **bankLinkNo**      | String | 银联号      | 非必填 | - | 当支行名称与易快报系统不匹配时，可通过银联号匹配 |
+| **bankLinkNo**      | String | 银联号      | 非必填 | - | 当支行名称与易快报系统不匹配时，<br/>可通过银联号匹配 |
 | **certificateType** | String | 证件类型    | 非必填 | - | 详细信息见下方【证件类型对照表】|
 | **certificateNo**   | String | 证件号     | 非必填 | - | 证件号 |
 | **remark**          | String | 备注       | 非必填 | - | 备注信息 |
@@ -41,7 +41,7 @@ url="/api/openapi/v2/payeeInfos/$`id`"
 | **&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
 | **&emsp; ∟ staffs**                     | Array   | 员工白名单      | 必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 | **&emsp; ∟ departments**                | Array   | 部门白名单      | 必填 | - | 值为[部门id](/docs/open-api/corporation/get-departments) |
-| **&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属部门是否可见 | 必填 | - | `true` : 可见<br/>`false` : 不可见 |
+| **&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属部门是否可见 | 必填 | - | `true` : 可见 &emsp; `false` : 不可见 |
 
 ### 证件类型对照表
 
@@ -171,6 +171,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
 ```
 
 ## 失败响应
+当传入要修改的账户ID不正确时，报错如下：
 ```json
 {
     "errorCode": 412,

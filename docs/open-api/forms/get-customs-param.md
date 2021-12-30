@@ -15,7 +15,7 @@ url="/api/openapi/v1/property"
 | **type**        | String | 全局字段类型 | 非必填  | `flow.FlowForm` | `flow.FlowForm` : 单据<br/>`datalink.form` : 业务对象<br/>`dimension.form` : 自定义档案<br/>`staff.form` : 人员全局字段<br/>`department.form` : 部门 | 
 
 :::tip
-- `type`参数不是备注中的固定值时，返回的是默认的`flow.FlowForm`，单据类型的全局字段列表。
+- `type` 参数不是备注中的固定值时，返回的是默认的 `flow.FlowForm`（单据类型的全局字段列表）。
 :::
 
 ## CURL

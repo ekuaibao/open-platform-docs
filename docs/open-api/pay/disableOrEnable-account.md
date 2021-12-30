@@ -1,5 +1,4 @@
 # 停用/启用收款账户
-该接口用于停用或者启用某个收款账户。
 
 import Control from "../../../components/Control";
 

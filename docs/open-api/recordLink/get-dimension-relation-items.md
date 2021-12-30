@@ -23,10 +23,10 @@ url="/api/openapi/v2/recordLink/getRecordLinkList/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **primary** | String  | 查询维度	| 非必填  | sourceType | `sourceType`:源维度 &emsp; `purposeType`:目标维度 |
+| **primary** | String  | 查询维度	| 非必填  | sourceType | `sourceType` : 源维度 &emsp; `purposeType` : 目标维度 |
 | **keyword** | String  | 关键字搜索	| 非必填  | -          | 关键字搜索 |
-| **start**   | Int     | 记录开始值	| 非必填  | 0          | 从0开始 |
-| **count**   | Int     | 查询记录数	| 必填    | -          | 每页查询最大数量不可超过100 |
+| **start**   | Int     | 查询开始值	| 非必填  | 0          | 从 `0` 开始 |
+| **count**   | Int     | 查询记录数	| 必填    | -          | 每页查询最大数量不能大于 `100` |
 
 ## CURL
 ```json
@@ -41,11 +41,11 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/recordLin
 }'
 ```
 
-:::tip
+## 成功响应
+:::caution
 - 响应数据根据维度关系的不同返回的数据详情不同。
 :::
 
-## 成功响应
 ```json
 {
     "data": { 
@@ -115,7 +115,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/recordLin
 ```
 
 ## 失败响应
-维度查询条件参数错误时，报以下提示:
+维度查询条件参数错误时，报以下提示：
 ```json
 {
     "errorCode": 412,

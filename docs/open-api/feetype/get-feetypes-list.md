@@ -1,5 +1,4 @@
-# 获取费用类型列表
-获取费用类型所有列表，包括已停用。
+# 获取费用类型列表(包含停用)
 
 import Control from "../../../components/Control";
 

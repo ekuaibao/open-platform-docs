@@ -1,4 +1,4 @@
-# 根据发起人ID获取其所有委托信息
+# 根据发起人ID获取所有委托信息
 
 import Control from "../../../components/Control";
 

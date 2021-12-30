@@ -7,7 +7,7 @@ method="GET"
 url="/api/openapi/v2/specifications/apportion"
 />
 
-:::tip
+:::caution
 - 只返回未停用、未删除的模版信息。
 :::
 

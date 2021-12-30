@@ -19,15 +19,15 @@ url="/api/openapi/v2/recordLink/editSingle/$`id`"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-#### Body Parameters:
+## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **recordLinks**                 | Array   | 批量更新项	| 必填  | - | 批量更新项 |
-| **recordLinks/oldSourceValue**  | String  | 旧源维度	| 必填  | - | 旧源维度 |
-| **recordLinks/oldPurposeValue** | String  | 旧目标维度	| 必填  | - | 旧目标维度 |
-| **recordLinks/newSourceValue**  | String  | 新源维度	| 必填  | - | 新源维度 |
-| **recordLinks/newPurposeValue** | String  | 新目标维度  | 必填  | - | 新目标维度 |
+| **&emsp; ∟ oldSourceValue**  | String  | 旧源维度	| 必填  | - | 旧源维度 |
+| **&emsp; ∟ oldPurposeValue** | String  | 旧目标维度	| 必填  | - | 旧目标维度 |
+| **&emsp; ∟ newSourceValue**  | String  | 新源维度	| 必填  | - | 新源维度 |
+| **&emsp; ∟ newPurposeValue** | String  | 新目标维度  | 必填  | - | 新目标维度 |
 
 ## CURL
 ```json

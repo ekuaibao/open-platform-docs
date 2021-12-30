@@ -1,5 +1,5 @@
 # 获取收款账户
-可以根据`银行账号`或者`账户名称`或者`账户id`来获取收款账号信息（支持翻页）。
+可以根据 `银行账户`、`账户名称`、`账户id` 来获取收款账户信息（支持翻页）。
 
 import Control from "../../../components/Control";
 
@@ -12,18 +12,18 @@ url="/api/openapi/v2/payeeInfos"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token           | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **count**       | Number  | 每页总数             | 必填  | 0 | 最大不能超过`1000` |
-| **start**       | Number  | 开始查询索引          | 必填  | 0 | 从`0`开始 |
-| **names**       | String  | 账户名称             | 非必填 | - | 多个值用英文逗号进行分割 |
-| **cardNos**     | String  | 银行卡号             | 非必填 | - | 多个值用英文逗号进行分割 |
-| **ids**         | String  | 账号id              | 非必填 | - | 多个值用英文逗号进行分割 |
-| **active**      | Boolean | 查询条件：账户是否停用 | 非必填 | true | `true` : 未停用 &emsp; `false` : 已停用 |
+| **accessToken** | String  | 认证token   | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **start**       | Number  | 开始查询索引  | 必填  | - | 从 `0` 开始 |
+| **count**       | Number  | 每页总数     | 必填  | - | 最大不能超过 `1000` |
+| **names**       | String  | 账户名称     | 非必填 | - | 多个值用英文逗号进行分割 |
+| **ids**         | String  | 账户id      | 非必填 | - | 多个值用英文逗号进行分割 |
+| **cardNos**     | String  | 银行卡号     | 非必填 | - | 多个值用英文逗号进行分割 |
+| **active**      | Boolean | 账户是否启用  | 非必填 | true | `true` : 启用 &emsp; `false` : 停用 |
 
 :::tip
-- 除`avtive`参数外，其他的请求参数都需要传，即使参数值为空也要带上参数。
-- 如果`names`、`cardNos`和`ids`都有值，则优先查询顺序为`ids` > `names` > `cardNos`，如果都没有值，则默认查询全部。
-- 每页`10`条数据，那么第一页对应的参数为`start` = `0` 、`count` = `10` ，第二页为`start` = `10` 、 `count` = `10`。
+- 除 `avtive` 参数外，其他的请求参数都需要传，即使参数值为空也要带上参数。
+- 如果 `names`、`cardNos`、`ids` 都有值，则优先查询顺序为 `ids` > `names` > `cardNos`，都没有值则默认查询全部。
+- 每页 `10` 条数据，那么第一页对应的参数为 `start=0&count=10` ，第二页为 `start=10&count=10`。
 :::
 
 ## CURL
@@ -40,8 +40,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
     "items": [
         {
             "sort": "ALIPAY",        //分类(银行=BANK,支付宝=ALIPAY,海外=OVERSEABANK,支票=CHECK,承兑汇票=ACCEPTANCEBILL,其他=OTHER,钱包= WALLET)
-            "id": "_iIaLyGGdM3I00",  //账号id
-            "name": "He",            //账号名称
+            "id": "_iIaLyGGdM3I00",  //账户id
+            "name": "He",            //账户名称
             "cardNo": "17000000000", //卡号或钱包号
             "type": "个人账户",       //账户类型 [个人账户、对公账户]
             "createTime": 1588651544665, //创建时间
@@ -53,18 +53,18 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "certificateNo": null,   //证件号码
             "bankLinkNo": null,      //银联号
             "unionBank": "",         //简洁录入开户行
-            "bankName": "",          //海外银行名称(海外账号)
-            "swiftCode": "",         //银行国际代码(海外账号)
-            "bankCode": "",          //联行号(海外账号)
-            "branchCode": "",        //支行号(海外账号)
+            "bankName": "",          //海外银行名称(海外账户)
+            "swiftCode": "",         //银行国际代码(海外账户)
+            "bankCode": "",          //联行号(海外账户)
+            "branchCode": "",        //支行号(海外账户)
             "visibility": {          //可见性
-                        "fullVisible": true,    //是否全员可见(true=全部; false=部分)
-                        "staffs": [],       //员工ID集
-                        "roles": [],        //角色ID集
-                        "departments": [],  //部门ID集
-                        "departmentsIncludeChildren": true
+                "fullVisible": true,  //是否全员可见(true=全部; false=部分)
+                "staffs": [],         //员工ID集
+                "roles": [],          //角色ID集
+                "departments": [],    //部门ID集
+                "departmentsIncludeChildren": true
             },
-            "remark": "remark",             //备注
+            "remark": "remark",                           //备注
             "operatorId": "PtgbQUtfE08400:dIEbu2mgTs6o00" //账户创建者ID
         },
         {
@@ -93,7 +93,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
                         "departments": [],      //部门ID集
                         "departmentsIncludeChildren": true
             },
-            "remark": "remark",                  //备注
+            "remark": "remark",                           //备注
             "operatorId": "PtgbQUtfE08400:dIEbu2mgTs6o00" //账户创建者ID
         }
     ]

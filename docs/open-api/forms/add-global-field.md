@@ -1,5 +1,5 @@
 # 在单据模板中追加全局字段
-向单据模板中添加全局字段，把全局字段名称添加到对应的单据模板id上。
+把全局字段名称添加到对应的单据模板id上，向单据模板中添加全局字段。
 
 import Control from "../../../components/Control";
 
@@ -25,8 +25,8 @@ url="/api/openapi/v2/specifications/addProperty"
 
 :::tip
 - 「**法人实体**」只能配置在单据模板中；
-- 「**企业已付金额**」只能配置在报销费用模板中；
-- 「**结算方式**」只能配置在报销费用、申请费用模板中。
+- 「**企业已付金额**」只能配置在报销单模板中；
+- 「**结算方式**」只能配置在报销单、申请单模板中。
 :::
 
 ## CURL
@@ -50,11 +50,16 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/specific
 ```
 
 ## 成功响应
+:::caution
+- 响应需要判断状态码来确定是否成功。
+:::
+
 ```text
-    code 204
+code 204
 ```
 
 ## 失败响应
+当添加字段在单据模板中已存在时，报错如下：
 ```json
 {
     "errorCode": 412,

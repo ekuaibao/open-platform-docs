@@ -7,7 +7,7 @@ method="GET"
 url="/api/openapi/v1/specifications/versionedByType"
 />
 
-:::tip
+:::caution
 - 单据模板最后一次修改保存后的版本为当前版本，最后一次修改之前的版本都为历史版本。
 :::
 

@@ -17,8 +17,8 @@ url="/api/openapi/v2/recordLink/queryAllRecordLink"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **start** | Int  | 记录开始值 | 非必填  | 0 | 从0开始 |
-| **count** | Int  | 查询记录数 | 必填    | - | 每次查询最大数量不可超过100 |
+| **start** | Int  | 查询开始值 | 非必填  | 0 | 从 `0` 开始 |
+| **count** | Int  | 查询记录数 | 必填    | - | 每次查询最大数量不能大于 `100` |
 
 ## CURL
 ```json
@@ -103,7 +103,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/recordLin
 }
 ```
 
-当`start`参数大于等于总记录数时，会报如下错误：
+当 `start` 参数大于等于总记录数时，会报如下错误：
 ```json
 {
     "errorCode": 412,
