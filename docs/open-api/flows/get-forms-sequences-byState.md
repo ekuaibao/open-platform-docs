@@ -1,5 +1,5 @@
-# 获取指定状态的单据列表(包含已删除单据)
-通过指定单据状态（ `REJECTED` : 已驳回 `PAYING` : 待支付 `PROCESSING` : 支付中 `PAID` : 已支付 ）过滤单据列表（包含已删除单据），并且可以通过过滤字段把不需要的参数置空来缩小回应数据。
+# 获取指定状态单据列表(包含已删除单据)
+通过指定单据状态（ `REJECTED` : 已驳回、`PAYING` : 待支付、`PROCESSING` : 支付中、`PAID` : 已支付 ）过滤单据列表（包含已删除单据），并且可以通过过滤字段把不需要的参数置空来缩小回应数据。
 
 import Control from "../../../components/Control";
 
@@ -15,8 +15,8 @@ url="/api/openapi/v1/docSequences"
 | **accessToken** | String  | 认证token          | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **powerCode**   | String  | 功能授权码，传入<br/>219902或者219904即可 | 必填 | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |       
 | **type**        | String  | 单据类型            | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`repayment` : 还款记录<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单 |
-| **index**       | Number  | 分页查询的起始索引序号 | 必填 | - | 例如 : 当`index` = `1484498318240`时，会查询所有<br/>`index` > `1484498318240的`单据。<br/>在分页查询时，获取上一页的单据后，取所有单据中<br/>最大的`index`作为下一次分页请求的`index`值即可。 |
-| **count**       | Number  | 查询数据条数         | 必填 | - | 最大不能超过`1000` |
+| **index**       | Number  | 分页查询的起始索引序号 | 必填 | - | 例如 : 当 `index` = `1484498318240` 时，会查询所有<br/>`index` > `1484498318240` 的单据 |
+| **count**       | Number  | 查询数据条数         | 必填 | - | 最大不能超过 `1000` |
 | **state**       | String  | 单据状态            | 非必填 | - | `REJECTED` : 已驳回<br/>`PAYING` : 待支付<br/>`PROCESSING` : 支付中<br/>`PAID` : 已支付<br/>不传值时，查询四种状态单据 |
 
 ## Body Parameters(以下为部分示例参数仅供参考)
@@ -38,9 +38,9 @@ url="/api/openapi/v1/docSequences"
 |**fields/docData/flowPlane**   | Object | 审批流信息          | 非必填 | -  | 审批流信息 |
 
 :::tip
-- index这个值实际是一个时间戳（毫秒级），是单据状态改变的时间，即审批流审批后单据进入`rejected`已驳回、`paying`待支付、`PROCESSING`支付中、`paid`已支付，四种状态中任意一种的时间。最开始查询可以根据自己需求设定的"时间范围"查询，大概从什么时间开始，会返回对应大于等于该时间的单据。
-- 分页这块的实际操作：根据你查的最后一条单据数据的index值作为第二次分页查询的index值，即返回的就是第二页的值。
-- `body`参数可根据`response`回应数据层级自行设置，绝大部分参数都可以置空，一些特殊参数不允许置空会有错误提示。
+- index这个值实际是一个时间戳（毫秒级），是单据状态改变的时间，即审批流审批后单据进入 `rejected` 已驳回、`paying` 待支付、`PROCESSING` 支付中、`paid` 已支付，四种状态中任意一种的时间。最开始查询可以根据自己需求设定的"时间范围"查询，大概从什么时间开始，会返回对应大于等于该时间的单据。
+- 分页查询操作：获取上一页的单据后，取所有单据中最大的 `index` 作为下一次分页请求的值即可。
+- `body` 参数可根据 `response` 回应数据层级自行设置，绝大部分参数都可以置空，一些特殊参数不允许置空会有错误提示。
 :::
 
 ## CURL
@@ -1748,7 +1748,7 @@ import TabItem from '@theme/TabItem';
     "data": null
 }
 ```
-当过滤字段中包含不可过滤的字段时报错如下，请检查过滤字段：
+当过滤字段中包含不可置空的字段时报错如下，请检查过滤字段：
 ```json
 {
     "errorCode": 400,
@@ -1758,3 +1758,10 @@ import TabItem from '@theme/TabItem';
     "data": null
 }
 ```
+
+:::caution
+已知不可置空字段：
+- docData.type
+- docData.flowPlan.id
+- docData.flowPlan.nodes.type
+:::

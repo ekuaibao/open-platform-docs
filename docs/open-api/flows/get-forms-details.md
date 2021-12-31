@@ -15,8 +15,8 @@ url="/api/openapi/v1/flowDetails"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **flowId**      | String  | 单据ID    | 必填 | - |  [一般通过出站消息获取单据Id信息](/docs/open-api/outbound-message/outbound-new) |
+| **accessToken** | String  | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **flowId**      | String  | 单据ID    | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 |
 
 :::tip
 - 单据编号是面向企业唯一，单据的Id是面向系统唯一。
@@ -708,7 +708,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 ## 失败响应
-`flowId`不存在报错如下：
+`flowId` 不存在报错如下：
 ```json
 {
     "errorCode": 412,

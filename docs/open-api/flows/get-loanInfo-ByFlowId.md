@@ -14,7 +14,7 @@ url="/api/openapi/v1/loans/getLoanInfoByFlowId/$`flowId`"
 ## Path Parameters
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowId** | String | 借款单id | 必填 | - | [一般通过出站消息获取单据Id信息](/docs/open-api/outbound-message/outbound-new) |
+| **flowId** | String | 借款单ID | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 |
 
 ## Query Parameters
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
@@ -79,7 +79,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/loans/get
 ```
 
 ## 失败响应
-单据中没找到对应的借款包，需要去检查单据是否已生成了借款记录（借款单流程已完成），或者检查下这个单据是否存在。
+单据中没找到对应的借款包，需要去检查单据是否已生成了借款记录（借款单流程已完成），或者检查下这个单据是否存在：
 ```json
 {
     "errorCode": 400,

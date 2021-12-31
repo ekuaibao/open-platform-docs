@@ -1,5 +1,5 @@
 # 根据单据ID集合获取单据列表
-此接口通过单据id集合，查询出各个id对应单据最新状态的数据内容。
+此接口通过单据ID集合，查询出各个ID对应单据最新状态的数据内容。
 
 import Control from "../../../components/Control";
 
@@ -9,14 +9,14 @@ url="/api/openapi/v1/docs/[`ids`]"
 />
 
 :::caution
-- 单据状态为“**draft（草稿）**”的单据无法被查询到。
+- 单据状态为“**draft(草稿)**”的单据无法被查询到。
 :::
 
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 单据的id集合 | 必填 | - | 通过其他api接口获取或者出站消息获取。<br/>示例：[zKIbl2WX4I8I00,I8I00zKIbl2WX4,zKIbI00l2WX4I8]|
+| **ids** | Array | 单据ID集合 | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取<br/>示例：[ zKIbl2WX4I8I00 , I8I00zKIbl2WX4 , zKIbI00l2WX4I8 ] |
 
 ## Query Parameters
 
@@ -2482,6 +2482,7 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
+查询不到数据时返回如下：
 ```json
 {
   "items": []   //表示没查到数据，单据处于“草稿”状态，或者单据id不正确
