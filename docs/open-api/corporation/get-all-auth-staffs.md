@@ -1,6 +1,7 @@
 # 获取已激活员工列表
 
 import Control from "../../../components/Control";
+
 <Control
 method="GET"
 url="/api/openapi/v1/staffs/authorized"
