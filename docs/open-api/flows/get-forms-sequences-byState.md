@@ -16,7 +16,7 @@ url="/api/openapi/v1/docSequences"
 | **powerCode**   | String  | 功能授权码，传入<br/>219902或者219904即可 | 必填 | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |       
 | **type**        | String  | 单据类型            | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`repayment` : 还款记录<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单 |
 | **index**       | Number  | 分页查询的起始索引序号 | 必填 | - | 例如 : 当 `index` = `1484498318240` 时，会查询所有<br/>`index` > `1484498318240` 的单据 |
-| **count**       | Number  | 查询数据条数         | 必填 | - | 最大不能超过 `1000` |
+| **count**       | Number  | 查询数据条数         | 必填 | - | 最大不能超过 `100` |
 | **state**       | String  | 单据状态            | 非必填 | - | `REJECTED` : 已驳回<br/>`PAYING` : 待支付<br/>`PROCESSING` : 支付中<br/>`PAID` : 已支付<br/>不传值时，查询四种状态单据 |
 
 ## Body Parameters(以下为部分示例参数仅供参考)
