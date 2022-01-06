@@ -50,6 +50,14 @@ const config = {
       },
     ],
     "@docusaurus/plugin-ideal-image",
+    [
+      "@easyops-cn/docusaurus-search-local",
+      {
+        hashed: true,
+        language: ["en", "zh"],
+        highlightSearchTermsOnTargetPage: true,
+      },
+    ],
   ],
   themes: ["@saucelabs/theme-github-codeblock"],
   themeConfig:
