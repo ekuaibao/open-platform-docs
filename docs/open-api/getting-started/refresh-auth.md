@@ -8,6 +8,11 @@ method="POST"
 url="/api/openapi/v2/auth/refreshToken"
 />
 
+:::caution
+- 刷新后 `accessToken` 的有效期为默认32天。
+- 如果您企业的 **开放接口(新)** 功能授权不足32天，则刷新后有效期为实际剩余授权时间。
+:::
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
@@ -28,9 +33,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/auth/ref
 ```json
 {
     "value": {
-      "accessToken": "sdsdsdsdsd",      // 授权码，后续所有模块开发需要依赖此返回值
-      "refreshToken": "oWUbwJAVVUq000", // 只有调用刷新有效期接口时需要传的token
-      "expireTime": 1601802040521,      // 授权码过期日期时间戳(默认2小时后到期)
+      "accessToken": "sdsdsdsdsd",      //授权码，后续所有模块开发需要依赖此返回值
+      "refreshToken": "oWUbwJAVVUq000", //只有调用刷新有效期接口时需要传的token
+      "expireTime": 1601802040521,      //授权码过期日期时间戳(默认32天后到期)
       "corporationId": "ekuaibao"       //企业id
     }
 }
