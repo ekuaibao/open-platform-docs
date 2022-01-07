@@ -41,13 +41,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/departme
     "value": {
         "id": "JOYbpjPP-E2Q00:NJ4bwJTotQiA00", //部门ID
         "name": "事业部",                      //部门名称
-        "parentId": "JOYbpjPP-E2Q00",          //上级部门ID
-        "form":{                               //部门关联法人实体ID和成本中心ID
-          "costCenter":"NzMcynfBJ43M00",       //成本中心ID
-          "legalEntity":"11YcypdGzoEo00"       //法人实体ID
+        "parentId": "JOYbpjPP-E2Q00",         //上级部门ID
+        "form":{                              //部门关联法人实体ID和成本中心ID
+          "costCenter":"NzMcynfBJ43M00",      //成本中心ID
+          "legalEntity":"11YcypdGzoEo00"      //法人实体ID
         },
-        "active": true,                        //是否停用
-        "code": "1330"                         //部门编码
+        "active": true,                       //是否停用
+        "code": "1330"                        //部门编码
     }
 }
 ```

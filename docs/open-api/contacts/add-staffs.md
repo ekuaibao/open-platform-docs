@@ -50,7 +50,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs?a
     "cellphone":"15070403486",
     "email":"2777481917@163.com",
     "note":"备注",
-    "defaultDepartment":"JOYbpjPP-E2Q00:pAwbwH_W7sec00",  // 默认部门
+    "defaultDepartment":"JOYbpjPP-E2Q00:pAwbwH_W7sec00",  //默认部门
     "departments":[                                       //所在部门
         "JOYbpjPP-E2Q00:pAwbwH_W7sec00"
     ],

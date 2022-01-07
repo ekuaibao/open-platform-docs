@@ -1,4 +1,4 @@
-# 根据部门id或编码获取部门信息
+# 根据部门ID或编码获取部门信息
 
 import Control from "../../../components/Control";
 
@@ -11,7 +11,7 @@ url="/api/openapi/v1/departments/$`idOrCode`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **idOrCode** | String | `部门id` 或 `部门编码`| 必填 | - | 参数为 `部门id` 或 `部门编码` | 
+| **idOrCode** | String | `部门ID` 或 `部门编码`| 必填 | - | 参数为 `部门ID` 或 `部门编码` | 
 
 ## Query Parameters
 
@@ -31,14 +31,14 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
 ```json
 {
     "value": {
-        "id": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", // 部门ID
-        "name": "财务部",                      // 部门名称
-        "parentId": "JOYbpjPP-E2Q00",          // 上级部门ID
-        "active": true,                        // 是否启用
-        "code": "1003"                         // 部门编码
-        "form":{                               //部门关联法人实体id和成本中心id
-            "costCenter":"NzMcynfBJ43M00",     //成本中心ID
-            "legalEntity":"11YcypdGzoEo00"     //法人实体ID
+        "id": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", //部门ID
+        "name": "财务部",                      //部门名称
+        "parentId": "JOYbpjPP-E2Q00",         //上级部门ID
+        "active": true,                       //是否启用
+        "code": "1003"                        //部门编码
+        "form":{                              //部门关联法人实体ID和成本中心ID
+            "costCenter":"NzMcynfBJ43M00",    //成本中心ID
+            "legalEntity":"11YcypdGzoEo00"    //法人实体ID
         }
     }
 }

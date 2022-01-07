@@ -1,6 +1,6 @@
 ---
 slug: tls
-title: TSL支持通知
+title: TLS支持通知
 authors: [冯继成]
 ---
 

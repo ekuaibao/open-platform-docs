@@ -43,7 +43,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/departmen
             "parentId": "JOYbpjPP-E2Q00",           //上级部门ID
             "active": false,                        //是否停用
             "code": "",                             //部门编码
-            "form":{                                //部门关联法人实体id和成本中心id
+            "form":{                                //部门关联法人实体ID和成本中心ID
                 "costCenter":"NzMcynfBJ43M00",      //成本中心ID
                 "legalEntity":"11YcypdGzoEo00"      //法人实体ID
             }
