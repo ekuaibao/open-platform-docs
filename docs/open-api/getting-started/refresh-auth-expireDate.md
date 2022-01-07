@@ -1,16 +1,15 @@
-# 刷新授权
+# 刷新授权(指定有效时间)
 在授权码过期前，可使用此接口刷新有效期。如果 `accessToken` 已经过期，则无法刷新，只能重新获取。
 
 import Control from "../../../components/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v2/auth/refreshToken"
+url="/api/openapi/v2/auth/refreshToken/expireDate"
 />
 
 :::caution
-- 刷新后 `accessToken` 的有效期为默认32天。
-- 如果您企业的 **开放接口(新)** 功能授权不足32天，则刷新后有效期为实际剩余授权时间。
+- 如果您企业的 **开放接口(新)** 功能授权不足指定有效时间，则刷新后有效期为实际剩余授权时间。
 :::
 
 ## Query Parameters
@@ -19,6 +18,7 @@ url="/api/openapi/v2/auth/refreshToken"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**  | String | 即将过期的授权码 | 必填 | - | 通过上次获取 `accessToken` 时返回的值 |
 | **refreshToken** | String | 刷新的授权码    | 必填 | - |  通过上次获取 `accessToken` 时返回的值 |
+| **expireDate**   | String | 有效天数       | 必填 | - | 单位：天 |
 | **powerCode**    | String | 功能授权码      | 必填 | - |  传入 `219904` 即可   |
 
 :::tip
@@ -27,17 +27,17 @@ url="/api/openapi/v2/auth/refreshToken"
 
 ## CURL
 ```
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/auth/refreshToken?accessToken=uIEbwJeFbogA00&refreshToken=IBAbwJeFbogE00&powerCode=219904'
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/auth/refreshToken/expireDate?accessToken=ID_3vMMouDbGqM:djg8LshfUkfM00&refreshToken=ID_3vMMouDbHqM:djg8LshfUkfM00&expireDate=1&powerCode=219904'
 ```
 ## 成功响应
 ```json
 {
-    "value": {
-      "accessToken": "sdsdsdsdsd",      //授权码，后续所有模块开发需要依赖此返回值
-      "refreshToken": "oWUbwJAVVUq000", //只有调用刷新授权接口时需要传的token
-      "expireTime": 1601802040521,      //授权码过期日期时间戳(默认32天后到期)
-      "corporationId": "ekuaibao"       //企业id
-    }
+  "value": {
+    "accessToken": "ID_3vMKHHg9gG0:djg8LshfUkfM00",   //授权码，后续所有模块开发需要依赖此返回值
+    "refreshToken": "ID_3vMKHHg9hG0:djg8LshfUkfM00",  //只有调用刷新授权接口时需要传的token
+    "expireTime": 1641626383724,                      //授权码过期日期时间戳 = 当前日期时间戳 + 有效天数
+    "corporationId": "djg8LshfUkfM00"                 //企业id
+  }
 }
 ```
 
