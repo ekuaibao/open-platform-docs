@@ -7,10 +7,10 @@ method="POST"
 url="/api/openapi/v2/flow/data/submitFlow"
 />
 
-:::tip
-- 经由[创建单据]接口，正确保存数据后，配置审批人，调用此接口提交单据
-- 与业务画面上的提交单据功能一样，需要按格式组织审批流程节点信息数据，提交单据信息
-- 程序会对请求参数、body数据格式以及流程节点进行完整性与合法性校验
+:::caution
+- 经由[创建单据]接口，正确保存数据后，配置审批人，调用此接口提交单据。
+- 程序会对请求参数、body数据格式以及流程节点进行完整性与合法性校验。
+- 与业务画面上的提交单据功能一样，需要按格式组织审批流程节点信息数据，提交单据信息。
 :::
 
 ## Query Parameters
@@ -33,12 +33,12 @@ url="/api/openapi/v2/flow/data/submitFlow"
 |**&emsp; &emsp; ∟ signerId** | String  | 会签审批人ID  | 非必填  | - | 当设置会签审批人列表时候必填|
 
 ## 附加说明
-
-- `isUrgent`字段表达是否加急；`urgentReason`字段为加急原因； 仅当流程配置允许加急时，`isUrgent`才可为"true"；
+:::tip
+- `isUrgent` 字段表达是否加急；`urgentReason` 字段为加急原因； 仅当流程配置允许加急时，`isUrgent` 才可为"true"；
 
 - 在上一步获取的流程实例中，<br/>
-  &emsp; 若某节点的 type="normal"时，对应传入参数为`approverId`；<br/>
-  &emsp; 若某节点的 type="countersign"时，对应传入参数为`signerId`；
+  &emsp; 若某节点的 type="normal"时，对应传入参数为 `approverId`；<br/>
+  &emsp; 若某节点的 type="countersign"时，对应传入参数为 `signerId`；
 
 - 在上一步获取的流程实例中，<br/>
   &emsp; 若某节点的 type="normal"，且 allStaffs="true" 时，可传入企业内任意员工 ID，仅 允许传入一个；<br/>
@@ -51,6 +51,7 @@ url="/api/openapi/v2/flow/data/submitFlow"
 - 在上一步获取的流程实例中，若某节点的 allstaffs="false"，且 isauto="true"：<br/>
   &emsp; 当其 type="normal"时，需传入 staffIds 数组中的任意一个员工 ID；<br/>
   &emsp; 当其 type="countersign"时，需传入 staffIds 数组中的所有员工 ID；
+:::
 
 ## CURL
 ```json
@@ -181,9 +182,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/dat
 ```
 
 ## 确认提交结果
-- 提交单据后，易快报预置的「费用标准检查」节点，会检查单据中的预算、费用标准等费控指标是否合规
-- 如存在不合规，需要驳回的情况时，该节点会自动驳回单据。 此时需调用「获取单据详情」接口
-- 根据返回数据中的【state】，判断该单据是否被 驳回，如返回 state!=“draft” 且 state!=“rejected”，则该单据提交成功
+- 提交单据后，易快报预置的「费用标准检查」节点，会检查单据中的预算、费用标准等费控指标是否合规。
+- 如存在不合规，需要驳回的情况时，该节点会自动驳回单据。 此时需调用「获取单据详情」接口。
+- 根据返回数据中的【state】，判断该单据是否被 驳回，如返回 state!=“draft” 且 state!=“rejected”，则该单据提交成功。
 
 ## 失败响应
 ```json

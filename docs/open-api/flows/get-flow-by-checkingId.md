@@ -1,9 +1,5 @@
 # 获取企业对账单管理的子对账单
-根据对账单ID获取该对账单所管理的子对账单详情，子对账单就是一个个的报销单
-
-:::tip
-【对账结算中心】模块需要开通【对账结算管理】功能！
-:::
+根据对账单ID获取该对账单所管理的子对账单详情，子对账单就是一个个的报销单。
 
 import Control from "../../../components/Control";
 
@@ -11,6 +7,10 @@ import Control from "../../../components/Control";
 method="GET"
 url="/api/openapi/v1/getFlowByCheckingId"
 />
+
+:::caution
+【对账结算中心】模块需要开通【对账结算管理】功能！
+:::
 
 ## Query Parameters
 
@@ -183,7 +183,7 @@ curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/getFlowByC
 ```
 
 ## 失败响应
-对账单ID错误或者不存在时，返回空数据，请检查对账单ID是否正确
+`对账单ID`错误或者不存在时，返回空数据，请检查`对账单ID`是否正确：
 ```json
 {
     "items": []

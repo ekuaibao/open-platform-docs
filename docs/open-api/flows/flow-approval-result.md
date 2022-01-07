@@ -1,16 +1,16 @@
 # 获取单据审批结果
 
-:::tip
-- 需要开通`单据审批`功能，方可使用
-- 该接口在调用[单据审批](/docs/open-api/flows/flow-approval)接口后60秒内调用， 方可得到审批结果
-:::
-
 import Control from "../../../components/Control";
 
 <Control
 method="GET"
 url="/api/openapi/v1/backlog/data/result"
 />
+
+:::caution
+- 需要开通`单据审批`功能，方可使用。
+- 该接口在调用[单据审批](/docs/open-api/flows/flow-approval)接口后60秒内调用， 方可得到审批结果。
+:::
 
 ## Query Parameters
 

@@ -1,5 +1,5 @@
 # 回写单据凭证信息
-- 支持批量回写单据凭证
+支持批量回写单据凭证。
 
 import Control from "../../../components/Control";
 
@@ -18,7 +18,7 @@ url="/api/openapi/v2/flow/data/erpVoucher"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**voucher**                    | Array  | 凭证信息        | 必填  | - | 凭证信息（至少一条） |
+|**voucher**                     | Array  | 凭证信息        | 必填  | - | 凭证信息（至少一条） |
 |**&emsp; ∟ flowId**            | String | 单据ID         | 必填  | - |  通过其他api接口获取或者出站消息 |
 |**&emsp; ∟ voucherNo**         | String | 单据凭证号      | 必填  | - |  根据实际业务提供的凭证号,如果传空("")则删除该单据的凭证号 |
 |**&emsp; ∟ voucherCreateTime** | String | 单据凭证生成时间 | 必填  | - |  毫秒级时间戳 |
@@ -47,7 +47,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data
 ```
 
 ## 失败响应
-出现以下信息，请检查单据id是存在的
+出现以下信息，请检查单据id是存在的：
 ```json
 {
     "errorCode": 412,

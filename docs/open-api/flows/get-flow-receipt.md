@@ -1,5 +1,5 @@
 # 获取回单下载链接地址
-根据单据id获取回单下载链接地址
+根据单据id获取回单下载链接地址。
 
 import Control from "../../../components/Control";
 
@@ -12,7 +12,7 @@ url="/api/openapi/v1/flowDetails/getReceipt/$flowId"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowId** | String | 单据的id | 必填 | - | 通过其他api接口获取或者出站消息 |
+| **flowId** | String | 单据id | 必填 | - | 通过其他api接口获取或者出站消息 |
 
 ## Query Parameters
 

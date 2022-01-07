@@ -1,9 +1,5 @@
 # 共享申请事项
 
-:::caution
-被共享人员是全量更新，不是增量更新，第二次调用接口时不包含第一次调用时的被共享人员的话，第一次的人员会被取消共享状态
-:::
-
 import Control from "../../../components/Control";
 
 <Control
@@ -11,12 +7,16 @@ method="PUT"
 url="/api/openapi/v1/requisition/$`flowId`/share/[`staffIds`]"
 />
 
+:::caution
+被共享人员是全量更新，不是增量更新，第二次调用接口时不包含第一次调用时的被共享人员的话，第一次的人员会被取消共享状态。
+:::
+
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowId**   | String               | 申请单单据的id | 必填 | - | [通过获取单据列表接口获取](/docs/open-api/flows/get-forms-sequences)或者出站消息|
-| **staffIds** | Array&lt;String&gt;  | 被共享员工的id | 必填 | - | [通过获取员工列表接口获取](/docs/open-api/corporation/get-all-staffs) |
+| **flowId**   | String | 申请单单据id | 必填 | - | [通过获取单据列表接口获取](/docs/open-api/flows/get-forms-sequences)或者出站消息|
+| **staffIds** | Array  | 被共享员工id | 必填 | - | [通过获取员工列表接口获取](/docs/open-api/corporation/get-all-staffs) |
 
 
 ## Query Parameters
@@ -39,7 +39,7 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1/requis
 ```
 
 ## 失败响应
-当`flowId`和共享员工id`staffId`不正确时，请检查
+当`flowId`和共享员工id`staffId`不正确时，请检查：
 ```json
 {
     "errorCode": 400,
@@ -50,7 +50,7 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1/requis
 }
 ```
 
-当`staffIds`不正确时，请检查被共享员工id
+当`staffIds`不正确时，请检查被共享员工id：
 ```json
 {
     "errorCode": 400,

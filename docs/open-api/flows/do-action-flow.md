@@ -1,5 +1,5 @@
 # 简单单据事件处理
-提供【**撤销单据**】和【**删除单据**】操作
+提供【**撤销单据**】和【**删除单据**】操作。
 
 import Control from "../../../components/Control";
 
@@ -12,7 +12,7 @@ url="/api/openapi/v2/flow/data/$`flowId`/`action`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowId** | String  | 单据ID          | 必填 | - | [一般通过出站消息获取单据ID](/docs/open-api/outbound-message/outbound-new)|
+| **flowId** | String  | 单据id          | 必填 | - | [一般通过出站消息获取单据ID](/docs/open-api/outbound-message/outbound-new)|
 | **action** | String  | 单据的action操作 | 必填 | - | `retract` : 撤销操作 &emsp; `delete` : 删除操作 |
 
 ## Query Parameters
@@ -22,8 +22,8 @@ url="/api/openapi/v2/flow/data/$`flowId`/`action`"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 :::caution
-- 删除操作，只能是驳回状态和草稿状态的单据
-- 撤销操作，只能是审批中状态的单据（审批流需要配置允许撤回单据）
+- 删除操作，只能是驳回状态和草稿状态的单据。
+- 撤销操作，只能是审批中状态的单据（审批流需要配置允许撤回单据）。
 :::
 
 ## CURL
@@ -126,7 +126,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/dat
 ```
 
 ## 失败响应
-
 ```json
 {
     "errorCode": 403,

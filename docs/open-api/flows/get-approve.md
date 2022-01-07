@@ -20,7 +20,7 @@ url="/api/openapi/v1/docs/byApproverId/$`approverId`"
 | **accessToken**   | String  | 通过授权接口获取        | 必填   | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **index**         | Number  | 分页查询的起始值        | 非必填 | 0 | 即从第几条数据查起，起始值从`0`开始 |
 | **count**         | Number  | 查询数据条数           | 必填   | - | 最大不能超过`1000` |
-| **powerCode**     | String  | 功能授权码，传入<br/>219902或者219904即可 |必填    | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |
+| **powerCode**     | String  | 功能授权码             |必填    | - | 传入219902或者219904即可<br/>`219902` : 开放接口 &emsp; `219904` : 开放接口(新) |
 
 ## CURL
 ```json

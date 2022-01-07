@@ -1,6 +1,5 @@
 # 获取单据附件
-
-本接口是提供根据单据的Id获取单据的附件数据信息
+本接口是提供根据单据的Id获取单据的附件数据信息。
 
 import Control from "../../../components/Control";
 
@@ -13,16 +12,16 @@ url="/api/openapi/v1/flowDetails/attachment"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**    | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowIds** | Array | 单据ID |必填 | - | 一次最多能查询100个单据 |
+| **flowIds** | Array | 单据ID | 必填 | - | 一次最多能查询100个单据 |
 
 :::caution
-单据的Id是面向系统唯一
+`flowIds`可以是一个批量的，以逗号隔开即可,例如`["1s8cfnyBH8Jw00","1s8cfnyBH8Jw01"]`;
 :::
 
 ## CURL
@@ -34,11 +33,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 "flowIds":["BXoci03_oQ5000","c3Aci0NWnkgc00","6_kcgINHfcbI00"]
 }'
 ```
-
-:::tip
-`flowIds`可以是一个批量的，以逗号隔开即可,例如["1s8cfnyBH8Jw00","1s8cfnyBH8Jw01"];<br/>
-返回的body中附件的`key`,`fileId`,`fileName`不是必返回的，有些附件可能没有该些字段。
-:::
 
 ## 成功响应
 ```json
@@ -179,8 +173,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 }
 ```
 
+:::tip
+响应数据中附件的`key`,`fileId`,`fileName`不是必返回的，有些附件可能没有该些字段。
+:::
+
 ## 失败响应
-单据不存在，一般是单据id不对或者单据已经被删除了，请检查
+单据不存在，一般是单据id不对或者单据已经被删除了，请检查：
 ```json
 {
 "items": [] //表示没查到数据

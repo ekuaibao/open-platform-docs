@@ -445,7 +445,7 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 ]
 ```
 - `feeTypeId` : 费用类型 ID，即[获取费用类型列表(包含停用)](/docs/open-api/feetype/get-feetypes-list)中返回的 id。
-- `specificationId` : 启用版本的费用类型报销(或申请)模板 ID，即[根据id或code获取费用类型模板信息](/docs/open-api/feetype/get-feetypes)中返回的 `expenseSpecificationId` 或 `requisitionSpecificationId`
+- `specificationId` : 启用版本的费用类型报销(或申请)模板 ID，即[根据id或code获取费用类型模板信息](/docs/open-api/feetype/get-feetypes)中返回的 `expenseSpecificationId` 或 `requisitionSpecificationId`。
 
 ### (2) 金额类型字段
 字段的「type」为【money】的，为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服。
@@ -509,13 +509,13 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
 ```
 
 ### (6) 部门类型字段
-字段的「type」为【select】且「valueFrom」为【organization.Department】的，为部门类型字段，需传入部门 ID，可通过[获取部门列表](/docs/open-api/corporation/get-departments)接口获取
+字段的「type」为【select】且「valueFrom」为【organization.Department】的，为部门类型字段，需传入部门 ID，可通过[获取部门列表](/docs/open-api/corporation/get-departments)接口获取：
 ```json
 "u_Z部门": "PCx3rwm3aA00qM"
 ```
 
 ### (7) 员工类型字段
-字段的「type」为【select】且「valueFrom」为【organization.Staff】的，为员工类型字段，需传入员工的 ID ，可通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)接口获取
+字段的「type」为【select】且「valueFrom」为【organization.Staff】的，为员工类型字段，需传入员工的 ID ，可通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)接口获取：
 ```json
 "u_Z员工": "PCx3rwm3aA00qM:SUv3rzY$rz02t0"
 ```
@@ -629,6 +629,6 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
    }
 ]
 ```
-- apportionMoney：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服，除「standard」外，其他内容请与示例保持一致；
-- 项目：是自定义档案--项目中的档案项ID，即[获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items)中返回的ID；
+- apportionMoney：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服，除「standard」外，其他内容请与示例保持一致。
+- 项目：是自定义档案--项目中的档案项ID，即[获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items)中返回的ID。
 - specificationId：费用分摊模板 ID，即[根据企业ID获取分摊模版列表](/docs/open-api/forms/get-apportion-template-list)中返回的ID。

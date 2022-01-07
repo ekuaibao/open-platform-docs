@@ -1,5 +1,5 @@
 # 根据批次号ID获取支付记录
-本接口是提供根据单据的批次号获取支付信息
+本接口是提供根据单据的批次号获取支付信息。
 
 import Control from "../../../components/Control";
 

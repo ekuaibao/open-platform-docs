@@ -12,7 +12,7 @@ url="/api/openapi/v1/approveStates/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 单据ID集合 | 必填 | - | 通过其他api接口或者出站消息获取<br/>示例：[zKIbl2WX4I8I00,I8I00zKIbl2WX4,zKIbI00l2WX4I8] |
+| **ids** | Array | 单据ID集合 | 必填 | - | 通过其他api接口或者出站消息获取<br/>示例：`[zKIbl2WX4I8I00,I8I00zKIbl2WX4,zKIbI00l2WX4I8]` |
 
 ## Query Parameters
 
