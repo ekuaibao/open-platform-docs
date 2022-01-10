@@ -5,7 +5,7 @@ import Control from "../../../components/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v2/extension/DATA_LINK/object/`entityId`"
+url="/api/openapi/v2/extension/DATA_LINK/object/`entityId`/search"
 />
 
 ## Path Parameters
@@ -29,8 +29,9 @@ url="/api/openapi/v2/extension/DATA_LINK/object/`entityId`"
 | **index** | Number | 当前页                     | 非必填 | - | 当前页 |
 | **count** | Number | 查询数                     | 非必填 | - | 每页查询数据量，最大不能超过 `1000` |
 
-:::tip
+:::caution
  - 参数优先级 `ids` > `codes` > `index` 和 `count` ，多组参数均传值时，按优先级最高的开始生效。
+ - `ids` 、 `codes` 参数，可以为空：`[]`，但是不可传`[null]`，否则会报错。
  - `ids` 、 `codes` 参数，接口没有校验参数是否在系统中存在，获取不到数据时，请检查参数的准确性。
  - `ids` 、 `codes` 不填时， `index` 和 `count` 两个参数必填，只要传了index和count参数，成功响应中的“count”表示总数。
  - `index` 和 `count` 不填时， `ids` 或 `codes` 参数必填，任意填写其一时，成功响应中的“count”表示有效参数量，而非总数。
