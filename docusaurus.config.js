@@ -55,6 +55,7 @@ const config = {
       {
         hashed: true,
         highlightSearchTermsOnTargetPage: true,
+        language: "zh",
       },
     ],
   ],
