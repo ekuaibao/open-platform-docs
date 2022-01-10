@@ -21,7 +21,7 @@ url="/api/openapi/v2/payeeInfos"
 | **active**      | Boolean | 账户是否启用  | 非必填 | true | `true` : 启用 &emsp; `false` : 停用 |
 
 :::tip
-- 除 `avtive` 参数外，其他的请求参数都需要传，即使参数值为空也要带上参数。
+- **除 `avtive` 参数外，其他的请求参数都需要传，即使参数值为空也要带上参数。**
 - 如果 `names`、`cardNos`、`ids` 都有值，则优先查询顺序为 `ids` > `names` > `cardNos`，都没有值则默认查询全部。
 - 每页 `10` 条数据，那么第一页对应的参数为 `start=0&count=10` ，第二页为 `start=10&count=10`。
 :::
