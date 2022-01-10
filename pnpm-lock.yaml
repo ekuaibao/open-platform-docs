@@ -16,7 +16,7 @@ specifiers:
   clsx: ^1.1.1
   coa: 2.0.2
   file-loader: ^6.2.0
-  nodejieba: ^2.6.0
+  nodejieba: 2.5.2
   prism-react-renderer: ^1.2.1
   prop-types: ^15.8.1
   react: ^17.0.1
@@ -34,7 +34,7 @@ dependencies:
   '@svgr/webpack': 5.5.0
   clsx: 1.1.1
   file-loader: 6.2.0
-  nodejieba: 2.6.0
+  nodejieba: 2.5.2
   prism-react-renderer: 1.2.1_react@17.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -7386,8 +7386,8 @@ packages:
       url: 0.11.0
     dev: false
 
-  /nodejieba/2.6.0:
-    resolution: {integrity: sha512-cyEOLRGLjDuxbTuv6nuMAK3NpML4ft9i7st98TFHvXtg+m3RFhIuf4INBHGp3VhUaqPsCTfAkhHB/ZNTFiwJjg==}
+  /nodejieba/2.5.2:
+    resolution: {integrity: sha1-/JKe4p+Twoxjlpa6wDGbrBFqKWo=}
     engines: {node: '>= 10.20.0'}
     requiresBuild: true
     dependencies:
@@ -9982,7 +9982,7 @@ packages:
   /wide-align/1.1.5:
     resolution: {integrity: sha1-3x1MIGhUNp7PPJpImPGyP72dFdM=}
     dependencies:
-      string-width: 1.0.2
+      string-width: 4.2.3
     dev: false
 
   /widest-line/3.1.0:
