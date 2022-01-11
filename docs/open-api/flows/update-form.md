@@ -59,7 +59,7 @@ url="/api/openapi/v2/flow/data/$`flowId`"
 
 ## CURL
 ```json
-curl --location --request PUT 'https://wx2.ekuaibao.com/api/openapi/v2/flow/data/$flowId?accessToken=SIw9lEj3rc0800' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data/$flowId?accessToken=SIw9lEj3rc0800' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "form": {

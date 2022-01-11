@@ -24,7 +24,7 @@ url="/api/openapi/v1/flowDetails/byCode"
 
 ## CURL
 ```json
-curl --location --request GET 'https://460mix.ekuaibao.net/api/openapi/v1/flowDetails/byCode?code=S21000002&accessToken=ID_3uTOGXa04Vw:PCx3rwm3aA00qM'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetails/byCode?code=S21000002&accessToken=ID_3uTOGXa04Vw:PCx3rwm3aA00qM'
 ```
 
 ## 成功响应

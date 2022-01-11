@@ -56,7 +56,7 @@ url="/api/openapi/v2/flow/data"
 ## CURL
 报销单示例：
 ```json
-curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/data?accessToken=ID_3tLWHTx0B8g:PCx3rwm3aA00qM' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/data?accessToken=ID_3tLWHTx0B8g:PCx3rwm3aA00qM' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "form":{
@@ -73,7 +73,6 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
                         "standardNumCode":"156",
                         "standardStrCode":"CNY"
                     },
-                    "detailId":"txL8K9Xdy1QxLo",
                     "apportions":[  //分摊明细具体信息
                         {
                             "apportionForm":{
@@ -129,10 +128,6 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
                 "fileName":"s-search.png"
             }
         ],
-        "voucherNo":"",
-        "printCount":"0",
-        "printState":"noPrint", //打印状态
-        "submitDate":1639378232585, //提交时间
         "description":"123",    //描述
         "expenseDate":1639324800000,    //报销日期
         "expenseLink":"ID_3twRddlb0$w", //关联申请单ID，如单据无需关联申请单，可不在 form 对象中添加该字段
@@ -159,8 +154,7 @@ curl --location --request POST 'https://460mix.ekuaibao.net/api/openapi/v2/flow/
                 "dataLinkTemplateId":"ID_3rW8lqul4Rw"
             }
         ],
-        "expenseDepartment":"PCx3rwm3aA00qM",   //报销部门
-        "voucherCreateTime":0
+        "expenseDepartment":"PCx3rwm3aA00qM"   //报销部门
     },
      "params":{ //当需要添加核销借款时添加该参数
         "loanWrittenOff":[ //表示报销单中的核销借款字段
