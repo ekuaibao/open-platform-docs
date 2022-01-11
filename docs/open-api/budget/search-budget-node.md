@@ -1,5 +1,5 @@
 # 查询预算节点配置和节点路径信息
-通过传递的查询参数（名称、编码）来查询符合条件的预算节点配置信息和节点路径信息（从根节点到查询节点之间的路径节点信息）。
+通过预算名称、预算编码查询符合条件的预算节点配置和节点路径信息（从根节点到查询节点之间的路径信息）。
 
 import Control from "../../../components/Control";
 
@@ -12,7 +12,7 @@ url="/api/openapi/v2/budgets/searchBudgetNode/$`budgetInfoId`/$`budgetInfoVersio
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetInfoId** | String  | 预算树id | 必填 | - | [预算树id获取](/docs/open-api/budget/get-budget-list) |
+| **budgetInfoId**      | String  | 预算树ID | 必填 | - | [预算树ID获取](/docs/open-api/budget/get-budget-list) |
 | **budgetInfoVersion** | String  | 预算版本 | 必填 | - | [预算版本获取](/docs/open-api/budget/get-budget-details) |
 
 ## Query Parameters
@@ -21,7 +21,7 @@ url="/api/openapi/v2/budgets/searchBudgetNode/$`budgetInfoId`/$`budgetInfoVersio
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token  | 必填   | -   | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **start**       | Number | 查询开始位置 | 非必填 | 0   | 查询开始位置 |
-| **count**       | Number | 查询数量    | 非必填 | 100 | 不可超过100 |
+| **count**       | Number | 查询数量    | 非必填 | 100 | 不可超过 `100` |
 
 ## Body Parameters
 
@@ -32,11 +32,11 @@ url="/api/openapi/v2/budgets/searchBudgetNode/$`budgetInfoId`/$`budgetInfoVersio
 
 ## CURL
 ```json
-curl --location --request POST 'http://460mix.ekuaibao.net/api/openapi/v2/budgets/searchBudgetNode/$ID_3hDGFB47JaY/$7?accessToken=ID_3lEhmoq01R0:rzj3hDLar4001E' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/searchBudgetNode/$ID_3hDGFB47JaY/$7?accessToken=ID_3lEhmoq01R0:rzj3hDLar4001E' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-    "name":"徐建",
+    "name":"张三",
     "code":""
 }'
 ```
@@ -71,13 +71,13 @@ curl --location --request POST 'http://460mix.ekuaibao.net/api/openapi/v2/budget
                     {
                         "nodeId": "1627633293733001",
                         "periodTime": "1",
-                        "budgetMoney": 66666,  //预算金额
+                        "budgetMoney": 66666,     //预算金额
                         "extendMoneys": {},
-                        "occupiedMoney": 0,  //占用金额
-                        "confirmedMoney": 0,  //已使用金额
-                        "budgetMoneyRoll": 0,  //预算金额（滚动）
-                        "occupiedMoneyRoll": 0,  //占用金额（滚动）
-                        "confirmedMoneyRoll": 0  //已使用金额（滚动）
+                        "occupiedMoney": 0,       //占用金额
+                        "confirmedMoney": 0,      //已使用金额
+                        "budgetMoneyRoll": 0,     //预算金额（滚动）
+                        "occupiedMoneyRoll": 0,   //占用金额（滚动）
+                        "confirmedMoneyRoll": 0   //已使用金额（滚动）
                     }
                 ],
                 "freeze": false

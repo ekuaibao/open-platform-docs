@@ -15,15 +15,16 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/del"
 />
 
 :::caution
-不推荐使用，接口废弃，不再更新。推荐使用【批量更新(新增/修改/删除)预算节点】接口。
+- 不推荐使用，接口废弃，不再更新维护。
+- 推荐使用【批量更新(新增/修改/删除)预算节点】接口。
 :::
 
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String  | 预算树id | 必填 | - | [预算树id获取](/docs/open-api/budget/get-budget-list) |
-| **nodeId** | String  | 要删除的节点id | 必填 | - | [预算节点id获取](/docs/open-api/budget/get-budget-details) |
+| **budgetId** | String | 预算树ID      | 必填 | - | [预算树ID获取](/docs/open-api/budget/get-budget-list) |
+| **nodeId**   | String | 要删除的节点ID | 必填 | - | [预算节点ID获取](/docs/open-api/budget/get-budget-details) |
 
 ## Query Parameters
 

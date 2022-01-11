@@ -213,8 +213,8 @@ const sidebars = {
         "open-api/budget/get-BudgetInfo-State",
         "open-api/budget/get-budget-details",
         "open-api/budget/add-budget-node",
-        "open-api/budget/delete-budget-node",
         "open-api/budget/update-budget-node",
+        "open-api/budget/delete-budget-node",
         "open-api/budget/batch-pdate-budget-node",
         "open-api/budget/search-budget-node",
         "open-api/budget/question-answer"

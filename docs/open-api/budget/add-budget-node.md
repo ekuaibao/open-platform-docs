@@ -5,7 +5,7 @@ authors: [张国阳]
 ---
 
 # ~~增加预算节点~~
-向指定的预算树的预算节点下增加新的子节点。
+向指定预算树的预算节点下增加新的子节点。
 
 import Control from "../../../components/Control";
 
@@ -15,7 +15,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/add"
 />
 
 :::caution
-- 不推荐使用，接口废弃，不再更新。
+- 不推荐使用，接口废弃，不再更新维护。
 - 推荐使用【批量更新(新增/修改/删除)预算节点】接口。
 :::
 
@@ -23,8 +23,8 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/add"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String  | 预算树id | 必填 | - | [预算树id获取](/docs/open-api/budget/get-budget-list) |
-| **nodeId**   | String  | 父节点id | 必填 | - | [预算节点id获取](/docs/open-api/budget/get-budget-details) |
+| **budgetId** | String  | 预算树ID | 必填 | - | [预算树ID获取](/docs/open-api/budget/get-budget-list) |
+| **nodeId**   | String  | 父节点ID | 必填 | - | [预算节点ID获取](/docs/open-api/budget/get-budget-details) |
 
 ## Query Parameters
 
@@ -37,21 +37,21 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/add"
 |名称 |描述 |类型 |是否必填 |默认值 |备注 |
 |:------ |:--------- |:-----------|:-------|:-----------|:-------------|
 |**budgetNode**                     | Object  | 预算节点信息            | 必填  | - | 新增的预算节点信息 | 
-|**&emsp; ∟ id**                   | String  | 预算节点id              | 必填  | - | 不重复的唯一id，例如：可用毫秒级时间戳作为节点ID |
+|**&emsp; ∟ id**                   | String  | 预算节点ID              | 必填  | - | 不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID |
 |**&emsp; ∟ code**                 | String  | 节点编码                | 必填  |- | 可传 `""` |
 |**&emsp; ∟ content**              | Array   | 节点维度                | 必填  |- | 一个节点对应一个维度 |
-|**&emsp; &emsp; ∟ dimensionType** | String  | 维度种类                | 必填  | - | `DEPART` : 费用承担部门 &emsp; `PROJECT` : 扩展档案<br/>`FEE_TYPE` : 费用类型 &emsp; `STAFF` : 员工 |
-|**&emsp; &emsp; ∟ dimensionId**   | String  | 维度种类的标识ID         | 必填  | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>PROJECT : `项目`(档案名称,例如:项目)<br/>FEE_TYPE : `feeTypeId` &emsp; STAFF : `submitterId` |
+|**&emsp; &emsp; ∟ dimensionType** | String  | 维度种类                | 必填  | - | `DEPART` : 费用承担部门<br/>`PROJECT` : 扩展档案<br/>`FEE_TYPE` : 费用类型<br/>`STAFF` : 员工 |
+|**&emsp; &emsp; ∟ dimensionId**   | String  | 维度种类的标识ID         | 必填  | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : `项目` (档案名称，例如：项目)<br/>STAFF : `submitterId` |
 |**&emsp; &emsp; ∟ mustLeaf**      | Boolean | 维度是否必定为叶节点(本部) | 必填  | false | `true` : 非本级 &emsp; `false` : 本级<br/>[表示维度类别是否为其子预算节点](/docs/open-api/budget/question-answer) |
-|**&emsp; &emsp; ∟ contentId**     | String  | 维度内容id              | 必填  | - | 对应维度种类下的项id，例如：部门维度就是 `部门id` ，扩展档案维度就是`档案项id` |
+|**&emsp; &emsp; ∟ contentId**     | String  | 维度内容ID              | 必填  | - | 对应维度种类下的项ID，例如：部门维度就是 `部门id` ，扩展档案维度就是 `档案项id` |
 |**&emsp; ∟ moneys**               | Array   | 节点金额                | 必填  |- | 预算金额，节点的[周期](/docs/open-api/budget/question-answer)数据不可省略 |
-|**&emsp; &emsp; ∟ nodeId**        | String  | 预算节点id              | 必填  | - | 与上面预算节点id保持一致，即一个预算节点下包含`节点信息`和`预算金额`两部分属性 |
-|**&emsp; &emsp; ∟ periodTime**    | String  | 第几个周期              | 必填  | - | 年度和自定义区间: `1` 半年度: `1`,`2` 季度: `1`,`2`,`3`,`4` 月度: `1~12` <br/>根据控制周期类型填写，例如：预算树控制周期是按季度类型，每个子预算节点的 `moneys` 数组数据，就包含4个对象，表示每个季度对应的预算金额 |
+|**&emsp; &emsp; ∟ nodeId**        | String  | 预算节点ID              | 必填  | - | 与上面预算节点ID保持一致，即一个预算节点下包含 `节点信息` 和 `预算金额` 两部分属性 |
+|**&emsp; &emsp; ∟ periodTime**    | String  | 第几个周期              | 必填  | - | 年度和自定义区间: `1`<br/>半年度: `1`，`2`<br/>季度: `1`，`2`，`3`，`4`<br/>月度: `1~12`<br/>根据控制周期类型填写，例如：预算树控制周期是按季度类型，每个子预算节点的 `moneys` 数组数据，就包含4个对象，表示每个季度对应的预算金额 |
 |**&emsp; &emsp; ∟ budgetMoney**   | Number  | 预算金额                | 必填  | - | 周期内的预算金额，不可为空 |
-|**&emsp; ∟ control**              | String  | 预算节点的控制方式        | 必填  | ALLOW | 当预算超额时的控制方式<br/>`ALLOW` : 允许提交单据 &emsp; `FORBID` : 禁止提交单据<br/>`IGNORED` : 什么都不做 |
+|**&emsp; ∟ control**              | String  | 预算节点的控制方式        | 必填  | ALLOW | 当预算超额时的控制方式<br/> `ALLOW` : 允许提交单据<br/>`FORBID` : 禁止提交单据<br/>`IGNORED` : 什么都不做 |
 |**visibility**                     | Object  | 节点负责人              | 非必填 |- | 负责人能在相关报销单和预算报表中查看该预算节点的进度 |
-|**&emsp; ∟ staffIds**             | Array   | 人员ID                 | 必填  |- | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
-|**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 |- | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
+|**&emsp; ∟ staffIds**             | Array   | 人员ID                 | 必填  |- | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
+|**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 |- | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
 
 :::tip
  - “节点维度”如下图所示，是预算节点的划分依据<br/>
@@ -77,10 +77,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-    "budgetNode":{   //预算节点信息
-        "id":"1634112670003",   //节点id
-        "code":"维度-2-1",  //节点编码
-        "content":[       //节点维度信息，以何种类型分解预算
+    "budgetNode":{                          //预算节点信息
+        "id":"1634112670003",               //节点id
+        "code":"维度-2-1",                  //节点编码
+        "content":[                         //节点维度信息，以何种类型分解预算
             {
                 "dimensionType": "DEPART",  //部门类型
                 "dimensionId": "expenseDepartment",
@@ -91,22 +91,22 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
         "moneys":[      
             {
                 "nodeId":"1634112670003", 
-                "periodTime":1,  //第1个预算周期金额
+                "periodTime":1,             //第1个预算周期金额
                 "budgetMoney":"100"
             },
             {
                 "nodeId":"1634112670003", 
-                "periodTime":2,  //第2个预算周期金额
+                "periodTime":2,             //第2个预算周期金额
                 "budgetMoney":"200"
             },
             {
                 "nodeId":"1634112670003", 
-                "periodTime":3,  //第3个预算周期金额
+                "periodTime":3,             //第3个预算周期金额
                 "budgetMoney":"300"
             },
             {
                 "nodeId":"1634112670003", 
-                "periodTime":4,  //第4个预算周期金额
+                "periodTime":4,             //第4个预算周期金额
                 "budgetMoney":"400"
             }
         ],

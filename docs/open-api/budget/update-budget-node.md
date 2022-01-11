@@ -15,15 +15,16 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/update"
 />
 
 :::caution
-不推荐使用，接口废弃，不再更新。推荐使用【批量更新(新增/修改/删除)预算节点】接口。
+- 不推荐使用，接口废弃，不再更新维护。
+- 推荐使用【批量更新(新增/修改/删除)预算节点】接口。
 :::
 
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String | 预算树id | 必填 |  - | [预算树id获取](/docs/open-api/budget/get-budget-list) |
-| **nodeId** | String | 要更新的预算节点id | 必填 | - | [预算节点id获取](/docs/open-api/budget/get-budget-details) |
+| **budgetId** | String | 预算树ID         | 必填 | - | [预算树ID获取](/docs/open-api/budget/get-budget-list) |
+| **nodeId** | String   | 要更新的预算节点ID | 必填 | - | [预算节点ID获取](/docs/open-api/budget/get-budget-details) |
 
 ## Query Parameters
 
@@ -37,8 +38,8 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/update"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 |**moneys**              | Object | 预算节点信息 | 必填   | - | 第N个[周期](/docs/open-api/budget/question-answer)的预算总额 | 
 |**visibility**          | Object | 节点的负责人 | 必填   | - | 负责人能在相关报销单和预算报表中查看该预算节点的进度 |
-|**&emsp; ∟ staffIds**  | Array  | 人员ID      | 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
-|**&emsp; ∟ roleDefIds**| Array  | 角色ID      | 非必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
+|**&emsp; ∟ staffIds**  | Array  | 人员ID      | 非必填 | - | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
+|**&emsp; ∟ roleDefIds**| Array  | 角色ID      | 非必填 | - | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
 
 ## CURL
 ```json
