@@ -10,7 +10,7 @@ url="/api/openapi/v2/auth/refreshToken"
 
 :::caution
 - 刷新后 `accessToken` 的有效期为默认32天。
-- 如果您企业的 **开放接口(新)** 功能授权不足32天，则刷新后有效期为实际剩余授权时间。
+- 如果您企业的 **【开放接口(新)】** 功能授权不足32天，则刷新后有效期为实际剩余授权时间。
 :::
 
 ## Query Parameters

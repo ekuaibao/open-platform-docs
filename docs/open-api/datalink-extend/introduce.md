@@ -1,5 +1,5 @@
 ---
-slug: introduce2
+slug: introduce
 title: 概述
 authors: [张国阳]
 ---
