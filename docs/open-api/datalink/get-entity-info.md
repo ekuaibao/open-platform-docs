@@ -32,25 +32,25 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
 ## 成功响应
 ```json
 {
-    "count": 2,// 总记录数
+    "count": 2,                                //总记录数
     "items": [
         {
-            "id": "smcbSWavrE2c00", // 业务对象实例id
-            "version": 3, //版本数
-            "active": true, //是否启用
+            "id": "smcbSWavrE2c00",            //业务对象实例id
+            "version": 3,                      //版本数
+            "active": true,                    //是否启用
             "createTime": 1604995509639,
             "updateTime": 1604995509639,
-            "name": "北京", // 业务对象实例名称
-            "nameSpell": "BEIJING", //业务对象实例名称大写
-            "code": "110", // 业务对象实例编码
-            "corporationId": "joQbMsJBw01c00", //企业id
-            "form": { //自定义业务对象实例参数表单数据
-                "E_8c500bdb8c4de2404000_pen": "joQbMsJBw01c00:FHMbOsCZegmw00",  //自定义业务对象实例员工参数
+            "name": "北京",                     //业务对象实例名称
+            "nameSpell": "BEIJING",             //业务对象实例名称大写
+            "code": "110",                      //业务对象实例编码
+            "corporationId": "joQbMsJBw01c00",  //企业id
+            "form": {                           //自定义业务对象实例参数表单数据
+                "E_8c500bdb8c4de2404000_pen": "joQbMsJBw01c00:FHMbOsCZegmw00",            //自定义业务对象实例员工参数
                 "E_8c500bdb8c4de2404000_city": "[{\"key\":\"497\",\"label\":\"沈阳市\"}]", //自定义业务对象实例城市参数
-                "E_8c500bdb8c4de2404000_code": "110", //自定义业务对象实例编码参数
-                "E_8c500bdb8c4de2404000_name": "北京", //自定义业务对象实例文本参数
-                "E_8c500bdb8c4de2404000_time": 1604937600000, //自定义业务对象实例时间参数
-                "E_8c500bdb8c4de2404000_money": { //自定义业务对象实例金额参数
+                "E_8c500bdb8c4de2404000_code": "110",           //自定义业务对象实例编码参数
+                "E_8c500bdb8c4de2404000_name": "北京",          //自定义业务对象实例文本参数
+                "E_8c500bdb8c4de2404000_time": 1604937600000,   //自定义业务对象实例时间参数
+                "E_8c500bdb8c4de2404000_money": {               //自定义业务对象实例金额参数
                     "standard": "99.00",
                     "standardUnit": "元",
                     "standardScale": 2,
@@ -61,24 +61,24 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
             },
             "ledgerAmount": null,
             "ledgerAmountModel": null,
-            "totalCount": 0, //总数量
-            "useCount": 0, //用户数量
+            "totalCount": 0,   //总数量
+            "useCount": 0,     //用户数量
             "entityId": "8c500bdb8c4de2404000", //业务对象业务对象id
             "platformId": "66wbMPbmLwsE00", 
             "source": "EXCEL", //来源
             "masterId": null, 
             "index": 0, 
-            "visibility": { //可见性权限列表
+            "visibility": {           //“参与人”配置
                 "fullVisible": true,
-                "staffs": null,
-                "roles": null,
-                "departments": null,
+                "staffs": null,       //参与人ID
+                "roles": null,        //角色ID
+                "departments": null,  //部门ID
                 "departmentsIncludeChildren": true
             },
-            "visible": true, //是否全部人员可见
-            "ownerId": "", //所属人id
-            "operatorId": "joQbMsJBw01c00:gwUbMbLvg4pA00", //操作人id
-            "sourceId": "", //来源id
+            "visible": true,   //是否全部人员可见
+            "ownerId": "",     //“负责人”ID
+            "operatorId": "joQbMsJBw01c00:gwUbMbLvg4pA00", //操作人ID
+            "sourceId": "",    //来源ID
             "flowCounts": {} 
         },
         {

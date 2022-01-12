@@ -14,10 +14,6 @@ url="/api/openapi/v1/property"
 | **accessToken** | String | 认证token  | 必填    | -               | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **type**        | String | 全局字段类型 | 非必填  | `flow.FlowForm` | `flow.FlowForm` : 单据<br/>`datalink.form` : 业务对象<br/>`dimension.form` : 自定义档案<br/>`staff.form` : 人员全局字段<br/>`department.form` : 部门 | 
 
-:::tip
-- `type` 参数不是备注中的固定值时，返回的是默认的 `flow.FlowForm`（单据类型的全局字段列表）。
-:::
-
 ## CURL
 ```json
 curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/property?accessToken=ID_3sNZ1zd0jTw:PCx3rwm3aA00qM&type=department.form' \
@@ -55,4 +51,15 @@ curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/property?a
 }
 ```
 
+## 失败响应
+`type` 参数不是备注中的固定值时，报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "type参数不合法",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
 

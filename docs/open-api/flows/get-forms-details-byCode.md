@@ -451,6 +451,7 @@ import TabItem from '@theme/TabItem';
             ],
             "requisitionDate": 1588435200000,
             "specificationId": "wxA8Mmqokkbw00:8a3cc00924dd83e6ba71bb24bd365754def2dd58",
+            "linkRequisitionInfo":"ID_3w0G92w8FCw",    //补充申请单的原单据ID
             "requisitionMoney": {
                 "standard": "22",
                 "standardUnit": "元",

@@ -17,8 +17,10 @@ url="/api/openapi/v2/recordLink/queryAllRecordLink"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **start** | Int  | 查询开始值 | 非必填  | 0 | 从 `0` 开始 |
-| **count** | Int  | 查询记录数 | 必填    | - | 每次查询最大数量不能大于 `100` |
+| **roleDefIds** | Array  | 档案关系ID  | 非必填  | - | 通过[获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation)获取，通过传递此值，<br/>查询指定档案关系下全部数据 |
+| **orderBy**    | String | 结果排序字段 | 非必填  | - | `updateTime` : 查询结果按更新时间倒序排列<br/>`createTime` : 查询结果按创建时间倒序排列 |
+| **start**      | Int    | 查询开始值  | 非必填  | 0 | 从 `0` 开始 |
+| **count**      | Int    | 查询记录数  | 必填    | - | 每次查询最大数量不能大于 `100` |
 
 ## CURL
 ```json
@@ -26,6 +28,8 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/recordLin
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
+      "roleDefIds":["ID_3gUPXqx3j6I"],  //档案关系ID
+      "orderBy":"updateTime",           //排序依据，更新时间倒序
       "start": 0,
       "count": 10
 }'
