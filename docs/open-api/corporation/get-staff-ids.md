@@ -70,7 +70,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
 ```
 
 ## 失败响应
-参数传值错误， 返回此响应结果
+参数传值错误， 返回此响应结果：
 ```json
 {
     "errorCode": 400,
