@@ -22,7 +22,8 @@ const sidebars = {
       type: "category",
       label: "通知",
       items: [
-        "open-api/notice/TLS"
+        "open-api/notice/TLS",
+        "open-api/notice/update-log"
       ],
     },
     {
