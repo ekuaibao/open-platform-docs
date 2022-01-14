@@ -17,18 +17,19 @@ url="/api/openapi/v2/auth/refreshToken"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**  | String | 即将过期的授权码 | 必填 | - | 通过上次获取 `accessToken` 时返回的值 |
-| **refreshToken** | String | 刷新的授权码    | 必填 | - |  通过上次获取 `accessToken` 时返回的值 |
-| **powerCode**    | String | 功能授权码      | 必填 | - |  传入 `219904` 即可   |
+| **accessToken**  | String | 即将过期的授权码 | 必填 | - | [获取授权](/docs/open-api/getting-started/auth)返回的 `accessToken` 值 |
+| **refreshToken** | String | 刷新的授权码    | 必填 | - | [获取授权](/docs/open-api/getting-started/auth)返回的 `refreshToken` 值 |
+| **powerCode**    | String | 功能授权码      | 必填 | - | 传入 `219904` 即可 |
 
 :::tip
 - 刷新后 `accessToken` 和 `refreshToken` 的值都会变化。
 :::
 
 ## CURL
-```
+```shell
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/auth/refreshToken?accessToken=uIEbwJeFbogA00&refreshToken=IBAbwJeFbogE00&powerCode=219904'
 ```
+
 ## 成功响应
 ```json
 {

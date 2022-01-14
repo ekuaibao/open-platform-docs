@@ -24,7 +24,7 @@ url="/api/openapi/v2/specifications/byIds/[`ids`]"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifications/byIds/[GQgbu2n6osbI00]?accessToken=qUMbutefrU8U00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

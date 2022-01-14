@@ -23,7 +23,7 @@ url="/api/openapi/v1/docs/byApproverId/$`approverId`"
 | **powerCode**     | String  | 功能授权码             |必填    | - | 传入219902或者219904即可<br/>`219902` : 开放接口 &emsp; `219904` : 开放接口(新) |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byApproverId/$gwobfjObAAno00:KpIbfkxLiU7800?accessToken=cWEbn1cA0kjU00&index=0&count=10&powerCode=219902'
 ```
 

@@ -24,7 +24,7 @@ url="/api/openapi/v1/dimensions/items/$`id`/disable"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/dimensions/items/$XBUbxhnP5k8w00/disable?accessToken=hQgbxfJnlElc00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

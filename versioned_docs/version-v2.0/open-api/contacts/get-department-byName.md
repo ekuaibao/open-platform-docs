@@ -19,7 +19,7 @@ url="/api/openapi/v1/departments/getDepartmentByName"
 | **name**        | String | 部门名称   | 必填 | - | 在易快报桌面端「系统设置」>「通讯录」处查看 |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departments/getDepartmentByName?accessToken=z0wbwXPo6sf400&name=%E8%B4%A2%E5%8A%A1%E9%83%A8' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

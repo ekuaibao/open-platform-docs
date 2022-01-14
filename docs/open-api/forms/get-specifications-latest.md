@@ -20,7 +20,7 @@ url="/api/openapi/v1/specifications/latestByType"
 | **specificationGroupId** | String  | 单据模板组ID | 非必填 | - | 单据模板组ID |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifications/latestByType?accessToken=qUMbutefrU8U00&type=expense&specificationGroupId' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

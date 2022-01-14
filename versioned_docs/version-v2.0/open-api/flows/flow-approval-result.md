@@ -21,7 +21,7 @@ url="/api/openapi/v1/backlog/data/result"
 | **powerCode**   | String  | 功能授权码     | 必填 | TICKET_AUDIT_switch | 传默认值即可 |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/backlog/data/result?accessToken=ID_3sTFcaTookM:djg8LshfUkfM00&approveId=djg8LshfUkfM00:ID_3kpneISgylw&powerCode=TICKET_AUDIT_switch' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json'

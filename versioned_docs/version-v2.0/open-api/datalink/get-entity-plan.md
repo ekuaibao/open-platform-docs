@@ -20,7 +20,7 @@ url="/api/openapi/v2/datalink/plan/getPlan/$`dataId`"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/plan/getPlan/$ID_3mcOcKEYUeM?accessToken=ID_3qolNHi0KF0:Urf3lsFgBp00gw'
 ```
 

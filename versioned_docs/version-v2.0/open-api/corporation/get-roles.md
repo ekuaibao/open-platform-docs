@@ -27,7 +27,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`"
 :::
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$JOYbpjPP-E2Q00:leader?accessToken=RCIbwHcnF0kg00&staffBy=id' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

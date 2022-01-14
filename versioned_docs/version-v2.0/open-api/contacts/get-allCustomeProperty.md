@@ -14,7 +14,7 @@ url="/api/openapi/v1/staffs/getAllCustomeProperty"
 | **accessToken** | String  | 认证token	| 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/staffs/getAllCustomeProperty?accessToken=ID_3kVvb6B042U' \
 --header 'Accept: application/json'
 ```

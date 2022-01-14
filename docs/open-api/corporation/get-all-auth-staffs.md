@@ -22,7 +22,7 @@ url="/api/openapi/v1/staffs/authorized"
 :::
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/authorized?accessToken=ID_3v7kdsVUWhg:djg8LshfUkfM00&start=0&count=100'
 ```
 

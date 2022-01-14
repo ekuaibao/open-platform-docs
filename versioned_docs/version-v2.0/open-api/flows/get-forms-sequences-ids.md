@@ -27,7 +27,7 @@ url="/api/openapi/v1/docs/[`ids`]"
 | **type**        | String  | 单据类型            | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`permit` : 授权单(商城超标审批申请单)<br/>`receipt` : 收款单 |
 
 ##  CURL
-```json
+```shell
 curl --location -g --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/[ID_3lztYYX7DJg]?accessToken=ID_3mMbt0x01LM:Urf3lsFgBp00gw&powerCode=219902&type=expense'
 ```
 

@@ -22,7 +22,7 @@ url="/api/openapi/v1/staffs/getBacklogCount/$`type`"
 | **staffParam**  | String  | 查询的员工参数  | 必填 | - | 员工信息中的 `staffID` 、`code` 、`cellphone` 任意一个即可 | 
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/getBacklogCount/$id?accessToken=RCIbwHcnF0kg00&staffParam=JOYbpjPP-E2Q00:y8gbpjP9OsnI00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

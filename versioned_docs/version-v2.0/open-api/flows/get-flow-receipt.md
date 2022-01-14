@@ -21,7 +21,7 @@ url="/api/openapi/v1/flowDetails/getReceipt/$flowId"
 | **accessToken**    | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/flowDetails/getReceipt/$Udscc9A3o8H800?accessToken=ID_3uUVAxi01Zw:PCx3rwm3aA00qM'
 ```
 

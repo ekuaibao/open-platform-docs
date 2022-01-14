@@ -15,7 +15,7 @@ url="/api/openapi/v1/specifications/getByName"
 | **name**        | String  | 模板组名称  | 必填 | - | 模板组名称|
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifications/getByName?name=个人费用&accessToken=ID_3wajigF3wH0:xgJ3wajigF25H0' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

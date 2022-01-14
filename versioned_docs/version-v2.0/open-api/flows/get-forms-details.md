@@ -43,7 +43,7 @@ import TabItem from '@theme/TabItem';
         "version": 1,                   //版本号
         "active": true,                 //是否有效（或者理解为是否被删除） true：有效，false：无效
         "createTime": 1592289377126,    //创建时间(毫秒级时间戳)
-        "updateTime": 1592289377125,    //创建时间(毫秒级时间戳)
+        "updateTime": 1592289377125,    //更新时间(毫秒级时间戳)，单据审批、单据字段修改都会改变此字段值
         "corporationId": "djg8LshfUkfM00",    //企业id
         "sourceCorporationId": null,
         "dataCorporationId": null,

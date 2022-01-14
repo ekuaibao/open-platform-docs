@@ -21,7 +21,7 @@ url="/api/openapi/v2/payeeInfos/$`id`/disableOrEnableAccount"
 | **active**      | String | 停用或启用标识 | 必填  | - | `true` : 启用 &emsp; `false` : 停用 |
 
 ## CURL
-```json
+```shell
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/payeeInfos/$u0gbxl3vQw7k00/disableOrEnableAccount?accessToken=AE4bxj-ZAIa800&active=false' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

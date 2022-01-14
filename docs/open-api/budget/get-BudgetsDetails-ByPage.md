@@ -25,7 +25,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/query"
 | **count**        | Number | 查询数量        | 必填  | 100 | 不可超过 `100` |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$u6wbqiMW0Yqo00/query?accessToken=f_kbtOJVVwdo00&start=1&count=100' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

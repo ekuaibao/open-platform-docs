@@ -22,7 +22,7 @@ url="/api/openapi/v1/staffs"
 :::
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?accessToken=RCIbwHcnF0kg00&start=0&count=20&active=true' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

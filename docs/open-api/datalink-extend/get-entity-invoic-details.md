@@ -20,7 +20,7 @@ url="/api/openapi/v2/extension/INVOICE/object/invoice/`invoiceId`/detail"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension/INVOICE/object/invoice/0aM9AbvdhI0400:011001900111:07517347/detail?accessToken=w3UbyyG1Xsfc00'
 ```
 

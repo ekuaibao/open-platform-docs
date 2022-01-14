@@ -22,7 +22,6 @@ url="/api/openapi/v2/specifications/feeType/byIdsAndCodes"
 | **codes** | Array | 费用类型编码CODE | 非必填 | - | 和 `ids` 至少有一个必填，可以传入多个 CODE |
 
 ## CURL
-
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/specifications/feeType/byIdsAndCodes?accessToken=cCMbw_mKUs8c00' \
 --header 'content-type: application/json' \

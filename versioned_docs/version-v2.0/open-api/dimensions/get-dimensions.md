@@ -21,7 +21,7 @@ url="/api/openapi/v1/dimensions"
 :::
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimensions?accessToken=hQgbxfJnlElc00&start=0&count=100' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

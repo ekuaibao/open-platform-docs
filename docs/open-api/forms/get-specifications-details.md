@@ -26,7 +26,7 @@ url="/api/openapi/v1/specifications/$`id`"
 | **type**        | String  | 模板类型    | 必填 | - | 固定值：`bill`（现在只支持这一种）|
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifications/$C20bu2n6osbc00:ebd338960d9053892b3fd86dfa6f31690d014de7?accessToken=qUMbutefrU8U00&type=bill' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

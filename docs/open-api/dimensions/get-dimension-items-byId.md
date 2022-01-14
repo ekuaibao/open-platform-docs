@@ -16,7 +16,7 @@ url="/api/openapi/v1/dimensions/getDimensionById"
 | **id**          | String | 自定义档案值的ID | 必填  | - | 可通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)获取 |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimensions/getDimensionById?accessToken=ID_3uzKp$o07_w:Urf3lsFgBp00gw&id=Urf3lsFgBp00gw:desktopPC' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

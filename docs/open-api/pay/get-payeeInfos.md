@@ -27,7 +27,7 @@ url="/api/openapi/v2/payeeInfos"
 :::
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfos?accessToken=ID_3uUlNBK01fM:PCx3rwm3aA00qM&count=100&start=0&names=&cardNos=&ids=&active=true' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

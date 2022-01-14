@@ -20,7 +20,7 @@ url="/api/openapi/v1/dimensions/getDimensionByName"
 | **name**        | String  |自定义档案值的名称 | 必填 | - | 不支持模糊搜索 |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimensions/getDimensionByName?accessToken=hQgbxfJnlElc00&name=%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

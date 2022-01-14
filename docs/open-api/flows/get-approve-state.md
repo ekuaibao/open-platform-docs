@@ -21,7 +21,7 @@ url="/api/openapi/v1/approveStates/[`ids`]"
 | **accessToken** | String | 通过授权接口获取 | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/approveStates/[yd4bn1Z-YM9000,ID_3sJUVscs$_w]?accessToken=UvsbtOEHTsk000'
 ```
 

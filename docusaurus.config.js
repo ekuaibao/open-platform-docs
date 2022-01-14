@@ -84,6 +84,11 @@ const config = {
             activeBaseRegex: "/block-ui/",
           },
           { to: "/blog", label: "Blog", position: "left" },
+          {
+            type: "docsVersionDropdown",
+            position: "right",
+            dropdownActiveClassDisabled: true,
+          },
         ],
       },
       footer: {

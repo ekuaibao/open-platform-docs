@@ -21,7 +21,7 @@ url="/api/openapi/v1/travel/costCenter/getInstanceData"
 
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/travel/costCenter/getInstanceData?accessToken=ZgQc4GFXqQb400&type=businessObject&start=0&count=10'
 ```
 

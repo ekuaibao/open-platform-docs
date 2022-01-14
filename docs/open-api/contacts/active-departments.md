@@ -27,7 +27,7 @@ url="/api/openapi/v1/departments/disableOrEnableDepartment/$`departmentId`"
 | **active**      | Boolean | 停用或启用标识	| 必填  | - | `true` : 启用 &emsp; `false` : 停用 |
 
 ## CURL
-```json
+```shell
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/departments/disableOrEnableDepartment/$JOYbpjPP-E2Q00:Ef0bwJTotQho00?accessToken=rv0bwKeAks4Y00&active=false' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

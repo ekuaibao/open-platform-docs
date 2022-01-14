@@ -27,7 +27,7 @@ url="/api/openapi/v1/requisition/$`flowId`/share/[`staffIds`]"
 | **staffId**     | String | 共享员工id | 必填 | - | [通过获取员工列表接口获取](/docs/open-api/corporation/get-all-staffs) |
 
 ## CURL
-```json
+```shell
 curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1/requisition/$ID_3nuAVmk3r9w/share/[Urf3lsFgBp00gw:ID_3ow_Xyy0MzM]?accessToken=ID_3oHBMwn017g:Urf3lsFgBp00gw&staffId=Urf3lsFgBp00gw:AvT3lntT8zzpWw'
 ```
 

@@ -20,7 +20,7 @@ url="/api/openapi/v1/getFlowByCheckingId"
 | **checkingBillId** | String | 对账单ID  | 必填 | - | 对账结算中心-对账结算中每条数据对应的ID,详见下方截图位置 |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/getFlowByCheckingId?checkingBillId=ID_3hCyl5N02eI&accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

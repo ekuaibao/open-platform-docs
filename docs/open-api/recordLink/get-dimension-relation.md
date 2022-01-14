@@ -14,7 +14,7 @@ url="/api/openapi/v2/recordLink/getRoleGroups"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/recordLink/getRoleGroups?accessToken=4vkbY22qkocU00'
 ```
 

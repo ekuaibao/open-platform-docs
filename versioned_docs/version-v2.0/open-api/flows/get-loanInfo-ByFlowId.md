@@ -22,7 +22,7 @@ url="/api/openapi/v1/loans/getLoanInfoByFlowId/$`flowId`"
 | **accessToken** | String | 通过授权接口获取 | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/loans/getLoanInfoByFlowId/$2a8bsS2qFgck00?accessToken=TNQbsyYQV80I00'
 ```
 

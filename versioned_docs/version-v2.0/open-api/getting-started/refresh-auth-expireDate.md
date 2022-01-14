@@ -16,19 +16,20 @@ url="/api/openapi/v2/auth/refreshToken/expireDate"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**  | String | 即将过期的授权码 | 必填 | - | 通过上次获取 `accessToken` 时返回的值 |
-| **refreshToken** | String | 刷新的授权码    | 必填 | - |  通过上次获取 `accessToken` 时返回的值 |
+| **accessToken**  | String | 即将过期的授权码 | 必填 | - | [获取授权](/docs/open-api/getting-started/auth)返回的 `accessToken` 值 |
+| **refreshToken** | String | 刷新的授权码    | 必填 | - | [获取授权](/docs/open-api/getting-started/auth)返回的 `refreshToken` 值 |
 | **expireDate**   | String | 有效天数       | 必填 | - | 单位：天 |
-| **powerCode**    | String | 功能授权码      | 必填 | - |  传入 `219904` 即可   |
+| **powerCode**    | String | 功能授权码      | 必填 | - | 传入 `219904` 即可 |
 
 :::tip
 - 刷新后 `accessToken` 和 `refreshToken` 的值都会变化。
 :::
 
 ## CURL
-```
+```shell
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/auth/refreshToken/expireDate?accessToken=ID_3vMMouDbGqM:djg8LshfUkfM00&refreshToken=ID_3vMMouDbHqM:djg8LshfUkfM00&expireDate=1&powerCode=219904'
 ```
+
 ## 成功响应
 ```json
 {

@@ -27,7 +27,7 @@ url="/api/openapi/v2/flow/data/$`flowId`/`action`"
 :::
 
 ## CURL
-```json
+```shell
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/data/$PQIbuN0nmYc800/retract?accessToken=cWEbn1cA0kjU00'
 ```
 

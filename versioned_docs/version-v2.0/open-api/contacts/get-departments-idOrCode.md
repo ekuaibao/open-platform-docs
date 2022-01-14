@@ -21,7 +21,7 @@ url="/api/openapi/v1/departments/$`idOrCode`"
 | **departmentBy** | String | 查询方式    | 非必填 | id | 固定值 : `id` 或者 `code`，与 `idOrCode` 参数对应 |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departments/$JOYbpjPP-E2Q00:pAwbwH_W7sec00?accessToken=z0wbwXPo6sf400&departmentBy=id' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

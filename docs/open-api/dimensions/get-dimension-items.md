@@ -17,7 +17,7 @@ url="/api/openapi/v1/dimensions/items"
 | **dimensionId** | String  | 档案类别id       | 非必填 | - | [获取自定义档案类别](/docs/open-api/dimensions/get-dimensions)，通过此参数可查询<br/>指定档案类别下的档案项 |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimensions/items?accessToken=hQgbxfJnlElc00&start=0&count=100' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

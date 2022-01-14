@@ -20,7 +20,7 @@ url="/api/openapi/v1/dimensions/getDimensionByCode"
 | **code**        | String  | 自定义档案值的编码 | 必填 | -  | 编码全名（可能会有中文） |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimensions/getDimensionByCode?accessToken=hQgbxfJnlElc00&code=CODE2' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

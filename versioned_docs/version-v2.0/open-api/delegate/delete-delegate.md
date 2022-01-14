@@ -20,7 +20,7 @@ url="/api/openapi/v2/organization/delegate/approve/$`id`"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request DELETE 'https://app.ekuaibao.com/api/openapi/v2/organization/delegate/approve/$jSIcih1RiNHg00?accessToken=MwAcih69ycDo00'
 ```
 

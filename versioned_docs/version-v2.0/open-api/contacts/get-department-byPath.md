@@ -15,7 +15,7 @@ url="/api/openapi/v1/departments/getDepartmentByPath"
 | **path**        | String | 部门路径   | 必填 | - | 部门名称全路径，例如“总公司/财务部” |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departments/getDepartmentByPath?accessToken=z0wbwXPo6sf400&path=%E8%B4%A2%E5%8A%A1%E9%83%A8' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

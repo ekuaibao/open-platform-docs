@@ -17,7 +17,7 @@ url="/api/openapi/v2/location"
 ![如何获取验证码](images/corpId.png)
 
 ## CURL
-```
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/location?corpId=-yQbjbywbc640011'
 ```
 

@@ -16,10 +16,10 @@ url="/api/openapi/v1/carbonCopy/getCarbonCopy"
 | **receiverId**  | String | 接收人Id/单据被抄送人Id必填 | 必填 | - |  接收人Id/单据被抄送人Id必填  |
 
 ## CURL
-```json
-   curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/carbonCopy/getCarbonCopy?accessToken=FdAcjUU3HM0s00&flowId=J4ccjUq08pRU00&receiverId=FF0c6gsq-gl400:dIEbu2mgTs6o00' \
-  --header 'Content-Type: application/json' \
-  --header 'Accept: application/json'
+```shell
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/carbonCopy/getCarbonCopy?accessToken=FdAcjUU3HM0s00&flowId=J4ccjUq08pRU00&receiverId=FF0c6gsq-gl400:dIEbu2mgTs6o00' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json'
 ```
 
 ## 成功响应

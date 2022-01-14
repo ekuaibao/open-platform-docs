@@ -18,7 +18,7 @@ url="/api/openapi/v1/dimensions/items/withAll"
 | **dimensionId** | String  | 档案类别id       | 非必填 | - | [获取自定义档案类别](/docs/open-api/dimensions/get-dimensions)，通过此参数可查询<br/>指定档案类别下的档案项 |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimensions/items/withAll?accessToken=ID_3w9Hs683BDM:f1Q9VElpo01s00&start=0&count=100&dimensionId=f1Q9VElpo01s00:成本中心预置'
 ```
 

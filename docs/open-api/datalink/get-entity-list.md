@@ -25,7 +25,7 @@ url="/api/openapi/v2/datalink/entity/$`platformId`"
 :::
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/entity/$PgQbrAHda85Y00?accessToken=cxEbrzNJSA3A00'
 ```
 

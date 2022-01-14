@@ -15,7 +15,7 @@ url="/api/openapi/v1/cityGroup/search"
 | **keyword**     | String | 查询关键字      | 非必填 | - | 按城市组名称搜索 |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/cityGroup/search?accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

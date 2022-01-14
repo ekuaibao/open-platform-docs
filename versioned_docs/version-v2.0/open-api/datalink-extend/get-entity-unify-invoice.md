@@ -17,7 +17,7 @@ url="api/openapi/v1/invoice/unify"
 | **count**                     | Number | 查询数据条数  | 必填 | - | 不可超过10 |
 
 ## CURL
-```json
+```shell
 curl --location --request get 'http://app.ekuaibao.com/api/openapi/v1/invoice/unify?accessToken=ojkcqAnfM40g00&unifyInvoiceCorporationId=0KkcigsqylyI00&index=1612344239976&count=10
 ```
 

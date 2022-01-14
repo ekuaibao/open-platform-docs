@@ -28,7 +28,7 @@ url="/api/openapi/v1/staffs/disableOrEnableStaff/[`ids`]"
 | **doCheck**       | Boolean  | 停用时是否校验该员工名下有代办事项 | 非必填 | true | `true` : 校验 &emsp; `false` : 不校验 |
 
 ## CURL
-```json
+```shell
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/staffs/disableOrEnableStaff/[3Qobu2l0cs6k00:Fu0bySHs1oqc00,3Qobu2l0cs6k00:1m4bySHs1orc00]?accessToken=aO8bySRCSYhQ00&active=true' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

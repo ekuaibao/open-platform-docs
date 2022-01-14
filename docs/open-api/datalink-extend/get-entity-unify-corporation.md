@@ -14,7 +14,7 @@ url="api/openapi/v1/invoice/unify/corporation/list"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request get 'http://app.ekuaibao.com/api/openapi/v1/invoice/unify/corporation/list?accessToken=T6IcqAnfM40400
 ```
 

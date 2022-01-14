@@ -27,7 +27,7 @@ url="/api/openapi/v1/docSequences"
 :::
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docSequences?accessToken=UvsbtOEHTsk000&powerCode=219902&type=expense&index=1551156015357&count=10'
 ```
 

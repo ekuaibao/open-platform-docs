@@ -20,7 +20,7 @@ url="/api/openapi/v2/organization/delegate/approve/$`staffId`"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/organization/delegate/approve/$34A73EyI8A0w00:VV89AHfyJo2E00?accessToken=MwAcih69ycDo00'
 ```
 

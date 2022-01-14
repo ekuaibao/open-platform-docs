@@ -33,7 +33,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/del"
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## CURL
-```json
+```shell
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/$u6wbqiMW0Yqo00/node/$1597314291146001/del?accessToken=f_kbtOJVVwdo00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'

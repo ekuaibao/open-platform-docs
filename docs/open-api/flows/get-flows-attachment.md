@@ -30,7 +30,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-"flowIds":["BXoci03_oQ5000","c3Aci0NWnkgc00","6_kcgINHfcbI00"]
+      "flowIds":["BXoci03_oQ5000","c3Aci0NWnkgc00","6_kcgINHfcbI00"]
 }'
 ```
 
