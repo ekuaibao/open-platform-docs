@@ -79,16 +79,11 @@ const config = {
           },
           {
             to: "/block-ui/support",
-            label: "Block UI",
+            label: "开放UI",
             position: "left",
             activeBaseRegex: "/block-ui/",
           },
           { to: "/blog", label: "Blog", position: "left" },
-          {
-            type: "docsVersionDropdown",
-            position: "right",
-            dropdownActiveClassDisabled: true,
-          },
         ],
       },
       footer: {
