@@ -47,4 +47,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: user/app:latest
+          tags: bohanzhang/open-platform-docs:latest
