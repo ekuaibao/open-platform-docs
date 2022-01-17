@@ -16,6 +16,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out repo
         uses: actions/checkout@v2
+      - name: Get the version
+        id: vars
+        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:14})
       # Node is required for npm
       - name: Set up Node
         uses: actions/setup-node@v2
@@ -25,7 +28,6 @@ jobs:
       - name: Build Docusaurus website
         run: |
           ls -lsh
-          echo 'tag ${GITHUB_REF}'
           npm install 
           npm run build
       # add cache to build
@@ -47,4 +49,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: bohanzhang/open-platform-docs:$GITHUB_REF
+          tags: bohanzhang/open-platform-docs:${{ steps.vars.outputs.tag }}
