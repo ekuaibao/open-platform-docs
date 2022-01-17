@@ -77,6 +77,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
 ```
 
 ## 失败响应
+`start` 参数不传或者传空时，报错如下：
 ```json
 {
     "errorCode": 400,

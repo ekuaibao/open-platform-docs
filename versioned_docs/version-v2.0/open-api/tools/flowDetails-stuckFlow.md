@@ -27,7 +27,41 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
 ```
 
 ## 成功响应
+`isUpdate`（是否处理）参数传 true/false，均返回异常状态的单据信息：
 ```json
+{
+    "count": 2,
+    "items": [
+        {
+            "id": "ID_3wlg6bv52Gg",               //单据ID
+            "code": "B22000001",                  //单据编号
+            "corporationId": "bwa3wajigF0WH0",    //企业ID
+            "state": "rejected",                  //单据状态
+            "updateTime": 1642404597341,          //更新日期
+            "createTime": 1642403403188,          //创建日期
+            "updateTimeString": "2022-01-17 15:29:57",  //格式化更新日期
+            "createTimeString": "2022-01-17 15:10:03"   //格式化创建日期
+        },
+        {
+            "id": "ID_3wlg6bv6EGg",
+            "code": "B22000002",
+            "corporationId": "bwa3wajigF0WH0",
+            "state": "rejected",
+            "updateTime": 1642404597362,
+            "createTime": 1642403403310,
+            "updateTimeString": "2022-01-17 15:29:57",
+            "createTimeString": "2022-01-17 15:10:03"
+        }
+    ]
+}
+```
+
+查询发现单据状态并未有异常时，返回如下：
+```json
+{
+    "count": 0,
+    "items": []
+}
 
 ```
 

@@ -27,10 +27,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifica
     "value": {
         "id": "xgJ3wajigF25H0:personalCost",   //模板组ID
         "name": "个人费用",                     //模板组名称
-        "active": true,                       //是否启用
-        "corporationId": "xgJ3wajigF25H0",    //企业ID
-        "createTime": 1585218096459,          //创建时间
-        "updateTime": 1585218170725           //修改时间
+        "active": true,                        //是否启用
+        "corporationId": "xgJ3wajigF25H0",     //企业ID
+        "createTime": 1585218096459,           //创建时间
+        "updateTime": 1585218170725            //修改时间
     }
 }
 ```
@@ -40,7 +40,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifica
 ```json
 {
     "errorCode": 412,
-    "errorMessage": "单据模版不存在，请切换新模版",
+    "errorMessage": "单据模版组不存在",
     "errorDetails": null,
     "code": null,
     "data": null

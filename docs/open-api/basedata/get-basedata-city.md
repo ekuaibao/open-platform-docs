@@ -22,7 +22,7 @@ url="/api/openapi/v1/city/getCityList"
 | **parentId** | String | 父级编号 | 非必填 | - | 省市县的父级编号，易快报系统中定义，非国标 |
 
 :::tip
-`name`、`code`、`parentId`三个参数是并且的关系， 查询时任选其一填写即可。
+`name`、`code`、`parentId` 三个参数是 **“AND(并且)”** 的关系， 查询时任选其一填写即可。
 :::
 
 ## CURL
@@ -42,18 +42,18 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/city/getC
 {
     "items": [
         {
-            "id": "1353",                     //编号
+            "id": "1353",                    //编号
             "version": 4,
             "active": true,
             "createTime": 1505372614205,
             "updateTime": 1505372614205,
             "name": "江西省",                 //名称
-            "nameSpell": "JIANGXISHENG",      //拼音
-            "code": "360000",                 //编码
+            "nameSpell": "JIANGXISHENG",     //拼音
+            "code": "360000",                //编码
             "corporationId": "",              
             "enName": "Jiangxisheng",         //英文名称
-            "enFullName": "Jiangxi, China",    //英文全称
-            "fullName": "中国, 江西省",           //中文全称
+            "enFullName": "Jiangxi, China",   //英文全称
+            "fullName": "中国, 江西省",        //中文全称
             "country": "国内",                   
             "parentId": "",                   //父级编号
             "treeLevel": 0,

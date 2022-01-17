@@ -7,6 +7,13 @@ method="POST"
 url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 />
 
+<details>
+  <summary>v1.1版本特性</summary>
+  <div>
+    - 🆕 新增 pageType = frontPage 类型，进入易快报“首页”。
+  </div>
+</details>
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
