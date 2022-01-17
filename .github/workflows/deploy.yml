@@ -33,7 +33,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: build
-          key: build
+          key: /build
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to DockerHub
