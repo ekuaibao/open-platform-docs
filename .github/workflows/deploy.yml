@@ -25,6 +25,7 @@ jobs:
       - name: Build Docusaurus website
         run: |
           ls -lsh
+          echo 'tag ${GITHUB_REF_NAME}'
           npm install 
           npm run build
       # add cache to build
@@ -46,4 +47,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: bohanzhang/open-platform-docs:${{ github.event.inputs.tag }}
+          tags: bohanzhang/open-platform-docs:${{ GITHUB_REF_NAME }}
