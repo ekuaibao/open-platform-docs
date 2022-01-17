@@ -1,6 +1,8 @@
-FROM halverneus/static-file-server
+FROM node:14
+RUN npm install -g serve
 
-ENV URL_PREFIX=/open-platform-docs
-EXPOSE 8080/tcp
+EXPOSE 3000/tcp
 
 COPY build/ /web
+
+CMD ["serve", "-s", "/web", "-l", "8080"]
