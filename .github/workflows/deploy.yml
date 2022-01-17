@@ -47,4 +47,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: bohanzhang/open-platform-docs:${{ GITHUB_REF }}
+          tags: bohanzhang/open-platform-docs:$GITHUB_REF
