@@ -47,4 +47,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: bohanzhang/open-platform-docs:latest
+          tags: bohanzhang/open-platform-docs:${{ github.event.inputs.tag || 'latest' }}
