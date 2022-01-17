@@ -1,2 +1,2 @@
 FROM halverneus/static-file-server
-COPY /build /web
+COPY build/ /web
