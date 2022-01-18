@@ -9,7 +9,7 @@ const config = {
   title: "文档中心",
   tagline: "开放平台文档中心",
   url: "https://ekuaibao.github.io",
-  baseUrl: "/open-platform-docs/",
+  baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
