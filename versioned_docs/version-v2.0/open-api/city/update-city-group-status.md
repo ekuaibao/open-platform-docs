@@ -1,4 +1,4 @@
-# 启用/禁用城市组
+# 启用/停用城市组
 
 import Control from "@theme/Control";
 
@@ -11,19 +11,19 @@ url="/api/openapi/v1/cityGroup/updateStatus/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String | 城市组id | 必填 | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
+| **id** | String | 城市组ID | 必填 | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 通过授权接口获取 | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **status** | Boolean | 城市组状态 | 必填 | - | 城市组状态 |
+| **status** | Boolean | 城市组状态 | 必填 | - | `true` : 启用 &emsp; `false` : 停用 |
 
 ## CURL
 ```json
@@ -42,5 +42,17 @@ curl --location --request PUT 'http://app.ekuaibao.com/api/openapi/v1/cityGroup/
         "success": true,
         "message": ""
     }
+}
+```
+
+## 失败响应
+`id`（城市组ID）不正确时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "ID_3wAjiZJ1h8M1数据不存在",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```

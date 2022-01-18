@@ -11,15 +11,15 @@ url="/api/openapi/v1/cityGroup/detail/delete"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 通过授权接口获取 | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **roleIds**     | String[] | 角色id列表 | 非必填 | - | [通过查询角色组和角色获取](/docs/open-api/corporation/get-roles-group) |
-| **staffIds**    | String[] | 人员id列表 | 非必填 | - | [通过获取员工列表获取](/docs/open-api/corporation/get-all-staffs) |
-| **cityGroupId** | String   | 城市组id   | 必填  | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
+| **roleIds**     | Array  | 角色ID列表 | 非必填 | - | [通过查询角色组和角色获取](/docs/open-api/corporation/get-roles-group) |
+| **staffIds**    | Array  | 人员ID列表 | 非必填 | - | [通过获取员工列表获取](/docs/open-api/corporation/get-all-staffs) |
+| **cityGroupId** | String | 城市组ID   | 必填  | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
 
 ## CURL
 ```json

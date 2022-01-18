@@ -21,7 +21,7 @@ url="/api/openapi/v1/provisional/getProvisionalAuth"
 | **userId**                  | String  | 第三方员工ID      | 非必填 | - | 当 `uid` 非必填时 `userId` 必填 |
 | **pageType**                | String  | 登录页面类型       | 必填  | - | `home` : 我的单据<br/>`approve` : 待办列表<br/>`form` : 单据详情页<br/>`new` : 新建单据<br/>`mall` : 商城<br/>`backlogDetail` : 查看待办详情，同时底部菜单<br/>显示指定审批按钮(不支持移动端) |
 | **expireDate**              | String  | 授权有效期        | 必填   | - |  单位：秒，最大不能超过 `604800` 秒（7天） |
-| **overdueTokenRedirect**    | String  | 重定向url        | 非必填 | - | `expireDate` 过期后重定向到该地址 |
+| **overdueTokenRedirect**    | String  | 重定向URL        | 非必填 | - | `expireDate` 过期后重定向到该地址 |
 | **isApplet**                | Boolean | 是否跳转app端     | 非必填 | `false` |  `true` : 跳转app端 &emsp; `false` : 跳转web端   |
 | **flowId**                  | String  | 单据ID           | 非必填 | - | 当「 `pageType` = `form` 或 `backlogDetail` 」时<br/>必填，表示需要访问的单据详情页 |
 | **approvalUrl**             | String  | 审批完成后跳转地址 | 非必填 | - | 当「 `pageType` = `form` 或 `backlogDetail` 」时<br/>参数有效，表示单据审批完成后跳转的地址 |

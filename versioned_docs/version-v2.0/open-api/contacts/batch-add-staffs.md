@@ -29,15 +29,22 @@ url="/api/openapi/v1/staffs/batch/create"
 | **&emsp; ∟ cellphone**          | String | 手机号           | 必填   | - | 如果手机号为国外手机号，那么应为 : "(区号)手机号" |
 | **&emsp; ∟ email**              | String | 邮箱             | 非必填 | - | 可以不传，但是不可以传 `""` |
 | **&emsp; ∟ note**               | String | 备注             | 非必填 | - | 备注 |
-| **&emsp; ∟ defaultDepartment**  | String | 默认部门id        | 必填  | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
-| **&emsp; ∟ departments**        | Array  | 所在部门，至少1个	  | 必填  | - | 兼职部门，请确保至少包含默认部门 |
-| **&emsp; ∟ userid**             | String | 第三方平台的id     | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数 |
-| **&emsp; ∟ useSendEmail**       | Boolean| 是否禁止发送邮件通知	| 非必填 | false | `true` : 禁止 &emsp; `false` : 不禁止 |
-| **&emsp; ∟ staffCustomForm**    | Object    | 自定义字段         | 非必填  | - | 自定义字段 |
-| **&emsp;&emsp; ∟ rankType**  | String    | 职级档案项id       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
-| **&emsp;&emsp; ∟ postType**  | String    | 岗位档案项id       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
+| **&emsp; ∟ defaultDepartment**  | String | 默认部门ID        | 必填  | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
+| **&emsp; ∟ departments**        | Array  | 所在部门ID，至少1个 | 必填  | - | 兼职部门，请确保至少包含默认部门 |
+| **&emsp; ∟ userid**             | String | 第三方平台的ID     | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数 |
+| **&emsp; ∟ useSendEmail**       | Boolean| 是否禁止发送邮件通知 | 非必填 | false | `true` : 禁止 &emsp; `false` : 不禁止 |
+| **&emsp; ∟ staffCustomForm**    | Object | 自定义字段         | 非必填  | - | 自定义字段 |
+| **&emsp;&emsp; ∟ rankType**  | String    | 职级档案项ID       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
+| **&emsp;&emsp; ∟ postType**  | String    | 岗位档案项ID       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
 | **&emsp;&emsp; ∟ base**      | String    | 常驻地            | 非必填  | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
 | **&emsp;&emsp; ∟ u_字段名**   | String    | 自定义字段         | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目 |
+
+:::tip
+- base参数拼接说明：<br/>
+  通过**[获取城市列表数据](/docs/open-api/basedata/get-basedata-city)**接口获取数据后，找到对应城市，`id`对应`key`，`fullName`对应`label`。
+  如果是国内城市吗，不需要拼接“中国”，如果是国外城市，需要将`fullName`参数全部按照格式拼接。
+  ![城市字段拼接示例](images/城市字段拼接示例.png)
+:::
 
 ## CURL
 ```json

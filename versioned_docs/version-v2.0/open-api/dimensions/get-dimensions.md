@@ -28,10 +28,6 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
 ```
 
 ## 成功响应
-:::caution
-- 成功响应时，`count` 参数返回的是档案类别总数量，不是查询条数；
-- `items` 参数返回的是查询的数据。
-:::
 
 ```json
 {
@@ -58,6 +54,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
     ]
 }
 ```
+
+:::caution
+- 成功响应时，`count` 参数返回的是档案类别总数量，不是查询条数。
+- `items` 参数返回的是查询的数据。
+:::
 
 ## 失败响应
 ```json

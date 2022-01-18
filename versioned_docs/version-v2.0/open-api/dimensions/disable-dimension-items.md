@@ -15,7 +15,7 @@ url="/api/openapi/v1/dimensions/items/$`id`/disable"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String | 档案项id | 必填| - | 可通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)获取 | 
+| **id** | String | 档案项ID | 必填| - | 可通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)获取 | 
 
 #### Query Parameters:
 

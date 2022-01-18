@@ -223,7 +223,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "自建应用(原自定义扩展/数据互联)",
+      label: "自建应用(自定义扩展/数据互联)",
       items: [
         "open-api/datalink/introduce",
         "open-api/datalink/create-platform",
