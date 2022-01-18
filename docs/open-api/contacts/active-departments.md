@@ -17,7 +17,7 @@ url="/api/openapi/v1/departments/disableOrEnableDepartment/$`departmentId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **departmentId** | String | 部门id | 必填 | - | 通过获取部门信息获得 |
+| **departmentId** | String | 部门ID | 必填 | - | 通过获取部门信息获得 |
 
 ## Query Parameters
 

@@ -24,9 +24,9 @@ url="/api/openapi/v2/flows/relay"
 | **staffId**             | String  | 操作人ID | 必填 | - | 可通过[查询员工](/docs/open-api/corporation/get-staff-ids)接口获取 |
 | **originApproverId**    | String  | 离职人ID | 必填 | - | 可通过[查询员工](/docs/open-api/corporation/get-staff-ids)接口获取 |
 | **relayApproverId**     | String  | 交接人ID | 必填 | - | 可通过[查询员工](/docs/open-api/corporation/get-staff-ids)接口获取 |
-| **unboundInvoice**      | Boolean | 将待离职员工草稿及被驳回的单据<br/>删除、关联的发票解除关联 | 必填 | - | 必填为 `true` |
-| **shareWaitingInvoice** | Boolean | 将待开发票共享给新交接人                              | 必填 | - | 必填为 `true` |
-| **dataLinkFlag**        | Boolean | 如果是业务对象负责人或者管理员，<br/>交接到新交接人下面    | 必填 | - | 必填为 `true` |
+| **unboundInvoice**      | Boolean | 将待离职员工草稿及被驳回的单据<br/>删除、关联的发票解除关联 | 必填 | - | `true` : 解除 &emsp; `false` : 不解除<br/>正常情况必填为`true` |
+| **shareWaitingInvoice** | Boolean | 将待开发票共享给新交接人                              | 必填 | - | `true` : 共享 &emsp; `false` : 不共享<br/>正常情况必填为`true` |
+| **dataLinkFlag**        | Boolean | 如果是业务对象负责人或者管理员，<br/>交接到新交接人下面    | 必填 | - | `true` : 交接 &emsp; `false` : 不交接<br/>正常情况必填为`true` |
 
 ## CURL
 ```json
@@ -36,8 +36,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flows/re
     "staffId":"Urf3lsFgBp00gw:AvT3lntT8zzpWw",            //操作人
     "originApproverId": "Urf3lsFgBp00gw:ID_3rw$2RXIjlM",  //离职人
     "relayApproverId": "Urf3lsFgBp00gw:AvT3lntT8zzpWw",   //交接人
-    "unboundInvoice": true,       //将待离职员工草稿及被驳回的单据删除、关联的发票解除关联。TRUE表示交接,FALSE表示不交接  必填为true
-    "shareWaitingInvoice": true,  //将待开发票共享给新交接人。TRUE表示交接,FALSE表示不交接  必填为true
+    "unboundInvoice": true,       //将待离职员工草稿及被驳回的单据删除、关联的发票解除关联。TRUE表示解除,FALSE表示不解除  必填为true
+    "shareWaitingInvoice": true,  //将待开发票共享给新交接人。TRUE表示共享,FALSE表示不共享 必填为true
     "dataLinkFlag": true          //如果是业务对象负责人或者管理员，交接到新交接人下面。TRUE表示交接,FALSE表示不交接  必填为true
 }'
 ```

@@ -11,7 +11,7 @@ url="/api/openapi/v1/staffs/$`staffId`/customFields"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **staffId** | String | 员工id | 必填 | - | 可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 | 
+| **staffId** | String | 员工ID | 必填 | - | 可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 | 
 
 ## Query Parameters
 
@@ -30,7 +30,11 @@ url="/api/openapi/v1/staffs/$`staffId`/customFields"
 
 :::tip
 - 员工自定义字段为“员工基础字段设置”里面的字段。
-![image](images/customFields.png)
+  ![image](images/customFields.png)
+- base参数拼接说明：<br/>
+  通过**[获取城市列表数据](/docs/open-api/basedata/get-basedata-city)**接口获取数据后，找到对应城市，`id`对应`key`，`fullName`对应`label`。
+  如果是国内城市吗，不需要拼接“中国”，如果是国外城市，需要将`fullName`参数全部按照格式拼接。
+  ![城市字段拼接示例](images/城市字段拼接示例.png)
 :::
 
 ## CURL

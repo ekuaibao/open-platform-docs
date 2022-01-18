@@ -17,16 +17,16 @@ url="/api/openapi/v1/dimensions/items/batch"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **dimensionId**                 | String  | 档案类别id  | 必填  | - | 可通过[获取档案类别](/docs/open-api/dimensions/get-dimensions)来获取 |
+| **dimensionId**                 | String  | 档案类别ID  | 必填  | - | 可通过[获取档案类别](/docs/open-api/dimensions/get-dimensions)来获取 |
 | **itemListRequest**             | Array   | 档案项集合   | 必填  | - | 新增的档案项集合 |
 | **&emsp; ∟ name**              | String  | 档案值名称	| 必填  | - | 档案值名称，最大不能超过300个字 |
 | **&emsp; ∟ code**              | String  | 档案值编码	| 必填  | - | 档案值编码 |
-| **&emsp; ∟ visibility**        | Object  | 可见范围	    | 非必填 | - | 可见范围 |
+| **&emsp; ∟ visibility**        | Object  | 可见范围	| 非必填 | - | 可见范围 |
 | **&emsp;&emsp; ∟ fullVisible** | Boolean | 是否全部可见 | 非必填 | true | `true` : 全部可见 &emsp; `false` : 非全部可见，此时白名单必填。<br/>在非全部可见的情况下，仅白名单内的员工可见 |
 | **&emsp;&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 | **&emsp;&emsp; ∟ roles**       | Array   | 角色白名单   | 非必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
 | **&emsp;&emsp; ∟ departments** | Array   | 部门白名单   | 非必填 | - | 值为[部门id](/docs/open-api/corporation/get-departments) |
-| **&emsp; ∟ parentId**          | String  | 档案值父级id	| 必填   | - | 可通过[获取档案值](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写 `""` |
+| **&emsp; ∟ parentId**          | String  | 档案值父级ID | 必填   | - | 可通过[获取档案值](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写 `""` |
 
 ## CURL
 ```json

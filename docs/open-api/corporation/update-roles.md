@@ -22,7 +22,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token	  | 必填  | -  | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **staffBy**     | String | 员工id参数格式 | 非必填 | id | `id` : 传入完整员工ID，格式：企业id : userId<br/>`sourceId` : 只传入userId即可 |
+| **staffBy**     | String | 员工ID参数格式 | 非必填 | id | `id` : 传入完整员工ID，格式：`企业id:userId`<br/>`sourceId` : 只传入userId即可 |
 
 ## Body Parameters
 

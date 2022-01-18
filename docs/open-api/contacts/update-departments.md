@@ -11,7 +11,7 @@ url="/api/openapi/v1/departments/update/$`departmentId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **departmentId** | String | 部门id | 必填 | - | 通过[获取部门列表](/docs/open-api/corporation/get-departments)获取 |
+| **departmentId** | String | 部门ID | 必填 | - | 通过[获取部门列表](/docs/open-api/corporation/get-departments)获取 |
 
 ## Query Parameters
 

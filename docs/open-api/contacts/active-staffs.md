@@ -17,7 +17,7 @@ url="/api/openapi/v1/staffs/disableOrEnableStaff/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 员工id | 必填 | - | 可以填写多个 | 
+| **ids** | Array | 员工ID | 必填 | - | 可以填写多个 | 
 
 ## Query Parameters
 

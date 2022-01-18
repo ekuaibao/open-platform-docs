@@ -11,7 +11,7 @@ url="/api/openapi/v1/dimensions/items/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String  | 档案项id | 必填| - | 可通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)获取 |
+| **id** | String  | 档案项ID | 必填| - | 可通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)获取 |
 
 ## Query Parameters
 
@@ -30,7 +30,7 @@ url="/api/openapi/v1/dimensions/items/$`id`"
 | **&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填  | -     | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 | **&emsp; ∟ roles**       | Array   | 角色白名单	| 非必填  | -     | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
 | **&emsp; ∟ departments** | Array   | 部门白名单	| 非必填  | -     | 值为[部门id](/docs/open-api/corporation/get-departments) |
-| **parentId**               | String  | 父节点id    | 非必填  | -     | 通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写 `""` |
+| **parentId**               | String  | 父节点ID    | 非必填  | -     | 通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写 `""` |
 
 :::tip
 - 系统预置档案有一些额外字段，详细字段传参见CURL里面的注释。
