@@ -91,6 +91,7 @@ const sidebars = {
         "open-api/dimensions/batch-creat-dimension-items",
         "open-api/dimensions/get-dimension-items",
         "open-api/dimensions/get-dimension-items-visibility",
+        "open-api/dimensions/get-dimension-items-withAll",
         "open-api/dimensions/get-dimension-items-byId",
         "open-api/dimensions/get-dimension-items-byCode",
         "open-api/dimensions/get-dimension-items-byName",
@@ -131,6 +132,7 @@ const sidebars = {
       label: "单据模板",
       items: [
         "open-api/forms/info",
+        "open-api/forms/get-specifications-byName",
         "open-api/forms/get-specifications-latest",
         "open-api/forms/get-specifications-versioned",
         "open-api/forms/get-specifications-details",
@@ -319,6 +321,16 @@ const sidebars = {
         "open-api/basedata/info",
         "open-api/basedata/get-basedata-city",
         "open-api/basedata/question-answer"
+      ],
+    },
+    {
+      type: "category",
+      label: "工具接口",
+      items: [
+        "open-api/tools/info",
+        "open-api/tools/flowDetails-stuckFlow",
+        "open-api/tools/staffs-clearInfo",
+        "open-api/tools/question-answer"
       ],
     },
   ],
