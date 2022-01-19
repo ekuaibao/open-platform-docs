@@ -5,8 +5,15 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v2/flow/data"
+url="/api/openapi/v2.1/flow/data"
 />
+
+<details>
+  <summary>v2.1版本特性</summary>
+  <div>
+    - 🐞 修复了费用类型里的必填字段类型是“自定义档案”时，传 “” 可通过校验的BUG，增加了非空校验。
+  </div>
+</details>
 
 ## Query Parameters
 
