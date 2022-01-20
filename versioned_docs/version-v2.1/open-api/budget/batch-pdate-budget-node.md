@@ -39,18 +39,18 @@ url="/api/openapi/v2/budgets/$`budgetId`/batchUpdate"
 |**&emsp; ∟ control**              | String | 节点控制方式              | 必填  | - | 当预算超额时的控制方式<br/> `ALLOW` : 允许提交单据<br/>`FORBID` : 禁止提交单据<br/>`IGNORED` : 什么都不做 | 
 |**&emsp; ∟ freeze**               | Boolean | 预算冻结                | 非必填 | false | `true` : 冻结 &emsp; `false` : 不冻结 | 
 |**&emsp; ∟ nodeId**               | String | 预算节点ID               | 必填   | - | 与上面预算节点ID保持一致 | 
-|**&emsp; ∟ parentId**             | String | 父节点ID                 | 非必填 | - | 父节点ID | 
+|**&emsp; ∟ parentId**             | String | 父节点ID                 | 必填 | - | [获取预算树详细信息](/docs/open-api/budget/get-budget-details)中的预算节点ID | 
 |**updateNodes**                    | Array  | 变更节点                 | 非必填 |- | 数据格式与追加节点保持一致，**节点维度无法变更** |
 |**deleteNodes**                    | Array  | 删除节点                 | 非必填 |- | 预算节点ID |
 |**visibilities**                   | Array  | 节点负责人数组            | 非必填 |- | 负责人能在相关报销单和预算报表中查看该预算节点的进度，负责人删除时也要在这里体现 |
-|**&emsp; ∟ visibility**        | Object | 节点负责人对象            | 非必填 |- | 节点负责人对象 |
-|**&emsp; &emsp; ∟ id**            | String | 节点负责人配置ID           | 非必填 |- | 更新已有节点负责人时需要传入，新增的节点传 `""`，[节点负责人配置ID获取](/docs/open-api/budget/get-budget-details) |
-|**&emsp; &emsp; ∟ corporationId** | String | 企业ID                   | 非必填 |- | [企业ID获取](/docs/open-api/getting-started/origin) |
-|**&emsp; &emsp; ∟ budgetId**      | String | 预算树ID                 | 非必填 |- | 预算树ID |
-|**&emsp; &emsp; ∟ budgetVersion** | String | 预算版本                 | 非必填 |- | [预算版本获取](/docs/open-api/budget/get-budget-details) |
-|**&emsp; &emsp; ∟ nodeId**        | String | 预算节点ID               | 非必填 |- | 要设置可见性的预算节点ID |
-|**&emsp; &emsp; ∟ staffIds**      | Array  | 人员ID                  | 非必填 |- | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
-|**&emsp; &emsp; ∟ roleDefIds**    | Array  | 角色ID                  | 非必填 |- | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
+|**&emsp; ∟ visibility**        | Object | 节点负责人对象            | 非必填 |- | 节点负责人对象<br/>注意，该参数可整体不填，如果填写，下级参数都必填 |
+|**&emsp; &emsp; ∟ id**            | String | 节点负责人配置ID           | 非必填 |- | 更新已有节点负责人时需要传入，新增的节点传 `""`，[节点负责人配置ID获取](/docs/open-api/budget/get-budget-details)<br/>`visibility`参数存在时必填 |
+|**&emsp; &emsp; ∟ corporationId** | String | 企业ID                   | 非必填 |- | [企业ID获取](/docs/open-api/getting-started/origin)<br/>`visibility`参数存在时必填 |
+|**&emsp; &emsp; ∟ budgetId**      | String | 预算树ID                 | 非必填 |- | 预算树ID<br/>`visibility`参数存在时必填 |
+|**&emsp; &emsp; ∟ budgetVersion** | String | 预算版本                 | 非必填 |- | [预算版本获取](/docs/open-api/budget/get-budget-details)<br/>`visibility`参数存在时必填 |
+|**&emsp; &emsp; ∟ nodeId**        | String | 预算节点ID               | 非必填 |- | 要设置可见性的预算节点ID<br/>`visibility`参数存在时必填 |
+|**&emsp; &emsp; ∟ staffIds**      | Array  | 人员ID                  | 非必填 |- | 值为[员工ID](/docs/open-api/corporation/get-all-staffs)<br/>`visibility`参数存在时,与`roleDefIds`参数必填一个 |
+|**&emsp; &emsp; ∟ roleDefIds**    | Array  | 角色ID                  | 非必填 |- | 值为[角色ID](/docs/open-api/corporation/get-roles-group)<br/>`visibility`参数存在时,与`staffIds`参数必填一个 |
 |**active**                         | Boolean | 是否为发布状态           | 必填  | false | `true` : 发布 &emsp; `false` : 草稿 |
 |**publish**                        | Boolean | 当前更新是否立即发布      | 必填  | false | `true` : 立即<br/> `false` : 加入缓存(用于多次批量更新，每次更新是否立即发布，还是最后一次更新完再发布) |
 |**version**                        | Long   | 当前预算包的版本          | 必填  |- | [预算版本获取](/docs/open-api/budget/get-budget-details) |
