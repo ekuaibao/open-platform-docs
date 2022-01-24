@@ -25,7 +25,7 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids**   | Array  |  业务对象实例id数组   | 非必填 | - | 按照[业务对象实例的id(发票ID)](/docs/open-api/datalink/get-flow-invoice)查询详情，<br/>发票实体保存在系统预置业务对象里 |
+| **ids**   | Array  |  业务对象实例id数组   | 非必填 | - | 按照[业务对象实例ID(发票ID)](/docs/open-api/datalink-extend/get-flow-invoice)查询详情，<br/>发票实体保存在系统预置业务对象里 |
 | **codes** | Array  |  业务对象实例code数组 | 非必填 | - | 按照业务对象实例的code查询详情，<br/>发票实体保存在系统预置业务对象里 |
 | **index** | Number |  当前页             | 非必填 | - | 当前页 |
 | **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `1000` |
