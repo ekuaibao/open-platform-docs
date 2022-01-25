@@ -1,5 +1,5 @@
 # 获取指定状态单据列表(包含已删除单据)
-通过指定单据状态（ `REJECTED` : 已驳回、`PAYING` : 待支付、`PROCESSING` : 支付中、`PAID` : 已支付 ）过滤单据列表（包含已删除单据），并且可以通过过滤字段把不需要的参数置空来缩小回应数据。
+通过指定单据状态过滤单据列表（包含已删除单据），并且可以通过过滤字段把不需要的参数置空来缩小回应数据。
 
 import Control from "@theme/Control";
 
@@ -1739,6 +1739,7 @@ import TabItem from '@theme/TabItem';
 ```
 
 ## 失败响应
+`powerCode` 输入错误时，报错如下：
 ```json
 {
     "errorCode": 403,
@@ -1749,6 +1750,13 @@ import TabItem from '@theme/TabItem';
 }
 ```
 当过滤字段中包含不可置空的字段时报错如下，请检查过滤字段：
+:::caution
+已知不可置空字段：
+- docData.type
+- docData.flowPlan.id
+- docData.flowPlan.nodes.type
+:::
+
 ```json
 {
     "errorCode": 400,
@@ -1759,9 +1767,4 @@ import TabItem from '@theme/TabItem';
 }
 ```
 
-:::caution
-已知不可置空字段：
-- docData.type
-- docData.flowPlan.id
-- docData.flowPlan.nodes.type
-:::
+

@@ -1,5 +1,5 @@
 # 根据批次号ID获取支付记录
-本接口是提供根据单据的批次号获取支付信息。
+根据单据的批次号获取支付信息。
 
 import Control from "@theme/Control";
 
@@ -35,40 +35,40 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
 {
     "items": [
         {
-            "version": 1, //版本号
-            "active": true, //是否有效（或者理解为是否被删除） true-有效，false-无效
-            "createTime": 1599469765944, //创建时间(毫秒级时间戳)
-            "updateTime": 1599469765921, //修改时间(毫秒级时间戳)
-            "corporationId": "3Qobu2l0cs6k00", //企业id
+            "version": 1,                       //版本号
+            "active": true,                     //是否有效（或者理解为是否被删除） true-有效，false-无效
+            "createTime": 1599469765944,        //创建时间(毫秒级时间戳)
+            "updateTime": 1599469765921,        //修改时间(毫秒级时间戳)
+            "corporationId": "3Qobu2l0cs6k00",  //企业ID
             "form": {
-                "code": "B20000001", //单据编码
-                "title": "sgsgs", //单据标题
-                "details": [  //消费明细
+                "code": "B20000001",            //单据编码
+                "title": "sgsgs",               //单据标题
+                "details": [                    //消费明细
                     {
-                        "feeTypeId": "3Qobu2l0cs6k00:office", //费用类型id 通过【获取费用类型】此接口可获得，通过【根据id获取费用类型】查询类型详情
-                        "feeTypeForm": { //费用类型数据明细
-                            "amount": { //费用金额
-                                "standard": "124", //本位币
-                                "standardUnit": "元", //本位币单位
-                                "standardScale": 2, //本位币精度
-                                "standardSymbol": "¥", //本位币符号
-                                "standardNumCode": "156", //本位币数字代码
-                                "standardStrCode": "CNY"  //本位币字母代码
+                        "feeTypeId": "3Qobu2l0cs6k00:office", //费用类型ID，通过【获取费用类型】接口可获得，通过【根据ID获取费用类型】查询类型详情
+                        "feeTypeForm": {                      //费用类型数据明细
+                            "amount": {                       //费用金额
+                                "standard": "124",            //本位币
+                                "standardUnit": "元",         //本位币单位
+                                "standardScale": 2,           //本位币精度
+                                "standardSymbol": "¥",        //本位币符号
+                                "standardNumCode": "156",     //本位币数字代码
+                                "standardStrCode": "CNY"      //本位币字母代码
                             },
-                            "feeDate": 1599408000000, //消费时间(毫秒级时间戳)
-                            "detailId": "osobykFMBcrc00", //发票(非必返回字段)
-                            "attachments": [], //附件 可用附件信息的数据通过调用【获取附件URL】接口来获取附件文件下载链接
-                            "invoiceForm": { //发票信息(非必返回字段)
+                            "feeDate": 1599408000000,         //消费时间(毫秒级时间戳)
+                            "detailId": "osobykFMBcrc00",     //发票(非必返回字段)
+                            "attachments": [],                //附件 可用附件信息的数据通过调用【获取附件URL】接口来获取附件文件下载链接
+                            "invoiceForm": {                  //发票信息(非必返回字段)
                                 "type": "noWrite"
                             },
                             "consumptionReasons": ""
                         },
-                        "specificationId": "3Qobu2l0cs6k00:office:expense:d862ab2944ebe9369de5cafd548796be16a0dc19" //单据模版id 
+                        "specificationId": "3Qobu2l0cs6k00:office:expense:d862ab2944ebe9369de5cafd548796be16a0dc19" //单据模版ID
                     }
                 ],
                 "payDate": 1599469765921, 
-                "payeeId": "XnIbuIH6HQ2E00", //收款人id
-                "payMoney": { //支付金额
+                "payeeId": "XnIbuIH6HQ2E00",  //收款人ID
+                "payMoney": {                 //支付金额
                     "standard": "124.00",
                     "standardUnit": "元",
                     "standardScale": "2",
@@ -78,11 +78,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
                 },
                 "printCount": "0",
                 "printState": "noPrint",
-                "submitDate": 1599469665928, //提交时间
+                "submitDate": 1599469665928,   //提交时间
                 "description": "",
-                "expenseDate": 1599408000000, //报销时间
-                "submitterId": "3Qobu2l0cs6k00:dIEbu2mgTs6o00", //提交人id
-                "expenseMoney": { //报销金额
+                "expenseDate": 1599408000000,  //报销时间
+                "submitterId": "3Qobu2l0cs6k00:dIEbu2mgTs6o00", //提交人ID
+                "expenseMoney": {              //报销金额
                     "standard": "124.00",
                     "standardUnit": "元",
                     "standardScale": "2",
@@ -90,7 +90,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
                     "standardNumCode": "156",
                     "standardStrCode": "CNY"
                 },
-                "companyRealPay": { //企业已付金额
+                "companyRealPay": {            //企业已付金额
                     "standard": "0.00",
                     "standardUnit": "元",
                     "standardScale": "2",
@@ -100,7 +100,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
                 },
                 "paymentChannel": "OFFLINE",
                 "specificationId": "C20bu2n6osbc00:ebd338960d9053892b3fd86dfa6f31690d014de7",
-                "writtenOffMoney": { //核销金额
+                "writtenOffMoney": {           //核销金额
                     "standard": "0.00",
                     "standardUnit": "元",
                     "standardScale": "2",
@@ -112,11 +112,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
                 "expenseDepartment": "3Qobu2l0cs6k00",
                 "timeToEnterPendingPayment": 1599469751158
             },
-            "ownerId": "3Qobu2l0cs6k00:dIEbu2mgTs6o00", //流程发起人id
-            "ownerDefaultDepartment": "3Qobu2l0cs6k00", // 流程发起人默认部门id
-            "state": "paid",  //流程状态 pending-提交中 approving-审批中 paying-待支付 PROCESSING-支付中 paid-已支付 archived-归档 sending-寄送中 receiving-收单中
-            "flowType": "freeflow", //流程类型
-            "formType": "expense", //单据类型 expense-报销单 requisition-申请单  loan-借款单 permit-授权单 custom-基础单据
+            "ownerId": "3Qobu2l0cs6k00:dIEbu2mgTs6o00",  //流程发起人ID
+            "ownerDefaultDepartment": "3Qobu2l0cs6k00",  //流程发起人默认部门ID
+            "state": "paid",                             //流程状态 pending-提交中 approving-审批中 paying-待支付 PROCESSING-支付中 paid-已支付 archived-归档 sending-寄送中 receiving-收单中
+            "flowType": "freeflow",                      //流程类型
+            "formType": "expense",                       //单据类型 expense-报销单 requisition-申请单  loan-借款单 permit-授权单 custom-基础单据
             "logs": [
                 {
                     "action": "freeflow.submit",
@@ -251,14 +251,14 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
                     "attachments": []
                 }
             ],
-            "actions": { //操作人可执行到动作  key是操作人的员工id;value是动作名称
+            "actions": {             //操作人可执行到动作：key是操作人的员工ID；value是动作名称
                 "3Qobu2l0cs6k00:dIEbu2mgTs6o00": [
                     "freeflow.archive",
                     "freeflow.copy"
                 ]
             },
             "invoiceRemind": false,
-            "id": "17wbykFMBcq000"  //单据id 对应其他api的flowId
+            "id": "17wbykFMBcq000"   //单据ID，对应其他api的flowId
         },
         {
             "version": 1,

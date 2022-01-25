@@ -8,11 +8,16 @@ method="POST"
 url="/api/openapi/v2/flow/data/$`flowId`/`action`"
 />
 
+:::caution
+- **删除操作**，只能是 **驳回** 状态和 **草稿** 状态的单据可用。
+- **撤销操作**，只能是 **审批中** 状态的单据可用（审批流需要配置允许撤回单据）。
+:::
+
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowId** | String  | 单据id          | 必填 | - | [一般通过出站消息获取单据ID](/docs/open-api/outbound-message/outbound-new)|
+| **flowId** | String  | 单据ID          | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 |
 | **action** | String  | 单据的action操作 | 必填 | - | `retract` : 撤销操作 &emsp; `delete` : 删除操作 |
 
 ## Query Parameters
@@ -20,11 +25,6 @@ url="/api/openapi/v2/flow/data/$`flowId`/`action`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-
-:::caution
-- 删除操作，只能是驳回状态和草稿状态的单据。
-- 撤销操作，只能是审批中状态的单据（审批流需要配置允许撤回单据）。
-:::
 
 ## CURL
 ```shell
@@ -129,7 +129,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/dat
 ```json
 {
     "errorCode": 403,
-    "errorMessage": "您没有权限执行此操作。可能是由于：\n1、单据已被撤回或驳回。\n2、单据当前所处审批环节根据流程配置，不允许撤回。",//或者检查单据是否已提交
+    "errorMessage": "您没有权限执行此操作。可能是由于：\n1、单据已被撤回或驳回。\n2、单据当前所处审批环节根据流程配置，不允许撤回。",  //或者检查单据是否已提交
     "errorDetails": null,
     "code": null,
     "data": null

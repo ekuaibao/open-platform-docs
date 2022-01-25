@@ -9,7 +9,7 @@ url="/api/openapi/v2/auth/refreshToken/expireDate"
 />
 
 :::caution
-- 如果您企业的 **【开放接口(新)】** 功能授权不足指定有效时间，则刷新后有效期为实际剩余授权时间。
+- 如果您企业的【**开放接口(新)**】功能授权不足指定有效时间，则刷新后有效期为实际剩余授权时间。
 :::
 
 ## Query Parameters
@@ -44,7 +44,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/auth/ref
 
 ## 失败响应
 请确保 `accessToken` 仍在有效使用时间之内，否则返回以下结果：
-```text
-未授权
+```json
+{
+    "errorCode": 403,
+    "errorMessage": "未授权",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
 ```
 

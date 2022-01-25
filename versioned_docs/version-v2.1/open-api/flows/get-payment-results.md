@@ -18,8 +18,8 @@ url="/api/openapi/v1/paymentResults"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **items**              | Array | 提交的单据支付结果集合  | 必填  | - | 请求体集合 |
-| **&emsp; ∟ id**       | String | 单据flowId          | 必填  | - | 通过其他接口或者出站消息获取 |
-| **&emsp; ∟ code**     | String | 单据支付返回状态码     | 必填  | - | `P00001`:支付成功 `P00002`:支付失败 |
+| **&emsp; ∟ id**       | String | 单据ID              | 必填  | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 |
+| **&emsp; ∟ code**     | String | 单据支付返回状态码     | 必填  | - | `P00001` : 支付成功 &emsp; `P00002` : 支付失败 |
 | **&emsp; ∟ errorMsg** | String | 支付返回信息          | 非必填 | - | 支付错误请将错误信息返回 |
 
 ## CURL
@@ -47,13 +47,13 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
 {
 	"items":[
 		{
-			"id":"id1",//单据id
-			"code":"R00000",//更新成功
+			"id":"id1",        //单据ID
+			"code":"R00000",   //更新成功
 			"errorMsg":null
 		},
 		{
-			"id":"id2",//单据id
-			"code":"R00001",//更新失败
+			"id":"id2",        //单据ID
+			"code":"R00001",   //更新失败
 			"errorMsg":null
 		}
 	]

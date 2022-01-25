@@ -9,7 +9,7 @@ url="/api/openapi/v2/flow/plan/computed/$`flowId`"
 />
 
 :::caution
-- 只有单据处于未提交的情况下才能获取审批流实例，例如：草稿和驳回状态的单据才能查询到，不然会提示没有权限获取该单据的流程实例。
+- 只有单据处于未提交的情况下才能获取审批流实例，例如：**草稿** 和 **驳回** 状态的单据才能查询到，不然会提示没有权限获取该单据的流程实例。
 :::
 
 ## Path Parameters
@@ -140,7 +140,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/flow/plan
 }
 ```
 
-目前只有草稿和驳回的单据才能被查询到，否则报错如下：
+目前只有 **草稿** 和 **驳回** 的单据才能被查询到，否则报错如下：
 ```json
 {
     "errorCode": 412,

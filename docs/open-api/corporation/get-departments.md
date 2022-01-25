@@ -33,7 +33,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
     "items": [
           {
                 "id": "JOYbpjPP-E2Q00:pAwbwH_W7sec00",  //部门id
-                "name": "财务部",                        //部门名称
+                "name": "财务部",                       //部门名称
                 "parentId": "JOYbpjPP-E2Q00",		    //父级部门id
                 "active": true,		                    //部门是否已停用
                 "form":{                                //部门关联法人实体id和成本中心id

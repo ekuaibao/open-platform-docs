@@ -1,5 +1,5 @@
 # 新增费用类型默认导入项
-用于把业务对象作为单据中【费用明细】的费用类型默认导入项，其在系统中的配置及使用详见[费用类型默认导入项](/docs/open-api/feetype/info#费用类型默认导入项)。
+用于把业务对象作为单据中【**费用明细**】的费用类型默认导入项，其在系统中的配置及使用详见[费用类型默认导入项](/docs/open-api/feetype/info#费用类型默认导入项)。
 
 import Control from "@theme/Control";
 
@@ -18,7 +18,7 @@ url="/api/openapi/v1/feeTypeImportRule/defaultRule"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **sourceId** | String | 增加的业务对象id  | 必填 | - | 格式为：dataLink_加业务对象id，[业务对象id获取](/docs/open-api/datalink/question-answer)<br/>例如：dataLink_b41a0b811ce2ef06ac00 |
+| **sourceId** | String | 增加的业务对象ID  | 必填 | - | 格式为：dataLink_加业务对象ID，[业务对象ID获取](/docs/open-api/datalink/question-answer#问题一)<br/>例如：dataLink_b41a0b811ce2ef06ac00 |
 | **title**    | String | 显示的业务对象名称 | 必填 | - | 为了方便区分，尽量不要与已导入的业务对象重名 |
 
 ## CURL
@@ -84,7 +84,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/feeTypeI
 ## 失败响应
 
 :::caution
-- 同一个业务对象id只能添加一次，多次添加返回**“该业务对象导入已存在 : dataLink_xx”**。
+- 同一个业务对象ID只能添加一次，多次添加返回**“该业务对象导入已存在 : dataLink_xx”**。
 :::
 
 ```json

@@ -9,7 +9,7 @@ url="/api/openapi/v1/docs/[`ids`]"
 />
 
 :::caution
-- 单据状态为“**draft(草稿)**”的单据无法被查询到。
+- 单据状态为【**draft(草稿)、已删除**】的单据无法被查询到。
 :::
 
 ## Path Parameters
