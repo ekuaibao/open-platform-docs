@@ -12,11 +12,16 @@ url="/api/openapi/v1/property"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token  | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **type**        | String | 全局字段类型 | 必填  | - | `flow.FlowForm` : 单据<br/>`datalink.form` : 业务对象<br/>`dimension.form` : 自定义档案<br/>`staff.form` : 人员全局字段<br/>`department.form` : 部门 | 
+| **type**        | String | 全局字段类型 | 必填  | - | `flow.FlowForm` : 单据<br/>`datalink.form` : 业务对象<br/>`dimension.form` : 自定义档案<br/>`staff.form` : 员工<br/>`department.form` : 部门 | 
 
 :::tip
- - 以下为人员全局字段使用场景，其他类型字段也在对应模块下的相同场景中所使用的：
-   ![员工类型全局字段使用场景](images/员工类型全局字段使用场景.png)
+ - 目前系统中存在单据，业务对象，人员类型的全局字段页面，自定义档案，部门类型的全局字段在系统中不显示；
+ - 单据类型全局字段位置：
+   ![单据类型全局字段](images/单据类型全局字段.png)
+ - 业务对象类型全局字段位置：
+   ![业务对象类型全局字段](images/业务对象类型全局字段.png)
+ - 员工类型全局字段位置：
+   ![员工类型全局字段](images/员工类型全局字段.png)
 :::
 
 ## CURL
