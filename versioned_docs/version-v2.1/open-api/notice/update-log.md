@@ -32,7 +32,7 @@ timeline: true
 - 🆕 `文档多版本` 上线。
 - 🆕 新增 [根据模板组名称获取模板组信息](/docs/open-api/forms/get-specifications-byName) 接口。
 - 🆕 新增 [获取自定义档案项(所有字段值)](/docs/open-api/dimensions/get-dimension-items-withAll) 接口。 
-- 🆕 新增 `工具接口` 模块。
+- 🆕 新增【**工具接口**】模块。
   - 🆕 新增 [工具一：处理单据列表接口拉取单据的状态不一致问题](/docs/open-api/tools/flowDetails-stuckFlow) 接口。
   - 🆕 新增 [工具二：清空员工手机号和邮箱](/docs/open-api/tools/staffs-clearInfo) 接口。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本
@@ -64,8 +64,8 @@ timeline: true
 `2022-01-07`
 
 - 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口，增加 `approvalUrl` （审批完成后跳转地址）参数。
-- 🐞 更新“预算”模块下前4个接口文档。
-- 🐞 更新“单据”模块下17个接口文档。
+- 🐞 更新【**预算**】模块下前4个接口文档。
+- 🐞 更新【**单据**】模块下17个接口文档。
 
 ---
 ## 0.7.162
@@ -173,7 +173,7 @@ timeline: true
 `2021-10-15`     
 
 - 🐞 更新 [新增预算树](/docs/open-api/budget/add-budget) 接口。
-- 🐞 更新“预算”模块下所有接口文档	。
+- 🐞 更新【**预算**】模块下所有接口文档	。
 
 ---
 ## 0.7.147

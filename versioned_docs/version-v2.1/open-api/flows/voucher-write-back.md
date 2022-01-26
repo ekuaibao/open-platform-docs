@@ -24,19 +24,24 @@ url="/api/openapi/v2/flow/data/erpVoucher"
 |**&emsp; ∟ voucherCreateTime** | String | 单据凭证生成时间 | 必填  | - |  毫秒级时间戳 |
 |**&emsp; ∟ fiscalPeriod**      | String | 会计期间       | 非必填 | - |  会计期间 |
 
+:::tip
+- 在系统中**单据管理**模块，编辑表头字段，添加凭证相关字段到表头，既可看到凭证相关信息。
+  ![单据凭证信息](images/单据凭证信息.png)
+:::
+
 ## CURL
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data/erpVoucher?accessToken=cWEbn1cA0kjU00' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data/erpVoucher?accessToken=ID_3xhx4F9YDa0:djg8LshfUkfM00' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "voucher":[
         {
-            "flowId": "yd4bn1Z-YM9000",
-            "voucherNo": "201908080001",
+            "flowId": "ID_3wPHuDsWTMM",
+            "voucherNo": "202201260001",
             "voucherCreateTime": "1565175685575"
         }
     ]
-}
+}'
 ```
 
 ## 成功响应
