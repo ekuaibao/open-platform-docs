@@ -16,7 +16,7 @@ url="/api/openapi/v1/docs/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 单据ID集合 | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取<br/>示例：[ zKIbl2WX4I8I00 , I8I00zKIbl2WX4 , zKIbI00l2WX4I8 ] |
+| **ids** | Array | 单据ID集合 | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一)<br/>示例：[ zKIbl2WX4I8I00 , I8I00zKIbl2WX4 , zKIbI00l2WX4I8 ] |
 
 ## Query Parameters
 
@@ -44,18 +44,18 @@ import TabItem from '@theme/TabItem';
     "items": [
         {
             "type": "expense",
-            "id": "K-w94CqZkA3o00",                    //单据id 对应其他api的flowId
-            "corporationId": "e4A8oQS29g0w00",         //企业id
-            "ownerId": "e4A8oQS29g0w00:C3I8oQCy9c4I00",//单据提交人id
+            "id": "K-w94CqZkA3o00",                    //单据ID 对应其他api的flowId
+            "corporationId": "e4A8oQS29g0w00",         //企业ID
+            "ownerId": "e4A8oQS29g0w00:C3I8oQCy9c4I00",//单据提交人ID
             "dataType": "expense",
             "remark": "",                              //备注
             "title": "报销单B19000188",                 //标题
             "updateTime": 1557131730611,               //更新日期时间戳
             "specificationId": "vbM8oQye68e400:961b7902e2640fabfa303798ae0547879d188eb1", //模板ID
-            "owner": {                                //提交人信息
-                "id": "e4A8oQS29g0w00:C3I8oQCy9c4I00",//员工id
-                "name": "悟空",                       //姓名
-                "departments": [                     //所属部门信息
+            "owner": {                                 //提交人信息
+                "id": "e4A8oQS29g0w00:C3I8oQCy9c4I00", //员工ID
+                "name": "悟空",                        //姓名
+                "departments": [                       //所属部门信息
                     {
                         "id": "e4A8oQS29g0w00",
                         "name": "西游记",
@@ -441,18 +441,18 @@ import TabItem from '@theme/TabItem';
     "items": [
         {
             "type": "loan",                              //单据类型
-            "id": "ygAcxFK839lc00",                      //单据id
-            "corporationId": "djg8LshfUkfM00",           //企业id
-            "ownerId": "djg8LshfUkfM00:NMIaVspFrM2Q00",  //单据提交人id
+            "id": "ygAcxFK839lc00",                      //单据ID
+            "corporationId": "djg8LshfUkfM00",           //企业ID
+            "ownerId": "djg8LshfUkfM00:NMIaVspFrM2Q00",  //单据提交人ID
             "dataType": "loan",
             "remark": "",                                //备注
             "title": "sdfsdf",                           //标题
             "updateTime": 1616469351976,                 //更新日期时间戳
             "specificationId": "hq48Mmqokkbs00:f087d153a4fd6af111608d0cc0702bd838f99dd2",  //单据模板ID
-            "owner": {                                  //提交人信息
-                "id": "djg8LshfUkfM00:NMIaVspFrM2Q00",  //员工id
-                "name": "刘新爱",                       //姓名
-                "departments": [                        //所属人信息
+            "owner": {                                   //提交人信息
+                "id": "djg8LshfUkfM00:NMIaVspFrM2Q00",   //员工ID
+                "name": "刘新爱",                        //姓名
+                "departments": [                         //所属人信息
                     {
                         "id": "djg8LshfUkfM00",
                         "name": "【测试】test_zyq",
@@ -706,13 +706,13 @@ import TabItem from '@theme/TabItem';
             "money_foreign": null,
             "money_foreignSymbol": null,
             "money_foreignUnit": null,
-            "payeeInfo": {   //收款人信息
+            "payeeInfo": {            //收款人信息
                 "sort": "BANK",
                 "name": "中国农行",
                 "cardNo": "31101201040003669",
                 "bank": "农业银行",    //开户行
                 "branch": "中国农业银行股份有限公司重庆巴南马王坪支行",  //开户网点
-                "type": "PERSONAL",  //账号类型(PERSONAL：个人账户; PUBLIC：对公账户)
+                "type": "PERSONAL",   //账号类型(PERSONAL：个人账户; PUBLIC：对公账户)
                 "province": "重庆市",
                 "city": "重庆市",
                 "certificateType": null,
@@ -724,7 +724,7 @@ import TabItem from '@theme/TabItem';
                 "branchCode": "",
                 "remark": null
             },
-            "payorId": "HzAcsVLIpEGA00",  //支付人Id
+            "payorId": "HzAcsVLIpEGA00",  //支付人ID
             "paymentChannel": null,       //支付方式，CREDITEASE为在线支付，OFFLINE为线下支付，ERP为ERP付款
             "paymentAccountId": null,     //支付账户
             "payTime": null,
@@ -2485,7 +2485,7 @@ import TabItem from '@theme/TabItem';
 查询不到数据时返回如下：
 ```json
 {
-  "items": []   //表示没查到数据，单据处于“草稿”状态，或者单据id不正确
+    "items": []   //表示没查到数据，单据处于“草稿”状态，或者单据ID不正确
 }
 ```
 

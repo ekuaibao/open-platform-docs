@@ -17,25 +17,25 @@ url="/api/openapi/v1/docSequences"
 | **type**        | String  | 单据类型            | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`repayment` : 还款记录<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单 |
 | **index**       | Number  | 分页查询的起始索引序号 | 必填 | - | 例如 : 当 `index` = `1484498318240` 时，会查询所有<br/>`index` > `1484498318240` 的单据 |
 | **count**       | Number  | 查询数据条数         | 必填 | - | 最大不能超过 `100` |
-| **state**       | String  | 单据状态            | 非必填 | - | `REJECTED` : 已驳回<br/>`PAYING` : 待支付<br/>`PROCESSING` : 支付中<br/>`PAID` : 已支付<br/>不传值时，查询四种状态单据 |
+| **state**       | String  | 单据状态            | 非必填 | - | `REJECTED` : 已驳回<br/>`PAYING` : 待支付<br/>`PROCESSING` : 支付中<br/>`PAID` : 已支付<br/>**不传值时，查询四种状态单据** |
 
 ## Body Parameters(以下为部分示例参数仅供参考)
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 |**fields**                     | Object | 过滤字段            | 非必填  | - | 指定过滤掉的字段返回空值，<br/>从而缩小响应数据 |
-|**fields/docData**             | Object | 单据数据            | 非必填  | - | 包含所有单据数据 |
-|**fields/docData/code**        | String | 单据编号            | 非必填 | -  | 单据编号 |
-|**fields/docData/title**       | String | 单据标题            | 非必填 | -  | 单据标题 |
-|**fields/docData/state**       | String | 单据状态            | 非必填 | -  | 单据状态 |
-|**fields/docData/remark**      | String | 备注               | 非必填  | - | 备注 |
-|**fields/docData/ownerId**     | String | 流程发起人ID(员工ID) | 非必填  | - | 流程发起人ID(员工ID) |
-|**fields/docData/owner**       | Object | 提交人信息          | 非必填  | - | 提交人信息 |
-|**fields/docData/department**  | Object | 部门信息            | 非必填 | -  | 部门信息 |
-|**fields/docData/userProps**   | Object | 自定义字段集         | 非必填 | -  | 自定义字段集 |
-|**fields/docData/details**     | Object | 单据明细信息         | 非必填 | -  | 单据明细信息 |
-|**fields/docData/logs**        | Object | 审批日志            | 非必填 | -  | 审批日志 |
-|**fields/docData/flowPlane**   | Object | 审批流信息          | 非必填 | -  | 审批流信息 |
+|**&emsp; ∟ docData**             | Object | 单据数据            | 非必填  | - | 包含所有单据数据 |
+|**&emsp; &emsp; ∟ code**        | String | 单据编号            | 非必填 | -  | 单据编号 |
+|**&emsp; &emsp; ∟ title**       | String | 单据标题            | 非必填 | -  | 单据标题 |
+|**&emsp; &emsp; ∟ state**       | String | 单据状态            | 非必填 | -  | 单据状态 |
+|**&emsp; &emsp; ∟ remark**      | String | 备注               | 非必填  | - | 备注 |
+|**&emsp; &emsp; ∟ ownerId**     | String | 流程发起人ID(员工ID) | 非必填  | - | 流程发起人ID(员工ID) |
+|**&emsp; &emsp; ∟ owner**       | Object | 提交人信息          | 非必填  | - | 提交人信息 |
+|**&emsp; &emsp; ∟ department**  | Object | 部门信息            | 非必填 | -  | 部门信息 |
+|**&emsp; &emsp; ∟ userProps**   | Object | 自定义字段集         | 非必填 | -  | 自定义字段集 |
+|**&emsp; &emsp; ∟ details**     | Object | 单据明细信息         | 非必填 | -  | 单据明细信息 |
+|**&emsp; &emsp; ∟ logs**        | Object | 审批日志            | 非必填 | -  | 审批日志 |
+|**&emsp; &emsp; ∟ flowPlane**   | Object | 审批流信息          | 非必填 | -  | 审批流信息 |
 
 :::tip
 - index这个值实际是一个时间戳（毫秒级），是单据状态改变的时间，即审批流审批后单据进入 `rejected` 已驳回、`paying` 待支付、`PROCESSING` 支付中、`paid` 已支付，四种状态中任意一种的时间。最开始查询可以根据自己需求设定的"时间范围"查询，大概从什么时间开始，会返回对应大于等于该时间的单据。

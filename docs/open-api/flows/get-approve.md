@@ -11,16 +11,16 @@ url="/api/openapi/v1/docs/byApproverId/$`approverId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **approverId** | String | 员工的id | 必填 | - | 通过[查询员工](/docs/open-api/corporation/get-staff-ids)获取 |
+| **approverId** | String | 员工ID | 必填 | - | 通过[查询员工](/docs/open-api/corporation/get-staff-ids)获取 |
 
 #### Query Parameters:
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**   | String  | 通过授权接口获取        | 必填   | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **index**         | Number  | 分页查询的起始值        | 非必填 | 0 | 即从第几条数据查起，起始值从`0`开始 |
-| **count**         | Number  | 查询数据条数           | 必填   | - | 最大不能超过`1000` |
-| **powerCode**     | String  | 功能授权码             |必填    | - | 传入219902或者219904即可<br/>`219902` : 开放接口 &emsp; `219904` : 开放接口(新) |
+| **accessToken**   | String  | 认证token     | 必填   | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **index**         | Number  | 分页查询的起始值 | 非必填 | 0 | 起始值从 `0` 开始 |
+| **count**         | Number  | 查询数据条数    | 必填   | - | 最大不能超过 `100` |
+| **powerCode**     | String  | 功能授权码      | 必填   | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |
 
 ## CURL
 ```shell
@@ -28,22 +28,22 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byAp
 ```
 
 ## 成功响应
-可以参考[根据单据ID集合获取单据列表](/docs/open-api/flows/get-forms-sequences-ids)返回信息，单据数据结构是一样的。
+可以参考[根据单据ID集合获取单据列表](/docs/open-api/flows/get-forms-sequences-ids)返回信息，单据数据结构是一样的：
 ```json
 {
     "items":[
         {
             "type":"loan",
-            "id":"ID_3sJUVscs$_w",                      //单据id 对应其他api的flowId
-            "corporationId":"PCx3rwm3aA00qM",           //企业id
-            "ownerId":"PCx3rwm3aA00qM:VWf3rvZHCb0ghM",  //单据提交人id
+            "id":"ID_3sJUVscs$_w",                      //单据ID 对应其他api的flowId
+            "corporationId":"PCx3rwm3aA00qM",           //企业ID
+            "ownerId":"PCx3rwm3aA00qM:VWf3rvZHCb0ghM",  //单据提交人ID
             "dataType":"loan",
             "remark":"333",                             //备注
             "title":"111111",                           //标题
             "updateTime":1638273586023,                 //更新日期时间戳
             "specificationId":"ID_3rwlFm525WM:783fa301dc70ce4040d2b913be214ac09f58121a",  //模板ID
             "owner":{                                   //提交人信息
-                "id":"PCx3rwm3aA00qM:VWf3rvZHCb0ghM",   //员工id
+                "id":"PCx3rwm3aA00qM:VWf3rvZHCb0ghM",   //员工ID
                 "name":"张国阳",                        //姓名  
                 "departments":[                         //所属部门信息
                     {
@@ -560,7 +560,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byAp
 ```json
 {
     "errorCode": 400,
-    "errorMessage": "不允许访问",  //检查员工id是否属于此公司的
+    "errorMessage": "不允许访问",  //检查员工ID是否属于此公司的
     "errorDetails": null,
     "code": null,
     "data": null

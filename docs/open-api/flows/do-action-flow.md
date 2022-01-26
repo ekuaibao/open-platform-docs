@@ -17,7 +17,7 @@ url="/api/openapi/v2/flow/data/$`flowId`/`action`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowId** | String  | 单据ID          | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 |
+| **flowId** | String  | 单据ID          | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
 | **action** | String  | 单据的action操作 | 必填 | - | `retract` : 撤销操作 &emsp; `delete` : 删除操作 |
 
 ## Query Parameters

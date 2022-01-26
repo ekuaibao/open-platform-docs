@@ -3,13 +3,15 @@
 ---
 ## 问题一
 
-Q: 如何获取单据Id？
+### Q: 如何获取单据ID？
 
-A: 单据Id可在【配置出站消息】接口中获取，或者查询单据列表接口。
+A: 三种方式如下：
 - 第一种方式：[配置出站消息](/docs/open-api/outbound-message/outbound-new)
 
-- 第二种方式：[获取单据列表(包含已删除单据)](/docs/open-api/flows/get-forms-sequences)
+- 第二种方式：[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 得到单据ID
 
- ![据列表单据接口中的Id](images/单据列表单据Id.png)
+- 第三种方式：[获取单据列表(包含已删除单据)](/docs/open-api/flows/get-forms-sequences) / [获取指定状态单据列表(包含已删除单据)](/docs/open-api/flows/get-forms-sequences-byState)
+
+ ![据列表单据接口中的Id](images/单据列表单据ID.png)
 
 ---

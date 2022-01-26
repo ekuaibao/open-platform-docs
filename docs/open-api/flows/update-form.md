@@ -12,7 +12,7 @@ url="/api/openapi/v2/flow/data/$`flowId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowId** | String  | 单据ID | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 | 
+| **flowId** | String  | 单据ID | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) | 
 
 ## Query Parameters
 
@@ -35,7 +35,7 @@ url="/api/openapi/v2/flow/data/$`flowId`"
 |**&emsp; ∟ specificationId**                   | String | 单据模板ID      | 必填  | - | 通过[获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)获取 |
 |**&emsp; ∟ details**                           | Array  | 费用明细        | 必填  | - | 费用明细 |
 |**&emsp; &emsp; ∟ feeTypeId**                  | String | 费用类型ID      | 必填  | - | 通过[获取费用类型列表(包含停用)](/docs/open-api/feetype/get-feetypes-list)获取 |
-|**&emsp; &emsp; ∟ specificationId**            | String | 费用类型模板ID   | 必填  | - | 通过[根据id或code获取费用类型模板信息](/docs/open-api/feetype/get-feetypes)获取 |
+|**&emsp; &emsp; ∟ specificationId**            | String | 费用类型模板ID   | 必填  | - | 通过[根据ID或CODE获取费用类型模板信息](/docs/open-api/feetype/get-feetypes)获取 |
 |**&emsp; &emsp; ∟ feeTypeForm**                | Object | 费用信息        | 必填  | - | 费用信息，具体传参请见获取费用模板接口返回值 |
 |**&emsp; &emsp; &emsp; ∟ amount**              | Object | 报销金额        | 必填  | - | 报销金额 |
 |**&emsp; &emsp; &emsp; ∟ feeDate**             | String | 费用日期        | 必填  | - | 毫秒级时间戳 |

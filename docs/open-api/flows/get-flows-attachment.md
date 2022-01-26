@@ -1,5 +1,5 @@
 # 获取单据附件
-本接口是提供根据单据的Id获取单据的附件数据信息。
+根据单据ID获取单据的附件数据信息（单据详情附件、费用明细附件、审批附件/评论附件、回单附件）。
 
 import Control from "@theme/Control";
 
@@ -18,11 +18,7 @@ url="/api/openapi/v1/flowDetails/attachment"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowIds** | Array | 单据ID | 必填 | - | 一次最多能查询100个单据 |
-
-:::caution
-`flowIds`可以是一个批量的，以逗号隔开即可,例如`["1s8cfnyBH8Jw00","1s8cfnyBH8Jw01"]`;
-:::
+| **flowIds** | Array | 单据ID | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一)，一次最多能查询 **100** 个单据<br/>例如：[ "1s8cfnyBH8Jw00" , "1s8cfnyBH8Jw01" ] |
 
 ## CURL
 ```json
@@ -39,24 +35,24 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 {
     "items":[
         {
-            "flowId":"6_kcgINHfcbI00",//单据id
-            "flowCode":"B21000073",//单据编码
+            "flowId":"6_kcgINHfcbI00",                  //单据ID
+            "flowCode":"B21000073",                     //单据编码
             "attachmentList":[
                 {
-                    "type":"flow.body",//单据详情附件
-                    "attachmentUrls":[//附件列表
+                    "type":"flow.body",                 //单据详情附件
+                    "attachmentUrls":[                  //附件列表
                         {
-                            "key":"无发票号码-1611919507409-253.jpg",//附件key
+                            "key":"无发票号码-1611919507409-253.jpg",  //附件key
                             "url":"https://vipimg.ekuaibao.com/%E6%97%A0%E5%8F%91%E7%A5%A8%E5%8F%B7%E7%A0%81-1611919507409-253.jpg?e=1612428089&token=hky7l9UOxMaLClIe5GV51aPS6KMpYBW2zLVpzfxi:oiv8FdEHZuO7LDQE-Qh8YdZS_8g=",//附件url
-                            "fileId":"2u8cgINHfceI00",//附件id
-                            "fileName":"无发票号码.jpg"//附件名称
+                            "fileId":"2u8cgINHfceI00",  //附件ID
+                            "fileName":"无发票号码.jpg"  //附件名称
                         }
                     ]
                 },
                 {
-                    "type":"flow.free",////单据费用详情附件
-                    "freeId":"r3gX9hMxRsvgAa",//费用详情id
-                    "attachmentUrls":[//费用详情附件
+                    "type":"flow.free",                //单据费用详情附件
+                    "freeId":"r3gX9hMxRsvgAa",         //费用详情ID
+                    "attachmentUrls":[                 //费用详情附件
                         {
                             "key":"无发票号码-1611919424372-705.jpg",
                             "url":"https://vipimg.ekuaibao.com/%E6%97%A0%E5%8F%91%E7%A5%A8%E5%8F%B7%E7%A0%81-1611919424372-705.jpg?e=1612428089&token=hky7l9UOxMaLClIe5GV51aPS6KMpYBW2zLVpzfxi:KN9enR6649pNcF13Mq4S7Uuka50=",
@@ -64,7 +60,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
                             "fileName":"无发票号码.jpg"
                         }
                     ],
-                    "invoiceUrls":[//发票文件
+                    "invoiceUrls":[                    //发票文件
                         {
                             "key":"广东机打发票9000(1)-1611919551788-38.jpg",
                             "url":"https://vipimg.ekuaibao.com/%E5%B9%BF%E4%B8%9C%E6%9C%BA%E6%89%93%E5%8F%91%E7%A5%A89000%281%29-1611919551788-38.jpg?e=1612428089&token=hky7l9UOxMaLClIe5GV51aPS6KMpYBW2zLVpzfxi:f4bcE63ecFlQ8wdyYW0UNwsJ9d0=",
@@ -74,7 +70,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
                     ]
                 },
                 {
-                    "type":"flow.approving",//单据审批附件（包含评论附件）
+                    "type":"flow.approving",           //单据审批附件（包含评论附件）
                     "attachmentUrls":[
                         {
                             "key":"1111g_200_200-1611919723502-854.png",
@@ -91,7 +87,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
                     ]
                 },
                 {
-                    "type":"flow.receipt",//单据回单地址
+                    "type":"flow.receipt",            //单据回单地址
                     "receiptUrls":[
                         {
                             "url":"https://vipimg.ekuaibao.com/503cedde-d7d6-4115-b8ee-1aed222add21-MjIwMjczOTE3ODE%3D.pdf?e=1612428089&token=hky7l9UOxMaLClIe5GV51aPS6KMpYBW2zLVpzfxi:OeWrlRnBSn8LQGlMz8reHTbn0vE=",
@@ -100,7 +96,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
                     ]
                 }
             ],
-            "fromType":"expense"//单据类型
+            "fromType":"expense"                      //单据类型
         },
         {
             "flowId":"BXoci03_oQ5000",
@@ -174,14 +170,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 ```
 
 :::tip
-响应数据中附件的`key`,`fileId`,`fileName`不是必返回的，有些附件可能没有该些字段。
+响应数据中附件的 `key`、`fileId`、`fileName` 不是必返回的，有些附件可能没有这些字段。
 :::
 
 ## 失败响应
-单据不存在，一般是单据id不对或者单据已经被删除了，请检查：
+单据不存在，一般是单据ID不对或者单据已经被删除了，请检查：
 ```json
 {
-"items": [] //表示没查到数据
+    "items": []  //表示没查到数据
 }
 ```
 
@@ -189,7 +185,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 
 | 字段名 | 对应附件来源类型 |
 | :--- | :--- |
-| flow.body | 单据详情附件 |
-| flow.free | 单据费用详情附件 |
-| flow.approving | 单据审批附件（包含评论附件） |
-| flow.receipt | 单据回单附件 |
+| **flow.body**      | 单据详情附件 |
+| **flow.free**      | 单据费用详情附件 |
+| **flow.approving** | 单据审批附件（包含评论附件） |
+| **flow.receipt**   | 单据回单附件 |

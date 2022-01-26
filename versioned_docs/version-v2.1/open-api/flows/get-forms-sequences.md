@@ -47,16 +47,16 @@ import TabItem from '@theme/TabItem';
             "index":1545640356544,
             "docData":{
                 "type":"expense",                           //单据类型
-                "id":"gps8pNvlUAvA00",                      //单据id 对应其他api的flowId
-                "corporationId":"e4A8oQS29g0w00",           //企业id
-                "ownerId":"e4A8oQS29g0w00:C3I8oQCy9c4I00",  //单据提交人id
+                "id":"gps8pNvlUAvA00",                      //单据ID 对应其他api的flowId
+                "corporationId":"e4A8oQS29g0w00",           //企业ID
+                "ownerId":"e4A8oQS29g0w00:C3I8oQCy9c4I00",  //单据提交人ID
                 "dataType":"expense",
                 "remark":null,               //备注
                 "title":"差旅申请单00",       //标题
                 "updateTime":1545640356200,  //更新日期时间戳
                 "specificationId":"fIk8oQye68e000:37b805c6c4ddabbbaf6d08635bef057d7d7cef92",  //模板ID
                 "owner":{                                  //提交人信息
-                    "id":"e4A8oQS29g0w00:C3I8oQCy9c4I00",  //员工id
+                    "id":"e4A8oQS29g0w00:C3I8oQCy9c4I00",  //员工ID
                     "name":"悟空",    //姓名
                     "departments":[  //所属部门信息
                         {
@@ -335,7 +335,7 @@ import TabItem from '@theme/TabItem';
                     "certificateType": "",
                     "remark": "remark"  //备注
                 },
-                "payorId":"p448pNvlUA4g00",  //收款信息id
+                "payorId":"p448pNvlUA4g00",  //收款信息ID
                 "paymentChannel":null,       //付款渠道（方式），出纳进行支付操作才会有
                 "paymentAccountId":null,     //付款账号，出纳进行支付操作才会有
                 "payTime":null,
@@ -450,7 +450,7 @@ import TabItem from '@theme/TabItem';
                      "certificateType": null,
                      "remark": "remark"      //备注
                 },
-                "payorId":"p448pNvlUA4g00",  //收款信息id
+                "payorId":"p448pNvlUA4g00",  //收款信息ID
                 "paymentChannel":null,
                 "paymentAccountId":null,
                 "payTime":null,

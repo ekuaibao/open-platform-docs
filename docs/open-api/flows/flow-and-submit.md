@@ -18,7 +18,7 @@ url="/api/openapi/v2/flow/data/submitFlow"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **flowId**      | String | 单据ID    | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 |
+| **flowId**      | String | 单据ID    | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
 
 ## Body Parameters
 

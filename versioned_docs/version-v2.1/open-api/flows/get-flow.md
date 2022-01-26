@@ -16,7 +16,7 @@ url="/api/openapi/v2/flow/plan/computed/$`flowId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowId** | String | 单据id | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 |
+| **flowId** | String | 单据ID | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
 
 ## Query Parameters
 
@@ -119,9 +119,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/flow/plan
                 "addNode": false
             }
         ],
-        "taskId": "SUBMIT",                            //当前环节所处的节点id
-        "ownerId": "LqY9lELfXs0000:4Ac9lCBulQ1Y00",    //流程发起人id;员工id
-        "submitterId": "LqY9lELfXs0000:4Ac9lCBulQ1Y00",//单据提交人id,即该单据归属者;员工id
+        "taskId": "SUBMIT",                            //当前环节所处的节点ID
+        "ownerId": "LqY9lELfXs0000:4Ac9lCBulQ1Y00",    //流程发起人ID/员工ID
+        "submitterId": "LqY9lELfXs0000:4Ac9lCBulQ1Y00",//单据提交人ID（即该单据归属者）员工ID
         "corporationId": "LqY9lELfXs0000",
         "fromStartNode": true                          //提交后是否重走流程
     }
@@ -129,7 +129,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/flow/plan
 ```
 
 ## 失败响应
-出现以下信息，请检查单据ID是存在的：
+出现以下信息，请检查单据ID是否存在：
 ```json
 {
     "errorCode": 412,

@@ -16,14 +16,14 @@ url="/api/openapi/v1/flowDetails"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **flowId**      | String  | 单据ID    | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 |
+| **flowId**      | String  | 单据ID    | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
 
 :::tip
-- 单据编号是面向企业唯一，单据的Id是面向系统唯一。
+- 单据编号是面向企业唯一，单据ID是面向系统唯一。
 :::
 
 ## CURL
-```json
+```shell
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetails?flowId=8ZAbsRr6_QfA00&accessToken=TNQbsyYQV80I00'
 ```
 
@@ -44,7 +44,7 @@ import TabItem from '@theme/TabItem';
         "active": true,                 //是否有效（或者理解为是否被删除） true：有效，false：无效
         "createTime": 1592289377126,    //创建时间(毫秒级时间戳)
         "updateTime": 1592289377125,    //更新时间(毫秒级时间戳)，单据审批、单据字段修改都会改变此字段值
-        "corporationId": "djg8LshfUkfM00",    //企业id
+        "corporationId": "djg8LshfUkfM00",    //企业ID
         "sourceCorporationId": null,
         "dataCorporationId": null,
         "form": {                    //单据详情
@@ -52,7 +52,7 @@ import TabItem from '@theme/TabItem';
             "title": "33",           //单据标题
             "details": [             //消费明细
                 {
-                    "feeTypeId": "djg8LshfUkfM00:office",      //费用类型id 通过【获取费用类型】此接口可获得，通过【根据id获取费用类型】查询类型详情
+                    "feeTypeId": "djg8LshfUkfM00:office",      //费用类型ID 通过【获取费用类型】此接口可获得，通过【根据ID获取费用类型】查询类型详情
                     "feeTypeForm": {    //费用类型数据明细
                         "amount": {     //费用金额
                             "standard": "33",         //本位币
@@ -64,17 +64,17 @@ import TabItem from '@theme/TabItem';
                         },
                         "feeDate": 1592236800000,    //消费时间(毫秒级时间戳)
                         "invoice": "1",              //发票(非必返回字段)
-                        "detailId": "g8Ub7AO5So4k00",//明细id
+                        "detailId": "g8Ub7AO5So4k00",//明细ID
                         "attachments": [],           //附件 可用附件信息的数据通过调用【获取附件URL】接口来获取附件文件下载链接
                         "invoiceForm": {             //发票信息(非必返回字段)
                             "type":"exist",          //发票类型
                             "invoices": [            //发票关联信息
                                 {
                                     "itemIds": [
-                                        "vIQbn1VrPkvc00", //发票明细id
+                                        "vIQbn1VrPkvc00", //发票明细ID
                                         "ARcbn1VrPkvE00"
                                     ],
-                                    "invoiceId": "7ds8qMsl2E0000:042001900211:67083249",  //发票id
+                                    "invoiceId": "7ds8qMsl2E0000:042001900211:67083249",  //发票ID
                                     "taxAmount": {        //税额
                                         "standard": 0,
                                         "standardUnit": "元",
@@ -90,15 +90,15 @@ import TabItem from '@theme/TabItem';
                     },
                     "specificationId": "djg8LshfUkfM00:office:expense:f284154aee2445c230a436cc44798ada2becf250",    //费用类型模版ID
                     "feeType": {
-                        "id": "djg8LshfUkfM00:office",  //费用类型id
+                        "id": "djg8LshfUkfM00:office",  //费用类型ID
                         "name": "办公|测试|测试|测试",   //费用类型名称
-                        "parentId": "",                 //父级费用类型id，无表示一级类型
+                        "parentId": "",                 //父级费用类型ID，无表示一级类型
                         "active": true,                 //是否启用，false=停用
                         "code": "COST1"                 //费用类型编码
                     }
                 }
             ],
-            "payeeId": "ED0b7ANNOwlI00",    //收款人id
+            "payeeId": "ED0b7ANNOwlI00",    //收款人ID
             "payMoney": {                   //支付金额
                 "standard": "33.00",
                 "standardUnit": "元",
@@ -113,7 +113,7 @@ import TabItem from '@theme/TabItem';
             "submitDate": 1592289361103,     //提交时间
             "description": "",               //说明
             "expenseDate": 1592236800000,    //报销时间
-            "submitterId": "djg8LshfUkfM00:Dwk7NVkt7o1E00", //提交人id
+            "submitterId": "djg8LshfUkfM00:Dwk7NVkt7o1E00", //提交人ID
             "expenseMoney": {                //报销金额
                 "standard": "33.00",
                 "standardUnit": "元",
@@ -143,8 +143,8 @@ import TabItem from '@theme/TabItem';
             "expenseDepartment": "djg8LshfUkfM00",  //报销部门
             "voucherCreateTime": 0
         },
-        "ownerId": "djg8LshfUkfM00:Dwk7NVkt7o1E00", //流程发起人id
-        "ownerDefaultDepartment": "djg8LshfUkfM00", // 流程发起人默认部门id
+        "ownerId": "djg8LshfUkfM00:Dwk7NVkt7o1E00", //流程发起人ID
+        "ownerDefaultDepartment": "djg8LshfUkfM00", // 流程发起人默认部门ID
         "state": "rejected",    //流程状态 pending-提交中 approving-审批中 rejected-已驳回 paying-待支付 PROCESSING-支付中 paid-已支付 archived-归档 sending-寄送中 receiving-收单中
         "flowType": "freeflow", //流程类型
         "formType": "expense",  //单据类型 expense-报销单 loan-借款单 payment-付款单 requisition-申请单 custom-通用审批单 receipt-收款单
@@ -152,11 +152,11 @@ import TabItem from '@theme/TabItem';
             {
                 "action": "freeflow.submit",    //动作名称
                 "state": "approving",           //操作后到流程状态
-                "operatorId": "djg8LshfUkfM00:Dwk7NVkt7o1E00",  //操作人id
+                "operatorId": "djg8LshfUkfM00:Dwk7NVkt7o1E00",  //操作人ID
                 "byDelegateId": null,
-                "operatorDefaultDepartment": "djg8LshfUkfM00",  //操作人默认部门id
-                "nextOperatorId": "ebot",    //下一操作人id
-                "nextOperatorIds": [],       //会签时的下一批操作人id
+                "operatorDefaultDepartment": "djg8LshfUkfM00",  //操作人默认部门ID
+                "nextOperatorId": "ebot",    //下一操作人ID
+                "nextOperatorIds": [],       //会签时的下一批操作人ID
                 "time": 1592289361509,       //操作时间
                 "attributes": {              //动作相关属性
                     "nextId": "FLOW:1848031693:1061401484",
@@ -184,7 +184,7 @@ import TabItem from '@theme/TabItem';
                 "attachments": []           //附件
             }
         ],
-        "actions": {                        //操作人可执行到动作  `key`是操作人的员工id;`value`是动作名称
+        "actions": {                        //操作人可执行到动作  `key`是操作人的员工ID；`value`是动作名称
             "djg8LshfUkfM00:Dwk7NVkt7o1E00": [
                 "freeflow.delete",
                 "freeflow.edit",
@@ -192,7 +192,7 @@ import TabItem from '@theme/TabItem';
             ]
         },
         "invoiceRemind": false,
-        "id": "lrMb7AO5So2800"              //单据id 对应其他api的flowId
+        "id": "lrMb7AO5So2800"              //单据ID 对应其他api的flowId
     }
 }
 ```
@@ -308,7 +308,7 @@ import TabItem from '@theme/TabItem';
                 "attachments": []
             }
         ],
-        "actions": {    //操作人可执行到动作  `key`是操作人的员工id;`value`是动作名称
+        "actions": {    //操作人可执行到动作  `key`是操作人的员工ID；`value`是动作名称
             "djg8LshfUkfM00:fuwb0AND7Mio00": [
                 "freeflow.delete",
                 "freeflow.edit",
@@ -719,7 +719,7 @@ import TabItem from '@theme/TabItem';
     "data": null
 }
 ```
-单据“已删除”报错如下：
+单据**“已删除”**报错如下：
 ```json
 {
     "errorCode": 412,

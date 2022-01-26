@@ -18,14 +18,14 @@ url="/api/openapi/v2/flow/data/erpVoucher"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**voucher**                     | Array  | 凭证信息        | 必填  | - | 凭证信息（至少一条） |
-|**&emsp; ∟ flowId**            | String | 单据ID         | 必填  | - |  通过其他api接口获取或者出站消息 |
-|**&emsp; ∟ voucherNo**         | String | 单据凭证号      | 必填  | - |  根据实际业务提供的凭证号,如果传空("")则删除该单据的凭证号 |
+|**voucher**                     | Array  | 凭证信息       | 必填  | - | 凭证信息（**至少一条**） |
+|**&emsp; ∟ flowId**            | String | 单据ID         | 必填  | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
+|**&emsp; ∟ voucherNo**         | String | 单据凭证号      | 必填  | - |  根据实际业务提供的凭证号<br/>如果传空 `""` 则删除该单据的凭证号 |
 |**&emsp; ∟ voucherCreateTime** | String | 单据凭证生成时间 | 必填  | - |  毫秒级时间戳 |
 |**&emsp; ∟ fiscalPeriod**      | String | 会计期间       | 非必填 | - |  会计期间 |
 
 :::tip
-- 在系统中**单据管理**模块，编辑表头字段，添加凭证相关字段到表头，既可看到凭证相关信息。
+- 在系统中 **单据管理** 模块，编辑表头字段，添加凭证相关字段到表头，即可看到凭证相关信息。
   ![单据凭证信息](images/单据凭证信息.png)
 :::
 
@@ -52,7 +52,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data
 ```
 
 ## 失败响应
-出现以下信息，请检查单据id是存在的：
+出现以下信息，请检查单据ID是否存在：
 ```json
 {
     "errorCode": 412,

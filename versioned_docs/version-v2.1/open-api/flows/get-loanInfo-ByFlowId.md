@@ -14,7 +14,7 @@ url="/api/openapi/v1/loans/getLoanInfoByFlowId/$`flowId`"
 ## Path Parameters
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowId** | String | 借款单ID | 必填 | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 |
+| **flowId** | String | 借款单ID | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
 
 ## Query Parameters
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |

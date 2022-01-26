@@ -18,7 +18,7 @@ url="/api/openapi/v1/paymentResults"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **items**              | Array | 提交的单据支付结果集合  | 必填  | - | 请求体集合 |
-| **&emsp; ∟ id**       | String | 单据ID              | 必填  | - | 通过其他api接口或者[出站消息](/docs/open-api/outbound-message/outbound-new)获取 |
+| **&emsp; ∟ id**       | String | 单据ID              | 必填  | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
 | **&emsp; ∟ code**     | String | 单据支付返回状态码     | 必填  | - | `P00001` : 支付成功 &emsp; `P00002` : 支付失败 |
 | **&emsp; ∟ errorMsg** | String | 支付返回信息          | 非必填 | - | 支付错误请将错误信息返回 |
 
