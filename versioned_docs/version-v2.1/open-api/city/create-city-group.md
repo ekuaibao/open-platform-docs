@@ -17,8 +17,8 @@ url="/api/openapi/v1/cityGroup/create"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **name** | String | 名称 | 必填  | - | 名称 |
-| **desc** | String | 描述 | 非必填 | - | 描述 |
+| **name** | String | 名称 | 必填  | - | 城市组名称 |
+| **desc** | String | 描述 | 非必填 | - | 城市组描述 |
 
 ## CURL
 ```json

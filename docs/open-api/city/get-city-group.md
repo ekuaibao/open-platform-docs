@@ -26,7 +26,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/cityGroup
     "items": [
         {
             "pipeline": 1,
-            "id": "As0c0vI1uk7g00",  //城市组id
+            "id": "As0c0vI1uk7g00",  //城市组ID
             "version": 10,
             "active": true,         
             "createTime": 1607569090433,

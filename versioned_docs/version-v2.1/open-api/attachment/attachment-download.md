@@ -1,5 +1,5 @@
 # 附件下载
-通过附件的 `id` ， `key` 去获取附件的下载链接
+通过附件的 `id` ， `key` 去获取附件的下载链接。
 
 import Control from "@theme/Control";
 
@@ -12,15 +12,15 @@ url="/api/openapi/v2/attachment/downloadurls"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 通过授权接口获取 | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id**         | String | 通过获取单据详情获取 | 必填 | - | 对应单据详情中的 `attachments` 字段的 `fileId` |
-| **key**        | String | 通过获取单据详情获取 | 必填 | - | 对应单据详情中的 `attachments` 字段的 `key` |
-| **expiration** | Number | 下载链接过期时间    | 必填 | - | 用户自定义，指获取到的url的过期时间，单位：秒 |
+| **id**         | String | 文件fileId    | 必填 | - | 可通过[获取单据详情](/docs/open-api/flows/get-forms-details-byCode)获取，对应单据详情中<br/>`attachments` 字段的 `fileId` |
+| **key**        | String | 文件key       | 必填 | - | 可通过[获取单据详情](/docs/open-api/flows/get-forms-details-byCode)获取，对应单据详情中<br/>`attachments` 字段的 `key` |
+| **expiration** | Number | 下载链接有效时间 | 必填 | - | 用户自定义，指下载链接在多长时间内有效，单位：秒 |
 
 ## CURL
 ```json
@@ -36,6 +36,10 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachmen
 ```
 
 ## 成功响应
+:::tip
+**url** 是文件下载路径，**thumbUrl** 是指缩略图的下载路径。
+:::
+
 ```json
 [
     {
@@ -47,12 +51,8 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachmen
 ]
 ```
 
-:::tip
-url是下载的路径，thumbUrl是指缩略图的下载路径。
-:::
-
 ## 失败响应
-请检查请求的方式正确的Method是POST方式：
+当请求方式 Method 不为 POST 方式时，报错入下：
 ```text
 Error 405 Method Not Allowed  
 ```

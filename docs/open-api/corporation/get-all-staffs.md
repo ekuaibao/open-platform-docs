@@ -12,11 +12,15 @@ url="/api/openapi/v1/staffs"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token	        | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **start**       | Number  | 分页查询的起始序号    | 必填   | - | 从第几条数据开始查询 |
-| **count**       | Number  | 查询数据条数         | 必填   | - | 最大不能超过 `1000` |
-| **active**      | Boolean | 查询条件：员工是否启用 | 非必填 | true | `true` : 启用 &emsp; `false` : 停用 |
+| **start**       | Number  | 分页查询的起始序号    | 必填  | - | 从第几条数据开始查询 |
+| **count**       | Number  | 查询数据条数         | 必填  | - | 最大不能超过 `1000` |
+| **active**      | Boolean | 查询条件：员工是否启用 | 非必填 | - | `true` : 启用 &emsp; `false` : 停用 |
 
 :::tip
+- `active` 参数传值分三种情况：
+  - `active` 参数和值均 `不传`，返回企业下 **全部员工信息**（包括停用）；
+  - `active` 值传 `空串` 或 `false` 或 `非true外任意值`，返回企业下全部 **停用** 的员工信息；
+  - `active` 值传 `true`，返回企业下全部 **启用** 的员工信息。
 - 分页的起始值是从0开始， 而不是传统的1开始。
 - 默认查询启用的员工，不是全部员工。
 :::

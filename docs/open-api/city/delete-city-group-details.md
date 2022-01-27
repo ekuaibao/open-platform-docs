@@ -17,9 +17,9 @@ url="/api/openapi/v1/cityGroup/detail/delete"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **roleIds**     | Array  | 角色ID列表 | 非必填 | - | [通过查询角色组和角色获取](/docs/open-api/corporation/get-roles-group) |
-| **staffIds**    | Array  | 人员ID列表 | 非必填 | - | [通过获取员工列表获取](/docs/open-api/corporation/get-all-staffs) |
-| **cityGroupId** | String | 城市组ID   | 必填  | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
+| **cityGroupId** | String | 城市组ID   | 必填  | - | 通过[获取城市组列表](/docs/open-api/city/get-city-group)获取 |
+| **staffIds**    | Array  | 人员ID列表 | 非必填 | - | 通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 |
+| **roleIds**     | Array  | 角色ID列表 | 非必填 | - | 通过[查询角色组和角色](/docs/open-api/corporation/get-roles-group)获取 |
 
 ## CURL
 ```json
@@ -27,9 +27,11 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-    "roleIds": [],
-    "staffIds": [ "AdMbpirnlY2Q00:-eAbCLexxI2k00" ],
-    "cityGroupId": "wC0cPu1DNY1400"
+    "cityGroupId": "wC0cPu1DNY1400",
+    "staffIds": [ 
+        "AdMbpirnlY2Q00:-eAbCLexxI2k00" 
+    ],
+    "roleIds": []
 }'
 ```
 

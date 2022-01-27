@@ -18,7 +18,7 @@ url="/api/openapi/v1/cityGroup/detail/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **cityGroupId** | String | 城市组id  | 必填  | - | [通过获取城市组列表获取](/docs/open-api/city/get-city-group) |
+| **cityGroupId** | String | 城市组ID  | 必填  | - | 通过[获取城市组列表](/docs/open-api/city/get-city-group)获取 |
 | **keyword**     | String | 搜索关键字 | 非必填 | - | 人员名称或角色名称 |
 
 ## CURL
@@ -44,7 +44,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup
             "staffIds": [
                 "AdMbpirnlY2Q00:HEQbpirnlYgk00"
             ],
-            "cityIds": [ //城市id列表
+            "cityIds": [ //城市ID列表
                 "1", "2", "19", "20"
             ]
         }

@@ -7,18 +7,22 @@ method="PUT"
 url="/api/openapi/v2/currency/updateCurrencyRate"
 />
 
+:::caution
+- 使用此接口需要开通【**币种设置**】功能。
+:::
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 通过授权接口获取 | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth)  |
+| **accessToken** | String | 认证token | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth)  |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **strCode** | String | 货币字母代码 | 必填 | - | 可通过[获取企业当前生效的币种信息](/docs/open-api/currency/get-currency)获取，例如：<br/>美元 : `USD`  |
-| **rate**    | String | 汇率       | 必填 | - | 汇率是基于人民币的 |
+| **strCode** | String | 货币字母代码 | 必填 | - | 可通过[获取企业当前生效的币种信息](/docs/open-api/currency/get-currency)获取，<br/>例如：美元 : `USD`  |
+| **rate**    | String | 汇率       | 必填 | - | 基于人民币的汇率 |
 
 ## CURL
 ```json
@@ -41,16 +45,16 @@ curl --location --request PUT 'http://app.ekuaibao.com/api/openapi/v2/currency/u
 {
     "items": [
         {
-            "id": "kTMacKJmPAfQ00",            //id
+            "id": "kTMacKJmPAfQ00",            //ID
             "version": 1,                      //版本号
             "active": true,                    //是否有效
             "createTime": 1576493933499,       //创建时间
             "updateTime": 1576493933499,       //更新时间
-            "corporationId": "JBwa4AZNzY0000", //企业 Id
+            "corporationId": "JBwa4AZNzY0000", //企业ID
             "numCode": "997",                  //货币数字代码
             "strCode": "USN",                  //货币字符代码
             "scale": 2,                        //精度
-            "name": "美元（次日）",               //货币名称
+            "name": "美元（次日）",             //货币名称
             "symbol": "$",                     //货币符号
             "unit": "美元",                     //货币单位
             "icon": "http://images.ekuaibao.com/currency/usn.png",  //货币图标
