@@ -17,8 +17,8 @@ url="/api/openapi/v2/organization/delegate/approve"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **staffId**     | String  | 授权发起人id	   | 必填  | - | 即委托人[员工ID](/docs/open-api/corporation/get-staff-ids) |
-| **delegateeId** | String  | 被委托人id	       | 必填  | - | 即被委托人[员工ID](/docs/open-api/corporation/get-staff-ids) |
+| **staffId**     | String  | 授权发起人ID	   | 必填  | - | 即委托人[员工ID](/docs/open-api/corporation/get-staff-ids) |
+| **delegateeId** | String  | 被委托人ID	       | 必填  | - | 即被委托人[员工ID](/docs/open-api/corporation/get-staff-ids) |
 | **name**        | String  | 授权名称	       | 非必填 | - | 授权名称 |
 | **remark**      | String  | 备注	           | 非必填 | - | 备注 |
 | **startTime**   | String  | 授权开始时间	   | 非必填 | - | 毫秒级时间戳 |
@@ -30,13 +30,13 @@ url="/api/openapi/v2/organization/delegate/approve"
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/organization/delegate/approve?accessToken=MwAcih69ycDo00' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "staffId": "34A73EyI8A0w00:VV89AHfyJo2E00",     //授权发起人id
-    "delegateeId": "34A73EyI8A0w00:rgobwK3yUoqw00", //被委托人id
+    "staffId": "34A73EyI8A0w00:VV89AHfyJo2E00",     //授权发起人ID
+    "delegateeId": "34A73EyI8A0w00:rgobwK3yUoqw00", //被委托人ID
     "name": "修改委托授权",                          //授权名称
     "remark": "备注",                               //授权备注
-    "startTime": 1612339282021,                    //授权开始时间
-    "endTime": null,                               //授权结束时间
-    "originalIds": [                               //授权单据模板ID集合
+    "startTime": 1612339282021,                     //授权开始时间
+    "endTime": null,                                //授权结束时间
+    "originalIds": [                                //授权单据模板ID集合
         "ms0cgHfmF1fU00",
         "U7IcgM1h6ZEo00"
     ]
@@ -46,11 +46,17 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/organiza
 ## 成功响应
 ```json
 {
-  "id": "jSIcih1RiNHg00"  //委托关系数据id
+    "id": "jSIcih1RiNHg00"  //委托关系数据ID
 }
 ```
 
 ## 失败响应
-```text
-委托发起人与被委托人已存在委托关系  //已经存在关系
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "委托发起人与被委托人已存在委托关系",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
 ```

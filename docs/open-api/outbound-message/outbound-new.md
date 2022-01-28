@@ -3,11 +3,9 @@
 ---
 ## 定义
 
-```text
-1.出站消息的定义：能够自动执行业务流程的一种触发器，以实现自动化传递信息（如通知消息、业务数据等）；
-2.订阅事件：相当于触发条件，当满足某种订阅事件时，执行某种行为；
-3.行为：当满足某种订阅事件时，执行调用接口传递信息的动作。
-```
+- 出站消息：能够自动执行业务流程的一种触发器，以实现自动化传递信息（如通知消息、业务数据等）；
+- 订阅事件：相当于触发条件，当满足某种订阅事件时，执行某种行为；
+- 行为：当满足某种订阅事件时，执行调用接口传递信息的动作。
 
 ---
 ## 出站消息的触发方式
@@ -15,7 +13,7 @@
 | 订阅事件 | 满足某种条件 | 触发方式 |
 |:--- |:--- |:--- |
 | **审批事件**        | 触发配置的审批事件动作<br/> 审批事件类型：【待审批】、【待寄送】、【待收单】、【待支付】、【被驳回】、【已支付/审批完成】、【催办】、【超时提醒】、【审批通过（已开通【差旅管理】的用户）】、【抄送】、【评论】、【被@】、【打印提醒】、【单据撤回】、【待办已处理】| 触发出站消息 |
-| **业务对象数据变更** | 新增或修改 | 触发出站消息 |
+| **业务对象数据变更** | 新增或修改业务对象数据 | 触发出站消息 |
 | **EBot**          | 到达此节点 | 触发出站消息，可触发调用失败后配置 |
 | **借款相关**        | 触发配置的还款事件<br/>还款事件类型：【发起手动还款】、【手动还款被确认收款】、【手动还款驳回】、【还款提醒】 | 触发出站消息 |
 
@@ -42,7 +40,7 @@
 ![image](images/datalinkChange.png)
 
 ---
-### （5）新建/编辑出站消息--Ebot（在审批流Ebot节点上新建此类型）
+### （5）新建/编辑出站消息--EBot（在审批流EBot节点上新建此类型）
 
 ![image](images/ebot.png)
 
@@ -61,15 +59,15 @@
 | **名称**       | 企业内唯一，20字以内，中文数字字母组合 |
 | **描述**       | 出站消息描述信息 |
 | **是否启用**    | 是否启用 |
-| **配置事件**    | 审批事件、业务对象数据变更、Ebot、借款相关 |   
-| **调用Url**    | 目标站点的Url | 
+| **配置事件**    | 审批事件、业务对象数据变更、EBot、借款相关 |   
+| **调用Url**    | 目标站点的URL | 
 | **签名秘钥**    | 由易快报系统签发，用于接口鉴定，不可修改，可以重新分配。<br/>打开「新建出站消息」页面时，自动分配。 | 
 | **字段选择**    | 可以从全局字段中选择，例如:【单据ID】、【节点ID】等。<br/>支持的类型参见本文档后半部分。|
 | **成功状态码**  | 返回什么样的响应码表示成功，支持多选<br/>【HTTP204】【HTTP200】【HTTP201】|
-| **关键字匹配**  | 关键字匹配作为成功状态码的补充条件，在选择的状态码中，且存在输入的关键字，则作为判断后的结果，默认关闭。<br/>例如:选择了【HTTP200】，关键字“code=1”则消息返回易快报时结果为HTTP200的时候不算为成功，必须满足{"code":"1"}才记为成功。 |
+| **关键字匹配**  | 关键字匹配作为成功状态码的补充条件，默认关闭。<br/>例如：选择了【HTTP200】和关键字“code=1”<br/>则出站接口URL返回为 【HTTP200】且{"code":"1"}时才算作成功。 |
 | **重试次数**    | 默认为0次，不重试。<br/>出站消息最多支持重试3次，在返回失败后将按照配置的间隔时间进行等待重试。 |
 | **网络间隔时长** | 默认为0秒，可在1-10秒内做选择。<br/>用户设置等待间隔后出站消息失败后不会立即重试，会按照这里的间隔时间进行等待。 |
-| **测试并保存**   | 点击「测试并保存」，测试成功后将保存该出站消息。 <br/> 注意：测试时易快报将调用该接口，并传送示例数据，目标服务器响应配置的成功状态码，例如:204，方认为测试通过。|
+| **测试并保存**   | 点击「测试并保存」，测试成功后将保存该出站消息。 <br/> 测试时易快报将向出站URL传送示例数据，目标服务器响应配置的成功状态码，例如：204，方认为测试通过。|
 
 ---
 ## 支持字段
@@ -85,9 +83,9 @@
 | **金额**                |  "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"currency": "CNY", //本位币币种<br/>&nbsp;&nbsp;&nbsp;&nbsp;"amount": "10.00", //本位币金额<br/>&nbsp;&nbsp;&nbsp;&nbsp;/* 如果金额是本位币，则无下列字段 */<br/>&nbsp;&nbsp;&nbsp;&nbsp;"foreignCurrency": "USD", //外币币种<br/>&nbsp;&nbsp;&nbsp;&nbsp;"foreignAmount": "68.80", //外币金额<br/>&nbsp;&nbsp;&nbsp;&nbsp;"exchangeRate": "6.88" //汇率 = 外币金额 ÷ 本位币金额<br/>} |  |
 | **开关**                |  "字段名": true |  |
 | **部门/自定义档案**       | "字段名": {&nbsp;&nbsp;&nbsp;&nbsp;//部门、自定义档案<br/>&nbsp;&nbsp;&nbsp;&nbsp;"id": "档案值id",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"path": "AAA/BBB/CCC",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "CCC",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"code": "0902"<br/>} |  |
-| **人员**                |  "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"id": "员工id", //这里的id是易快报的员工id<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "姓名"<br />}, |   |
+| **人员**                |  "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"id": "员工ID", //这里的ID是易快报的员工ID<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "姓名"<br />} |   |
 | **自定义扩展业务对象**     | "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"id": "x2y34",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "xxxx",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"code": "1234"<br/>} | &#8195; |
-| **收款信息_银行卡**       | "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"sort": "BANK",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"type": "PERSONAL",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "杨平",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"nameSpell": "YANGPING",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"cardNo":"6214000123123028888",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"bank":"招商银行",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"province":"江苏省"，<br/>&nbsp;&nbsp;&nbsp;&nbsp;"city":"南京市"，<br/>&nbsp;&nbsp;&nbsp;&nbsp;"branch":"招商银行股份有限公司南京中央路支行"，<br/>&nbsp;&nbsp;&nbsp;&nbsp;"certificateType":"03",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"certificateNo":"134322222343",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"bankLinkNo":"308301006211"<br/>} | 需根据单据中的收款信息id，联查相关字段 |
+| **收款信息_银行卡**       | "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"sort": "BANK",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"type": "PERSONAL",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "杨平",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"nameSpell": "YANGPING",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"cardNo":"6214000123123028888",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"bank":"招商银行",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"province":"江苏省"，<br/>&nbsp;&nbsp;&nbsp;&nbsp;"city":"南京市"，<br/>&nbsp;&nbsp;&nbsp;&nbsp;"branch":"招商银行股份有限公司南京中央路支行"，<br/>&nbsp;&nbsp;&nbsp;&nbsp;"certificateType":"03",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"certificateNo":"134322222343",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"bankLinkNo":"308301006211"<br/>} | 需根据单据中的收款信息ID，联查相关字段 |
 | **收款信息_海外账户**     | "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"sort": "OVERSEABANK",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "杨平",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"type": "PERSONAL",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"owner": "INDIVIDUAL",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"cardNo":"9984000123123028888",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"bankCode":"BankCode001"，<br/>&nbsp;&nbsp;&nbsp;&nbsp;"bankName":"BankName001"，<br/>&nbsp;&nbsp;&nbsp;&nbsp;"nameSpell": "YANGPING",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"swiftCode":"SwiftCode001",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"branchCode":"BranchCode001"<br/>} |  |
 | **收款信息_支付宝**       | "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"sort": "ALIPAY",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "杨平",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"type": "PERSONAL",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"owner": "INDIVIDUAL",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"cardNo":"13900001111",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"nameSpell": "YANGPING"} |  |
 | **收款信息_其他**         | "字段名": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"sort": "OTHER",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"name": "杨平",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"type": "PERSONAL",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"cardNo":"13900001111",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"nameSpell": "YANGPING" <br/>&nbsp;&nbsp;&nbsp;&nbsp;"certificateType":"03",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"certificateNo":"134322222343"<br/>} |  |

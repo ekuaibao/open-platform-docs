@@ -1,4 +1,4 @@
-# 私车公用
+# 获取【私车公用】业务对象数据
 
 import Control from "@theme/Control";
 
@@ -23,17 +23,16 @@ url="/api/openapi/v2/extension/PRIVATE_CAR/object/`objectId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **index** | Number | 当前页        | 必填  | - | 当前页 |
-| **count** | Number | 查询数        | 必填  | - | 查询数 |
-| **ids**   | Array  | 业务对象实例id | 非必填 | - | 按照业务对象实例的id查询详情 |
+| **ids**   | Array  | 业务对象实例ID数组 | 非必填 | - | 按照[业务对象实例的ID](/docs/open-api/datalink/get-entity-info)查询详情 |
+| **index** | Number |  开始索引           | 非必填 | - | 从 `1` 开始，不可为 `0` |
+| **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `1000` |
 
 ## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extension/PRIVATE_CAR/object/drivingRecord/search?accessToken=Ts0byCA-_A4M00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
---data-raw '
-{
+--data-raw '{
     "index":1,
     "count":10,
     "ids":[]
@@ -46,10 +45,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
     "count": 1,
     "items": [
         {
-            "id": "uzobyZz2qgcc00", //业务对象ID
+            "id": "uzobyZz2qgcc00",         //业务对象ID
             "ownerId": null,
-            "visibility": { //可见性信息
-                "fullVisible": false, //是否全部可见  true=全部， false=部分人员
+            "visibility": {                 //可见性信息
+                "fullVisible": false,       //是否全部可见；true=全部，false=部分人员
                 "staff": [
                     {
                         "version": 3,
@@ -57,32 +56,32 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
                         "createTime": 1597050351322,
                         "updateTime": 1597050351322,
                         "nameSpell": "GONGHENG",
-                        "code": "1001", //员工编码
-                        "corporationId": "JOYbpjPP-E2Q00", //企业ID
-                        "userId": "y8gbpjP9OsnI00", //用户ID
+                        "code": "1001",                        //员工编码
+                        "corporationId": "JOYbpjPP-E2Q00",     //企业ID
+                        "userId": "y8gbpjP9OsnI00",            //用户ID
                         "id": "JOYbpjPP-E2Q00:y8gbpjP9OsnI00", //员工ID
-                        "name": "一号员工", //员工名称
+                        "name": "一号员工",                     //员工名称
                         "avatar": "",
                         "email": "",
-                        "cellphone": "18603000749", //手机号
+                        "cellphone": "18603000749",            //手机号
                         "note": null,
-                        "departments": [ //所属部门
+                        "departments": [                       //所属部门
                             "JOYbpjPP-E2Q00"
                         ],
                         "defaultDepartment": "JOYbpjPP-E2Q00", //默认部门
-                        "external": false, //是否外部人员
+                        "external": false,                     //是否外部人员
                         "order": null
                     }
                 ],
                 "department": [],
                 "role": []
             },
-            "useCount": 0, //使用次数
-            "totalCount": 1, //总数量
-            "active": true, //是否停用
-            "entityId": "48e50b8a6c88d3873c00", //实体编码
-            "E_48e50b8a6c88d3873c00_code": "dXIbyZxFNYuc00", //对象编码
-            "E_48e50b8a6c88d3873c00_name": "一号员工", //对象名称
+            "useCount": 0,                                     //使用次数
+            "totalCount": 1,                                   //总数量
+            "active": true,                                    //是否停用
+            "entityId": "48e50b8a6c88d3873c00",                //实体编码
+            "E_48e50b8a6c88d3873c00_code": "dXIbyZxFNYuc00",   //对象编码
+            "E_48e50b8a6c88d3873c00_name": "一号员工",          //对象名称
             "E_48e50b8a6c88d3873c00_备注": "hello",
             "E_48e50b8a6c88d3873c00_出发地": {
                 "name": "",
@@ -181,7 +180,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 ```
 
 ## 失败响应
-`objectId` 不可传未支持的类型，否则返回一下内容：
+`objectId` 不可传未支持的类型，否则报错如下：
 ```json
 {
     "errorCode": 400,

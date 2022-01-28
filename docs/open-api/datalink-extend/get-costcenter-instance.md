@@ -1,7 +1,5 @@
 # 获取成本中心配置实例数据
 
-使用之前请确保已经开通【**合思商城订购管理**】功能。
-
 import Control from "@theme/Control";
 
 <Control
@@ -15,10 +13,9 @@ url="/api/openapi/v1/travel/costCenter/getInstanceData"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **type**        | String | 查询类型   | 必填  | - | `businessObject` : 业务对象 &emsp; `dimension` : 自定义档案  |
-| **start**       | Number | 数据开始数 | 必填  | - | 默认填0 |
-| **count**       | Number | 每页总数   | 必填  | - | 默认填0  |
-| **keywords**    | String | 查询关键字 | 非必填 | - | 查询关键字  |
-
+| **start**       | Number | 数据开始数 | 必填  | 0 | 从 `0` 开始 |
+| **count**       | Number | 查询数量   | 必填  | 0 | 查询数量 |
+| **keywords**    | String | 查询关键字 | 非必填 | - | 查询关键字 |
 
 ## CURL
 ```shell
@@ -55,8 +52,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/travel/co
 }
 ```
 
-## 失败响应
-当该配置关闭或者无实例数据时，返回以下内容：
+当无实例数据时，返回以下内容：
 ```json
 {
     "count": 0,

@@ -1,4 +1,4 @@
-# 统一开票
+# 获取统一开票信息
 
 import Control from "@theme/Control";
 
@@ -12,9 +12,9 @@ url="api/openapi/v1/invoice/unify"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**               | String | 认证token    | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **unifyInvoiceCorporationId** | String | 开票方id     | 必填 | - | [获取开票方](/docs/open-api/datalink-extend/get-entity-unify-corporation) |
-| **index**                     | Number | 确认开票时间戳 | 必填 | - | 例如：当index=1612344239976时，会查询所有index>1612344239976的开票信息 |
-| **count**                     | Number | 查询数据条数  | 必填 | - | 不可超过10 |
+| **unifyInvoiceCorporationId** | String | 开票方ID     | 必填 | - | [获取统一开票方](/docs/open-api/datalink-extend/get-entity-unify-corporation) |
+| **index**                     | Number | 确认开票时间戳 | 必填 | - | 例如：当 `index` = `1612344239976` 时，会查询所有<br/>`index` > `1612344239976` 的开票信息 |
+| **count**                     | Number | 查询数据条数   | 必填 | - | 不可超过 `10` |
 
 ## CURL
 ```shell
@@ -41,14 +41,14 @@ curl --location --request get 'http://app.ekuaibao.com/api/openapi/v1/invoice/un
             "channel": "OFFLINE",
             "version": 3,
             "feeCount": 1,
-            "invoices": [		//发票信息
+            "invoices": [		          //发票信息
                 {
                     "invoiceId": "cWQc8EeLU41A00:011001900411:47211517",
                     "invoiceDetailIds": [
                         "zVUctOuhHgI400"
                     ],
                     "invoiceDetail": {
-                    "master": {		//发票主体
+                    "master": {		      //发票主体
                         "version": 2,
                         "active": false,
                         "createTime": 1615450904276,
@@ -626,14 +626,4 @@ curl --location --request get 'http://app.ekuaibao.com/api/openapi/v1/invoice/un
 }
 ```
 
-## 失败响应
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "未授权",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 

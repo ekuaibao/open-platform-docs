@@ -24,8 +24,8 @@ url="/api/openapi/v2/datalink/add"
 | **&emsp; ∟ count**                             | Number  | 最大引用次数  | 非必填 | 0      | 限制引用次数时必填。若设置的值小于已引用次数，则易快报系统会自动修正到已引用次数  |
 | **&emsp; ∟ disabled**                          | Boolean | 是否停用     | 非必填 | true   | `true` : 停用 &emsp; `false` : 启用|
 | **&emsp; ∟ ownerId**                           | String  | 负责人ID     | 非必填 | -      | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
-| **&emsp; ∟ data**                              | Object  | 字段值       | 必填   | -     | 格式为 {字段名称 : 字段值}。 `字段名称` 是[获取业务对象](/docs/open-api/datalink/get-entity-list)返回值中 `fields` 里面的 `name` 值|
-| **&emsp; ∟ visible**                           | Object  | 可见性       | 非必填 | -      | 业务对象”参与人配置“为”部分人员参与“时此参数才有效，为“全员参与”时此参数不生效 |
+| **&emsp; ∟ data**                              | Object  | 字段值       | 必填   | -     | 格式为 { 字段名称 : 字段值 }。**字段名称** 是[获取业务对象](/docs/open-api/datalink/get-entity-list)返回值中 `fields` 里面的 `name` 值 |
+| **&emsp; ∟ visible**                           | Object  | 可见性       | 非必填 | -      | 业务对象**”参与人配置“**为**”部分人员参与“**时此参数才 **有效**，为**“全员参与”**时此参数 **不生效** |
 | **&emsp; &emsp; ∟ fullVisible**                | Boolean | 全员可见性    | 非必填 | false | `true` : 全部可见 &emsp; `false` : 指定员工可见 |
 | **&emsp; &emsp; ∟ staffs**                     | Array   | 可见员工ID    | 非必填 | -     | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
 | **&emsp; &emsp; ∟ roles**                      | Array   | 可见角色ID    | 非必填 | -     | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
@@ -59,7 +59,7 @@ url="/api/openapi/v2/datalink/add"
 ```
 
 ## CURL
-根据业务对象的 `数据权限`、`停用方式` 配置不同，所需Body Parameters的数据结构略有差异，请根据配置选择合适的示例。
+根据业务对象的 **数据权限**、**停用方式** 配置不同，所需Body Parameters的数据结构略有差异，请根据配置选择合适的示例。
 
 
 import Tabs from '@theme/Tabs';
@@ -227,7 +227,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
           "第1条数据导入成功"
         ],
         "dataLinkIds": {
-            "004": "cagbsyR13Qok00"  //key表示code，value表示id
+            "004": "cagbsyR13Qok00"  //key表示code，value表示ID
         },
         "success": true
     }

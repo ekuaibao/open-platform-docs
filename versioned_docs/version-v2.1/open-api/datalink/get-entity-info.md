@@ -15,11 +15,11 @@ url="/api/openapi/v2/datalink"
 | **entityId**    | String | 业务对象ID  |  必填  | - | 通过[获取业务对象](/docs/open-api/datalink/get-entity-list)接口获取 |
 | **start**       | Number | 数据开始数  | 必填   | 0 | 数据开始数 |
 | **count**       | Number | 每页总数    | 必填   | 0 | 最大不能超过 `1000` |
-| **startDate**   | String | 查询开始时间 | 非必填 | - | 按业务对象实例更新时间查询，格式：yyyy-MM-dd HH:mm:ss |
-| **endDate**     | String | 查询结束时间 | 非必填 | - | 按业务对象实例更新时间查询，格式：yyyy-MM-dd HH:mm:ss |
+| **startDate**   | String | 查询开始时间 | 非必填 | - | 按业务对象实例 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
+| **endDate**     | String | 查询结束时间 | 非必填 | - | 按业务对象实例 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 
 :::tip
- - 只返回未停用的业务对象，如果业务对象已停用，则不返回。
+ - 只返回 **未停用** 的业务对象，如果业务对象已停用，则不返回。
  - `startDate` 查询规则是”大于等于“， `endDate` 查询规则是“小于等于”（”毫秒级时间戳“与“日期”转换的影响，导致取值结果往往是”小于“，没有等于）。
  - `start=0&count=10` 代表每页10条数据，第一页数据开始于 `start = 0` 开始，则第二页数据开始于 `start = 10`。
 :::
@@ -35,15 +35,15 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
     "count": 2,                                //总记录数
     "items": [
         {
-            "id": "smcbSWavrE2c00",            //业务对象实例id
-            "version": 3,                      //版本数
+            "id": "smcbSWavrE2c00",            //业务对象实例ID
+            "version": 3,                      //版本号
             "active": true,                    //是否启用
             "createTime": 1604995509639,
             "updateTime": 1604995509639,
             "name": "北京",                     //业务对象实例名称
             "nameSpell": "BEIJING",             //业务对象实例名称大写
             "code": "110",                      //业务对象实例编码
-            "corporationId": "joQbMsJBw01c00",  //企业id
+            "corporationId": "joQbMsJBw01c00",  //企业ID
             "form": {                           //自定义业务对象实例参数表单数据
                 "E_8c500bdb8c4de2404000_pen": "joQbMsJBw01c00:FHMbOsCZegmw00",            //自定义业务对象实例员工参数
                 "E_8c500bdb8c4de2404000_city": "[{\"key\":\"497\",\"label\":\"沈阳市\"}]", //自定义业务对象实例城市参数
@@ -61,24 +61,24 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
             },
             "ledgerAmount": null,
             "ledgerAmountModel": null,
-            "totalCount": 0,   //总数量
-            "useCount": 0,     //用户数量
-            "entityId": "8c500bdb8c4de2404000", //业务对象业务对象id
+            "totalCount": 0,           //总数量
+            "useCount": 0,             //用户数量
+            "entityId": "8c500bdb8c4de2404000",  //业务对象ID
             "platformId": "66wbMPbmLwsE00", 
-            "source": "EXCEL", //来源
+            "source": "EXCEL",         //来源
             "masterId": null, 
             "index": 0, 
-            "visibility": {           //“参与人”配置
+            "visibility": {            //“参与人”配置
                 "fullVisible": true,
-                "staffs": null,       //参与人ID
-                "roles": null,        //角色ID
-                "departments": null,  //部门ID
+                "staffs": null,        //参与人ID
+                "roles": null,         //角色ID
+                "departments": null,   //部门ID
                 "departmentsIncludeChildren": true
             },
-            "visible": true,   //是否全部人员可见
-            "ownerId": "",     //“负责人”ID
-            "operatorId": "joQbMsJBw01c00:gwUbMbLvg4pA00", //操作人ID
-            "sourceId": "",    //来源ID
+            "visible": true,           //是否全部人员可见
+            "ownerId": "",             //“负责人”ID
+            "operatorId": "joQbMsJBw01c00:gwUbMbLvg4pA00",  //操作人ID
+            "sourceId": "",            //来源ID
             "flowCounts": {} 
         },
         {
@@ -133,8 +133,14 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
 ```
 
 ## 失败响应
-请确保 `业务对象ID` 真实存在，否则会返回如下响应：
-```text
-26d60b5d6dd47f4350100 对应的业务对象不存在
+请确保 `entityId`（业务对象ID）真实存在，否则会返回如下响应：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "26d60b5d6dd47f4350100 对应的业务对象不存在",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
 ```
 

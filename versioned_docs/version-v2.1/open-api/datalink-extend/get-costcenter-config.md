@@ -1,7 +1,5 @@
 # 获取成本中心配置
 
-使用之前请确保已经开通【**合思商城订购管理**】功能。
-
 import Control from "@theme/Control";
 
 <Control
@@ -24,8 +22,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/travel/co
 ```json
 {
     "value": {
-        "hasDimension": true, // 是否配置自定义档案
-        "hasBusinessObject": true // 是否配置业务对象
+        "hasDimension": true,     //是否配置自定义档案
+        "hasBusinessObject": true //是否配置业务对象
     }
 }
 ```

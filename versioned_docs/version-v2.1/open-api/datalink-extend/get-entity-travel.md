@@ -1,4 +1,4 @@
-# 行程
+# 获取【行程】业务对象数据
 
 import Control from "@theme/Control";
 
@@ -23,17 +23,16 @@ url="/api/openapi/v2/extension/TRAVEL/object/`objectId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **index** | Number | 当前页        | 必填  | - | 当前页 |
-| **count** | Number | 查询数        | 必填  | - | 查询数 |
-| **ids**   | Array  | 业务对象实例id | 非必填 | - | 按照业务对象实例的id查询详情 |
+| **ids**   | Array  | 业务对象实例ID数组 | 非必填 | - | 按照[业务对象实例的ID](/docs/open-api/datalink/get-entity-info)查询详情 |
+| **index** | Number |  开始索引           | 非必填 | - | 从 `1` 开始，不可为 `0` |
+| **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `1000` |
 
 ## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extension/TRAVEL/object/travel/search?accessToken=Ts0byCA-_A4M00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
---data-raw '
-{
+--data-raw '{
     "index":1,
     "count":10,
     "ids":["0m4aN2sTKEv000"]
@@ -46,27 +45,27 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
     "count": 1,
     "items": [
         {
-            "id": "0m4aN2sTKEv000", //业务对象ID
-            "ownerId": { //负责人
-                "version": 128, //版本号
-                "active": true, //是否启用
+            "id": "0m4aN2sTKEv000",                    //业务对象ID
+            "ownerId": {                               //负责人
+                "version": 128,                        //版本号
+                "active": true,                        //是否启用
                 "createTime": 1577066928842,
                 "updateTime": 1599061982830,
                 "nameSpell": "MAXIAO",
-                "code": "0650", //员工编码
-                "corporationId": "jsw646Uwfo0400", //企业ID
-                "userId": "qy01773affcc89bfb79b68c7c3f3", //用户ID
-                "id": "jsw646Uwfo0400:qy01773affcc89bfb79b68c7c3f3", //员工ID
-                "name": "马骁", //员工名称
+                "code": "0650",                        //员工编码
+                "corporationId": "jsw646Uwfo0400",     //企业ID
+                "userId": "qy01773affcc89bfb79b68c7c3f3",             //用户ID
+                "id": "jsw646Uwfo0400:qy01773affcc89bfb79b68c7c3f3",  //员工ID
+                "name": "马骁",                        //员工名称
                 "avatar": "https://wework.qpic.cn/wwhead/duc2TvpEgSTPk74IwG7Bs0LwtRFOibzwibGKx05gZplOHKmNkeCqYTbO57kunGZLndVYIFEU1W3EA/0",
                 "email": "endtiger@sina.com",
-                "cellphone": "15764907096", //手机号
+                "cellphone": "15764907096",            //手机号
                 "note": "费控产品部",
-                "departments": [ //所属部门
+                "departments": [                       //所属部门
                     "jsw646Uwfo0400:1634018471"
                 ],
                 "defaultDepartment": "jsw646Uwfo0400:1634018471", //默认部门
-                "external": false, //是否外部人员
+                "external": false,                     //是否外部人员
                 "order": {
                     "jsw646Uwfo0400:1634018471": "0"
                 }
@@ -77,12 +76,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
                 "department": [],
                 "role": []
             },
-            "useCount": 0, //使用数量
-            "totalCount": 1, //总数量
-            "active": true, //是否有效
+            "useCount": 0,                 //使用数量
+            "totalCount": 1,               //总数量
+            "active": true,                //是否有效
             "entityId": "a90909923caa65007000",
-            "E_fa1409923caa65001000_code": "TRIP0000000007", //业务对象编码
-            "E_fa1409923caa65001000_name": "辅导费", //业务对象名称
+            "E_fa1409923caa65001000_code": "TRIP0000000007",  //业务对象编码
+            "E_fa1409923caa65001000_name": "辅导费",           //业务对象名称
             "E_fa1409923caa65001000_出发地": "[{\"key\":\"858\",\"label\":\"上海市区\"}]",
             "E_fa1409923caa65001000_同行人": [
                 {
@@ -188,7 +187,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 ```
 
 ## 失败响应
-`objectId` 不可传未支持的类型，否则返回一下内容：
+`objectId` 不可传未支持的类型，否则报错如下：
 ```json
 {
     "errorCode": 400,

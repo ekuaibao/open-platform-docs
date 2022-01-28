@@ -17,12 +17,12 @@ url="/api/openapi/v1/ldap/sync"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ldapUsers**               | Object[] | 员工集合 | 必填  | - |  员工集合 |
-| **&emsp; ∟ mail**           | String  | 邮箱    | 必填  | - |  邮箱  |
-| **&emsp; ∟ name**           | String  | 用户名  | 必填  | - |  用户名  |
-| **&emsp; ∟ employeeNumber** | String  | 工号    | 必填  | - |  工号  |
-| **&emsp; ∟ mobile**         | String  | 手机号  | 必填  | - |  手机号  |
-| **&emsp; ∟ login**          | String  | 登录名  | 必填  | - |  登录名  |
+| **ldapUsers**                | Array | 员工集合 | 必填  | - |  员工集合 |
+| **&emsp; ∟ mail**           | String | 邮箱     | 必填  | - |  邮箱  |
+| **&emsp; ∟ name**           | String | 用户名   | 必填  | - |  用户名  |
+| **&emsp; ∟ employeeNumber** | String | 工号     | 必填  | - |  工号  |
+| **&emsp; ∟ mobile**         | String | 手机号   | 必填  | - |  手机号  |
+| **&emsp; ∟ login**          | String | 登录名   | 必填  | - |  登录名  |
 
 ## CURL
 ```json

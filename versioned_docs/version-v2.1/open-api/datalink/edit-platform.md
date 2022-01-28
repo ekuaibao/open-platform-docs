@@ -68,7 +68,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 
 
 ## 失败响应
-请确保编辑的 `平台ID` 是真实存在的，否则会返回如下响应：
+请确保编辑的 `应用ID/平台ID` 是真实存在的，否则会返回如下响应：
 ```json
 {
     "errorCode": 400,

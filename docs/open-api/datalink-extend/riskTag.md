@@ -11,7 +11,7 @@ url="/api/openapi/v2/invoice/risk/label/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 单据集合 | 必填 | - | 单据集合 |
+| **ids** | Array | 单据ID集合 | 必填 | - | [单据ID](/docs/open-api/flows/get-forms-details-byCode)获取 |
 
 ## Query Parameters
 
@@ -29,11 +29,11 @@ curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v2/invoice/ri
 {
     "items": [
         {
-            "flowId": "j7sbyDMhYUpU00",
+            "flowId": "j7sbyDMhYUpU00",                 //单据ID
             "details": [
                 {
-                    "detailId": "hwhoupBjAvQ2ha",
-                    "riskTags": [
+                    "detailId": "hwhoupBjAvQ2ha",       //费用明细ID
+                    "riskTags": [                       //单据风险标签
                         {
                             "tagName": "存在疑似发票重复",
                             "type": "INVOICE_REPEAT_VERIFICATION",
@@ -53,8 +53,14 @@ curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v2/invoice/ri
 }
 ```
 
+参数 `ids`（单据ID集合）对应的单据没有风险标签或者单据不存在时，返回为空：
+```json
+{
+    "items": []
+}
+```
 ## 失败响应
-参数 `ids` 为必填项，不可为空，否则请求无效，返回以下报错：
+参数 `ids`（单据ID集合）为必填项，不可为空，否则请求无效，返回以下报错：
 ```json
 {
     "servlet": "org.glassfish.jersey.servlet.ServletContainer-23df29c6",

@@ -20,7 +20,7 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/byDataLinkIds"
 | **ids** | Array | 业务对象实例ID | 必填 | - | 可通过[获取行程管理业务对象列表](/docs/open-api/datalink/get-tripManager-order)获取 |
 
 :::tip
-- 例如：“行程管理”-“行程”分类的业务对象ID可以在单据详情里面获取到
+- 例如：“行程管理”-“行程”分类的业务对象ID可以在单据详情里面获取到。
 
   ![image](images/行程业务对象ID获取.png)
 :::
@@ -40,7 +40,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 {
 	"items": [
         {
-			"id": "gyMbDPToxUnQ00", //业务对象ID
+			"id": "gyMbDPToxUnQ00",                 //业务对象ID
 			"version": 2,
 			"active": true,
 			"createTime": 1600942574851,
@@ -50,7 +50,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 			"code": "TRIP202009240000000002",
 			"corporationId": "kRsbl5WsyMmg00",
 			"form": {
-				"E_0ee20b9ed9cade87bc00_code": "TRIP202009240000000002", //业务对象编码
+				"E_0ee20b9ed9cade87bc00_code": "TRIP202009240000000002",   //业务对象编码
 				"E_0ee20b9ed9cade87bc00_name": "广东省/广州市/广州市区",     //业务对象名称
 				"E_0ee20b9ed9cade87bc00_住宿地": "[{\"key\":\"2123\",\"label\":\"广州市区\"}]",
 				"E_0ee20b9ed9cade87bc00_出行人": [
@@ -77,8 +77,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 			"ledgerAmountModel": null,
 			"totalCount": 0,
 			"useCount": 0,
-			"entityId": "7cea0b9edcc64ec06400", //业务实体对象ID
-			"platformId": "5NgbDJDaTEuQ00", //业务扩渣平台ID
+			"entityId": "7cea0b9edcc64ec06400", //业务对象ID
+			"platformId": "5NgbDJDaTEuQ00",     //自建应用ID
 			"source": "FLOW",
 			"masterId": null,
 			"index": 0,
@@ -92,7 +92,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 				"departmentsIncludeChildren": false
 			},
 			"visible": true,
-			"ownerId": "kRsbl5WsyMmg00:pgEbDN7NbIg000", //员工ID
+			"ownerId": "kRsbl5WsyMmg00:pgEbDN7NbIg000",    //员工ID
 			"operatorId": "kRsbl5WsyMmg00:pgEbDN7NbIg000", //操作者ID
 			"sourceId": "MCAbDPTiSA2w00",
 			"flowCounts": {}

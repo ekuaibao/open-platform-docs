@@ -1,4 +1,4 @@
-# 饿了么
+# 获取【饿了么】业务对象数据
 
 import Control from "@theme/Control";
 
@@ -23,17 +23,16 @@ url="/api/openapi/v2/extension/ELEM/object/`objectId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **index** | Number | 当前页        | 必填  | - | 当前页 |
-| **count** | Number | 查询数        | 必填  | - | 查询数 |
-| **ids**   | Array  | 业务对象实例id | 非必填 | - | 按照业务对象实例的id查询详情 |
+| **ids**   | Array  | 业务对象实例ID数组 | 非必填 | - | 按照[业务对象实例的ID](/docs/open-api/datalink/get-entity-info)查询详情 |
+| **index** | Number |  开始索引           | 非必填 | - | 从 `1` 开始，不可为 `0` |
+| **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `1000` |
 
 ## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extension/ELM/object/order/search?accessToken=Ts0byCA-_A4M00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
---data-raw '
-{
+--data-raw '{
     "index":1,
     "count":10,
     "ids":["b41a0b811ce2ef06ac00"]
@@ -48,21 +47,21 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
         {
             "id": "68Ib7YRbTcr400",
             "ownerId": null,
-            "visibility": { //可见性
-                "fullVisible": true, //是否全员可见 true=全员； false=部分员工可见
-                "staff": [], //员工白名单
-                "department": [], //部门白名单
-                "role": [] //角色白名单
+            "visibility": {                //可见性
+                "fullVisible": true,       //是否全员可见；true=全员；false=部分员工可见
+                "staff": [],               //员工白名单
+                "department": [],          //部门白名单
+                "role": []                 //角色白名单
             },
             "useCount": 0,
             "totalCount": 0,
-            "active": true, //是否有效
-            "entityId": "ce240b1facd3d8051c00", //实体ID
+            "active": true,                                  //是否有效
+            "entityId": "ce240b1facd3d8051c00",              //实体ID
             "E_f7470b1fb59d17803000_code": "1sob7YOBKIiY00", //对象编码
-            "E_f7470b1fb59d17803000_name": "饿了么&120", //对象名称
+            "E_f7470b1fb59d17803000_name": "饿了么&120",     //对象名称
             "E_f7470b1fb59d17803000_stage": "requisition",
-            "E_f7470b1fb59d17803000_state": "paid", //支付状态
-            "E_f7470b1fb59d17803000_title": "饿了么阶梯价", //标题
+            "E_f7470b1fb59d17803000_state": "paid",          //支付状态
+            "E_f7470b1fb59d17803000_title": "饿了么阶梯价",   //标题
             "E_f7470b1fb59d17803000_amount": {
                 "standard": "120.00",
                 "standardUnit": "元",
@@ -151,7 +150,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 
 
 ## 失败响应
-`objectId` 不可传未支持的类型，否则返回一下内容：
+`objectId` 不可传未支持的类型，否则报错如下：
 ```json
 {
     "errorCode": 400,

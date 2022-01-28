@@ -23,18 +23,18 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/organiza
 {
     "items": [
         {
-            "corporationId": "34A73EyI8A0w00",             //企业id
-            "staffId": "34A73EyI8A0w00:VV89AHfyJo2E00",    //授权发起人id
-            "delegateeId": "34A73EyI8A0w00:rgobwK3yUoqw00",//被委托人id
+            "corporationId": "34A73EyI8A0w00",             //企业ID
+            "staffId": "34A73EyI8A0w00:VV89AHfyJo2E00",    //授权发起人ID
+            "delegateeId": "34A73EyI8A0w00:rgobwK3yUoqw00",//被委托人ID
             "name": "委托授权",                            //授权名称
             "remark": "备注",                              //授权备注
             "startTime": 1612339282021,                   //授权开始时间
             "endTime": null,                              //授权结束时间
-            "originalIds": [                              //授权模板源模板id集合
+            "originalIds": [                              //授权的单据源模板ID集合
                 "ms0cgHfmF1fU00",
                 "U7IcgM1h6ZEo00"
             ],
-            "id": "jSIcih1RiNHg00"                        //委托关系数据id
+            "id": "jSIcih1RiNHg00"                        //委托关系数据ID
         },
         {
                 "corporationId": "34A73EyI8A0w00",

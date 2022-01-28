@@ -18,8 +18,8 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **entityId** | String | 行程管理的业务对象ID  | 必填 | - | 行程管理的业务对象ID |
-| **start**    | Int    | 起始值              | 必填 | - | 从0开始搜索  |
-| **count**    | Int    | 查询总数            | 必填 | - | 每批次查询总数不可大于100条 |
+| **start**    | Int    | 起始值              | 必填 | - | 从 `0` 开始搜索  |
+| **count**    | Int    | 查询总数            | 必填 | - | 最大不能超过 `100` 条 |
 
 - 行程管理业务对象ID获取见下图
 
@@ -32,10 +32,10 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders"
   ![image](images/行程管理业务对象释义.png)
 
 :::tip
-3个飞机的 `entityId` 不一样，里面的字段也不一样:
- - 1.行程里的飞机是申请单审批通过之后生成，然后传给商城。
- - 2.商城根据行程下完单后，会推送订单信息给费控，生成订单业务对象，一般来说报销单中需要关联的就是订单业务对象，订单中会有具体的订单信息，例如订单金额、改签费、服务费之类的字段。
- - 3.费控接收订单的时候，同时保存成订单和对账单，其数据大部分一致，飞机退改签时，会生成同一条订单，但是对账单是多个。
+3个 **飞机** 的 `entityId` 不一样，里面的字段也不一样:
+  - 1.行程里的飞机是申请单审批通过之后生成，然后传给商城。
+  - 2.商城根据行程下完单后，会推送订单信息给费控，生成订单业务对象，一般来说报销单中需要关联的就是订单业务对象，订单中会有具体的订单信息，例如订单金额、改签费、服务费之类的字段。
+  - 3.费控接收订单的时候，同时保存成订单和对账单，其数据大部分一致，飞机退改签时，会生成同一条订单，但是对账单是多个。
 :::
 
 ## CURL
@@ -54,16 +54,16 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 ```json
 {
     "items": {
-        "total": 2152,    //业务对象-总订单数
+        "total": 2152,                       //业务对象-总订单数
         "data": [
             {
-                "dataLink": {     //订单业务对象
+                "dataLink": {                //订单业务对象
                     "id": "hQYc20Y4W8is00", 
                     "useCount": 0,          
                     "totalCount": 1,        
                     "ownerId": null,        
-                    "visibility": {            //可见范围信息
-                        "fullVisible": false,//是否全员可见(true=全部； false=部分)
+                    "visibility": {          //可见范围信息
+                        "fullVisible": false,//是否全员可见(true=全部；false=部分)
                         "staff": [],         //员工ID集
                         "department": [],    //部门ID集
                         "role": []           //角色ID集

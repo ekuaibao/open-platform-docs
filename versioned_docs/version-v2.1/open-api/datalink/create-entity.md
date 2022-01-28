@@ -32,7 +32,7 @@ url="/api/openapi/v2/datalink/createDataLinkEntity"
 | **&emsp; ∟ disableStrategy**        | String  | 停用方式                    | 必填   | -     | `MANUAL_ADMIN` : 管理员停启用<br/>`LIMIT_COUNT` : 限制引用次数 |
 | **&emsp; ∟ maxUsageCount**          | Number  | 最大引用次数                 | 非必填 | 0     | 该参数不可省略，可传 `""`。<br/>仅当“限制引用次数”时有效 |
 | **&emsp; ∟ importMethod**           | Array   | 导入方式                    | 必填   | -     | `excel` : Excel<br/>`api` : API<br/>`ebot` : EBot<br/>`flow` : 单据写入<br/>`directly` : 直接写入 |
-| **&emsp; ∟ fieldMapping**           | Object  | 业务对象赋值规则              | 必填   | -     | 设置业务对象字段赋值给单据字段的规则，参数格式见CURL示例 |
+| **&emsp; ∟ fieldMapping**           | Object  | 业务对象赋值规则              | 必填   | -     | 设置业务对象字段赋值给单据字段的规则，参数格式见 **CURL** 示例 |
 | **&emsp; ∟ fields**                 | Array   | 业务对象字段配置              | 必填   | -     | 业务对象字段配置信息 |
 | **&emsp; &emsp; ∟ name**            | String  | 字段实际名称                 | 非必填 | -      | 字段实际名称，“名称”、“编码”两个系统字段此参数必填 |
 | **&emsp; &emsp; ∟ label**           | String  | 字段显示名称                 | 必填   | -     | 字段显示名称 |

@@ -11,7 +11,7 @@ url="/api/openapi/v2/organization/delegate/approve/$`staffId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **staffId** | String | 授权发起人id | 必填 | - | 值为[员工ID](/docs/open-api/corporation/get-staff-ids) |
+| **staffId** | String | 授权发起人ID | 必填 | - | 值为[员工ID](/docs/open-api/corporation/get-staff-ids) |
 
 ## Query Parameters
 
@@ -29,18 +29,18 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/organizat
 {
     "items": [
         {
-            "corporationId": "34A73EyI8A0w00",              //企业id
-            "staffId": "34A73EyI8A0w00:VV89AHfyJo2E00",     //授权发起人id
-            "delegateeId": "34A73EyI8A0w00:rgobwK3yUoqw00", //被委托人id
-            "name": "委托授权",                              //授权名称
+            "corporationId": "34A73EyI8A0w00",              //企业ID
+            "staffId": "34A73EyI8A0w00:VV89AHfyJo2E00",     //授权发起人ID
+            "delegateeId": "34A73EyI8A0w00:rgobwK3yUoqw00", //被委托人ID
+            "name": "委托授权",                             //授权名称
             "remark": "备注",                               //授权备注
             "startTime": 1612339282021,                     //授权开始时间
             "endTime": null,                                //授权结束时间
-            "originalIds": [                                //授权模板源模板id集合
+            "originalIds": [                                //授权的单据源模板ID集合
                 "ms0cgHfmF1fU00",
                 "U7IcgM1h6ZEo00"
             ],
-            "id": "jSIcih1RiNHg00"                          //委托关系数据id
+            "id": "jSIcih1RiNHg00"                          //委托关系数据ID
         },
         {
             "corporationId": "34A73EyI8A0w00",

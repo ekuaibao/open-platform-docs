@@ -1,5 +1,5 @@
 # 获取业务对象
-获取某个扩展的所有业务对象。
+获取某个自建应用下的所有业务对象。
 
 import Control from "@theme/Control";
 

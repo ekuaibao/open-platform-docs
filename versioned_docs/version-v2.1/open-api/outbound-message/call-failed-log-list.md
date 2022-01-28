@@ -1,5 +1,5 @@
 # 调用失败日志列表
-如果Ebot出站消息调用失败，则会生成失败日志。外部服务器可以根据自身需求获取失败日志(如定时、定期获取)。
+出站消息调用失败，会生成失败日志。外部服务器可以根据自身需求获取失败日志(如定时、定期获取)。
 
 import Control from "@theme/Control";
 
@@ -14,8 +14,8 @@ url="/api/openapi/v1/outboundMessageLogs"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token	  | 必填   | -    | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **messageType** | String | 消息类型       | 非必填 | flow | `message` : 审批事件 &emsp; `flow` : 流程(EBOT) <br/> `repayment` : 还款事件 &emsp; `dataLink` : 业务对象变更事件 |
-| **startDate**   | Long   | 开始时间（毫秒） | 必填   | -    | 开始时间（毫秒） |
-| **endDate**     | Long   | 结束时间（毫秒） | 必填   | -    | 结束时间（毫秒） |
+| **startDate**   | Long   | 开始时间（毫秒） | 必填   | -    | 毫秒级时间戳 |
+| **endDate**     | Long   | 结束时间（毫秒） | 必填   | -    | 毫秒级时间戳 |
 
 ## CURL
 ```shell
@@ -29,23 +29,23 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/outboundM
 {
     "items": [
         {
-            "name":"名称1", // 出站消息名称
-            "flowId":"110000", // 单据ID
-            "nodeName":"节点名称", // 节点名称
-            "request":{ // 请求参数
+            "name":"名称1",         //出站消息名称
+            "flowId":"110000",     //单据ID
+            "nodeName":"节点名称",  //节点名称
+            "request":{            //请求参数
                 "aa":"bb"
             },
-            "response":{ // 返回结果
+            "response":{           //返回结果
                 "aa":"bb"
             },
-            "state":"FAILURE", // 失败日志
+            "state":"FAILURE",     //失败日志
             "id":"222",
             "version":4,
-            "active":true, // 是否有效
-            "createTime":1505372614157, // 创建时间
+            "active":true,                    //是否有效
+            "createTime":1505372614157,       //创建时间
             "updateTime":1505372614157,
-            "corporationId":"Uq08cj71400000", // 企业id
-            "messageType":"flow" // 消息类型
+            "corporationId":"Uq08cj71400000", //企业ID
+            "messageType":"flow"              //消息类型
         }
     ]
 }

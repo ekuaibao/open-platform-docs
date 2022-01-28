@@ -13,7 +13,7 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **objectId** | String | 发票类型 | 必填 | - | 见下面的发票类型表格 | 
+| **objectId** | String | 发票类型 | 必填 | - | [见下面的发票类型表格](/docs/open-api/datalink-extend/get-entity-invoice#objectid发票类型) | 
 
 ## Query Parameters
 
@@ -21,28 +21,29 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-## Body Parameters(Body不能为空)
+## Body Parameters（Body不能为空）
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **ids**   | Array  |  业务对象实例ID数组   | 非必填 | - | 按照[业务对象实例ID(发票ID)](/docs/open-api/datalink-extend/get-flow-invoice)查询详情，<br/>发票实体保存在系统预置业务对象里 |
-| **codes** | Array  |  业务对象实例CODE数组 | 非必填 | - | 按照业务对象实例的code查询详情，<br/>发票实体保存在系统预置业务对象里 |
-| **index** | Number |  当前页             | 非必填 | - | 当前页 |
+| **codes** | Array  |  业务对象实例CODE数组 | 非必填 | - | 按照业务对象实例的CODE查询详情，<br/>发票实体保存在系统预置业务对象里 |
+| **index** | Number |  开始索引           | 非必填 | - | 从 `1` 开始，不可为 `0` |
 | **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `1000` |
 
 :::tip
- - 业务对象实例ID（即发票ID）可以通过[获取单据详情](/docs/open-api/flows/get-forms-details)接口或[根据单据编号或单据ID查询发票和其明细ID](/docs/open-api/datalink/get-flow-invoice)接口获取。
- - 参数优先级 `ids` > `codes` > `index` 和 `count` ，多组参数均传值时，按优先级最高的开始生效。
- - `ids` 、 `codes` 参数，接口没有校验参数是否在系统中存在，获取不到数据时，请检查参数的准确性。
- - `ids` 、 `codes` 不填时， `index` 和 `count` 两个参数必填，只要传了index和count参数，成功响应中的“count”表示总数。
- - `index` 和 `count` 不填时， `ids` 或 `codes` 参数必填，任意填写其一时，成功响应中的“count”表示有效参数量，而非总数。
+- 业务对象实例ID（即发票ID）可以通过[获取单据详情](/docs/open-api/flows/get-forms-details)接口或[根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice)接口获取。
+- 参数优先级 `ids` > `codes` > `index` 和 `count` ，多组参数均传值时，按优先级最高的开始生效。
+- `ids` 、 `codes` 参数，可以为空：`[]`，但是不可传`[null]`，否则会报错。
+- `ids` 、 `codes` 参数，接口没有校验参数是否在系统中存在，获取不到数据时，请检查参数的准确性。
+- `ids` 、 `codes` 不填时， `index` 和 `count` 两个参数必填，只要传了 `index` 和 `count` 参数，成功响应中的 **“count”** 表示总数。
+- `index` 和 `count` 不填时， `ids` 或 `codes` 参数必填，任意填写其一时，成功响应中的 **“count”** 表示有效参数量，而非总数。
 :::
 
 
 ## objectId发票类型
 
-| objectId       | 发票类型    | 
-| :--------- | :------ |
+| objectId | 发票类型 | 
+| :--- | :--- |
 | **invoice**         | 发票（包含：增值税发票、增值税普通发票/卷票、二手车销售统一发票、机动车销售统一发票）|
 | **other**           | 其它 |
 | **taxi**            | 出租车票 |
@@ -52,7 +53,7 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 | **tolls**           | 过路费发票 |
 | **fixed**           | 定额发票 |
 
-## 发票类别(E\_system\_发票主体\_发票类别)介绍如下
+## 发票类别（E\_system\_发票主体\_发票类别）介绍如下
 | 字段名 | 对应发票类型 |
 | :---  | :---      |
 | **DIGITAL_NORMAL**  | 增值税电子普票 |
@@ -846,7 +847,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 ## 失败响应
-当 `index` = `0` 时，报错如下：
+当 `index`（开始索引）= `0` 时，报错如下：
 ```json
 {
     "errorCode": 400,

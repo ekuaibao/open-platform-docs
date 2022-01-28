@@ -1,4 +1,4 @@
-# 统一开票方
+# 获取统一开票方
 
 import Control from "@theme/Control";
 
@@ -23,12 +23,12 @@ curl --location --request get 'http://app.ekuaibao.com/api/openapi/v1/invoice/un
 {
     "items": [
         {
-            "id": "LCccnaJWo4Xc00",   //开票方id
+            "id": "LCccnaJWo4Xc00",     //开票方ID
             "version": 1,
             "active": true,
             "createTime": 1613705055537,
             "updateTime": 1613705055537,
-            "name": "测试统一开票001",    //开票方名称
+            "name": "测试统一开票001",   //开票方名称
             "nameSpell": "CESHITONGYIKAIPIAO001",
             "code": "",
             "corporationId": "cWQc8EeLU41A00",
