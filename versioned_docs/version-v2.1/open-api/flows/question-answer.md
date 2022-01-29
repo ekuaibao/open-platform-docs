@@ -12,6 +12,6 @@ A: 三种方式如下：
 
 - 第三种方式：[获取单据列表(包含已删除单据)](/docs/open-api/flows/get-forms-sequences) / [获取指定状态单据列表(包含已删除单据)](/docs/open-api/flows/get-forms-sequences-byState)
 
- ![据列表单据接口中的Id](images/单据列表单据ID.png)
+ ![image](images/单据列表单据ID.png)
 
 ---
