@@ -1,4 +1,4 @@
-# 修改收款账户
+# 更新收款账户
 根据收款账户的 ID 来修改该账户的收款信息。
 
 import Control from "@theme/Control";
@@ -32,36 +32,36 @@ url="/api/openapi/v2/payeeInfos/$`id`"
 | **owner**           | String | 所属类型    | 必填 | - | `INDIVIDUAL` : 个人<br/>`CORPORATION` : 企业 |
 | **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
 | **province**        | String | 银行所在省   | 非必填 | - | 银行所在省 |
-| **bankLinkNo**      | String | 银联号      | 非必填 | - | 当支行名称与易快报系统不匹配时，<br/>可通过银联号匹配 |
-| **certificateType** | String | 证件类型    | 非必填 | - | 详细信息见下方【证件类型对照表】|
+| **bankLinkNo**      | String | 银联号      | 非必填 | - | **当支行名称与易快报系统不匹配时，<br/>可通过银联号匹配** |
+| **certificateType** | String | 证件类型    | 非必填 | - | 详细信息见下方【[证件类型对照表](/docs/open-api/pay/new-account#证件类型对照表)】 |
 | **certificateNo**   | String | 证件号     | 非必填 | - | 证件号 |
 | **remark**          | String | 备注       | 非必填 | - | 备注信息 |
 | **visibility**                          | Object   | 可见范围       | 非必填 | - | 可见范围对象 |
 | **&emsp; ∟ fullVisible**                | Boolean | 是否全员可见    | 必填 | - | `true` : 全员可见<br/>`false` : 部分可见<br/>部分可见则仅有白名单中可见 |
-| **&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
-| **&emsp; ∟ staffs**                     | Array   | 员工白名单      | 必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
-| **&emsp; ∟ departments**                | Array   | 部门白名单      | 必填 | - | 值为[部门id](/docs/open-api/corporation/get-departments) |
+| **&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
+| **&emsp; ∟ staffs**                     | Array   | 员工白名单      | 必填 | - | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp; ∟ departments**                | Array   | 部门白名单      | 必填 | - | 值为[部门ID](/docs/open-api/corporation/get-departments) |
 | **&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属部门是否可见 | 必填 | - | `true` : 可见 &emsp; `false` : 不可见 |
 
 ### 证件类型对照表
 
 | 证件类型 | code |
 | :--- | :--- |
-| 居民身份证                | 01 |
-| 临时身份证                | 02 |
-| 护照                     | 03 |
-| 户口簿                   | 04 |
-| 军人身份证                | 05 |
-| 武装警察身份证             | 06 |
-| 港澳台居民往来内地通行证     | 07 |
-| 外交人员身份证             | 08 |
-| 外国人居留许可证            | 09 |
-| 边民出入境通行证            | 10 |
-| 其它                     | 11 |
-| 澳居民来往内地通行证(香港)   | 47 |
-| 港澳居民来往内地通行证(澳门) | 48 |
-| 湾居民来往大陆通行证        | 49 |
-| 纳税人识别号(TIN)         | 54 |
+| **居民身份证**                | 01 |
+| **临时身份证**                | 02 |
+| **护照**                     | 03 |
+| **户口簿**                   | 04 |
+| **军人身份证**                | 05 |
+| **武装警察身份证**             | 06 |
+| **港澳台居民往来内地通行证**     | 07 |
+| **外交人员身份证**             | 08 |
+| **外国人居留许可证**            | 09 |
+| **边民出入境通行证**            | 10 |
+| **其它**                     | 11 |
+| **澳居民来往内地通行证(香港)**   | 47 |
+| **港澳居民来往内地通行证(澳门)** | 48 |
+| **湾居民来往大陆通行证**        | 49 |
+| **纳税人识别号(TIN)**         | 54 |
 
 ## CURL
 ```json
@@ -104,7 +104,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
         "corporationId": "JOYbpjPP-E2Q00", //企业ID
         "id": "u0gbxl3vQw7k00",      //账户ID
         "name": "tiger.guoyj",       //账户名
-        "type": "PERSONAL",          //账户类型（PUBLIC=对公账户,PERSONAL=个人账户）
+        "type": "PERSONAL",          //账户类型（PUBLIC=对公账户，PERSONAL=个人账户）
         "owner": "CORPORATION",      //所属类型（INDIVIDUAL=个人，CORPORATION=企业）
         "cardNo": "84745996999",     //银行卡号
         "logs": [                    //日志信息
@@ -171,7 +171,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
 ```
 
 ## 失败响应
-当传入要修改的账户ID不正确时，报错如下：
+当传入要修改的 **账户ID** 不正确时，报错如下：
 ```json
 {
     "errorCode": 412,

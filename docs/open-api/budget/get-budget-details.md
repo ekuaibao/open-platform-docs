@@ -1,5 +1,5 @@
-# 获取预算树详细信息
-返回单个预算树的全部信息，包括预算执行情况。
+# 获取预算包详细信息
+返回单个预算包的全部信息，包括预算执行情况。
 
 import Control from "@theme/Control";
 
@@ -9,14 +9,14 @@ url="/api/openapi/v2/budgets/$`budgetId`"
 />
 
 :::caution
-不推荐使用，本接口依赖于服务的性能，当后台判定要查询的预算树超过2000个节点时此接口就会报错。
+- 不推荐使用，本接口依赖于服务的性能，当后台判定要查询的预算包超过2000个节点时，此接口就会报错。
 :::
 
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String | 预算树ID | 必填 | - | [预算树ID获取](/docs/open-api/budget/get-budget-list) |
+| **budgetId** | String | 预算包ID | 必填 | - | [预算包ID获取](/docs/open-api/budget/get-budget-list) |
 
 ## Query Parameters
 
@@ -36,18 +36,18 @@ url="/api/openapi/v2/budgets/$`budgetId`"
 {
     "value": {
         "budgetInfo": {
-            "budgetInfo": {                     //预算树信息
+            "budgetInfo": {                     //预算包信息
                 "id": "u6wbqiMW0Yqo00",         //预算ID
                 "version": 1,                   //预算版本
-                "active": true,                 //是否激活
+                "active": true,                 //是否激活，true：发布，false：草稿
                 "createTime": 1597314328513,
                 "updateTime": 1597994882124,
-                "name": "预算2020",              //预算名称
+                "name": "预算2020",              //预算包名称
                 "nameSpell": "YUSUAN2020",  
-                "corporationId": "zKIbl2WX4I8I00",   //企业编号
+                "corporationId": "zKIbl2WX4I8I00",   //企业ID
                 "period": {                          //预算年度
                         "annual": "2020",            //控制年度
-                        "period": "MONTH",           //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制。
+                        "period": "MONTH",           //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
                         "startTime": 1577857343984,  //非周期控制开始时间
                         "endTime": 1609393343984     //非周期控制结束时间
                 },
@@ -62,19 +62,19 @@ url="/api/openapi/v2/budgets/$`budgetId`"
                 "isRollCalc": false        //预算是否是滚动预算
             },
             "tree": {
-                "id": "1597314178620",     //预算节点id
+                "id": "1597314178620",     //预算节点ID
                 "code": "1001",            //节点编号
                 "content": [               //节点维度
                             {
-                                "dimensionType":"FEE_TYPE",               //维度种类(DEPART: 部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工)
+                                "dimensionType":"FEE_TYPE",               //维度种类（DEPART：部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工）
                                 "dimensionId":"feeTypeId",                //维度种类的标识ID
-                                "mustLeaf":true,                          //维度是否必定为叶节点(本部)
-                                "contentId":"zKIbl2WX4I8I00:allowance"    //维度内容id
+                                "mustLeaf":true,                          //维度是否必定为叶子节点（本部），true：非本级，false：本级
+                                "contentId":"zKIbl2WX4I8I00:allowance"    //维度内容ID
                             }
                 ],
                 "moneys": [                          //节点金额
                     {
-                        "nodeId": "1597314178620",   //预算节点id
+                        "nodeId": "1597314178620",   //预算节点ID
                         "periodTime": "1",           //第几个周期
                         "budgetMoney": 355000,       //预算总额
                         "extendMoneys": {}           //参考金额

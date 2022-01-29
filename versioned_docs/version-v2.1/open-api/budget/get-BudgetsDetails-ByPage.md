@@ -1,6 +1,6 @@
-# 获取预算节点和子节点详细信息(分页)
+# 获取预算节点和子节点详细信息
 
-返回查询的预算节点和其子节点信息，包括预算执行情况。
+返回查询的预算节点和其子节点信息，包括预算执行情况（支持分页）。
 
 import Control from "@theme/Control";
 
@@ -13,7 +13,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/query"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String  | 预算树ID | 必填 | - | [预算树ID获取](/docs/open-api/budget/get-budget-list) |
+| **budgetId** | String  | 预算包ID | 必填 | - | [预算包ID获取](/docs/open-api/budget/get-budget-list) |
 
 ## Query Parameters
 
@@ -21,7 +21,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/query"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**  | String | 认证token      | 必填  | -   | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **nodeId**       | String | 指定查询的节点ID | 非必填 | -   | [预算节点ID获取](/docs/open-api/budget/get-budget-details)，为空就是查询根节点 |
-| **start**        | Number | 查询开始位置     | 必填  | 0   | 查询开始位置 |
+| **start**        | Number | 查询开始位置     | 必填  | 0   | 从 `0` 开始 |
 | **count**        | Number | 查询数量        | 必填  | 100 | 不可超过 `100` |
 
 ## CURL
@@ -39,7 +39,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
             {
                 "id": "rd0bqiMW0Yr000",
                 "version": 10,  
-                "active": true,         //是否激活
+                "active": true,         //是否激活，true：发布，false：草稿
                 "createTime": 1597314328513,
                 "updateTime": 1597314328513,
                 "nameSpell": "",
@@ -48,9 +48,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                 "nodeId": "1597314178620",          //节点ID
                 "content": [                        //节点维度
                          {
-                             "dimensionType":"FEE_TYPE",            //维度种类(DEPART: 部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工)
+                             "dimensionType":"FEE_TYPE",            //维度种类（DEPART：部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工）
                              "dimensionId":"feeTypeId",             //维度种类的标识ID
-                             "mustLeaf":true,                       //维度是否必定为叶节点(本部)，true:非本级 
+                             "mustLeaf":true,                       //维度是否必定为叶子节点（本部），true：非本级，false：本级 
                              "contentId":"zKIbl2WX4I8I00:allowance" //维度内容ID
                          }
                 ],
@@ -62,7 +62,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                         "extendMoneys": {}          //参考金额
                     }
                 ],
-                "control": "FORBID",                //预算节点的控制方式(ALLOW：允许，WARN：警告，FORBID：禁止，IGNORED：什么都不做)
+                "control": "FORBID",                //预算节点的控制方式（ALLOW：允许，WARN：警告，FORBID：禁止，IGNORED：什么都不做）
                 "overControllerRate": 100,          //预算超标比例
                 "budgetId": "u6wbqiMW0Yqo00",       //预算树ID
                 "budgetVersion": 1,                 //预算版本
@@ -89,14 +89,14 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                 "budgetMoney": 75000,     //预算金额
                 "confirmedMoney": 0,      //已使用金额
                 "occupiedMoney": 30,      //占用金额
-                "budgetMoneyRoll": 0,     //预算金额(滚动)
-                "confirmedMoneyRoll": 0,  //已使用金额(滚动)
-                "occupiedMoneyRoll": 30,  //占用金额(滚动)
+                "budgetMoneyRoll": 0,     //预算金额（滚动）
+                "confirmedMoneyRoll": 0,  //已使用金额（滚动）
+                "occupiedMoneyRoll": 30,  //占用金额（滚动）
                 "dimensionContents": [    //预算节点占用的全维度
                     {
-                        "dimensionType": "FEE_TYPE",            //维度种类(DEPART: 部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工)
+                        "dimensionType": "FEE_TYPE",            //维度种类（DEPART：部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工）
                         "dimensionId": "feeTypeId",             //维度种类的标识ID
-                        "mustLeaf": true,                       //维度是否必定为叶节点(本部)
+                        "mustLeaf": true,                       //维度是否必定为叶子节点（本部），true：非本级，false：本级
                         "contentId": "zKIbl2WX4I8I00:catering"  //维度内容ID
                     }
                 ],
@@ -106,15 +106,15 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 
         ],
         "count": 3,              //查询节点和其子节点的总数
-        "visibilities": [        //预算可见性(预算负责人)
+        "visibilities": [        //预算可见性（预算负责人）
             {
                 "id": "6pEbqiMW0Yrc00",
                 "version": 2,
                 "active": true,
                 "createTime": 1597314328513,
                 "updateTime": 1597994882143,
-                "corporationId": "zKIbl2WX4I8I00",  //企业编号
-                "budgetId": "u6wbqiMW0Yqo00",       //预算树ID
+                "corporationId": "zKIbl2WX4I8I00",  //企业ID
+                "budgetId": "u6wbqiMW0Yqo00",       //预算包ID
                 "budgetVersion": 1,                 //预算版本
                 "nodeId": "1597314178620",          //预算节点ID
                 "roleDefIds": ["角色ID"],           //角色ID集合
@@ -145,7 +145,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 ```
 
 ## 失败响应
-`budgetId` 不存在时， 返回此响应数据：
+`budgetId`（预算包ID）不存在时， 返回如下响应结果：
 ```json
 {
     "errorCode": 400,
@@ -156,7 +156,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 }
 ```
 
-程序内部错误， 返回此响应数据， 可尝试再次请求获取数据：
+程序内部错误，返回此响应数据， 可尝试再次请求获取数据：
 ```json
 {
     "errorCode": 500,

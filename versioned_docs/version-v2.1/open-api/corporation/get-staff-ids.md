@@ -8,6 +8,10 @@ method="POST"
 url="/api/openapi/v1/staffs/getStaffIds"
 />
 
+:::caution
+- 本接口只能查询到 **启用** 的员工信息，如果需要查询已停用的员工信息，请通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)查询到全部已停用的员工列表，再进行匹配。
+:::
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
@@ -23,7 +27,6 @@ url="/api/openapi/v1/staffs/getStaffIds"
 
 :::tip
 - 第三方ID指钉钉ID、企业微信open ID、云之家ID等，易快报原生版本没有第三方ID。
-- 该接口只能查询到未停用的员工信息，如果需要查询已停用员工信息，请通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)查询到全部已停用的员工列表，再进行匹配。
 :::
 
 ## CURL

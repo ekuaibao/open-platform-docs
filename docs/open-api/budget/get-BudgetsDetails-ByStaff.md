@@ -1,6 +1,6 @@
-# 根据员工获取对应权限预算节点列表
+# 获取指定员工对应权限的预算节点列表
 
-根据传入的预算树ID、员工ID、节点ID，判断员工是否有权限访问此节点，返回有权限访问的节点ID。
+根据传入的 `预算包ID`、`员工ID`、`节点ID`，判断员工是否有权限访问此节点，返回有权限访问的节点ID。
 
 import Control from "@theme/Control";
 
@@ -13,8 +13,8 @@ url="/api/openapi/v2/budgets/$`budgetId`/staff/$`staffId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String | 预算树ID | 必填 | - | [预算树ID获取](/docs/open-api/budget/get-budget-list) |
-| **staffId**  | String | 员工ID   | 必填 | - | [查询员工ID](/docs/open-api/corporation/get-staff-ids) |
+| **budgetId** | String | 预算包ID | 必填 | - | [预算包ID获取](/docs/open-api/budget/get-budget-list) |
+| **staffId**  | String | 员工ID   | 必填 | - | [员工ID获取](/docs/open-api/corporation/get-staff-ids) |
 
 ## Query Parameters
 
@@ -26,7 +26,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/staff/$`staffId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **nodeIds** | Array | 指定查询的节点ID（可多个） | 必填 | - | [节点ID获取](/docs/open-api/budget/get-BudgetsDetails-ByPage) |
+| **nodeIds** | Array | 指定查询的节点ID（可多个） | 必填 | - | [节点ID获取](/docs/open-api/budget/get-budget-details) |
 
 ## CURL
 ```json
@@ -51,14 +51,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 ```
 
 ## 失败响应
-传入的节点ID均无权限时，响应如下：
+传入的 `nodeIds`（节点ID）均无权限时，返回如下：
 ```json
 {
     "items": []
 }
 ```
 
-不传 `nodeIds` 参数时，响应如下：
+不传 `nodeIds`（节点ID）参数时，返回如下：
 ```json
 {
     "errorCode": 400,

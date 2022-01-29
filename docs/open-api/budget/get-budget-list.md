@@ -1,6 +1,6 @@
-# 获取预算树列表
+# 获取预算包列表
 
-返回企业下全部预算树信息，对于草稿状态的也会返回记录。开发者需要判断预算树所处的状态。
+返回企业下全部预算包信息，对于 **草稿** 状态的也会返回（需要判断预算包所处的状态取用数据）。
 
 import Control from "@theme/Control";
 
@@ -27,17 +27,17 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets?a
 {
     "items": [
         {
-            "id": "d8MalZSgiYh000",        //预算树id
+            "id": "d8MalZSgiYh000",        //预算包ID
             "version": 8,                  //预算版本
-            "active": true,                //是否激活
+            "active": true,                //是否激活，true：发布，false：草稿
             "createTime": 1578980543973,   //创建日期
             "updateTime": 1582353878353,   //更新日期
-            "name": "预算2020",            //预算名称
+            "name": "预算2020",            //预算包名称
             "nameSpell": "YUSUAN2020",
             "corporationId": "e4A8oQS29g0w00",  //企业编码
             "period": {                     //预算年度
                 "annual": "2020",           //控制年度
-                "period": "MONTH",          //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制。
+                "period": "MONTH",          //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
                 "startTime": 1577857343984, //非周期控制开始时间
                 "endTime": 1609393343984    //非周期控制结束时间
             },

@@ -1,4 +1,4 @@
-# 查询预算节点配置和节点路径信息
+# 获取预算节点配置和路径信息
 通过预算名称、预算编码查询符合条件的预算节点配置和节点路径信息（从根节点到查询节点之间的路径信息）。
 
 import Control from "@theme/Control";
@@ -12,7 +12,7 @@ url="/api/openapi/v2/budgets/searchBudgetNode/$`budgetInfoId`/$`budgetInfoVersio
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetInfoId**      | String  | 预算树ID | 必填 | - | [预算树ID获取](/docs/open-api/budget/get-budget-list) |
+| **budgetInfoId**      | String  | 预算包ID | 必填 | - | [预算包ID获取](/docs/open-api/budget/get-budget-list) |
 | **budgetInfoVersion** | String  | 预算版本 | 必填 | - | [预算版本获取](/docs/open-api/budget/get-budget-details) |
 
 ## Query Parameters
@@ -20,15 +20,15 @@ url="/api/openapi/v2/budgets/searchBudgetNode/$`budgetInfoId`/$`budgetInfoVersio
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token  | 必填   | -   | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **start**       | Number | 查询开始位置 | 非必填 | 0   | 查询开始位置 |
+| **start**       | Number | 查询开始位置 | 非必填 | 0   | 从 `0` 开始 |
 | **count**       | Number | 查询数量    | 非必填 | 100 | 不可超过 `100` |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**name** | String | 节点名称	 | 非必填  | - | 节点名称 | 
-|**code** | String | 节点编码	 | 非必填  | - | 节点编码 |
+|**name** | String | 节点名称	 | 非必填  | - | `name` 和 `code` 二选一必填 | 
+|**code** | String | 节点编码	 | 非必填  | - | `name` 和 `code` 二选一必填 |
 
 ## CURL
 ```json
@@ -141,7 +141,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 ```
 
 ## 失败响应
-参数传输错误， 返回此响应数据：
+`name`（节点名称）和 `code`（节点编码）二者均为空时，报错如下：
 ```json
 {
     "errorCode": 400,
@@ -152,5 +152,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 }
 ```
 
+整个 **Body Parameters** 参数为空时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "输入存在错误:\n- 缺少查询参数",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
 
 

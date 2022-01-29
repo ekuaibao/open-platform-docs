@@ -24,7 +24,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentAc
 {
 	"items": [
 		{
-			"id": "-nUafoDS-4k000",              //账户id
+			"id": "-nUafoDS-4k000",              //账户ID
 			"name": "中国工商银行付款账户",        //账户名称
 			"code": "codeo4tk",                  //账户编码
 			"detail": {                          //账户的银行信息
@@ -35,10 +35,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentAc
 					"province": "北京市",             //开户省份
 					"city": "北京市"                  //开户城市
 			},
-			"active": false,            //是否停用 true：未停用 false：已停用
-			"sort": "BANK",             //分类(银行=BANK,支付宝=ALIPAY,海外=OVERSEABANK,支票=CHECK,承兑汇票=ACCEPTANCEBILL,其他=OTHER,钱包= WALLET)
+			"active": false,            //是否停用（true：未停用 false：已停用）
+			"sort": "BANK",             //分类（银行=BANK，支付宝=ALIPAY，海外=OVERSEABANK，支票=CHECK，承兑汇票=ACCEPTANCEBILL，其他=OTHER，钱包= WALLET）
 			"visibility":{              //可见性
-                "fullVisible":true,		//是否全员可见(true=全部; false=部分)
+                "fullVisible":true,		//是否全员可见（true=全部; false=部分）
                 "staffs":null,			//员工ID集
                 "roles":null,			//角色ID集
                 "departments":null,		//部门ID集
