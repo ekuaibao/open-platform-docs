@@ -25,13 +25,13 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids**   | Array  |  业务对象实例id数组   | 非必填 | - | 按照[业务对象实例的id(发票ID)](/docs/open-api/datalink/get-flow-invoice)查询详情，<br/>发票实体保存在系统预置业务对象里 |
+| **ids**   | Array  |  业务对象实例id数组   | 非必填 | - | 按照[业务对象实例的id(发票ID)](/docs/open-api/datalink-extend/get-flow-invoice)查询详情，<br/>发票实体保存在系统预置业务对象里 |
 | **codes** | Array  |  业务对象实例code数组 | 非必填 | - | 按照业务对象实例的code查询详情，<br/>发票实体保存在系统预置业务对象里 |
 | **index** | Number |  当前页             | 非必填 | - | 当前页 |
 | **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `1000` |
 
 :::tip
- - 业务对象实例id（即发票ID）可以通过[获取单据详情](/docs/open-api/flows/get-forms-details)接口或[根据单据编号或单据ID查询发票和其明细ID](/docs/open-api/datalink/get-flow-invoice)接口获取。
+ - 业务对象实例id（即发票ID）可以通过[获取单据详情](/docs/open-api/flows/get-forms-details)接口或[根据单据编号或单据ID查询发票和其明细ID](/docs/open-api/datalink-extend/get-flow-invoice)接口获取。
  - 参数优先级 `ids` > `codes` > `index` 和 `count` ，多组参数均传值时，按优先级最高的开始生效。
  - `ids` 、 `codes` 参数，接口没有校验参数是否在系统中存在，获取不到数据时，请检查参数的准确性。
  - `ids` 、 `codes` 不填时， `index` 和 `count` 两个参数必填，只要传了index和count参数，成功响应中的“count”表示总数。
