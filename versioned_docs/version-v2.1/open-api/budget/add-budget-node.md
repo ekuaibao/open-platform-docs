@@ -41,8 +41,8 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/add"
 |**&emsp; ∟ code**                 | String  | 节点编码                | 必填  |- | 可传 `""` |
 |**&emsp; ∟ content**              | Array   | 节点维度                | 必填  |- | 一个节点对应一个维度 |
 |**&emsp; &emsp; ∟ dimensionType** | String  | 维度种类                | 必填  | - | `DEPART` : 费用承担部门<br/>`PROJECT` : 扩展档案<br/>`FEE_TYPE` : 费用类型<br/>`STAFF` : 员工 |
-|**&emsp; &emsp; ∟ dimensionId**   | String  | 维度种类的标识ID         | 必填  | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : `项目`（档案名称，例如：项目）<br/>STAFF : `submitterId` |
-|**&emsp; &emsp; ∟ mustLeaf**      | Boolean | 维度是否必定为叶节点(本部) | 必填  | false | `true` : 非本级 &emsp; `false` : 本级<br/>[什么是“维度是否必定为叶子节点(本部)”？](/docs/open-api/budget/question-answer#问题一) |
+|**&emsp; &emsp; ∟ dimensionId**   | String  | 维度种类的标识ID         | 必填  | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : 通过[全局字段名称](/docs/open-api/forms/get-customs-param)获取（档案名称，例如：`项目`）<br/>STAFF : `submitterId` |
+|**&emsp; &emsp; ∟ mustLeaf**      | Boolean | 维度是否必定为叶子节点(本部) | 必填  | false | `true` : 非本级 &emsp; `false` : 本级<br/>[什么是“维度是否必定为叶子节点(本部)”？](/docs/open-api/budget/question-answer#问题一) |
 |**&emsp; &emsp; ∟ contentId**     | String  | 维度内容ID              | 必填  | - | 对应维度种类下的项ID，例如：部门维度就是 **部门ID**，扩展档案维度就是 **档案项ID** |
 |**&emsp; ∟ moneys**               | Array   | 节点金额                | 必填  |- | 预算金额，节点的[周期](/docs/open-api/budget/question-answer#问题二)数据不可省略 |
 |**&emsp; &emsp; ∟ nodeId**        | String  | 预算节点ID              | 必填  | - | 与上面预算节点ID保持一致，即一个预算节点下包含 **节点信息** 和 **预算金额** 两部分属性 |
@@ -50,7 +50,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/add"
 |**&emsp; &emsp; ∟ budgetMoney**   | Number  | 预算金额                | 必填  | - | 周期内的预算金额，不可为空 |
 |**&emsp; ∟ control**              | String  | 预算节点的控制方式        | 必填  | ALLOW | 当预算超额时的控制方式<br/> `ALLOW` : 允许提交单据<br/>`FORBID` : 禁止提交单据<br/>`IGNORED` : 什么都不做 |
 |**visibility**                     | Object  | 节点负责人              | 非必填 |- | 负责人能在相关报销单和预算报表中查看该预算节点的进度 |
-|**&emsp; ∟ staffIds**             | Array   | 人员ID                 | 必填  |- | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
+|**&emsp; ∟ staffIds**             | Array   | 员工ID                 | 必填  |- | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
 |**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 |- | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
 
 :::tip

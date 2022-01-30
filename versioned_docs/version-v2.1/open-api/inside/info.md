@@ -13,6 +13,11 @@ authors: [冯继成]
 ### [查询全局字段是否存在](/docs/open-api/forms/get-customs-param-checkProperty)
 
 ---
+## 业务对象
+### [创建业务对象台账](/docs/open-api/datalink/inside-createLedger)
+
+
+---
 ## 工具接口
 ### [工具一：处理单据列表接口拉取单据的状态不一致问题](/docs/open-api/tools/flowDetails-stuckFlow-v1.1) 
 

@@ -16,14 +16,14 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/del"
 
 :::caution
 - 不推荐使用，接口废弃，不再更新维护。
-- 推荐使用【批量更新(新增/修改/删除)预算节点】接口。
+- 推荐使用【[批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node)】接口。
 :::
 
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String | 预算树ID      | 必填 | - | [预算树ID获取](/docs/open-api/budget/get-budget-list) |
+| **budgetId** | String | 预算包ID      | 必填 | - | [预算包ID获取](/docs/open-api/budget/get-budget-list) |
 | **nodeId**   | String | 要删除的节点ID | 必填 | - | [预算节点ID获取](/docs/open-api/budget/get-budget-details) |
 
 ## Query Parameters
@@ -52,7 +52,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 
 
 ## 失败响应
-`budgetId` 不存在时，返回此响应数据：
+`budgetId`（预算包ID）不存在时，报错如下：
 ```json
 {
     "value": {
