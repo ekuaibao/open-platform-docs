@@ -6,24 +6,28 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1/flowDetails/stuckFlow"
+url="/api/openapi/v1.1/flowDetails/stuckFlow"
 />
 
-:::caution
-- 每条异常单据只能调用一次本接口，重复调用无效。
-:::
+<details>
+  <summary>v1.1版本特性</summary>
+  <div>
+    - 🆕 新增 isForce 字段，表示是否重复触发，默认为 false。当该值为 true 时，会将 flow_flow 表的 version（版本号）修改为 1，再修改为 999。
+  </div>
+</details>
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **codes**       | String | 单据编号   | 必填  | - | 单据CODE，多个用英文逗号 `,` 分隔 |
-| **isUpdate**    | String | 是否处理   | 非必填 | true | `true` : 处理<br/>`false` : 不处理，只返回异常单据信息 |
+| **accessToken** | String | 认证token  | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **codes**       | String | 单据编号    | 必填  | - | 单据CODE，多个用英文逗号 `,` 分隔 |
+| **isUpdate**    | String | 是否处理    | 非必填 | true | `true` : 处理<br/>`false` : 不处理，只返回异常单据信息 |
+| **isForce**     | String | 是否重复触发 | 非必填 | false | `true` : 重复触发<br/>`false` : 不触发 |
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetails/stuckFlow?accessToken=ID_3wb4Xco0gs0:bwa3wajigF0WH0&codes=B21000001&isUpdate=false'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDetails/stuckFlow?accessToken=ID_3wb4Xco0gs0:bwa3wajigF0WH0&codes=B21000001&isUpdate=false'
 ```
 
 ## 成功响应
