@@ -328,7 +328,6 @@ const sidebars = {
       label: "工具接口",
       items: [
         "open-api/tools/info",
-        "open-api/tools/flowDetails-stuckFlow",
         "open-api/tools/staffs-clearInfo",
         "open-api/tools/question-answer"
       ],
