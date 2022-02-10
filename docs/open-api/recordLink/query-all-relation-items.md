@@ -20,7 +20,7 @@ url="/api/openapi/v2/recordLink/queryAllRecordLink"
 | **roleDefIds** | Array  | 档案关系ID  | 非必填  | - | 通过[获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation)获取，通过传递此值，<br/>查询指定档案关系下全部数据 |
 | **orderBy**    | String | 结果排序字段 | 非必填  | - | `updateTime` : 查询结果按更新时间倒序排列<br/>`createTime` : 查询结果按创建时间倒序排列 |
 | **start**      | Int    | 查询开始值  | 非必填  | 0 | 从 `0` 开始 |
-| **count**      | Int    | 查询记录数  | 必填    | - | 每次查询最大数量不能大于 `100` |
+| **count**      | Int    | 查询记录数  | 必填    | - |  `0` < `count` ≤ `100` |
 
 ## CURL
 ```json

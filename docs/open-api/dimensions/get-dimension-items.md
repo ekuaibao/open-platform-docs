@@ -15,10 +15,12 @@ url="/api/openapi/v1/dimensions/items"
 | **start**       | Number  | 分页查询的起始序号 | 必填  | - | 从第几条数据开始查询 |
 | **count**       | Number  | 查询数据条数      | 必填  | - | 最大不能超过 `1000` |
 | **dimensionId** | String  | 档案类别ID       | 非必填 | - | [获取自定义档案类别](/docs/open-api/dimensions/get-dimensions)，通过此参数可查询<br/>指定档案类别下的档案项 |
+| **startDate**   | String | 查询开始时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
+| **endDate**     | String | 查询结束时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimensions/items?accessToken=hQgbxfJnlElc00&start=0&count=100' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimensions/items?accessToken=hQgbxfJnlElc00&start=0&count=100&startDate=2022-01-12 14:35:54&endDate=' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
@@ -29,12 +31,14 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
     "count": 6,	                           //档案值的数量
     "items": [
         {
-            "id": "JOYbpjPP-E2Q00:laptop", //档案值id
+            "id": "JOYbpjPP-E2Q00:laptop", //档案值ID
             "name": "笔记本电脑",           //档案值名称
             "active": true,                //是否有效
             "code": "4-Laptop",            //档案值编码
-            "dimensionId": "JOYbpjPP-E2Q00:固定资产类目", //所属档案类别id
-            "parentId": ""                 //档案值的父级id
+            "dimensionId": "JOYbpjPP-E2Q00:固定资产类目", //所属档案类别ID
+            "parentId": "",                 //档案值的父级ID
+            "updateTime": "2022-02-10 11:16:33",
+            "createTime": "2022-02-10 11:16:33"
         },
         {
             "id": "Ak0btTcoEkrA00",
@@ -42,7 +46,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
             "active": true,
             "code": "CODE1",
             "dimensionId": "JOYbpjPP-E2Q00:项目",
-            "parentId": ""
+            "parentId": "",
+            "updateTime": "2022-02-10 11:16:39",
+            "createTime": "2022-02-10 11:16:39"
         }
     ]
 }

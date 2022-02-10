@@ -12,22 +12,23 @@ url="/api/openapi/v1/staffs"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token	        | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **start**       | Number  | 分页查询的起始序号    | 必填  | - | 从第几条数据开始查询 |
+| **start**       | Number  | 分页查询的起始序号    | 必填  | - | 分页的起始值是从 `0` 开始， 而不是传统的 `1` 开始 |
 | **count**       | Number  | 查询数据条数         | 必填  | - | 最大不能超过 `1000` |
-| **active**      | Boolean | 查询条件：员工是否启用 | 非必填 | - | `true` : 启用 &emsp; `false` : 停用 |
+| **active**      | Boolean | 查询条件：员工是否启用 | 非必填 | false | `true` : 启用 &emsp; `false` : 停用 |
+| **startDate**   | String | 查询开始时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
+| **endDate**     | String | 查询结束时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 
 :::tip
 - `active` 参数传值分三种情况：
   - `active` 参数和值均 `不传`，返回企业下 **全部员工信息**（包括停用）；
   - `active` 值传 `空串` 或 `false` 或 `非true外任意值`，返回企业下全部 **停用** 的员工信息；
   - `active` 值传 `true`，返回企业下全部 **启用** 的员工信息。
-- 分页的起始值是从0开始， 而不是传统的1开始。
-- 默认查询启用的员工，不是全部员工。
+- `startDate` 查询规则是”大于等于“， `endDate` 查询规则是“小于等于”（”毫秒级时间戳“与“日期”转换的影响，导致取值结果往往是”小于“，没有等于）。
 :::
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?accessToken=RCIbwHcnF0kg00&start=0&count=20&active=true' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?accessToken=RCIbwHcnF0kg00&start=0&count=20&active=true&startDate=2022-01-17 18:08:07&endDate=' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
@@ -54,7 +55,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
             "staffCustomForm": {
               "base": "[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",
               "u_数字字段": "1"
-            }
+            },
+            "updateTime": "2022-02-10 14:49:38",
+            "createTime": "2022-01-17 16:22:41"
         },
         {
             "id": "PCx3rwm3aA00qM:ID_3rAZNCY2X$g",
@@ -72,7 +75,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
             "note": null,
             "staffCustomForm": {
               "u_爱好": ""
-            }
+            },
+            "updateTime": "2022-01-17 18:08:07",
+            "createTime": "2022-01-17 16:01:08"
         }
     ]
 }

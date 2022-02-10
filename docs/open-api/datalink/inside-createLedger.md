@@ -4,8 +4,15 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v2/datalink/ledger/createLedger"
+url="/api/openapi/v2.1/datalink/ledger/createLedger"
 />
+
+<details>
+  <summary>v2.1版本特性</summary>
+  <div>
+    - 🐞 添加了sumFieldName（统计字段）、statisticsEntityId（关联业务对象ID）、dataLinkEntityId（业务对象ID）校验。
+  </div>
+</details>
 
 ## Query Parameters
 
@@ -24,13 +31,13 @@ url="/api/openapi/v2/datalink/ledger/createLedger"
 | **statisticsEntityId** | String | 关联业务对象ID | 非必填 | - | `statisticsSource` = `DATA_LINK` 时，必填 |
 | **dataLinkEntityId** | String | 业务对象ID | 必填 | - |  |
 | **statisticsSource** | String | 统计来源 | 必填 | - | `MASTER`：单据<br/>`DETAILS`：费用明细<br/>`DATA_LINK`： 其他业务对象 |
-| **billRefFieldName** | String | 关联业务对象字段 | 非必填 | - | 单据全局业务对象字段（name对应值） |
+| **billRefFieldName** | String | 关联业务对象字段 | 非必填 | - | 单据全局业务对象字段，`name` 对应值 |
 | **filter** | Object | 过滤条件 | 非必填 | - |  |
 | **&emsp; ∟ template** | String | 模板 | 必填 | - | `simple` |
 | **&emsp; ∟ expressions** | Array | 过滤表达式 | 非必填 | - |  |
 | **&emsp; &emsp; ∟ left** | String | 过滤表达式左侧 | 非必填 | - | `feeTypeId`：费用类型ID<br/>`specificationId`：单据模板ID<br/>`state`：单据状态<br/>`feeTypeForm.invoiceForm.type`：费用明细发票状态<br/>`xxx`：任意字段值（例如：title-标题） |
 | **&emsp; &emsp; ∟ operator** | String | 过滤条件 | 非必填 | - | `in` ：指定单据状态或模板类型等<br/>`>、>=、<、<=、=、<>` ：金额、数字类型字段 |
-| **&emsp; &emsp; ∟ right** | String | 过滤表达式右侧 | 非必填 | - | 见CURL示例 |
+| **&emsp; &emsp; ∟ right** | String | 过滤表达式右侧 | 非必填 | - | 见**CURL**示例 |
 | **&emsp; &emsp; ∟ includeChildren** | String | 按left的类型 | 非必填 | - |  |
 | **&emsp; &emsp; ∟ isSearchInMaster** | String | 按left的类型 | 非必填 | - |  |
 | **&emsp; &emsp; ∟ fromWhere** | String | 过滤来源 | 非必填 | - | `MASTER`：单据<br/>`DETAILS`：费用明细<br/>`DATA_LINK`： 其他业务对象  |
@@ -43,7 +50,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="单据" label="单据" default>
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/ledger/createLedger?accessToken=ID_3xpRfa80Nmw:Urf3lsFgBp00gw' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/datalink/ledger/createLedger?accessToken=ID_3xpRfa80Nmw:Urf3lsFgBp00gw' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "sumFieldName": "quantity",
@@ -101,7 +108,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 <TabItem value="费用明细" label="费用明细">
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/ledger/createLedger?accessToken=ID_3xpRfa80Nmw:Urf3lsFgBp00gw' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/datalink/ledger/createLedger?accessToken=ID_3xpRfa80Nmw:Urf3lsFgBp00gw' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "sumFieldName": "quantity",
@@ -172,7 +179,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 <TabItem value="业务对象" label="业务对象">
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/ledger/createLedger?accessToken=ID_3xpRfa80Nmw:Urf3lsFgBp00gw' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/datalink/ledger/createLedger?accessToken=ID_3xpRfa80Nmw:Urf3lsFgBp00gw' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "sumFieldName": "E_25010caea1b9049e4400_合同金额",
@@ -212,7 +219,3 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 }
 ```
 
-## 失败响应
-```json
-
-```

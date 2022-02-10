@@ -12,16 +12,14 @@ url="/api/openapi/v1/departments"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token	    | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **start**       | Number | 分页查询的起始序号 | 必填 | - | 从第几条数据开始查询 |
+| **start**       | Number | 分页查询的起始序号 | 必填 | - | 分页的起始值是从 `0` 开始， 而不是传统的 `1` 开始 |
 | **count**       | Number | 查询数据条数      | 必填 | - | 最大不能超过 `1000` |
-
-:::tip
-- 分页的起始值是从0开始， 而不是传统的1开始。
-:::
+| **startDate**   | String | 查询开始时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
+| **endDate**     | String | 查询结束时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departments?accessToken=RCIbwHcnF0kg00&start=0&count=200' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departments?accessToken=RCIbwHcnF0kg00&start=0&count=200&startDate=2022-01-21 15:29:18&endDate=' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
@@ -32,11 +30,13 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
     "count": 3, //数据总条数
     "items": [
           {
-                "id": "JOYbpjPP-E2Q00:pAwbwH_W7sec00",  //部门id
+                "id": "JOYbpjPP-E2Q00:pAwbwH_W7sec00",  //部门ID
                 "name": "财务部",                       //部门名称
-                "parentId": "JOYbpjPP-E2Q00",		    //父级部门id
+                "parentId": "JOYbpjPP-E2Q00",		    //父级部门ID
                 "active": true,		                    //部门是否已停用
-                "form":{                                //部门关联法人实体id和成本中心id
+                "updateTime": "2022-02-10 18:16:48",
+                "createTime": "2022-01-21 15:29:07",
+                "form":{                                //部门关联法人实体ID和成本中心ID
                     "costCenter":"NzMcynfBJ43M00",      //成本中心ID
                     "legalEntity":"11YcypdGzoEo00"      //法人实体ID
                 },
@@ -47,7 +47,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
                 "name": "恒达",
                 "parentId": "",
                 "active": true,
-                "form":{                                 //部门关联法人实体id和成本中心id
+                "updateTime": "2022-01-21 15:29:28",
+                "createTime": "2022-01-21 15:29:28",
+                "form":{                                 //部门关联法人实体ID和成本中心ID
                     "costCenter":"NzMcynfBJ43M00",       //成本中心ID
                     "legalEntity":"11YcypdGzoEo00"       //法人实体ID
                 },
@@ -58,7 +60,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
                 "name": "人事部",
                 "parentId": "JOYbpjPP-E2Q00",
                 "active": true,
-                "form":{                                  //部门关联法人实体id和成本中心id
+                "updateTime": "2022-02-10 18:16:48",
+                "createTime": "2022-01-21 15:29:07",
+                "form":{                                  //部门关联法人实体ID和成本中心ID
                   "costCenter":"NzMcynfBJ43M00",          //成本中心ID
                   "legalEntity":"11YcypdGzoEo00"          //法人实体ID
                 },
