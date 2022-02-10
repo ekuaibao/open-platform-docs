@@ -4,8 +4,15 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v1/dimensions/items/batch"
+url="/api/openapi/v1.1/dimensions/items/batch"
 />
+
+<details>
+  <summary>v1.1版本特性</summary>
+  <div>
+    - 🐞 新增了当“fullVisible“为”false“时，对 ”staffs“、”roles“、”departments“三个参数的必填及有效性校验。
+  </div>
+</details>
 
 ## Query Parameters
 
@@ -22,7 +29,7 @@ url="/api/openapi/v1/dimensions/items/batch"
 | **&emsp; ∟ name**              | String  | 档案值名称	| 必填  | - | 档案值名称，最大不能超过300个字 |
 | **&emsp; ∟ code**              | String  | 档案值编码	| 必填  | - | 档案值编码 |
 | **&emsp; ∟ visibility**        | Object  | 可见范围	| 非必填 | - | 可见范围 |
-| **&emsp;&emsp; ∟ fullVisible** | Boolean | 是否全部可见 | 非必填 | true | `true` : 全部可见 &emsp; `false` : 非全部可见，此时白名单必填。<br/>在非全部可见的情况下，仅白名单内的员工可见 |
+| **&emsp;&emsp; ∟ fullVisible** | Boolean | 是否全部可见 | 非必填 | true | `true` : 全部可见 <br/>`false` : 非全部可见，此时**三个白名单至少必填一项**<br/>在非全部可见的情况下，仅白名单内的员工可见 |
 | **&emsp;&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 | **&emsp;&emsp; ∟ roles**       | Array   | 角色白名单   | 非必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
 | **&emsp;&emsp; ∟ departments** | Array   | 部门白名单   | 非必填 | - | 值为[部门id](/docs/open-api/corporation/get-departments) |
@@ -171,11 +178,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 ## 失败响应
 ```json
 {
-    "errorCode": 500,
-    "errorMessage": "上级档案不存在",
-    "errorDetails": "java.lang.IllegalArgumentException: 上级档案不存在\n\t",
-    "code": null,
-    "data": null
+  "errorCode": 412,
+  "errorMessage": "上级档案[3456]不存在",
+  "errorDetails": null,
+  "code": null,
+  "data": null
 }
 ```
 

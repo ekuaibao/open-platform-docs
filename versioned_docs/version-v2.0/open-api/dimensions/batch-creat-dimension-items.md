@@ -171,11 +171,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 ## 失败响应
 ```json
 {
-    "errorCode": 500,
-    "errorMessage": "上级档案不存在",
-    "errorDetails": "java.lang.IllegalArgumentException: 上级档案不存在\n\t",
-    "code": null,
-    "data": null
+  "errorCode": 412,
+  "errorMessage": "上级档案[2222]不存在",
+  "errorDetails": null,
+  "code": null,
+  "data": null
 }
 ```
 

@@ -84,11 +84,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 当档案值父级id参数错误时：
 ```json
 {
-    "errorCode": 412,
-    "errorMessage": "编码为[XM2001]的档案项找不到上级节点",
-    "errorDetails": null,
-    "code": null,
-    "data": null
+  "errorCode": 412,
+  "errorMessage": "上级档案不存在",
+  "errorDetails": null,
+  "code": null,
+  "data": null
 }
 ```
 

@@ -4,8 +4,15 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v1/dimensions/items"
+url="/api/openapi/v1.1/dimensions/items"
 />
+
+<details>
+  <summary>v1.1版本特性</summary>
+  <div>
+    - 🐞 新增了当“fullVisible“为”false“时，对 ”staffs“、”roles“、”departments“三个参数的必填及有效性校验。
+  </div>
+</details>
 
 ## Query Parameters
 
@@ -21,7 +28,7 @@ url="/api/openapi/v1/dimensions/items"
 |**name**                  | String   | 档案值名称	| 必填  | - | 档案值名称，最大不能超过300个字 |
 |**code**                  | String   | 档案值编码	| 必填  | - | 档案值编码 |
 |**visibility**            | Object   | 可见范围      | 非必填 | - | 可见范围 |
-|**&emsp; ∟ fullVisible** | Boolean  | 是否全部可见   | 非必填 | true | `true` : 全部可见 &emsp;  `false` : 非全部可见，此时白名单必填。<br/>在非全部可见的情况下，仅白名单内的员工可见 |
+|**&emsp; ∟ fullVisible** | Boolean  | 是否全部可见   | 非必填 | true | `true` : 全部可见 <br/>`false` : 非全部可见，此时**三个白名单至少必填一项**<br/>在非全部可见的情况下，仅白名单内的员工可见 |
 |**&emsp; ∟ staffs**      | Array    | 员工白名单	| 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
 |**&emsp; ∟ roles**       | Array    | 角色白名单	| 非必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
 |**&emsp; ∟ departments** | Array    | 部门白名单    | 非必填 | - | 值为[部门id](/docs/open-api/corporation/get-departments) |
@@ -85,7 +92,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 ```json
 {
     "errorCode": 412,
-    "errorMessage": "编码为[XM2001]的档案项找不到上级节点",
+    "errorMessage": "上级档案不存在",
     "errorDetails": null,
     "code": null,
     "data": null
@@ -108,6 +115,28 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 {
     "errorCode": 412,
     "errorMessage": "编码[XM2003]已经被占用",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当 `fullVisible` 为 `false` ，`departments` 、`roles` 、`staffs` 参数都为空时：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "当fullVisible为false时，请指定departments、roles或staffs的值",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当 `departments` 、`roles` 、`staffs` 参数值不正确时：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "参数staffs的值不存在或已被禁用[xxxx]",
     "errorDetails": null,
     "code": null,
     "data": null
