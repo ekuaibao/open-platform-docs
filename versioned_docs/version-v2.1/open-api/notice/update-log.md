@@ -34,7 +34,7 @@ timeline: true
 - 🐞 优化【**自建应用**】模块下全部接口文档的描述及排版。
 - 🐞 优化【**扩展中心**】模块下全部接口文档的描述及排版。
 - 🐞 优化【**出站消息**】模块下全部接口文档的描述及排版。
-   - 🐞 更新 [常见问题总结](/docs/open-api/outbound-message/question-answer) 文档，新增问题描述。
+   - 更新 [常见问题总结](/docs/open-api/outbound-message/question-answer) 文档，新增问题描述。
 - 🐞 优化【**委托授权**】模块下全部接口文档的描述及排版。
 
 ---
