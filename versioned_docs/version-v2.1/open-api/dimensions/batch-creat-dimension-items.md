@@ -30,9 +30,9 @@ url="/api/openapi/v1.1/dimensions/items/batch"
 | **&emsp; ∟ code**              | String  | 档案值编码	| 必填  | - | 档案值编码 |
 | **&emsp; ∟ visibility**        | Object  | 可见范围	| 非必填 | - | 可见范围 |
 | **&emsp;&emsp; ∟ fullVisible** | Boolean | 是否全部可见 | 非必填 | true | `true` : 全部可见 <br/>`false` : 非全部可见，此时**三个白名单至少必填一项**<br/>在非全部可见的情况下，仅白名单内的员工可见 |
-| **&emsp;&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
-| **&emsp;&emsp; ∟ roles**       | Array   | 角色白名单   | 非必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
-| **&emsp;&emsp; ∟ departments** | Array   | 部门白名单   | 非必填 | - | 值为[部门id](/docs/open-api/corporation/get-departments) |
+| **&emsp;&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填 | - | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp;&emsp; ∟ roles**       | Array   | 角色白名单   | 非必填 | - | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
+| **&emsp;&emsp; ∟ departments** | Array   | 部门白名单   | 非必填 | - | 值为[部门ID](/docs/open-api/corporation/get-departments) |
 | **&emsp; ∟ parentId**          | String  | 档案值父级ID | 必填   | - | 可通过[获取档案值](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写 `""` |
 
 ## CURL

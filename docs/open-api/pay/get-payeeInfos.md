@@ -19,16 +19,19 @@ url="/api/openapi/v2/payeeInfos"
 | **ids**         | String  | 账户ID      | 非必填 | - | 多个值用英文逗号 `,` 进行分割 |
 | **cardNos**     | String  | 银行卡号     | 非必填 | - | 多个值用英文逗号 `,` 进行分割 |
 | **active**      | Boolean | 账户是否启用  | 非必填 | true | `true` : 启用 &emsp; `false` : 停用 |
+| **startDate**   | String | 查询开始时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
+| **endDate**     | String | 查询结束时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 
 :::tip
 - **除 `avtive` 参数外，其他的请求参数都需要传，即使参数值为空也要带上参数。**
 - 如果 `names`、`cardNos`、`ids` 都有值，则优先查询顺序为 `ids` > `names` > `cardNos`，都没有值则默认查询全部。
 - 每页 `10` 条数据，那么第一页对应的参数为 `start=0&count=10` ，第二页为 `start=10&count=10`。
+- `startDate` 查询规则是”大于等于“， `endDate` 查询规则是“小于等于”（”毫秒级时间戳“与“日期”转换的影响，导致取值结果往往是”小于“，没有等于）。
 :::
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfos?accessToken=ID_3uUlNBK01fM:PCx3rwm3aA00qM&count=100&start=0&names=&cardNos=&ids=&active=true' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfos?accessToken=ID_3uUlNBK01fM:PCx3rwm3aA00qM&count=100&start=0&names=&cardNos=&ids=&active=true&startDate=2022-01-17 18:08:07&endDate=' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
@@ -45,6 +48,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "cardNo": "17000000000", //卡号或钱包号
             "type": "个人账户",       //账户类型（个人账户、对公账户）
             "createTime": 1588651544665, //创建时间
+            "updateTime": 1588651544665, //更新时间
             "province": "",          //开户省份
             "city": "",              //开户城市
             "bank": "支付宝",        //开户行
@@ -73,7 +77,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "name": "张杰",
             "cardNo": "111",
             "type": "个人账户",
-            "createTime": 1585017203965,
+            "createTime": 1585017203965, //创建时间
+            "updateTime": 1585017203965, //更新时间
             "province": "广东省",
             "city": "深圳市",
             "bank": "建设银行",

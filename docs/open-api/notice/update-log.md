@@ -14,13 +14,14 @@ timeline: true
 ---
 ## 1.1.0
 `2022-02-11`
-- 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments)、[获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items) 接口
+- 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments)、[获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items)、[获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
   - 新增接口参数 `startDate` 和 `endDate` 根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
     - 修复了部门类型字段设置取值规则为“使用字段依赖性”，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
     - 修复了字段配置计算规则为“从关联申请单中取值”，“关联申请”字段为非必填但未传值时，无法通过校验的BUG。
 - 🆕 新增 [新建自定义档案项](/docs/open-api/dimensions/creat-dimension-items) 、[批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口 `v1.1` 版本
     - 新增了当 `fullVisible` 为 `false` 时，对 `staffs` 、`roles` 、`departments` 三个参数的必填及有效性校验。
+
 ---
 ## 1.0.5
 `2022-02-09`

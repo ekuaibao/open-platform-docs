@@ -29,9 +29,9 @@ url="/api/openapi/v1.1/dimensions/items"
 |**code**                  | String   | 档案值编码	| 必填  | - | 档案值编码 |
 |**visibility**            | Object   | 可见范围      | 非必填 | - | 可见范围 |
 |**&emsp; ∟ fullVisible** | Boolean  | 是否全部可见   | 非必填 | true | `true` : 全部可见 <br/>`false` : 非全部可见，此时**三个白名单至少必填一项**<br/>在非全部可见的情况下，仅白名单内的员工可见 |
-|**&emsp; ∟ staffs**      | Array    | 员工白名单	| 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
-|**&emsp; ∟ roles**       | Array    | 角色白名单	| 非必填 | - | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
-|**&emsp; ∟ departments** | Array    | 部门白名单    | 非必填 | - | 值为[部门id](/docs/open-api/corporation/get-departments) |
+|**&emsp; ∟ staffs**      | Array    | 员工白名单	| 非必填 | - | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
+|**&emsp; ∟ roles**       | Array    | 角色白名单	| 非必填 | - | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
+|**&emsp; ∟ departments** | Array    | 部门白名单    | 非必填 | - | 值为[部门ID](/docs/open-api/corporation/get-departments) |
 |**parentId**              | String   | 档案值父级ID  | 必填   | - | 可通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)来获取。如果是根节点应填写 `""` |
 
 :::tip
@@ -44,7 +44,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-    "dimensionId": "Urf3lsFgBp00gw:项目",  //档案类别id
+    "dimensionId": "Urf3lsFgBp00gw:项目",  //档案类别ID
     "name": "项目2-1",                     //档案值名称	
     "code": "XM2001",                     //档案值编码	
     "visibility": {
@@ -53,7 +53,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
         "roles": [],
         "departments": []
     },
-    "parentId": "Ak0btTcoEkrA00",         //档案值父级id
+    "parentId": "Ak0btTcoEkrA00",         //档案值父级ID
     //-----------------------------------------
     //系统预置档案额外参数如下，不用时不传即可：        
     "form":{
@@ -83,12 +83,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 ## 成功响应
 ```json
 {
-  "id": "XBUbxhnP5k8w00" // 档案值id
+  "id": "XBUbxhnP5k8w00" // 档案值ID
 }
 ```
 
 ## 失败响应
-当档案值父级id参数错误时：
+当档案值父级ID参数错误时：
 ```json
 {
     "errorCode": 412,
