@@ -38,7 +38,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/add"
 |:------ |:--------- |:-----------|:-------|:-----------|:-------------|
 |**budgetNode**                     | Object  | 预算节点信息            | 必填  | - | 新增的预算节点信息 | 
 |**&emsp; ∟ id**                   | String  | 预算节点ID              | 必填  | - | 不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID |
-|**&emsp; ∟ code**                 | String  | 节点编码                | 必填  |- | 可传 `""` |
+|**&emsp; ∟ code**                 | String  | 节点编码                | 必填  |- | 可传 `""`，**长度不能超过20个字符** |
 |**&emsp; ∟ content**              | Array   | 节点维度                | 必填  |- | 一个节点对应一个维度 |
 |**&emsp; &emsp; ∟ dimensionType** | String  | 维度种类                | 必填  | - | `DEPART` : 费用承担部门<br/>`PROJECT` : 扩展档案<br/>`FEE_TYPE` : 费用类型<br/>`STAFF` : 员工 |
 |**&emsp; &emsp; ∟ dimensionId**   | String  | 维度种类的标识ID         | 必填  | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : 通过[全局字段名称](/docs/open-api/forms/get-customs-param)获取（档案名称，例如：`项目`）<br/>STAFF : `submitterId` |

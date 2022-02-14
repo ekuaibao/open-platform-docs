@@ -8,7 +8,7 @@ url="/api/openapi/v1/docSequences"
 />
 
 :::caution
-- 此接口只能获取单据状态为 `REJECTED` 已驳回、`PAYING` 待支付、`PROCESSING` 支付中、`PAID` 已支付的单据（包含已删除的单据）。
+- 此接口只能获取单据状态为 `REJECTED` 已驳回、`PAYING` 待支付、`PROCESSING` 支付中、`PAID` 已支付的单据（包含已删除的单据：进入”出纳支付“节点后再驳回删除的单据）。
 :::
 
 ## Query Parameters
