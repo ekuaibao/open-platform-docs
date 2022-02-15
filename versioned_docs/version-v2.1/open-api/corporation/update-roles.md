@@ -31,7 +31,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 | **contents**          | Array  | 角色配置情况     | 必填   | - | 每一个元素对应「角色管理」界面右侧列表的一行 |
 | **&emsp; ∟ pathType** | String | name或code	  | 非必填 | name | 当 `pathType` = `name` 或不传时，`path` 传入部门名称<br/>或自定义档案值名称；<br/>当 `pathType` = `code` 时，`path` 传入部门编码或自定<br/>义档案值编码 |
 | **&emsp; ∟ path**     | Array  | 部门或自定义档案值 | 非必填 | - | 传入内容参考pathType，[注意事项](/docs/open-api/corporation/question-answer) |
-| **&emsp; ∟ staffs**   | Array  | 员工集	      | 非必填 | - | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp; ∟ staffs**   | Array  | 员工集	      | 非必填 | - | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
 
 :::tip
 - 当 `staffs` 为空时，则删除此部门/自定义档案值对应的角色下所有员工。
