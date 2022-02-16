@@ -237,6 +237,7 @@ const sidebars = {
         "open-api/datalink/update-entity-data",
         "open-api/datalink/field-mapping",
         "open-api/datalink/get-entity-info",
+        "open-api/datalink-extend/get-entity-object",
         "open-api/datalink/get-entity-plan",
         "open-api/datalink/get-tripManager-order",
         "open-api/datalink/get-tripManager-data",
@@ -248,7 +249,6 @@ const sidebars = {
       label: "扩展中心",
       items: [
         "open-api/datalink-extend/introduce",
-        "open-api/datalink-extend/get-entity-object",
         "open-api/datalink-extend/get-flow-invoice",
         "open-api/datalink-extend/get-entity-invoice",
         "open-api/datalink-extend/get-entity-invoic-details",
