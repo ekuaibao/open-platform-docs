@@ -37,7 +37,7 @@ url="/api/openapi/v1.1/dimensions/items/batch"
 
 ## CURL
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensions/items/batch?accessToken=hQgbxfJnlElc00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimensions/items/batch?accessToken=hQgbxfJnlElc00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{

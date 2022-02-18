@@ -12,6 +12,14 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.1.1
+`2022-02-18`
+- 🐞 更新 [批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node) 接口
+  - 优化接口校验逻辑，报错时会准确描述具体出错的节点和参数。
+- 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
+  - `pathType` 参数支持 `id` 类型。
+
+---
 ## 1.1.0
 `2022-02-11`
 - 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments)、[获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items)、[获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口

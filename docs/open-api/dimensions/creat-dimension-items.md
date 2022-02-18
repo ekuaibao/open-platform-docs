@@ -40,7 +40,7 @@ url="/api/openapi/v1.1/dimensions/items"
 
 ## CURL
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensions/items?accessToken=hQgbxfJnlElc00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimensions/items?accessToken=hQgbxfJnlElc00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{

@@ -245,7 +245,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 ```
 
 ## 失败响应
-`budgetId`（预算包ID）不存在时，报错如下：
+当 `budgetId`（预算包ID）不存在时，报错如下：
 ```json
 {
     "value": {
@@ -264,7 +264,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
     "data": null
 }
 ```
-`moneys` 字段数量与预算包设置周期数不匹配时，报错如下：
+当 `moneys` 字段数量与预算包设置周期数不匹配时，报错如下：
 ```json
 {
     "value": {
@@ -282,5 +282,21 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
     }
 }
 ```
-
-
+当 `parentId`（父节点ID）不存在时，报错如下：
+```json
+{
+    "value": {
+        "success": false,
+        "errmsg": "节点ID为1634112670003的父节点ID不存在, 请确认参数"
+    }
+}
+```
+当 `content`（节点维度信息）参数输入错误，或者与同级维度类型不一致时，报错如下：
+```json
+{
+    "value": {
+        "success": false,
+        "errmsg": "节点ID为1634112670004的维度信息错误, 请确认参数"
+    }
+}
+```
