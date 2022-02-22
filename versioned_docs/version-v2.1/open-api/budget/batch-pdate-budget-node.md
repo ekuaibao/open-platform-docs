@@ -282,7 +282,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
     }
 }
 ```
-当 `parentId`（父节点ID）不存在时，报错如下：
+当 `parentId`（父节点ID）不存在，预算节点比较少时，直接返回如下报错；<br/>
+当预算节点数据量大时，报错信息不返回，可通过 [获取预算异步执行结果](/docs/open-api/budget/get-BudgetInfo-State) 接口获取执行结果和报错信息：
 ```json
 {
     "value": {
