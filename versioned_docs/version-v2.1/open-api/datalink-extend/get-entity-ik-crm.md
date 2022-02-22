@@ -26,7 +26,7 @@ url="/api/openapi/v2/extension/IKCRM/object/`objectId`/search"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **ids**   | Array  | 业务对象实例ID数组 | 非必填 | - | 按照[业务对象实例的ID](/docs/open-api/datalink/get-entity-info)查询详情 |
 | **index** | Number |  开始索引           | 非必填 | - | 从 `1` 开始，不可为 `0` |
-| **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `1000` |
+| **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `100` |
 
 ## CURL
 ```json

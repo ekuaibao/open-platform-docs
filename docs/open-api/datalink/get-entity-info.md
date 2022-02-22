@@ -14,7 +14,7 @@ url="/api/openapi/v2/datalink"
 | **accessToken** | String | 认证token  | 必填   | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **entityId**    | String | 业务对象ID  |  必填  | - | 通过[获取业务对象](/docs/open-api/datalink/get-entity-list)接口获取 |
 | **start**       | Number | 数据开始数  | 必填   | 0 | 数据开始数 |
-| **count**       | Number | 每页总数    | 必填   | 0 | 最大不能超过 `1000` |
+| **count**       | Number | 每页总数    | 必填   | 0 | 最大不能超过 `100` |
 | **startDate**   | String | 查询开始时间 | 非必填 | - | 按业务对象实例 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 | **endDate**     | String | 查询结束时间 | 非必填 | - | 按业务对象实例 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 

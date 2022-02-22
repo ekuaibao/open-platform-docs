@@ -28,7 +28,7 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 | **ids**   | Array  |  业务对象实例ID数组   | 非必填 | - | 按照[业务对象实例ID(发票ID)](/docs/open-api/datalink-extend/get-flow-invoice)查询详情，<br/>发票实体保存在系统预置业务对象里 |
 | **codes** | Array  |  业务对象实例CODE数组 | 非必填 | - | 按照业务对象实例的CODE查询详情，<br/>发票实体保存在系统预置业务对象里 |
 | **index** | Number |  开始索引           | 非必填 | - | 从 `1` 开始，不可为 `0` |
-| **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `1000` |
+| **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `100` |
 
 :::tip
 - 业务对象实例ID（即发票ID）可以通过[获取单据详情](/docs/open-api/flows/get-forms-details)接口或[根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice)接口获取。
