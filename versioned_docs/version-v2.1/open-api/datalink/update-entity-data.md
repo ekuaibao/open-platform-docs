@@ -25,11 +25,11 @@ url="/api/openapi/v2/datalink/add"
 | **&emsp; ∟ disabled**                          | Boolean | 是否停用     | 非必填 | true   | `true` : 停用 &emsp; `false` : 启用|
 | **&emsp; ∟ ownerId**                           | String  | 负责人ID     | 非必填 | -      | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
 | **&emsp; ∟ data**                              | Object  | 字段值       | 必填   | -     | 格式为 { 字段名称 : 字段值 }。**字段名称** 是[获取业务对象](/docs/open-api/datalink/get-entity-list)返回值中 `fields` 里面的 `name` 值 |
-| **&emsp; ∟ visible**                           | Object  | 可见性       | 非必填 | -      | 业务对象**”参与人配置“**为**”部分人员参与“**时此参数才 **有效**，为**“全员参与”**时此参数 **不生效** |
-| **&emsp; &emsp; ∟ fullVisible**                | Boolean | 全员可见性    | 非必填 | false | `true` : 全部可见 &emsp; `false` : 指定员工可见 |
-| **&emsp; &emsp; ∟ staffs**                     | Array   | 可见员工ID    | 非必填 | -     | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
-| **&emsp; &emsp; ∟ roles**                      | Array   | 可见角色ID    | 非必填 | -     | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
-| **&emsp; &emsp; ∟ departments**                | Array   | 可见部门ID    | 非必填 | -     | 值为[部门ID](/docs/open-api/corporation/get-departments) |
+| **&emsp; ∟ visible**                           | Object  | 参与人配置    | 非必填 | -      | 业务对象**”参与人配置“**为**”部分人员参与“**时此参数才 **有效**，为**“全员参与”**时此参数 **不生效** |
+| **&emsp; &emsp; ∟ fullVisible**                | Boolean | 全员可见性    | 非必填 | false | `true` : 全部可见 &emsp; `false` : 参与人可见 |
+| **&emsp; &emsp; ∟ staffs**                     | Array   | 参与人ID     | 非必填 | -     | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp; &emsp; ∟ roles**                      | Array   | 参与角色ID    | 非必填 | -     | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
+| **&emsp; &emsp; ∟ departments**                | Array   | 参与部门ID    | 非必填 | -     | 值为[部门ID](/docs/open-api/corporation/get-departments) |
 | **&emsp; &emsp; ∟ departmentsIncludeChildren** | Boolean | 子部门是否可见 | 非必填 | true   | `true` : 可见 &emsp; `false` : 不可见 |
 
 :::caution
@@ -76,15 +76,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
     "dataLinks": [
         {
             "count": 1,              //限制引用次数 1
-            "visible":{              //业务对象”参与人配置“为”部分人员参与“时此参数才有效，否则此参数设置不生效
+            "visible":{              //业务对象 “参与人配置” 为 “部分人员参与” 时此参数才有效，否则此参数设置不生效
                 "fullVisible":true,  //全员可见，为true时，下面4个参数配置无效
-                "staffs":[],         //可见员工ID
-                "roles":[],          //可见角色ID
-                "departments":[],    //可见部门ID
+                "staffs":[],         //参与人ID
+                "roles":[],          //参与角色ID
+                "departments":[],    //参与部门ID
                 "departmentsIncludeChildren":true  //子部门是否可见
             },
             "disabled":false,        //true:停用 false:启用
-            "ownerId":"",            //负责人ID
+            "ownerId":"",            //负责人ID，设置可以停启用此数据的人员
             "data": {
                 "E_ea9d0b6e522a25878000_name":"数据名称1",
                 "E_ea9d0b6e522a25878000_code":"1",  	//唯一ID
@@ -114,11 +114,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
     "entityId": "ea9d0b6e522a25878000",
     "dataLinks": [
         {
-            "visible":{               //业务对象”参与人配置“为”部分人员参与“时此参数才有效，否则此参数设置不生效
+            "visible":{               //业务对象 “参与人配置” 为 “部分人员参与” 时此参数才有效，否则此参数设置不生效
                 "fullVisible":true,   //全员可见，为true时，下面4个参数配置无效
-                "staffs":[],          //可见员工ID
-                "roles":[],           //可见角色ID
-                "departments":[],     //可见部门ID
+                "staffs":[],          //参与人ID
+                "roles":[],           //参与角色ID
+                "departments":[],     //参与部门ID
                 "departmentsIncludeChildren":true  //子部门是否可见
             },
             "disabled": false,                           //true:停用 false:启用
@@ -152,15 +152,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
     "dataLinks": [
         {
             "count": 1,                //限制引用次数 1
-            "visible":{                //业务对象”参与人配置“为”部分人员参与“时此参数才有效，否则此参数设置不生效
+            "visible":{                //业务对象 “参与人配置” 为 “部分人员参与” 时此参数才有效，否则此参数设置不生效
                 "fullVisible":false,   //部分可见，为false时，下面4个参数配置才有效
-                "staffs":["Urf3lsFgBp00gw:Fmd3oQU9lg00q0","Urf3lsFgBp00gw:AvT3lntT8zzpWw"],  //可见员工ID
-                "roles":[],                        //可见角色ID
-                "departments":[],                  //可见部门ID
+                "staffs":["Urf3lsFgBp00gw:Fmd3oQU9lg00q0","Urf3lsFgBp00gw:AvT3lntT8zzpWw"],  //参与人ID
+                "roles":[],                        //参与角色ID
+                "departments":[],                  //参与部门ID
                 "departmentsIncludeChildren":true  //子部门是否可见
             },
             "disabled":false,                      //true:停用 false:启用
-            "ownerId":"",                          //负责人ID
+            "ownerId":"",                          //负责人ID，设置可以停启用此数据的人员
             "data": {
                 "E_ea9d0b6e522a25878000_name":"数据名称1",
                 "E_ea9d0b6e522a25878000_code":"1",	//唯一ID
@@ -189,15 +189,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
     "entityId": "ea9d0b6e522a25878000",
     "dataLinks": [
         {
-            "visible":{                   //业务对象”参与人配置“为”部分人员参与“时此参数才有效，否则此参数设置不生效
+            "visible":{                   //业务对象 “参与人配置” 为 “部分人员参与” 时此参数才有效，否则此参数设置不生效
                 "fullVisible":false,      //部分可见，为false时，下面4个参数配置才有效
-                "staffs":["Urf3lsFgBp00gw:Fmd3oQU9lg00q0","Urf3lsFgBp00gw:AvT3lntT8zzpWw"],  //可见员工ID
-                "roles":[],                        //可见角色ID
-                "departments":[],                  //可见部门ID
+                "staffs":["Urf3lsFgBp00gw:Fmd3oQU9lg00q0","Urf3lsFgBp00gw:AvT3lntT8zzpWw"],  //参与员工ID
+                "roles":[],                        //参与角色ID
+                "departments":[],                  //参与部门ID
                 "departmentsIncludeChildren":true  //子部门是否可见
             },
             "disabled":false,                           //true:停用 false:启用
-            "ownerId":"Urf3lsFgBp00gw:Fmd3oQU9lg00q0",  //负责人ID,设置可以停启用此数据的人员
+            "ownerId":"Urf3lsFgBp00gw:Fmd3oQU9lg00q0",  //负责人ID，设置可以停启用此数据的人员
             "data": {
                 "E_ea9d0b6e522a25878000_name":"数据名称1",
                 "E_ea9d0b6e522a25878000_code":"1",	    //唯一ID

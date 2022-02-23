@@ -8,7 +8,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 />
 
 :::caution
-- 只有数据来源为【**API导入**】的角色才能使用此接口更新角色。
+- 只有数据来源为【**[API导入](/docs/open-api/corporation/info#新建角色)**】的角色才能使用此接口更新角色。
 :::
 
 ## Path Parameters
