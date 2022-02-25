@@ -18,13 +18,18 @@ url="/api/openapi/v2/payeeInfos"
 | **names**       | String  | 账户名称     | 非必填 | - | 多个值用英文逗号 `,` 进行分割 |
 | **ids**         | String  | 账户ID      | 非必填 | - | 多个值用英文逗号 `,` 进行分割 |
 | **cardNos**     | String  | 银行卡号     | 非必填 | - | 多个值用英文逗号 `,` 进行分割 |
-| **active**      | Boolean | 账户是否启用  | 非必填 | true | `true` : 启用 &emsp; `false` : 停用 |
+| **active**      | Boolean | 账户是否启用  | 非必填 | false | `true` : 启用 &emsp; `false` : 停用 |
 | **startDate**   | String | 查询开始时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 | **endDate**     | String | 查询结束时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 
 :::tip
 - **除 `avtive` 参数外，其他的请求参数都需要传，即使参数值为空也要带上参数。**
+- `active` 参数传值分三种情况：
+    - `active` 参数和值均 `不传`，返回企业下 **全部收款账户**（包括停用）；
+    - `active` 值传 `空串` 或 `false` 或 `非true外任意值`，返回企业下全部 **停用** 的收款账户；
+    - `active` 值传 `true`，返回企业下全部 **启用** 的收款账户。
 - 如果 `names`、`cardNos`、`ids` 都有值，则优先查询顺序为 `ids` > `names` > `cardNos`，都没有值则默认查询全部。
+    -  **已停用**的收款账户，无法通过 `names`、`cardNos`、`ids` 这三个参数过滤查询，只能通过 `active` 查询到。
 - 每页 `10` 条数据，那么第一页对应的参数为 `start=0&count=10` ，第二页为 `start=10&count=10`。
 - `startDate` 查询规则是”大于等于“， `endDate` 查询规则是“小于等于”（”毫秒级时间戳“与“日期”转换的影响，导致取值结果往往是”小于“，没有等于）。
 :::
@@ -69,6 +74,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
                 "departmentsIncludeChildren": true
             },
             "remark": "remark",                           //备注
+            "active": true,                               //账户状态，true：启用；false：停用
             "operatorId": "PtgbQUtfE08400:dIEbu2mgTs6o00" //账户创建者ID
         },
         {
@@ -99,6 +105,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
                         "departmentsIncludeChildren": true
             },
             "remark": "remark",                           //备注
+            "active": true,                               //账户状态，true：启用；false：停用
             "operatorId": "PtgbQUtfE08400:dIEbu2mgTs6o00" //账户创建者ID
         }
     ]
@@ -106,13 +113,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
 ```
 
 ## 失败响应
-请求参数未完全填写， 则可能报以下错误：
-```json
-{
-    "servlet": "org.glassfish.jersey.servlet.ServletContainer-500d9427",
-    "message": "Not Found",
-    "url": "/api/openapi/v2/payeeInfos",
-    "status": "404"
-}
+请求参数未按要求填写完全，回应状态码 **HTTP 404**，并错误如下：
+```text
+<span>The page you're looking for could not be found.</span>
 ```
 

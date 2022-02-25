@@ -4,8 +4,16 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v1/cityGroup/detail/delete"
+url="/api/openapi/v1.1/cityGroup/detail/delete"
 />
+
+<details>
+  <summary>v1.1版本特性</summary>
+  <div>
+    - 🐞 新增了 staffIds（员工ID）与 roleIds（角色ID）列表不能同时为空的校验。
+  </div>
+</details>
+
 
 ## Query Parameters
 
@@ -21,9 +29,13 @@ url="/api/openapi/v1/cityGroup/detail/delete"
 | **staffIds**    | Array  | 人员ID列表 | 非必填 | - | 通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 |
 | **roleIds**     | Array  | 角色ID列表 | 非必填 | - | 通过[查询角色组和角色](/docs/open-api/corporation/get-roles-group)获取 |
 
+:::tip
+- `staffIds`（员工ID）与 `roleIds`（角色ID）不能同时为空。
+:::
+
 ## CURL
 ```json
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup/detail/delete?accessToken=FsYc5j4FlclU00' \
+curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1.1/cityGroup/detail/delete?accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
@@ -35,10 +47,22 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup
 }'
 ```
 
-#### 成功响应:
+## 成功响应:
 ```json
 {
     "success": true,
     "message": "ok"
+}
+```
+
+## 失败响应:
+`staffIds`（员工ID）与 `roleIds`（角色ID）同时为空时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "员工和角色不允许同时为空",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```

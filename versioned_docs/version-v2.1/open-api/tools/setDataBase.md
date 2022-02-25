@@ -4,7 +4,7 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v1/docs/setDataBase/[`flowId`]"
+url="/api/openapi/v1/docs/setDataBase"
 />
 
 ## Query Parameters
@@ -12,60 +12,1252 @@ url="/api/openapi/v1/docs/setDataBase/[`flowId`]"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token  | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **powerCode**   | String | 功能授权码，传入<br/>219902或者219904即可 | 必填 | true | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |
+| **state**       | String | 要修复的单据状态  | 必填  | - | `PAYING` : 待支付<br/>`PROCESSING` : 支付中 |
+| **type**        | String | 单据类型         | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`repayment` : 还款记录<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单 |
 | **codes**       | String | 单据编号    | 必填  | - | 单据CODE，多个用英文逗号 `,` 分隔 |
-| **isUpdate**    | String | 是否处理    | 非必填 | true | `true` : 处理<br/>`false` : 不处理，只返回异常单据信息 |
-| **isForce**     | String | 是否重复触发 | 非必填 | false | `true` : 重复触发<br/>`false` : 不触发 |
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDetails/stuckFlow?accessToken=ID_3wb4Xco0gs0:bwa3wajigF0WH0&codes=B21000001&isUpdate=false'
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docs/setDataBase?accessToken=ID_3zE5G_0dZw0:bwa3wajigF0WH0&powerCode=219904&state=PAYING&type=expense&codes=B22000002'
 ```
 
 ## 成功响应
-`isUpdate`（是否处理）参数传 true/false，均返回异常状态的单据信息：
+
 ```json
 {
-    "count": 2,
     "items": [
         {
-            "id": "ID_3wlg6bv52Gg",               //单据ID
-            "code": "B22000001",                  //单据编号
-            "corporationId": "bwa3wajigF0WH0",    //企业ID
-            "state": "rejected",                  //单据状态
-            "updateTime": 1642404597341,          //更新日期
-            "createTime": 1642403403188,          //创建日期
-            "updateTimeString": "2022-01-17 15:29:57",  //格式化更新日期
-            "createTimeString": "2022-01-17 15:10:03"   //格式化创建日期
+            "type": "BaseData",
+            "id": "ID_3wlg6bv6EGg",
+            "corporationId": "bwa3wajigF0WH0",
+            "ownerId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+            "dataType": "expense",
+            "remark": "",
+            "title": "2",
+            "updateTime": 1645696726362,
+            "specificationId": "ID_3w9HsnE1fq0:0a5d8f235fc04170e807622be04f2c0c33d0dc9d",
+            "owner": {
+                "id": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                "name": "冯继成",
+                "departments": [
+                    {
+                        "id": "bwa3wajigF0WH0",
+                        "name": "测试接口专用",
+                        "code": ""
+                    }
+                ],
+                "code": ""
+            },
+            "department": {
+                "id": "bwa3wajigF0WH0",
+                "name": "测试接口专用",
+                "code": ""
+            },
+            "code": "B22000002",
+            "userProps": {
+                "companyRealPay": "0.00",
+                "companyRealPay_standardStrCode": "CNY",
+                "companyRealPay_standardNumCode": "156",
+                "companyRealPay_standardSymbol": "¥",
+                "companyRealPay_standardUnit": "元",
+                "companyRealPay_rate": "1",
+                "companyRealPay_foreignStrCode": "",
+                "companyRealPay_foreignNumCode": "",
+                "companyRealPay_foreign": "",
+                "companyRealPay_foreignSymbol": "",
+                "companyRealPay_foreignUnit": "",
+                "companyRealPay_budget": "",
+                "companyRealPay_budgetStrCode": "",
+                "companyRealPay_budgetNumCode": "",
+                "companyRealPay_budgetSymbol": "",
+                "companyRealPay_budgetUnit": "",
+                "companyRealPay_budgetScale": "",
+                "companyRealPay_budgetRate": "",
+                "specificationId": {
+                    "id": "ID_3w9HsnE1fq0:0a5d8f235fc04170e807622be04f2c0c33d0dc9d",
+                    "code": "",
+                    "name": "日常报销单"
+                },
+                "submitterId": {
+                    "id": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "code": "9458",
+                    "name": "冯继成"
+                },
+                "expenseDepartment": {
+                    "id": "bwa3wajigF0WH0",
+                    "code": "code1",
+                    "name": "测试接口专用"
+                },
+                "payeeId": {
+                    "id": "ID_3wlg6bv4TGg",
+                    "code": "",
+                    "name": "冯继成"
+                }
+            },
+            "state": "PAYING",
+            "project": null,
+            "logs": [
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1642403002063,
+                    "state": "approving",
+                    "action": "freeflow.submit",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "SUBMIT",
+                    "nodeId": "SUBMIT",
+                    "nextNodeId": "FLOW:84238549:214046537",
+                    "nextOperatorId": "ebot",
+                    "logid": "ID_3wxTnOm7VGg",
+                    "attachments": [],
+                    "attributes": {
+                        "nextId": "FLOW:84238549:214046537",
+                        "nodeId": "SUBMIT",
+                        "comment": "",
+                        "isUrgent": false,
+                        "nextName": "费用标准检查",
+                        "urgentReason": null,
+                        "resubmitMethod": "FROM_START",
+                        "nextCounterSign": false,
+                        "sensitiveContent": null,
+                        "resubmitOperatorIds": []
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1642403403306,
+                    "state": "rejected",
+                    "action": "freeflow.reject",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "主管审批",
+                    "nodeId": "FLOW:1574971047:1652829542",
+                    "nextNodeId": "null",
+                    "nextOperatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "logid": "ID_3wxTnOm7XGg",
+                    "attachments": [],
+                    "attributes": {
+                        "isAuto": false,
+                        "nextId": null,
+                        "nodeId": "FLOW:1574971047:1652829542",
+                        "comment": "11",
+                        "nodeName": "提交人",
+                        "isEbotNode": false,
+                        "isStaffExit": false,
+                        "resubmitMethod": "TO_REJECTOR",
+                        "isCostControlCheck": false
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614292101,
+                    "state": "approving",
+                    "action": "freeflow.submit",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "SUBMIT",
+                    "nodeId": "SUBMIT",
+                    "nextNodeId": "FLOW:84238549:214046537",
+                    "nextOperatorId": "ebot",
+                    "logid": "ID_3zznbK03f3g",
+                    "attachments": [],
+                    "attributes": {
+                        "nextId": "FLOW:84238549:214046537",
+                        "nodeId": "SUBMIT",
+                        "comment": "提交人没有修改单据。",
+                        "isUrgent": false,
+                        "nextName": "费用标准检查",
+                        "urgentReason": null,
+                        "resubmitMethod": "TO_REJECTOR",
+                        "nextCounterSign": false,
+                        "sensitiveContent": null,
+                        "resubmitOperatorIds": [
+                            "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                        ]
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614326952,
+                    "state": "approving",
+                    "action": "freeflow.select.approver",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "",
+                    "nodeId": null,
+                    "nextNodeId": null,
+                    "nextOperatorId": null,
+                    "logid": "ID_3zznbK03g3g",
+                    "attachments": [],
+                    "attributes": {
+                        "name": "总经理审批",
+                        "label": null,
+                        "oldApproverId": null,
+                        "newApproverNames": [
+                            "冯继成"
+                        ]
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614402954,
+                    "state": "approving",
+                    "action": "freeflow.agree",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "主管审批",
+                    "nodeId": "FLOW:1574971047:1652829542",
+                    "nextNodeId": "FLOW:82053494:1198454593",
+                    "nextOperatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "logid": "ID_3zznbK03h3g",
+                    "attachments": [],
+                    "attributes": {
+                        "nextId": "FLOW:82053494:1198454593",
+                        "nodeId": "FLOW:1574971047:1652829542",
+                        "comment": "同意",
+                        "complete": true,
+                        "nextName": "总经理审批",
+                        "nodeName": "主管审批",
+                        "expressNum": null,
+                        "isEbotNode": false,
+                        "counterSign": false,
+                        "isRecalNode": false,
+                        "oldFlowPlanId": null,
+                        "nextCounterSign": false,
+                        "autographImageId": null
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614415959,
+                    "state": "approving",
+                    "action": "freeflow.select.approver",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "",
+                    "nodeId": null,
+                    "nextNodeId": null,
+                    "nextOperatorId": null,
+                    "logid": "ID_3zznbK03i3g",
+                    "attachments": [],
+                    "attributes": {
+                        "name": "财务复核",
+                        "label": null,
+                        "oldApproverId": null,
+                        "newApproverNames": [
+                            "冯继成"
+                        ]
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614416133,
+                    "state": "approving",
+                    "action": "freeflow.agree",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "总经理审批",
+                    "nodeId": "FLOW:82053494:1198454593",
+                    "nextNodeId": "FLOW:1252803601:559140440",
+                    "nextOperatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "logid": "ID_3zznbK03j3g",
+                    "attachments": [],
+                    "attributes": {
+                        "nextId": "FLOW:1252803601:559140440",
+                        "nodeId": "FLOW:82053494:1198454593",
+                        "comment": "同意",
+                        "complete": true,
+                        "nextName": "财务复核",
+                        "nodeName": "总经理审批",
+                        "expressNum": null,
+                        "isEbotNode": false,
+                        "counterSign": false,
+                        "isRecalNode": false,
+                        "oldFlowPlanId": null,
+                        "nextCounterSign": false,
+                        "autographImageId": null
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614464929,
+                    "state": "approving",
+                    "action": "freeflow.select.approver",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "",
+                    "nodeId": null,
+                    "nextNodeId": null,
+                    "nextOperatorId": null,
+                    "logid": "ID_3zznbK03k3g",
+                    "attachments": [],
+                    "attributes": {
+                        "name": "出纳支付",
+                        "label": null,
+                        "oldApproverId": null,
+                        "newApproverNames": [
+                            "冯继成"
+                        ]
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614465140,
+                    "state": "paying",
+                    "action": "freeflow.agree",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "财务复核",
+                    "nodeId": "FLOW:1252803601:559140440",
+                    "nextNodeId": "FLOW:1211230535:340012282",
+                    "nextOperatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "logid": "ID_3zznbK03l3g",
+                    "attachments": [],
+                    "attributes": {
+                        "nextId": "FLOW:1211230535:340012282",
+                        "nodeId": "FLOW:1252803601:559140440",
+                        "comment": "同意",
+                        "complete": true,
+                        "nextName": "出纳支付",
+                        "nodeName": "财务复核",
+                        "expressNum": null,
+                        "isEbotNode": false,
+                        "counterSign": false,
+                        "isRecalNode": false,
+                        "oldFlowPlanId": null,
+                        "nextCounterSign": false,
+                        "autographImageId": null
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614476949,
+                    "state": "paying",
+                    "action": "freeflow.paying",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "出纳支付",
+                    "nodeId": "FLOW:1211230535:340012282",
+                    "nextNodeId": null,
+                    "nextOperatorId": null,
+                    "logid": "ID_3zznbK03s3g",
+                    "attachments": [],
+                    "attributes": {
+                        "nodeId": "FLOW:1211230535:340012282",
+                        "comment": null,
+                        "failureReason": null,
+                        "channelTradeNo": "OFFLINE2022000002",
+                        "paymentChannel": "OFFLINE",
+                        "autographImageId": null,
+                        "paymentAccountId": "bwa3wajigF0WH0:BANK"
+                    }
+                }
+            ],
+            "flowPlan": {
+                "pipeline": 1,
+                "grayver": "9.10.0.0:A",
+                "id": "ID_3wlg6bv6EGg",
+                "version": 9,
+                "active": true,
+                "createTime": 1645614290747,
+                "updateTime": 1645614465121,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "prevId": "FLOW:1252803601:559140440",
+                "nextNodeId": null,
+                "taskId": "FLOW:1211230535:340012282",
+                "ownerId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                "submitterId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                "flowPlanConfigId": "ID_3w9HsnE0Pq0",
+                "submitNode": {
+                    "id": "SUBMIT",
+                    "nextId": "SUBMIT",
+                    "nextApproverIds": null,
+                    "ownerId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "carbonCopy": [],
+                    "urgent": null,
+                    "isSensitive": null,
+                    "isRequired": null,
+                    "submitOutboundMessage": null,
+                    "hidePrintBtnDependOnRemind": null,
+                    "budgetCalcTime": null,
+                    "isAllowWithdraw": null,
+                    "onlyOwnerPrint": null
+                },
+                "nodes": [
+                    {
+                        "type": "ebot",
+                        "id": "FLOW:84238549:214046537",
+                        "configNodeId": "ID_3w9HsnE0Qq0",
+                        "name": "费用标准检查",
+                        "label": null,
+                        "skippedType": "NO_SKIPPED",
+                        "agreeType": "NO_AUTO_AGREE",
+                        "conditionalDescription": null,
+                        "conditionalType": null,
+                        "skipWhenApproverNonMatched": false,
+                        "autoAgreeWhenApproverRepeated": false,
+                        "autoAgreeWhenApproverSameAsSubmitter": false,
+                        "removeDefaultHistoryApprover": false,
+                        "autoAgreeWhenCreditInsepction": false,
+                        "creditNoteAvailable": false,
+                        "allowModify": true,
+                        "config": {
+                            "isAuto": false
+                        },
+                        "isAllStaffs": false,
+                        "carbonCopy": [],
+                        "timeCount": null,
+                        "addCountReport": false,
+                        "isAddNode": false,
+                        "autoRemindPrint": false,
+                        "beforeRemindPrint": false,
+                        "allowModifyApprover": false,
+                        "expressConfig": null,
+                        "commentWhenFlowHasRisk": false,
+                        "forbidBatchApproveRiskFlow": false,
+                        "condition": null,
+                        "laterCalcReason": null,
+                        "forbidBeforeAddNode": false,
+                        "forbidAftAddNode": false,
+                        "forbidShiftNode": false,
+                        "crossCorpNode": false,
+                        "rejectSetting": null,
+                        "ebotConfig": {
+                            "type": "costControlCheck",
+                            "setting": {
+                                "controlIds": [],
+                                "isOutOfLimitReject": false
+                            }
+                        },
+                        "approveType": "NONE"
+                    },
+                    {
+                        "type": "normal",
+                        "id": "FLOW:1574971047:1652829542",
+                        "configNodeId": "ID_3w9HsnE0Rq0",
+                        "name": "主管审批",
+                        "label": null,
+                        "skippedType": "NO_SKIPPED",
+                        "agreeType": "NO_AUTO_AGREE",
+                        "conditionalDescription": null,
+                        "conditionalType": null,
+                        "skipWhenApproverNonMatched": true,
+                        "autoAgreeWhenApproverRepeated": false,
+                        "autoAgreeWhenApproverSameAsSubmitter": false,
+                        "removeDefaultHistoryApprover": false,
+                        "autoAgreeWhenCreditInsepction": false,
+                        "creditNoteAvailable": false,
+                        "allowModify": false,
+                        "config": {
+                            "isAuto": false,
+                            "isSubmitterChoice": false
+                        },
+                        "isAllStaffs": true,
+                        "carbonCopy": [],
+                        "timeCount": null,
+                        "addCountReport": true,
+                        "isAddNode": false,
+                        "autoRemindPrint": false,
+                        "beforeRemindPrint": false,
+                        "allowModifyApprover": false,
+                        "expressConfig": null,
+                        "commentWhenFlowHasRisk": false,
+                        "forbidBatchApproveRiskFlow": false,
+                        "condition": null,
+                        "laterCalcReason": null,
+                        "forbidBeforeAddNode": false,
+                        "forbidAftAddNode": false,
+                        "forbidShiftNode": false,
+                        "crossCorpNode": false,
+                        "rejectSetting": null,
+                        "staffIds": [],
+                        "approverId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                        "forbidRejectNode": false,
+                        "forbidRiskWarnings": false,
+                        "filterRiskWarnings": null,
+                        "approveType": "NONE"
+                    },
+                    {
+                        "type": "normal",
+                        "id": "FLOW:82053494:1198454593",
+                        "configNodeId": "ID_3w9HsnE0Sq0",
+                        "name": "总经理审批",
+                        "label": null,
+                        "skippedType": "NO_SKIPPED",
+                        "agreeType": "NO_AUTO_AGREE",
+                        "conditionalDescription": null,
+                        "conditionalType": null,
+                        "skipWhenApproverNonMatched": true,
+                        "autoAgreeWhenApproverRepeated": false,
+                        "autoAgreeWhenApproverSameAsSubmitter": false,
+                        "removeDefaultHistoryApprover": false,
+                        "autoAgreeWhenCreditInsepction": false,
+                        "creditNoteAvailable": false,
+                        "allowModify": false,
+                        "config": {
+                            "isAuto": false,
+                            "isSubmitterChoice": false
+                        },
+                        "isAllStaffs": true,
+                        "carbonCopy": [],
+                        "timeCount": null,
+                        "addCountReport": true,
+                        "isAddNode": false,
+                        "autoRemindPrint": false,
+                        "beforeRemindPrint": false,
+                        "allowModifyApprover": false,
+                        "expressConfig": null,
+                        "commentWhenFlowHasRisk": false,
+                        "forbidBatchApproveRiskFlow": false,
+                        "condition": null,
+                        "laterCalcReason": null,
+                        "forbidBeforeAddNode": false,
+                        "forbidAftAddNode": false,
+                        "forbidShiftNode": false,
+                        "crossCorpNode": false,
+                        "rejectSetting": null,
+                        "staffIds": [],
+                        "approverId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                        "forbidRejectNode": false,
+                        "forbidRiskWarnings": false,
+                        "filterRiskWarnings": null,
+                        "approveType": "NONE"
+                    },
+                    {
+                        "type": "normal",
+                        "id": "FLOW:1252803601:559140440",
+                        "configNodeId": "ID_3w9HsnE0Tq0",
+                        "name": "财务复核",
+                        "label": null,
+                        "skippedType": "NO_SKIPPED",
+                        "agreeType": "NO_AUTO_AGREE",
+                        "conditionalDescription": null,
+                        "conditionalType": null,
+                        "skipWhenApproverNonMatched": true,
+                        "autoAgreeWhenApproverRepeated": false,
+                        "autoAgreeWhenApproverSameAsSubmitter": false,
+                        "removeDefaultHistoryApprover": false,
+                        "autoAgreeWhenCreditInsepction": false,
+                        "creditNoteAvailable": false,
+                        "allowModify": false,
+                        "config": {
+                            "isAuto": false,
+                            "isSubmitterChoice": false
+                        },
+                        "isAllStaffs": true,
+                        "carbonCopy": [],
+                        "timeCount": null,
+                        "addCountReport": true,
+                        "isAddNode": false,
+                        "autoRemindPrint": false,
+                        "beforeRemindPrint": false,
+                        "allowModifyApprover": false,
+                        "expressConfig": null,
+                        "commentWhenFlowHasRisk": false,
+                        "forbidBatchApproveRiskFlow": false,
+                        "condition": null,
+                        "laterCalcReason": null,
+                        "forbidBeforeAddNode": false,
+                        "forbidAftAddNode": false,
+                        "forbidShiftNode": false,
+                        "crossCorpNode": false,
+                        "rejectSetting": null,
+                        "staffIds": [],
+                        "approverId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                        "forbidRejectNode": false,
+                        "forbidRiskWarnings": false,
+                        "filterRiskWarnings": null,
+                        "approveType": "NONE"
+                    },
+                    {
+                        "type": "normal",
+                        "id": "FLOW:1211230535:340012282",
+                        "configNodeId": "ID_3w9HsnE0Uq0",
+                        "name": "出纳支付",
+                        "label": null,
+                        "skippedType": "NO_SKIPPED",
+                        "agreeType": "NO_AUTO_AGREE",
+                        "conditionalDescription": null,
+                        "conditionalType": null,
+                        "skipWhenApproverNonMatched": false,
+                        "autoAgreeWhenApproverRepeated": false,
+                        "autoAgreeWhenApproverSameAsSubmitter": false,
+                        "removeDefaultHistoryApprover": false,
+                        "autoAgreeWhenCreditInsepction": false,
+                        "creditNoteAvailable": false,
+                        "allowModify": false,
+                        "config": {
+                            "isAuto": false,
+                            "isSubmitterChoice": false
+                        },
+                        "isAllStaffs": true,
+                        "carbonCopy": [],
+                        "timeCount": null,
+                        "addCountReport": true,
+                        "isAddNode": false,
+                        "autoRemindPrint": false,
+                        "beforeRemindPrint": false,
+                        "allowModifyApprover": false,
+                        "expressConfig": null,
+                        "commentWhenFlowHasRisk": false,
+                        "forbidBatchApproveRiskFlow": false,
+                        "condition": null,
+                        "laterCalcReason": null,
+                        "forbidBeforeAddNode": false,
+                        "forbidAftAddNode": false,
+                        "forbidShiftNode": false,
+                        "crossCorpNode": false,
+                        "rejectSetting": null,
+                        "staffIds": [],
+                        "approverId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                        "forbidRejectNode": false,
+                        "forbidRiskWarnings": false,
+                        "filterRiskWarnings": null,
+                        "approveType": "NONE"
+                    }
+                ],
+                "resubmitMethod": "TO_NEXTNODE",
+                "configVersion": 1,
+                "hasCrossCorpNode": false
+            }
         },
         {
+            "type": "BaseData",
             "id": "ID_3wlg6bv6EGg",
-            "code": "B22000002",
             "corporationId": "bwa3wajigF0WH0",
-            "state": "rejected",
-            "updateTime": 1642404597362,
-            "createTime": 1642403403310,
-            "updateTimeString": "2022-01-17 15:29:57",
-            "createTimeString": "2022-01-17 15:10:03"
+            "ownerId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+            "dataType": "expense",
+            "remark": "",
+            "title": "2",
+            "updateTime": 1645696726362,
+            "specificationId": "ID_3w9HsnE1fq0:0a5d8f235fc04170e807622be04f2c0c33d0dc9d",
+            "owner": {
+                "id": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                "name": "冯继成",
+                "departments": [
+                    {
+                        "id": "bwa3wajigF0WH0",
+                        "name": "测试接口专用",
+                        "code": ""
+                    }
+                ],
+                "code": ""
+            },
+            "department": {
+                "id": "bwa3wajigF0WH0",
+                "name": "测试接口专用",
+                "code": ""
+            },
+            "code": "B22000002",
+            "userProps": {
+                "companyRealPay": "0.00",
+                "companyRealPay_standardStrCode": "CNY",
+                "companyRealPay_standardNumCode": "156",
+                "companyRealPay_standardSymbol": "¥",
+                "companyRealPay_standardUnit": "元",
+                "companyRealPay_rate": "1",
+                "companyRealPay_foreignStrCode": "",
+                "companyRealPay_foreignNumCode": "",
+                "companyRealPay_foreign": "",
+                "companyRealPay_foreignSymbol": "",
+                "companyRealPay_foreignUnit": "",
+                "companyRealPay_budget": "",
+                "companyRealPay_budgetStrCode": "",
+                "companyRealPay_budgetNumCode": "",
+                "companyRealPay_budgetSymbol": "",
+                "companyRealPay_budgetUnit": "",
+                "companyRealPay_budgetScale": "",
+                "companyRealPay_budgetRate": "",
+                "specificationId": {
+                    "id": "ID_3w9HsnE1fq0:0a5d8f235fc04170e807622be04f2c0c33d0dc9d",
+                    "code": "",
+                    "name": "日常报销单"
+                },
+                "submitterId": {
+                    "id": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "code": "9458",
+                    "name": "冯继成"
+                },
+                "expenseDepartment": {
+                    "id": "bwa3wajigF0WH0",
+                    "code": "code1",
+                    "name": "测试接口专用"
+                },
+                "payeeId": {
+                    "id": "ID_3wlg6bv4TGg",
+                    "code": "",
+                    "name": "冯继成"
+                }
+            },
+            "state": "PAYING",
+            "project": null,
+            "logs": [
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1642403002063,
+                    "state": "approving",
+                    "action": "freeflow.submit",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "SUBMIT",
+                    "nodeId": "SUBMIT",
+                    "nextNodeId": "FLOW:84238549:214046537",
+                    "nextOperatorId": "ebot",
+                    "logid": "ID_3wxTnOm7VGg",
+                    "attachments": [],
+                    "attributes": {
+                        "nextId": "FLOW:84238549:214046537",
+                        "nodeId": "SUBMIT",
+                        "comment": "",
+                        "isUrgent": false,
+                        "nextName": "费用标准检查",
+                        "urgentReason": null,
+                        "resubmitMethod": "FROM_START",
+                        "nextCounterSign": false,
+                        "sensitiveContent": null,
+                        "resubmitOperatorIds": []
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1642403403306,
+                    "state": "rejected",
+                    "action": "freeflow.reject",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "主管审批",
+                    "nodeId": "FLOW:1574971047:1652829542",
+                    "nextNodeId": "null",
+                    "nextOperatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "logid": "ID_3wxTnOm7XGg",
+                    "attachments": [],
+                    "attributes": {
+                        "isAuto": false,
+                        "nextId": null,
+                        "nodeId": "FLOW:1574971047:1652829542",
+                        "comment": "11",
+                        "nodeName": "提交人",
+                        "isEbotNode": false,
+                        "isStaffExit": false,
+                        "resubmitMethod": "TO_REJECTOR",
+                        "isCostControlCheck": false
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614292101,
+                    "state": "approving",
+                    "action": "freeflow.submit",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "SUBMIT",
+                    "nodeId": "SUBMIT",
+                    "nextNodeId": "FLOW:84238549:214046537",
+                    "nextOperatorId": "ebot",
+                    "logid": "ID_3zznbK03f3g",
+                    "attachments": [],
+                    "attributes": {
+                        "nextId": "FLOW:84238549:214046537",
+                        "nodeId": "SUBMIT",
+                        "comment": "提交人没有修改单据。",
+                        "isUrgent": false,
+                        "nextName": "费用标准检查",
+                        "urgentReason": null,
+                        "resubmitMethod": "TO_REJECTOR",
+                        "nextCounterSign": false,
+                        "sensitiveContent": null,
+                        "resubmitOperatorIds": [
+                            "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                        ]
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614326952,
+                    "state": "approving",
+                    "action": "freeflow.select.approver",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "",
+                    "nodeId": null,
+                    "nextNodeId": null,
+                    "nextOperatorId": null,
+                    "logid": "ID_3zznbK03g3g",
+                    "attachments": [],
+                    "attributes": {
+                        "name": "总经理审批",
+                        "label": null,
+                        "oldApproverId": null,
+                        "newApproverNames": [
+                            "冯继成"
+                        ]
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614402954,
+                    "state": "approving",
+                    "action": "freeflow.agree",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "主管审批",
+                    "nodeId": "FLOW:1574971047:1652829542",
+                    "nextNodeId": "FLOW:82053494:1198454593",
+                    "nextOperatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "logid": "ID_3zznbK03h3g",
+                    "attachments": [],
+                    "attributes": {
+                        "nextId": "FLOW:82053494:1198454593",
+                        "nodeId": "FLOW:1574971047:1652829542",
+                        "comment": "同意",
+                        "complete": true,
+                        "nextName": "总经理审批",
+                        "nodeName": "主管审批",
+                        "expressNum": null,
+                        "isEbotNode": false,
+                        "counterSign": false,
+                        "isRecalNode": false,
+                        "oldFlowPlanId": null,
+                        "nextCounterSign": false,
+                        "autographImageId": null
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614415959,
+                    "state": "approving",
+                    "action": "freeflow.select.approver",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "",
+                    "nodeId": null,
+                    "nextNodeId": null,
+                    "nextOperatorId": null,
+                    "logid": "ID_3zznbK03i3g",
+                    "attachments": [],
+                    "attributes": {
+                        "name": "财务复核",
+                        "label": null,
+                        "oldApproverId": null,
+                        "newApproverNames": [
+                            "冯继成"
+                        ]
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614416133,
+                    "state": "approving",
+                    "action": "freeflow.agree",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "总经理审批",
+                    "nodeId": "FLOW:82053494:1198454593",
+                    "nextNodeId": "FLOW:1252803601:559140440",
+                    "nextOperatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "logid": "ID_3zznbK03j3g",
+                    "attachments": [],
+                    "attributes": {
+                        "nextId": "FLOW:1252803601:559140440",
+                        "nodeId": "FLOW:82053494:1198454593",
+                        "comment": "同意",
+                        "complete": true,
+                        "nextName": "财务复核",
+                        "nodeName": "总经理审批",
+                        "expressNum": null,
+                        "isEbotNode": false,
+                        "counterSign": false,
+                        "isRecalNode": false,
+                        "oldFlowPlanId": null,
+                        "nextCounterSign": false,
+                        "autographImageId": null
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614464929,
+                    "state": "approving",
+                    "action": "freeflow.select.approver",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "",
+                    "nodeId": null,
+                    "nextNodeId": null,
+                    "nextOperatorId": null,
+                    "logid": "ID_3zznbK03k3g",
+                    "attachments": [],
+                    "attributes": {
+                        "name": "出纳支付",
+                        "label": null,
+                        "oldApproverId": null,
+                        "newApproverNames": [
+                            "冯继成"
+                        ]
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614465140,
+                    "state": "paying",
+                    "action": "freeflow.agree",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "财务复核",
+                    "nodeId": "FLOW:1252803601:559140440",
+                    "nextNodeId": "FLOW:1211230535:340012282",
+                    "nextOperatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "logid": "ID_3zznbK03l3g",
+                    "attachments": [],
+                    "attributes": {
+                        "nextId": "FLOW:1211230535:340012282",
+                        "nodeId": "FLOW:1252803601:559140440",
+                        "comment": "同意",
+                        "complete": true,
+                        "nextName": "出纳支付",
+                        "nodeName": "财务复核",
+                        "expressNum": null,
+                        "isEbotNode": false,
+                        "counterSign": false,
+                        "isRecalNode": false,
+                        "oldFlowPlanId": null,
+                        "nextCounterSign": false,
+                        "autographImageId": null
+                    }
+                },
+                {
+                    "isNew": false,
+                    "corporationId": "bwa3wajigF0WH0",
+                    "docDataCode": "B22000002",
+                    "time": 1645614476949,
+                    "state": "paying",
+                    "action": "freeflow.paying",
+                    "operatorId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "nodeName": "出纳支付",
+                    "nodeId": "FLOW:1211230535:340012282",
+                    "nextNodeId": null,
+                    "nextOperatorId": null,
+                    "logid": "ID_3zznbK03s3g",
+                    "attachments": [],
+                    "attributes": {
+                        "nodeId": "FLOW:1211230535:340012282",
+                        "comment": null,
+                        "failureReason": null,
+                        "channelTradeNo": "OFFLINE2022000002",
+                        "paymentChannel": "OFFLINE",
+                        "autographImageId": null,
+                        "paymentAccountId": "bwa3wajigF0WH0:BANK"
+                    }
+                }
+            ],
+            "flowPlan": {
+                "pipeline": 1,
+                "grayver": "9.10.0.0:A",
+                "id": "ID_3wlg6bv6EGg",
+                "version": 9,
+                "active": true,
+                "createTime": 1645614290747,
+                "updateTime": 1645614465121,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "prevId": "FLOW:1252803601:559140440",
+                "nextNodeId": null,
+                "taskId": "FLOW:1211230535:340012282",
+                "ownerId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                "submitterId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                "flowPlanConfigId": "ID_3w9HsnE0Pq0",
+                "submitNode": {
+                    "id": "SUBMIT",
+                    "nextId": "SUBMIT",
+                    "nextApproverIds": null,
+                    "ownerId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                    "carbonCopy": [],
+                    "urgent": null,
+                    "isSensitive": null,
+                    "isRequired": null,
+                    "submitOutboundMessage": null,
+                    "hidePrintBtnDependOnRemind": null,
+                    "budgetCalcTime": null,
+                    "isAllowWithdraw": null,
+                    "onlyOwnerPrint": null
+                },
+                "nodes": [
+                    {
+                        "type": "ebot",
+                        "id": "FLOW:84238549:214046537",
+                        "configNodeId": "ID_3w9HsnE0Qq0",
+                        "name": "费用标准检查",
+                        "label": null,
+                        "skippedType": "NO_SKIPPED",
+                        "agreeType": "NO_AUTO_AGREE",
+                        "conditionalDescription": null,
+                        "conditionalType": null,
+                        "skipWhenApproverNonMatched": false,
+                        "autoAgreeWhenApproverRepeated": false,
+                        "autoAgreeWhenApproverSameAsSubmitter": false,
+                        "removeDefaultHistoryApprover": false,
+                        "autoAgreeWhenCreditInsepction": false,
+                        "creditNoteAvailable": false,
+                        "allowModify": true,
+                        "config": {
+                            "isAuto": false
+                        },
+                        "isAllStaffs": false,
+                        "carbonCopy": [],
+                        "timeCount": null,
+                        "addCountReport": false,
+                        "isAddNode": false,
+                        "autoRemindPrint": false,
+                        "beforeRemindPrint": false,
+                        "allowModifyApprover": false,
+                        "expressConfig": null,
+                        "commentWhenFlowHasRisk": false,
+                        "forbidBatchApproveRiskFlow": false,
+                        "condition": null,
+                        "laterCalcReason": null,
+                        "forbidBeforeAddNode": false,
+                        "forbidAftAddNode": false,
+                        "forbidShiftNode": false,
+                        "crossCorpNode": false,
+                        "rejectSetting": null,
+                        "ebotConfig": {
+                            "type": "costControlCheck",
+                            "setting": {
+                                "controlIds": [],
+                                "isOutOfLimitReject": false
+                            }
+                        },
+                        "approveType": "NONE"
+                    },
+                    {
+                        "type": "normal",
+                        "id": "FLOW:1574971047:1652829542",
+                        "configNodeId": "ID_3w9HsnE0Rq0",
+                        "name": "主管审批",
+                        "label": null,
+                        "skippedType": "NO_SKIPPED",
+                        "agreeType": "NO_AUTO_AGREE",
+                        "conditionalDescription": null,
+                        "conditionalType": null,
+                        "skipWhenApproverNonMatched": true,
+                        "autoAgreeWhenApproverRepeated": false,
+                        "autoAgreeWhenApproverSameAsSubmitter": false,
+                        "removeDefaultHistoryApprover": false,
+                        "autoAgreeWhenCreditInsepction": false,
+                        "creditNoteAvailable": false,
+                        "allowModify": false,
+                        "config": {
+                            "isAuto": false,
+                            "isSubmitterChoice": false
+                        },
+                        "isAllStaffs": true,
+                        "carbonCopy": [],
+                        "timeCount": null,
+                        "addCountReport": true,
+                        "isAddNode": false,
+                        "autoRemindPrint": false,
+                        "beforeRemindPrint": false,
+                        "allowModifyApprover": false,
+                        "expressConfig": null,
+                        "commentWhenFlowHasRisk": false,
+                        "forbidBatchApproveRiskFlow": false,
+                        "condition": null,
+                        "laterCalcReason": null,
+                        "forbidBeforeAddNode": false,
+                        "forbidAftAddNode": false,
+                        "forbidShiftNode": false,
+                        "crossCorpNode": false,
+                        "rejectSetting": null,
+                        "staffIds": [],
+                        "approverId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                        "forbidRejectNode": false,
+                        "forbidRiskWarnings": false,
+                        "filterRiskWarnings": null,
+                        "approveType": "NONE"
+                    },
+                    {
+                        "type": "normal",
+                        "id": "FLOW:82053494:1198454593",
+                        "configNodeId": "ID_3w9HsnE0Sq0",
+                        "name": "总经理审批",
+                        "label": null,
+                        "skippedType": "NO_SKIPPED",
+                        "agreeType": "NO_AUTO_AGREE",
+                        "conditionalDescription": null,
+                        "conditionalType": null,
+                        "skipWhenApproverNonMatched": true,
+                        "autoAgreeWhenApproverRepeated": false,
+                        "autoAgreeWhenApproverSameAsSubmitter": false,
+                        "removeDefaultHistoryApprover": false,
+                        "autoAgreeWhenCreditInsepction": false,
+                        "creditNoteAvailable": false,
+                        "allowModify": false,
+                        "config": {
+                            "isAuto": false,
+                            "isSubmitterChoice": false
+                        },
+                        "isAllStaffs": true,
+                        "carbonCopy": [],
+                        "timeCount": null,
+                        "addCountReport": true,
+                        "isAddNode": false,
+                        "autoRemindPrint": false,
+                        "beforeRemindPrint": false,
+                        "allowModifyApprover": false,
+                        "expressConfig": null,
+                        "commentWhenFlowHasRisk": false,
+                        "forbidBatchApproveRiskFlow": false,
+                        "condition": null,
+                        "laterCalcReason": null,
+                        "forbidBeforeAddNode": false,
+                        "forbidAftAddNode": false,
+                        "forbidShiftNode": false,
+                        "crossCorpNode": false,
+                        "rejectSetting": null,
+                        "staffIds": [],
+                        "approverId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                        "forbidRejectNode": false,
+                        "forbidRiskWarnings": false,
+                        "filterRiskWarnings": null,
+                        "approveType": "NONE"
+                    },
+                    {
+                        "type": "normal",
+                        "id": "FLOW:1252803601:559140440",
+                        "configNodeId": "ID_3w9HsnE0Tq0",
+                        "name": "财务复核",
+                        "label": null,
+                        "skippedType": "NO_SKIPPED",
+                        "agreeType": "NO_AUTO_AGREE",
+                        "conditionalDescription": null,
+                        "conditionalType": null,
+                        "skipWhenApproverNonMatched": true,
+                        "autoAgreeWhenApproverRepeated": false,
+                        "autoAgreeWhenApproverSameAsSubmitter": false,
+                        "removeDefaultHistoryApprover": false,
+                        "autoAgreeWhenCreditInsepction": false,
+                        "creditNoteAvailable": false,
+                        "allowModify": false,
+                        "config": {
+                            "isAuto": false,
+                            "isSubmitterChoice": false
+                        },
+                        "isAllStaffs": true,
+                        "carbonCopy": [],
+                        "timeCount": null,
+                        "addCountReport": true,
+                        "isAddNode": false,
+                        "autoRemindPrint": false,
+                        "beforeRemindPrint": false,
+                        "allowModifyApprover": false,
+                        "expressConfig": null,
+                        "commentWhenFlowHasRisk": false,
+                        "forbidBatchApproveRiskFlow": false,
+                        "condition": null,
+                        "laterCalcReason": null,
+                        "forbidBeforeAddNode": false,
+                        "forbidAftAddNode": false,
+                        "forbidShiftNode": false,
+                        "crossCorpNode": false,
+                        "rejectSetting": null,
+                        "staffIds": [],
+                        "approverId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                        "forbidRejectNode": false,
+                        "forbidRiskWarnings": false,
+                        "filterRiskWarnings": null,
+                        "approveType": "NONE"
+                    },
+                    {
+                        "type": "normal",
+                        "id": "FLOW:1211230535:340012282",
+                        "configNodeId": "ID_3w9HsnE0Uq0",
+                        "name": "出纳支付",
+                        "label": null,
+                        "skippedType": "NO_SKIPPED",
+                        "agreeType": "NO_AUTO_AGREE",
+                        "conditionalDescription": null,
+                        "conditionalType": null,
+                        "skipWhenApproverNonMatched": false,
+                        "autoAgreeWhenApproverRepeated": false,
+                        "autoAgreeWhenApproverSameAsSubmitter": false,
+                        "removeDefaultHistoryApprover": false,
+                        "autoAgreeWhenCreditInsepction": false,
+                        "creditNoteAvailable": false,
+                        "allowModify": false,
+                        "config": {
+                            "isAuto": false,
+                            "isSubmitterChoice": false
+                        },
+                        "isAllStaffs": true,
+                        "carbonCopy": [],
+                        "timeCount": null,
+                        "addCountReport": true,
+                        "isAddNode": false,
+                        "autoRemindPrint": false,
+                        "beforeRemindPrint": false,
+                        "allowModifyApprover": false,
+                        "expressConfig": null,
+                        "commentWhenFlowHasRisk": false,
+                        "forbidBatchApproveRiskFlow": false,
+                        "condition": null,
+                        "laterCalcReason": null,
+                        "forbidBeforeAddNode": false,
+                        "forbidAftAddNode": false,
+                        "forbidShiftNode": false,
+                        "crossCorpNode": false,
+                        "rejectSetting": null,
+                        "staffIds": [],
+                        "approverId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                        "forbidRejectNode": false,
+                        "forbidRiskWarnings": false,
+                        "filterRiskWarnings": null,
+                        "approveType": "NONE"
+                    }
+                ],
+                "resubmitMethod": "TO_NEXTNODE",
+                "configVersion": 1,
+                "hasCrossCorpNode": false
+            }
         }
     ]
 }
 ```
 
-查询发现单据状态并未有异常时，返回如下：
+**单据ID不存在**，**单据ID和单据类型不匹配** 等导致的修复状态不成功，返回如下：
 ```json
 {
-    "count": 0,
-    "items": []
+  "items": []
 }
-
 ```
 
 ## 失败响应
-`codes` 单据编号不正确时，报错如下：
+`type`（单据类型）不存在时，报错如下：
 ```json
 {
-    "errorCode": 412,
-    "errorMessage": "单据不存在",
+    "errorCode": 400,
+    "errorMessage": "参数type无法识别",
     "errorDetails": null,
     "code": null,
     "data": null

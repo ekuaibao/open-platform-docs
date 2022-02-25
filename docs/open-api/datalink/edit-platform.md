@@ -1,11 +1,18 @@
-# 编辑自建应用
+# 更新自建应用
 
 import Control from "@theme/Control";
 
 <Control
 method="PUT"
-url="/api/openapi/v2/datalink/editPlatform"
+url="/api/openapi/v2.1/datalink/editPlatform"
 />
+
+<details>
+  <summary>v2.1版本特性</summary>
+  <div>
+    - 🐞 新增了支持更新应用名称，对 adminIds（管理员ID）做参数真实性校验。
+  </div>
+</details>
 
 ## Query Parameters
 
@@ -19,15 +26,11 @@ url="/api/openapi/v2/datalink/editPlatform"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **id**       | String | 应用ID  | 必填 | - | 应用ID/自定义扩展ID |
 | **name**     | String | 应用名称 | 必填 | - | 应用名称/自定义扩展名称 |
-| **adminIds** | Array  | 管理员ID | 必填 | - | [员工ID获取](/docs/open-api/corporation/get-staff-ids) |
-
-:::caution
-由于历史迭代遗留问题，该接口暂时只支持编辑管理员，但是参数 `name` 依然必填。
-:::
+| **adminIds** | Array  | 管理员ID | 非必填 | - | [员工ID获取](/docs/open-api/corporation/get-staff-ids) |
 
 ## CURL
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/editPlatform?accessToken=cxEbrzNJSA3A00' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/datalink/editPlatform?accessToken=cxEbrzNJSA3A00' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "互联测试1111",
@@ -68,7 +71,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 
 
 ## 失败响应
-请确保编辑的 `应用ID/平台ID` 是真实存在的，否则会返回如下响应：
+请确保要更新的 `应用ID/平台ID` 是真实存在的，否则会返回如下响应：
 ```json
 {
     "errorCode": 400,
@@ -79,4 +82,13 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 }
 ```
 
-
+当 `adminIds`（管理员ID）不存在时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "ID为'bwa3wajigF0WH0:ID_3wlg6bv9UGg·'的员工不存在",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```

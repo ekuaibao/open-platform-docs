@@ -1,4 +1,4 @@
-# 创建自建应用(自定义扩展)
+# 创建自建应用
 
 import Control from "@theme/Control";
 
