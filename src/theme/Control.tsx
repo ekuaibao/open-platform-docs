@@ -9,10 +9,11 @@ interface IProps {
 }
 
 const Control: FC<IProps> = ({ method, url, description }) => {
+  const formatUrl = url.replace(/\`(.*?)\`/g, "<span>$1</span>");
   return (
     <div className={`${styles.control} ${styles[method]}`}>
       <span className={styles.method}>{method}</span>
-      <strong>{url}</strong>
+      <strong dangerouslySetInnerHTML={{__html: formatUrl}} />
       {description && <small>{description}</small>}
     </div>
   );
