@@ -8,7 +8,7 @@ url="/api/openapi/v1/flowDetails"
 />
 
 :::caution
-- 单据状态为【**已删除**】的单据无法被查询到。
+- 单据状态为【**已删除**】的单据无法被查询到，并报错“单据已删除”。
 :::
 
 ## Query Parameters

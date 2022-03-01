@@ -95,3 +95,23 @@ code 204
     "data": null
 }
 ```
+
+`path`、`staffs` 不允许传 `null`，否则报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "参数staffs不能为空",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "参数path不能为空",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```

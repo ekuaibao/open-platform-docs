@@ -66,3 +66,25 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1.1/cityGro
     "data": null
 }
 ```
+
+`staffIds`（员工ID）或 `roleIds`（角色ID）不存在时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "ID为'bwa3wajigF0WH0:ID_3lokDfb1p5w-'的员工不存在",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+要删除的 `staffIds`（员工ID）或 `roleIds`（角色ID）与系统中的数据不匹配时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "根据参数staffIds和roleIds找不到需要删除的数据",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```

@@ -5,8 +5,15 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1/approveStates/[`ids`]"
+url="/api/openapi/v1.1/approveStates/[`ids`]"
 />
+
+<details>
+  <summary>v1.1版本特性</summary>
+  <div>
+    - 🐞 新增了能获取到已删除的单据，并且显示“已删除”状态。
+  </div>
+</details>
 
 ## Path Parameters
 
@@ -22,7 +29,7 @@ url="/api/openapi/v1/approveStates/[`ids`]"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/approveStates/[yd4bn1Z-YM9000,ID_3sJUVscs$_w]?accessToken=UvsbtOEHTsk000'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/approveStates/[ID_3zE5G_07ew0,ID_3zJ05rt0DY0]?accessToken=UvsbtOEHTsk000'
 ```
 
 ## 成功响应
@@ -44,6 +51,12 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/approveSt
         {
             "flowId": "ID_3seTcgi0qrg",
             "stageName": "完成",
+            "operators": [],
+            "delegateData": []
+        },
+        {
+            "flowId": "ID_3zE5G_07ew0",
+            "stageName": "已删除",
             "operators": [],
             "delegateData": []
         }

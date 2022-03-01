@@ -92,3 +92,14 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/datalin
     "data": null
 }
 ```
+
+当 `name`（应用名称）传 `""` 时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "自建应用名称不能为空",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```

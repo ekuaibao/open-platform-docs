@@ -1,4 +1,4 @@
-# 获取指定员工的待审批单据
+# 根据员工ID获取待审批单据
 
 import Control from "@theme/Control";
 
@@ -18,9 +18,9 @@ url="/api/openapi/v1/docs/byApproverId/$`approverId`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**   | String  | 认证token     | 必填   | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **powerCode**     | String  | 功能授权码      | 必填   | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |
 | **index**         | Number  | 分页查询的起始值 | 非必填 | 0 | 起始值从 `0` 开始 |
 | **count**         | Number  | 查询数据条数    | 必填   | - | 最大不能超过 `100` |
-| **powerCode**     | String  | 功能授权码      | 必填   | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |
 
 ## CURL
 ```shell
