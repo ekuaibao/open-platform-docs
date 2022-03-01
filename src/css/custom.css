@@ -76,6 +76,19 @@ table td {
   vertical-align: top;
 }
 
+table thead th {
+  white-space: nowrap;
+}
+
+table tbody tr td {
+  white-space: nowrap;
+}
+
+table tbody tr td:nth-child(3),
+table tbody tr td:last-child,{
+  white-space: normal;
+}
+
 .prism-code {
   max-height: 480px;
   verflow: auto;
