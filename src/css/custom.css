@@ -85,7 +85,7 @@ table tbody tr td {
 }
 
 table tbody tr td:nth-child(3),
-table tbody tr td:last-child,{
+table tbody tr td:last-child {
   white-space: normal;
 }
 
