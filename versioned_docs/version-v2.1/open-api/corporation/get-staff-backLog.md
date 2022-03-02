@@ -5,8 +5,15 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1/staffs/getBacklogCount/$`type`"
+url="/api/openapi/v1.1/staffs/getBacklogCount/$`type`"
 />
+
+<details>
+  <summary>v1.1版本特性</summary>
+  <div>
+    - 🐞 新增了响应数据中返回详细待办类型及数量。
+  </div>
+</details>
 
 ## Path Parameters
 
@@ -23,7 +30,7 @@ url="/api/openapi/v1/staffs/getBacklogCount/$`type`"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/getBacklogCount/$id?accessToken=RCIbwHcnF0kg00&staffParam=JOYbpjPP-E2Q00:y8gbpjP9OsnI00' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/getBacklogCount/$id?accessToken=RCIbwHcnF0kg00&staffParam=JOYbpjPP-E2Q00:y8gbpjP9OsnI00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
@@ -31,7 +38,17 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/ge
 ## 成功响应
 ```json
 {
-    "count": 0 // 待办数量
+    "items": {
+    "count": 1,             //待办总数量
+        "type": {           //待办类型细项
+          "print": 1,       //待我打印
+          "paying": 0,      //待我支付
+          "carbonCopy": 0,  //抄送我的
+          "sending": 0,     //待我寄送
+          "peceving": 0,    //待我收单
+          "approving": 1    //待我审批
+        }
+    }
 }
 ```
 
