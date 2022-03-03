@@ -38,7 +38,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/flow/plan
         "flowPlanConfigId": "dcI9lCDmlg1Y00",  //流程配置ID
         "node": [                              //流程节点
             {
-                "id":"",                       //节点ID，当单据提交之后就会生成对应的应用节点id
+                "id":"",                       //节点ID，当单据提交之后就会生成对应的应用节点ID
                 "configNodeId": "0XQ9lCDmlg2000",//节点模版节点ID
                 "name": "费用标准检查",           //节点名称
                 "skippedType": "NO_SKIPPED",     //跳过类型【不跳过：NO_SKIPPED,匹配不到审批人：APPROVER_NOT_FOUND,通过角色或部门主管匹配不到审批人：APPROVER_NOT_FOUND_BY_ROLE,不具有该节点能力：NO_ABILITY】

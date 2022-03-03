@@ -25,6 +25,8 @@ timeline: true
   - 新增了能获取到已删除的单据，并且显示“已删除”状态。
 - 🆕 新增 [删除城市组详情](/docs/open-api/city/delete-city-group-details) 接口 `v1.1` 版本
   - 新增了 `staffIds`（员工ID）与 `roleIds`（角色ID）列表不能同时为空的校验。
+- 🆕 新增 [查询员工待办数量](/docs/open-api/corporation/get-staff-backLog) 接口 `v1.1` 版本
+  - 新增了响应数据中返回详细待办类型及数量。
 - 🆕 新增 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items) 接口 `v2.1` 版本
   - 修复了传其他类型自定义档案项ID（非档案关系配置的类型）可以创建成功数据的问题。
 - 🐞 更新 [获取单据附件](/docs/open-api/flows/get-flows-attachment) 接口
@@ -32,8 +34,7 @@ timeline: true
 - 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
   - 修复了接口 **HTTP 500** 报错问题，增加了 `path`、`staffs` 不允许传 `null` 的校验。
 - 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
-  - 增加了 `active`（查询条件：收款账户是否启用）参数描述。
-  - 接口返回数据中增加了 `active` 参数。
+  - 新增了 `active`（查询条件：收款账户是否启用）参数描述，并且响应数据中增加了 `active` 参数。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本
   - 修复了 **离职人员** 可以成功创建单据的问题。  
 

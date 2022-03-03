@@ -34,9 +34,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/loans/get
         "active": true,                //是否有效
         "createTime": 1589272741621,   //创建时间(毫秒级时间戳)
         "updateTime": 1589272741622,   //修改时间(毫秒级时间戳)
-        "corporationId": "nd8aNompiogg00",//企业id
-        "ownerId": "nd8aNompiogg00:mFw8PzLLpI0800",//借款包所属人员工id
-        "id": "g3MaYlA9mc5c00",        //借款包id
+        "corporationId": "nd8aNompiogg00",//企业ID
+        "ownerId": "nd8aNompiogg00:mFw8PzLLpI0800",//借款包所属人员工ID
+        "id": "g3MaYlA9mc5c00",        //借款包ID
         "total": 1000,                 //总金额
         "totalMoneyNode": {
             "standard": "1000",

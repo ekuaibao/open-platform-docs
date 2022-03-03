@@ -53,6 +53,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 ```
 
 ## 失败响应
+`staffParam`（查询的员工参数）查询的员工不存在或者参数错误时，报错如下：
 ```json
 {
     "errorCode": 412,

@@ -25,9 +25,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/feeTypes?
 {
     "items": [
         {
-            "id": "JOYbpjPP-E2Q00:bus",              //费用类型id
+            "id": "JOYbpjPP-E2Q00:bus",              //费用类型ID
             "name": "巴士",                          //费用类型名称
-            "parentId": "JOYbpjPP-E2Q00:longTravel", //父级类型id
+            "parentId": "JOYbpjPP-E2Q00:longTravel", //父级类型ID
             "active": true,                          //是否停用
             "code": "COST53"                         //费用类型编码
         },

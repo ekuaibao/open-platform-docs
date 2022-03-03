@@ -53,7 +53,7 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 | **tolls**           | 过路费发票 |
 | **fixed**           | 定额发票 |
 
-## 发票类别（E\_system\_发票主体\_发票类别）介绍如下
+## 发票类别（E\_system\_发票主体\_发票类别）介绍如下，是对 `invoice` 获取到的发票做补充解释：
 | 字段名 | 对应发票类型 |
 | :---  | :---      |
 | **DIGITAL_NORMAL**  | 增值税电子普票 |
