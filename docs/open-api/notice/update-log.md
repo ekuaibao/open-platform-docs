@@ -32,7 +32,7 @@ timeline: true
 - 🐞 更新 [获取单据附件](/docs/open-api/flows/get-flows-attachment) 接口
   - 修复了无法把费用明细里的系统无法识别的充当发票的图片当附件处理返回的问题。
 - 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
-  - 修复了接口 **HTTP 500** 报错问题，增加了 `path`、`staffs` 不允许传 `null` 的校验。
+  - 修复了接口 **HTTP 500** 报错问题，增加了 `path` 、`staffs` 不允许传 `null` 的校验。
 - 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
   - 新增了 `active`（查询条件：收款账户是否启用）参数描述，并且响应数据中增加了 `active` 参数。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本

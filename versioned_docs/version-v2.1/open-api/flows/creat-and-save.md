@@ -374,7 +374,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 }
 ```
 
-单据提交人离职，返回以下报错信息，请检查 `submitterId` 字段：
+`submitterId` 字段所对应员工离职时，返回以下报错信息：
 ```json
 {
     "errorCode": 400,
