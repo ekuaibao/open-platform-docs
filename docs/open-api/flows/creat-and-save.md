@@ -374,6 +374,17 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 }
 ```
 
+单据提交人离职，返回以下报错信息，请检查 `submitterId` 字段：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "提交人参数不合法，请检查该员工是否已离职",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
 ## 字段填写规则
 
 ### (1) 费用类型字段(details)  
