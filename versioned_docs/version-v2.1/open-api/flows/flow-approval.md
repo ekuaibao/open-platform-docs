@@ -15,7 +15,7 @@ url="/api/openapi/v1/backlog/data/[`flowIds`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowIds** | String  | 单据ID | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一)，可传多个，用 `,` 分隔 |
+| **flowIds** | String  | 单据ID | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一)，可传多个，用 `,` 分隔<br/>**一次最多不要审批超过 `10` 个单据，并且循环调用的话，间隔请大于 `1分钟`** |
 
 ## Query Parameters
 

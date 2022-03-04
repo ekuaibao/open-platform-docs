@@ -8,6 +8,10 @@ method="PUT"
 url="/api/openapi/v2/flow/data/$`flowId`"
 />
 
+:::caution
+- 目前此接口只支持修改 **draft（草稿）、approving（审批中）** 状态的单据，并且对应节点要配置 ”**允许审批人修改单据**“。
+:::
+
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |

@@ -61,7 +61,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/staffs/$d
         "departments": [                        //所在部门
             "djg8LshfUkfM00"
         ],
-        "defaultDepartment": "djg8LshfUkfM00",  //默认部门id
+        "defaultDepartment": "djg8LshfUkfM00",  //默认部门ID
         "cellphone": "17600109458",             //手机号
         "active": true,                         //是否停用
         "userId": "ID_3kpneISgylw",             //第三方ID

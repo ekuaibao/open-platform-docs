@@ -60,15 +60,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
             "cellphone":"18888881005",      //手机号
             "email":"18888881005@163.com",  //邮箱
             "note":"批量新增",               //备注
-            "defaultDepartment":"Tdk3tgber501v0:ID_3tgaWMa0hjg",  //默认部门id
+            "defaultDepartment":"Tdk3tgber501v0:ID_3tgaWMa0hjg",  //默认部门ID
             "departments":[  //兼职部门，请确保至少包含默认部门
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"  
             ],
-            "userid":"P1005",  //第三方平台的id	
+            "userid":"P1005",  //第三方平台的ID	
             "useSendEmail":true,  //是否禁止发送邮件通知  true:禁止 false:不禁止
             "staffCustomForm":{  //员工自定义字段
-                    "rankType":"ID_3tqvxwgjK6w",  //职级，值为职级档案项id，一级        
-                    "postType":"ID_3tqvxwgjF6w",  //岗位，值为岗位档案项id，经理
+                    "rankType":"ID_3tqvxwgjK6w",  //职级，值为职级档案项ID，一级        
+                    "postType":"ID_3tqvxwgjF6w",  //岗位，值为岗位档案项ID，经理
                     "base":"[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
                     "u_花名":"法外狂徒",  //花名
                     "u_项目":"ID_3tqvxwgjD6w"  //项目，米哈游项目
@@ -80,15 +80,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
             "cellphone":"18888881006",      //手机号
             "email":"18888881006@163.com",  //邮箱
             "note":"批量新增",               //备注
-            "defaultDepartment":"Tdk3tgber501v0:ID_3tgaWMa0hjg",  //默认部门id
+            "defaultDepartment":"Tdk3tgber501v0:ID_3tgaWMa0hjg",  //默认部门ID
             "departments":[  //兼职部门，请确保至少包含默认部门
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"  
             ],
-            "userid":"P1006",  //第三方平台的id	
+            "userid":"P1006",  //第三方平台的ID	
             "useSendEmail":true,  //是否禁止发送邮件通知  true:禁止 false:不禁止
             "staffCustomForm":{  //员工自定义字段
-                "rankType":"ID_3tqvxwgjK6w",  //职级，值为职级档案项id，一级        
-                "postType":"ID_3tqvxwgjF6w",  //岗位，值为岗位档案项id，经理
+                "rankType":"ID_3tqvxwgjK6w",  //职级，值为职级档案项ID，一级        
+                "postType":"ID_3tqvxwgjF6w",  //岗位，值为岗位档案项ID，经理
                 "base":"[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
                 "u_花名":"法外狂徒",  //花名
                 "u_项目":"ID_3tqvxwgjD6w"  //项目，米哈游项目
@@ -103,7 +103,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
 {
     "items": [
         {
-            "id": "Tdk3tgber501v0:P1005",  //员工id
+            "id": "Tdk3tgber501v0:P1005",  //员工ID
             "name": "批量新增-5",          //员工姓名
             "code": "P1005",              //员工工号
             "departments": [              //部门集合
@@ -112,7 +112,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
             "defaultDepartment": "Tdk3tgber501v0:ID_3tgaWMa0hjg",  //默认部门
             "cellphone": "18888881005",                            //手机号
             "active": true,                                        //员工状态
-            "userId": "P1005",                                     //第三方id
+            "userId": "P1005",                                     //第三方ID
             "email": "18888881005@163.com",                        //邮箱
             "external": false,                                     //是否外部人员
             "note": "批量新增",                                     //备注

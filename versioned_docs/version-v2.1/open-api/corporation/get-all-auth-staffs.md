@@ -31,21 +31,21 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/au
     "count": 14,  //已激活员工总数
     "items": [    //已激活员工信息
         {
-            "id": "PCx3rwm3aA00qM:ID_3rAZNCY2V$g",
-            "name": "李四",
-            "code": "",
-            "departments": [
+            "id": "PCx3rwm3aA00qM:ID_3rAZNCY2V$g",   //员工ID
+            "name": "李四",                          //员工姓名
+            "code": "",                              //员工工号
+            "departments": [                         //所在部门
               "PCx3rwm3aA00qM:ID_3rw$2RXc5lM"
             ],
-            "defaultDepartment": "PCx3rwm3aA00qM:ID_3rw$2RXc5lM",
-            "cellphone": "",
-            "active": true,
-            "userId": "ID_3rAZNCY2U$g",
-            "email": "17777777777@163.com",
-            "external": false,
-            "note": "notea",
-            "staffCustomForm": {
-              "base": "[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",
+            "defaultDepartment": "PCx3rwm3aA00qM:ID_3rw$2RXc5lM",  //默认部门
+            "cellphone": "",                         //手机号
+            "active": true,                          //true：在职，false：已离职
+            "userId": "ID_3rAZNCY2U$g",              //第三方ID
+            "email": "17777777777@163.com",          //邮箱
+            "external": false,                       //是否外部员工
+            "note": "notea",                         //备注
+            "staffCustomForm": {                     //员工自定义字段
+              "base": "[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",  //常驻地
               "u_数字字段": "1"
             }
         },

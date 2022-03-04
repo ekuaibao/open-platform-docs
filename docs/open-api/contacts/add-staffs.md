@@ -87,7 +87,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs?a
 ```json
 {
       "value": {
-            "id": "JOYbpjPP-E2Q00:IIEbwYgR2E5M00",  //员工id
+            "id": "JOYbpjPP-E2Q00:IIEbwYgR2E5M00",  //员工ID
             "name": "张三",                         //员工姓名
             "code": "36987",                        //员工工号
             "departments": [                        //所在部门
@@ -101,8 +101,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs?a
             "email": "2777481917@163.com",          //邮箱
             "external": false,                      //是否外部员工
             "staffCustomForm": {                    //员工自定义字段
-                  "rankType":"lUcctXntW82A00",      //职级档案项id        
-                  "postType":"ltUcxNyWSQ1o00",      //岗位档案项id
+                  "rankType":"lUcctXntW82A00",      //职级档案项ID        
+                  "postType":"ltUcxNyWSQ1o00",      //岗位档案项ID
                   "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
                   "u_文本1": "",
                   "u_num1": "1",

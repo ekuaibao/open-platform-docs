@@ -36,28 +36,28 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
 ## 成功响应
 ```json
 {
-    "count": 14,
+    "count": 14,   //员工总数，传了 startDate 、endDate 的话，就是这个时间段内的总数
     "items": [
         {
-            "id": "PCx3rwm3aA00qM:ID_3rAZNCY2V$g",
-            "name": "李四",
-            "code": "",
-            "departments": [
+            "id": "PCx3rwm3aA00qM:ID_3rAZNCY2V$g",  //员工ID
+            "name": "李四",                         //员工姓名
+            "code": "",                             //员工工号
+            "departments": [                        //所属部门ID集合
               "PCx3rwm3aA00qM:ID_3rw$2RXc5lM"
             ],
-            "defaultDepartment": "PCx3rwm3aA00qM:ID_3rw$2RXc5lM",
-            "cellphone": "",
-            "active": true,
-            "userId": "ID_3rAZNCY2U$g",
-            "email": "17777777777@163.com",
-            "external": false,
-            "note": "notea",
-            "staffCustomForm": {
-              "base": "[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",
+            "defaultDepartment": "PCx3rwm3aA00qM:ID_3rw$2RXc5lM",  //默认部门ID
+            "cellphone": "",                                       //手机号
+            "active": true,                                        //是否停用
+            "userId": "ID_3rAZNCY2U$g",                            //第三方ID
+            "email": "17777777777@163.com",                        //邮箱
+            "external": false,                                     //是否外部员工
+            "note": "notea",                                       //备注
+            "staffCustomForm": {                                   //员工自定义字段
+              "base": "[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",  //常驻地
               "u_数字字段": "1"
-            },
-            "updateTime": "2022-02-10 14:49:38",
-            "createTime": "2022-01-17 16:22:41"
+            }, 
+            "updateTime": "2022-02-10 14:49:38",                   //更新时间
+            "createTime": "2022-01-17 16:22:41"                    //创建时间
         },
         {
             "id": "PCx3rwm3aA00qM:ID_3rAZNCY2X$g",

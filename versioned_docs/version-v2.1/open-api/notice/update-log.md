@@ -14,7 +14,7 @@ timeline: true
 ---
 ## 1.2.0
 
-`2022-03-03`
+`2022-03-08`
 
 - 🆕 新增 [根据员工ID批量获取单据详情](/docs/open-api/flows/get-forms-details-byStaff) 接口。
 - 🆕 新增 [获取申请事项](/docs/open-api/flows/get-requisition-all) 接口。

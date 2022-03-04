@@ -48,8 +48,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
     "items": [
         {
             "id": "JOYbpjPP-E2Q00:pt4bu1ZI9s2000",  //员工ID
-            "name": "二号员工",                      //员工名称
-            "code": "1002",                         //员工编码
+            "name": "二号员工",                     //员工姓名
+            "code": "1002",                         //员工工号
             "departments": [                        //所属部门ID集合
                 "JOYbpjPP-E2Q00:ZNEbwH_W7sc000",
                 "JOYbpjPP-E2Q00:pAwbwH_W7sec00",
@@ -60,10 +60,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
             "active": true,                                       //是否停用
             "userId": "-Nwbu1ZI9s1Y00",                           //第三方ID
             "email": "",
-            "staffCustomForm":{                                              //员工自定义字段集合
+            "staffCustomForm":{                                               //员工自定义字段集合
                 "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
-                "postType":"ltUcxNyWSQ1o00",                                 //岗位
-                "rankType":"lUcctXntW82A00",                                 //职级
+                "postType":"ltUcxNyWSQ1o00",                                  //岗位
+                "rankType":"lUcctXntW82A00",                                  //职级
                 "u_数字字段":"1"                                              //员工自定义字段
             },
             "external": false   //是否外部员工
