@@ -27,9 +27,9 @@ url="/api/openapi/v1/dimensions/items/$`id`"
 | **code**                   | String  | 档案项编码	| 非必填  | -     | 档案项编码 |
 | **visibility**             | Object  | 可见范围	    | 非必填  | -     | 可见范围  |
 | **&emsp; ∟ fullVisible** | Boolean | 是否全部可见	| 非必填  | false | 在非全部可见的情况下，仅白名单内的员工可见。 |
-| **&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填  | -     | 值为[员工id](/docs/open-api/corporation/get-all-staffs) |
-| **&emsp; ∟ roles**       | Array   | 角色白名单	| 非必填  | -     | 值为[角色id](/docs/open-api/corporation/get-roles-group) |
-| **&emsp; ∟ departments** | Array   | 部门白名单	| 非必填  | -     | 值为[部门id](/docs/open-api/corporation/get-departments) |
+| **&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填  | -     | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp; ∟ roles**       | Array   | 角色白名单	| 非必填  | -     | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
+| **&emsp; ∟ departments** | Array   | 部门白名单	| 非必填  | -     | 值为[部门ID](/docs/open-api/corporation/get-departments) |
 | **parentId**               | String  | 父节点ID    | 非必填  | -     | 通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写 `""` |
 
 :::tip

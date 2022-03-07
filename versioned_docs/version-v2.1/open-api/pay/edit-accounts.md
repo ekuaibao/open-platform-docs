@@ -25,17 +25,17 @@ url="/api/openapi/v2/payeeInfos/$`id`"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **staffId**         | String | 所有者ID   | 非必填 | - | 当 `owner` = `INDIVIDUAL` 时必填；<br/>当 `owner` = `CORPORATION` 时非必填；<br/>可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)接口获取 |
 | **type**            | String | 账户类型    | 必填 | -| `PUBLIC` : 对公账户<br/>`PERSONAL` : 个人账户 |
-| **name**            | String | 账户名      | 必填 | - | 账户名称 |
+| **name**            | String | 开户名称    | 必填 | - | 开户名称 |
 | **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |
-| **bank**            | String | 银行名称    | 必填 | - | 银行名称 |
-| **branch**          | String | 支行名称    | 必填 | - | 支行名称 |
+| **bank**            | String | 银行名称    | 非必填 | - | 银行名称 |
+| **branch**          | String | 开户网点    | 必填 | - | 开户网点 |
 | **owner**           | String | 所属类型    | 必填 | - | `INDIVIDUAL` : 个人<br/>`CORPORATION` : 企业 |
 | **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
 | **province**        | String | 银行所在省   | 非必填 | - | 银行所在省 |
-| **bankLinkNo**      | String | 银联号      | 非必填 | - | **当支行名称与易快报系统不匹配时，<br/>可通过银联号匹配** |
+| **bankLinkNo**      | String | 银联号      | 非必填 | - | **开户网点，<br/>可通过银联号匹配** |
 | **certificateType** | String | 证件类型    | 非必填 | - | 详细信息见下方【[证件类型对照表](/docs/open-api/pay/new-account#证件类型对照表)】 |
-| **certificateNo**   | String | 证件号     | 非必填 | - | 证件号 |
-| **remark**          | String | 备注       | 非必填 | - | 备注信息 |
+| **certificateNo**   | String | 证件号码    | 非必填 | - | 证件号码 |
+| **remark**          | String | 备注信息    | 非必填 | - | 备注信息 |
 | **visibility**                          | Object   | 可见范围       | 非必填 | - | 可见范围对象 |
 | **&emsp; ∟ fullVisible**                | Boolean | 是否全员可见    | 必填 | - | `true` : 全员可见<br/>`false` : 部分可见<br/>部分可见则仅有白名单中可见 |
 | **&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
@@ -79,7 +79,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
     "city":"北京市",
     "province":"北京市",
     "bankLinkNo":"102100020044",
-    "remark": "备注",
+    "remark": "备注信息",
     "visibility":
         {
             "fullVisible": false,
@@ -103,7 +103,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
         "code": "",                  //编码
         "corporationId": "JOYbpjPP-E2Q00", //企业ID
         "id": "u0gbxl3vQw7k00",      //账户ID
-        "name": "tiger.guoyj",       //账户名
+        "name": "tiger.guoyj",       //开户名称
         "type": "PERSONAL",          //账户类型（PUBLIC=对公账户，PERSONAL=个人账户）
         "owner": "CORPORATION",      //所属类型（INDIVIDUAL=个人，CORPORATION=企业）
         "cardNo": "84745996999",     //银行卡号
@@ -140,7 +140,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             }
         ],
         "sort": "BANK",
-        "remark": "备注",
+        "remark": "备注信息",
         "staffId": "",
         "visibility": {           //可见性
             "fullVisible": false, //是否全员可见
@@ -156,7 +156,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             ],
             "departmentsIncludeChildren": true
         },
-        "branch": "中国工商银行股份有限公司北京范家胡同支行", //支行名称
+        "branch": "中国工商银行股份有限公司北京范家胡同支行", //开户网点
         "icon": "https://images.ekuaibao.com/bank/bank-gs.svg",
         "bank": "工商银行",                            //银行名称
         "province": "北京市",                          //银行所在省
