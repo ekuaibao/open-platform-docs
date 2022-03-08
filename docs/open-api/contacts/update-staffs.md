@@ -4,8 +4,16 @@ import Control from "@theme/Control";
 
 <Control
 method="PUT"
-url="/api/openapi/v1/staffs/update/$`staffId`"
+url="/api/openapi/v1.1/staffs/update/$`staffId`"
 />
+
+<details>
+  <summary>v1.1版本特性</summary>
+  <div>
+    - 🐞 员工自定义字段值的保存做增量更新（v1版本为全量更新，不传的字段置空处理）。<br/>
+    - 🐞 添加员工自定义字段真实性校验。
+  </div>
+</details>
 
 :::caution
 - 使用此接口更新的员工（包括在系统上创建的），更新后您将 **无法在易快报界面上维护其通讯录**，只能通过接口更新信息和删除。
@@ -53,7 +61,7 @@ url="/api/openapi/v1/staffs/update/$`staffId`"
 
 ## CURL
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/staffs/update/$JOYbpjPP-E2Q00:IIEbwYgR2E5M00?accessToken=z0wbwXPo6sf400' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/update/$JOYbpjPP-E2Q00:IIEbwYgR2E5M00?accessToken=z0wbwXPo6sf400' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
@@ -108,6 +116,17 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/staffs/up
 {
     "errorCode": 400,
     "errorMessage": "员工名称不能为空",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+`staffCustomForm`（员工自定义字段）所传参数不存在时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "staffCustomForm中的u_测试1字段不属于员工自定义字段",
     "errorDetails": null,
     "code": null,
     "data": null

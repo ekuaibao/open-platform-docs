@@ -12,6 +12,17 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.2.1
+
+`2022-03-08`
+
+- 🆕 新增 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口 `v1.1` 版本
+  - 员工自定义字段值的保存做增量更新（v1版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。
+- 🐞 更新 **员工** 相关接口响应字段注释。
+- 🐞 更新 [更新单据](/docs/open-api/flows/update-form)、[单据审批](/docs/open-api/flows/flow-approval) 接口注意事项。  
+- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-account)、[更新收款账户](/docs/open-api/pay/edit-accounts) 接口参数描述，与系统界面上的字段保持一致。
+
+---  
 ## 1.2.0
 
 `2022-03-08`
@@ -38,6 +49,7 @@ timeline: true
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本
   - 修复了 **离职人员** 可以成功创建单据的问题。  
 
+---
 ## 1.1.1
 
 `2022-02-18`
