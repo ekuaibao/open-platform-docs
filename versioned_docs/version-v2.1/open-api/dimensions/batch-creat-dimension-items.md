@@ -176,6 +176,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
 ```
 
 ## 失败响应
+本接口是从数组第一个参数开始校验，参数有问题就报错打断，直到全部通过校验才调用成功：
 ```json
 {
   "errorCode": 412,
