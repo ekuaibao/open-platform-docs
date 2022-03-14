@@ -20,7 +20,7 @@ url="/api/openapi/v2/datalink/add"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **entityId**                                   | String  | 业务对象ID    | 必填   | -     | [业务对象ID获取](/docs/open-api/datalink/question-answer#问题一) |
 | **importPart**                                 | Boolean | 是否部分导入   | 非必填 | false | 当有一条数据导入失败后，其他数据是否继续导入。<br/>**当导入附件时，此项必填为 `true`** |
-| **dataLinks**                                  | Array   | 更新数据数组   | 必填  | -      | 要新增或修改的业务对象数据，最大不能超过 `100` 条|
+| **dataLinks**                                  | Array   | 更新数据数组   | 必填  | -      | 要新增或修改的业务对象数据，**最大不能超过 `100` 条** |
 | **&emsp; ∟ count**                             | Number  | 最大引用次数  | 非必填 | 0      | 限制引用次数时必填。若设置的值小于已引用次数，则易快报系统会自动修正到已引用次数  |
 | **&emsp; ∟ disabled**                          | Boolean | 是否停用     | 非必填 | true   | `true` : 停用 &emsp; `false` : 启用|
 | **&emsp; ∟ ownerId**                           | String  | 负责人ID     | 非必填 | -      | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
@@ -34,7 +34,8 @@ url="/api/openapi/v2/datalink/add"
 
 :::caution
 - `dataLinks.data` 中的 `code` 字段值为必填字段，新增数据时，如果code设置为 `自动编号`，传 `""` 即可，如果为 `文本` 类型，表示手动传入编号，不可为空。
-- 更新业务对象实例数据时，`dataLinks.data` 中不传的字段，表示清空该字段的值，要格外注意。
+- 更新业务对象实例数据时，`dataLinks.data` 中不传的字段，除**“自动计算”**字段外，表示清空该字段的值，要格外注意。
+  - 新增或更新业务对象实例数据，“**自动计算**”字段可传 `""` 或者不传该字段，字段值自动计算。 
 - `dataLinks.visible` 参数需要配合业务对象”参与人配置“一起使用，只有”部分人员参与“时此参数才有效。
 
   ![image](images/visible.png)

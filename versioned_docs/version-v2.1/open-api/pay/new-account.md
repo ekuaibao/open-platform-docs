@@ -22,7 +22,7 @@ url="/api/openapi/v2/payeeInfos"
 | **name**            | String | 开户名称    | 必填 | - | 开户名称 |
 | **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |
 | **bank**            | String | 银行名称    | 非必填 | - | 银行名称 |
-| **branch**          | String | 开户网点    | 必填 | - | 开户网点 |
+| **branch**          | String | 开户网点    | 必填 | - | 获取[开户网点](/docs/open-api/pay/get-all-branch)<br/>可通过系统配置改为 ”**非必填**“，见注意事项 |
 | **owner**           | String | 所属类型    | 必填 | - | `INDIVIDUAL` : 个人<br/>`CORPORATION` : 企业 |
 | **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
 | **province**        | String | 银行所在省   | 非必填 | - | 银行所在省 |
@@ -38,7 +38,10 @@ url="/api/openapi/v2/payeeInfos"
 | **&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属部门是否可见 | 必填 | - | `true` : 可见 &emsp; `false` : 不可见 |
 
 :::tip
-- 当 `branch`（开户网点）不确定时，可填写 ”1“（branch必填且不可为null），并保证 `bankLinkNo`（银联号）正确，系统会根据银联号自动回填开户网点。
+- 当 `branch`（开户网点）不确定且必填时，可填写 ”1“（branch不可为null），并保证 `bankLinkNo`（银联号）正确，系统会根据银联号自动回填开户网点。
+- 当不需要线上支付时，可通过系统配置，关闭 “**开户网点**” 必填。
+
+  ![image](images/允许开户网点为非必填项.png)
 :::
 
 ### 证件类型对照表

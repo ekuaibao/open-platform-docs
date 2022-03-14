@@ -183,6 +183,7 @@
         "open-api/pay/info",
         "open-api/pay/get-payment-account",
         "open-api/pay/get-payeeInfos",
+        "open-api/pay/get-all-branch",
         "open-api/pay/new-account",
         "open-api/pay/edit-accounts",
         "open-api/pay/disableOrEnable-account",
