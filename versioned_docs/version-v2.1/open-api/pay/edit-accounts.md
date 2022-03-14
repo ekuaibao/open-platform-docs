@@ -28,7 +28,7 @@ url="/api/openapi/v2/payeeInfos/$`id`"
 | **name**            | String | 开户名称    | 必填 | - | 开户名称 |
 | **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |
 | **bank**            | String | 银行名称    | 非必填 | - | 银行名称 |
-| **branch**          | String | 开户网点    | 必填 | - | 获取[开户网点](/docs/open-api/pay/get-all-branch)<br/>可通过系统配置改为 ”**非必填**“，见注意事项 |
+| **branch**          | String | 开户网点    | 必填 | - | 获取[开户网点](/docs/open-api/pay/get-all-branch)<br/>可通过系统配置改为 ”**非必填**“，详见下方**TIP**注意事项 |
 | **owner**           | String | 所属类型    | 必填 | - | `INDIVIDUAL` : 个人<br/>`CORPORATION` : 企业 |
 | **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
 | **province**        | String | 银行所在省   | 非必填 | - | 银行所在省 |
