@@ -37,7 +37,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/approve
 {
     "items": [
         {
-            "flowId": "xxx",            //单据ID
+            "flowId": "xxx",             //单据ID
             "stageName": "出纳支付",     //审批节点名称
             "operators": [              //审批人列表，来自员工信息
                 {     

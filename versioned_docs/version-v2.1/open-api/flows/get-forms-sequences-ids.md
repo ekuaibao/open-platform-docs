@@ -389,6 +389,9 @@ import TabItem from '@theme/TabItem';
                         "invoice": "1",
                         "attachments": "[]",
                         "apportionPercent": "100",
+                        "apportionSpecificationId":"e4A8oQS29g0w00:报销部门分摊:61a8838dea300dd6cca459126d7a3b51c4a67111",  //分摊模板ID
+                        "apportionAmountType":"e4A8oQS29g0w00:报销部门分摊",  //分摊方式
+                        "apportionAmountFiled":"notaxamount",                //分摊字段
                         "apportionMoney": "22",
                         "apportionMoney_standardStrCode": "CNY",
                         "apportionMoney_standardNumCode": "156",

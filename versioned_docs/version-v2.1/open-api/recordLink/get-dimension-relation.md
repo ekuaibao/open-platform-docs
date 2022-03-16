@@ -75,10 +75,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/recordLi
 ```
 
 ## 失败响应
+企业下没有档案关系时，报错如下：
 ```json
 {
-    "errorCode": 412,
-    "errorMessage": "查询结果不存在.",
+    "errorCode": 400,
+    "errorMessage": "查询结果不存在",
     "errorDetails": null,
     "code": null,
     "data": null

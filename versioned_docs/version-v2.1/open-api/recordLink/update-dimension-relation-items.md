@@ -30,8 +30,8 @@ url="/api/openapi/v2/recordLink/edit/$`id`"
 | **editRecordLinks/purposeValues** | Array  | 目标维度值	| 必填    | - | 通过[获取某档案关系下的档案项数据](/docs/open-api/recordLink/get-dimension-relation-items)获取 |
 
 :::tip
-- 全量覆盖是指的填写的源维度值或目标维度值，会把原数据覆盖（如果填写的源维度值和目标维度值在原数据中都无法匹配到，将会覆盖掉之前全部的数据）。
-- 增量新增是指的填写的源维度值或目标维度值，会追加到原来的数据中，不会将原数据覆盖。
+- 增量新增：在原数据中增量处理，原数据不变。
+- 全量覆盖：接口参数会覆盖原数据。
 :::
 
 ## CURL

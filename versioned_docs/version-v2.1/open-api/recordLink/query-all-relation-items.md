@@ -107,7 +107,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/recordLin
 }
 ```
 
-当 `start` 参数大于等于总记录数时，会报如下错误：
+当查询的档案关系ID下无数据 或者 `start` 参数大于等于总记录数时，会报如下错误：
 ```json
 {
     "errorCode": 412,
