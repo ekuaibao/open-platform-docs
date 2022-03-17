@@ -30,7 +30,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **contents**          | Array   | 角色配置情况     | 必填   | - | 每一个元素对应「角色管理」界面右侧列表的一行 |
 | **&emsp; ∟ pathType** | String | `name` 或 `code` 或 `id`  | 非必填 | name | 当 `pathType` = `name` 或不传时，`path` 传入部门名称<br/>或自定义档案项名称；<br/>当 `pathType` = `code` 时，`path` 传入部门编码或自定<br/>义档案项编码；<br/>当 `pathType` = `id` 时，`path` 传入部门ID或自定义档<br/>案项ID |
-| **&emsp; ∟ path**     | Array  | 部门或自定义档案值 | 必填 | - | 传入内容参考pathType，传入对应类型的全路径参数<br/>[注意事项](/docs/open-api/corporation/question-answer)<br/>角色类型为「普通角色」时，传入 `[]` 即可 |
+| **&emsp; ∟ path**     | Array  | 部门或自定义档案值 | 必填 | - | 传入内容参考pathType，传入对应类型的全路径参数<br/>[注意事项](/docs/open-api/corporation/question-answer)<br/>**角色类型为「普通角色」时非必填** |
 | **&emsp; ∟ staffs**   | Array  | 员工集	      | 必填 | - | 值为[员工ID](/docs/open-api/corporation/get-all-staffs)<br/>传入 `[]` 时会删除 `path` 值所对应的这条数据 |
 
 :::tip
