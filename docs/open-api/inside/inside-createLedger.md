@@ -53,21 +53,21 @@ import TabItem from '@theme/TabItem';
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/datalink/ledger/createLedger?accessToken=ID_3xpRfa80Nmw:Urf3lsFgBp00gw' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "sumFieldName": "quantity",
-    "sumFieldLabel": "dengjaac_006",
-    "sumFieldType": "NUMBER", 
+    "sumFieldName": "quantity",          //汇总字段标识
+    "sumFieldLabel": "dengjaac_006",     //汇总字段名称
+    "sumFieldType": "NUMBER",            //统计单据的哪个字段
     "unit": "个",
-    "dataLinkEntityId": "e45b0cc602a30f865400",
+    "dataLinkEntityId": "e45b0cc602a30f865400",  //业务对象ID
     "statisticsSource": "MASTER",
-    "billRefFieldName": "u_时间管理",
+    "billRefFieldName": "u_时间管理",     //自定义全局字段（业务对象字段）
     "filter": {
         "template": "simple",
-        "expressions": [
+        "expressions": [                 //限定统计的单据类型为：
             {
                 "left": "specificationId",   //单据模板ID
                 "operator": "in",
                 "right": [
-                    "3Zccokvg3I0000:personalCost"
+                    "3Zccokvg3I0000:personalCost"  
                 ],
                 "includeChildren": true,
                 "fromWhere": "MASTER"        //单据：MASTER，明细：DETAILS，业务对象：DATA_LINK
