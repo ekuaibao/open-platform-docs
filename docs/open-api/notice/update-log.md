@@ -12,6 +12,15 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.3.0
+
+`2022-03-24`
+
+- 🆕 新增 [xx](/docs/open-api/pay/get-all-branch) 接口。
+- 🐞 更新 [查询角色下员工信息](/docs/open-api/corporation/get-roles)、[更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口参数描述
+  - `staffBy`（员工参数格式）增加 `code`、`cellphone`、`email` 3种参数类型；
+
+---
 ## 1.2.2
 
 `2022-03-14`

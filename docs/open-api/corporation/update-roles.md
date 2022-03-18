@@ -21,17 +21,17 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token	  | 必填  | -  | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **staffBy**     | String | 员工ID参数格式 | 非必填 | id | `id` : 传入完整员工ID，格式：`企业id:userId`<br/>`sourceId` : 只传入userId即可 |
+| **accessToken** | String | 认证token  | 必填  | -  | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **staffBy**     | String | 员工参数格式 | 非必填 | id | `id` : 传入完整员工ID，格式：`企业id : userId`<br/>`sourceId` : 传入 userId <br/>`code` : 员工工号<br/>`cellphone` : 手机号<br/>`email` : 邮箱 |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **contents**          | Array   | 角色配置情况     | 必填   | - | 每一个元素对应「角色管理」界面右侧列表的一行 |
-| **&emsp; ∟ pathType** | String | `name` 或 `code` 或 `id`  | 非必填 | name | 当 `pathType` = `name` 或不传时，`path` 传入部门名称<br/>或自定义档案项名称；<br/>当 `pathType` = `code` 时，`path` 传入部门编码或自定<br/>义档案项编码；<br/>当 `pathType` = `id` 时，`path` 传入部门ID或自定义档<br/>案项ID |
+| **&emsp; ∟ pathType** | String | `name` 或 `code` 或 `id`  | 非必填 | name | 当 `pathType` = `name` 或不传时，`path` 传入部门或自定义档案项名称<br/>当 `pathType` = `code` 时，`path` 传入部门或自定义档案项编码<br/>当 `pathType` = `id` 时，`path` 传入部门或自定义档案项ID |
 | **&emsp; ∟ path**     | Array  | 部门或自定义档案值 | 必填 | - | 传入内容参考pathType，传入对应类型的全路径参数<br/>[注意事项](/docs/open-api/corporation/question-answer)<br/>**角色类型为「普通角色」时非必填** |
-| **&emsp; ∟ staffs**   | Array  | 员工集	      | 必填 | - | 值为[员工ID](/docs/open-api/corporation/get-all-staffs)<br/>传入 `[]` 时会删除 `path` 值所对应的这条数据 |
+| **&emsp; ∟ staffs**   | Array  | 员工集合         | 必填 | - | 值为[员工信息](/docs/open-api/corporation/get-all-staffs)<br/>**传入 `[]` 时会删除 `path` 值所对应的这条数据** |
 
 :::tip
 - 在系统上新建角色时，角色类型可按【部门】和【档案类别】划分，此接口中的 `path` 参数就传这个角色对应的类型值。
@@ -40,7 +40,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 
 ## CURL
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$7FQbuoqQBA9U00/staffs?accessToken=RCIbwHcnF0kg00&staffBy=id' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$7FQbuoqQBA9U00/staffs?accessToken=RCIbwHcnF0kg00&staffBy=code' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
@@ -50,7 +50,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
                 "企业名称","财务部","北京财务部"   //部门名称全路径
             ],
             "staffs": [
-                "EAQbauUqXweI00:YCgbc2y8_Ivg00"
+                "CODE11"                         //员工工号
             ]
         },
         {
@@ -59,7 +59,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
                 "code1", "code2"                //部门编码全路径
             ],
             "staffs": [
-                "EAQbauUqXweI00:YCgbc2y8_Ivg00"
+                "CODE332"
             ]
         },
         {
@@ -68,7 +68,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
                 "EAQbauUqXweI00","EAQbauUqXweI00:ID_3wUvB7G2b3w"  //部门ID全路径
             ],
             "staffs": [
-                "EAQbauUqXweI00:YCgbc2y8_Ivg00"
+                "CODE234"
             ]
         }
     ]

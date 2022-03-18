@@ -204,7 +204,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
             }
         ],
         "fieldMapping":{           //业务对象赋值规则
-            "名称":[               //业务对象字段
+            "名称":[               //业务对象字段的label
                 "title","u_文本2"  //单据字段  title：单据标题，u_文本2：自定义字段
             ],
             "部门":[                 //业务对象字段

@@ -19,7 +19,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token	      | 必填   | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **staffBy**     | String | 查询员工信息显示类型 | 非必填 | id | `id` : 显示完整员工ID，格式：企业id : userId<br/>`sourceId` : 只显示userId |
+| **staffBy**     | String | 查询员工信息显示类型 | 非必填 | id | `id` : 显示完整员工ID，格式：`企业id : userId`<br/>`sourceId` : 只显示 userId<br/>`code` : 员工工号<br/>`cellphone` : 手机号<br/>`email` : 邮箱 |
 
 :::tip
 - 角色ID获取如下所示
@@ -36,20 +36,22 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
 ## 成功响应
 ```json
 {
-      "value": {
-            "id": "JOYbpjPP-E2Q00:leader",  //角色ID
-            "name": "部门主管",             //角色名称
-            "contents": [                  //角色配置情况，每一个元素对应「角色管理」界面右侧列表的一行
-                  {
-                        "path": [          //如果是普通角色，则无此节点。这个节点通过路径名称来表示一个部门或自定义档案值
-                              "恒达"
-                        ],
-                        "staffs": [        // 员工集合
-                              "JOYbpjPP-E2Q00:y8gbpjP9OsnI00"
-                        ]
-                  }
-            ]
-      }
+    "value": {
+        "id": "JOYbpjPP-E2Q00:leader",  //角色ID
+        "name": "部门主管",             //角色名称
+        "contents": [                  //角色配置情况，每一个元素对应「角色管理」界面右侧列表的一行
+            {
+                "pathType": null,
+                "path": [           //如果是普通角色，返回空数组。这个节点通过路径名称来表示一个部门或自定义档案值
+                  "恒达"  
+                ],
+                "staffs": [         //员工集合，根据“staffBy”显示员工对应的信息
+                  "JOYbpjPP-E2Q00:y8gbpjP9OsnI00"
+                ],
+                "staffsType": "id"  //查询员工信息显示类型
+            }
+        ]
+    }
 }
 ```
 

@@ -10,17 +10,17 @@ authors: [冯继成]
 
 ---
 ## 单据模板
-### [查询全局字段是否存在](/docs/open-api/forms/get-customs-param-checkProperty)
+### [查询全局字段是否存在](/docs/open-api/inside/get-customs-param-checkProperty)
 
 ---
 ## 业务对象
-### [创建业务对象台账](/docs/open-api/datalink/inside-createLedger)
+### [创建业务对象台账](/docs/open-api/inside/inside-createLedger)
 
 ---
 ## 工具接口
-### [处理EAI插件拉取不到单据最终态问题（已完成、单据当前状态）](/docs/open-api/tools/flowDetails-stuckFlow) 
+### [处理EAI插件拉取不到单据最终态问题（已完成、单据当前状态）](/docs/open-api/inside/flowDetails-stuckFlow) 
 
-### [处理EAI插件拉取不到单据中间态问题（待支付、支付中）](/docs/open-api/tools/setDataBase)
+### [处理EAI插件拉取不到单据中间态问题（待支付、支付中）](/docs/open-api/inside/setDataBase)
 
 ---
 
