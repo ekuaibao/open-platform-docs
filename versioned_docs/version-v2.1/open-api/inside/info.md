@@ -15,6 +15,7 @@ authors: [冯继成]
 ---
 ## 业务对象
 ### [创建业务对象台账](/docs/open-api/inside/inside-createLedger)
+### [获取业务对象台账](/docs/open-api/inside/get-entity-leader)
 
 ---
 ## 工具接口

@@ -89,6 +89,144 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
             "totalCount": 0,
             "active": true,                                           //是否停用
             "entityId": "b41a0b811ce2ef06ac00",                       //业务对象ID
+            "entity":{ //业务对象数据
+                "pipeline":1,
+                "grayver":"9.16.0.0:A",
+                "version":14, //版本
+                "active":true, //是否启用
+                "createTime":1639108010124,
+                "updateTime":1647835213506,
+                "name":"测试单据", //业务对象数据名称
+                "nameSpell":"CESHIDANJU",
+                "corporationId":"djg8LshfUkfM00", //企业ID
+                "sourceCorporationId":null,
+                "dataCorporationId":null,
+                "ledgerIds":[   //业务对象台账配置ID
+                    "ID_3v7HGBq_dW0"
+                ],
+                "plannedIds":[  //业务对象执行计划配置ID
+                    "ID_3BDK0O2lbe0"
+                ],
+                "parentId":"",
+                "code":"", //编码
+                "scoped":false,
+                "multiCurrencyFlag":false,
+                "importOverrideStrategy":{
+                    "api":"CODE_DUPLI_OVERRIDE",
+                    "excel":"CODE_DUPLI_OVERRIDE"
+                },
+                "visibility":{
+                    "fullVisible":false,
+                    "staffs":[],
+                    "roles":[],
+                    "departments":[],
+                    "departmentsIncludeChildren":true
+                },
+                "type":"BILL",
+                "disableStrategy":"MANUAL_ADMIN",
+                "maxUsageCount":0,
+                "writtenOffField":null,
+                "fields":[ //字段信息
+                    {
+                        "name":"E_a10dd7f32900de827800_name",
+                        "label":"name",
+                        "type":"text",
+                        "source":"dataLink",
+                        "optional":false,
+                        "defaultValue":null,
+                        "formula":false,
+                        "index":true,
+                        "systemField":false,
+                        "calculation":{
+                            "dependencies":[],
+                            "dependenciesBy":[],
+                            "order":4
+                        }
+                    },
+                    {
+                        "name":"E_a10dd7f32900de827800_code",
+                        "label":"code",
+                        "type":"text",
+                        "source":"dataLink",
+                        "optional":false,
+                        "defaultValue":null,
+                        "formula":false,
+                        "index":true,
+                        "systemField":false,
+                        "calculation":{
+                            "dependencies":[],
+                            "dependenciesBy":[],
+                            "order":3
+                        }
+                    },
+                    {
+                        "name":"E_a10dd7f32900de827800_test1",
+                        "label":"test1",
+                        "type":"text",
+                        "source":"dataLink",
+                        "optional":false,
+                        "defaultValue":null,
+                        "formula":false,
+                        "index":false,
+                        "systemField":false,
+                        "calculation":{
+                            "dependencies":[],
+                            "dependenciesBy":[],
+                            "order":2
+                        }
+                    },
+                    {
+                        "name":"E_a10dd7f32900de827800_money",
+                        "label":"money",
+                        "type":"money",
+                        "source":"dataLink",
+                        "optional":false,
+                        "defaultValue":null,
+                        "formula":false,
+                        "index":false,
+                        "systemField":false,
+                        "calculation":{
+                            "dependencies":[],
+                            "dependenciesBy":[],
+                            "order":1
+                        }
+                    }
+                ],
+                "defaultMappingRuleId":"ID_3tvPzlC0WgM", //默认映射规则ID
+                "filterId":null,
+                "id":"a10dd7f32900de827800", //业务对象实例ID
+                "platformId":"ID_3tvOoC0feMw",
+                "details":null,
+                "homePageVisibleIds":null,
+                "homeVisibility":{
+                    "fullVisible":false,
+                    "staffs":[],
+                    "roles":[],
+                    "departments":[],
+                    "departmentsIncludeChildren":true
+                },
+                "exportVisibility":{
+                    "fullVisible":false,
+                    "staffs":[],
+                    "roles":[],
+                    "departments":[],
+                    "departmentsIncludeChildren":true
+                },
+                "ownerDepts":false,
+                "showOnPage":true,
+                "importMethod":[
+                    "excel",
+                    "api",
+                    "ebot",
+                    "flow",
+                    "directly"
+                ],
+                "allowRecordLog":false,
+                "logFields":[],
+                "showBook":false,
+                "allowAddSubType":true,
+                "dataFilter":false
+            },
             "E_b41a0b811ce2ef06ac00_code": "900925",                  //对象编码
             "E_b41a0b811ce2ef06ac00_name": "北京合思信息技术有限公司",  //对象名称
             "ledgers": [],
