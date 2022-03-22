@@ -16,9 +16,12 @@ timeline: true
 
 `2022-03-24`
 
-- 🆕 新增 [xx](/docs/open-api/pay/get-all-branch) 接口。
+- 🆕 新增 [获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation)、[获取企业下档案项数据](/docs/open-api/recordLink/query-all-relation-items) 接口 `v2.1` 版本
+  - 优化报错输出。
+- 🆕 新增 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items)、[删除某档案关系下的档案项数据](/docs/open-api/recordLink/delete-dimension-relation-items)、[更新某档案关系下的档案项数据](/docs/open-api/recordLink/update-dimension-relation-items)、[编辑某档案关系下的档案项数据](/docs/open-api/recordLink/edit-dimension-relation-items) 接口 `v2.1` 版本
+  - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
 - 🐞 更新 [查询角色下员工信息](/docs/open-api/corporation/get-roles)、[更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口参数描述
-  - `staffBy`（员工参数格式）增加 `code`、`cellphone`、`email` 3种参数类型；
+  - 新增了 `staffBy`（员工参数格式）支持 `code`、`cellphone`、`email` 3种参数类型。
 
 ---
 ## 1.2.2

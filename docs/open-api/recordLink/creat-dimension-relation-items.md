@@ -10,7 +10,8 @@ url="/api/openapi/v2.1/recordLink/add/$`id`"
 <details>
   <summary>v2.1版本特性</summary>
   <div>
-    - 🐞 修复了传其他类型自定义档案项ID（非档案关系配置的类型）可以创建成功数据的问题。
+    - 🐞 修复了传其他类型自定义档案项ID（非档案关系配置的类型）可以创建成功数据的问题。<br/>
+    - 🆕 新增 “type” 类型参数，支持 ”id“ 或 ”code“ 传参。
   </div>
 </details>
 
@@ -25,6 +26,7 @@ url="/api/openapi/v2.1/recordLink/add/$`id`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **type**        | String | 参数类型   | 非必填 | id | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』和『部门』的 `code` 在系统上允许重复** |
 
 ## Body Parameters
 
@@ -39,19 +41,41 @@ url="/api/openapi/v2.1/recordLink/add/$`id`"
 :::
 
 ## CURL
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="id" label="id" default>
+
 ```json
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2.1/recordLink/add/$qyMbXMvgBgaU00?accessToken=73QbYDmzCc6I00' \
---header 'content-type: application/json' \
---header 'Accept: application/json' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/recordLink/add/$ID_3BFuV7KbVDw?accessToken=ID_3BFuV7KbNDw:bwa3wajigF0WH0&type=id' \
+--header 'Content-Type: application/json' \
 --data-raw '{
-      "sourceValues": [   //例如 “项目和预算项”的档案关系，源维度值传“项目”分类下的项目ID
-            "ltAbQUtfE03k00:taxi","ltAbQUtfE03k00:communication"  
-      ],
-      "purposeValues": [  //例如 “项目和预算项”的档案关系，目标维度值传“预算项”分类下的预算项ID
-            "ltAbQUtfE03k00:dIEbu2mgTs6o00","ltAbQUtfE03k00:NU8bdZALSsts00"
-      ]
+    "sourceValues": [   //例如：“员工和项目”的档案关系，源维度值传某个员工的ID或者CODE
+        "bwa3wajigF0WH0:qKZ3wlg6bv9OGg","bwa3wajigF0WH0:IqQ3wlg6bv9QGg"
+    ],
+    "purposeValues": [  //例如：“员工和项目”的档案关系，目标维度值传某个项目的ID或者CODE
+        "ID_3zYtLIa21gM","ID_3zYtLIa22gM"
+    ]
 }'
 ```
+</TabItem>
+<TabItem value="code" label="code">
+
+```json
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/recordLink/add/$ID_3BFuV7KbVDw?accessToken=ID_3BFuV7KbNDw:bwa3wajigF0WH0&type=code' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "sourceValues": [   //例如：“员工和项目”的档案关系，源维度值传某个员工的ID或者CODE
+        "1001","1002","1003"
+    ],
+    "purposeValues": [  //例如：“员工和项目”的档案关系，目标维度值传某个项目的ID或者CODE
+        "CODE1","CODE2","CODE3"
+    ]
+}'
+```
+</TabItem>
+</Tabs>
 
 ## 成功响应
 ```text
@@ -59,7 +83,18 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2.1/recordL
 ```
 
 ## 失败响应
-当 `sourceValue`（源维度值）与 `purposeValue`（目标维度值）参数输入错误或者写反时，会报如下错误：
+档案关系不存在或已删除时，报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "档案关系ID:ID_3BfDMDHeZ20不存在或已删除！",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当 `sourceValues`（源维度值）与 `purposeValues`（目标维度值）参数写反时，报错如下：
 ```json
 {
     "errorCode": 412,
@@ -70,7 +105,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2.1/recordL
 }
 ```
 
-传其他类型自定义档案项ID，例如：“项目”与“员工”的档案关系，项目传值是其他自定义档案项ID时（例如：岗位），报错如下：
+当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）参数不存在时，报错如下：
 ```json
 {
     "errorCode": 412,

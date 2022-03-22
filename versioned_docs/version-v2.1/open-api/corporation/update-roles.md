@@ -39,41 +39,210 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 :::
 
 ## CURL
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="id" label="id" default>
+
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$7FQbuoqQBA9U00/staffs?accessToken=RCIbwHcnF0kg00&staffBy=code' \
---header 'content-type: application/json' \
---header 'Accept: application/json' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BFuV7KbNDw:bwa3wajigF0WH0&staffBy=id' \
+--header 'Content-Type: application/json' \
 --data-raw '{
-    "contents": [
+    "contents": [  //角色配置情况
         {
-            "path": [  
-                "企业名称","财务部","北京财务部"   //部门名称全路径
+            "pathType": "name",                  //当pathType不传或者传name时，path传入部门名称或者自定义档案项名称
+            "path": [
+                "测试接口专用","部门1","部门1-1"  //部门名称全路径
             ],
             "staffs": [
-                "CODE11"                         //员工工号
+                "bwa3wajigF0WH0:IqQ3wlg6bv9QGg", //员工ID
+                "bwa3wajigF0WH0:qKZ3wlg6bv9OGg"
             ]
         },
         {
-            "pathType": "code",
+            "pathType": "code",                //当pathType传code时，path传入部门编码或者自定义档案项编码
             "path": [
-                "code1", "code2"                //部门编码全路径
+                "GS001","BM002"                //部门编码全路径
             ],
             "staffs": [
-                "CODE332"
+                "bwa3wajigF0WH0:aRx3BagJH20mdg"  //员工ID
             ]
         },
         {
-            "pathType": "id",
+            "pathType": "id",                //当pathType传id时，path传入部门ID或者自定义档案项ID
             "path": [
-                "EAQbauUqXweI00","EAQbauUqXweI00:ID_3wUvB7G2b3w"  //部门ID全路径
+                "bwa3wajigF0WH0","bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID全路径
             ],
             "staffs": [
-                "CODE234"
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"  //员工ID
             ]
         }
     ]
 }'
 ```
+</TabItem>
+<TabItem value="sourceId" label="sourceId">
+
+```json
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=sourceId' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "contents": [  //角色配置情况
+        {
+            "pathType": "name",                  //当pathType不传或者传name时，path传入部门名称或者自定义档案项名称
+            "path": [
+                "测试接口专用","部门1","部门1-1"  //部门名称全路径
+            ],
+            "staffs": [
+                "IqQ3wlg6bv9QGg",                //员工USERID
+                "qKZ3wlg6bv9OGg"
+            ]
+        },
+        {
+            "pathType": "code",                //当pathType传code时，path传入部门编码或者自定义档案项编码
+            "path": [
+                "GS001","BM002"                //部门编码全路径
+            ],
+            "staffs": [
+                "aRx3BagJH20mdg"               //员工USERID
+            ]
+        },
+        {
+            "pathType": "id",                //当pathType传id时，path传入部门ID或者自定义档案项ID
+            "path": [
+                "bwa3wajigF0WH0","bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID全路径
+            ],
+            "staffs": [
+                "ID_3lokDfb1p5w"             //员工USERID
+            ]
+        }
+    ]
+}'
+```
+</TabItem>
+<TabItem value="code" label="code">
+
+```json
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=code' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "contents": [  //角色配置情况
+        {
+            "pathType": "name",                  //当pathType不传或者传name时，path传入部门名称或者自定义档案项名称
+            "path": [
+                "测试接口专用","部门1","部门1-1"  //部门名称全路径
+            ],
+            "staffs": [
+                "1001",                          //员工CODE（工号）
+                "1002"
+            ]
+        },
+        {
+            "pathType": "code",                //当pathType传code时，path传入部门编码或者自定义档案项编码
+            "path": [
+                "GS001","BM002"                //部门编码全路径
+            ],
+            "staffs": [
+                "1003"                         //员工CODE（工号）
+            ]
+        },
+        {
+            "pathType": "id",                //当pathType传id时，path传入部门ID或者自定义档案项ID
+            "path": [
+                "bwa3wajigF0WH0","bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID全路径
+            ],
+            "staffs": [
+                "9458"                       //员工CODE（工号）
+            ]
+        }
+    ]
+}'
+```
+</TabItem>
+<TabItem value="cellphone" label="cellphone">
+
+```json
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=cellphone' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "contents": [  //角色配置情况
+        {
+            "pathType": "name",                  //当pathType不传或者传name时，path传入部门名称或者自定义档案项名称
+            "path": [
+                "测试接口专用","部门1","部门1-1"  //部门名称全路径
+            ],
+            "staffs": [
+                "17600109458",                   //员工手机号
+                "12341234123"
+            ]
+        },
+        {
+            "pathType": "code",                //当pathType传code时，path传入部门编码或者自定义档案项编码
+            "path": [
+                "GS001","BM002"                //部门编码全路径
+            ],
+            "staffs": [
+                "18811110002"                  //员工手机号
+            ]
+        },
+        {
+            "pathType": "id",                //当pathType传id时，path传入部门ID或者自定义档案项ID
+            "path": [
+                "bwa3wajigF0WH0","bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID全路径
+            ],
+            "staffs": [
+                "15810011001"                //员工手机号
+            ]
+        }
+    ]
+}'
+```
+</TabItem>
+<TabItem value="email" label="email">
+
+```json
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=email' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "contents": [  //角色配置情况
+        {
+            "pathType": "name",                  //当pathType不传或者传name时，path传入部门名称或者自定义档案项名称
+            "path": [
+                "测试接口专用","部门1","部门1-1"  //部门名称全路径
+            ],
+            "staffs": [
+                "youxiang1@123.com",             //员工邮箱
+                "ddd@163.com"
+            ]
+        },
+        {
+            "pathType": "code",                //当pathType传code时，path传入部门编码或者自定义档案项编码
+            "path": [
+                "GS001","BM002"                //部门编码全路径
+            ],
+            "staffs": [
+                "youxiang@123.com"             //员工邮箱
+            ]
+        },
+        {
+            "pathType": "id",                //当pathType传id时，path传入部门ID或者自定义档案项ID
+            "path": [
+                "bwa3wajigF0WH0","bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID全路径
+            ],
+            "staffs": [
+                "youxiang3@123.com"          //员工邮箱
+            ]
+        }
+    ]
+}'
+```
+</TabItem>
+</Tabs>
+
+
+
+
 
 ## 成功响应
 :::caution
@@ -85,6 +254,7 @@ code 204
 ```
 
 ## 失败响应
+参数非全路径或员工信息不正确时，报错如下：
 ```json
 {
     "errorCode": 412,
@@ -95,7 +265,7 @@ code 204
 }
 ```
 
-`path`、`staffs` 不允许传 `null`，否则报错如下：
+除了普通角色，`path`、`staffs` 不允许传 `null`，否则报错如下：
 ```json
 {
     "errorCode": 412,

@@ -4,8 +4,15 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v2/recordLink/queryAllRecordLink"
+url="/api/openapi/v2.1/recordLink/queryAllRecordLink"
 />
+
+<details>
+  <summary>v2.1版本特性</summary>
+  <div>
+    - 🐞 优化报错输出。
+  </div>
+</details>
 
 ## Query Parameters
 
@@ -24,7 +31,7 @@ url="/api/openapi/v2/recordLink/queryAllRecordLink"
 
 ## CURL
 ```json
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/recordLink/queryAllRecordLink?accessToken=1A4cbPai0o1U00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/recordLink/queryAllRecordLink?accessToken=1A4cbPai0o1U00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
@@ -97,6 +104,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/recordLin
 ```
 
 ## 失败响应
+`count` 大于 `100` 时报错如下：
 ```json
 {
     "errorCode": 412,
@@ -107,7 +115,18 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/recordLin
 }
 ```
 
-当查询的档案关系ID下无数据 或者 `start` 参数大于等于总记录数时，会报如下错误：
+当查询的档案关系ID不存在或已删除时，报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "档案关系不存在或已删除！",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当查询的档案关系ID下无数据或 `start` 参数大于等于总记录数时，报错如下：
 ```json
 {
     "errorCode": 412,
@@ -117,3 +136,4 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/recordLin
     "data": null
 }
 ```
+

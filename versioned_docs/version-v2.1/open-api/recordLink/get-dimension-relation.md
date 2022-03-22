@@ -4,8 +4,15 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v2/recordLink/getRoleGroups"
+url="/api/openapi/v2.1/recordLink/getRoleGroups"
 />
+
+<details>
+  <summary>v2.1版本特性</summary>
+  <div>
+    - 🐞 优化报错输出。
+  </div>
+</details>
 
 ## Query Parameters
 
@@ -15,7 +22,7 @@ url="/api/openapi/v2/recordLink/getRoleGroups"
 
 ## CURL
 ```shell
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/recordLink/getRoleGroups?accessToken=4vkbY22qkocU00'
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/recordLink/getRoleGroups?accessToken=4vkbY22qkocU00'
 ```
 
 ## 成功响应
