@@ -52,7 +52,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-    "sourceValues": [
+    "sourceValues": [  //以“员工和项目”档案关系为例，员工ID
        "bwa3wajigF0WH0:qKZ3wlg6bv9OGg","bwa3wajigF0WH0:IqQ3wlg6bv9QGg","bwa3wajigF0WH0:aRx3BagJH20mdg"
     ],
     "purposeValues": []
@@ -66,7 +66,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-    "sourceValues": [
+    "sourceValues": [  //以“员工和项目”档案关系为例，员工工号（CODE）
        "1001","1002","1003"
     ],
     "purposeValues": []
@@ -81,7 +81,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 ```
 
 ## 失败响应
-档案关系不存在或已删除时，报错如下：
+档案关系已删除时，报错如下：
 ```json
 {
     "errorCode": 412,
@@ -92,7 +92,18 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 }
 ```
 
-当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）参数输入错误或者写反时，报错如下：
+档案关系不存在时，报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "无效的档案关系ID",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）输入错误或者写反时，报错如下：
 ```json
 {
     "errorCode": 412,

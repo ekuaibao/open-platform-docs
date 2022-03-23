@@ -10,7 +10,8 @@ url="/api/openapi/v2.1/recordLink/edit/$`id`"
 <details>
   <summary>v2.1版本特性</summary>
   <div>
-    - 🆕 新增 “type” 类型参数，支持 ”id“ 或 ”code“ 传参。
+    - 🆕 新增 “type” 类型参数，支持 ”id“ 或 ”code“ 传参。<br/>
+    - 🐞 “editFlag”（更新标志）默认值从 “cover” 改为 “increment”。
   </div>
 </details>
 
@@ -57,10 +58,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
     "editFlag": "increment",   //increment：增量新增； cover：全量覆盖
     "editRecordLinks": [
         {
-            "sourceValues": [
+            "sourceValues": [   //以“员工和项目”档案关系为例，员工ID
                 "bwa3wajigF0WH0:qKZ3wlg6bv9OGg","bwa3wajigF0WH0:IqQ3wlg6bv9QGg"
             ],
-            "purposeValues": [
+            "purposeValues": [  //项目ID
                 "ID_3zYtLIa21gM","ID_3zYtLIa22gM"
             ]
         },
@@ -86,10 +87,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
     "editFlag": "cover",       //increment：增量新增； cover：全量覆盖
     "editRecordLinks": [
         {
-            "sourceValues": [
+            "sourceValues": [   //以“员工和项目”档案关系为例，员工工号（CODE）
                 "1003","9458"
             ],
-            "purposeValues": [
+            "purposeValues": [  //项目CODE
                 "CODE1","CODE2"
             ]
         },
@@ -113,7 +114,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 ```
 
 ## 失败响应
-档案关系不存在或已删除时，报错如下：
+档案关系已删除时，报错如下：
 ```json
 {
     "errorCode": 412,
@@ -124,7 +125,18 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 }
 ```
 
-当 `sourceValues`（源维度值）与 `purposeValues`（目标维度值）参数写反时，报错如下：
+档案关系不存在时，报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "无效的档案关系ID",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当 `sourceValues`（源维度值）与 `purposeValues`（目标维度值）写反时，报错如下：
 ```json
 {
     "errorCode": 412,
@@ -135,7 +147,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 }
 ```
 
-当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）参数不存在时，报错如下：
+当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）不存在时，报错如下：
 ```json
 {
     "errorCode": 412,

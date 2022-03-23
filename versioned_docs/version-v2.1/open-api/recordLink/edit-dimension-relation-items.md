@@ -51,10 +51,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 --data-raw '{
     "recordLinks": [
         {
-            "oldSourceValue": "bwa3wajigF0WH0:qKZ3wlg6bv9OGg",   
-            "oldPurposeValue": "ID_3zYtLIa21gM",                 
-            "newSourceValue": "bwa3wajigF0WH0:ID_3lokDfb1p5w",
-            "newPurposeValue": "ID_3B9HDc30MOM"
+            "oldSourceValue": "bwa3wajigF0WH0:qKZ3wlg6bv9OGg",  //以“员工和项目”档案关系为例，旧员工ID
+            "oldPurposeValue": "ID_3zYtLIa21gM",                //旧项目ID 
+            "newSourceValue": "bwa3wajigF0WH0:ID_3lokDfb1p5w",  //新员工ID
+            "newPurposeValue": "ID_3B9HDc30MOM"                 //新项目ID
         }
     ]
 }'
@@ -69,10 +69,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 --data-raw '{
     "recordLinks": [
         {
-            "oldSourceValue": "1003",   
-            "oldPurposeValue": "CODE1",         
-            "newSourceValue": "1001",
-            "newPurposeValue": "CODE2"
+            "oldSourceValue": "1003",                           //以“员工和项目”档案关系为例，旧员工工号（CODE）
+            "oldPurposeValue": "CODE1",                         //旧项目CODE
+            "newSourceValue": "1001",                           //新员工工号（CODE）
+            "newPurposeValue": "CODE2"                          //新项目CODE
         }
     ]
 }'
@@ -86,7 +86,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 ```
 
 ## 失败响应
-档案关系不存在或已删除时，报错如下：
+档案关系已删除时，报错如下：
 ```json
 {
     "errorCode": 412,
@@ -97,15 +97,36 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 }
 ```
 
-当 `oldSourceValue`（旧源维度值）或 `oldPurposeValue`（旧目标维度值）参数不存在时，报错如下：
+档案关系不存在时，报错如下：
 ```json
 {
     "errorCode": 412,
-    "errorMessage": "旧档案关系不存在",
+    "errorMessage": "无效的档案关系ID",
     "errorDetails": null,
     "code": null,
     "data": null
 }
 ```
 
+当 `oldSourceValue`（旧源维度值）或 `oldPurposeValue`（旧目标维度值）不存在时，报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "编辑关系，旧档案双向关系必须存在有效值！",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当 `newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）不存在时，报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "编辑关系，新档案双向关系必须存在有效值！",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
 

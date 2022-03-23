@@ -20,9 +20,18 @@ timeline: true
   - 优化报错输出。
 - 🆕 新增 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items)、[删除某档案关系下的档案项数据](/docs/open-api/recordLink/delete-dimension-relation-items)、[更新某档案关系下的档案项数据](/docs/open-api/recordLink/update-dimension-relation-items)、[编辑某档案关系下的档案项数据](/docs/open-api/recordLink/edit-dimension-relation-items) 接口 `v2.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
+  - **更新某档案关系下的档案项数据** 接口，更新 `editFlag`（更新标志）默认值，从 `cover` 改为 `increment`。
+- 🆕 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
+  - 新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**paying（待支付）**】状态更新单据。
+  - 修复了单据模板中配置【**必须关联申请单**】，**关联申请** 字段设置【**允许关联多个申请事项**】后，提示"关联申请单不存在，请补充申请单ID！"的BUG。
 - 🐞 更新 [查询角色下员工信息](/docs/open-api/corporation/get-roles)、[更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口参数描述
-  - 新增了 `staffBy`（员工参数格式）支持 `code`、`cellphone`、`email` 3种参数类型。
-
+  - `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。
+  - **更新角色下员工信息** 接口兼容老版本：更新「普通角色」时 `path` 参数非必填。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本
+  - 新增了只允许用 `单据模板`、`费用类型模板` 最新的模板ID创建单据的校验。
+  - 修复了费用类型必填字段传 `""` 可通过校验的BUG，共16种数据类型。
+  - 修复了申请单开启借款金额字段并配置了 **系统计算** 时，计算结果小数位超过2位的BUG。
+  
 ---
 ## 1.2.2
 

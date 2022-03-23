@@ -46,12 +46,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 ```json
 {
     "value": {
-        "total": 10,      //总记录数量
+        "total": 10,                                         //总记录数
         "queryRecords": [
             {
                 "roleDefId": "s4kbXGlvvAs000",               //角色关系ID
-                "sourceValue": "gwobfjObAAno00:15000000034", //源数据ID
-                "purposeValue": "gwobfjObAAno00"             //目标数据ID
+                "sourceValue": "gwobfjObAAno00:15000000034", //源维度值
+                "purposeValue": "gwobfjObAAno00"             //目标维度值
             },
             {
                 "roleDefId": "s4kbXGlvvAs000",

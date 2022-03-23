@@ -10,8 +10,8 @@ url="/api/openapi/v2.1/recordLink/add/$`id`"
 <details>
   <summary>v2.1版本特性</summary>
   <div>
-    - 🐞 修复了传其他类型自定义档案项ID（非档案关系配置的类型）可以创建成功数据的问题。<br/>
-    - 🆕 新增 “type” 类型参数，支持 ”id“ 或 ”code“ 传参。
+    - 🆕 新增 “type” 类型参数，支持 ”id“ 或 ”code“ 传参。<br/>
+    - 🐞 修复了传其他类型自定义档案项ID（非档案关系配置的类型）可以创建成功数据的问题。
   </div>
 </details>
 
@@ -51,10 +51,10 @@ import TabItem from '@theme/TabItem';
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/recordLink/add/$ID_3BFuV7KbVDw?accessToken=ID_3BFuV7KbNDw:bwa3wajigF0WH0&type=id' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "sourceValues": [   //例如：“员工和项目”的档案关系，源维度值传某个员工的ID或者CODE
+    "sourceValues": [   //以“员工和项目”档案关系为例，源维度值传某个员工的ID
         "bwa3wajigF0WH0:qKZ3wlg6bv9OGg","bwa3wajigF0WH0:IqQ3wlg6bv9QGg"
     ],
-    "purposeValues": [  //例如：“员工和项目”的档案关系，目标维度值传某个项目的ID或者CODE
+    "purposeValues": [  //以“员工和项目”档案关系为例，目标维度值传某个项目的ID
         "ID_3zYtLIa21gM","ID_3zYtLIa22gM"
     ]
 }'
@@ -66,10 +66,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/recordLink/add/$ID_3BFuV7KbVDw?accessToken=ID_3BFuV7KbNDw:bwa3wajigF0WH0&type=code' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "sourceValues": [   //例如：“员工和项目”的档案关系，源维度值传某个员工的ID或者CODE
+    "sourceValues": [   //以“员工和项目”档案关系为例，源维度值传某个员工的工号（CODE)
         "1001","1002","1003"
     ],
-    "purposeValues": [  //例如：“员工和项目”的档案关系，目标维度值传某个项目的ID或者CODE
+    "purposeValues": [  //以“员工和项目”档案关系为例，目标维度值传某个项目的CODE
         "CODE1","CODE2","CODE3"
     ]
 }'
@@ -83,7 +83,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 ```
 
 ## 失败响应
-档案关系不存在或已删除时，报错如下：
+档案关系已删除时，报错如下：
 ```json
 {
     "errorCode": 412,
@@ -94,7 +94,18 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 }
 ```
 
-当 `sourceValues`（源维度值）与 `purposeValues`（目标维度值）参数写反时，报错如下：
+档案关系不存在时，报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "无效的档案关系ID",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当 `sourceValues`（源维度值）与 `purposeValues`（目标维度值）写反时，报错如下：
 ```json
 {
     "errorCode": 412,
@@ -105,7 +116,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 }
 ```
 
-当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）参数不存在时，报错如下：
+当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）不存在时，报错如下：
 ```json
 {
     "errorCode": 412,

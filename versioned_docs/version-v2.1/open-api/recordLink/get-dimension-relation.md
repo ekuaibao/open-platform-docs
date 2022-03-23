@@ -32,8 +32,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
         {
             "id": "gf4bVQSClE3g00",                          //档案关系ID
             "name": "1与12",                                 //档案关系名称
-            "sourceType": "basedata.Dimension.项目",         //源维度
-            "purposeType": "basedata.Dimension.固定资产类目" //目标维度
+            "sourceType": "basedata.Dimension.项目",         //源维度类型
+            "purposeType": "basedata.Dimension.固定资产类目" //目标维度类型
         },
         {
             "id": "4GAbXLhPP0go00",
