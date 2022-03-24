@@ -28,7 +28,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ## 成功响应
 ```json
 {
-  "count":3,  //总数量
+  "count":3,                    //总数量
   "items":[
     {
       "id":"ID_3BEqPWzQyaw",    //业务对象台账ID
@@ -56,41 +56,41 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
         "standardNumCode":"156",
         "standardStrCode":"CNY"
       },
-      "detail":{        //关联消费信息
-        "feeTypeId":"ID_3BDKWQqqq8g",   //费用明细ID
-        "feeTypeForm":{                 //费用类型数据明细
-          "amount":{                    //费用金额
-            "standard":"100",           //本位币
-            "standardUnit":"元",        //本位币单位
-            "standardScale":2,         //本位币精度
-            "standardSymbol":"¥",      //本位币符号
-            "standardNumCode":"156",   //本位币数字代码
-            "standardStrCode":"CNY"    //本位币字母代码
+      "detail":{                           //关联消费信息
+        "feeTypeId":"ID_3BDKWQqqq8g",      //费用明细ID
+        "feeTypeForm":{                    //费用类型数据明细
+          "amount":{                       //费用金额
+            "standard":"100",              //本位币
+            "standardUnit":"元",           //本位币单位
+            "standardScale":2,            //本位币精度
+            "standardSymbol":"¥",         //本位币符号
+            "standardNumCode":"156",      //本位币数字代码
+            "standardStrCode":"CNY"       //本位币字母代码
           },
-          "feeDate":1647792000000,      //消费时间(毫秒级时间戳)
-          "detailId":"tMUB7Hi2aItcS6",  //明细ID
-          "attachments":[               //附件 可用附件信息的数据通过调用【获取附件URL】接口来获取附件文件下载链接
+          "feeDate":1647792000000,        //消费时间(毫秒级时间戳)
+          "detailId":"tMUB7Hi2aItcS6",    //明细ID
+          "attachments":[                 //附件 可用附件信息的数据通过调用【获取附件URL】接口来获取附件文件下载链接
 
           ],
-          "invoiceForm":{               //发票信息(非必返回字段)
-            "type":"noWrite"            //发票类型
+          "invoiceForm":{                 //发票信息(非必返回字段)
+            "type":"noWrite"              //发票类型
           },
-          "consumptionReasons":"",      //消费原因
-          "u_测试费用导入":"ID_3v7IN7M5pT0"     //自定义字段
+          "consumptionReasons":"",        //消费原因
+          "u_测试费用导入":"ID_3v7IN7M5pT0" //自定义字段
         },
         "specificationId":"ID_3BDKWQqqq8g:expense:484c25ad502a1b0c4817ccd0b157430c9d20d2a4"   //费用类型模版ID
       },
-      "flowId":"ID_3BEqPWzQgaw",      //单据ID
-      "feeDate":1647792000000,        //消费时间(毫秒级时间戳)
+      "flowId":"ID_3BEqPWzQgaw",          //单据ID
+      "feeDate":1647792000000,            //消费时间(毫秒级时间戳)
       "grayver":"9.16.0.0:A",
       "version":1,
-      "detailId":"tMUB7Hi2aItcS6",    //明细ID
+      "detailId":"tMUB7Hi2aItcS6",        //明细ID
       "pipeline":1,
       "totalNum":"0",
       "apportion":null,
-      "feeTypeId":"ID_3BDKWQqqq8g",   //费用明细ID
+      "feeTypeId":"ID_3BDKWQqqq8g",       //费用明细ID
       "createTime":1647842693505,
-      "dataLinkId":"ID_3v7IN7M5pT0",    //业务对象实例ID
+      "dataLinkId":"ID_3v7IN7M5pT0",      //业务对象实例ID
       "updateTime":1647842693505,
       "apportionId":null,
       "originalRate":"1",
@@ -100,7 +100,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
       "refDataLinkId":"",
       "groupDimension":"",
       "ledgerConfigId":"ID_3v7HGBq_dW0",  //业务对象台账配置ID
-      "originalAmount":{                //计划金额
+      "originalAmount":{                  //计划金额
         "rate":null,
         "budget":null,
         "foreign":null,

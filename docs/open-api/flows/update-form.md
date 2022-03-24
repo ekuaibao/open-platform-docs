@@ -5,11 +5,19 @@ import Control from "@theme/Control";
 
 <Control
 method="PUT"
-url="/api/openapi/v2/flow/data/$`flowId`"
+url="/api/openapi/v2.1/flow/data/$`flowId`"
 />
 
+<details>
+  <summary>v2.1版本特性</summary>
+  <div>
+    - 🐞 新增了校验审批流节点是否配置【允许审批人修改单据】，支持【paying（待支付）】状态允许更新单据。<br/>
+    - 🐞 修复了单据模板中配置【必须关联申请单】，“关联申请”字段设置【允许关联多个申请事项】后，提示"关联申请单不存在，请补充申请单ID！"的BUG。
+  </div>
+</details>
+
 :::caution
-- 目前此接口只支持修改 **draft（草稿）、approving（审批中）** 状态的单据，并且对应节点要配置 ”**允许审批人修改单据**“。
+- 目前此接口只支持修改 **draft（草稿）、approving（审批中）、paying（待支付）** 状态的单据，并且对应节点要配置 ”**允许审批人修改单据**“。
 :::
 
 ## Path Parameters
@@ -37,6 +45,7 @@ url="/api/openapi/v2/flow/data/$`flowId`"
 |**&emsp; ∟ description**                       | String | 描述           | 非必填 | - | 描述 |
 |**&emsp; ∟ payeeId**                           | String | 收款人信息ID    | 必填  | - | 通过[获取收款账号信息](/docs/open-api/pay/get-payeeInfos)获取 |
 |**&emsp; ∟ specificationId**                   | String | 单据模板ID      | 必填  | - | 通过[获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)获取 |
+|**&emsp; ∟ expenseLink**                       | String | 关联申请        | 非必填 | - | 需要关联的申请单ID |
 |**&emsp; ∟ details**                           | Array  | 费用明细        | 必填  | - | 费用明细 |
 |**&emsp; &emsp; ∟ feeTypeId**                  | String | 费用类型ID      | 必填  | - | 通过[获取费用类型列表(包含停用)](/docs/open-api/feetype/get-feetypes-list)获取 |
 |**&emsp; &emsp; ∟ specificationId**            | String | 费用类型模板ID   | 必填  | - | 通过[根据ID或CODE获取费用类型模板信息](/docs/open-api/feetype/get-feetypes)获取 |
@@ -63,7 +72,7 @@ url="/api/openapi/v2/flow/data/$`flowId`"
 
 ## CURL
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data/$flowId?accessToken=SIw9lEj3rc0800' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/data/$flowId?accessToken=SIw9lEj3rc0800' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "form": {
@@ -72,6 +81,9 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data
         "expenseDate": 1562036472205,
         "expenseDepartment": "6Rk9l1WYNM0400:72157064",
         "description": "",
+        "expenseLinks":[
+            "ID_3twRddlb0$w"
+        ] 
         "details": [
             {
                 "feeTypeId": "6Rk9l1WYNM0400:taxi",                                 //费用类型ID
@@ -200,6 +212,9 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data
                 }
             ],
             "specificationId":"Ys49lCDmlgbc00:6ad521a290e74c85",
+            "expenseLinks":[
+                "ID_3twRddlb0$w"
+            ],
             "writtenOffMoney":{
                 "standard":"0.00",
                 "standardStrCode":"CNY",
@@ -259,6 +274,17 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data
 {
     "errorCode": 400,
     "errorMessage": "单据模板不存在",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+单据当前审批节点未配置【允许审批人修改单据】时：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "此节点未配置允许审批人修改单据选项，请检查审批流",
     "errorDetails": null,
     "code": null,
     "data": null

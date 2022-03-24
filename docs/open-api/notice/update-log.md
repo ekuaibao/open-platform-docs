@@ -16,6 +16,7 @@ timeline: true
 
 `2022-03-24`
 
+- 🆕 新增 [新增角色](/docs/open-api/corporation/create-roledefs)、[更新角色](/docs/open-api/corporation/update-roledefs)接口 `v1` 版本
 - 🆕 新增 [获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation)、[获取企业下档案项数据](/docs/open-api/recordLink/query-all-relation-items) 接口 `v2.1` 版本
   - 优化报错输出。
 - 🆕 新增 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items)、[删除某档案关系下的档案项数据](/docs/open-api/recordLink/delete-dimension-relation-items)、[更新某档案关系下的档案项数据](/docs/open-api/recordLink/update-dimension-relation-items)、[编辑某档案关系下的档案项数据](/docs/open-api/recordLink/edit-dimension-relation-items) 接口 `v2.1` 版本
@@ -24,11 +25,12 @@ timeline: true
 - 🆕 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
   - 新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**paying（待支付）**】状态更新单据。
   - 修复了单据模板中配置【**必须关联申请单**】，**关联申请** 字段设置【**允许关联多个申请事项**】后，提示"关联申请单不存在，请补充申请单ID！"的BUG。
-- 🐞 更新 [查询角色下员工信息](/docs/open-api/corporation/get-roles)、[更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口参数描述
+- 🆕 新增 [审批动作（审批日志中action字段）](/docs/open-api/flows/forms-state#审批动作审批日志中-action-字段)参数列表
+- 🐞 更新 [查询角色下员工信息](/docs/open-api/corporation/get-roles)、[更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口 `v1` 版本参数描述
   - `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。
   - **更新角色下员工信息** 接口兼容老版本：更新「普通角色」时 `path` 参数非必填。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本
-  - 新增了只允许用 `单据模板`、`费用类型模板` 最新的模板ID创建单据的校验。
+  - 新增了只允许用 **单据模板**、**费用类型模板** 最新的模板ID创建单据的校验。
   - 修复了费用类型必填字段传 `""` 可通过校验的BUG，共16种数据类型。
   - 修复了申请单开启借款金额字段并配置了 **系统计算** 时，计算结果小数位超过2位的BUG。
   

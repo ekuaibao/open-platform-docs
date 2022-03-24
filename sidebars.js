@@ -52,6 +52,8 @@ const sidebars = {
         "open-api/corporation/get-staff-ids",
         "open-api/corporation/get-staff-backLog",
         "open-api/corporation/get-roles-group",
+        "open-api/corporation/create-roledefs",
+        "open-api/corporation/update-roledefs",
         "open-api/corporation/get-roles",
         "open-api/corporation/update-roles",
         "open-api/corporation/question-answer"
