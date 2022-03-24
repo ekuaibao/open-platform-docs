@@ -73,12 +73,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 --header 'Content-Type: application/json' \
 --data-raw '{
   "form":{
-        "title":"测试日常报销单4", //单据标题
-        "details":[              //费用明细
+        "title":"测试日常报销单4",                     //单据标题
+        "details":[                                   //费用明细
             {
-                "feeTypeId":"PCx3rwm3aA00qM:hotel", //费用类型ID
-                "feeTypeForm":{ //费用信息
-                    "amount":{  //报销金额
+                "feeTypeId":"PCx3rwm3aA00qM:hotel",   //费用类型ID
+                "feeTypeForm":{                       //费用信息
+                    "amount":{                        //报销金额
                         "standard":"335",
                         "standardUnit":"元",
                         "standardScale":2,
@@ -86,12 +86,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
                         "standardNumCode":"156",
                         "standardStrCode":"CNY"
                     },
-                    "apportions":[  //分摊明细具体信息
+                    "apportions":[                    //分摊明细具体信息
                         {
                             "apportionForm":{
-                                "项目":"ID_3rw$2RXfelM",    //项目
-                                "apportionId":"ID_3tLTuqz9b6M", //分摊明细ID
-                                "apportionMoney":{  //分摊金额
+                                "项目":"ID_3rw$2RXfelM",          //项目
+                                "apportionId":"ID_3tLTuqz9b6M",  //分摊明细ID
+                                "apportionMoney":{               //分摊金额
                                     "standard":"335",
                                     "standardUnit":"元",
                                     "standardScale":2,
@@ -99,15 +99,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
                                     "standardNumCode":"156",
                                     "standardStrCode":"CNY"
                                 },
-                                "apportionPercent":"100.00",    //分摊百分比
-                                "expenseDepartment":"PCx3rwm3aA00qM:ID_3rw$2RXc5lM" //分摊部门
+                                "apportionPercent":"100.00",                         //分摊百分比
+                                "expenseDepartment":"PCx3rwm3aA00qM:ID_3rw$2RXc5lM"  //分摊部门
                             },
                             "specificationId":"PCx3rwm3aA00qM:报销部门&项目分摊:0234d1a99e67306c72df937ba8d4f7abb60e2c20"   //分摊方式ID
                         }
                     ],
-                    "invoiceForm":{ //发票附件
-                        "type":"exist", //已有发票
-                        "attachments":[     //如果没有附件,不传此字段(附件先通过“上传附件”接口上传数据)
+                    "invoiceForm":{          //发票附件
+                        "type":"exist",      //已有发票
+                        "attachments":[      //如果没有附件,不传此字段(附件先通过“上传附件”接口上传数据)
                             {
                                 "key":"OffLine-1639378118926-931.jpg",
                                 "fileId":"ID_3tLTuqz8f6M",
@@ -115,7 +115,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
                             }
                         ]
                     },
-                    "feeDatePeriod":{   //自定义配置的日期范围字段
+                    "feeDatePeriod":{        //自定义配置的日期范围字段
                         "end":1639324800000,
                         "start":1639324800000
                     },
@@ -141,9 +141,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
                 "fileName":"s-search.png"
             }
         ],
-        "description":"123",    //描述
+        "description":"123",            //描述
         "expenseDate":1639324800000,    //报销日期
-        "expenseLink":"ID_3twRddlb0$w", //关联申请单ID，如单据无需关联申请单，可不在 form 对象中添加该字段
+        "expenseLink":"ID_3twRddlb0$w", //关联申请单ID，如单据无需关联申请单，可不在form对象中添加该字段
         "submitterId":"PCx3rwm3aA00qM:VWf3rvZHCb0ghM",  //提交人ID
         "specificationId":"ID_3rwlFm523WM:2f01211a2447e29378d078e1219a51899eff7d36",    //单据模板ID
         "u_Z业务对象":"ID_3tLfV302QDw",
@@ -169,16 +169,16 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
         ],
         "expenseDepartment":"PCx3rwm3aA00qM"   //报销部门
     },
-     "params":{ //当需要添加核销借款时添加该参数
-        "loanWrittenOff":[ //表示报销单中的核销借款字段
+     "params":{                                //当需要添加核销借款时添加该参数
+        "loanWrittenOff":[                     //表示报销单中的核销借款字段
             {
-              "loanInfoId":"ID_3sJUjsRJUrw", //借款包id
-              "title":"测试", //借款单标题
-              "repaymentDate":1641724500000,// 还款日期
+              "loanInfoId":"ID_3sJUjsRJUrw",   //借款包ID
+              "title":"测试",                  //借款单标题
+              "repaymentDate":1641724500000,   //还款日期
               "fromApply":false,
-              "flowId":"ID_3seTcgi0qrg", //借款单 Id
+              "flowId":"ID_3seTcgi0qrg",       //借款单ID
               "hasImported":false,
-              "amount":"222" //核销金额
+              "amount":"222"                   //核销金额
             }
         ]
     }
@@ -366,7 +366,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 ```
 
 ## 失败响应
-单据模板错误，返回单据模板不存在，需要确认单据模板，对应字段 `specificationId` 值：
+`form.specificationId`（单据模板ID）错误，需要确认单据模板ID是否为 “**单据模板ID:小版本号**” 的正确形式：
 ```json
 {
     "errorCode": 400,
@@ -377,7 +377,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 }
 ```
 
-单据模板ID不是最新的，不允许创建单据，请每次修改单据模板后都获取最新的单据模板ID：
+单据模板ID不是最新的，不允许创建单据，报错如下（请每次修改单据模板后都获取最新的模板ID再创建单据操作）：
 ```json
 {
     "errorCode": 400,
@@ -388,9 +388,38 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 }
 ```
 
+`form.details.specificationId`（费用类型模板ID）错误，需要确认费用类型模板ID是否为 “**费用类型模板ID:单据类型:小版本号**” 的正确形式：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "openapi单据数据保存，明细模板不存在, specificationId:ID_3BJKZuv0pow",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
 
+费用类型模板ID不是最新的，不允许创建单据，报错如下（请每次修改费用类型模板后都获取最新的模板ID再创建单据操作）：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "openapi单据数据保存，明细模板已删除, specificationId:ID_3BJKZuv0pow:requisition:3f8fa0ca71fc1f33aceae7ad7d4cfa2fa845ac2c",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
 
-
+必填字段没有传值时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "'u_业务对象'字段[业务对象]字段为必填，值不能为空",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
 
 `submitterId` 字段所对应员工离职时，返回以下报错信息：
 ```json

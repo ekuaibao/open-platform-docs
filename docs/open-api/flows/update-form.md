@@ -11,7 +11,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 <details>
   <summary>v2.1版本特性</summary>
   <div>
-    - 🐞 新增了校验审批流节点是否配置【允许审批人修改单据】，支持【paying（待支付）】状态允许更新单据。<br/>
+    - 🆕 新增了校验审批流节点是否配置【允许审批人修改单据】，支持【paying（待支付）】状态更新单据。<br/>
     - 🐞 修复了单据模板中配置【必须关联申请单】，“关联申请”字段设置【允许关联多个申请事项】后，提示"关联申请单不存在，请补充申请单ID！"的BUG。
   </div>
 </details>
@@ -54,7 +54,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 |**&emsp; &emsp; &emsp; ∟ feeDate**             | String | 费用日期        | 必填  | - | 毫秒级时间戳 |
 |**&emsp; &emsp; &emsp; ∟ invoiceForm**         | Object | 发票相关信息     | 必填  | - | 根据单据模板决定 |
 |**&emsp; &emsp; &emsp; ∟ type**                | String | 发票开票类型     | 必填  | - | 发票相关信息参数存在时有效<br/>`unify` : 统一开票 &emsp; `wait` : 待开发票<br/>`exist` : 已有发票 &emsp; `noExist` : 无发票<br/>`noWrite` : 无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
-|**&emsp; &emsp; &emsp; ∟ attachments**         | Array  | 发票附件        | 非必填 | - | **无法对发票附件进行验真查重**<br/>需要先通过[上传附件](/docs/open-api/attachment/attachment-upload)上传数据，然后使用接口返回值为参数 |
+|**&emsp; &emsp; &emsp; ∟ attachments**         | Array  | 发票附件        | 非必填 | - | **无法对发票附件进行验真查重或者OCR处理**<br/>需要先通过[上传附件](/docs/open-api/attachment/attachment-upload)上传数据，然后使用接口返回值为参数 |
 |**&emsp; &emsp; &emsp; ∟ consumptionReasons**  | String | 消费事由        | 非必填 | - | 消费事由 |
 |**&emsp; &emsp; &emsp; ∟ apportions**          | Array  | 分摊明细        | 非必填 | - | 根据单据模板决定 |
 |**&emsp; &emsp; &emsp; &emsp; ∟ apportionForm**| Object |	分摊明细具体信息 | 非必填 | - | 分摊明细具体信息 |
@@ -136,11 +136,11 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
     "params":{                                  //自定义字段
         "loanWrittenOff":[                      //表示核销借款
             {
-                "loanInfoId":"KWYaYjurRo2000",  //借款包id
+                "loanInfoId":"KWYaYjurRo2000",  //借款包ID
                 "title":"333",                  //借款单标题
-                "repaymentDate":1591942260000,  // 还款日期
+                "repaymentDate":1591942260000,  //还款日期
                 "fromApply":false,
-                "flowId":"_LAaYjoV9sm000",      //借款单 Id
+                "flowId":"_LAaYjoV9sm000",      //借款单ID
                 "hasImported":false,
                 "amount":"3"                    //核销金额
             }
@@ -152,7 +152,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
 
 :::tip
 - 更新单据接口与创建单据接口参数一致，所有参数规则说明请参考创建单据接口里的说明。
-- 返回信息与[创建单据](/docs/open-api/flows/creat-and-save)接口一样。
+- 返回信息与[创建单据](/docs/open-api/flows/creat-and-save)接口一致。
 :::
 
 ## 成功响应
@@ -269,7 +269,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
 ```
 
 ## 失败响应
-单据模板错误，返回单据模板不存在，需要确认单据模板 ID `specificationId` 值：
+`form.specificationId`（单据模板ID）错误，需要确认单据模板ID是否为 “**单据模板ID:小版本号**” 的正确形式：
 ```json
 {
     "errorCode": 400,

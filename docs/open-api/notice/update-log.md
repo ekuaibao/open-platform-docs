@@ -25,7 +25,7 @@ timeline: true
 - 🆕 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
   - 新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**paying（待支付）**】状态更新单据。
   - 修复了单据模板中配置【**必须关联申请单**】，**关联申请** 字段设置【**允许关联多个申请事项**】后，提示"关联申请单不存在，请补充申请单ID！"的BUG。
-- 🆕 新增 [审批动作（审批日志中action字段）](/docs/open-api/flows/forms-state#审批动作审批日志中-action-字段)参数列表
+- 🆕 新增 [审批动作（审批日志中action字段）](/docs/open-api/flows/forms-state#审批动作审批日志中-action-字段)参数列表。
 - 🐞 更新 [查询角色下员工信息](/docs/open-api/corporation/get-roles)、[更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口 `v1` 版本参数描述
   - `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。
   - **更新角色下员工信息** 接口兼容老版本：更新「普通角色」时 `path` 参数非必填。

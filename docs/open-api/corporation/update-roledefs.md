@@ -38,28 +38,28 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
         "active": true,          //是否启用
         "createTime": 1648024446623,
         "updateTime": 1648024446623,
-        "name": "ZGY职级预置角色1",     //角色名称
+        "name": "ZGY职级预置角色1",          //角色名称
         "nameSpell": "ZGYZHIJIYUZHIJIAOSE", //名称拼音
-        "corporationId": "xgJ3wajigF25H0", //企业ID
+        "corporationId": "xgJ3wajigF25H0",  //企业ID
         "sourceCorporationId": null,
         "dataCorporationId": null,
         "roleGroupId": "xgJ3wajigF25H0:group:default",  //角色组ID
-        "scope": {    //角色类型
-            "name": "职级预置角色",  //角色类型名称
-          "properties": {         //角色类型配置
-            "职级预置": "basedata.Dimension.职级预置"
-          }
+        "scope": {                                      //角色类型
+            "name": "职级预置角色",                      //角色类型名称
+            "properties": {                             //角色类型配置
+                "职级预置": "basedata.Dimension.职级预置"
+            }
         },
         "locked": false,
-        "code": "CODE10", //角色编号
-        "type": "ROLE",  //类型
-        "sourceType": "basedata.Dimension",  //角色类型来源
+        "code": "CODE10",                    //角色编号
+        "type": "ROLE",                      //类型
+        "sourceType": "basedata.Dimension",  
         "sourceTypeValue": "basedata.Dimension.职级预置",
         "sourceName": "ZGY职级预置角色1",
         "purposeType": "organization.Staff",
         "purposeTypeValue": null,
         "purposeName": "ZGY职级预置角色1(反)",
-        "sourceChannel": "MANUAL",
+        "sourceChannel": "MANUAL",          //角色数据来源，MANUAL:手动管理  API:API导入
         "sourcePlat": null,
         "sourceId": null,
         "suffixName": null
@@ -71,11 +71,11 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
 角色名称已存在时，报错如下：
 ```json
 {
-  "errorCode": 412,
-  "errorMessage": "此名称的角色已经存在，请更换名称",
-  "errorDetails": null,
-  "code": null,
-  "data": null
+    "errorCode": 412,
+    "errorMessage": "此名称的角色已经存在，请更换名称",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```
 
