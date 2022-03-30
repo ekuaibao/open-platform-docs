@@ -83,7 +83,6 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
 }
 ```
 
-## 失败响应
 `start` 传参大于等于实际员工总数据量时，会得到如下响应，只显示总数据量“count“，不显示员工信息：
 ```json
 {
@@ -91,6 +90,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
     "items": []
 }
 ```
+
+## 失败响应
 当 `accessToken` 失效时，得到如下回应：
 ```json
 {
