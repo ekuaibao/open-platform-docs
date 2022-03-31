@@ -83,7 +83,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
 ## 成功响应
 ```json
 {
-  "id": "XBUbxhnP5k8w00" // 档案值ID
+    "id": "XBUbxhnP5k8w00" // 档案值ID
 }
 ```
 

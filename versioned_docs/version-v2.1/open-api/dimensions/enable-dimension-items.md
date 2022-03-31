@@ -41,7 +41,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/dimension
 
 ## 成功响应
 :::caution
-- 响应需要判断状态码来确定是否成功。
+- 响应需要判断HTTP状态码来确定是否成功，响应成功时无内容返回。
 :::
 
 ```text

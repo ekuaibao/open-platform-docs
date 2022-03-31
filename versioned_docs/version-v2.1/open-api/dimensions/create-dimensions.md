@@ -38,7 +38,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 当 `code` 编码和 `name` 名称在系统中已存在时，会返回已创建的档案值id：
 ```json
 {
-  "id": "Urf3lsFgBp00gw:档案名称"   //档案值id
+    "id": "Urf3lsFgBp00gw:档案名称"   //档案值id
 }
 ```
 
@@ -46,21 +46,21 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 当 `code` 编码在系统中已存在时创建失败并返回如下类似内容：
 ```json
 {
-  "errorCode": 412,
-  "errorMessage": "此编码已经被占用",
-  "errorDetails": null,
-  "code": null,
-  "data": null
+    "errorCode": 412,
+    "errorMessage": "此编码已经被占用",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```
 当 `name` 名称为空时返回如下类似内容：
 ```json
 {
-  "errorCode": 400,
-  "errorMessage": "请填写显示名称",
-  "errorDetails": null,
-  "code": null,
-  "data": null
+    "errorCode": 400,
+    "errorMessage": "请填写显示名称",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```
 

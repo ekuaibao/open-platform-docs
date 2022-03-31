@@ -632,12 +632,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 "invoiceForm": {
     "type": "unify",  //统一开票
     "invoices": [],
-    "invoiceCorporationId": "H50cghSyeQxw00"  //开票方企业id
+    "invoiceCorporationId": "H50cghSyeQxw00"  //开票方企业ID，暂无接口可获取
 }
 ```
 
 - `attachments` 为发票文件，发票附件可通过[上传附件](/docs/open-api/attachment/attachment-upload)接口，先上传文件到服务器后，然后在请求回应中拿到上传附件的文件key等参数。
-- 当 `invoiceForm` 整个对象都不传入时，会附默认值「noWrite」(无需填写)。
+- 当 `invoiceForm` 整个对象都不传入时，会赋默认值「noWrite」(无需填写)。
 
 ### (13) 收款信息字段
 字段的「type」为【select】且「valueFrom」为【pay.PayeeInfo】的，为收款信息字段，需传入收款信息的 ID，可通过[获取收款账号信息](/docs/open-api/pay/get-payeeInfos)接口获取：

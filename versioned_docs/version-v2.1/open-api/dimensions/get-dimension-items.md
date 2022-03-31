@@ -32,7 +32,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
     "items": [
         {
             "id": "JOYbpjPP-E2Q00:laptop", //档案值ID
-            "name": "笔记本电脑",           //档案值名称
+            "name": "笔记本电脑",          //档案值名称
             "active": true,                //是否有效
             "code": "4-Laptop",            //档案值编码
             "dimensionId": "JOYbpjPP-E2Q00:固定资产类目", //所属档案类别ID

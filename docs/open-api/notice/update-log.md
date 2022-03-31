@@ -12,6 +12,16 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.3.1
+
+`2022-03-31`
+
+- 🐞 更新 开通 [通讯录接口](/docs/open-api/contacts/info) 功能描述。 
+- 🐞 更新 [重定向URL](/docs/open-api/getting-started/question-answer#问题三) 参数描述。
+- 🐞 更新 [获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments)、[获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取已激活员工列表](/docs/open-api/corporation/get-all-auth-staffs) 接口失败响应。
+- 🐞 优化【**委托授权**】模块下全部接口名称。
+
+---
 ## 1.3.0
 
 `2022-03-24`

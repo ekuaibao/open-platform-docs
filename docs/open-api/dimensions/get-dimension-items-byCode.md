@@ -66,12 +66,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
 
 **如果出现以下信息，表示没有对应 `code` 的档案项信息：**
 ```json
-
 {
     "count": 0,
     "items": []
 }
-
 ```
 
 ## 失败响应

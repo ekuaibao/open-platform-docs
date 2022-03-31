@@ -74,10 +74,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
 ## 失败响应
 ```json
 {
-  "errorCode": 400,
-  "errorMessage": "输入存在错误:\n- 缺少id参数",
-  "errorDetails": null,
-  "code": null,
-  "data": null
+    "errorCode": 400,
+    "errorMessage": "输入存在错误:\n- 缺少id参数",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```
