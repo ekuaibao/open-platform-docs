@@ -1,4 +1,4 @@
-# 新增委托授权
+# 新增委托审批授权
 
 import Control from "@theme/Control";
 

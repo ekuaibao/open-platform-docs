@@ -1,4 +1,4 @@
-# 根据发起人ID获取所有委托信息
+# 根据发起人ID获取委托审批授权数据
 
 import Control from "@theme/Control";
 

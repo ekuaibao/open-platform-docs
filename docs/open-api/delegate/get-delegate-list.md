@@ -1,4 +1,4 @@
-# 获取企业下所有的委托授权数据
+# 获取企业下所有委托审批授权数据
 
 import Control from "@theme/Control";
 
@@ -15,7 +15,7 @@ url="/api/openapi/v2/organization/delegate/approve"
 
 ## CURL
 ```shell
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/organization/delegate/approve?accessToken=cCMbw_mKUs8c00' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/organization/delegate/approve?accessToken=cCMbw_mKUs8c00' \
 ```
 
 ## 成功响应
