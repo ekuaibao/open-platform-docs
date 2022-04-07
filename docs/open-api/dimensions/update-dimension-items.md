@@ -55,7 +55,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/dimension
     //系统预置档案额外参数如下，不用时不传即可：        
     "form":{
         //“项目” 档案额外参数
-        "projectBase": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //项目所在地
+        "projectBase": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]", //项目所在地
         "projectInspector": "uIk3sePdIJ00v0:1102",                     //项目总监，值为员工ID
         "projectManager": "uIk3sePdIJ00v0:AvT3lntT8zzpWw",             //项目经理，值为员工ID
         "projectType": "ID_3sjnVFu0ZOw",                               //项目类型，值为【项目类型预置】档案实例ID

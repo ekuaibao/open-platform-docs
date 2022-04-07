@@ -35,6 +35,10 @@ url="/api/openapi/v1.1/dimensions/items/batch"
 | **&emsp;&emsp; ∟ departments** | Array   | 部门白名单   | 非必填 | - | 值为[部门ID](/docs/open-api/corporation/get-departments) |
 | **&emsp; ∟ parentId**          | String  | 档案值父级ID | 必填   | - | 可通过[获取档案值](/docs/open-api/dimensions/get-dimension-items)来获取。根节点请填写 `""` |
 
+:::tip
+- 系统预置档案有一些额外字段，详细字段传参见CURL里面的注释。
+:::
+
 ## CURL
 ```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimensions/items/batch?accessToken=hQgbxfJnlElc00' \
@@ -61,7 +65,26 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
                     "ltAbQUtfE03k00"
                 ]
             },
-            "parentId":""
+            "parentId":"",
+            //-----------------------------------------
+            //系统预置档案额外参数如下，不用时不传即可：        
+            "form":{
+                //“项目” 档案额外参数
+                "projectBase": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]", //项目所在地
+                "projectInspector": "uIk3sePdIJ00v0:1102",                     //项目总监，值为员工ID
+                "projectManager": "uIk3sePdIJ00v0:AvT3lntT8zzpWw",             //项目经理，值为员工ID
+                "projectType": "ID_3sjnVFu0ZOw",                               //项目类型，值为【项目类型预置】档案实例ID
+                //-----------------------------------------
+                //“职级预置”档案额外参数
+                "rankType":"ID_3sjnv7SJeIw",                                   //职级类型，值为【职级类型预置】档案实例ID
+                //-----------------------------------------
+                //“岗位预置”档案额外参数
+                 "postType":"ID_3sjQzq30UL0",                                  //岗位类型，值为【岗位类型预置】档案实例ID
+                //-----------------------------------------
+                //“法人实体”档案额外参数
+                "taxpayerType":"GeneralTaxpayer"                               //纳税人类型，GeneralTaxpayer：一般纳税人；SmallScaleTaxpayer：小规模纳税人
+                //-----------------------------------------
+            }
         },
         {
             "name":"批量接口二子1111",
