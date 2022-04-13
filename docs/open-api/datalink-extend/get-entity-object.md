@@ -27,7 +27,7 @@ url="/api/openapi/v2/extension/DATA_LINK/object/`entityId`/search"
 | **ids**   | Array  | 业务对象实例ID数组   | 非必填 | - | 按照[业务对象实例的ID](/docs/open-api/datalink/get-entity-info)查询详情 |
 | **codes** | Array  | 业务对象实例CODE数组 | 非必填 | - | 按照业务对象实例的CODE查询详情 |
 | **index** | Number | 开始索引            | 非必填 | - | 从 `1` 开始，不可为 `0` |
-| **count** | Number | 查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `1000` |
+| **count** | Number | 查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `100` |
 
 :::caution
  - 参数优先级 `ids` > `codes` > `index` 和 `count` ，多组参数均传值时，按优先级最高的开始生效。

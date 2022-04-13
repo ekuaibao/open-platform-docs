@@ -13,6 +13,7 @@ url="/api/openapi/v2/datalink/add"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **editFlag**    | String | 更新标志   | 非必填 | cover | `increment` : 增量更新 &emsp; `cover` : 全量覆盖<br/>**只在更新数据时生效** |
 
 ## Body Parameters
 
@@ -34,8 +35,10 @@ url="/api/openapi/v2/datalink/add"
 
 :::caution
 - `dataLinks.data` 中的 `code` 字段值为必填字段，新增数据时，如果code设置为 `自动编号`，传 `""` 即可，如果为 `文本` 类型，表示手动传入编号，不可为空。
-- 更新业务对象实例数据时，`dataLinks.data` 中不传的字段，除**“自动计算”**字段外，表示清空该字段的值，要格外注意。
-  - 新增或更新业务对象实例数据，“**自动计算**”字段可传 `""` 或者不传该字段，字段值自动计算。 
+- 更新业务对象实例数据时注意事项：
+  - 新增或更新业务对象实例数据，“**自动计算**”字段可传 `""` 或者不传该字段，字段值自动计算。
+  - `editFlag` = `cover`，表示 `dataLinks.data` 中**必填字段**参数必传，不传的**非必填字段**清空对应字段值。
+  - `editFlag` = `increment`，表示只更新 `dataLinks.data` 中传递的字段参数，不传的字段无变化。
 - `dataLinks.visible` 参数需要配合业务对象”参与人配置“一起使用，只有”部分人员参与“时此参数才有效。
 
   ![image](images/visible.png)
@@ -72,7 +75,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="全员可见&限制次数" label="全员可见&限制次数" default>
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "entityId": "ea9d0b6e522a25878000",
@@ -111,7 +114,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 <TabItem value="全员可见&管理员停启用" label="全员可见&管理员停启用">
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "entityId": "ea9d0b6e522a25878000",
@@ -148,7 +151,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 <TabItem value="部分可见&限制次数" label="部分可见&限制次数">
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "entityId": "ea9d0b6e522a25878000",
@@ -186,7 +189,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 <TabItem value="部分可见&管理员停启用" label="部分可见&管理员停启用">
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "entityId": "ea9d0b6e522a25878000",
@@ -245,6 +248,19 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
     "value": {
         "errorMsg": [
             "第1条[编码]数据格式不正确,必填，不能为空"
+        ],
+        "dataLinkIds": {},
+        "success": false
+    }
+}
+```
+
+当新增数据时，**自动编号** 类型字段传 `""` 即可，否则报错如下：
+```json
+{
+    "value": {
+        "errorMsg": [
+            "第1条[自动编号]数据不正确"
         ],
         "dataLinkIds": {},
         "success": false

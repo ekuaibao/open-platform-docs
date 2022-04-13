@@ -12,6 +12,37 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.4.0
+
+`2022-04-14`
+
+- 🆕 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口 `v1.1` 版本
+  - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
+- 🆕 新增 [员工离职交接](/docs/open-api/contacts/relay-staff) 接口 `v2.1` 版本
+  - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
+- 🐞 更新 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口 `v1.1` 版本
+  - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
+- 🐞 更新 [获取企业下档案项数据](/docs/open-api/recordLink/query-all-relation-items) 接口 `v2.1` 版本
+  - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
+- 🐞 更新 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items)、[删除某档案关系下的档案项数据](/docs/open-api/recordLink/delete-dimension-relation-items)、[更新某档案关系下的档案项数据](/docs/open-api/recordLink/update-dimension-relation-items)、[编辑某档案关系下的档案项数据](/docs/open-api/recordLink/edit-dimension-relation-items) 接口 `v2.1` 版本，更新校验逻辑
+  - 档案关系类型共六种，全都做参数校验，若传入已删除参数则报错：
+    - **未激活/已移除** 员工，不能进行任何档案关系数据操作；
+    - body参数里传多个值时，校验参数任意一个不存在则报错。
+  - 无效果的增删改返回信息提示。
+- 🐞 更新 [根据单据ID集合获取单据列表](/docs/open-api/flows/get-forms-sequences-ids) 接口 `v1` 版本
+  - 优化了单据费用明细和发票过多导致的 **HTTP 504** 超时问题。
+- 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口 `v2` 版本
+  - 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。
+  - 新增了 **业务对象（多选）** 传参示例。
+- 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本，修复部分情况下无法更新单据的BUG
+  - 新增了 `editorId`（单据修改人）参数，审批日志记录为“**单据修改人**”修改了单据。
+  - `editorId` 不传时，审批日志记录为“**节点审批人（会签节点任选其一）**”修改了单据。
+- 🐞 更新 [批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口 `v2.1` 版本
+  - 新增了系统预置档案额外参数描述。
+- 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口
+  - 更新了接口注意事项。
+---
+
 ## 1.3.1
 
 `2022-03-31`

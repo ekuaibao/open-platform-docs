@@ -10,6 +10,7 @@ url="/api/openapi/v2.1/recordLink/queryAllRecordLink"
 <details>
   <summary>v2.1版本特性</summary>
   <div>
+    - 🆕 新增 “type” 类型参数，支持 ”id“ 或 ”code“ 传参。<br/>
     - 🐞 优化报错输出。
   </div>
 </details>
@@ -19,6 +20,7 @@ url="/api/openapi/v2.1/recordLink/queryAllRecordLink"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **type**        | String | 参数类型   | 非必填 | id | `id` : 返回id值 &emsp; `code` : 返回code值<br/>**请保证 `code` 唯一，『员工』和『部门』的 `code` 在系统上允许为空和重复** |
 
 ## Body Parameters
 
@@ -31,77 +33,96 @@ url="/api/openapi/v2.1/recordLink/queryAllRecordLink"
 
 ## CURL
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/recordLink/queryAllRecordLink?accessToken=1A4cbPai0o1U00' \
---header 'content-type: application/json' \
---header 'Accept: application/json' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/recordLink/queryAllRecordLink?accessToken=ID_3Dlosos3tGg:bwa3wajigF0WH0&type=id' \
+--header 'Content-Type: application/json' \
 --data-raw '{
-      "roleDefIds":["ID_3gUPXqx3j6I"],  //档案关系ID
-      "orderBy":"updateTime",           //排序依据，更新时间倒序
-      "start": 0,
-      "count": 10
+    "roleDefIds":["ID_3BFuV7KbVDw"],   //档案关系ID
+    "orderBy":"updateTime",            //排序依据，更新时间倒序
+    "start": 0,
+    "count": 10
 }'
 ```
 
 ## 成功响应
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="id" label="id" default>
+
 ```json
 {
     "value": {
-        "total": 10,                                         //总记录数
-        "queryRecords": [
+        "total": 5,                                        //总记录数
+        "queryRecords": [                                 
             {
-                "roleDefId": "s4kbXGlvvAs000",               //角色关系ID
-                "sourceValue": "gwobfjObAAno00:15000000034", //源维度值
-                "purposeValue": "gwobfjObAAno00"             //目标维度值
+                "roleDefId": "ID_3BFuV7KbVDw",             //档案关系ID
+                "sourceValue": "bwa3wajigF0WH0:20220408",  //源维度值ID
+                "purposeValue": "ID_3zYtLIa21gM"           //目标维度值ID
             },
             {
-                "roleDefId": "s4kbXGlvvAs000",
-                "sourceValue": "gwobfjObAAno00:15000000034",
-                "purposeValue": "gwobfjObAAno00:_GMb_D2wMQ7A00"
+                "roleDefId": "ID_3BFuV7KbVDw",
+                "sourceValue": "bwa3wajigF0WH0:IqQ3wlg6bv9QGg",
+                "purposeValue": "ID_3zYtLIa22gM"
             },
             {
-                "roleDefId": "s4kbXGlvvAs000",
-                "sourceValue": "gwobfjObAAno00:B6sbACnWCgjU00",
-                "purposeValue": "gwobfjObAAno00:_GMb_D2wMQ7A00"
+                "roleDefId": "ID_3BFuV7KbVDw",
+                "sourceValue": "bwa3wajigF0WH0:aRx3BagJH20mdg",
+                "purposeValue": "ID_3zYtLIa21gM"
             },
             {
-                "roleDefId": "s4kbXGlvvAs000",
-                "sourceValue": "gwobfjObAAno00:B6sbACnWCgjU00",
-                "purposeValue": "gwobfjObAAno00"
+                "roleDefId": "ID_3BFuV7KbVDw",
+                "sourceValue": "bwa3wajigF0WH0:aRx3BagJH20mdg",
+                "purposeValue": "ID_3zYtLIa22gM"
             },
             {
-                "roleDefId": "s4kbXGlvvAs000",
-                "sourceValue": "gwobfjObAAno00:KpIbfkxLiU7800",
-                "purposeValue": "gwobfjObAAno00:_GMb_D2wMQ7A00"
-            },
-            {
-                "roleDefId": "s4kbXGlvvAs000",
-                "sourceValue": "gwobfjObAAno00:KpIbfkxLiU7800",
-                "purposeValue": "gwobfjObAAno00"
-            },
-            {
-                "roleDefId": "s4kbXGlvvAs000",
-                "sourceValue": "gwobfjObAAno00:TJAbw0PhCM3s00",
-                "purposeValue": "gwobfjObAAno00:_GMb_D2wMQ7A00"
-            },
-            {
-                "roleDefId": "s4kbXGlvvAs000",
-                "sourceValue": "gwobfjObAAno00:TJAbw0PhCM3s00",
-                "purposeValue": "gwobfjObAAno00"
-            },
-            {
-                "roleDefId": "s4kbXGlvvAs000",
-                "sourceValue": "gwobfjObAAno00:bFYbzd2EoMfA00",
-                "purposeValue": "gwobfjObAAno00"
-            },
-            {
-                "roleDefId": "s4kbXGlvvAs000",
-                "sourceValue": "gwobfjObAAno00:bFYbzd2EoMfA00",
-                "purposeValue": "gwobfjObAAno00:_GMb_D2wMQ7A00"
+                "roleDefId": "ID_3BFuV7KbVDw",
+                "sourceValue": "bwa3wajigF0WH0:qKZ3wlg6bv9OGg",
+                "purposeValue": "ID_3zYtLIa21gM"
             }
         ]
     }
 }
 ```
+</TabItem>
+<TabItem value="code" label="code">
+
+```json
+{
+    "value": {
+        "total": 5,                                        //总记录数
+        "queryRecords": [
+            {
+                "roleDefId": "ID_3BFuV7KbVDw",             //档案关系ID
+                "sourceValue": "20220408",                 //源维度值CODE
+                "purposeValue": "CODE1"                    //目标维度值CODE
+            },
+            {
+                "roleDefId": "ID_3BFuV7KbVDw",
+                "sourceValue": "1002",
+                "purposeValue": "CODE2"
+            },
+            {
+                "roleDefId": "ID_3BFuV7KbVDw",
+                "sourceValue": "1003",
+                "purposeValue": "CODE1"
+            },
+            {
+                "roleDefId": "ID_3BFuV7KbVDw",
+                "sourceValue": "1003",
+                "purposeValue": "CODE2"
+            },
+            {
+                "roleDefId": "ID_3BFuV7KbVDw",
+                "sourceValue": "1001",
+                "purposeValue": "CODE1"
+            }
+        ]
+    }
+}
+```
+</TabItem>
+</Tabs>
 
 ## 失败响应
 `count` 大于 `100` 时报错如下：

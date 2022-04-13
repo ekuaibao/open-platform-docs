@@ -11,7 +11,11 @@ url="/api/openapi/v2.1/recordLink/edit/$`id`"
   <summary>v2.1版本特性</summary>
   <div>
     - 🆕 新增 “type” 类型参数，支持 ”id“ 或 ”code“ 传参。<br/>
-    - 🐞 “editFlag”（更新标志）默认值从 “cover” 改为 “increment”。
+    - 🐞 “editFlag”（更新标志）默认值从 “cover” 改为 “increment”。<br/>
+    - 🐞 档案关系类型共六种，全都做参数校验，若传入已删除参数则报错。<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 未激活/已移除 员工，不能进行任何档案关系数据操作。<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● body参数里传多个值时，校验参数任意一个不存在则报错。<br/>
+    - 🐞 无效果的更新返回信息提示。
   </div>
 </details>
 
@@ -32,7 +36,7 @@ url="/api/openapi/v2.1/recordLink/edit/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **type**                    | String | 参数类型   | 非必填 | id | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』和『部门』的 `code` 在系统上允许重复** |
+| **type**                    | String | 参数类型   | 非必填 | id | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』和『部门』的 `code` 在系统上允许为空和重复** |
 | **editFlag**                | String | 更新标志   | 非必填 | increment | `increment`：增量新增 &emsp; `cover`：全量覆盖 |
 | **editRecordLinks**         | Array  | 批量更新项 | 必填   | - | 批量更新项 |
 | **&emsp; ∟ sourceValues**  | Array  | 源维度值   | 必填   | - | 源维度值 |
@@ -136,24 +140,46 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 }
 ```
 
-当 `sourceValues`（源维度值）与 `purposeValues`（目标维度值）写反时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "没有可用的sourceValue与purposeValue！",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
+当传入的档案关系已存在时（例如，同一组参数重复调用），报错如下：
+:::caution
+- **增量新增**：同一组参数重复调用会报错。
+- **全量覆盖**：同一组参数重复调用一直都会成功。
+:::
+
+```text
+传入的参数不需要更新档案关系  
 ```
 
 当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）不存在时，报错如下：
 ```json
 {
     "errorCode": 412,
-    "errorMessage": "编辑关系，双向关系必须存在有效值！",
+    "errorMessage": "维度值[sss]对应的数据不存在",
     "errorDetails": null,
     "code": null,
     "data": null
 }
 ```
+
+当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）值停用时报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "[code]为[CODE3]的数据已停用或删除",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+员工档案关系，当操作的员工 **未激活/已移除** 时报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "[code]为[20220408]的员工未激活",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
