@@ -20,16 +20,16 @@ url="/api/openapi/v2/extension/searchAnslysis/`entityId`"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
-## Body Parameters（Body不能为空）
+## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **fileds**| Array  | 自定义字段数组   | 非必填 | - | 按照[业务对象实例的ID](/docs/open-api/datalink/get-entity-info)查询详情 |
-| **&emsp; ∟ key** | String | 自定义字段名称 | 非必填 | - | 可通过[获取业务对象](/docs/open-api/datalink/get-entity-list) 响应中 `items.fields.name` 获取，多个参数取交集查询 |
-| **&emsp; ∟ value** | String | 自定义字段查询值 | 非必填 | - | |
-| **&emsp; ∟ operator** | String | 过滤条件 | 非必填 | - | `>、>=、<、<=、=、<>`，只支持**文本**、**金额**、**数字**类型字段使用 |
-| **index** | Number | 开始索引           | 必填 | - | 从 `1` 开始，不可为 `0` |
-| **count** | Number | 查询数             | 必填 | - | 每页查询数据量，最大不能超过 `100` |
+| **fileds**             | Array  | 自定义字段数组 | 非必填 | - | 自定义字段数组 |
+| **&emsp; ∟ key**      | String | 自定义字段名称 | 非必填 | - | 可通过 [获取业务对象](/docs/open-api/datalink/get-entity-list) 响应中 `items.fields.name` 获取<br/>目前只支持 **文本**、**数字**、**日期** 类型字段使用，支持 `id` 参数<br/>多个参数取交集查询 |
+| **&emsp; ∟ value**    | String或<br/>Number | 查询参数 | 非必填 | - | 文本、数字类型传 **String**<br/>日期（转化为毫秒级时间戳）传 **Number** |
+| **&emsp; ∟ operator** | String | 过滤条件 | 非必填 | = | `>、>=、<、<=、=、<>` |
+| **index**              | Number | 开始索引 | 必填 | - | 从 `1` 开始，不可为 `0` |
+| **count**              | Number | 查询数   | 必填 | - | 每页查询数据量，最大不能超过 `100` |
 
 ## CURL
 ```json
@@ -1128,6 +1128,28 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 {
     "errorCode": 400,
     "errorMessage": "未找到对应的业务对象",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当 `index`（开始索引）等于 `0` 时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "当前页不能为0",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当 `count`（查询数）大于 `100` 时，报错如下： 
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "超过单次最大查询数量100",
     "errorDetails": null,
     "code": null,
     "data": null
