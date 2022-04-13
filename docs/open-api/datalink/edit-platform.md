@@ -10,7 +10,7 @@ url="/api/openapi/v2.1/datalink/editPlatform"
 <details>
   <summary>v2.1版本特性</summary>
   <div>
-    - 🐞 新增了支持更新应用名称，对 adminIds（管理员ID）做参数真实性校验。
+    - 🐞 新增了支持更新应用名称，对 “<b>adminIds</b>”（管理员ID）做参数真实性校验。
   </div>
 </details>
 

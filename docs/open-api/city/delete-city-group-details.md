@@ -10,7 +10,7 @@ url="/api/openapi/v1.1/cityGroup/detail/delete"
 <details>
   <summary>v1.1版本特性</summary>
   <div>
-    - 🐞 新增了 staffIds（员工ID）与 roleIds（角色ID）列表不能同时为空的校验。
+    - 🐞 新增了 “<b>staffIds</b>”（员工ID）与 “<b>roleIds</b>”（角色ID）列表不能同时为空的校验。
   </div>
 </details>
 

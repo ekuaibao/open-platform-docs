@@ -10,7 +10,7 @@ url="/api/openapi/v1.1/property"
 <details>
   <summary>v1.1版本特性</summary>
   <div>
-    - 🐞 新增对 type（全局字段类型）的参数校验，非备注类型时，报错 ”type参数不合法“。
+    - 🐞 新增对 “<b>type</b>”（全局字段类型）的参数校验，非备注类型时，报错 ”<b>type参数不合法</b>“。
   </div>
 </details>
 

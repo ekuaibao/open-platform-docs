@@ -10,7 +10,7 @@ url="/api/openapi/v2.1/recordLink/queryAllRecordLink"
 <details>
   <summary>v2.1版本特性</summary>
   <div>
-    - 🆕 新增 “type” 类型参数，支持 ”id“ 或 ”code“ 传参。<br/>
+    - 🆕 新增 “<b>type</b>” 类型参数，支持 ”<b>id</b>“ 或 ”<b>code</b>“ 传参。<br/>
     - 🐞 优化报错输出。
   </div>
 </details>

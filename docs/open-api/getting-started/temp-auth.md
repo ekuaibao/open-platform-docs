@@ -10,7 +10,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 <details>
   <summary>v1.1版本特性</summary>
   <div>
-    - 🆕 新增 pageType = frontPage 类型，进入易快报“首页”。
+    - 🆕 新增 “<b>pageType</b>” = “<b>frontPage</b>” 类型，进入易快报“<b>首页</b>”。
   </div>
 </details>
 

@@ -5,8 +5,15 @@ import Control from "@theme/Control";
 
 <Control
 method="PUT"
-url="/api/openapi/v1/staffs/disableOrEnableStaff/[`ids`]"
+url="/api/openapi/v1.1/staffs/disableOrEnableStaff/[`ids`]"
 />
+
+<details>
+  <summary>v1.1版本特性</summary>
+  <div>
+    - 🆕 新增 “<b>type</b>” 类型参数，支持 ”<b>id</b>“ 或 ”<b>code</b>“ 传参。
+  </div>
+</details>
 
 :::caution
 - 返回数据中员工信息数不正确时，请检查输入的对应员工id参数是否正确。
@@ -17,46 +24,86 @@ url="/api/openapi/v1/staffs/disableOrEnableStaff/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 员工ID | 必填 | - | 可以填写多个 | 
+| **idsOrCodes** | Array | 员工ID或Code集合 | 必填 | - | **与 `type` 保持一致**，可以填写多个 | 
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**   | String   | 认证token	                 | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **active**        | Boolean  | 停用或启用标识                 | 必填  | - | `true` : 启用<br/>`false` : 停用，停用即表示已离职 | 
+| **accessToken**   | String   | 认证token	                 | 必填  | -     | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **active**        | Boolean  | 停用或启用标识                 | 必填  | -     | `true` : 启用<br/>`false` : 停用，停用即表示已离职 | 
 | **doCheck**       | Boolean  | 停用时是否校验该员工名下有代办事项 | 非必填 | true | `true` : 校验 &emsp; `false` : 不校验 |
+| **type**          | String   | 参数类型                      | 非必填 | id   | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』的 `code` 在系统上允许为空和重复** |
 
 ## CURL
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="id" label="id" default>
+
 ```shell
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/staffs/disableOrEnableStaff/[3Qobu2l0cs6k00:Fu0bySHs1oqc00,3Qobu2l0cs6k00:1m4bySHs1orc00]?accessToken=aO8bySRCSYhQ00&active=true' \
---header 'content-type: application/json' \
---header 'Accept: application/json'
+curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/disableOrEnableStaff/[xgJ3wajigF25H0:ID_3Be8RKT03bg,xgJ3wajigF25H0:ID_3zE5G_06Ww0]?accessToken=ID_3Dp9Znt1KHM:xgJ3wajigF25H0&active=false&doCheck=fasle'
 ```
+</TabItem>
+<TabItem value="code" label="code">
+
+```shell
+curl --location -g --request PUT 'https://s1.dev.ekuaibao.cn/api/openapi/v1.1/staffs/disableOrEnableStaff/[00005,00003]?accessToken=ID_3Dp9Znt7_HM:xgJ3wajigF25H0&active=true&doCheck=fasle&type=code'
+```
+</TabItem>
+</Tabs>
 
 ## 成功响应
 ```json
 {
     "items": [
         {
-            "id": "JOYbpjPP-E2Q00:IIEbwYgR2E5M00",   //员工ID
-            "name": "李四",                          //员工姓名
-            "code": "",                              //员工工号
-            "departments": [                         //所在部门
-                "JOYbpjPP-E2Q00:pAwbwH_W7sec00"
+            "id": "xgJ3wajigF25H0:ID_3Be8RKT03bg",    //员工ID
+            "name": "赵六",                            //员工姓名
+            "code": "00005",                          //员工工号
+            "departments": [                          //所在部门
+                "xgJ3wajigF25H0"
             ],
-            "defaultDepartment": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", //默认部门ID
-            "cellphone": "",                        //手机号
-            "active": false,                        //true：在职，false：已离职
-            "userId": "sQgbwYgR2E5s00",             //第三方ID
-            "email": "2777481917@qq.com",           //邮箱
-            "staffCustomForm":{                     //员工自定义字段集合
-                "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
-                "postType":"ltUcxNyWSQ1o00",        //岗位
-                "rankType":"lUcctXntW82A00",        //职级
-                "u_数字字段":"1"                     //员工自定义字段
+            "defaultDepartment": "xgJ3wajigF25H0",                      //默认部门ID
+            "cellphone": "15588881010",               //手机号
+            "active": false,                          //true：在职，false：已离职
+            "userId": "ID_3Be8RKT03bg",               //第三方ID
+            "email": "15588881010@163.com",           //邮箱
+            "external": false,                        //是否外部员工
+            "note": "Code修改",
+            "staffCustomForm": {                      //员工自定义字段集合
+                "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
+                "postType": "ID_3D5RavktVRM",         //岗位
+                "rankType": "ID_3D5RavktTRM",         //职级
+                "u_张国阳001": "ID_3yrzERx1pf0"        //员工自定义字段
             },
-            "external": false                       //是否外部员工
+            "updateTime": "2022-04-11 16:15:10",      //更新时间
+            "createTime": "2022-03-16 11:34:42"       //创建时间
+        },
+        {
+            "id": "xgJ3wajigF25H0:ID_3zE5G_06Ww0",    //员工ID
+            "name": "李四",                            //员工姓名
+            "code": "00003",                          //员工工号
+            "departments": [                          //所在部门
+                "xgJ3wajigF25H0:ID_3zE5G_06Ow0"
+            ],
+            "defaultDepartment": "xgJ3wajigF25H0:ID_3zE5G_06Ow0",   //默认部门ID
+            "cellphone": "14444444444",               //手机号
+            "active": false,                          //true：在职，false：已离职
+            "userId": "ID_3zE5G_06Ww0",               //第三方ID
+            "email": "14444444444@163.com",           //邮箱
+            "external": false,                        //是否外部员工
+            "note": "批量新增",
+            "staffCustomForm": {                      //员工自定义字段集合
+              "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
+              "postType": "ID_3D5RavktVRM",           //岗位
+              "rankType": "ID_3D5RavktTRM",           //职级
+              "u_张国阳001": "ID_3yrzERx1pf0"          //员工自定义字段
+            },
+            "updateTime": "2022-02-24 16:28:59",      //更新时间
+            "createTime": "2022-02-24 16:24:55"       //创建时间
         }
     ]
 }

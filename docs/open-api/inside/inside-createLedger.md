@@ -10,7 +10,7 @@ url="/api/openapi/v2.1/datalink/ledger/createLedger"
 <details>
   <summary>v2.1版本特性</summary>
   <div>
-    - 🐞 添加了sumFieldName（统计字段）、statisticsEntityId（关联业务对象ID）、dataLinkEntityId（业务对象ID）校验。
+    - 🐞 添加了“<b>sumFieldName</b>”（统计字段）、“<b>statisticsEntityId</b>”（关联业务对象ID）、“<b>ataLinkEntityId</b>”（业务对象ID）校验。
   </div>
 </details>
 

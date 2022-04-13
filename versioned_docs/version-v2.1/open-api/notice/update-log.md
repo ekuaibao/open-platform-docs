@@ -34,9 +34,10 @@ timeline: true
 - 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口 `v2` 版本
   - 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。
   - 新增了 **业务对象（多选）** 传参示例。
-- 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本，修复部分情况下无法更新单据的BUG
-  - 新增了 `editorId`（单据修改人）参数，审批日志记录为“**单据修改人**”修改了单据。
-  - `editorId` 不传时，审批日志记录为“**节点审批人（会签节点任选其一）**”修改了单据。
+- 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
+  - 新增了 `editorId`（单据修改人）参数，修复部分情况下无法更新单据的BUG。
+    - `editorId` 传参时，审批日志记录为"**单据修改人**"修改了单据。
+    - `editorId` 不传时，审批日志默认记录为"**节点审批人（会签节点任选其一）**"修改了单据。
 - 🐞 更新 [批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口 `v2.1` 版本
   - 新增了系统预置档案额外参数描述。
 - 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口

@@ -11,8 +11,11 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 <details>
   <summary>v2.1版本特性</summary>
   <div>
-    - 🆕 新增了校验审批流节点是否配置【允许审批人修改单据】，支持【paying（待支付）】状态更新单据。<br/>
-    - 🐞 修复了单据模板中配置【必须关联申请单】，“关联申请”字段设置【允许关联多个申请事项】后，提示"关联申请单不存在，请补充申请单ID！"的BUG。
+    - 🆕 新增了“<b>editorId</b>“（单据修改人）参数，修复了部分情况下无法更新单据的BUG<br/>
+        &emsp; - “<b>editorId</b>“传参时，审批日志记录为“<b>单据修改人</b>“修改了单据。<br/>
+        &emsp; - “<b>editorId</b>“不传时，审批日志默认记录为“<b>节点审批人（会签节点任选其一）</b>“修改了单据。<br/>
+    - 🆕 新增了校验审批流节点是否配置【<b>允许审批人修改单据</b>】，支持【<b>paying（待支付）</b>】状态更新单据。<br/>
+    - 🐞 修复了单据模板中配置【<b>必须关联申请单</b>】，“<b>关联申请</b>“字段设置【<b>允许关联多个申请事项</b>】后，提示“<b>关联申请单不存在，请补充申请单ID！</b>“的BUG。
   </div>
 </details>
 
@@ -30,7 +33,8 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **editorId**    | String | 单据修改人 | 非必填 | - | [通过获取员工列表获取](/docs/open-api/corporation/get-departments) |
 
 ## Body Parameters
 不同表单类型参数各不相同，以下仅为示例，详见单据模板：
@@ -72,7 +76,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 
 ## CURL
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/data/$flowId?accessToken=SIw9lEj3rc0800' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/data/$flowId?accessToken=ID_3DujXpr0kCg:xgJ3wajigF25H0&editorId=xgJ3wajigF25H0:ID_3zE5G_06Ww0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "form": {
