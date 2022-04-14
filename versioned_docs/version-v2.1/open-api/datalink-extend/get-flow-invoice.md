@@ -34,7 +34,7 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
 ```json
 {
     "value": {
-        "j7sbyDMhYUpU00": [                   //单据ID或者单据编号，依据传参回应
+        "j7sbyDMhYUpU00": [                   //单据ID或者单据编号，与传参对应
             {
                 "invoiceId": "gwobfjObAAno00:3700171320:38415400",    //发票ID
                 "invoiceItemId": [            //发票明细ID

@@ -13,7 +13,7 @@ url="/api/openapi/v2.1/recordLink/add/$`id`"
     - 🆕 新增 “<b>type</b>” 类型参数，支持 ”<b>id</b>“ 或 ”<b>code</b>“ 传参。<br/>
     - 🐞 修复了传其他类型自定义档案项ID（非档案关系配置的类型）可以创建成功数据的问题。<br/>
     - 🐞 档案关系类型共六种，全都做参数校验，若传入已删除参数则报错。<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 未激活/已移除 员工，不能进行任何档案关系数据操作。<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● <b>未激活/已移除</b> 员工，不能进行任何档案关系数据操作。<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● body参数里传多个值时，校验参数任意一个不存在则报错。<br/>
     - 🐞 无效果的新增返回信息提示。
   </div>

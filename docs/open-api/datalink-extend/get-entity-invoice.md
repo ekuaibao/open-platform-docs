@@ -41,19 +41,22 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 
 
 ## objectId发票类型
+可通过[根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice)接口得到的 `invoiceType` 参数确定
 
 | objectId | 发票类型 | 
 | :--- | :--- |
-| **invoice**         | 发票（包含：增值税发票、增值税普通发票/卷票、二手车销售统一发票、机动车销售统一发票）|
-| **other**           | 其它 |
+| **invoice**         | 发票（包含下述 **发票类别**）|
+| **other**           | 其他 |
 | **taxi**            | 出租车票 |
+| **fixed**           | 定额发票 |
 | **passengerCar**    | 客运汽车发票 |
+| **machinePrint**    | 机打发票 |
+| **shopping**        | 消费小票 |
 | **train**           | 火车票 |
 | **flightItinerary** | 航空运输电子客票行程单 |
 | **tolls**           | 过路费发票 |
-| **fixed**           | 定额发票 |
 
-## 发票类别（E\_system\_发票主体\_发票类别）介绍如下，是对 `invoice` 获取到的发票做补充解释：
+## 发票类别（E\_system\_发票主体\_发票类别）介绍如下，是对 `invoice` 类型获取到的发票做补充解释：
 | 字段名 | 对应发票类型 |
 | :---  | :---      |
 | **DIGITAL_NORMAL**  | 增值税电子普票 |

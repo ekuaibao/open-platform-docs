@@ -10,7 +10,7 @@ url="/api/openapi/v1.1/dimensions/items"
 <details>
   <summary>v1.1版本特性</summary>
   <div>
-    - 🐞 新增了当“<b>fullVisible</b>“为”<b>false</b>“时，对 ”<b>staffs</b>“、”<b>roles</b>“、”<b>departments</b>“三个参数的必填及有效性校验。
+    - 🐞 新增了当“<b>fullVisible</b>“ = ”<b>false</b>“时，对 ”<b>staffs</b>“、”<b>roles</b>“、”<b>departments</b>“三个参数的必填及有效性校验。
   </div>
 </details>
 

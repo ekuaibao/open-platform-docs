@@ -24,7 +24,7 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **IdOrCode** | String | 员工ID或Code | 必填 | - | **与 `type` 保持一致**，可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 | 
+| **IdOrCode** | String | 员工ID或CODE | 必填 | - | **与 `type` 保持一致**，可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 | 
 
 ## Query Parameters
 
@@ -42,9 +42,9 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
 | **cellphone**                 | String  | 手机号           | 非必填  | - | 如果手机号为国外手机号，那么应为 : "(区号)手机号" |
 | **email**                     | String  | 邮箱	            | 非必填  | - | 可以不传，但是不可以传 `""` |
 | **note**                      | String  | 备注	            | 非必填  | - | 备注 |
-| **defaultDepartment**         | String  | 默认部门ID或Code  | 非必填  | - | 默认部门ID或Code |
-| **departments**               | Array   | 所在部门ID或Code,至少1个	| 非必填  | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将 `departments` 的第一个元素视为默认部门 |
-| **modifyAccountPhone**        | Boolean | 是否修改登录手机号	| 非必填  | false | `true` : 修改登录手机号，修改的手机号为 `cellphone`，不可修改成已注册企业的手机号<br/>`false` : 不修改登录手机号 |
+| **defaultDepartment**         | String  | 默认部门ID或CODE  | 非必填  | - | 默认部门ID或CODE |
+| **departments**               | Array   | 所在部门ID或CODE,至少1个	| 非必填  | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将 `departments` 的第一个元素视为默认部门 |
+| **modifyAccountPhone**        | Boolean | 是否修改登录手机号	| 非必填  | false | `true` : 修改登录手机号，修改的手机号为 `cellphone`，**不可修改成已注册企业的手机号**<br/>`false` : 不修改登录手机号 |
 | **modifyAccountEmail**        | Boolean | 是否修改邮箱	    | 非必填  | false | `true` : 修改邮箱 &emsp; `false` : 不修改邮箱|
 | **staffCustomForm**           | Object  | 自定义字段	    | 非必填  | - | 员工自定义字段 |
 | **&emsp; ∟ rankType**  | String  | 职级	            | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
@@ -53,7 +53,7 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
 | **&emsp; ∟ u_字段名**   | String  | 自定义字段	        | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目 |
 
 :::tip
-- **若 `type` 参数为 `code` ，则『员工』、『部门』、自定义字段中属于『自定义档案』的字段，必须传 `code` 值。**
+- **若 `type` 参数为 `code` ，则『部门』、『自定义档案』类型字段，必须传 `code` 值。**
 - `base`（常驻地）参数拼接说明：<br/>
   通过 **[获取城市列表数据](/docs/open-api/basedata/get-basedata-city)** 接口获取数据后，找到对应城市。
    - `id` 对应 `key`
@@ -74,14 +74,14 @@ import TabItem from '@theme/TabItem';
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/update/$JOYbpjPP-E2Q00:IIEbwYgR2E5M00?accessToken=ID_3D5RavktZRM:xgJ3wajigF25H0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "name": "赵六",                          //员工姓名
+    "name": "赵六",                         //员工姓名
     "code": "",                             //员工工号
     "cellphone": "15588881010",             //手机号
     "email": "15588881010@163.com",         //邮箱
-    "note": "Id修改",                        //备注
+    "note": "Id修改",                       //备注
     "defaultDepartment": "xgJ3wajigF25H0",  //默认部门
     "departments":[                         //所在部门
-      "xgJ3wajigF25H0"
+        "xgJ3wajigF25H0"
     ],
     "modifyAccountPhone": false,            //是否修改员工手机号
     "modifyAccountEmail": false,            //是否修改员工邮箱
@@ -100,11 +100,11 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/update/$00005?accessToken=ID_3D5RavktZRM:xgJ3wajigF25H0&type=code' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "name": "赵六",                          //员工姓名
+    "name": "赵六",                         //员工姓名
     "code": "",                             //员工工号
     "cellphone": "15588881010",             //手机号
     "email": "15588881010@163.com",         //邮箱
-    "note": "Code修改",                      //备注
+    "note": "Code修改",                     //备注
     "defaultDepartment": "001",             //默认部门
     "departments": [                        //所在部门
         "001"
@@ -125,33 +125,34 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 ## 成功响应
 ```json
 {
-  "value": {
-    "id": "xgJ3wajigF25H0:ID_3Be8RKT03bg",
-    "name": "赵六",
-    "code": "00005",
-    "departments": [
-        "xgJ3wajigF25H0"
-    ],
-    "defaultDepartment": "xgJ3wajigF25H0",
-    "cellphone": "15588881010",
-    "active": true,
-    "userId": "ID_3Be8RKT03bg",
-    "email": "15588881010@163.com",
-    "external": false,
-    "note": "Code修改",
-    "staffCustomForm": {
-        "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",
-        "postType": "ID_3D5RavktVRM",
-        "rankType": "ID_3D5RavktTRM",
-        "u_张国阳001": "ID_3yrzERx1pf0"
-    },
-    "updateTime": "2022-04-11 16:15:10",
-    "createTime": "2022-03-16 11:34:42"
-  }
+    "value": {
+        "id": "xgJ3wajigF25H0:ID_3Be8RKT03bg",
+        "name": "赵六",
+        "code": "00005",
+        "departments": [
+            "xgJ3wajigF25H0"
+        ],
+        "defaultDepartment": "xgJ3wajigF25H0",
+        "cellphone": "15588881010",
+        "active": true,
+        "userId": "ID_3Be8RKT03bg",
+        "email": "15588881010@163.com",
+        "external": false,
+        "note": "Code修改",
+        "staffCustomForm": {
+            "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",
+            "postType": "ID_3D5RavktVRM",
+            "rankType": "ID_3D5RavktTRM",
+            "u_张国阳001": "ID_3yrzERx1pf0"
+        },
+        "updateTime": "2022-04-11 16:15:10",
+        "createTime": "2022-03-16 11:34:42"
+    }
 }
 ```
 
 ## 失败响应
+`name`（员工姓名）不传或者传 `""` 时，报错如下：
 ```json
 {
     "errorCode": 400,
@@ -173,7 +174,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 }
 ```
 
-`type` 值为 `code` 时，部门类型字段所传**部门code**在系统中重复或不存在时，报错如下：
+`type` 值为 `code` 时，部门类型字段所传 **部门CODE** 在系统中重复或不存在时，报错如下：
 ```json
 {
     "errorCode": 400,
@@ -182,5 +183,4 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
     "code": null,
     "data": null
 }
-
 ```

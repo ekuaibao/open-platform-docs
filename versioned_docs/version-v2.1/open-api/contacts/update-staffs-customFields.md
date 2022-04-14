@@ -18,7 +18,7 @@ url="/api/openapi/v1.1/staffs/$`staffId`/customFields"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **IdOrCode** | String | 员工ID或Code | 必填 | - | **与 `type` 保持一致**，可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 | 
+| **IdOrCode** | String | 员工ID或CODE | 必填 | - | **与 `type` 保持一致**，可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 | 
 
 ## Query Parameters
 
@@ -38,8 +38,8 @@ url="/api/openapi/v1.1/staffs/$`staffId`/customFields"
 | **u_字段名**  | String | 自定义字段	| 非必填 | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目|
 
 :::tip
-- **若 `type` 参数为 `code` ，则『员工』、『部门』、『自定义档案』的字段，必须传 `code` 值。**
-- 员工自定义字段为“员工基础字段设置”里面的字段。
+- **若 `type` 参数为 `code` ，则『自定义档案』类型字段，必须传 `code` 值。**
+- 员工自定义字段为“**员工基础字段设置**”里面的字段。
   ![image](images/customFields.png)
 - `base`（常驻地）参数拼接说明：<br/>
   通过 **[获取城市列表数据](/docs/open-api/basedata/get-basedata-city)** 接口获取数据后，找到对应城市。
@@ -61,8 +61,8 @@ import TabItem from '@theme/TabItem';
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/$xgJ3wajigF25H0:ID_3Be8RKT03bg/customFields?accessToken=ID_3D5RavktZRM:xgJ3wajigF25H0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "rankType":"ID_3D5RavktTRM",    //职级       
-    "postType":"ID_3D5RavktVRM",    //岗位
+    "rankType":"ID_3D5RavktTRM",     //职级       
+    "postType":"ID_3D5RavktVRM",     //岗位
     "u_张国阳001":"ID_3yrzERx1pf0",  //自定义档案类型字段
     "base":"[{\"key\":\"4\",\"label\":\"北京市/西城区\"}]"  //常驻地
 }'
@@ -74,8 +74,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/$00005/customFields?accessToken=ID_3D5RavktZRM:xgJ3wajigF25H0&type=code' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "rankType":"CODE1",             //职级    
-    "postType":"CODE1",             //岗位
+    "rankType":"CODE1",              //职级    
+    "postType":"CODE1",              //岗位
     "u_张国阳001":"CODE1",           //自定义档案类型字段
     "base":"[{\"key\":\"4\",\"label\":\"北京市/西城区\"}]"  //常驻地
 }'
@@ -88,7 +88,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 {
     "value": {
         "id": "xgJ3wajigF25H0:ID_3Be8RKT03bg",  //员工ID
-        "name": "赵六-改",                       //员工姓名
+        "name": "赵六-改",                      //员工姓名
         "code": "00005",                        //员工工号
         "departments": [                        //所在部门
             "xgJ3wajigF25H0:ID_3zE5G_06Ow0"
@@ -104,14 +104,14 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
             "rankType": "ID_3jO67GBsl3I",       //职级
             "postType": "ID_3pp9B5CUgPg",       //岗位
             "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
-            "u_张国阳001": "ID_3yrzERx1pf0"      //员工自定义字段
+            "u_张国阳001": "ID_3yrzERx1pf0"     //员工自定义字段
         }
     }
 }
 ```
 
 ## 失败响应
-自定义档案类型字段，所传值不存在时，报以下错误：
+自定义档案类型字段，所传值不存在时，报错如下：
 ```json
 {
     "errorCode": 400,

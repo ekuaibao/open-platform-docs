@@ -34,7 +34,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **editorId**    | String | 单据修改人 | 非必填 | - | [通过获取员工列表获取](/docs/open-api/corporation/get-departments) |
+| **editorId**    | String | 单据修改人 | 非必填 | - | 通过[查询员工](/docs/open-api/corporation/get-staff-ids)获取 |
 
 ## Body Parameters
 不同表单类型参数各不相同，以下仅为示例，详见单据模板：
