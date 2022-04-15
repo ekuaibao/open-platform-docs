@@ -40,7 +40,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
         {
             "key":"E_fa0e76842feec54b3400_code",
             "value":"B2204-12001",
-            "operate":"="
+            "operator":"="
         }
     ],
     "index":1,

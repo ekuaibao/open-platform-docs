@@ -14,7 +14,7 @@ timeline: true
 ---
 ## 1.4.0
 
-`2022-04-14`
+`2022-04-15`
 
 - 🆕 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
@@ -352,7 +352,7 @@ timeline: true
 
 `2021-10-20`
 
-- 🆕 新增 [修改员工自定义字段](/docs/open-api/contacts/update-staffs-customFields) 接口。	
+- 🆕 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields) 接口。	
 
 ---
 ## 0.7.148
