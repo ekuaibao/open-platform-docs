@@ -1,10 +1,11 @@
 # 获取统一开票信息
+获取的是【**发票管理**】下【**统一开票**】中的信息。
 
 import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="api/openapi/v1/invoice/unify"
+url="/api/openapi/v1/invoice/unify"
 />
 
 ## Query Parameters

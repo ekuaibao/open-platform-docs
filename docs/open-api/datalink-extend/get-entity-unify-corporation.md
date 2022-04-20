@@ -1,10 +1,11 @@
 # 获取统一开票方
+获取的是【**档案设置**】下【**供应商档案**】中的信息。
 
 import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="api/openapi/v1/invoice/unify/corporation/list"
+url="/api/openapi/v1/invoice/unify/corporation/list"
 />
 
 ## Query Parameters

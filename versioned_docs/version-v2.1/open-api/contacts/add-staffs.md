@@ -132,3 +132,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs?a
 }
 ```
 
+新增员工时手机号/邮箱在系统中已存在，报以下错误：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "该手机号已被其他员工使用，请勿重复绑定",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
