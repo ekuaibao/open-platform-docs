@@ -86,53 +86,53 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs?a
 ## 成功响应
 ```json
 {
-      "value": {
-            "id": "JOYbpjPP-E2Q00:IIEbwYgR2E5M00",  //员工ID
-            "name": "张三",                         //员工姓名
-            "code": "36987",                        //员工工号
-            "departments": [                        //所在部门
-                  "JOYbpjPP-E2Q00:pAwbwH_W7sec00"
-            ],
-            "defaultDepartment": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", //默认部门
-            "cellphone": "15070403486",             //手机号
-            "staffCustomForm":null,                 //员工自定义字段
-            "active": true,                         //true：在职，false：已离职
-            "userId": "sQgbwYgR2E5s00",             //第三方ID
-            "email": "2777481917@163.com",          //邮箱
-            "external": false,                      //是否外部员工
-            "staffCustomForm": {                    //员工自定义字段
-                  "rankType":"lUcctXntW82A00",      //职级档案项ID        
-                  "postType":"ltUcxNyWSQ1o00",      //岗位档案项ID
-                  "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
-                  "u_文本1": "",
-                  "u_num1": "1",
-                  "u_员工档案": "ID_3b9EX5San3s",
-                  "u_money1": {
-                        "standard": "123.1234",
-                        "standardStrCode": "CNY",
-                        "standardNumCode": "156",
-                        "standardSymbol": "¥",
-                        "standardUnit": "元",
-                        "standardScale": 2
-                  },
-                  "u_date1": 1624896000000
-            }
-      }
+    "value": {
+        "id": "JOYbpjPP-E2Q00:IIEbwYgR2E5M00",  //员工ID
+        "name": "张三",                         //员工姓名
+        "code": "36987",                        //员工工号
+        "departments": [                        //所在部门
+            "JOYbpjPP-E2Q00:pAwbwH_W7sec00"
+        ],
+        "defaultDepartment": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", //默认部门
+        "cellphone": "15070403486",             //手机号
+        "staffCustomForm":null,                 //员工自定义字段
+        "active": true,                         //true：在职，false：已离职
+        "userId": "sQgbwYgR2E5s00",             //第三方ID
+        "email": "2777481917@163.com",          //邮箱
+        "external": false,                      //是否外部员工
+        "staffCustomForm": {                    //员工自定义字段
+            "rankType":"lUcctXntW82A00",        //职级档案项ID        
+            "postType":"ltUcxNyWSQ1o00",        //岗位档案项ID
+            "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
+            "u_文本1": "",
+            "u_num1": "1",
+            "u_员工档案": "ID_3b9EX5San3s",
+            "u_money1": {
+                "standard": "123.1234",
+                "standardStrCode": "CNY",
+                "standardNumCode": "156",
+                "standardSymbol": "¥",
+                "standardUnit": "元",
+                "standardScale": 2
+            },
+            "u_date1": 1624896000000
+        }
+    }
 }
 ```
 
 ## 失败响应
 ```json
 {
-      "errorCode": 403,
-      "errorMessage": "部门不能为空",
-      "errorDetails": null,
-      "code": null,
-      "data": null
+    "errorCode": 403,
+    "errorMessage": "部门不能为空",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```
 
-新增员工时手机号/邮箱在系统中已存在，报以下错误：
+当新增员工的手机号/邮箱在系统中已存在时，报错如下：
 ```json
 {
     "errorCode": 400,

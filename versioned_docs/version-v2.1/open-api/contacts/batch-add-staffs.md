@@ -160,3 +160,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
     "data": null
 }
 ```
+
+当新增员工的手机号/邮箱在系统中已存在时，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "批量新增员工数据库异常：该userId已被绑定「18820220419」，请勿重复绑定",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
