@@ -90,7 +90,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
     "addNodes":[
         {
             "id":"1634112670003",              //节点ID
-            "code":"批量新增",                  //节点编码
+            "code":"批量新增",                 //节点编码
             "content":[                        //节点维度,以何种类型分解预算
                 {
                     "dimensionType":"STAFF",   //以提交人类型分解预算
@@ -202,32 +202,52 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
     "deleteNodes":[],
     "visibilities":[
         {
-            "visibility" :  {
-                "id":"",
-                "corporationId":"Urf3lsFgBp00gw",
-                "budgetId":"ID_3o_V3Um0XZ0",
-                "budgetVersion":"1",
-                "nodeId":"1634112670003",
-                "staffIds":[
-                    "Urf3lsFgBp00gw:Jbz3lxSOC60290"
-                ],
-                "roleDefIds":[]
-            }
+            "id":"",
+            "corporationId":"Urf3lsFgBp00gw",
+            "budgetId":"ID_3o_V3Um0XZ0",
+            "budgetVersion":"1",
+            "nodeId":"1634112670003",
+            "staffIds":[
+                "Urf3lsFgBp00gw:Jbz3lxSOC60290"
+            ],
+            "roleDefIds":[]
         },
         {
-            "visibility" :  {
-                "id":"",
-                "corporationId":"Urf3lsFgBp00gw",
-                "budgetId":"ID_3o_V3Um0XZ0",
-                "budgetVersion":"1",
-                "nodeId":"1634112670004",
-                "staffIds":[
-                    "Urf3lsFgBp00gw:Jbz3lxSOC60290"
-                ],
-                "roleDefIds":[]
-            }
+            "id":"",
+            "corporationId":"Urf3lsFgBp00gw",
+            "budgetId":"ID_3o_V3Um0XZ0",
+            "budgetVersion":"1",
+            "nodeId":"1634112670004",
+            "staffIds":[
+                "Urf3lsFgBp00gw:Jbz3lxSOC60290"
+            ],
+            "roleDefIds":[]
         }
     ],
+    "editInChargers":[
+        {
+            "id":"",
+            "corporationId":"Urf3lsFgBp00gw",
+            "budgetId":"ID_3o_V3Um0XZ0",
+            "budgetVersion":"1",
+            "nodeId":"1634112670003",
+            "staffIds":[
+                "Urf3lsFgBp00gw:Jbz3lxSOC60290"
+            ],
+            "roleDefIds":[]
+        },
+        {
+            "id":"",
+            "corporationId":"Urf3lsFgBp00gw",
+            "budgetId":"ID_3o_V3Um0XZ0",
+            "budgetVersion":"1",
+            "nodeId":"1634112670004",
+            "staffIds":[
+                "Urf3lsFgBp00gw:Jbz3lxSOC60290"
+            ],
+            "roleDefIds":[]
+        }
+    ],    
     "active":true,
     "publish":true,
     "version":1
