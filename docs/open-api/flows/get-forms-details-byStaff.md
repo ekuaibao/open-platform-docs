@@ -74,7 +74,7 @@ import TabItem from '@theme/TabItem';
                                             "ARcbn1VrPkvE00"
                                         ],
                                         "invoiceId": "7ds8qMsl2E0000:042001900211:67083249",  //发票ID
-                                        "taxAmount": {        //税额
+                                        "taxAmount": {        //可抵扣税额
                                             "standard": 0,
                                             "standardUnit": "元",
                                             "standardScale": 2,

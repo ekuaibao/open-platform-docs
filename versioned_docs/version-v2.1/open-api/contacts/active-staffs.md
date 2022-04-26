@@ -73,7 +73,7 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staf
             "defaultDepartment": "xgJ3wajigF25H0",    //默认部门ID
             "cellphone": "15588881010",               //手机号
             "active": false,                          //true：在职，false：已离职
-            "userId": "ID_3Be8RKT03bg",               //第三方ID
+            "userId": "ID_3Be8RKT03bg",               //第三方平台人员ID
             "email": "15588881010@163.com",           //邮箱
             "external": false,                        //是否外部员工
             "note": "Code修改",

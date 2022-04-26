@@ -2512,4 +2512,15 @@ import TabItem from '@theme/TabItem';
     "data": null
 }
 ```
+当单据中有引用的数据被物理删除时（数据库中不存在），可以通过[更新单据](/docs/open-api/flows/update-form)清理脏数据：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "获取待审批单据异常：找不到依赖的实体：[{\"key\":\"2325\",\"label\":\"广西壮族自治区/桂林市/荔浦县\"}]",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
 

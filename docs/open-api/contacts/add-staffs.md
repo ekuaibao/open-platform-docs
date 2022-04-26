@@ -30,7 +30,7 @@ url="/api/openapi/v1/staffs"
 | **note**                      | String    | 备注              | 非必填 | - | 备注 |
 | **defaultDepartment**         | String    | 默认部门ID         | 必填   | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
 | **departments**               | Array     | 所在部门ID，至少1个  | 必填  | - | 兼职部门，请确保至少包含默认部门 |
-| **userid**                    | String    | 第三方平台的ID      | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数 |
+| **userid**                    | String    | 第三方平台的人员ID   | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数 |
 | **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | `true` : 启用 &emsp; `false` : 不启用 |
 | **useSendEmail**              | Boolean   | 是否禁止发送邮件通知 | 非必填  | false | `true` : 禁止 &emsp; `false` : 不禁止 |
 | **staffCustomForm**           | Object    | 自定义字段         | 非必填  | - | 自定义字段 |
@@ -97,7 +97,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs?a
         "cellphone": "15070403486",             //手机号
         "staffCustomForm":null,                 //员工自定义字段
         "active": true,                         //true：在职，false：已离职
-        "userId": "sQgbwYgR2E5s00",             //第三方ID
+        "userId": "sQgbwYgR2E5s00",             //第三方平台人员ID
         "email": "2777481917@163.com",          //邮箱
         "external": false,                      //是否外部员工
         "staffCustomForm": {                    //员工自定义字段

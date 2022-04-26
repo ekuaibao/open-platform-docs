@@ -40,7 +40,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/au
             "defaultDepartment": "PCx3rwm3aA00qM:ID_3rw$2RXc5lM",  //默认部门
             "cellphone": "",                         //手机号
             "active": true,                          //true：在职，false：已离职
-            "userId": "ID_3rAZNCY2U$g",              //第三方ID
+            "userId": "ID_3rAZNCY2U$g",              //第三方平台人员ID
             "email": "17777777777@163.com",          //邮箱
             "external": false,                       //是否外部员工
             "note": "notea",                         //备注

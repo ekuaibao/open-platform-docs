@@ -31,7 +31,7 @@ url="/api/openapi/v1/staffs/batch/create"
 | **&emsp; ∟ note**               | String | 备注             | 非必填 | - | 备注 |
 | **&emsp; ∟ defaultDepartment**  | String | 默认部门ID        | 必填  | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
 | **&emsp; ∟ departments**        | Array  | 所在部门ID，至少1个 | 必填  | - | 兼职部门，请确保至少包含默认部门 |
-| **&emsp; ∟ userid**             | String | 第三方平台的ID     | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数 |
+| **&emsp; ∟ userid**             | String | 第三方平台的人员ID  | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数 |
 | **&emsp; ∟ useSendEmail**       | Boolean| 是否禁止发送邮件通知 | 非必填 | false | `true` : 禁止 &emsp; `false` : 不禁止 |
 | **&emsp; ∟ staffCustomForm**    | Object | 自定义字段         | 非必填  | - | 自定义字段 |
 | **&emsp;&emsp; ∟ rankType**  | String    | 职级档案项ID       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
@@ -64,7 +64,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
             "departments":[  //兼职部门，请确保至少包含默认部门
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"  
             ],
-            "userid":"P1005",  //第三方平台的ID	
+            "userid":"P1005",  //第三方平台人员ID	
             "useSendEmail":true,  //是否禁止发送邮件通知  true:禁止 false:不禁止
             "staffCustomForm":{  //员工自定义字段
                     "rankType":"ID_3tqvxwgjK6w",  //职级，值为职级档案项ID，一级        
@@ -84,7 +84,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
             "departments":[  //兼职部门，请确保至少包含默认部门
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"  
             ],
-            "userid":"P1006",  //第三方平台的ID	
+            "userid":"P1006",  //第三方平台人员ID	
             "useSendEmail":true,  //是否禁止发送邮件通知  true:禁止 false:不禁止
             "staffCustomForm":{  //员工自定义字段
                 "rankType":"ID_3tqvxwgjK6w",  //职级，值为职级档案项ID，一级        
@@ -112,7 +112,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
             "defaultDepartment": "Tdk3tgber501v0:ID_3tgaWMa0hjg",  //默认部门
             "cellphone": "18888881005",                            //手机号
             "active": true,                                        //员工状态
-            "userId": "P1005",                                     //第三方ID
+            "userId": "P1005",                                     //第三方平台人员ID
             "email": "18888881005@163.com",                        //邮箱
             "external": false,                                     //是否外部人员
             "note": "批量新增",                                     //备注

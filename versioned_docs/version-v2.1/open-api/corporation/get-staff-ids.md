@@ -58,7 +58,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
             "defaultDepartment": "JOYbpjPP-E2Q00:ZNEbwH_W7sc000", //默认部门ID
             "cellphone": "18603000748",                           //手机号
             "active": true,                                       //是否停用
-            "userId": "-Nwbu1ZI9s1Y00",                           //第三方ID
+            "userId": "-Nwbu1ZI9s1Y00",                           //第三方平台人员ID
             "email": "",
             "staffCustomForm":{                                               //员工自定义字段集合
                 "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
