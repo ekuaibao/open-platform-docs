@@ -2512,7 +2512,7 @@ import TabItem from '@theme/TabItem';
     "data": null
 }
 ```
-当单据中有引用的数据被物理删除时（数据库中不存在），可以通过[更新单据](/docs/open-api/flows/update-form)清理脏数据：
+当单据中有引用的数据被物理删除时（数据库中不存在），可以通过 [更新单据](/docs/open-api/flows/update-form) 清理脏数据：
 ```json
 {
     "errorCode": 400,

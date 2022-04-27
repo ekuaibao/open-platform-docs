@@ -80,246 +80,246 @@ url="/api/openapi/v2/budgets/create"
 
 ## CURL
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/create?accessToken=ID_3oSqGqf04lw:Urf3lsFgBp00gw' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/create?accessToken=ID_3D$9pAVgeG0:bwa3wajigF0WH0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "budgetInfo": {
-        "active": true,             //是否发布
-        "name": "测试预算-1013-10", //预算包名称
-        "corporationId": "Urf3lsFgBp00gw",
-        "isCustom": false,         //是否自定义区间
-        "isRollCalc": false,       //是否滚动预算
-        "period": {
-            "annual": "2021",      //控制年度
-            "period": "SEASON",    //年度内分割方式，SEASON: 按季度, MONTH: 按月份, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
-            "startTime": null,     //非周期控制开始时间
-            "endTime": null        //非周期控制结束时间
+    "budgetInfo": {                         //预算包信息
+        "active": true,                     //是否激活 true : 发布  false : 草稿
+        "name": "测试预算-1",               //预算包名称
+        "corporationId": "bwa3wajigF0WH0",  //企业ID
+        "isCustom": false,                  //是否自定义区间 true : 自定义时间区间（需要 period（控制周期）= null ） false : 周期控制，周期累计控制均为 false
+        "isRollCalc": false,                //是否滚动预算  true : 周期累计控制   false : 周期控制
+        "period": {                         //预算年度 
+            "annual": "2022",               //控制年度
+            "period": "SEASON",             //年度内分割方式，SEASON: 按季度, MONTH: 按月份, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制。
+            "startTime": null,              //非周期控制开始时间
+            "endTime": null                 //非周期控制结束时间
         }
     },
-    "addNodes": [                   //追加节点
+    "addNodes": [                //追加节点
         {
-            "id": "1634112660000",  //不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID
-            "code": "根节点",
-            "content": [            //节点维度信息，根节点可传空，也可添加预算包控制条件
-                 {
-                     "dimensionType": "STAFF",  //员工类型
-                     "dimensionId": "submitterId",   
-                     "mustLeaf": true,
-                     "contentId": "Urf3lsFgBp00gw:AvT3lntT8zzpWw"
-                 },
-                 {
-                      "dimensionType": "PROJECT",      //扩展档案
-                      "dimensionId": "E_system_rank",  //系统字段示例；E_system_rank：职级预置，E_system_post：岗位预置
-                      "mustLeaf": true,
-                      "contentId": "ID_3oOKW5BiYh0"
-                 }
-            ],
-            "moneys": [
+            "id": "20220419",    //不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID
+            "code": "根节点",    //节点编码
+            "content": [         //节点维度信息，根节点可传空，也可添加预算包控制条件
                 {
-                    "budgetMoney": null,   //根节点传空，由系统自动累加子预算额度合计
-                    "nodeId": "1634112660000",
-                    "periodTime": "1"      //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "dimensionType": "STAFF",            //维度种类，员工类型
+                    "dimensionId": "submitterId",        //维度种类的标识ID 
+                    "mustLeaf": true,                    //维度是否必定为叶子节点(本部) true : 非本级   false : 本级
+                    "contentId": "bwa3wajigF0WH0:ID_3lokDfb1p5w"  //维度内容ID
                 },
                 {
-                    "budgetMoney": null,   //根节点传空，由系统自动累加子预算额度合计
-                    "nodeId": "1634112660000",
-                    "periodTime": "2"      //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
-                },
-                {
-                    "budgetMoney": null,   //根节点传空，由系统自动累加子预算额度合计
-                    "nodeId": "1634112660000",
-                    "periodTime": "3"      //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
-                },
-                {
-                    "budgetMoney": null,   //根节点传空，由系统自动累加子预算额度合计
-                    "nodeId": "1634112660000",
-                    "periodTime": "4"      //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "dimensionType": "PROJECT",        //维度种类，扩展档案
+                    "dimensionId": "E_system_rank",    //维度种类的标识ID，系统字段示例：E_system_rank 职级预置  E_system_post 岗位预置
+                    "mustLeaf": true,                  //维度是否必定为叶子节点(本部) true : 非本级   false : 本级
+                    "contentId": "ID_3Ah8fh60CEg"      //维度内容ID
                 }
             ],
-            "control": "ALLOW",            //当预算超额时，控制方式（ALLOW：允许提交单据，FORBID：禁止提交单据，IGNORED：什么都不做）
-            "nodeId": "1634112660000",     //与上面预算节点ID保持一致
-            "parentId": ""                 //父节点ID为空就是根节点
+            "moneys": [                  //子预算项对应的预算金额
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20220419",//预算节点ID
+                    "periodTime": "1"    //第几个周期，因为是按季度划分，所以有4个周期，即每个季度的预算金额
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20220419",
+                    "periodTime": "2"
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20220419",
+                    "periodTime": "3"
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20220419",
+                    "periodTime": "4"
+                }
+            ],
+            "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "nodeId": "20220419",      //与上面预算节点ID保持一致
+            "parentId": ""             //父节点ID为空就是根节点
         },
         {
-            "id": "1634112670000",         //不重复的唯一ID，例如:可用毫秒级时间戳作为节点ID
+            "id": "20220419-1",        //不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID
             "code": "维度-1", 
             "content": [
                 {
-                    "dimensionType": "PROJECT",    //DEPART：费用承担部门，PROJECT：扩展档案，FEE_TYPE：费用类型，STAFF：员工
-                    "dimensionId": "项目",         //DEPART：expenseDepartment，PROJECT：项目（档案名称，例如：项目、法人实体），FEE_TYPE：feeTypeId，STAFF：submitterId，参数为冒号之后的部分
-                    "mustLeaf": true,              //true：非本级，false：本级
-                    "contentId": "ID_3oOKW5BgYh0"  //对应维度种类下的项ID，例如：部门维度就是部门ID，扩展档案维度就是档案项ID
+                    "dimensionType": "PROJECT",   //DEPART：费用承担部门，PROJECT：扩展档案，FEE_TYPE：费用类型，STAFF：员工
+                    "dimensionId": "项目",        //DEPART：expenseDepartment，PROJECT：项目（档案名称，例如：项目、法人实体），FEE_TYPE：feeTypeId，STAFF：submitterId，参数为冒号之后的部分
+                    "mustLeaf": true,             //true：非本级，false：本级
+                    "contentId": "ID_3yrzERx0Rf0" //对应维度种类下的项ID，例如：部门维度就是部门ID，扩展档案维度就是档案项ID
                 }
             ],
             "moneys": [
                 {
-                    "budgetMoney": null,         //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
-                    "nodeId": "1634112670000",
-                    "periodTime": "1"            //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "budgetMoney": null, //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20220419-1",
+                    "periodTime": "1"    //第几个周期，因为是按季度划分，所以有4个周期，即每个季度的预算金额
                 },
                 {
-                    "budgetMoney": null,         //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
-                    "nodeId": "1634112670000",
-                    "periodTime": "2"            //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "budgetMoney": null, //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20220419-1",
+                    "periodTime": "2"
                 },
                 {
-                    "budgetMoney": null,         //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
-                    "nodeId": "1634112670000",
-                    "periodTime": "3"            //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "budgetMoney": null, //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20220419-1",
+                    "periodTime": "3"
                 },
                 {
-                    "budgetMoney": null,         //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
-                    "nodeId": "1634112670000",
-                    "periodTime": "4"            //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "budgetMoney": null, //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20220419-1",
+                    "periodTime": "4"
                 }
             ],
-            "control": "ALLOW",                  //当预算超额时，控制方式（ALLOW：允许提交单据，FORBID：禁止提交单据，IGNORED：什么都不做）
-            "nodeId": "1634112670000",
-            "parentId": "1634112660000"          //父节点ID为空就是根节点
+            "control": "FORBID",    //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "nodeId": "20220419-1", //节点ID
+            "parentId": "20220419"  //父节点ID为空就是根节点
         },
         {
-            "id": "1634112670001",
+            "id": "20220419-2",
             "code": "维度-2",
             "content": [
                 {
-                    "dimensionType": "PROJECT",
+                    "dimensionType": "PROJECT",  //同一层级预算节点维度必须一致
                     "dimensionId": "项目",
                     "mustLeaf": true,
-                    "contentId": "ID_3mwUvA4ib1M"
+                    "contentId": "ID_3yrzERx0Sf0"
                 }
             ],
             "moneys": [
                 {
                     "budgetMoney": "11.00",  //维度下没有子预算，需要传入预算金额
-                    "nodeId": "1634112670001",
-                    "periodTime": "1"        //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "nodeId": "20220419-2",
+                    "periodTime": "1"        //第几个周期，因为是按季度划分，所以有4个周期，即每个季度的预算金额
                 },
                 {
                     "budgetMoney": "22.00",  //维度下没有子预算，需要传入预算金额
-                    "nodeId": "1634112670001",
-                    "periodTime": "2"        //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "nodeId": "20220419-2",
+                    "periodTime": "2"
                 },
                 {
                     "budgetMoney": "33.00",  //维度下没有子预算，需要传入预算金额
-                    "nodeId": "1634112670001",
-                    "periodTime": "3"        //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "nodeId": "20220419-2",
+                    "periodTime": "3"
                 },
                 {
                     "budgetMoney": "44.00",  //维度下没有子预算，需要传入预算金额
-                    "nodeId": "1634112670001",
-                    "periodTime": "4"        //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "nodeId": "20220419-2",
+                    "periodTime": "4"
                 }
             ],
-            "control": "ALLOW",             //当预算超额时，控制方式（ALLOW：允许提交单据，FORBID：禁止提交单据，IGNORED：什么都不做）
-            "nodeId": "1634112670001",
-            "parentId": "1634112660000"     //父节点ID为空就是根节点
+            "control": "IGNORED",    //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "nodeId": "20220419-2",
+            "parentId": "20220419"   //父节点ID为空就是根节点
         },
         {
-            "id": "1634112670002",
+            "id": "20220419-1-1",
             "code": "维度-1-1",
             "content": [
                 {
                     "dimensionType": "DEPART",
                     "dimensionId": "expenseDepartment",
                     "mustLeaf": true,
-                    "contentId": "Urf3lsFgBp00gw"
+                    "contentId": "bwa3wajigF0WH0:ID_3wUvB7G293w"
                 }
             ],
             "moneys": [
                 {
-                    "budgetMoney": "10.00",  //维度下没有子预算，需要传入预算金额
-                    "nodeId": "1634112670002",
-                    "periodTime": "1"        //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "budgetMoney": "10.00", //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20220419-1-1",
+                    "periodTime": "1"       //第几个周期，因为是按季度划分，所以有4个周期，即每个季度的预算金额
                 },
                 {
-                    "budgetMoney": "20.00",  //维度下没有子预算，需要传入预算金额
-                    "nodeId": "1634112670002",
-                    "periodTime": "2"        //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "budgetMoney": "20.00", //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20220419-1-1",
+                    "periodTime": "2"
                 },
                 {
-                    "budgetMoney": "30.00",  //维度下没有子预算，需要传入预算金额
-                    "nodeId": "1634112670002",
-                    "periodTime": "3"        //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "budgetMoney": "30.00", //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20220419-1-1",
+                    "periodTime": "3"
                 },
                 {
-                    "budgetMoney": "40.00",  //维度下没有子预算，需要传入预算金额
-                    "nodeId": "1634112670002",
-                    "periodTime": "4"        //第几个周期，因为是按季度划分，所以有4个周期，即4个季度的预算金额
+                    "budgetMoney": "40.00", //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20220419-1-1",
+                    "periodTime": "4"
                 }
             ],
-            "control": "ALLOW",              //节点控制方式（ALLOW：允许提交单据，FORBID：禁止提交单据）
-            "nodeId": "1634112670002",
-            "parentId": "1634112670000"      //父节点ID为空就是根节点
+            "control": "ALLOW",         //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "nodeId": "20220419-1-1",
+            "parentId": "20220419-1"    //父节点ID为空就是根节点
         }
     ],
-    "visibilities": [                        //节点负责人
+    "visibilities": [                //预算节点负责人
         {
-            "nodeId": "1634112660000",
+            "nodeId": "20220419",    //预算节点ID
+            "staffIds": [            //负责人ID
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+            ],
+            "roleDefIds": []         //负责角色ID
+        },
+        {
+            "nodeId": "20220419-1",
             "staffIds": [
-                "Urf3lsFgBp00gw:AvT3lntT8zzpWw"
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
             ],
             "roleDefIds": []
         },
         {
-            "nodeId": "1634112670000",
+            "nodeId": "20220419-2",
             "staffIds": [
-                "Urf3lsFgBp00gw:AvT3lntT8zzpWw"
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
             ],
             "roleDefIds": []
         },
         {
-            "nodeId": "1634112670001",
+            "nodeId": "20220419-1-1",
             "staffIds": [
-                "Urf3lsFgBp00gw:AvT3lntT8zzpWw"
-            ],
-            "roleDefIds": []
-        },
-        {
-            "nodeId": "1634112670002",
-            "staffIds": [
-                "Urf3lsFgBp00gw:AvT3lntT8zzpWw"
-            ],
-            "roleDefIds": []
-        }
-    ],
-    "editInChargers": [  //预算编制负责人
-        {
-            "nodeId": "1634112660000",
-            "staffIds": [
-                "Urf3lsFgBp00gw:AvT3lntT8zzpWw"
-            ],
-            "roleDefIds": []
-        },
-        {
-            "nodeId": "1634112670000",
-            "staffIds": [
-                "Urf3lsFgBp00gw:AvT3lntT8zzpWw"
-            ],
-            "roleDefIds": []
-        },
-        {
-            "nodeId": "1634112670001",
-            "staffIds": [
-                "Urf3lsFgBp00gw:AvT3lntT8zzpWw"
-            ],
-            "roleDefIds": []
-        },
-        {
-            "nodeId": "1634112670002",
-            "staffIds": [
-                "Urf3lsFgBp00gw:AvT3lntT8zzpWw"
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
             ],
             "roleDefIds": []
         }
     ],
-    "version":1
+    "editInChargers": [   //预算编制负责人，负责该节点的预算编制，如不填写则默认与上级节点相同，需开通【预算编制】功能方可见此字段
+        {
+            "nodeId": "20220419",    //预算节点ID
+            "staffIds": [            //编制人ID
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+            ],
+            "roleDefIds": []         //编制角色ID
+        },
+        {
+            "nodeId": "20220419-1",
+            "staffIds": [
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+            ],
+            "roleDefIds": []
+        },
+        {
+            "nodeId": "20220419-2",
+            "staffIds": [
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+            ],
+            "roleDefIds": []
+        },
+        {
+            "nodeId": "20220419-1-1",
+            "staffIds": [
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+            ],
+            "roleDefIds": []
+        }
+    ],
+    "version":1  //预算包版本
 }'
 ```
 
 ## 成功响应
 ```json
 {   
-    "id": "dJEb_UkozIlI00"        //预算包ID
+    "id": "ID_3D$8ov23ECg"        //新增的预算包ID
 }
 ```
 

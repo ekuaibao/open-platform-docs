@@ -40,7 +40,7 @@ url="/api/openapi/v2/budgets/$`budgetId`/batchUpdate"
 |**&emsp; ∟ freeze**               | Boolean | 预算冻结                | 非必填 | false | `true` : 冻结 &emsp; `false` : 不冻结 | 
 |**&emsp; ∟ nodeId**               | String | 预算节点ID               | 必填   | - | 与上面预算节点ID保持一致 | 
 |**&emsp; ∟ parentId**             | String | 父节点ID                 | 必填 | - | [获取预算包详细信息](/docs/open-api/budget/get-budget-details)返回值中的 `value` -> `budgetInfo` -> `tree` -> `id` | 
-|**updateNodes**                    | Array  | 变更节点                 | 非必填 |- | 数据格式与追加节点保持一致，**节点维度无法变更** |
+|**updateNodes**                    | Array  | 变更节点                 | 非必填 |- | 数据格式与追加节点保持一致，**节点维度无法变更，可不传；节点预算金额不变更时可不传** |
 |**deleteNodes**                    | Array  | 删除节点                 | 非必填 |- | 预算节点ID |
 |**visibilities**                   | Array  | 预算负责人数组            | 非必填 |- | 预算负责人能在相关报销单和预算报表中查看该预算节点的进度 |
 |**&emsp; ∟ id**                    | String | 预算负责人配置ID           | 非必填 |- | 更新已有预算负责人时需要传入，新增的节点传 `""`，[节点负责人配置ID获取](/docs/open-api/budget/get-budget-details) |
@@ -82,177 +82,285 @@ url="/api/openapi/v2/budgets/$`budgetId`/batchUpdate"
 :::
 
 ## CURL
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="新增预算节点" label="新增预算节点" default>
+
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$u6wbqiMW0Yqo00/batchUpdate?accessToken=f_kbtOJVVwdo00' \
---header 'content-type: application/json' \
---header 'Accept: application/json' \
---data-raw '{
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$ID_3D$8ov23ECg/batchUpdate?accessToken=ID_3EdP4O14_I0:bwa3wajigF0WH0' \
+--header 'Content-Type: application/json' \
+--data-raw '
+{
     "addNodes":[
         {
-            "id":"1634112670003",              //节点ID
-            "code":"批量新增",                 //节点编码
-            "content":[                        //节点维度,以何种类型分解预算
+            "id":"20220422-1",                 //节点ID
+            "code":"批量新增-1",               //节点编码
+            "content":[                        //节点维度，以何种类型分解预算，与同级预算要保持一致
                 {
-                    "dimensionType":"STAFF",   //以提交人类型分解预算
-                    "dimensionId":"submitterId",
-                    "mustLeaf":true,
-                    "contentId":"Urf3lsFgBp00gw:Fmd3oQU9lg00q0"
+                    "dimensionType": "PROJECT",   //DEPART：费用承担部门，PROJECT：扩展档案，FEE_TYPE：费用类型，STAFF：员工
+                    "dimensionId": "项目",        //DEPART：expenseDepartment，PROJECT：项目（档案名称，例如：项目、法人实体），FEE_TYPE：feeTypeId，STAFF：submitterId，参数为冒号之后的部分
+                    "mustLeaf": true,             //true：非本级，false：本级
+                    "contentId": "ID_3EdP4O159I0" //对应维度种类下的项ID，例如：部门维度就是部门ID，扩展档案维度就是档案项ID
                 }
             ],
             "moneys":[                          //节点金额
                 {
-                    "budgetMoney":"0", 
-                    "nodeId":"1634112670003",
+                    "budgetMoney":"0",          //非最末级节点传 0 即可，由系统自动累加此维度下子预算额度求和
+                    "nodeId":"20220422-1",
                     "periodTime":"1"            //第几个周期
                 },
                 {
                     "budgetMoney":"0",
-                    "nodeId":"1634112670003",
+                    "nodeId":"20220422-1",
                     "periodTime":"2"
                 },
                 {
                     "budgetMoney":"0",
-                    "nodeId":"1634112670003",
+                    "nodeId":"20220422-1",
                     "periodTime":"3"
                 },
                 {
                     "budgetMoney":"0",
-                    "nodeId":"1634112670003",
+                    "nodeId":"20220422-1",
                     "periodTime":"4"
                 }
             ],
-            "control":"ALLOW",  
+            "control":"ALLOW",          //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
             "freeze": false,            //预算冻结，默认值false，不冻结
-            "nodeId":"1634112670003",
-            "parentId":"1634112670002"
+            "nodeId":"20220422-1",      //节点ID
+            "parentId":"20220419"       //父节点ID
         },
         {
-            "id":"1634112670004",
-            "code":"批量新增-子",
+            "id":"20220422-1-1",
+            "code":"批量新增-1-子",
             "content":[
                 {
-                    "dimensionType":"STAFF",
-                    "dimensionId":"submitterId",
-                    "mustLeaf":true,
-                    "contentId":"Urf3lsFgBp00gw:ID_3ow_Xyy0MzM"
+                    "dimensionType": "PROJECT",     //DEPART：费用承担部门，PROJECT：扩展档案，FEE_TYPE：费用类型，STAFF：员工
+                    "dimensionId": "E_system_post", //DEPART：expenseDepartment，PROJECT：项目（档案名称，例如：项目、法人实体），FEE_TYPE：feeTypeId，STAFF：submitterId，参数为冒号之后的部分
+                    "mustLeaf": true,               //true：非本级，false：本级
+                    "contentId": "ID_3Ah8fh60EEg"   //对应维度种类下的项ID，例如：部门维度就是部门ID，扩展档案维度就是档案项ID
                 }
             ],
             "moneys":[
                 {
-                    "budgetMoney":"19",
-                    "nodeId":"1634112670004",
+                    "budgetMoney":"100",
+                    "nodeId":"20220422-1-1",
                     "periodTime":"1"
                 },
                 {
-                    "budgetMoney":"29",
-                    "nodeId":"1634112670004",
+                    "budgetMoney":"200",
+                    "nodeId":"20220422-1-1",
                     "periodTime":"2"
                 },
                 {
-                    "budgetMoney":"39",
-                    "nodeId":"1634112670004",
+                    "budgetMoney":"300",
+                    "nodeId":"20220422-1-1",
                     "periodTime":"3"
                 },
                 {
-                    "budgetMoney":"49",
-                    "nodeId":"1634112670004",
+                    "budgetMoney":"400",
+                    "nodeId":"20220422-1-1",
                     "periodTime":"4"
                 }
             ],
-            "control":"ALLOW",
+            "control":"ALLOW",      //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
             "freeze": false,        //预算冻结，默认值false，不冻结
-            "nodeId":"1634112670004",
-            "parentId":"1634112670003"
+            "nodeId":"20220422-1-1",//节点ID
+            "parentId":"20220422-1" //父节点ID
         }
     ],
-    "updateNodes":[
+    // "updateNodes":[],  //变更节点
+    // "deleteNodes":[],  //删除节点
+    "visibilities":[                          //预算负责人数组
         {
-            "id":"1634112670001",
-            "code":"批量更新",
-            "content":[            //节点维度无法变更
-            ],
-            "moneys":[
-                {
-                    "budgetMoney":"119",
-                    "nodeId":"1634112670001",
-                    "periodTime":"1"
-                },
-                {
-                    "budgetMoney":"229",
-                    "nodeId":"1634112670001",
-                    "periodTime":"2"
-                },
-                {
-                    "budgetMoney":"339",
-                    "nodeId":"1634112670001",
-                    "periodTime":"3"
-                },
-                {
-                    "budgetMoney":"449",
-                    "nodeId":"1634112670001",
-                    "periodTime":"4"
-                }
-            ],
-            "control":"ALLOW",
-            "freeze": true,           //预算冻结，默认值false，不冻结
-            "nodeId":"1634112670001",
-            "parentId":"1634112660000"
-        }
-    ],
-    "deleteNodes":[],
-    "visibilities":[
-        {
-            "id":"",
-            "corporationId":"Urf3lsFgBp00gw",
-            "budgetId":"ID_3o_V3Um0XZ0",
-            "budgetVersion":"1",
-            "nodeId":"1634112670003",
-            "staffIds":[
-                "Urf3lsFgBp00gw:Jbz3lxSOC60290"
+            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
+            "corporationId":"bwa3wajigF0WH0", //企业ID
+            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
+            "budgetVersion":"1",              //预算版本
+            "nodeId":"20220422-1",            //预算节点ID
+            "staffIds":[                      //员工ID
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
             ],
             "roleDefIds":[]
         },
         {
-            "id":"",
-            "corporationId":"Urf3lsFgBp00gw",
-            "budgetId":"ID_3o_V3Um0XZ0",
-            "budgetVersion":"1",
-            "nodeId":"1634112670004",
-            "staffIds":[
-                "Urf3lsFgBp00gw:Jbz3lxSOC60290"
+            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
+            "corporationId":"bwa3wajigF0WH0", //企业ID
+            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
+            "budgetVersion":"1",              //预算版本
+            "nodeId":"20220422-1-1",          //预算节点ID
+            "staffIds":[                      //员工ID
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
             ],
             "roleDefIds":[]
         }
     ],
-    "editInChargers":[
+    "editInChargers":[                        //预算编制人数组
         {
-            "id":"",
-            "corporationId":"Urf3lsFgBp00gw",
-            "budgetId":"ID_3o_V3Um0XZ0",
-            "budgetVersion":"1",
-            "nodeId":"1634112670003",
-            "staffIds":[
-                "Urf3lsFgBp00gw:Jbz3lxSOC60290"
+            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
+            "corporationId":"bwa3wajigF0WH0", //企业ID
+            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
+            "budgetVersion":"1",              //预算版本
+            "nodeId":"20220422-1",            //预算节点ID
+            "staffIds":[                      //员工ID
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
             ],
             "roleDefIds":[]
         },
         {
-            "id":"",
-            "corporationId":"Urf3lsFgBp00gw",
-            "budgetId":"ID_3o_V3Um0XZ0",
-            "budgetVersion":"1",
-            "nodeId":"1634112670004",
-            "staffIds":[
-                "Urf3lsFgBp00gw:Jbz3lxSOC60290"
+            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
+            "corporationId":"bwa3wajigF0WH0", //企业ID
+            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
+            "budgetVersion":"1",              //预算版本
+            "nodeId":"20220422-1-1",          //预算节点ID
+            "staffIds":[                      //员工ID
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w"
             ],
             "roleDefIds":[]
         }
-    ],    
-    "active":true,
-    "publish":true,
-    "version":1
+    ],
+    "active":true,       //是否为发布状态
+    "publish":true,      //当前更新是否立即发布
+    "version":1          //当前预算包的版本
 }'
 ```
+</TabItem>
+<TabItem value="更新预算节点" label="更新预算节点">
+
+```json
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$ID_3D$8ov23ECg/batchUpdate?accessToken=ID_3EnD3w6lOe0:bwa3wajigF0WH0' \
+--header 'Content-Type: application/json' \
+--data-raw '
+{
+    // "addNodes":[],     //新增节点
+    "updateNodes":[       //变更节点
+        {
+            "id":"20220419-1",       //节点ID
+            "code":"维度-1-更新",    //节点编码
+            "content":[],            //节点维度无法变更
+            "moneys":[
+                {
+                    "budgetMoney":"111",  //更新节点预算金额
+                    "nodeId":"20220419-1",
+                    "periodTime":"1"      //第几个周期
+                },
+                {
+                    "budgetMoney":"222",
+                    "nodeId":"20220419-1",
+                    "periodTime":"2"
+                },
+                {
+                    "budgetMoney":"333",
+                    "nodeId":"20220419-1",
+                    "periodTime":"3"
+                },
+                {
+                    "budgetMoney":"444",
+                    "nodeId":"20220419-1",
+                    "periodTime":"4"
+                }
+            ],
+            "control":"ALLOW",      //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "freeze": false,        //预算冻结，默认值false，不冻结
+            "nodeId":"20220419-1",  //节点ID
+            "parentId":"20220419"   //父节点ID
+        }
+    ],
+    // "deleteNodes":[],                      //删除节点
+    "visibilities":[                          //预算负责人数组
+        {
+            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
+            "corporationId":"bwa3wajigF0WH0", //企业ID
+            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
+            "budgetVersion":"2",              //预算版本，节点变更后，版本 +1
+            "nodeId":"20220419-1",            //预算节点ID
+            "staffIds":[                      //员工ID
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w","bwa3wajigF0WH0:qKZ3wlg6bv9OGg"
+            ],
+            "roleDefIds":[]
+        }
+    ],
+    "editInChargers":[                        //预算编制人数组
+        {
+            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
+            "corporationId":"bwa3wajigF0WH0", //企业ID
+            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
+            "budgetVersion":"2",              //预算版本，节点变更后，版本 +1
+            "nodeId":"20220419-1",            //预算节点ID
+            "staffIds":[                      //员工ID
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w","bwa3wajigF0WH0:qKZ3wlg6bv9OGg"
+            ],
+            "roleDefIds":[]
+        }
+    ],
+    "active":true,       //是否为发布状态
+    "publish":true,      //当前更新是否立即发布
+    "version":2          //当前预算包的版本，节点变更后，版本 +1
+}'
+```
+</TabItem>
+<TabItem value="冻结预算节点" label="冻结预算节点">
+
+```json
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$ID_3D$8ov23ECg/batchUpdate?accessToken=ID_3EnD3w6lOe0:bwa3wajigF0WH0' \
+--header 'Content-Type: application/json' \
+--data-raw '
+{
+    // "addNodes":[],     //新增节点
+    "updateNodes":[       //变更节点
+        {
+            "id":"20220419-1",        //节点ID
+            "code":"维度-1-更新",     //节点编码
+            "control":"ALLOW",        //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "freeze": true,           //预算冻结，默认值false，不冻结
+            "nodeId":"20220419-1",    //节点ID
+            "parentId":"20220419"     //父节点ID
+        }
+    ],
+    // "deleteNodes":[], //删除节点
+    "active":true,       //是否为发布状态
+    "publish":true,      //当前更新是否立即发布
+    "version":2          //当前预算包的版本，节点变更后，版本 +1
+}'
+```
+</TabItem>
+<TabItem value="删除预算节点" label="删除预算节点">
+
+```json
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$ID_3D$8ov23ECg/batchUpdate?accessToken=ID_3Eo3_NB0Se0:bwa3wajigF0WH0' \
+--header 'Content-Type: application/json' \
+--data-raw '
+{
+    // "addNodes":[],     //新增节点
+    // "updateNodes":[],  //变更节点
+    "deleteNodes":[       //删除节点
+        "20220419-2","20220419-1-1"
+    ],  
+    "active":true,       //是否为发布状态
+    "publish":true,      //当前更新是否立即发布
+    "version":2          //当前预算包的版本，节点变更后，版本 +1
+}'
+```
+</TabItem>
+<TabItem value="变更预算包状态（发布/草稿）" label="变更预算包状态（发布/草稿）">
+
+```json
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$ID_3D$8ov23ECg/batchUpdate?accessToken=ID_3Eo3_NB0Se0:bwa3wajigF0WH0' \
+--header 'Content-Type: application/json' \
+--data-raw '
+{
+    // "addNodes":[],     //新增节点
+    // "updateNodes":[],  //变更节点
+    // "deleteNodes":[],  //删除节点
+    "active":false,       //是否为发布状态
+    "publish":true,       //当前更新是否立即发布
+    "version":3           //当前预算包的版本，节点变更后，版本 +1
+}'
+```
+</TabItem>
+</Tabs>
 
 ## 成功响应
 ```json

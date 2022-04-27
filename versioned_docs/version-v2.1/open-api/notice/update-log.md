@@ -12,6 +12,23 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.4.1
+
+`2022-04-29`
+
+- 🐞 更新 [通讯录接口-常见问题总结](/docs/open-api/contacts/question-answer) 
+  - 新增了问题“调用【修改员工信息】时，接口响应成功，但员工信息未修改成功？”。
+- 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments)、[批量新增部门](/docs/open-api/contacts/batch-add-departments)、[新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口 **失败响应** 示例。
+- 🐞 更新 [获取统一开票方](/docs/open-api/datalink-extend/get-entity-unify-corporation)、[获取统一开票信息](/docs/open-api/datalink-extend/get-entity-unify-invoice) 接口描述。
+- 🐞 更新 [外部服务回调审批接口](/docs/open-api/outbound-message/outbound-callback) 接口
+  - 新增了报错场景注意事项。
+- 🐞 更新 [根据单据ID集合获取单据列表](/docs/open-api/flows/get-forms-sequences-ids)、[根据员工ID获取待审批单据](/docs/open-api/flows/get-approve) 接口
+  - 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。
+- 🐞 更新【**预算**】模块下全部接口
+  - 优化了 **CURL** 传参示例，增加参数注释。
+  - [批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node) 接口，按情景拆分 **CURL** 传参示例。
+
+---
 ## 1.4.0
 
 `2022-04-15`

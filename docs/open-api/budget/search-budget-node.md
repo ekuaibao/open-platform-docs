@@ -32,61 +32,107 @@ url="/api/openapi/v2/budgets/searchBudgetNode/$`budgetInfoId`/$`budgetInfoVersio
 
 ## CURL
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/searchBudgetNode/$ID_3hDGFB47JaY/$7?accessToken=ID_3lEhmoq01R0:rzj3hDLar4001E' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/searchBudgetNode/$ID_3D$8ov23ECg/$3?accessToken=ID_3Eo3_NBaxe0:bwa3wajigF0WH0&start=0&count=100' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-    "name":"张三",
-    "code":""
+    "name":"",               //预算节点名称
+    "code":"批量新增-1-子"   //预算节点编码
 }'
 ```
 
 ## 成功响应
 ```json
 {
-    "count": 1,
+    "count": 1,      //查询到的节点数量
     "items": [
         {
-            "budgetNodeEntity": {
-                "id": "1627633293733001",
-                "code": "",
-                "content": [
+            "budgetNodeEntity": {       //查询到的节点信息
+                "id": "20220422-1-1",   //节点ID
+                "code": "批量新增-1-子",//节点编码
+                "content": [            //节点维度信息
                     {
-                        "dimensionType": "STAFF",
-                        "dimensionId": "submitterId",
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_post",
                         "mustLeaf": true,
-                        "contentId": "rzj3hDLar4001E:9h09FFdjmoaE00"
+                        "contentId": "ID_3Ah8fh60EEg"
                     }
                 ],
-                "moneys": null,
-                "control": "ALLOW",
-                "children": null,
+                "moneys": null,        
+                "control": "ALLOW",           //预算节点的控制方式（ALLOW：允许，WARN：警告，FORBID：禁止，IGNORED：什么都不做）
+                "children": null,             
                 "name": null,
-                "overControllerRate": 100,
-                "hasChild": false,
-                "parentId": "1626357326465",
-                "childCount": 0,
+                "overControllerRate": 100.0,  //预算超标比例
+                "hasChild": false,            //是否有子节点    
+                "parentId": "20220422-1",     //父节点ID
+                "childCount": 0,              //子节点数量
                 "hasSelfNode": false,
                 "moneyExts": [
                     {
-                        "nodeId": "1627633293733001",
-                        "periodTime": "1",
-                        "budgetMoney": 66666,     //预算金额
+                        "nodeId": "20220422-1-1",  //节点ID
+                        "periodTime": "1",         //第几个周期
+                        "budgetMoney": 100.0,      //预算金额
                         "extendMoneys": {},
-                        "occupiedMoney": 0,       //占用金额
-                        "confirmedMoney": 0,      //已使用金额
-                        "budgetMoneyRoll": 0,     //预算金额（滚动）
-                        "occupiedMoneyRoll": 0,   //占用金额（滚动）
-                        "confirmedMoneyRoll": 0   //已使用金额（滚动）
+                        "occupiedMoney": 0,        //占用金额
+                        "confirmedMoney": 0,       //已使用金额
+                        "budgetMoneyRoll": 0,      //预算金额（滚动）
+                        "occupiedMoneyRoll": 0,    //占用金额（滚动）
+                        "confirmedMoneyRoll": 0    //已使用金额（滚动）
+                    },
+                    {
+                        "nodeId": "20220422-1-1",
+                        "periodTime": "2",
+                        "budgetMoney": 200.0,
+                        "extendMoneys": {},
+                        "occupiedMoney": 0,
+                        "confirmedMoney": 0,
+                        "budgetMoneyRoll": 0,
+                        "occupiedMoneyRoll": 0,
+                        "confirmedMoneyRoll": 0
+                    },
+                    {
+                        "nodeId": "20220422-1-1",
+                        "periodTime": "3",
+                        "budgetMoney": 300.0,
+                        "extendMoneys": {},
+                        "occupiedMoney": 0,
+                        "confirmedMoney": 0,
+                        "budgetMoneyRoll": 0,
+                        "occupiedMoneyRoll": 0,
+                        "confirmedMoneyRoll": 0
+                    },
+                    {
+                        "nodeId": "20220422-1-1",
+                        "periodTime": "4",
+                        "budgetMoney": 400.0,
+                        "extendMoneys": {},
+                        "occupiedMoney": 0,
+                        "confirmedMoney": 0,
+                        "budgetMoneyRoll": 0,
+                        "occupiedMoneyRoll": 0,
+                        "confirmedMoneyRoll": 0
                     }
                 ],
-                "freeze": false
+                "freeze": false    //节点是否冻结预算
             },
-            "path": [
+            "path": [              //节点路径信息，从根节点到查询节点
                 {
-                    "id": "1626357326465",
-                    "code": "",
-                    "content": [],
+                    "id": "20220419",      //节点ID
+                    "code": "根节点",      //节点编码
+                    "content": [           //节点维度信息
+                        {
+                            "dimensionType": "STAFF",
+                            "dimensionId": "submitterId",
+                            "mustLeaf": true,
+                            "contentId": "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                        },
+                        {
+                            "dimensionType": "PROJECT",
+                            "dimensionId": "E_system_rank",
+                            "mustLeaf": true,
+                            "contentId": "ID_3Ah8fh60CEg"
+                        }
+                    ],
                     "moneys": null,
                     "control": "ALLOW",
                     "children": null,
@@ -96,34 +142,180 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                     "parentId": "",
                     "childCount": 2,
                     "hasSelfNode": false,
-                    "moneyExts": [],
+                    "moneyExts": [
+                        {
+                            "nodeId": "20220419",
+                            "periodTime": "1",
+                            "budgetMoney": 110.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        },
+                        {
+                            "nodeId": "20220419",
+                            "periodTime": "2",
+                            "budgetMoney": 220.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        },
+                        {
+                            "nodeId": "20220419",
+                            "periodTime": "3",
+                            "budgetMoney": 330.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        },
+                        {
+                            "nodeId": "20220419",
+                            "periodTime": "4",
+                            "budgetMoney": 440.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        }
+                    ],
                     "freeze": false
                 },
                 {
-                    "id": "1627633293733001",
-                    "code": "",
+                    "id": "20220422-1",
+                    "code": "批量新增-1",
                     "content": [
                         {
-                            "dimensionType": "STAFF",
-                            "dimensionId": "submitterId",
+                            "dimensionType": "PROJECT",
+                            "dimensionId": "项目",
                             "mustLeaf": true,
-                            "contentId": "rzj3hDLar4001E:9h09FFdjmoaE00"
+                            "contentId": "ID_3EdP4O159I0"
                         }
                     ],
                     "moneys": null,
                     "control": "ALLOW",
                     "children": null,
                     "name": null,
-                    "overControllerRate": 100,
+                    "overControllerRate": 100.0,
+                    "hasChild": true,
+                    "parentId": "20220419",
+                    "childCount": 1,
+                    "hasSelfNode": false,
+                    "moneyExts": [
+                        {
+                            "nodeId": "20220422-1",
+                            "periodTime": "1",
+                            "budgetMoney": 100.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        },
+                        {
+                            "nodeId": "20220422-1",
+                            "periodTime": "2",
+                            "budgetMoney": 200.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        },
+                        {
+                            "nodeId": "20220422-1",
+                            "periodTime": "3",
+                            "budgetMoney": 300.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        },
+                        {
+                            "nodeId": "20220422-1",
+                            "periodTime": "4",
+                            "budgetMoney": 400.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        }
+                    ],
+                    "freeze": false
+                },
+                {
+                    "id": "20220422-1-1",
+                    "code": "批量新增-1-子",
+                    "content": [
+                        {
+                            "dimensionType": "PROJECT",
+                            "dimensionId": "E_system_post",
+                            "mustLeaf": true,
+                            "contentId": "ID_3Ah8fh60EEg"
+                        }
+                    ],
+                    "moneys": null,
+                    "control": "ALLOW",
+                    "children": null,
+                    "name": null,
+                    "overControllerRate": 100.0,
                     "hasChild": false,
-                    "parentId": "1626357326465",
+                    "parentId": "20220422-1",
                     "childCount": 0,
                     "hasSelfNode": false,
                     "moneyExts": [
                         {
-                            "nodeId": "1627633293733001",
+                            "nodeId": "20220422-1-1",
                             "periodTime": "1",
-                            "budgetMoney": 66666,
+                            "budgetMoney": 100.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        },
+                        {
+                            "nodeId": "20220422-1-1",
+                            "periodTime": "2",
+                            "budgetMoney": 200.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        },
+                        {
+                            "nodeId": "20220422-1-1",
+                            "periodTime": "3",
+                            "budgetMoney": 300.0,
+                            "extendMoneys": {},
+                            "occupiedMoney": 0,
+                            "confirmedMoney": 0,
+                            "budgetMoneyRoll": 0,
+                            "occupiedMoneyRoll": 0,
+                            "confirmedMoneyRoll": 0
+                        },
+                        {
+                            "nodeId": "20220422-1-1",
+                            "periodTime": "4",
+                            "budgetMoney": 400.0,
                             "extendMoneys": {},
                             "occupiedMoney": 0,
                             "confirmedMoney": 0,
@@ -137,7 +329,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
             ]
         }
     ]
-} 
+}
 ```
 
 ## 失败响应

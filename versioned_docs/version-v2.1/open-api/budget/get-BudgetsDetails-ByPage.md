@@ -26,118 +26,578 @@ url="/api/openapi/v2/budgets/$`budgetId`/query"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$u6wbqiMW0Yqo00/query?accessToken=f_kbtOJVVwdo00&start=1&count=100' \
---header 'content-type: application/json' \
---header 'Accept: application/json'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$ID_3D$8ov23ECg/query?accessToken=ID_3Eo3_NB0Se0:bwa3wajigF0WH0&nodeId=20220422-1&start=0&count=100'
 ```
 
 ## 成功响应
 ```json
 {
     "value": {
-        "nodes": [                      //查询的预算节点和其子节点信息
+        "nodes": [         //查询的预算节点和其子节点信息，不包含更下级节点（孙子级）
             {
-                "id": "rd0bqiMW0Yr000",
-                "version": 10,  
-                "active": true,         //是否激活，true：发布，false：草稿
-                "createTime": 1597314328513,
-                "updateTime": 1597314328513,
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3EnCZ9y2o5w",
+                "version": 18,
+                "active": true,        //是否激活，true：发布，false：草稿
+                "createTime": 1650794498347,
+                "updateTime": 1650794498347,
                 "nameSpell": "",
-                "code": "1001",         //预算编码
-                "corporationId": "zKIbl2WX4I8I00",  //企业ID
-                "nodeId": "1597314178620",          //节点ID
-                "content": [                        //节点维度
-                         {
-                             "dimensionType":"FEE_TYPE",            //维度种类（DEPART：部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工）
-                             "dimensionId":"feeTypeId",             //维度种类的标识ID
-                             "mustLeaf":true,                       //维度是否必定为叶子节点（本部），true：非本级，false：本级 
-                             "contentId":"zKIbl2WX4I8I00:allowance" //维度内容ID
-                         }
-                ],
-                "moneys": [                         //节点金额
+                "code": "批量新增-1",   //预算编码
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "nodeId": "20220422-1",//节点ID
+                "content": [           //节点维度信息
                     {
-                        "nodeId": "1597314178620",  //预算节点ID
-                        "periodTime": "1",          //第几个周期
-                        "budgetMoney": 355000,      //预算总额
-                        "extendMoneys": {}          //参考金额
+                        "dimensionType": "PROJECT",   //维度种类（DEPART：部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工）
+                        "dimensionId": "项目",        //维度种类的标识ID
+                        "mustLeaf": true,             //维度是否必定为叶子节点（本部），true：非本级，false：本级       
+                        "contentId": "ID_3EdP4O159I0" //维度内容ID
                     }
                 ],
-                "control": "FORBID",                //预算节点的控制方式（ALLOW：允许，WARN：警告，FORBID：禁止，IGNORED：什么都不做）
-                "overControllerRate": 100,          //预算超标比例
-                "budgetId": "u6wbqiMW0Yqo00",       //预算树ID
-                "budgetVersion": 1,                 //预算版本
-                "name": "预算2020",                 //预算名称
-                "parentId": "",                     //父节点ID
-                "isLeaf": false                     //预算节点是否是叶子节点
-            },
-
-            ...
-
-        ],
-        "monies": [                  //节点对应的预算执行情况
-            {
-                "budgetId": "u6wbqiMW0Yqo00",
-                "nodeId": "1597314273579001",
-                "periodTime": "1",
-                "budgetVersion": 1,
-                "id": "u6wbqiMW0Yqo00:1:1",
-                "version": 5,
-                "active": true,
-                "createTime": 1597314330412,
-                "updateTime": 1597911655998,
-                "corporationId": "zKIbl2WX4I8I00",
-                "budgetMoney": 75000,     //预算金额
-                "confirmedMoney": 0,      //已使用金额
-                "occupiedMoney": 30,      //占用金额
-                "budgetMoneyRoll": 0,     //预算金额（滚动）
-                "confirmedMoneyRoll": 0,  //已使用金额（滚动）
-                "occupiedMoneyRoll": 30,  //占用金额（滚动）
-                "dimensionContents": [    //预算节点占用的全维度
+                "moneys": [                      //预算节点金额
                     {
-                        "dimensionType": "FEE_TYPE",            //维度种类（DEPART：部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工）
-                        "dimensionId": "feeTypeId",             //维度种类的标识ID
-                        "mustLeaf": true,                       //维度是否必定为叶子节点（本部），true：非本级，false：本级
-                        "contentId": "zKIbl2WX4I8I00:catering"  //维度内容ID
+                        "nodeId": "20220422-1",  //预算节点ID
+                        "periodTime": "1",       //第几个周期
+                        "budgetMoney": 100.0,    //预算总额
+                        "extendMoneys": {}       //参考金额
+                    },
+                    {
+                        "nodeId": "20220422-1",
+                        "periodTime": "2",
+                        "budgetMoney": 200.0,
+                        "extendMoneys": {}
+                    },
+                    {
+                        "nodeId": "20220422-1",
+                        "periodTime": "3",
+                        "budgetMoney": 300.0,
+                        "extendMoneys": {}
+                    },
+                    {
+                        "nodeId": "20220422-1",
+                        "periodTime": "4",
+                        "budgetMoney": 400.0,
+                        "extendMoneys": {}
                     }
                 ],
-                "isLeaf": true    //预算节点是否是叶子节点
+                "control": "ALLOW",          //预算节点的控制方式（ALLOW：允许，WARN：警告，FORBID：禁止，IGNORED：什么都不做）
+                "overControllerRate": 100.0, //预算超标比例
+                "freeze": false, 
+                "budgetId": "ID_3D$8ov23ECg",//预算包ID
+                "budgetVersion": 3,          //预算版本
+                "name": "项目4",             //预算节点名称
+                "parentId": "20220419",      //父节点ID
+                "isLeaf": false              //预算节点是否是叶子节点  
             },
-            ...
-
-        ],
-        "count": 3,              //查询节点和其子节点的总数
-        "visibilities": [        //预算可见性（预算负责人）
             {
-                "id": "6pEbqiMW0Yrc00",
-                "version": 2,
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3EnCZ9y2p5w",
+                "version": 3,
                 "active": true,
-                "createTime": 1597314328513,
-                "updateTime": 1597994882143,
-                "corporationId": "zKIbl2WX4I8I00",  //企业ID
-                "budgetId": "u6wbqiMW0Yqo00",       //预算包ID
-                "budgetVersion": 1,                 //预算版本
-                "nodeId": "1597314178620",          //预算节点ID
-                "roleDefIds": ["角色ID"],           //角色ID集合
-                "staffIds": [                       //员工ID集合 
-                    "zKIbl2WX4I8I00:h5wbhuSCoQh000"
-                ]  
+                "createTime": 1650794498347,
+                "updateTime": 1650794498347,
+                "nameSpell": "",
+                "code": "批量新增-1-子",
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "nodeId": "20220422-1-1",
+                "content": [
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_post",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60EEg"
+                    }
+                ],
+                "moneys": [
+                    {
+                        "nodeId": "20220422-1-1",
+                        "periodTime": "1",
+                        "budgetMoney": 100.0,
+                        "extendMoneys": {}
+                    },
+                    {
+                        "nodeId": "20220422-1-1",
+                        "periodTime": "2",
+                        "budgetMoney": 200.0,
+                        "extendMoneys": {}
+                    },
+                    {
+                        "nodeId": "20220422-1-1",
+                        "periodTime": "3",
+                        "budgetMoney": 300.0,
+                        "extendMoneys": {}
+                    },
+                    {
+                        "nodeId": "20220422-1-1",
+                        "periodTime": "4",
+                        "budgetMoney": 400.0,
+                        "extendMoneys": {}
+                    }
+                ],
+                "control": "ALLOW",
+                "overControllerRate": 100.0,
+                "freeze": false,
+                "budgetId": "ID_3D$8ov23ECg",
+                "budgetVersion": 3,
+                "name": "岗位1",
+                "parentId": "20220422-1",
+                "isLeaf": true
             }
         ],
-        "editInChargers": [                 //预算编制人
+        "monies": [                   //节点对应的预算执行情况
             {
-                "nodeId": "1597314178620",  //预算节点ID
-                "roleDefIds": [],           //角色ID集合
-                "staffIds": [               //员工ID集合
-                    "zKIbl2WX4I8I00:h5wbhuSCoQh000"
-                ],
-                "id": "uJ8bqiMW0Yro00",
-                "version": 2,
+                "budgetId": "ID_3D$8ov23ECg",  //预算包ID
+                "nodeId": "20220422-1",        //节点ID
+                "periodTime": "1",             //预算的第几个周期
+                "budgetVersion": 3,
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3D$8ov23ECg:3:13",
+                "version": 1,
                 "active": true,
-                "createTime": 1597314329816,
-                "updateTime": 1597994882256,
-                "corporationId": "zKIbl2WX4I8I00",
-                "budgetId": "u6wbqiMW0Yqo00", //预算ID
-                "budgetVersion": 1            //预算版本
+                "createTime": 1650794499883,
+                "updateTime": 1650794499883,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetMoney": 100.0,   //预算金额
+                "confirmedMoney": 0,    //已使用金额
+                "occupiedMoney": 0,     //占用金额
+                "budgetMoneyRoll": 0,   //预算金额（滚动）
+                "confirmedMoneyRoll": 0,//已使用金额（滚动）
+                "occupiedMoneyRoll": 0, //占用金额（滚动）
+                "dimensionContents": [  //预算节点占用的全维度
+                    {
+                        "dimensionType": "STAFF",      //维度种类（DEPART：部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工）
+                        "dimensionId": "submitterId",  //维度种类的标识ID
+                        "mustLeaf": true,              //维度是否必定为叶子节点（本部），true：非本级，false：本级     
+                        "contentId": "bwa3wajigF0WH0:ID_3lokDfb1p5w"  //维度内容ID
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_rank",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60CEg"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "项目",
+                        "mustLeaf": true,
+                        "contentId": "ID_3EdP4O159I0"
+                    }
+                ], 
+                "isLeaf": false  //预算节点是否是叶子节点
+            },
+            {
+                "budgetId": "ID_3D$8ov23ECg",
+                "nodeId": "20220422-1",
+                "periodTime": "2",
+                "budgetVersion": 3,
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3D$8ov23ECg:3:14",
+                "version": 1,
+                "active": true,
+                "createTime": 1650794499883,
+                "updateTime": 1650794499883,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetMoney": 200.0,
+                "confirmedMoney": 0,
+                "occupiedMoney": 0,
+                "budgetMoneyRoll": 0,
+                "confirmedMoneyRoll": 0,
+                "occupiedMoneyRoll": 0,
+                "dimensionContents": [
+                    {
+                        "dimensionType": "STAFF",
+                        "dimensionId": "submitterId",
+                        "mustLeaf": true,
+                        "contentId": "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_rank",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60CEg"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "项目",
+                        "mustLeaf": true,
+                        "contentId": "ID_3EdP4O159I0"
+                    }
+                ],
+                "isLeaf": false
+            },
+            {
+                "budgetId": "ID_3D$8ov23ECg",
+                "nodeId": "20220422-1",
+                "periodTime": "3",
+                "budgetVersion": 3,
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3D$8ov23ECg:3:15",
+                "version": 1,
+                "active": true,
+                "createTime": 1650794499884,
+                "updateTime": 1650794499884,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetMoney": 300.0,
+                "confirmedMoney": 0,
+                "occupiedMoney": 0,
+                "budgetMoneyRoll": 0,
+                "confirmedMoneyRoll": 0,
+                "occupiedMoneyRoll": 0,
+                "dimensionContents": [
+                    {
+                        "dimensionType": "STAFF",
+                        "dimensionId": "submitterId",
+                        "mustLeaf": true,
+                        "contentId": "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_rank",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60CEg"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "项目",
+                        "mustLeaf": true,
+                        "contentId": "ID_3EdP4O159I0"
+                    }
+                ],
+                "isLeaf": false
+            },
+            {
+                "budgetId": "ID_3D$8ov23ECg",
+                "nodeId": "20220422-1",
+                "periodTime": "4",
+                "budgetVersion": 3,
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3D$8ov23ECg:3:16",
+                "version": 1,
+                "active": true,
+                "createTime": 1650794499884,
+                "updateTime": 1650794499884,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetMoney": 400.0,
+                "confirmedMoney": 0,
+                "occupiedMoney": 0,
+                "budgetMoneyRoll": 0,
+                "confirmedMoneyRoll": 0,
+                "occupiedMoneyRoll": 0,
+                "dimensionContents": [
+                    {
+                        "dimensionType": "STAFF",
+                        "dimensionId": "submitterId",
+                        "mustLeaf": true,
+                        "contentId": "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_rank",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60CEg"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "项目",
+                        "mustLeaf": true,
+                        "contentId": "ID_3EdP4O159I0"
+                    }
+                ],
+                "isLeaf": false
+            },
+            {
+                "budgetId": "ID_3D$8ov23ECg",
+                "nodeId": "20220422-1-1",
+                "periodTime": "1",
+                "budgetVersion": 3,
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3D$8ov23ECg:3:1",
+                "version": 1,
+                "active": true,
+                "createTime": 1650794499880,
+                "updateTime": 1650794499880,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetMoney": 100.0,
+                "confirmedMoney": 0,
+                "occupiedMoney": 0,
+                "budgetMoneyRoll": 0,
+                "confirmedMoneyRoll": 0,
+                "occupiedMoneyRoll": 0,
+                "dimensionContents": [
+                    {
+                        "dimensionType": "STAFF",
+                        "dimensionId": "submitterId",
+                        "mustLeaf": true,
+                        "contentId": "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_rank",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60CEg"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "项目",
+                        "mustLeaf": true,
+                        "contentId": "ID_3EdP4O159I0"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_post",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60EEg"
+                    }
+                ],
+                "isLeaf": false
+            },
+            {
+                "budgetId": "ID_3D$8ov23ECg",
+                "nodeId": "20220422-1-1",
+                "periodTime": "2",
+                "budgetVersion": 3,
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3D$8ov23ECg:3:2",
+                "version": 1,
+                "active": true,
+                "createTime": 1650794499881,
+                "updateTime": 1650794499881,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetMoney": 200.0,
+                "confirmedMoney": 0,
+                "occupiedMoney": 0,
+                "budgetMoneyRoll": 0,
+                "confirmedMoneyRoll": 0,
+                "occupiedMoneyRoll": 0,
+                "dimensionContents": [
+                    {
+                        "dimensionType": "STAFF",
+                        "dimensionId": "submitterId",
+                        "mustLeaf": true,
+                        "contentId": "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_rank",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60CEg"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "项目",
+                        "mustLeaf": true,
+                        "contentId": "ID_3EdP4O159I0"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_post",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60EEg"
+                    }
+                ],
+                "isLeaf": false
+            },
+            {
+                "budgetId": "ID_3D$8ov23ECg",
+                "nodeId": "20220422-1-1",
+                "periodTime": "3",
+                "budgetVersion": 3,
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3D$8ov23ECg:3:3",
+                "version": 1,
+                "active": true,
+                "createTime": 1650794499881,
+                "updateTime": 1650794499881,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetMoney": 300.0,
+                "confirmedMoney": 0,
+                "occupiedMoney": 0,
+                "budgetMoneyRoll": 0,
+                "confirmedMoneyRoll": 0,
+                "occupiedMoneyRoll": 0,
+                "dimensionContents": [
+                    {
+                        "dimensionType": "STAFF",
+                        "dimensionId": "submitterId",
+                        "mustLeaf": true,
+                        "contentId": "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_rank",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60CEg"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "项目",
+                        "mustLeaf": true,
+                        "contentId": "ID_3EdP4O159I0"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_post",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60EEg"
+                    }
+                ],
+                "isLeaf": false
+            },
+            {
+                "budgetId": "ID_3D$8ov23ECg",
+                "nodeId": "20220422-1-1",
+                "periodTime": "4",
+                "budgetVersion": 3,
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3D$8ov23ECg:3:4",
+                "version": 1,
+                "active": true,
+                "createTime": 1650794499881,
+                "updateTime": 1650794499881,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetMoney": 400.0,
+                "confirmedMoney": 0,
+                "occupiedMoney": 0,
+                "budgetMoneyRoll": 0,
+                "confirmedMoneyRoll": 0,
+                "occupiedMoneyRoll": 0,
+                "dimensionContents": [
+                    {
+                        "dimensionType": "STAFF",
+                        "dimensionId": "submitterId",
+                        "mustLeaf": true,
+                        "contentId": "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_rank",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60CEg"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "项目",
+                        "mustLeaf": true,
+                        "contentId": "ID_3EdP4O159I0"
+                    },
+                    {
+                        "dimensionType": "PROJECT",
+                        "dimensionId": "E_system_post",
+                        "mustLeaf": true,
+                        "contentId": "ID_3Ah8fh60EEg"
+                    }
+                ],
+                "isLeaf": false
+            }
+        ],
+        "count": 2,           //查询节点和其子节点的总数
+        "visibilities": [     //预算可见性（预算负责人）
+            {
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3Ee6WVB0fcw",             
+                "version": 3,
+                "active": true,
+                "createTime": 1650622302478,
+                "updateTime": 1650622302478,
+                "corporationId": "bwa3wajigF0WH0",  //企业ID
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetId": "ID_3D$8ov23ECg",       //预算包ID
+                "budgetVersion": 3,                 //预算版本
+                "nodeId": "20220422-1",             //预算节点ID
+                "roleDefIds": [],                   //角色ID集合
+                "staffIds": [                       //员工ID集合 
+                    "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                ]
+            },
+            {
+                "pipeline": 1,
+                "grayver": "9.25.0.0:A",
+                "id": "ID_3Ee6WVB0gcw",
+                "version": 3,
+                "active": true,
+                "createTime": 1650622302478,
+                "updateTime": 1650622302478,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetId": "ID_3D$8ov23ECg",
+                "budgetVersion": 3,
+                "nodeId": "20220422-1-1",
+                "roleDefIds": [],
+                "staffIds": [
+                    "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                ]
+            }
+        ],
+        "editInChargers": [               //预算编制人
+            {
+                "nodeId": "20220422-1",   //预算节点ID
+                "roleDefIds": [],         //角色ID集合
+                "staffIds": [             //员工ID集合
+                    "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                ],
+                "pipeline": 1,
+                "grayver": "9.23.0.0:A",
+                "id": "ID_3Ee6WVB0hcw",
+                "version": 1,
+                "active": true,
+                "createTime": 1650622302544,
+                "updateTime": 1650622302544,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetId": "ID_3D$8ov23ECg", //预算包ID
+                "budgetVersion": 3            //预算版本
+            },
+            {
+                "nodeId": "20220422-1-1",
+                "roleDefIds": [],
+                "staffIds": [
+                    "bwa3wajigF0WH0:ID_3lokDfb1p5w"
+                ],
+                "pipeline": 1,
+                "grayver": "9.23.0.0:A",
+                "id": "ID_3Ee6WVB0icw",
+                "version": 1,
+                "active": true,
+                "createTime": 1650622302544,
+                "updateTime": 1650622302544,
+                "corporationId": "bwa3wajigF0WH0",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "budgetId": "ID_3D$8ov23ECg",
+                "budgetVersion": 3
             }
         ]
     }

@@ -566,7 +566,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byAp
     "data": null
 }
 ```
-当某个单据中有引用的数据被物理删除时（数据库中不存在），可以通过[更新单据](/docs/open-api/flows/update-form)清理脏数据：
+当某个单据中有引用的数据被物理删除时（数据库中不存在），可以通过 [更新单据](/docs/open-api/flows/update-form) 清理脏数据：
 ```json
 {
     "errorCode": 400,

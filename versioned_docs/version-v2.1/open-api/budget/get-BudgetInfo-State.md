@@ -25,41 +25,48 @@ url="/api/openapi/v2/budgets/$`budgetId`/async"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$u6wbqiMW0Yqo00/async?accessToken=KS4btJTf3o5o00' \
---header 'content-type: application/json' \
---header 'Accept: application/json'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$ID_3D$8ov23ECg/async?accessToken=ID_3Eo3_NB0Se0:bwa3wajigF0WH0'
 ```
 
 ## 成功响应
 ```json
 {
     "value": {
-        "status": "DONE",           //预算执行状态，DONE：完成；PROCESSING：计算中；ERROR：上次执行错误
-        "errorMessage": null,       //错误消息
-        "budgetInfo": {             //状态不是错误时返回预算包信息（预算包信息，同“获取预算包详细信息”接口）
-            "id": "u6wbqiMW0Yqo00", //预算ID
-            "version": 1,           //预算版本
-            "active": true,         //是否激活，true：发布，false：草稿
-            "createTime": 1597314328513,
-            "updateTime": 1597994882124,
-            "name": "预算2020",     //预算包名称
-            "nameSpell": "YUSUAN2020",  
-            "corporationId": "zKIbl2WX4I8I00",  //企业ID
-            "period": {               //预算年度
-                "annual": "2020",     //控制年度
-                "period": "MONTH",    //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
-                "startTime": 1577857343984,  //非周期控制开始时间
-                "endTime": 1609393343984     //非周期控制结束时间
+        "status": "DONE",              //预算执行状态，DONE：完成；PROCESSING：计算中；ERROR：上次执行错误
+        "errorMessage": null,          //错误消息
+        "budgetInfo": {                //状态不是错误时返回预算包信息（预算包信息，同“获取预算包详细信息”接口）
+            "pipeline": 1,
+            "grayver": "9.25.0.0:A",
+            "id": "ID_3D$8ov23ECg",    //预算ID
+            "version": 3,              //预算版本
+            "active": false,           //是否激活，true：发布，false：草稿
+            "createTime": 1650359969300,
+            "updateTime": 1650795420877,
+            "name": "测试预算-1",       //预算包名称
+            "nameSpell": "CESHIYUSUAN-1",
+            "corporationId": "bwa3wajigF0WH0",  //企业ID
+            "sourceCorporationId": null,
+            "dataCorporationId": null,
+            "period": {                //预算年度
+                "annual": "2022",      //控制年度
+                "period": "SEASON",    //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
+                "startTime": 1641028769360,  //非周期控制开始时间
+                "endTime": 1672478369360     //非周期控制结束时间
             },
             "tree": null,
-            "delete": false,          //预算是否删除
+            "delete": false,           //预算是否删除
             "extendMoneys": null,
-            "dimensionIds": {         //预算内部的全部维度值
-                "feeTypeId": "FEE_TYPE" 
+            "legalEntityIds": [],
+            "budgetCurrency": null,
+            "dimensionIds": {          //预算内部的全部维度值
+                "项目": "PROJECT",
+                "submitterId": "STAFF",
+                "E_system_post": "PROJECT",
+                "E_system_rank": "PROJECT"
             },
-            "isEdit": false,          //预算包编制状态
-            "isCustom": false,        //预算周期是否是自定义
-            "isRollCalc": false       //预算是否是滚动预算
+            "isCustom": false,         //预算周期是否是自定义
+            "isRollCalc": false,       //预算是否是滚动预算
+            "isEdit": false            //预算包编制状态
         }
     }
 }

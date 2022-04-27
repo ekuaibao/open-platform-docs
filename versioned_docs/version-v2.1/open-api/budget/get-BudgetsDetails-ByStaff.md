@@ -30,11 +30,11 @@ url="/api/openapi/v2/budgets/$`budgetId`/staff/$`staffId`"
 
 ## CURL
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/$ID_3o_V3Um0XZ0/staff/$Urf3lsFgBp00gw:AvT3lntT8zzpWw?accessToken=ID_3rg$H9i0dTM:Urf3lsFgBp00gw' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/$ID_3D$8ov23ECg/staff/$bwa3wajigF0WH0:ID_3lokDfb1p5w?accessToken=ID_3Eo3_NBaMe0:bwa3wajigF0WH0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "nodeIds":[
-        "1634112670000","1635907908830002","1635907908830001"
+        "20220419","20220422-1","20220422-1-1","test001","abc123"
     ]
 }'
 ```
@@ -43,9 +43,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 ```json
 {
     "items": [
-        "1634112670000",
-        "1635907908830002",
-        "1635907908830001"
+        "20220419",
+        "20220422-1",
+        "20220422-1-1"
     ]
 }
 ```
