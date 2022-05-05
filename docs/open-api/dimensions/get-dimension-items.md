@@ -10,7 +10,8 @@ url="/api/openapi/v1/dimensions/items"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.136</b></a> -> 🆕 新增了支持按档案类别ID（<b>dimensionId</b>）参数过滤数据。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 新增了 <b>startDate</b> 和 <b>endDate</b> 参数，根据 <b>更新时间</b> 过滤列表数据，并且返回值中增加 <b>createTime</b> 和 <b>updateTime</b> 参数。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.136</b></a> -> 🆕 新增了支持按 <b>dimensionId</b>（档案类别ID）参数过滤数据。<br/>
   </div>
 </details>
 

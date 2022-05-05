@@ -8,9 +8,10 @@ url="/api/openapi/v1.1/staffs/$`staffId`/customFields"
 />
 
 <details>
-  <summary>v1.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🆕 新增 “<b>type</b>” 类型参数，支持 ”<b>id</b>“ 或 ”<b>code</b>“ 传参。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增 “<b>type</b>” 类型参数，支持 ”<b>id</b>“ 或 ”<b>code</b>“ 传参。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.149</b></a> -> 🆕 新增了本接口。<br/>
   </div>
 </details>
 

@@ -7,6 +7,13 @@ method="GET"
 url="/api/openapi/v1/departments"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.0</b></a> -> 🐞 新增了 <b>startDate</b> 和 <b>endDate</b> 参数，根据 <b>更新时间</b> 过滤列表数据，并且返回值中增加 <b>createTime</b> 和 <b>updateTime</b> 参数。<br/>
+  </div>
+</details>
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
