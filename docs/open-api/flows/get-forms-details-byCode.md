@@ -4,8 +4,15 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1/flowDetails/byCode"
+url="/api/openapi/v1.1/flowDetails/byCode"
 />
+
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0</b></a> -> 🆕 接口升级 <b>v1.1</b> 版本，报销单类型返回数据中新增了费用明细关联的申请单ID（<b>expenseLink</b>）参数。
+  </div>
+</details>
 
 :::caution
 - 单据状态为【**已删除**】的单据无法被查询到，并报错“单据已删除“。
@@ -24,7 +31,7 @@ url="/api/openapi/v1/flowDetails/byCode"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetails/byCode?code=S21000002&accessToken=ID_3uTOGXa04Vw:PCx3rwm3aA00qM'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDetails/byCode?code=S21000002&accessToken=ID_3uTOGXa04Vw:PCx3rwm3aA00qM'
 ```
 
 ## 成功响应
@@ -86,7 +93,21 @@ import TabItem from '@theme/TabItem';
                                 }
                             ]
                         },
-                        "consumptionReasons": ""          //消费原因
+                        "consumptionReasons": "",          //消费原因
+                        "linkDetailEntities": [            //报销单关联申请事项数据
+                            {
+                                "amount": {
+                                    "standard": "0",       //报销金额
+                                    "standardUnit": "元",
+                                    "standardScale": 2,
+                                    "standardSymbol": "¥",
+                                    "standardNumCode": "156",
+                                    "standardStrCode": "CNY"
+                                },
+                            "linkDetailEntityId": "ID_3zE5G_00Mw0",
+                            "expenseLink": "ID_3zE5G_00rw0" //申请单ID
+                            }
+                        ]
                     },
                     "specificationId": "djg8LshfUkfM00:office:expense:f284154aee2445c230a436cc44798ada2becf250",    //费用类型模版ID
                     "feeType": {

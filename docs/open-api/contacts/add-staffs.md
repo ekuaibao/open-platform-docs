@@ -8,6 +8,14 @@ method="POST"
 url="/api/openapi/v1/staffs"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.140</b></a> -> 🆕 新增了支持自定义字段保存。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.133</b></a> -> 🆕 新增了控制发送邮件标识参数。<br/>
+  </div>
+</details>
+
 :::caution
 - 当新增员工的 **手机号**/**邮箱** 与一个已停用的员工相同，那么系统将启用已停用的员工并更新其员工信息，而不会创建一个新员工。
 - 使用此接口新增的员工，您将 **无法在易快报界面上维护其通讯录**，只能通过接口更新信息和删除。

@@ -8,12 +8,12 @@ url="/api/openapi/v1.1/cityGroup/detail/delete"
 />
 
 <details>
-  <summary>v1.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🐞 新增了 “<b>staffIds</b>”（员工ID）与 “<b>roleIds</b>”（角色ID）列表不能同时为空的校验。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 新增了 “<b>staffIds</b>”（员工ID）与 “<b>roleIds</b>”（角色ID）列表不能同时为空的校验。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.135</b></a> -> 🆕 新增了本接口。<br/>
   </div>
 </details>
-
 
 ## Query Parameters
 

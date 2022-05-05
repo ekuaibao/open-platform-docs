@@ -7,6 +7,10 @@ method="POST"
 url="/api/openapi/v1/paymentResults"
 />
 
+:::caution
+- 单据到达“**出纳支付**”节点并且处于“**支付中（PROCESSING）**”状态时可以通过此接口提交支付结果。
+:::
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |

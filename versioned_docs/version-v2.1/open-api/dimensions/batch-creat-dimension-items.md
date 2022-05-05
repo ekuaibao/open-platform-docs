@@ -1,4 +1,4 @@
-# 批量新建自定义档案项
+# 批量新增自定义档案项
 
 import Control from "@theme/Control";
 
@@ -8,9 +8,10 @@ url="/api/openapi/v1.1/dimensions/items/batch"
 />
 
 <details>
-  <summary>v1.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🐞 新增了当“<b>fullVisible</b>“ = ”<b>false</b>“时，对 ”<b>staffs</b>“、”<b>roles</b>“、”<b>departments</b>“三个参数的必填及有效性校验。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 新增了当“<b>fullVisible</b>“ = ”<b>false</b>“时，对 ”<b>staffs</b>“、”<b>roles</b>“、”<b>departments</b>“三个参数的必填及有效性校验。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.125</b></a> -> 🆕 新增了本接口。<br/>
   </div>
 </details>
 

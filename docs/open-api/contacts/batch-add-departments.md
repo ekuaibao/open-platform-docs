@@ -7,6 +7,13 @@ method="POST"
 url="/api/openapi/v1/departments/batch/create"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.125</b></a> -> 🆕 新增了本接口。
+  </div>
+</details>
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |

@@ -7,6 +7,13 @@ method="GET"
 url="/api/openapi/v1/dimensions/items/withVisibility"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.136</b></a> -> 🆕 新增了支持按档案类别ID（<b>dimensionId</b>）参数过滤数据。<br/>
+  </div>
+</details>
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
@@ -40,7 +47,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
                 "staffs": null,       //员工白名单
                 "roles": null,        //角色白名单
                 "departments": null,  //部门白名单
-                "departmentsIncludeChildren": true
+                "departmentsIncludeChildren": true  //子部门是否可见
             }
         },
         {
@@ -57,7 +64,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
                 ],
                 "roles": [],          //角色白名单
                 "departments": [],    //部门白名单
-                "departmentsIncludeChildren": true
+                "departmentsIncludeChildren": true  //子部门是否可见
             }
         }
     ]

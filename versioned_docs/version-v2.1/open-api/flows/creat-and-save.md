@@ -9,15 +9,16 @@ url="/api/openapi/v2.1/flow/data"
 />
 
 <details>
-  <summary>v2.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🆕 新增了只允许用“<b>单据模板</b>”、“<b>费用类型模板</b>”最新的模板ID创建单据的校验。<br/>
-    - 🐞 修复了费用类型必填字段传 <b>""</b> 可通过校验的BUG，共16种数据类型。<br/>
-    - 🐞 修复了申请单开启借款金额字段并配置了“<b>系统计算</b>”时，计算结果小数位超过2位的BUG。<br/>
-    - 🐞 修复了费用类型里的必填字段类型是“<b>自定义档案</b>”时，传 <b>""</b> 可通过校验的BUG，增加了非空校验。<br/>
-    - 🐞 修复了部门类型字段设置取值规则为“<b>使用字段依赖性</b>”，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
-    - 🐞 修复了字段配置计算规则为“<b>从关联申请单中取值</b>”，“<b>关联申请</b>”字段为非必填但未传值时，无法通过校验的BUG。<br/>
-    - 🐞 修复了”<b>离职人员</b>“可以成功创建单据的问题。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增了只允许用“<b>单据模板</b>”、“<b>费用类型模板</b>”最新的模板ID创建单据的校验。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了费用类型必填字段传 <b>""</b> 可通过校验的BUG，共16种数据类型。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了申请单开启借款金额字段并配置了“<b>系统计算</b>”时，计算结果小数位超过2位的BUG。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了费用类型里的必填字段类型是“<b>自定义档案</b>”时，传 <b>""</b> 可通过校验的BUG，增加了非空校验。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了部门类型字段设置取值规则为“<b>使用字段依赖性</b>”，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了字段配置计算规则为“<b>从关联申请单中取值</b>”，“<b>关联申请</b>”字段为非必填但未传值时，无法通过校验的BUG。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了”<b>离职人员</b>“可以成功创建单据的问题。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.130</b></a> -> 🆕 新增了支持 <b>直接提审</b> 能力。<br/>
   </div>
 </details>
 

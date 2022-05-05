@@ -8,9 +8,10 @@ url="/api/openapi/v1.1/property"
 />
 
 <details>
-  <summary>v1.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🐞 新增对 “<b>type</b>”（全局字段类型）的参数校验，非备注类型时，报错 ”<b>type参数不合法</b>“。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 新增对 “<b>type</b>”（全局字段类型）的参数校验，非备注类型时，报错 ”<b>type参数不合法</b>“。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.131</b></a> -> 🆕 新增了本接口。<br/>
   </div>
 </details>
 

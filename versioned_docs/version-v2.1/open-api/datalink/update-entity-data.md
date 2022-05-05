@@ -8,6 +8,13 @@ method="POST"
 url="/api/openapi/v2/datalink/add"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.138</b></a> -> 🆕 新增了各类型字段值传参示例。<br/>
+  </div>
+</details>
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
@@ -48,18 +55,26 @@ url="/api/openapi/v2/datalink/add"
 - 若需要关联其他业务对象、自定义档案等，传其对应 `id` 即可。
 :::
 
-## 各类型字段值示例
+## 各类型字段值传参示例
 ```text
 - 文本 - "数据1"
+
 - 日期 - "1528276414283"
+
 - 日期范围 - "1528276414283-1528276414283"
+
 - 数字 - "1.2234"
+
 - 金额 - "12.35"
+
 - 开关 - true
+
 - 附件（转义后的json格式字符串，多个附件时用 ";" 分隔）:
   "{\"key\": \"openapib9e51730-f778-4b81-b108-d6ca27d44ad9-登录密码.txt\", \"fileId\": \"zEIb-kGNMsoc00\", \"fileName\": \"登录密码.txt\"}"
+
 - 人员(多选)：多个人员时用","分隔
   "Urf3lsFgBp00gw:Msy3lYjbQ103KM,Urf3lsFgBp00gw:mRI3oQU9lg02q0,Urf3lsFgBp00gw:Fmd3oQU9lg00q0"
+
 - 业务对象(多选)：多个业务对象用","分隔  
   "ID_3Cy8NYL4rnM,ID_3Cy8NYL4BnM,ID_3Cy8NYL4wnM"
 ```

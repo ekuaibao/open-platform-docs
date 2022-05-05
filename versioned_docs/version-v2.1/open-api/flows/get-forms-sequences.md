@@ -7,6 +7,13 @@ method="GET"
 url="/api/openapi/v1/docSequences"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.128</b></a> -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
+  </div>
+</details>
+
 :::caution
 - 此接口只能获取单据状态为 `REJECTED` 已驳回、`PAYING` 待支付、`PROCESSING` 支付中、`PAID` 已支付的单据（包含已删除的单据：进入”出纳支付“节点后再驳回删除的单据）。
 :::

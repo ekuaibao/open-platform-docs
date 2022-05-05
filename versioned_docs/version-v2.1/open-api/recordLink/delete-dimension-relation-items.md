@@ -8,13 +8,14 @@ url="/api/openapi/v2.1/recordLink/del/$`id`"
 />
 
 <details>
-  <summary>v2.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🆕 新增 “<b>type</b>” 类型参数，支持 ”<b>id</b>“ 或 ”<b>code</b>“ 传参。<br/>
-    - 🐞 档案关系类型共六种，全都做参数校验，若传入已删除参数则报错。<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● <b>未激活/已移除</b> 员工，不能进行任何档案关系数据操作。<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● body参数里传多个值时，校验参数任意一个不存在则报错。<br/>
-    - 🐞 无效果的删除返回信息提示。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增 “<b>type</b>” 类型参数，支持 ”<b>id</b>“ 或 ”<b>code</b>“ 传参。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 档案关系类型共六种，全都做参数校验，若传入已删除参数则报错。<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● <b>未激活/已移除</b> 员工，不能进行任何档案关系数据操作。<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● body参数里传多个值时，校验参数任意一个不存在则报错。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 无效果的删除返回信息提示。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.132</b></a> -> 🆕 新增了支持两种维度取交集删除。<br/>
   </div>
 </details>
 
