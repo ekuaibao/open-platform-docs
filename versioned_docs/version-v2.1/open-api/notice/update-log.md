@@ -87,19 +87,19 @@ timeline: true
 
 `2022-03-24`
 
-- 🆕 新增 [新增角色](/docs/open-api/corporation/create-roledefs)、[更新角色](/docs/open-api/corporation/update-roledefs) 接口 `v1` 版本
+- 🆕 新增 [新增角色](/docs/open-api/corporation/create-roledefs)、[更新角色](/docs/open-api/corporation/update-roledefs) 接口。
 - 🚀 新增 [获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation)、[获取企业下档案项数据](/docs/open-api/recordLink/query-all-relation-items) 接口 `v2.1` 版本
-  - 优化报错输出。
+  - 优化了报错输出。
 - 🚀 新增 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items)、[删除某档案关系下的档案项数据](/docs/open-api/recordLink/delete-dimension-relation-items)、[更新某档案关系下的档案项数据](/docs/open-api/recordLink/update-dimension-relation-items)、[编辑某档案关系下的档案项数据](/docs/open-api/recordLink/edit-dimension-relation-items) 接口 `v2.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
   - **更新某档案关系下的档案项数据** 接口，更新 `editFlag`（更新标志）默认值，从 `cover` 改为 `increment`。
 - 🚀 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
   - 新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**paying（待支付）**】状态更新单据。
-  - 修复了单据模板中配置【**必须关联申请单**】，**关联申请** 字段设置【**允许关联多个申请事项**】后，提示"关联申请单不存在，请补充申请单ID！"的BUG。
+  - 修复了单据模板中配置【**必须关联申请单**】，**关联申请** 字段设置【**允许关联多个申请事项**】后，提示 **"关联申请单不存在，请补充申请单ID！"** 的BUG。
 - 🆕 新增 [审批动作（审批日志中action字段）](/docs/open-api/flows/forms-state#审批动作审批日志中-action-字段)参数列表。
-- 🐞 更新 [查询角色下员工信息](/docs/open-api/corporation/get-roles)、[更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口 `v1` 版本参数描述
+- 🐞 更新 [查询角色下员工信息](/docs/open-api/corporation/get-roles)、[更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
   - `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。
-  - **更新角色下员工信息** 接口兼容老版本：更新「普通角色」时 `path` 参数非必填。
+  - **更新角色下员工信息** 接口兼容老版本：更新「**普通角色**」时 `path` 参数非必填。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本
   - 新增了只允许用 **单据模板**、**费用类型模板** 最新的模板ID创建单据的校验。
   - 修复了费用类型必填字段传 `""` 可通过校验的BUG，共16种数据类型。
@@ -111,14 +111,18 @@ timeline: true
 `2022-03-14`
 
 - 🆕 新增 [获取所有开户网点信息](/docs/open-api/pay/get-all-branch) 接口。
-- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-account)、[更新收款账户](/docs/open-api/pay/edit-accounts) 接口参数描述
-  - `branch`（开户网点）参数支持通过系统配置设置 “**非必填**”。
-- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 参数描述
-  - 无法对发票附件进行验真查重或者OCR处理。
-- 🐞 更新 [获取预算节点和子节点详细信息](/docs/open-api/budget/get-BudgetsDetails-ByPage) 接口描述。
-- 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 参数描述。
-- 🐞 更新 [批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 报错信息。
-- 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 注意事项。
+- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-account)、[更新收款账户](/docs/open-api/pay/edit-accounts) 接口
+  - 更新了 `branch`（开户网点）参数描述，支持通过系统配置设置 “**非必填**”。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
+  - 更新了参数描述 **“无法对发票附件进行验真查重或者OCR处理”**。
+- 🐞 更新 [获取预算节点和子节点详细信息](/docs/open-api/budget/get-BudgetsDetails-ByPage) 接口
+  - 更新了接口描述。
+- 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
+  - 更新了接口参数描述。
+- 🐞 更新 [批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口
+  - 更新了接口失败响应信息。
+- 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口
+  - 更新了接口注意事项。
 
 ---
 ## 1.2.1
@@ -126,10 +130,12 @@ timeline: true
 `2022-03-08`
 
 - 🚀 新增 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口 `v1.1` 版本
-  - 员工自定义字段值的保存做增量更新（v1版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。
-- 🐞 更新 **员工** 相关接口响应字段注释。
-- 🐞 更新 [更新单据](/docs/open-api/flows/update-form)、[单据审批](/docs/open-api/flows/flow-approval) 接口注意事项。  
-- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-account)、[更新收款账户](/docs/open-api/pay/edit-accounts) 接口参数描述，与系统界面上的字段保持一致。
+  - 员工自定义字段值的保存做增量更新（`v1` 版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。
+- 🐞 更新 【**员工**】 增删改查接口响应字段注释。
+- 🐞 更新 [更新单据](/docs/open-api/flows/update-form)、[单据审批](/docs/open-api/flows/flow-approval) 接口
+  - 更新了接口注意事项。  
+- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-account)、[更新收款账户](/docs/open-api/pay/edit-accounts) 接口
+  - 更新了参数描述，与系统界面上的字段保持一致。
 
 ---  
 ## 1.2.0

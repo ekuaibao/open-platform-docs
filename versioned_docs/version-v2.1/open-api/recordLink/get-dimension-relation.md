@@ -8,9 +8,9 @@ url="/api/openapi/v2.1/recordLink/getRoleGroups"
 />
 
 <details>
-  <summary>v2.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🐞 优化报错输出。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.3.0</b></a> -> 🚀 接口升级 <b>v2.1</b> 版本，优化了报错输出。<br/>
   </div>
 </details>
 

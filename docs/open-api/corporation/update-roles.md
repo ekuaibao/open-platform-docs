@@ -10,6 +10,8 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.3.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 <b>staffBy</b>（员工参数格式）新增了支持 <b>code</b>、<b>cellphone</b>、<b>email</b> 3种参数类型。<br/>
+                                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 兼容老版本，更新「<b>普通角色</b>」时 <b>path</b> 参数非必填。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了接口 <b>HTTP 500</b> 报错问题，增加了 <b>path</b>、<b>staffs</b> 不允许传 <b>null</b> 的校验。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.1  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增了 <b>pathType</b> 参数支持 <b>id</b> 类型。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.137</b></a> -> 🆕 新增了 <b>pathType</b>（路径类型）参数。<br/>
