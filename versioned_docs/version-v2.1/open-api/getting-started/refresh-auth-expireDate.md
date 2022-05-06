@@ -8,6 +8,13 @@ method="POST"
 url="/api/openapi/v2/auth/refreshToken/expireDate"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.162</b></a> -> 🆕 新增了本接口。<br/>
+  </div>
+</details>
+
 :::caution
 - 如果您企业的【**开放接口(新)**】功能授权不足指定有效时间，则刷新后有效期为实际剩余授权时间。
 :::

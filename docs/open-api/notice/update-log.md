@@ -17,7 +17,7 @@ timeline: true
 `2022-05-10`
 
 - 🆕 【**所有接口**】增加了 **更新日志** 描述，方便查看接口上线版本和更新内容。
-- 🆕 新增 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口 `v1.1` 版本 
+- 🚀 新增 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口 `v1.1` 版本 
   - 报销单类型返回数据中新增了费用明细关联的申请单ID（`expenseLink`）参数。
 
 
@@ -43,9 +43,9 @@ timeline: true
 
 `2022-04-15`
 
-- 🆕 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口 `v1.1` 版本
+- 🚀 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
-- 🆕 新增 [员工离职交接](/docs/open-api/contacts/relay-staff) 接口 `v2.1` 版本
+- 🚀 新增 [员工离职交接](/docs/open-api/contacts/relay-staff) 接口 `v2.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
 - 🐞 更新 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
@@ -87,13 +87,13 @@ timeline: true
 
 `2022-03-24`
 
-- 🆕 新增 [新增角色](/docs/open-api/corporation/create-roledefs)、[更新角色](/docs/open-api/corporation/update-roledefs)接口 `v1` 版本
-- 🆕 新增 [获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation)、[获取企业下档案项数据](/docs/open-api/recordLink/query-all-relation-items) 接口 `v2.1` 版本
+- 🆕 新增 [新增角色](/docs/open-api/corporation/create-roledefs)、[更新角色](/docs/open-api/corporation/update-roledefs) 接口 `v1` 版本
+- 🚀 新增 [获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation)、[获取企业下档案项数据](/docs/open-api/recordLink/query-all-relation-items) 接口 `v2.1` 版本
   - 优化报错输出。
-- 🆕 新增 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items)、[删除某档案关系下的档案项数据](/docs/open-api/recordLink/delete-dimension-relation-items)、[更新某档案关系下的档案项数据](/docs/open-api/recordLink/update-dimension-relation-items)、[编辑某档案关系下的档案项数据](/docs/open-api/recordLink/edit-dimension-relation-items) 接口 `v2.1` 版本
+- 🚀 新增 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items)、[删除某档案关系下的档案项数据](/docs/open-api/recordLink/delete-dimension-relation-items)、[更新某档案关系下的档案项数据](/docs/open-api/recordLink/update-dimension-relation-items)、[编辑某档案关系下的档案项数据](/docs/open-api/recordLink/edit-dimension-relation-items) 接口 `v2.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
   - **更新某档案关系下的档案项数据** 接口，更新 `editFlag`（更新标志）默认值，从 `cover` 改为 `increment`。
-- 🆕 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
+- 🚀 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
   - 新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**paying（待支付）**】状态更新单据。
   - 修复了单据模板中配置【**必须关联申请单**】，**关联申请** 字段设置【**允许关联多个申请事项**】后，提示"关联申请单不存在，请补充申请单ID！"的BUG。
 - 🆕 新增 [审批动作（审批日志中action字段）](/docs/open-api/flows/forms-state#审批动作审批日志中-action-字段)参数列表。
@@ -125,7 +125,7 @@ timeline: true
 
 `2022-03-08`
 
-- 🆕 新增 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口 `v1.1` 版本
+- 🚀 新增 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口 `v1.1` 版本
   - 员工自定义字段值的保存做增量更新（v1版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。
 - 🐞 更新 **员工** 相关接口响应字段注释。
 - 🐞 更新 [更新单据](/docs/open-api/flows/update-form)、[单据审批](/docs/open-api/flows/flow-approval) 接口注意事项。  
@@ -139,15 +139,15 @@ timeline: true
 - 🆕 新增 [根据员工ID批量获取单据详情](/docs/open-api/flows/get-forms-details-byStaff) 接口。
 - 🆕 新增 [获取申请事项](/docs/open-api/flows/get-requisition-all) 接口。
 - 🆕 新增 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口。
-- 🆕 新增 [更新自建应用](/docs/open-api/datalink/edit-platform) 接口 `v2.1` 版本
+- 🚀 新增 [更新自建应用](/docs/open-api/datalink/edit-platform) 接口 `v2.1` 版本
   - 新增了支持更新应用名称，对 `adminIds`（管理员ID）做参数真实性校验。
-- 🆕 新增 [获取单据审批状态](/docs/open-api/flows/get-approve-state) 接口 `v1.1` 版本
-  - 新增了能获取到已删除的单据，并且显示“已删除”状态。
-- 🆕 新增 [删除城市组详情](/docs/open-api/city/delete-city-group-details) 接口 `v1.1` 版本
+- 🚀 新增 [获取单据审批状态](/docs/open-api/flows/get-approve-state) 接口 `v1.1` 版本
+  - 新增了能获取到已删除的单据，并且显示 “**已删除**” 状态。
+- 🚀 新增 [删除城市组详情](/docs/open-api/city/delete-city-group-details) 接口 `v1.1` 版本
   - 新增了 `staffIds`（员工ID）与 `roleIds`（角色ID）列表不能同时为空的校验。
-- 🆕 新增 [查询员工待办数量](/docs/open-api/corporation/get-staff-backLog) 接口 `v1.1` 版本
+- 🚀 新增 [查询员工待办数量](/docs/open-api/corporation/get-staff-backLog) 接口 `v1.1` 版本
   - 新增了响应数据中返回详细待办类型及数量。
-- 🆕 新增 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items) 接口 `v2.1` 版本
+- 🚀 新增 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items) 接口 `v2.1` 版本
   - 修复了传其他类型自定义档案项ID（非档案关系配置的类型）可以创建成功数据的问题。
 - 🐞 更新 [获取单据附件](/docs/open-api/flows/get-flows-attachment) 接口
   - 修复了无法把费用明细里的系统无法识别的充当发票的图片当附件处理返回的问题。
@@ -164,16 +164,16 @@ timeline: true
 `2022-02-18`
 
 - 🐞 更新 [批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node) 接口
-  - 优化接口校验逻辑，报错时会准确描述具体出错的节点和参数。
+  - 优化了接口校验逻辑，报错时会准确描述具体出错的节点和参数。
 - 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
-  - `pathType` 参数支持 `id` 类型。
+  - 新增了 `pathType` 参数支持 `id` 类型。
 
 ---
 ## 1.1.0
 
 `2022-02-11`
 
-- 🆕 新增 [新建自定义档案项](/docs/open-api/dimensions/creat-dimension-items) 、[批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口 `v1.1` 版本
+- 🚀 新增 [新建自定义档案项](/docs/open-api/dimensions/creat-dimension-items) 、[批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口 `v1.1` 版本
   - 新增了当 `fullVisible` = `false` 时，对 `staffs` 、`roles` 、`departments` 三个参数的必填及有效性校验。
 - 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments)、[获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items)、[获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
   - 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。

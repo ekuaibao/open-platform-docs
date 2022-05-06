@@ -8,6 +8,14 @@ method="PUT"
 url="/api/openapi/v2/budgets/$`budgetId`/batchUpdate"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.1</b></a> -> 🐞 优化了接口校验逻辑，报错时会准确描述具体出错的节点和参数。<br/>
+  </div>
+</details>
+
+
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |

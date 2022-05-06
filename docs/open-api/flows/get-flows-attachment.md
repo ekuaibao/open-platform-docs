@@ -8,6 +8,13 @@ method="POST"
 url="/api/openapi/v1/flowDetails/attachment"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.0</b></a> -> 🐞 修复了无法把费用明细里的系统无法识别的充当发票的图片当附件处理返回的问题。<br/>
+  </div>
+</details>
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |

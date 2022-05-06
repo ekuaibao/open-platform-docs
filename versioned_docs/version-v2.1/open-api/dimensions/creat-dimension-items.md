@@ -8,9 +8,9 @@ url="/api/openapi/v1.1/dimensions/items"
 />
 
 <details>
-  <summary>v1.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🐞 新增了当“<b>fullVisible</b>“ = ”<b>false</b>“时，对 ”<b>staffs</b>“、”<b>roles</b>“、”<b>departments</b>“三个参数的必填及有效性校验。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.0</b></a> -> 🚀 接口升级 <b>v1.1</b> 版本，新增了当 <b>fullVisible</b> = <b>false</b> 时，对 <b>staffs</b>、<b>roles</b>、<b>departments</b> 三个参数的必填及有效性校验。<br/>
   </div>
 </details>
 

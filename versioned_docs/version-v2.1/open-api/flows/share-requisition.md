@@ -7,6 +7,13 @@ method="PUT"
 url="/api/openapi/v1/requisition/$`flowId`/share/[`staffIds`]"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.146</b></a> -> 🆕 新增了本接口。<br/>
+  </div>
+</details>
+
 :::caution
 - 被共享人员是 **全量更新**，不是增量更新，再次调用接口时不包含上一次的被共享人员的话，上一次的人员会被取消共享状态。
 :::

@@ -8,6 +8,20 @@ url="/api/openapi/v2.1/recordLink/add/$`id`"
 />
 
 <details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x</b></a> -> 🆕 新增了只允许用“<b>单据模板</b>”、“<b>费用类型模板</b>”最新的模板ID创建单据的校验。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x</b></a> -> 🐞 修复了费用类型必填字段传 <b>""</b> 可通过校验的BUG，共16种数据类型。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.x</b></a> -> 🐞 修复了申请单开启借款金额字段并配置了“<b>系统计算</b>”时，计算结果小数位超过2位的BUG。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.x</b></a> -> 🐞 修复了”<b>离职人员</b>“可以成功创建单据的问题。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.0</b></a> -> 🐞 修复了部门类型字段设置取值规则为 <b>使用字段依赖性</b>，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
+                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 修复了字段配置计算规则为 <b>从关联申请单中取值</b>，<b>关联申请</b> 字段为非必填但未传值时，无法通过校验的BUG。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.0</b></a> -> 🚀 接口升级 <b>v2.1</b> 版本，修复了传其他类型自定义档案项ID（非档案关系配置的类型）可以创建成功数据的问题。<br/>
+  </div>
+</details>
+
+
+<details>
   <summary>v2.1版本特性</summary>
   <div>
     - 🆕 新增 “<b>type</b>” 类型参数，支持 ”<b>id</b>“ 或 ”<b>code</b>“ 传参。<br/>

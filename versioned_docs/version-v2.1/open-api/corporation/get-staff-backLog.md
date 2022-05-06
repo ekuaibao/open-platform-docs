@@ -9,9 +9,9 @@ url="/api/openapi/v1.1/staffs/getBacklogCount/$`type`"
 />
 
 <details>
-  <summary>v1.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🐞 新增了响应数据中返回详细待办类型及数量。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.0</b></a> -> 🚀 接口升级 <b>v1.1</b> 版本，新增了响应数据中返回详细待办类型及数量。<br/>
   </div>
 </details>
 

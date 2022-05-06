@@ -8,9 +8,10 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 />
 
 <details>
-  <summary>v1.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🆕 新增 “<b>pageType</b>” = “<b>frontPage</b>” 类型，进入易快报“<b>首页</b>”。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🚀 接口升级 <b>v1.1</b> 版本，新增了 <b>pageType</b> = <b>frontPage</b> 类型，进入易快报 <b>首页</b>。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.130</b></a> -> 🆕 新增了 <b>approvalUrl</b>（审批完成后跳转地址）参数。<br/>
   </div>
 </details>
 
