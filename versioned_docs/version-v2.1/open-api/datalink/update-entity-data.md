@@ -11,6 +11,7 @@ url="/api/openapi/v2/datalink/add"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 <b> 金额 </b>类型字段支持多币种。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.138</b></a> -> 🆕 新增了各类型字段值传参示例。<br/>
   </div>
 </details>
@@ -66,6 +67,8 @@ url="/api/openapi/v2/datalink/add"
 - 数字 - "1.2234"
 
 - 金额 - "12.35"
+
+- 金额(多币种) - "USD12.35"   //拼接结构：货币字母代码+金额值
 
 - 开关 - true
 
@@ -312,6 +315,18 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 }
 ```
 
+当**金额**类型字段填写的**货币字母代码**对应的币种信息在**档案设置-币种设置**中未配置时，报错如下：
+```json
+{
+    "value": {
+        "errorMsg": [
+            "第1条[单价]数据格式不正确,请填写正确币种"
+        ],
+        "dataLinkIds": {},
+        "success": false
+    }
+}
+```
 
 
 

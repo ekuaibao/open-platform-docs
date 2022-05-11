@@ -11,6 +11,8 @@ url="/api/openapi/v2.1/flow/data"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了单据配置 <b>必须关联申请单</b> 且 <b>关联申请</b> 字段已传值时，报 <b>关联申请单不存在，请补充申请单ID！</b> 的BUG。<br/>
+                                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 修复了业务对象类型字段 <b>联动赋值</b> 规则不生效的BUG。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.3.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增了只允许用 <b>单据模板</b>、<b>费用类型模板</b> 最新的模板ID创建单据的校验。<br/>
                                                                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 修复了费用类型必填字段传 <b>""</b> 可通过校验的BUG，共16种数据类型。<br/>
                                                                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 修复了申请单开启借款金额字段并配置了 <b>系统计算</b> 时，计算结果小数位超过2位的BUG。<br/>

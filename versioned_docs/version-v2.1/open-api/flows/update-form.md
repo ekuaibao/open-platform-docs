@@ -11,6 +11,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0</b></a> -> 🐞 修复了 <b>待支付</b> 状态更新单据后，审批日志中无记录生成的BUG。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.0</b></a> -> 🆕 新增了 <b>editorId</b>（单据修改人）参数，修复了部分情况下无法更新单据的BUG<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ● <b>editorId</b> 传参时，审批日志记录为 <b>单据修改人</b> 修改了单据。<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ● <b>editorId</b> 不传时，审批日志默认记录为 <b>节点审批人（会签节点任选其一）</b> 修改了单据。<br/>
