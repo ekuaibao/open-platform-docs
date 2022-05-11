@@ -66,6 +66,17 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachmen
 }
 ```
 
+**Body Parameters** 参数 `file` 写成 `files` 时，报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "空指针异常",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
 文件名不合法时，将会返回：
 ```json
 {
