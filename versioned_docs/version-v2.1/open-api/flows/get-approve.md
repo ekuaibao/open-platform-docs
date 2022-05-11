@@ -7,6 +7,13 @@ method="GET"
 url="/api/openapi/v1/docs/byApproverId/$`approverId`"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.1</b></a> -> 🐞 优化了接口 <b>HTTP 500</b> 错误，更新接口 <b>失败响应</b> 示例。<br/>
+  </div>
+</details>
+
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |

@@ -31,16 +31,18 @@ timeline: true
 
 `2022-04-28`
 
-- 🐞 更新 [通讯录接口-常见问题总结](/docs/open-api/contacts/question-answer) 
-  - 新增了问题“调用【修改员工信息】时，接口响应成功，但员工信息未修改成功？”。
-- 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments)、[批量新增部门](/docs/open-api/contacts/batch-add-departments)、[新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口 **失败响应** 示例。
-- 🐞 更新 [获取统一开票方](/docs/open-api/datalink-extend/get-entity-unify-corporation)、[获取统一开票信息](/docs/open-api/datalink-extend/get-entity-unify-invoice) 接口描述。
+- 🐞 更新 [通讯录同步-常见问题总结](/docs/open-api/contacts/question-answer) 文档
+  - 新增了问题总结“调用【修改员工信息】时，接口响应成功，但员工信息未修改成功？”。
+- 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments)、[批量新增部门](/docs/open-api/contacts/batch-add-departments)、[新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口
+  - 更新了接口 **失败响应** 示例。
+- 🐞 更新 [获取统一开票方](/docs/open-api/datalink-extend/get-entity-unify-corporation)、[获取统一开票信息](/docs/open-api/datalink-extend/get-entity-unify-invoice) 接口
+  - 更新了接口描述。
 - 🐞 更新 [外部服务回调审批接口](/docs/open-api/outbound-message/outbound-callback) 接口
-  - 新增了报错场景注意事项。
+  - 新增了 **失败响应** 报错场景注意事项。
 - 🐞 更新 [根据单据ID集合获取单据列表](/docs/open-api/flows/get-forms-sequences-ids)、[根据员工ID获取待审批单据](/docs/open-api/flows/get-approve) 接口
   - 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。
-- 🐞 更新【**预算**】模块下全部接口
-  - 优化了 **CURL** 传参示例，增加参数注释。
+- 🐞 更新【**预算**】模块
+  - 优化了模块下全部接口 **CURL** 传参示例，增加参数注释。
   - [批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node) 接口，按情景拆分 **CURL** 传参示例。
 
 ---
@@ -56,21 +58,21 @@ timeline: true
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
 - 🐞 更新 [获取企业下档案项数据](/docs/open-api/recordLink/query-all-relation-items) 接口 `v2.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
-- 🐞 更新 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items)、[删除某档案关系下的档案项数据](/docs/open-api/recordLink/delete-dimension-relation-items)、[更新某档案关系下的档案项数据](/docs/open-api/recordLink/update-dimension-relation-items)、[编辑某档案关系下的档案项数据](/docs/open-api/recordLink/edit-dimension-relation-items) 接口 `v2.1` 版本，更新校验逻辑
-  - 档案关系类型共六种，全都做参数校验，若传入已删除参数则报错：
-    - **未激活/已移除** 员工，不能进行任何档案关系数据操作；
+- 🐞 更新 [新增某档案关系下的档案项数据](/docs/open-api/recordLink/creat-dimension-relation-items)、[删除某档案关系下的档案项数据](/docs/open-api/recordLink/delete-dimension-relation-items)、[更新某档案关系下的档案项数据](/docs/open-api/recordLink/update-dimension-relation-items)、[编辑某档案关系下的档案项数据](/docs/open-api/recordLink/edit-dimension-relation-items) 接口 `v2.1` 版本
+  - 更新了校验逻辑，档案关系类型共六种，全都做参数校验，若传入已删除参数则报错：
+    - **未激活/已移除** 员工，不能进行任何档案关系数据操作。
     - body参数里传多个值时，校验参数任意一个不存在则报错。
   - 无效果的增删改返回信息提示。
-- 🐞 更新 [根据单据ID集合获取单据列表](/docs/open-api/flows/get-forms-sequences-ids) 接口 `v1` 版本
+- 🐞 更新 [根据单据ID集合获取单据列表](/docs/open-api/flows/get-forms-sequences-ids) 接口 
   - 优化了单据费用明细和发票过多导致的 **HTTP 504** 超时问题。
-- 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口 `v2` 版本
+- 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口
   - 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。
   - 新增了 **业务对象（多选）** 传参示例。
 - 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
   - 新增了 `editorId`（单据修改人）参数，修复部分情况下无法更新单据的BUG。
     - `editorId` 传参时，审批日志记录为"**单据修改人**"修改了单据。
     - `editorId` 不传时，审批日志默认记录为"**节点审批人（会签节点任选其一）**"修改了单据。
-- 🐞 更新 [批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口 `v2.1` 版本
+- 🐞 更新 [批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口
   - 新增了系统预置档案额外参数描述。
 - 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口
   - 更新了接口注意事项。
@@ -82,10 +84,14 @@ timeline: true
 
 `2022-03-31`
 
-- 🐞 更新 开通 [通讯录接口](/docs/open-api/contacts/info) 功能描述。 
-- 🐞 更新 [重定向URL](/docs/open-api/getting-started/question-answer#问题三) 参数描述。
-- 🐞 更新 [获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments)、[获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取已激活员工列表](/docs/open-api/corporation/get-all-auth-staffs) 接口失败响应。
-- 🐞 优化【**委托授权**】模块下全部接口名称。
+- 🐞 更新 [开始使用通讯录同步](/docs/open-api/contacts/info) 文档
+  - 更新了开通【**通讯录同步**】功能描述。
+- 🐞 更新 [开始使用-常见问题总结](/docs/open-api/getting-started/question-answer#问题三) 文档
+  - 更新了【**重定向URL**】功能描述。
+- 🐞 更新 [获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments)、[获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取已激活员工列表](/docs/open-api/corporation/get-all-auth-staffs) 接口
+  - 更新了接口 **失败响应** 示例。
+- 🐞 优化【**委托授权**】模块
+  - 更新了模块下全部接口名称。
 
 ---
 ## 1.3.0

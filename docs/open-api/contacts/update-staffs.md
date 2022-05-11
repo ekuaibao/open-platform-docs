@@ -10,7 +10,7 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.x.x</b></a> -> 🆕 新增 <b>type</b> 类型参数，支持 <b>id</b> 或 <b>code</b> 传参。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.0</b></a> -> 🆕 新增 <b>type</b> 类型参数，支持 <b>id</b> 或 <b>code</b> 传参。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.1</b></a> -> 🚀 接口升级 <b>v1.1</b> 版本，员工自定义字段值的保存做增量更新（<b>v1</b> 版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。<br/>
   </div>
 </details>

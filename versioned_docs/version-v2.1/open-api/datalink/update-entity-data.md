@@ -12,6 +12,7 @@ url="/api/openapi/v2/datalink/add"
   <summary><b>更新日志</b></summary>
   <div>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 <b> 金额 </b>类型字段支持多币种，使用此功能需要开通【<b>币种设置</b>】功能。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增了 <b>editFlag</b>（更新标志）参数，默认为 <b>cover</b>（全量覆盖）可配置为 <b>increment</b>（增量更新）。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.138</b></a> -> 🆕 新增了各类型字段值传参示例。<br/>
   </div>
 </details>

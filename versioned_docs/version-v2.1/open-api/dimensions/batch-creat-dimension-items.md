@@ -107,7 +107,57 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
 <TabItem value="code" label="code">
 
 ```json
-
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimensions/items/batch?accessToken=ID_3FGF$rF1IR0:bwa3wajigF0WH0&type=code' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "dimensionId":"DA001",                                    //档案类别CODE
+    "itemListRequest":[
+        {
+            "name":"项目测试1",                               //档案项名称
+            "code":"XMCS001",                                 //档案项编码
+            "visibility":{                                    //可见范围
+                "fullVisible":false,                          //是否全部可见
+                "staffs": ["1001"],                               //员工CODE（工号）
+                "roles": ["CODE2"],                               //角色CODE
+                "departments": ["BM001"]                          //部门CODE
+            },
+            "parentId":"",                                        //父节点CODE
+            //-----------------------------------------
+            //系统预置档案额外参数如下，不用时不传即可：     
+            "form":{
+                //“项目”档案额外参数
+                "projectBase": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //项目所在地
+                "projectInspector": "9458",                                     //项目总监，值为员工ID或CODE，与 “type” 参数保持一致
+                "projectManager": "9458",                                       //项目经理，值为员工ID或CODE，与 “type” 参数保持一致
+                "projectType": "CODE1",                                         //项目类型，值为【项目类型预置】档案实例ID或CODE，与 “type” 参数保持一致
+                //-----------------------------------------
+                //”职级预置“档案额外参数
+                "rankType":"CODE1",                                             //职级类型，值为【职级类型预置】档案实例ID或CODE，与 “type” 参数保持一致
+                //-----------------------------------------
+                //”岗位预置“档案额外参数
+                "postType":"CODE1",                                             //岗位类型，值为【岗位类型预置】档案实例ID或CODE，与 “type” 参数保持一致
+                //-----------------------------------------
+                //”法人实体“档案额外参数
+                "taxpayerType":"GeneralTaxpayer"                                //纳税人类型，GeneralTaxpayer:一般纳税人；SmallScaleTaxpayer：小规模纳税人
+             },
+            //”法人实体“档案额外参数
+            "payAccountIds":["bwa3wajigF0WH0:BANK"],          //可用支付账户
+            //”法人实体“，“成本中心预置”档案额外参数
+            "departments":["BM001"]                           //所属部门ID或CODE，与 “type” 参数保持一致
+        },
+        {
+            "name":"项目测试2",                               //档案项名称
+            "code":"XMCS002",                                 //档案项编码
+            "visibility":{                                    //可见范围
+                "fullVisible":false,                          //是否全部可见
+                "staffs": ["1001"],                           //员工CODE（工号）
+                "roles": ["CODE2"],                           //角色CODE
+                "departments": ["BM001"]                      //部门CODE
+            },
+            "parentId":"CODE12"                               //父节点CODE
+        }
+    ]
+}'
 ```
 </TabItem>
 </Tabs>

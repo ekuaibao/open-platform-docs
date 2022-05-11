@@ -41,7 +41,7 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 
 
 ## objectId发票类型
-可通过[根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice)接口得到的 `invoiceType` 参数确定
+可通过 [根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice) 接口得到的 `invoiceType` 参数确定
 
 | objectId | 发票类型 | 
 | :--- | :--- |

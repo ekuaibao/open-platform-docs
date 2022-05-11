@@ -152,7 +152,7 @@ code 204
 ```json
 {
     "errorCode": 412,
-    "errorMessage": "编码为[档编码]的档案项找不到上级节点",
+    "errorMessage": "上级档案[ID_3yrzERx0Qf01]不存在",
     "errorDetails": null,
     "code": null,
     "data": null
