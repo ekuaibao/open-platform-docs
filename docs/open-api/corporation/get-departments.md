@@ -26,7 +26,7 @@ url="/api/openapi/v1/departments"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departments?accessToken=RCIbwHcnF0kg00&start=0&count=200&startDate=2022-01-21 15:29:18&endDate=' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departments?accessToken=RCIbwHcnF0kg00&start=0&count=20&startDate=2022-01-21 15:29:18&endDate=' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
