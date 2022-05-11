@@ -20,7 +20,7 @@ url="/api/openapi/v1/staffs/authorized"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token	     | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **start**       | Number  | 分页查询的起始序号 | 必填 | - | 分页的起始值是从 `0` 开始， 而不是传统的 `1` 开始 |
-| **count**       | Number  | 查询数据条数      | 必填 | - | 最大不能超过 `1000` |
+| **count**       | Number  | 查询数据条数      | 必填 | - | 最大不能超过 `100` |
 
 :::tip
 - 系统上获取已激活的员工人数页面如下：

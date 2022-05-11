@@ -23,7 +23,7 @@ url="/api/openapi/v2/payeeInfos"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token   | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **start**       | Number  | 开始查询索引  | 必填  | - | 从 `0` 开始 |
-| **count**       | Number  | 每页总数     | 必填  | - | 最大不能超过 `1000` |
+| **count**       | Number  | 每页总数     | 必填  | - | 最大不能超过 `100` |
 | **names**       | String  | 账户名称     | 非必填 | - | 多个值用英文逗号 `,` 进行分割 |
 | **ids**         | String  | 账户ID      | 非必填 | - | 多个值用英文逗号 `,` 进行分割 |
 | **cardNos**     | String  | 银行卡号     | 非必填 | - | 多个值用英文逗号 `,` 进行分割 |

@@ -11,7 +11,7 @@ url="/api/openapi/v2/datalink/add"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 <b> 金额 </b>类型字段支持多币种。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 <b> 金额 </b>类型字段支持多币种。PS：需要开通【<b>币种设置</b>】功能。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.138</b></a> -> 🆕 新增了各类型字段值传参示例。<br/>
   </div>
 </details>
@@ -68,7 +68,7 @@ url="/api/openapi/v2/datalink/add"
 
 - 金额 - "12.35"
 
-- 金额(多币种) - "USD12.35"   //拼接结构：货币字母代码+金额值
+- 金额(多币种) - "USD12.35"   //拼接结构：货币字母代码+金额值 ，需要开通【币种设置】功能
 
 - 开关 - true
 

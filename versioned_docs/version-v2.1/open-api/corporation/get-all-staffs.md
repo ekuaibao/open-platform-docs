@@ -21,7 +21,7 @@ url="/api/openapi/v1/staffs"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token	        | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 | **start**       | Number  | 分页查询的起始序号    | 必填  | - | 分页的起始值是从 `0` 开始， 而不是传统的 `1` 开始 |
-| **count**       | Number  | 查询数据条数         | 必填  | - | 最大不能超过 `1000` |
+| **count**       | Number  | 查询数据条数         | 必填  | - | 最大不能超过 `100` |
 | **active**      | Boolean | 查询条件：员工是否启用 | 非必填 | false | `true` : 启用 &emsp; `false` : 停用 |
 | **startDate**   | String  | 查询开始时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 | **endDate**     | String  | 查询结束时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
