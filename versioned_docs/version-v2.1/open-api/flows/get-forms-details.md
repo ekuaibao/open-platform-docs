@@ -10,7 +10,7 @@ url="/api/openapi/v1.1/flowDetails"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0</b></a> -> 🆕 接口升级 <b>v1.1</b> 版本，报销单类型返回数据中新增了费用明细关联的申请单ID（<b>expenseLink</b>）参数。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0</b></a> -> 🚀 接口升级 <b>v1.1</b> 版本，报销单类型返回数据中新增了费用明细关联的申请单ID（<b>expenseLink</b>）参数。
   </div>
 </details>
 

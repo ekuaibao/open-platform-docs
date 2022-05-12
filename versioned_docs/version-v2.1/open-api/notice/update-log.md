@@ -14,7 +14,7 @@ timeline: true
 ---
 ## 1.5.0
 
-`2022-05-10`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5-2`
+`2022-05-12`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5-2`
 
 - 🆕 【**所有接口**】增加了 **更新日志** 描述，方便查看接口上线版本和更新内容。
 - 🚀 新增 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口 `v1.1` 版本 
@@ -25,6 +25,15 @@ timeline: true
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
 - 🐞 更新 [批量新增自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
+- 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口
+  - 新增了 **金额** 类型字段支持多币种，使用此功能需要开通【**币种设置**】功能。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本
+  - 修复了单据配置 **必须关联申请单** 且 **关联申请** 字段已传值时，报 **关联申请单不存在，请补充申请单ID！** 的BUG。
+  - 修复了业务对象类型字段 **联动赋值** 规则不生效的BUG。
+- 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口
+  - 修复了被委托人审批会签节点的单据（ `pageType` = `form` ）时，无审批按钮的BUG。
+- 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
+  - 修复了 **待支付** 状态更新单据后，审批日志中无记录生成的BUG。
 
 ---
 ## 1.4.1
@@ -48,7 +57,7 @@ timeline: true
 ---
 ## 1.4.0
 
-`2022-04-15`
+`2022-04-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5-1`
 
 - 🚀 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
@@ -96,7 +105,7 @@ timeline: true
 ---
 ## 1.3.0
 
-`2022-03-24`
+`2022-03-24`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.4`
 
 - 🆕 新增 [新增角色](/docs/open-api/corporation/create-roledefs)、[更新角色](/docs/open-api/corporation/update-roledefs) 接口。
 - 🚀 新增 [获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation)、[获取企业下档案项数据](/docs/open-api/recordLink/query-all-relation-items) 接口 `v2.1` 版本
@@ -151,7 +160,7 @@ timeline: true
 ---  
 ## 1.2.0
 
-`2022-03-08`
+`2022-03-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.3`
 
 - 🆕 新增 [根据员工ID批量获取单据详情](/docs/open-api/flows/get-forms-details-byStaff) 接口。
 - 🆕 新增 [获取申请事项](/docs/open-api/flows/get-requisition-all) 接口。
@@ -188,7 +197,7 @@ timeline: true
 ---
 ## 1.1.0
 
-`2022-02-11`
+`2022-02-11`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.2`
 
 - 🚀 新增 [新建自定义档案项](/docs/open-api/dimensions/creat-dimension-items) 、[批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口 `v1.1` 版本
   - 新增了当 `fullVisible` = `false` 时，对 `staffs` 、`roles` 、`departments` 三个参数的必填及有效性校验。
@@ -260,7 +269,7 @@ timeline: true
 ---
 ## 1.0.0
 
-`2022-01-19`
+`2022-01-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
 
 - 🆕 【**文档多版本**】上线。
 - 🆕 新增 [根据模板组名称获取模板组信息](/docs/open-api/forms/get-specifications-byName) 接口。
