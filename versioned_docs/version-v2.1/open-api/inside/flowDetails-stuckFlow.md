@@ -10,9 +10,9 @@ url="/api/openapi/v1.1/flowDetails/stuckFlow"
 />
 
 <details>
-  <summary>v1.1版本特性</summary>
+  <summary><b>更新日志</b></summary>
   <div>
-    - 🆕 新增 “<b>isForce</b>” 字段，表示是否重复触发，默认为 “<b>false</b>”。当该值为 “<b>true</b>” 时，会将 “<b>flow_flow</b>” 表的 “<b>version</b>”（版本号）修改为 1，再修改为 999。
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.0</b></a> -> 🆕 新增 <b>isForce</b> 字段，表示是否重复触发，默认为 <b>false</b>。当该值为 <b>true</b> 时，会将 <b>flow_flow</b> 表的 <b>version</b>（版本号）修改为 <b>1</b>，再修改为 <b>999</b>。<br/>
   </div>
 </details>
 

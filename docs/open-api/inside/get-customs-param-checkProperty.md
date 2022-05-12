@@ -5,7 +5,7 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1.1/property/checkProperty"
+url="/api/openapi/v1/property/checkProperty"
 />
 
 ## Query Parameters
@@ -28,7 +28,7 @@ url="/api/openapi/v1.1/property/checkProperty"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/property/checkProperty?accessToken=ID_3xonnTw94KM:djg8LshfUkfM00&type=flow.FlowForm&propertyName=标题'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/property/checkProperty?accessToken=ID_3xonnTw94KM:djg8LshfUkfM00&type=flow.FlowForm&propertyName=标题'
 ```
 
 ## 成功响应

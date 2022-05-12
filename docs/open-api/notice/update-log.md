@@ -27,21 +27,25 @@ timeline: true
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
 - 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口
   - 新增了 **金额** 类型字段支持多币种，使用此功能需要开通【**币种设置**】功能。
-- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本
-  - 修复了单据配置 **必须关联申请单** 且 **关联申请** 字段已传值时，报 **关联申请单不存在，请补充申请单ID！** 的BUG。
-  - 修复了业务对象类型字段 **联动赋值** 规则不生效的BUG。
 - 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口
   - 修复了被委托人审批会签节点的单据（ `pageType` = `form` ）时，无审批按钮的BUG。
+- 🐞 更新 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口
+  - 修复了登录邮箱中包含大写字母，更新后无法登录的BUG。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本
+  - 修复了单据配置 **必须关联申请单** 且 **关联申请** 字段已传值时，报 “**关联申请单不存在，请补充申请单ID！**” 的BUG。
+  - 修复了业务对象类型字段 **联动赋值** 规则不生效的BUG。
 - 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
   - 修复了 **待支付** 状态更新单据后，审批日志中无记录生成的BUG。
+- 🐞 更新 [企业通讯录-常见问题总结](/docs/open-api/corporation/question-answer#问题三) 文档
+  - 新增了问题总结**“如何在系统上获取角色的CODE？”**。
 
 ---
 ## 1.4.1
 
-`2022-04-28`
+`2022-04-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5-2`
 
 - 🐞 更新 [通讯录同步-常见问题总结](/docs/open-api/contacts/question-answer) 文档
-  - 新增了问题总结“调用【修改员工信息】时，接口响应成功，但员工信息未修改成功？”。
+  - 新增了问题总结**“调用【修改员工信息】时，接口响应成功，但员工信息未修改成功？”**。
 - 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments)、[批量新增部门](/docs/open-api/contacts/batch-add-departments)、[新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口
   - 更新了接口 **失败响应** 示例。
 - 🐞 更新 [获取统一开票方](/docs/open-api/datalink-extend/get-entity-unify-corporation)、[获取统一开票信息](/docs/open-api/datalink-extend/get-entity-unify-invoice) 接口
@@ -79,8 +83,8 @@ timeline: true
   - 新增了 **业务对象（多选）** 传参示例。
 - 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
   - 新增了 `editorId`（单据修改人）参数，修复部分情况下无法更新单据的BUG。
-    - `editorId` 传参时，审批日志记录为"**单据修改人**"修改了单据。
-    - `editorId` 不传时，审批日志默认记录为"**节点审批人（会签节点任选其一）**"修改了单据。
+    - `editorId` 传参时，审批日志记录为 **单据修改人** 修改了单据。
+    - `editorId` 不传时，审批日志默认记录为 **节点审批人（会签节点任选其一）** 修改了单据。
 - 🐞 更新 [批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口
   - 新增了系统预置档案额外参数描述。
 - 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口
@@ -91,7 +95,7 @@ timeline: true
 
 ## 1.3.1
 
-`2022-03-31`
+`2022-03-31`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.4`
 
 - 🐞 更新 [开始使用通讯录同步](/docs/open-api/contacts/info) 文档
   - 更新了开通【**通讯录同步**】功能描述。
@@ -128,7 +132,7 @@ timeline: true
 ---
 ## 1.2.2
 
-`2022-03-14`
+`2022-03-14`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.3`
 
 - 🆕 新增 [获取所有开户网点信息](/docs/open-api/pay/get-all-branch) 接口。
 - 🐞 更新 [新增收款账户](/docs/open-api/pay/new-account)、[更新收款账户](/docs/open-api/pay/edit-accounts) 接口
@@ -147,7 +151,7 @@ timeline: true
 ---
 ## 1.2.1
 
-`2022-03-08`
+`2022-03-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.3`
 
 - 🚀 新增 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口 `v1.1` 版本
   - 员工自定义字段值的保存做增量更新（`v1` 版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。
@@ -187,7 +191,7 @@ timeline: true
 ---
 ## 1.1.1
 
-`2022-02-18`
+`2022-02-18`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.2`
 
 - 🐞 更新 [批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node) 接口
   - 优化了接口校验逻辑，报错时会准确描述具体出错的节点和参数。
@@ -210,7 +214,7 @@ timeline: true
 ---
 ## 1.0.5
 
-`2022-02-09`
+`2022-02-09`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
 
 - 🐞 优化【**企业收付款账户**】模块下全部接口文档的描述及排版。
 - 🐞 优化【**预算**】模块下全部接口文档的描述及排版。
@@ -219,7 +223,7 @@ timeline: true
 ---
 ## 1.0.4
 
-`2022-01-28`
+`2022-01-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
 
 - 🐞 优化【**自建应用**】模块下全部接口文档的描述及排版。
 - 🐞 优化【**扩展中心**】模块下全部接口文档的描述及排版。
@@ -232,7 +236,7 @@ timeline: true
 ---
 ## 1.0.3
 
-`2022-01-27`
+`2022-01-27`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
 
 - 🚀 新增 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 接口 `v1.1` 版本
   - 新增了对 `type`（全局字段类型）的参数校验，非备注类型时，报错 **”type参数不合法“**。
@@ -250,7 +254,7 @@ timeline: true
 ---
 ## 1.0.2
 
-`2022-01-25`
+`2022-01-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
 
 - 🐞 更新 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 接口
   - 新增了 `type` 参数所对应全局字段的位置图片。
@@ -259,7 +263,7 @@ timeline: true
 ---
 ## 1.0.1
 
-`2022-01-24`
+`2022-01-24`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
 
 - 🐞 更新 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 接口
   - 更新了 `type` 参数描述。
@@ -333,7 +337,7 @@ timeline: true
 
 - 🆕 新增 [根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口。
 - 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
-  - 新增了 `active`（是否停用）参数过滤收款账户信息。
+  - 新增了 `active`（查询条件：收款账户是否启用）参数过滤收款账户信息。
 
 ---
 ## 0.7.159

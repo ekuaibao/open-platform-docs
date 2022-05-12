@@ -15,7 +15,7 @@ A：建议调用[更新角色下员工信息](/docs/open-api/corporation/update-
 
 ---
 ## 问题三
-### Q: 如何获取角色的CODE？
+### Q: 如何在系统上获取角色的CODE？
 
 A：【档案设置】 - 【档案关系】 - 【分组（来自角色）】下获取。
 ![image](images/获取角色CODE.png)
