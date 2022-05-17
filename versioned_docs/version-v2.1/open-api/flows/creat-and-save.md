@@ -424,11 +424,22 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 }
 ```
 
-`submitterId` 字段所对应员工离职时，返回以下报错信息：
+`submitterId` 字段所对应员工离职时，报错如下：
 ```json
 {
     "errorCode": 400,
     "errorMessage": "提交人参数不合法，请检查该员工是否已离职",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+**业务对象**类型字段配置的赋值规则中所选择的单据字段，在当前模板中不存在时，报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "单据数据包含不支持的字段：u_Z文本。",
     "errorDetails": null,
     "code": null,
     "data": null

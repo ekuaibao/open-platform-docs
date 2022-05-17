@@ -10,8 +10,8 @@ A: 三种方式如下：
 
 - 第二种方式：[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 得到单据ID
 
-- 第三种方式：[获取单据列表(包含已删除单据)](/docs/open-api/flows/get-forms-sequences) / [获取指定状态单据列表(包含已删除单据)](/docs/open-api/flows/get-forms-sequences-byState)
+- 第三种方式：[根据员工ID批量获取单据详情](/docs/open-api/flows/get-forms-details-byStaff)
 
-![image](images/从单据列表获取单据ID.png)
+![image](images/从单据详情获取单据ID.png)
 
 ---
