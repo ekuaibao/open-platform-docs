@@ -42,8 +42,8 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
 | **cellphone**                 | String  | 手机号           | 非必填  | - | 如果手机号为国外手机号，那么应为 : "(区号)手机号" |
 | **email**                     | String  | 邮箱	            | 非必填  | - | 可以不传，但是不可以传 `""` |
 | **note**                      | String  | 备注	            | 非必填  | - | 备注 |
-| **defaultDepartment**         | String  | 默认部门ID或CODE  | 非必填  | - | 默认部门ID或CODE |
-| **departments**               | Array   | 所在部门ID或CODE,至少1个	| 非必填  | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将 `departments` 的第一个元素视为默认部门 |
+| **defaultDepartment**         | String  | 默认部门ID或CODE  | 非必填  | - | 所传默认部门必须在 `departments` 里 |
+| **departments**               | Array   | 所在部门ID或CODE,至少1个	| 非必填  | - | 与`defaultDepartment`参数 须同时存在，都传或都不传 |
 | **modifyAccountPhone**        | Boolean | 是否修改登录手机号	| 非必填  | false | `true` : 修改登录手机号，修改的手机号为 `cellphone`，**不可修改成已注册企业的手机号**<br/>`false` : 不修改登录手机号 |
 | **modifyAccountEmail**        | Boolean | 是否修改邮箱	    | 非必填  | false | `true` : 修改邮箱 &emsp; `false` : 不修改邮箱|
 | **staffCustomForm**           | Object  | 自定义字段	    | 非必填  | - | 员工自定义字段 |
