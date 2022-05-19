@@ -29,14 +29,14 @@ url="/api/openapi/v1/staffs/getOpenUserId"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**userIds**| Array | 企微明文userId | 必填  | - | 企微明文userId数组，**最大数量不能超过 `100`** |
+|**ids**| Array | 企微明文userId | 必填  | - | 企微明文userId数组，**最大数量不能超过 `100`** |
 
 ## CURL
 ```shell
 curl --location --request POST 'https://wx2.ekuaibao.com/api/openapi/v1/staffs/getOpenUserId?accessToken=ID_3GjSy1OEUwM:dAY3noVGjy4s7w' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "userIds":["id1","id2"]
+    "ids":["id1","id2"]
 }'
 ```
 
