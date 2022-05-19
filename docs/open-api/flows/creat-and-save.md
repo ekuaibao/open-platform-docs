@@ -435,7 +435,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 }
 ```
 
-**业务对象**类型字段配置的赋值规则中所选择的单据字段，在当前模板中不存在时，报错如下：
+**业务对象** 类型字段配置的赋值规则中所选择的单据字段，在当前模板中不存在时，报错如下：
 ```json
 {
     "errorCode": 412,

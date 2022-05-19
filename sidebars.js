@@ -153,6 +153,7 @@ const sidebars = {
       items: [
         "open-api/flows/introduce",
         "open-api/flows/forms-state",
+        "open-api/flows/get-notes",
         "open-api/flows/get-forms-sequences",
         "open-api/flows/get-forms-sequences-byState",
         "open-api/flows/get-forms-sequences-ids",
@@ -335,6 +336,7 @@ const sidebars = {
       items: [
         "open-api/tools/info",
         "open-api/tools/staffs-clearInfo",
+        "open-api/tools/staffs-getOpenUserId",
         "open-api/tools/question-answer"
       ],
     },
