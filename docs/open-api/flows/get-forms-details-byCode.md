@@ -60,7 +60,7 @@ import TabItem from '@theme/TabItem';
             "title": "33",           //单据标题
             "details": [             //消费明细
                 {
-                    "feeTypeId": "djg8LshfUkfM00:office",      //费用类型ID 通过【获取费用类型】此接口可获得，通过【根据ID获取费用类型】查询类型详情
+                    "feeTypeId": "djg8LshfUkfM00:office",      //费用类型ID，通过【获取费用类型列表】接口可获得，通过【根据ID或CODE获取费用类型模板信息】查询类型详情
                     "feeTypeForm": {    //费用类型数据明细
                         "amount": {     //费用金额
                             "standard": "33",         //本位币
@@ -73,7 +73,7 @@ import TabItem from '@theme/TabItem';
                         "feeDate": 1592236800000,    //消费时间(毫秒级时间戳)
                         "invoice": "1",              //发票(非必返回字段)
                         "detailId": "g8Ub7AO5So4k00",//明细ID
-                        "attachments": [],           //附件 可用附件信息的数据通过调用【获取附件URL】接口来获取附件文件下载链接
+                        "attachments": [],           //附件，可用附件信息的数据通过调用【附件下载】接口来获取附件文件下载链接
                         "invoiceForm": {             //发票信息(非必返回字段)
                             "type":"exist",          //发票类型
                             "invoices": [            //发票关联信息
@@ -133,7 +133,7 @@ import TabItem from '@theme/TabItem';
             "printCount": "0",
             "printState": "noPrint",
             "submitDate": 1592289361103,     //提交时间
-            "description": "",               //说明
+            "description": "",               //描述
             "expenseDate": 1592236800000,    //报销时间
             "submitterId": "djg8LshfUkfM00:Dwk7NVkt7o1E00", //提交人ID
             "expenseMoney": {                //报销金额
@@ -166,7 +166,7 @@ import TabItem from '@theme/TabItem';
             "voucherCreateTime": 0
         },
         "ownerId": "djg8LshfUkfM00:Dwk7NVkt7o1E00", //流程发起人ID
-        "ownerDefaultDepartment": "djg8LshfUkfM00", // 流程发起人默认部门ID
+        "ownerDefaultDepartment": "djg8LshfUkfM00", //流程发起人默认部门ID
         "state": "rejected",    //流程状态 pending-提交中 approving-审批中 rejected-已驳回 paying-待支付 PROCESSING-支付中 paid-已支付 archived-归档 sending-寄送中 receiving-收单中
         "flowType": "freeflow", //流程类型
         "formType": "expense",  //单据类型 expense-报销单 loan-借款单 payment-付款单 requisition-申请单 custom-通用审批单 receipt-收款单
@@ -206,7 +206,7 @@ import TabItem from '@theme/TabItem';
                 "attachments": []           //附件
             }
         ],
-        "actions": {                        //操作人可执行到动作  `key`是操作人的员工ID；`value`是动作名称
+        "actions": {                        //操作人可执行的动作  key是操作人的员工ID；value是动作名称
             "djg8LshfUkfM00:Dwk7NVkt7o1E00": [
                 "freeflow.delete",
                 "freeflow.edit",

@@ -161,6 +161,7 @@ const sidebars = {
         "open-api/flows/get-forms-details-byCode",
         "open-api/flows/get-forms-details-byStaff",
         "open-api/flows/get-approve",
+        "open-api/flows/get-approve-new",
         "open-api/flows/get-forms-details-byId",
         "open-api/flows/get-loanInfo-ByFlowId",
         "open-api/flows/creat-and-save",

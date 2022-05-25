@@ -1,4 +1,10 @@
-# 根据员工ID获取待审批单据
+---
+slug: get-approve
+title: 根据员工ID获取待审批单据(废弃)
+authors: [冯继成]
+---
+
+# ~~根据员工ID获取待审批单据~~
 
 import Control from "@theme/Control";
 
@@ -10,9 +16,15 @@ url="/api/openapi/v1/docs/byApproverId/$`approverId`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> ❌ 接口废弃。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.1</b></a> -> 🐞 优化了接口 <b>HTTP 500</b> 错误，更新接口 <b>失败响应</b> 示例。<br/>
   </div>
 </details>
+
+:::danger
+- 不推荐使用，接口废弃，不再更新维护。
+- 推荐使用【[根据员工ID获取待审批单据(新)](/docs/open-api/flows/get-approve-new)】接口。
+:::
 
 ## Path Parameters
 

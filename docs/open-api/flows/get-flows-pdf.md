@@ -8,6 +8,17 @@ method="GET"
 url="/api/openapi/v1/flowDetails/getFlowsPdf/[`ids`]"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 优化了接口 <b>HTTP 500</b> 错误，获取的单据超过 <b>32M</b>，输出报错信息。<br/>
+  </div>
+</details>
+
+:::caution
+- 要获取的单据（包含发票附件）**不能超过32M**，否则报错见“**失败响应**”。
+:::
+
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
@@ -29,3 +40,13 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
 一个PDF文件，文件名为单据ID，例如下图：
 
 ![单据pdf流](images/单据pdf流返回.png)
+
+## 失败响应
+当获取的单据（包含发票附件）超过32M时，报错如下：
+```text
+单据内容过大，请减少单据生成条数据，生成pdf文件出错:[ID_3GSEp0zevUw]
+```
+
+### 获取单据失败如何处理？
+
+![单据pdf流失败处理](images/获取单据PDF文件流失败处理.png)

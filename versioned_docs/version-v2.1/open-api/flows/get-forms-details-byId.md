@@ -27,6 +27,17 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
 ```
 
 ## 成功响应
+:::tip
+`state`（任务状态）参数介绍：
+- **APPROVING**：待审批、待支付。
+- **PROCESSING**：支付中。
+- **PROCESSED**：处理完毕（审批完成、已支付）。
+- **CANCELED**：待办被取消。常见场景如下：
+  - 单据被撤回。
+  - A待办转交给B，A的待办被取消。
+  - 会签节点一人审批通过配置，一人审批完成，其余会签待办被取消。
+:::
+
 ```json
 {
     "count":5,                           //待办已办总数量
@@ -44,9 +55,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
             "dataCorporationId":null,
             "ownerId":"bwa3wajigF0WH0:ID_3lokDfb1p5w",  //待办或已办人员ID
             "flowId":"ID_3zE5G_0bRw0",                  //单据ID
-            "logId":-1,                                 //-1：表示待办，非-1：表示已办
+            "logId":-1,                                 //-1：表示待办，需配合 state 使用，非-1：表示已办
             "type":"expense",                           //单据类型
-            "state":"PROCESSING",                       //任务状态，PROCESSING：处理中；PROCESSED：处理完毕
+            "state":"PROCESSING",                       //任务状态，见 TIP 提示。
             "remindEndTime":0,
             "rejectEndTime":0,
             "autoApproveType":"NONE",

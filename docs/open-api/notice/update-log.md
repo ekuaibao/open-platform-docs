@@ -12,6 +12,19 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.6.0
+
+`2022-05-31`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
+
+- 🆕 新增 [根据员工ID获取待审批单据(新)](/docs/open-api/flows/get-approve-new) 接口。
+- ❌ 废弃 [根据员工ID获取待审批单据(废弃)](/docs/open-api/flows/get-approve) 接口。
+- 🐞 更新 [获取单据PDF文件流](/docs/open-api/flows/get-flows-pdf) 接口
+  - 优化了接口 **HTTP 500** 错误，获取的单据超过 **32M**，输出报错信息。
+- 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
+  - 新增了 `state`（任务状态）参数介绍。
+
+
+---
 ## 1.5.1
 
 `2022-05-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
