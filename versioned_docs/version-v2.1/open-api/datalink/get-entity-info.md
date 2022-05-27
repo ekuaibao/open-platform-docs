@@ -59,8 +59,19 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
                     "standardStrCode": "CNY"
                 }
             },
-            "ledgerAmount": null,
-            "ledgerAmountModel": null,
+            "ledgerAmount": {         //台账金额
+                "E_ID_3GYgoz67FLw_测试台账接口_L": "66.00000000"
+            },
+            "ledgerAmountModel": {    //台账金额字段
+                "E_ID_3GYgoz67FLw_测试台账接口_L": {
+                    "standard": "66.00",
+                    "standardUnit": "元",
+                    "standardScale": 2,
+                    "standardSymbol": "¥",
+                    "standardNumCode": "156",
+                    "standardStrCode": "CNY"
+                }
+            },
             "totalCount": 0,           //总数量
             "useCount": 0,             //用户数量
             "entityId": "8c500bdb8c4de2404000",  //业务对象ID

@@ -18,7 +18,7 @@ A：**自建应用ID** 可在易快报【**应用中心**】->【**自建应用*
 
 ### Q：如何获取一个业务对象实例数据的详情？
 
-A：通过[获取业务对象实例信息](/docs/open-api/datalink-extend/get-entity-object)接口获取。
+A：通过 [获取业务对象实例信息](/docs/open-api/datalink/get-entity-object) 接口获取。
 
 ---
 ## 问题三

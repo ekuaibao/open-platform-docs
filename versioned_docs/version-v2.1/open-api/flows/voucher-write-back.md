@@ -5,15 +5,20 @@ import Control from "@theme/Control";
 
 <Control
 method="PUT"
-url="/api/openapi/v2/flow/data/erpVoucher"
+url="/api/openapi/v2.1/flow/data/erpVoucher"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🚀 接口升级 <b>v2.1</b> 版本，新增了业务校验只允许 <b>paid 已支付/审批完成</b>  状态回写单据凭证。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.132</b></a> -> 🐞 修复了回写凭证信息清除凭证号时，凭证状态、生成时间未能正确回写的BUG。<br/>
   </div>
 </details>
+
+:::caution
+- 只允许单据为 **`paid` 已支付/审批完成** 状态回写单据凭证。
+:::
 
 ## Query Parameters
 
@@ -38,7 +43,7 @@ url="/api/openapi/v2/flow/data/erpVoucher"
 
 ## CURL
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data/erpVoucher?accessToken=ID_3xhx4F9YDa0:djg8LshfUkfM00' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/data/erpVoucher?accessToken=ID_3xhx4F9YDa0:djg8LshfUkfM00' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "voucher":[
@@ -59,11 +64,22 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/flow/data
 ```
 
 ## 失败响应
-出现以下信息，请检查单据ID是否存在：
+当 `flowId`（单据ID）错误时，报错如下：
 ```json
 {
     "errorCode": 412,
     "errorMessage": "不存在此单据[yd4bn1Z-YM900]",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+当单据不处于 **`paid` 已支付/审批完成** 状态时报错如下：
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "单据Id:[[ID_3FQR$Yx5LWM]]的单据不是已支付状态，不能回写单据凭证，请检查",
     "errorDetails": null,
     "code": null,
     "data": null

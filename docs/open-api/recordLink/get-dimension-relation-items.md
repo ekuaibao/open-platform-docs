@@ -24,7 +24,7 @@ url="/api/openapi/v2/recordLink/getRecordLinkList/$`id`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **primary** | String  | 查询维度	| 非必填  | sourceType | `sourceType` : 源维度 &emsp; `purposeType` : 目标维度 |
-| **keyword** | String  | 关键字搜索	| 非必填  | -          | 关键字搜索 |
+| **keyword** | String  | 搜索关键字	| 非必填  | -          | 搜索关键字，对应维度下的数据名称 |
 | **start**   | Int     | 查询开始值	| 非必填  | 0          | 从 `0` 开始 |
 | **count**   | Int     | 查询记录数	| 必填    | -          | `0` < `count` ≤ `100` |
 

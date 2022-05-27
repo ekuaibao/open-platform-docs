@@ -30,7 +30,7 @@ url="/api/openapi/v1/docs/byApproverId/$`approverId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **approverId** | String | 员工ID | 必填 | - | 通过[查询员工](/docs/open-api/corporation/get-staff-ids)获取 |
+| **approverId** | String | 员工ID | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 
 #### Query Parameters:
 
@@ -64,7 +64,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byAp
             "owner":{                                   //提交人信息
                 "id":"PCx3rwm3aA00qM:VWf3rvZHCb0ghM",   //员工ID
                 "name":"张国阳",                        //姓名  
-                "departments":[                         //所属部门信息
+                "departments":[                        //所属部门信息
                     {
                         "id":"PCx3rwm3aA00qM",
                         "name":"洪洞大槐树",

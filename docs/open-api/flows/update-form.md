@@ -22,7 +22,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 </details>
 
 :::caution
-- 目前此接口只支持修改 **draft（草稿）、approving（审批中）、paying（待支付）** 状态的单据，并且对应节点要配置 ”**允许审批人修改单据**“。
+- 目前本接口只支持修改 **`draft` 草稿、`approving` 审批中、`paying` 待支付** 状态的单据，并且对应节点要配置 ”**允许审批人修改单据**“。
 :::
 
 ## Path Parameters

@@ -1,10 +1,10 @@
-# 新增收款账户
+# 新增付款账户
 
 import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v2/payeeInfos"
+url="/api/openapi/v4/payerInfos"
 />
 
 ## Query Parameters
@@ -17,52 +17,24 @@ url="/api/openapi/v2/payeeInfos"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **staffId**         | String | 所有者ID    | 非必填 | - | 当 `owner` = `INDIVIDUAL` 时必填；<br/>当 `owner` = `CORPORATION` 时非必填；<br/>可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 |
-| **type**            | String | 账户类型    | 必填 | -| `PUBLIC` : 对公账户<br/>`PERSONAL` : 个人账户 |
+| **sort**            | String | 账号类别    | 非必填 | - |  |
+| **staffId**         | String | 所有者ID    | 非必填 | - |  |
+| **type**            | String | 账户类型    | 非必填 | -| `PUBLIC` : 对公账户 |
 | **name**            | String | 开户名称    | 必填 | - | 开户名称 |
 | **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |
 | **bank**            | String | 银行名称    | 非必填 | - | 银行名称 |
-| **branch**          | String | 开户网点    | 必填 | - | 获取[开户网点](/docs/open-api/pay/get-all-branch)<br/>可通过系统配置改为 ”**非必填**“，见下方**TIP** |
-| **owner**           | String | 所属类型    | 必填 | - | `INDIVIDUAL` : 个人<br/>`CORPORATION` : 企业 |
-| **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
+| **branch**          | String | 开户网点    | 非必填 | - | 获取[开户网点](/docs/open-api/pay/get-all-branch) |
 | **province**        | String | 银行所在省   | 非必填 | - | 银行所在省 |
+| **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
 | **bankLinkNo**      | String | 银联号      | 非必填 | - | **当开户网点与易快报系统不匹配时，<br/>可通过银联号匹配** |
-| **certificateType** | String | 证件类型    | 非必填 | - | 详细信息见下方【[证件类型对照表](/docs/open-api/pay/new-payeeInfo#证件类型对照表)】|
-| **certificateNo**   | String | 证件号码    | 非必填 | - | 证件号码 |
 | **remark**          | String | 备注信息    | 非必填 | - | 备注信息 |
+| **channels**        | Array  | 支付方式    | 必填 | - | 支付方式 |
 | **visibility**                          | Object   | 可见范围       | 非必填 | - | 可见范围对象 |
 | **&emsp; ∟ fullVisible**                | Boolean | 是否全员可见    | 必填 | - | `true` : 全员可见<br/>`false` : 部分可见<br/>部分可见则仅有白名单中可见 |
 | **&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
 | **&emsp; ∟ staffs**                     | Array   | 员工白名单      | 必填 | - | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
 | **&emsp; ∟ departments**                | Array   | 部门白名单      | 必填 | - | 值为[部门ID](/docs/open-api/corporation/get-departments) |
 | **&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属部门是否可见 | 必填 | - | `true` : 可见 &emsp; `false` : 不可见 |
-
-:::tip
-- 当 `branch`（开户网点）不确定且必填时，可填写 ”1“（branch不可为null），并保证 `bankLinkNo`（银联号）正确，系统会根据银联号自动回填开户网点。
-- 当不需要线上支付时，可通过系统配置，关闭 “**开户网点**” 必填。
-
-  ![image](images/允许开户网点为非必填项.png)
-:::
-
-### 证件类型对照表
-
-| 证件类型 | code |
-| :--- | :--- |
-| **居民身份证**                | 01 |
-| **临时身份证**                | 02 |
-| **护照**                     | 03 |
-| **户口簿**                   | 04 |
-| **军人身份证**                | 05 |
-| **武装警察身份证**             | 06 |
-| **港澳台居民往来内地通行证**     | 07 |
-| **外交人员身份证**             | 08 |
-| **外国人居留许可证**            | 09 |
-| **边民出入境通行证**            | 10 |
-| **其它**                     | 11 |
-| **澳居民来往内地通行证(香港)**   | 47 |
-| **港澳居民来往内地通行证(澳门)** | 48 |
-| **湾居民来往大陆通行证**        | 49 |
-| **纳税人识别号(TIN)**         | 54 |
 
 ## CURL
 ```json

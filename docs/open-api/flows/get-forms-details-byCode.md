@@ -16,7 +16,7 @@ url="/api/openapi/v1.1/flowDetails/byCode"
 </details>
 
 :::caution
-- 单据状态为【**已删除**】的单据无法被查询到，并报错“单据已删除“。
+- 单据状态为 **已删除** 的单据无法被查询到，并报错“**单据已删除**“。
 :::
 
 ## Query Parameters
@@ -153,6 +153,8 @@ import TabItem from '@theme/TabItem';
                 "standardNumCode": "156",
                 "standardStrCode": "CNY"
             },
+            "paymentChannel": "OFFLINE",          //支付方式，支付完成的单据才有此字段，详细类型见“获取付款账户”接口
+            "paymentAccountId": "IeMazu3jIksU00", //付款账户ID，支付完成的单据才有此字段
             "specificationId": "O6s8Mmqokkbk00:a444a2bd3c65fd0331a2a7c0c2d1b0d7cd7366b2",   //单据模版ID
             "writtenOffMoney": {             //核销金额
                 "standard": "0.00",

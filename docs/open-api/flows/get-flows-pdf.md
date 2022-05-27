@@ -43,8 +43,14 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
 
 ## 失败响应
 当获取的单据（包含发票附件）超过32M时，报错如下：
-```text
-单据内容过大，请减少单据生成条数据，生成pdf文件出错:[ID_3GSEp0zevUw]
+```json
+{
+    "errorCode": 412,
+    "errorMessage": "单据内容过大，请减少单据生成条数据，生成pdf文件出错:[ID_3GSEp0zevUw]",  
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
 ```
 
 ### 获取单据失败如何处理？

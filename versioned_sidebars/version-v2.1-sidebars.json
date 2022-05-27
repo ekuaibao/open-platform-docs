@@ -185,12 +185,14 @@
       "label": "企业收付款账户",
       "items": [
         "open-api/pay/info",
-        "open-api/pay/get-payment-account",
+        "open-api/pay/get-payerInfos",
+        "open-api/pay/get-payerInfos-search",
         "open-api/pay/get-payeeInfos",
         "open-api/pay/get-all-branch",
-        "open-api/pay/new-account",
-        "open-api/pay/edit-accounts",
-        "open-api/pay/disableOrEnable-account",
+        "open-api/pay/new-payerInfo",
+        "open-api/pay/new-payeeInfo",
+        "open-api/pay/edit-payeeInfo",
+        "open-api/pay/disableOrEnable-payeeInfo",
         "open-api/pay/question-answer"
       ]
     },
@@ -227,7 +229,7 @@
         "open-api/datalink/update-entity-data",
         "open-api/datalink/field-mapping",
         "open-api/datalink/get-entity-info",
-        "open-api/datalink-extend/get-entity-object",
+        "open-api/datalink/get-entity-object",
         "open-api/datalink/get-entity-plan",
         "open-api/datalink/get-tripManager-order",
         "open-api/datalink/get-tripManager-data",
