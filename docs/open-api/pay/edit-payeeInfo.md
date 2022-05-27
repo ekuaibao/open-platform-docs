@@ -33,7 +33,7 @@ url="/api/openapi/v2/payeeInfos/$`id`"
 | **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
 | **province**        | String | 银行所在省   | 非必填 | - | 银行所在省 |
 | **bankLinkNo**      | String | 银联号      | 非必填 | - | **当开户网点与易快报系统不匹配时，<br/>可通过银联号匹配** |
-| **certificateType** | String | 证件类型    | 非必填 | - | 详细信息见下方【[证件类型对照表](/docs/open-api/pay/new-account#证件类型对照表)】 |
+| **certificateType** | String | 证件类型    | 非必填 | - | 详细信息见下方【[证件类型对照表](/docs/open-api/pay/new-payeeInfo#证件类型对照表)】 |
 | **certificateNo**   | String | 证件号码    | 非必填 | - | 证件号码 |
 | **remark**          | String | 备注信息    | 非必填 | - | 备注信息 |
 | **visibility**                          | Object   | 可见范围       | 非必填 | - | 可见范围对象 |

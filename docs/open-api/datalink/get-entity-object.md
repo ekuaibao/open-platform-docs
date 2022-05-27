@@ -87,28 +87,28 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
             },
             "useCount": 0,
             "totalCount": 0,
-            "active": true,                                           //是否停用
-            "entityId": "b41a0b811ce2ef06ac00",                       //业务对象ID
-            "entity":{ //业务对象数据
+            "active": true,                      //是否停用
+            "entityId": "b41a0b811ce2ef06ac00",  //业务对象ID
+            "entity":{                           //业务对象数据
                 "pipeline":1,
                 "grayver":"9.16.0.0:A",
-                "version":14, //版本
-                "active":true, //是否启用
+                "version":14,                //版本
+                "active":true,               //是否启用
                 "createTime":1639108010124,
                 "updateTime":1647835213506,
-                "name":"测试单据", //业务对象数据名称
+                "name":"测试单据",            //业务对象数据名称
                 "nameSpell":"CESHIDANJU",
                 "corporationId":"djg8LshfUkfM00", //企业ID
                 "sourceCorporationId":null,
                 "dataCorporationId":null,
-                "ledgerIds":[   //业务对象台账配置ID
+                "ledgerIds":[                //业务对象台账配置ID
                     "ID_3v7HGBq_dW0"
                 ],
-                "plannedIds":[  //业务对象执行计划配置ID
+                "plannedIds":[               //业务对象执行计划配置ID
                     "ID_3BDK0O2lbe0"
                 ],
                 "parentId":"",
-                "code":"", //编码
+                "code":"",                   //编码
                 "scoped":false,
                 "multiCurrencyFlag":false,
                 "importOverrideStrategy":{
@@ -126,7 +126,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
                 "disableStrategy":"MANUAL_ADMIN",
                 "maxUsageCount":0,
                 "writtenOffField":null,
-                "fields":[ //字段信息
+                "fields":[                       //字段信息
                     {
                         "name":"E_a10dd7f32900de827800_name",
                         "label":"name",
@@ -194,7 +194,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
                 ],
                 "defaultMappingRuleId":"ID_3tvPzlC0WgM", //默认映射规则ID
                 "filterId":null,
-                "id":"a10dd7f32900de827800", //业务对象实例ID
+                "id":"a10dd7f32900de827800",             //业务对象实例ID
                 "platformId":"ID_3tvOoC0feMw",
                 "details":null,
                 "homePageVisibleIds":null,
