@@ -10,7 +10,7 @@ url="/api/openapi/v1/departments/$`idOrCode`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 响应信息中增加 <b>order</b> 参数。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 <b>成功响应</b>中增加 <b>'order'</b> 参数。<br/>
   </div>
 </details>
 

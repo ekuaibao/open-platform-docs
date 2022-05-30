@@ -33,7 +33,7 @@ timeline: true
 - 🐞 更新 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口
   - 新增了 **成功响应** 中 `ledgerAmount`（台账金额）、`ledgerAmountModel`（台账金额字段）参数备注。
 - 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments) 、[批量新增部门](/docs/open-api/contacts/batch-add-departments) 、[修改部门信息](/docs/open-api/contacts/update-departments) 、[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments) 、[根据部门名称获取部门信息](/docs/open-api/contacts/get-department-byName) 、[根据部门路径获取部门信息](/docs/open-api/contacts/get-department-byPath) 、[根据部门ID或编码获取部门信息](/docs/open-api/contacts/get-department-byPath) 、[停启用部门](/docs/open-api/contacts/active-departments) 接口
-  - 新增了 响应信息中 `order`（排序序号）字段。
+  - 新增了 **成功响应** 中 `order`（排序序号）字段。
 - 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new) 文档
   - 新增了【**单据删除**】审批事件。
 - 🐞 优化【**企业收付款账户**】模块
