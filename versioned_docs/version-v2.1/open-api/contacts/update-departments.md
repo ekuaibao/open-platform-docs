@@ -10,7 +10,7 @@ url="/api/openapi/v1/departments/update/$`departmentId`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 <b>成功响应</b>中增加 <b>'order'</b> 参数。<br/>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 <b>成功响应</b> 中增加 <b>order</b>（排序序号）参数。<br/>
   </div>
 </details>
 
@@ -52,12 +52,12 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/departmen
 ```json
 {
     "value": {
-        "id": "PCx3rwm3aA00qM:ID_3rLjlEB0zrg",        // 部门ID
-        "name": "测试事业部1",                         // 部门名称
-        "parentId": "PCx3rwm3aA00qM:ID_3rLjlEB09rg",  // 上级部门ID
-        "active": true,                               // 是否停用
-        "code": "00301",                              // 部门编码
-        "form": {                                     //部门关联法人实体id和成本中心id
+        "id": "PCx3rwm3aA00qM:ID_3rLjlEB0zrg",        //部门ID
+        "name": "测试事业部1",                        //部门名称
+        "parentId": "PCx3rwm3aA00qM:ID_3rLjlEB09rg",  //上级部门ID
+        "active": true,                               //是否停用
+        "code": "00301",                              //部门编码
+        "form": {                                     //部门关联法人实体ID和成本中心ID
             "costCenter": "cc0dbcd46cf6d0444c00",     //成本中心ID
             "legalEntity": "ID_3rPkrfrfv4M"           //法人实体ID
         },

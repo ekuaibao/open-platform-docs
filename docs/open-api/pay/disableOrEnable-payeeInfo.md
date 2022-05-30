@@ -11,7 +11,7 @@ url="/api/openapi/v2/payeeInfos/$`id`/disableOrEnableAccount"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String | 账户ID | 必填 | - | 通过[获取收款账号](/docs/open-api/pay/get-payeeInfos)获取 |   
+| **id** | String | 账户ID | 必填 | - | 通过 [获取收款账号](/docs/open-api/pay/get-payeeInfos) 获取 |   
 
 ## Query Parameters
 

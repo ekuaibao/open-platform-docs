@@ -209,7 +209,9 @@ const sidebars = {
         "open-api/pay/get-all-branch",
         "open-api/pay/new-payerInfo",
         "open-api/pay/new-payeeInfo",
+        "open-api/pay/edit-payerInfo",
         "open-api/pay/edit-payeeInfo",
+        "open-api/pay/disableOrEnable-payerInfo",
         "open-api/pay/disableOrEnable-payeeInfo",
         "open-api/pay/question-answer"
       ],

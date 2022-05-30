@@ -713,7 +713,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 - specificationId：费用分摊模板 ID，即[根据企业ID获取分摊模版列表](/docs/open-api/forms/get-apportion-template-list)中返回的ID。
 
 ### (17) 多收款人字段
-单据的 `payPlan` 字段为**多收款人**模式的**支付计划**字段，下面按照三种类型举例：
+单据的 `payPlan` 字段为 **多收款人** 模式的 **支付计划** 字段，传参示例如下：
+- 使用 **多收款人** 功能，需要在单据模板中勾选 “**允许多收款人**”。<br/>
+- 当多收款人为 **按明细/按收款信息汇总明细金额** 类型时，费用明细中的收款信息字段（`details`->`feeTypeForm`->`feeDetailPayeeId`）**必填**。<br/>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -726,7 +728,7 @@ import TabItem from '@theme/TabItem';
 "payPlan": [                                  //支付计划，可传多条
     {
         "dataLinkForm": {                     //每条支付计划中的支付金额和收款信息，必须与费用明细中的一致。
-            "E_system_支付计划_支付金额": {      //支付金额
+            "E_system_支付计划_支付金额": {    //支付金额
                 "standard": "13",
                 "standardUnit": "元",
                 "standardScale": 2,
@@ -734,7 +736,7 @@ import TabItem from '@theme/TabItem';
                 "standardNumCode": "156",
                 "standardStrCode": "CNY"
             },
-            "E_system_支付计划_收款信息": "ID_3zDKigh39zw"      //收款信息，与费用明细中的（收款信息字段"feeDetailPayeeId"）对应
+            "E_system_支付计划_收款信息": "ID_3zDKigh39zw" //收款信息，与费用明细中的（收款信息字段"feeDetailPayeeId"）对应
         }
     },
     {
@@ -761,7 +763,7 @@ import TabItem from '@theme/TabItem';
 "payPlan": [                                  //支付计划，可传多条
     {
         "dataLinkForm": {                     //每条支付计划中的支付金额和收款信息，必须与费用明细中的一致。
-            "E_system_支付计划_支付金额": {      //支付金额
+            "E_system_支付计划_支付金额": {    //支付金额
                 "standard": "13",
                 "standardUnit": "元",
                 "standardScale": 2,
@@ -796,15 +798,15 @@ import TabItem from '@theme/TabItem';
 "payPlan": [                                  //支付计划，可传多条
     {
         "dataLinkForm": {                     //每条支付计划中的支付金额和收款信息，必须与费用明细中的一致。
-            "E_system_支付计划_支付金额": {      //支付金额
-                "standard": "13",             //如果费用明细中存在多条收款人相同的明细，需要将对应明细的金额汇总相加传入。
+            "E_system_支付计划_支付金额": {    //支付金额
+                "standard": "13",             //如果费用明细中存在多条收款人相同的明细，需要将对应明细的金额汇总传入。
                 "standardUnit": "元",
                 "standardScale": 2,
                 "standardSymbol": "¥",
                 "standardNumCode": "156",
                 "standardStrCode": "CNY"
             },
-            "E_system_支付计划_收款信息": "ID_3zDKigh39zw"      //收款信息，与费用明细中的（收款信息字段"feeDetailPayeeId"）对应
+            "E_system_支付计划_收款信息": "ID_3zDKigh39zw" //收款信息，与费用明细中的（收款信息字段"feeDetailPayeeId"）对应
         }
     },
     {
@@ -825,5 +827,3 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-- 使用**多收款人**功能，需要在单据模板中勾选“**允许多收款人**”<br/>
-- 当多收款人为**<按明细>/<按收款信息汇总明细金额>**类型时，费用明细中的收款信息字段（`details`->`feeTypeForm`->`feeDetailPayeeId`）**必填**。

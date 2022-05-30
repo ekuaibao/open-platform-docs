@@ -1,10 +1,11 @@
-# 新增付款账户
+# 更新付款账户
+根据付款账户的 `ID` 修改付款信息。
 
 import Control from "@theme/Control";
 
 <Control
-method="POST"
-url="/api/openapi/v4/payerInfos"
+method="PUT"
+url="/api/openapi/v4/payerInfos/$`id`"
 />
 
 <details>
@@ -14,14 +15,19 @@ url="/api/openapi/v4/payerInfos"
   </div>
 </details>
 
+## Path Parameters
+
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **id** | String | 账户ID | 必填 | - | 通过 [获取付款账户](/docs/open-api/pay/get-payerInfos-search) 获取 |   
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | -  | [通过授权接口获取](/docs/open-api/getting-started/auth) |
 
 ## Body Parameters
-
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **sort**            | String | 账号类别    | 非必填 | OTHER | `BANK` : 银行卡 &emsp; `OTHER` : 其它 |
@@ -49,13 +55,13 @@ url="/api/openapi/v4/payerInfos"
 
 ## CURL
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v4/payerInfos?accessToken=ID_3H6V3NV0s$g:Urf3lsFgBp00gw' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v4/payerInfos/$ID_3Hh7yim0bx0?accessToken=ID_3HhzhrN0aU0:Urf3lsFgBp00gw' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "sort": "BANK",                 //账号类别
     "type":"PUBLIC",                //账户类型       
-    "name": "接口新增6",            //开户名称
-    "cardNo": "05306",             //银行卡号
+    "name": "接口新增6-修改",       //开户名称
+    "cardNo": "0530666",           //银行卡号
     // "bank":"工商银行",          //银行名称，此示例为通过“bankLinkNo”（银联号）自动回填                
     "branch":"1",                  //开户网点，此示例为通过“bankLinkNo”（银联号）自动回填       
     //"province":"北京市",         //银行所在省，此示例为通过“bankLinkNo”（银联号）自动回填                    
@@ -63,7 +69,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v4/payerInf
     "bankLinkNo": "403431000017",  //银联号
     "remark":"备注",               //备注信息
     "channels": [                  //支付方式
-        "OFFLINE"
+        "OFFLINE","WXPAY"
     ],
     "visibility":{                  //可见性
         "fullVisible":false,        //是否全员可见（true：全部可见，false：指定人员可见）
@@ -81,19 +87,19 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v4/payerInf
     "value": {
         "pipeline": 1,
         "grayver": "9.30.0.0:A",
-        "id": "ID_3Hh7yim08x0",      //新增的付款账户ID
-        "version": 1,
+        "id": "ID_3Hh7yim0bx0",
+        "version": 19,
         "active": true,
-        "createTime": 1653896478960,
-        "updateTime": 1653896478960,
+        "createTime": 1653907072694,
+        "updateTime": 1653907072694,
         "nameSpell": "",
         "corporationId": "Urf3lsFgBp00gw",
         "sourceCorporationId": null,
         "dataCorporationId": null,
         "name": "",
         "code": "",
-        "accountName": "接口新增9",
-        "accountNo": "05309",
+        "accountName": "接口新增6-修改",
+        "accountNo": "0530666",
         "type": "PUBLIC",
         "owner": "CORPORATION",
         "sort": "BANK",
@@ -104,18 +110,19 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v4/payerInf
         "asPayee": false,
         "asPayer": true,
         "channels": [
+            "WXPAY",
             "OFFLINE"
         ],
         "visibility": {
             "fullVisible": false,
             "staffs": [
-                "Urf3lsFgBp00gw:ID_3two5lv0D7M1"
+                "Urf3lsFgBp00gw:ID_3two5lv0D7M"
             ],
             "roles": [
-                "Urf3lsFgBp00gw:leader1"
+                "Urf3lsFgBp00gw:leader"
             ],
             "departments": [
-                "Urf3lsFgBp00gw:ID_3nLNQ_X0$QM1"
+                "Urf3lsFgBp00gw:ID_3nLNQ_X0RQM"
             ],
             "departmentsIncludeChildren": true
         },
@@ -136,14 +143,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v4/payerInf
 ```
 
 ## 失败响应
-请勿重复添加同一账户，否则返回以下内容：
+当传入要修改的 **账户ID** 不正确时，报错如下：
 ```json
 {
     "errorCode": 412,
-    "errorMessage": "该账户已存在，无法创建",
+    "errorMessage": "账户信息未找到",
     "errorDetails": null,
     "code": null,
     "data": null
 }
 ```
-
