@@ -7,6 +7,13 @@ method="GET"
 url="/api/openapi/v1/departments/getDepartmentByName"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 响应信息中增加 <b>order</b> 参数。<br/>
+  </div>
+</details>
+
 :::caution
 - 由于不同路径存在重名部门，所以可返回多个。
 :::
@@ -38,7 +45,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
             "form":{                              //部门关联法人实体ID和成本中心ID
                 "costCenter":"NzMcynfBJ43M00",    //成本中心ID
                 "legalEntity":"11YcypdGzoEo00"    //法人实体ID
-            }
+            },
+            "order": 3                            //排序序号
         }
     ]
 }

@@ -7,6 +7,13 @@ method="POST"
 url="/api/openapi/v1/departments"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 响应信息中增加 <b>order</b> 参数。<br/>
+  </div>
+</details>
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
@@ -47,6 +54,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/departme
           "legalEntity":"11YcypdGzoEo00"      //法人实体ID
         },
         "active": true,                       //是否停用
+        "order": 0,                           //排序序号
         "code": "1330"                        //部门编码
     }
 }

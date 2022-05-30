@@ -11,6 +11,7 @@ url="/api/openapi/v2.1/flow/data"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增了支持<b>多收款人</b>类型参数。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了单据配置 <b>必须关联申请单</b> 且 <b>关联申请</b> 字段已传值时，报 “<b>关联申请单不存在，请补充申请单ID！</b>” 的BUG。<br/>
                                                                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 修复了业务对象类型字段 <b>联动赋值</b> 规则不生效的BUG。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.3.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增了只允许用 <b>单据模板</b>、<b>费用类型模板</b> 最新的模板ID创建单据的校验。<br/>
@@ -53,6 +54,7 @@ url="/api/openapi/v2.1/flow/data"
 |**&emsp; &emsp; &emsp; ∟ amount**               | Object | 报销金额        | 必填  | - | 报销金额 |
 |**&emsp; &emsp; &emsp; ∟ feeDate**              | String | 费用日期        | 必填  | - | 毫秒级时间戳 |
 |**&emsp; &emsp; &emsp; ∟ invoiceForm**          | Object | 发票相关信息     | 非必填 | - | 根据单据模板决定 |
+|**&emsp; &emsp; &emsp; ∟ feeDetailPayeeId**     | String | 收款信息ID      | 非必填 | - | **多收款人模式下，<按明细><按收款信息汇总明细金额>类型时必填**<br/>通过[获取收款账号信息](/docs/open-api/pay/get-payeeInfos)获取 |
 |**&emsp; &emsp; &emsp; &emsp; ∟ type**          | String | 发票开票类型     | 必填  | - | 发票相关信息参数存在时有效<br/>`unify` : 统一开票 &emsp; `wait` : 待开发票<br/>`exist` : 已有发票 &emsp; `noExist` : 无发票<br/>`noWrite` : 无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
 |**&emsp; &emsp; &emsp; &emsp; ∟ attachments**   | Array  | 发票附件        | 非必填 | - | **无法对发票附件进行验真查重或者OCR处理**<br/>需要先通过[上传附件](/docs/open-api/attachment/attachment-upload)上传数据，然后使用接口返回值为参数 |
 |**&emsp; &emsp; &emsp; ∟ consumptionReasons**   | String | 消费事由        | 非必填 | - | 消费事由 |
@@ -705,6 +707,123 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
    }
 ]
 ```
+
 - apportionMoney：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服，除「standard」外，其他内容请与示例保持一致。
 - 项目：是自定义档案--项目中的档案项ID，即[获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items)中返回的ID。
 - specificationId：费用分摊模板 ID，即[根据企业ID获取分摊模版列表](/docs/open-api/forms/get-apportion-template-list)中返回的ID。
+
+### (17) 多收款人字段
+单据的 `payPlan` 字段为**多收款人**模式的**支付计划**字段，下面按照三种类型举例：
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="default" label="按明细" default>
+
+```json
+"multiplePayeesMode": true,                   //是否开启多收款人模式，开启后默认 <按明细> 类型
+"payPlan": [                                  //支付计划，可传多条
+    {
+        "dataLinkForm": {                     //每条支付计划中的支付金额和收款信息，必须与费用明细中的一致。
+            "E_system_支付计划_支付金额": {      //支付金额
+                "standard": "13",
+                "standardUnit": "元",
+                "standardScale": 2,
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
+            },
+            "E_system_支付计划_收款信息": "ID_3zDKigh39zw"      //收款信息，与费用明细中的（收款信息字段"feeDetailPayeeId"）对应
+        }
+    },
+    {
+        "dataLinkForm": {
+            "E_system_支付计划_支付金额": {
+                "standard": "25",
+                "standardUnit": "元",
+                "standardScale": 2,
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
+            },
+            "E_system_支付计划_收款信息": "ID_3zDKigh0Izw"
+        }
+    }
+]
+```
+</TabItem>
+<TabItem value="payPlanMode" label="按金额">
+
+```json
+"multiplePayeesMode": true,                   //是否开启多收款人模式
+"payPlanMode": true,                          //是否选择 <按金额> 类型  true: 按金额   false: 按明细
+"payPlan": [                                  //支付计划，可传多条
+    {
+        "dataLinkForm": {                     //每条支付计划中的支付金额和收款信息，必须与费用明细中的一致。
+            "E_system_支付计划_支付金额": {      //支付金额
+                "standard": "13",
+                "standardUnit": "元",
+                "standardScale": 2,
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
+            },
+            "E_system_支付计划_收款信息": "ID_3zDKigh39zw"      //收款信息
+        }
+    },
+    {
+        "dataLinkForm": {
+            "E_system_支付计划_支付金额": {
+                "standard": "25",
+                "standardUnit": "元",
+                "standardScale": 2,
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
+            },
+            "E_system_支付计划_收款信息": "ID_3zDKigh0Izw"
+        }
+    }
+]
+```
+</TabItem>
+<TabItem value="payeePayPlan" label="按收款信息汇总明细金额">
+
+```json
+"multiplePayeesMode": true,                   //是否开启多收款人模式
+"payeePayPlan": true,                         //是否选择 <按收款信息汇总明细金额> 类型   true: 按收款信息汇总明细金额   false: 按明细
+"payPlan": [                                  //支付计划，可传多条
+    {
+        "dataLinkForm": {                     //每条支付计划中的支付金额和收款信息，必须与费用明细中的一致。
+            "E_system_支付计划_支付金额": {      //支付金额
+                "standard": "13",             //如果费用明细中存在多条收款人相同的明细，需要将对应明细的金额汇总相加传入。
+                "standardUnit": "元",
+                "standardScale": 2,
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
+            },
+            "E_system_支付计划_收款信息": "ID_3zDKigh39zw"      //收款信息，与费用明细中的（收款信息字段"feeDetailPayeeId"）对应
+        }
+    },
+    {
+        "dataLinkForm": {
+            "E_system_支付计划_支付金额": {
+                "standard": "25",
+                "standardUnit": "元",
+                "standardScale": 2,
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
+            },
+            "E_system_支付计划_收款信息": "ID_3zDKigh0Izw"
+        }
+    }
+]
+```
+</TabItem>
+</Tabs>
+
+- 使用**多收款人**功能，需要在单据模板中勾选“**允许多收款人**”<br/>
+- 当多收款人为**<按明细>/<按收款信息汇总明细金额>**类型时，费用明细中的收款信息字段（`details`->`feeTypeForm`->`feeDetailPayeeId`）**必填**。

@@ -22,6 +22,8 @@ timeline: true
 - ❌ 废弃 [根据员工ID获取待审批单据(废弃)](/docs/open-api/flows/get-approve) 接口。
 - 🚀 新增 [回写单据凭证信息](/docs/open-api/flows/voucher-write-back) 接口 `v2.1` 版本
   - 新增了业务校验只允许 **`paid` 已支付/审批完成** 状态回写单据凭证。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
+  - 新增了支持**多收款人**类型参数。
 - 🐞 更新 [获取单据PDF文件流](/docs/open-api/flows/get-flows-pdf) 接口
   - 优化了接口 **HTTP 500** 错误，获取的单据超过 **32M**，输出报错信息。
 - 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
@@ -30,13 +32,15 @@ timeline: true
   - 新增了 **成功响应** 中 `paymentChannel`（支付方式）、`paymentAccountId`（付款账户ID）参数备注。
 - 🐞 更新 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口
   - 新增了 **成功响应** 中 `ledgerAmount`（台账金额）、`ledgerAmountModel`（台账金额字段）参数备注。
+- 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments) 、[批量新增部门](/docs/open-api/contacts/batch-add-departments) 、[修改部门信息](/docs/open-api/contacts/update-departments) 、[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments) 、[根据部门名称获取部门信息](/docs/open-api/contacts/get-department-byName) 、[根据部门路径获取部门信息](/docs/open-api/contacts/get-department-byPath) 、[根据部门ID或编码获取部门信息](/docs/open-api/contacts/get-department-byPath) 、[停启用部门](/docs/open-api/contacts/active-departments) 接口
+  - 新增了 响应信息中 `order`（排序序号）字段。
 - 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new) 文档
   - 新增了【**单据删除**】审批事件。
 - 🐞 优化【**企业收付款账户**】模块
   - 更新了模块下 **全部** 接口文档的描述及排版。
 - 🐞 优化【**单据**】模块
   - 更新了模块下 **部分** 接口注意事项的描述。
-  
+
 ---
 ## 1.5.1
 
@@ -183,7 +187,7 @@ timeline: true
 `2022-03-14`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.3`
 
 - 🆕 新增 [获取所有开户网点信息](/docs/open-api/pay/get-all-branch) 接口。
-- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-payeeInfo)、[更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口
+- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-account)、[更新收款账户](/docs/open-api/pay/edit-accounts) 接口
   - 更新了 `branch`（开户网点）参数描述，支持通过系统配置设置 “**非必填**”。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
   - 更新了参数描述 **“无法对发票附件进行验真查重或者OCR处理”**。
@@ -206,7 +210,7 @@ timeline: true
 - 🐞 更新 【**员工**】 增删改查接口响应字段注释。
 - 🐞 更新 [更新单据](/docs/open-api/flows/update-form)、[单据审批](/docs/open-api/flows/flow-approval) 接口
   - 更新了接口注意事项。  
-- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-payeeInfo)、[更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口
+- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-account)、[更新收款账户](/docs/open-api/pay/edit-accounts) 接口
   - 更新了参数描述，与系统界面上的字段保持一致。
 
 ---  
@@ -232,7 +236,7 @@ timeline: true
 - 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
   - 修复了接口 **HTTP 500** 报错问题，增加了 `path` 、`staffs` 不允许传 `null` 的校验。
 - 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
-  - 新增了 `active`（账户是否启用）参数描述，并且响应数据中增加了 `active` 参数。
+  - 新增了 `active`（查询条件：收款账户是否启用）参数描述，并且响应数据中增加了 `active` 参数。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.1` 版本
   - 修复了 **离职人员** 可以成功创建单据的问题。  
 
@@ -385,7 +389,7 @@ timeline: true
 
 - 🆕 新增 [根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口。
 - 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
-  - 新增了 `active`（账户是否启用）参数过滤收款账户信息。
+  - 新增了 `active`（查询条件：收款账户是否启用）参数过滤收款账户信息。
 
 ---
 ## 0.7.159

@@ -22,6 +22,8 @@ timeline: true
 - ❌ 废弃 [根据员工ID获取待审批单据(废弃)](/docs/open-api/flows/get-approve) 接口。
 - 🚀 新增 [回写单据凭证信息](/docs/open-api/flows/voucher-write-back) 接口 `v2.1` 版本
   - 新增了业务校验只允许 **`paid` 已支付/审批完成** 状态回写单据凭证。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
+  - 新增了支持**多收款人**类型参数。
 - 🐞 更新 [获取单据PDF文件流](/docs/open-api/flows/get-flows-pdf) 接口
   - 优化了接口 **HTTP 500** 错误，获取的单据超过 **32M**，输出报错信息。
 - 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
@@ -30,13 +32,15 @@ timeline: true
   - 新增了 **成功响应** 中 `paymentChannel`（支付方式）、`paymentAccountId`（付款账户ID）参数备注。
 - 🐞 更新 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口
   - 新增了 **成功响应** 中 `ledgerAmount`（台账金额）、`ledgerAmountModel`（台账金额字段）参数备注。
+- 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments) 、[批量新增部门](/docs/open-api/contacts/batch-add-departments) 、[修改部门信息](/docs/open-api/contacts/update-departments) 、[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments) 、[根据部门名称获取部门信息](/docs/open-api/contacts/get-department-byName) 、[根据部门路径获取部门信息](/docs/open-api/contacts/get-department-byPath) 、[根据部门ID或编码获取部门信息](/docs/open-api/contacts/get-department-byPath) 、[停启用部门](/docs/open-api/contacts/active-departments) 接口
+  - 新增了 响应信息中 `order`（排序序号）字段。
 - 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new) 文档
   - 新增了【**单据删除**】审批事件。
 - 🐞 优化【**企业收付款账户**】模块
   - 更新了模块下 **全部** 接口文档的描述及排版。
 - 🐞 优化【**单据**】模块
   - 更新了模块下 **部分** 接口注意事项的描述。
-  
+
 ---
 ## 1.5.1
 
