@@ -10,6 +10,7 @@ url="/api/openapi/v1/departments/batch/create"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 响应信息中增加 <b>order</b> 参数。<br/>
     <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.125</b></a> -> 🆕 新增了本接口。
   </div>
 </details>
@@ -41,13 +42,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/departme
             "code":"233434342121111",
             "name":"事业部11111",
             "parentId":"U_gb_X4Yr8aY00:NTIc6przKo2s00",
-            "order":0
+            "order":1
         },
         {
             "code":"233434342121311111",
             "name":"事业部11112",
             "parentId":"U_gb_X4Yr8aY00:NTIc6przKo2s00",
-            "order":0
+            "order":2
         }
     ]
 }'
@@ -66,6 +67,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/departme
                 "costCenter":"NzMcynfBJ43M00",  //成本中心ID
                 "legalEntity":"11YcypdGzoEo00"  //法人实体ID
             },
+            "order": 1,                             //排序序号
             "code":"233434342121111"
         },
         {
@@ -77,6 +79,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/departme
                 "costCenter":"NzMcynfBJ43M00",  //成本中心ID
                 "legalEntity":"11YcypdGzoEo00"  //法人实体ID
             },
+            "order": 2,                             //排序序号
             "code":"233434342121311111"
         }
     ]

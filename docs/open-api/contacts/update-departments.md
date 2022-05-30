@@ -7,6 +7,13 @@ method="PUT"
 url="/api/openapi/v1/departments/update/$`departmentId`"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 响应信息中增加 <b>order</b> 参数。<br/>
+  </div>
+</details>
+
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
@@ -53,7 +60,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/departmen
         "form": {                                     //部门关联法人实体id和成本中心id
             "costCenter": "cc0dbcd46cf6d0444c00",     //成本中心ID
             "legalEntity": "ID_3rPkrfrfv4M"           //法人实体ID
-        }
+        },
+        "order": 0                                    //排序序号
     }
 }
 ```
