@@ -31,7 +31,6 @@ url="/api/openapi/v4/payerInfos/$`id`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **sort**            | String | 账号类别    | 非必填 | OTHER | `BANK` : 银行卡 &emsp; `OTHER` : 其它 |
-| **staffId**         | String | 所有者ID    | 非必填 | - |  |
 | **type**            | String | 账户类型    | 非必填 | PUBLIC | `PUBLIC` : 对公账户 |
 | **name**            | String | 开户名称    | 必填 | - | 开户名称 |
 | **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |

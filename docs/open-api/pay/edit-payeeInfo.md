@@ -23,7 +23,7 @@ url="/api/openapi/v2/payeeInfos/$`id`"
 ## Body Parameters
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **staffId**         | String | 所有者ID   | 非必填 | - | 当 `owner` = `INDIVIDUAL` 时**必填**<br/>当 `owner` = `CORPORATION` 时**非必填**<br/>可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)接口获取 |
+| **staffId**         | String | 所有者ID   | 非必填 | - | 当 `owner` = `INDIVIDUAL` 时**必填**<br/>当 `owner` = `CORPORATION` 时**非必填**<br/>可以通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 接口获取 |
 | **type**            | String | 账户类型    | 必填 | -| `PUBLIC` : 对公账户 &emsp; `PERSONAL` : 个人账户 |
 | **name**            | String | 开户名称    | 必填 | - | 开户名称 |
 | **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |

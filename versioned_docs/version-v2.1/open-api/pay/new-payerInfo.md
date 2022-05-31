@@ -25,7 +25,6 @@ url="/api/openapi/v4/payerInfos"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **sort**            | String | 账号类别    | 非必填 | OTHER | `BANK` : 银行卡 &emsp; `OTHER` : 其它 |
-| **staffId**         | String | 所有者ID    | 非必填 | - |  |
 | **type**            | String | 账户类型    | 非必填 | PUBLIC | `PUBLIC` : 对公账户 |
 | **name**            | String | 开户名称    | 必填 | - | 开户名称 |
 | **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |
@@ -62,7 +61,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v4/payerInf
     //"city":"北京市",             //银行所在城市，此示例为通过“bankLinkNo”（银联号）自动回填                        
     "bankLinkNo": "403431000017",  //银联号
     "remark":"备注",               //备注信息
-    "channels": [                  //支付方式
+    "channels": [                 //支付方式
         "OFFLINE"
     ],
     "visibility":{                  //可见性
