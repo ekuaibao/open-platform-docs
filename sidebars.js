@@ -34,6 +34,7 @@ const sidebars = {
         "open-api/getting-started/postman-use",
         "open-api/getting-started/origin",
         "open-api/getting-started/auth",
+        "open-api/getting-started/platform-auth",
         "open-api/getting-started/refresh-auth",
         "open-api/getting-started/refresh-auth-expireDate",
         "open-api/getting-started/temp-auth",
@@ -333,6 +334,14 @@ const sidebars = {
         "open-api/basedata/info",
         "open-api/basedata/get-basedata-city",
         "open-api/basedata/question-answer"
+      ],
+    },
+    {
+      type: "category",
+      label: "商城接口",
+      items: [
+        "open-api/mall/info",
+        "open-api/mall/question-answer"
       ],
     },
     {

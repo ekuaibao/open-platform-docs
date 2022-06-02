@@ -12,6 +12,18 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.6.1
+
+`2022-06-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+- 🆕 新增 [获取自建应用授权](/docs/open-api/getting-started/platform-auth) 接口。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save)、[更新单据](/docs/open-api/flows/update-form) 接口
+  - 更新了 `specificationId`（单据模板ID）参数备注。
+- 🐞 更新 [根据编码获取自定义档案项](/docs/open-api/dimensions/get-dimension-items-byCode) 接口
+  - 更新了 `code`（自定义档案值的编码）参数注意事项，**不支持中文**。
+- 🐞 更新 [开始使用-常见问题总结](/docs/open-api/getting-started/question-answer#问题四) 文档
+  - 新增了 **问题四：获取自建应用授权 时如何获取接入账号和密码？**
+
+---
 ## 1.6.0
 
 `2022-05-31`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
@@ -31,9 +43,9 @@ timeline: true
 - 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
   - 新增了 `state`（任务状态）参数介绍。
 - 🐞 更新 [获取业务对象实例列表](/docs/open-api/datalink/get-entity-info) 接口
-  - 新增了 **成功响应** 中 `paymentChannel`（支付方式）、`paymentAccountId`（付款账户ID）参数备注。
-- 🐞 更新 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口
   - 新增了 **成功响应** 中 `ledgerAmount`（台账金额）、`ledgerAmountModel`（台账金额字段）参数备注。
+- 🐞 更新 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口
+  - 新增了 **成功响应** 中 `paymentChannel`（支付方式）、`paymentAccountId`（付款账户ID）参数备注。
 - 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments) 、[批量新增部门](/docs/open-api/contacts/batch-add-departments) 、[修改部门信息](/docs/open-api/contacts/update-departments) 、[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments) 、[根据部门名称获取部门信息](/docs/open-api/contacts/get-department-byName) 、[根据部门路径获取部门信息](/docs/open-api/contacts/get-department-byPath) 、[根据部门ID或编码获取部门信息](/docs/open-api/contacts/get-department-byPath) 、[停启用部门](/docs/open-api/contacts/active-departments) 接口
   - 新增了 **成功响应** 中 `order`（排序序号）字段。
 - 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new) 文档

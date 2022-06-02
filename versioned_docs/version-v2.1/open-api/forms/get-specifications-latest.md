@@ -32,7 +32,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifica
     "items": [
         {
             "id": "C20bu2n6osbc00", //单据模板ID
-            "name": "差旅报销单",    //单据模板名称
+            "name": "差旅报销单",   //单据模板名称
             "active": true          //是否启用
         },
         {

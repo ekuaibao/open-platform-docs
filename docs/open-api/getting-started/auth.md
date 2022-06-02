@@ -19,21 +19,20 @@ import Control from "@theme/Control";
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/auth/getAccessToken' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "appKey": "xxxx-xxxx-xxx-xxxxx",
-  "appSecurity": "xxxxx-xxxx-xxx-xxx"
+    "appKey": "xxxx-xxxx-xxx-xxxxx",
+    "appSecurity": "xxxxx-xxxx-xxx-xxx"
 }'
 ```
 
 ## 成功响应
-
 ```json
 {
-  "value": {
-    "accessToken": "u-E4PVy28Q0400",  // 授权码，后续所有模块开发需要依赖此返回值
-    "refreshToken": "asg4PVy28Q0800", // 只有调用刷新有效期接口时需要传的token
-    "expireTime": 1531046137469,      // 授权码过期日期时间戳(默认2小时后到期)
-    "corporationId": "34A73EyI8A0w00" // 企业id
-  }
+    "value": {
+        "accessToken": "u-E4PVy28Q0400",  // 授权码，后续所有模块开发需要依赖此返回值
+        "refreshToken": "asg4PVy28Q0800", // 只有调用刷新有效期接口时需要传的token
+        "expireTime": 1531046137469,      // 授权码过期日期时间戳(默认2小时后到期)
+        "corporationId": "34A73EyI8A0w00" // 企业id
+    }
 }
 ```
 
@@ -41,10 +40,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/auth/get
 请确保接入账号和密码的正确性，否则返回以下结果：
 ```json
 {
-  "value": {
-    "errorCode": 403,
-    "errorMessage": "密钥无效",
-    "errorDetail": null
-  }
+    "value": {
+        "errorCode": 403,
+        "errorMessage": "密钥无效",
+        "errorDetail": null
+    }
 }
 ```
