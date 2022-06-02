@@ -50,7 +50,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 |**&emsp; ∟ expenseDepartment**                 | String | 报销部门ID      | 必填  | - | 通过[获取部门列表](/docs/open-api/corporation/get-departments)获取 |
 |**&emsp; ∟ description**                       | String | 描述           | 非必填 | - | 描述 |
 |**&emsp; ∟ payeeId**                           | String | 收款人信息ID    | 必填  | - | 通过[获取收款账号信息](/docs/open-api/pay/get-payeeInfos)获取 |
-|**&emsp; ∟ specificationId**                   | String | 单据模板ID      | 必填  | - | 通过[获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)获取 |
+|**&emsp; ∟ specificationId**                   | String | 单据模板ID      | 必填  | - | 通过[根据模版ID获取模板信息](/docs/open-api/forms/get-template-byId)获取 |
 |**&emsp; ∟ expenseLink**                       | String | 关联申请        | 非必填 | - | 需要关联的申请单ID |
 |**&emsp; ∟ details**                           | Array  | 费用明细        | 必填  | - | 费用明细 |
 |**&emsp; &emsp; ∟ feeTypeId**                  | String | 费用类型ID      | 必填  | - | 通过[获取费用类型列表(包含停用)](/docs/open-api/feetype/get-feetypes-list)获取 |

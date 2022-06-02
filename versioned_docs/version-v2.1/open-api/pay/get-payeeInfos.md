@@ -22,9 +22,9 @@ url="/api/openapi/v2/payeeInfos"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token   | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **ids**         | String  | 收款账户ID   | 非必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
-| **names**       | String  | 开户名称     | 非必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
-| **cardNos**     | String  | 银行卡号     | 非必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
+| **ids**         | String  | 收款账户ID   | 必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
+| **names**       | String  | 开户名称     | 必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
+| **cardNos**     | String  | 银行卡号     | 必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
 | **start**       | Number  | 开始查询索引  | 必填  | - | 从 `0` 开始 |
 | **count**       | Number  | 每页总数     | 必填  | - | 最大不能超过 `100` |
 | **active**      | Boolean | 账户是否启用  | 非必填 | false | `true` : 启用 &emsp; `false` : 停用 |
