@@ -49,11 +49,11 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/realms/auth' \
 请确保接入账号和密码的正确性，否则报错如下：
 ```json
 {
-    "value": {
-        "errorCode": 403,
-        "errorMessage": "密钥无效",
-        "errorDetail": null
-    }
+    "errorCode": 400,
+    "errorMessage": "ak sk not match",
+    "errorDetails": null,
+    "code": null,
+    "data": null
 }
 ```
 

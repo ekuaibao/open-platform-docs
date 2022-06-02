@@ -341,6 +341,8 @@ const sidebars = {
       label: "商城接口",
       items: [
         "open-api/mall/info",
+        "open-api/mall/find-pageData-billId",
+        "open-api/mall/find-billDetail-byId",
         "open-api/mall/question-answer"
       ],
     },
