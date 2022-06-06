@@ -296,3 +296,14 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
     "data": null
 }
 ```
+
+系统机制不允许接口修改 `submitterId`（单据提交人），否则报错如下：
+```json
+{
+    "errorCode": 403,
+    "errorMessage": "您没有权限执行此操作",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```

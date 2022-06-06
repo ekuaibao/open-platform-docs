@@ -4,7 +4,7 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/mall-open-api/open-api/finance/bill/findBillDetailById"
+url="/api/mall-openapi/open-api/finance/bill/findBillDetailById"
 />
 
 <details>

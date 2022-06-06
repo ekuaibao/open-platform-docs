@@ -18,8 +18,8 @@ import Control from "@theme/Control";
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **appKey**       | String | 接入账号 | 必填 | - | [获取接入账号](/docs/open-api/getting-started/question-answer#问题四) |
-| **appSecurity**  | String | 接入密码 | 必填 | - | [获取接入密码](/docs/open-api/getting-started/question-answer#问题四) |
+| **appKey**       | String | 接入账号 | 必填 | - | [获取接入账号，见问题四](/docs/open-api/getting-started/question-answer#问题四) |
+| **appSecurity**  | String | 接入密码 | 必填 | - | [获取接入密码，见问题四](/docs/open-api/getting-started/question-answer#问题四) |
 
 ## CURL
 :::caution
@@ -46,7 +46,18 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/realms/auth' \
 ```
 
 ## 失败响应
-请确保接入账号和密码的正确性，否则报错如下：
+请确保 `appKey`（接入账号）的正确性，否则报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "realm not found",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+请确保 `appSecret`（接入密码）的正确性，否则报错如下：
 ```json
 {
     "errorCode": 400,

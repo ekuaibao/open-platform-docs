@@ -4,7 +4,7 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/mall-open-api/open-api/finance/bill/findPageDataBillId"
+url="/api/mall-openapi/open-api/finance/bill/findPageDataBillId"
 />
 
 <details>
@@ -45,7 +45,7 @@ url="/api/mall-open-api/open-api/finance/bill/findPageDataBillId"
 :::
 
 ```json
-curl --location --request POST 'https://unity.ekuaibao.com/api/mall-open-api/open-api/finance/bill/findPageDataBillId' \
+curl --location --request POST 'https://unity.ekuaibao.com/api/mall-openapi/open-api/finance/bill/findPageDataBillId' \
 --header 'Authorization: Bearer akBNtNMJEbOvbRiIZjECmvKUHPPyQuuV' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -80,7 +80,7 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/mall-open-api/ope
 }
 ```
 
-### 返回参数介绍
+### 返回参数列表
 | 字段名称 | 类型 | 是否必返回 | 备注 |
 | :--- | :--- | :--- | :--- |
 | **status**              | String | 是 | "00000"表示成功，其余标识均为失败 |
