@@ -12,11 +12,18 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.6.3
+
+`2022-06-10`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+- 🐞 更新 [新增预算包](/docs/open-api/budget/add-budget)、[批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node) 接口
+  - 新增了 `overControllerRate`（超标比例）接口参数和描述。
+  
+---
 ## 1.6.2
 
 `2022-06-06`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
 - 🐞 更新 [获取自建应用授权](/docs/open-api/getting-started/platform-auth) 接口
-  - 更新了接口 `appKey`（接入账号）、`appSecurity`（接入密码）参数备注和 **失败响应** 示例。
+  - 更新了 `appKey`（接入账号）、`appSecurity`（接入密码）接口参数备注和 **失败响应** 示例。
 - 🐞 更新 [获取企业对账单列表](/docs/open-api/mall/find-pageData-billId)、[获取企业对账单详情](/docs/open-api/mall/find-billDetail-byId) 接口
   - 更新了接口路径。
 - 🐞 更新 [获取业务对象实例信息](/docs/next/open-api/datalink/get-entity-object) 接口

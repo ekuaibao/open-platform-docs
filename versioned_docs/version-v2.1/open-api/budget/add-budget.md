@@ -39,26 +39,27 @@ url="/api/openapi/v2.1/budgets/create"
 |**addNodes**                       | Array   | 追加节点信息            | 必填   | - | 添加预算包下子预算项 | 
 |**&emsp; ∟ id**                   | String  | 预算节点ID              | 必填   | - | 不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID | 
 |**&emsp; ∟ code**                 | String  | 节点编码                | 必填   | - | 可传 `""`，**长度不能超过20个字符** | 
-|**&emsp; ∟ content**              | Array   | 节点维度                | 必填   | - | 预算分解依据，例如根据"费用类型"、"部门"分解<br/>**只有根节点允许有多个维度，其他子级节点有且仅有一个维度信息。** | 
+|**&emsp; ∟ content**              | Array   | 节点维度                | 必填   | - | 预算分解依据，例如根据"费用类型"、"部门"分解<br/>**只有根节点允许有多个维度，其他子级节点有且仅有一个维度信息** | 
 |**&emsp; &emsp; ∟ dimensionType** | String  | 维度种类                | 必填   | - | `DEPART` : 费用承担部门<br/>`PROJECT` : 扩展档案<br/>`FEE_TYPE` : 费用类型<br/>`STAFF` : 员工 | 
-|**&emsp; &emsp; ∟ dimensionId**   | String  | 维度种类的标识ID         | 必填   | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : 通过 [全局字段名称](/docs/open-api/forms/get-customs-param) 获取，见下方 **TIP**。<br/>STAFF : `submitterId` | 
+|**&emsp; &emsp; ∟ dimensionId**   | String  | 维度种类的标识ID         | 必填   | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : 通过 [全局字段名称](/docs/open-api/forms/get-customs-param) 获取，见下方 **TIP**<br/>STAFF : `submitterId` | 
 |**&emsp; &emsp; ∟ mustLeaf**      | Boolean | 维度是否必定为叶子节点(本部) | 必填   | false | `true` : 非本级 &emsp; `false` : 本级<br/>[什么是“维度是否必定为叶子节点(本部)”？](/docs/open-api/budget/question-answer#问题一) | 
-|**&emsp; &emsp; ∟ contentId**     | String  | 维度内容ID              | 必填   | - | 对应维度种类下实例项的 **ID** 或 **CODE**，**与 `type` 参数保持一致**。<br/>例如：部门维度就是 **部门ID/CODE**，扩展档案维度就是 **档案项ID/CODE** | 
+|**&emsp; &emsp; ∟ contentId**     | String  | 维度内容ID              | 必填   | - | 对应维度种类下实例项的 **ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>例如：部门维度就是 **部门ID/CODE**，扩展档案维度就是 **档案项ID/CODE** | 
 |**&emsp; ∟ moneys**               | Array   | 节点金额信息             | 必填   | - | 子预算项对应的预算金额 | 
 |**&emsp; &emsp; ∟ budgetMoney**   | String  | 预算金额                | 必填   | - | [周期](/docs/open-api/budget/question-answer#问题二) 预算金额，非最末级节点传 `null` 即可，由系统自动累加此维度下子预算额度求和 | 
 |**&emsp; &emsp; ∟ nodeId**        | String  | 预算节点ID              | 必填   | - | 与上面预算节点ID保持一致，即一个预算节点下包含 **节点信息** 和 **预算金额** 两部分属性 | 
 |**&emsp; &emsp; ∟ periodTime**    | String  | 第几个周期               | 必填   | - | 年度和自定义区间: `1`<br/>半年度: `1`、`2`<br/>季度: `1`、`2`、`3`、`4`<br/>月度: `1~12`<br/>根据控制周期类型填写，例如：预算包控制周期是 **季度** 类型，每个子预算节点的 `moneys` 数组数据，就包含4个对象，表示每个季度对应的预算金额 | 
-|**&emsp; ∟ control**              | String  | 节点控制方式             | 必填   | ALLOW | 当预算超额时的控制方式<br/> `ALLOW` : 允许提交单据<br/>`FORBID` : 禁止提交单据<br/>`IGNORED` : 什么都不做 | 
+|**&emsp; ∟ overControllerRate**   | String  | 超标比例                | 非必填  | 100 | 预算超标比例（百分比），`1` ≤ 传参 ≤ `1000` | 
+|**&emsp; ∟ control**              | String  | 节点控制方式             | 必填   | ALLOW | 当预算超额时的控制方式<br/> `ALLOW` : 允许单据提交，并显示警告<br/>`FORBID` : 禁止提交单据<br/>`IGNORED` : 允许单据提交，不显示警告 | 
 |**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 必填   | - | 与上面预算节点ID保持一致 | 
 |**&emsp; ∟ parentId**             | String  | 父节点ID                | 非必填 | - | 父节点ID，为空表示根节点 | 
 |**visibilities**                   | Array   | 节点负责人              | 非必填 | - | 负责人能在相关报销单和预算报表中查看该预算节点的进度 |
 |**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 非必填 | - | 与上面预算节点ID保持一致 |
-|**&emsp; ∟ staffIds**             | Array   | 员工ID                 | 非必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) 或 CODE，**与 `type` 参数保持一致**。 |
-|**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 | - | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**。 |
+|**&emsp; ∟ staffIds**             | Array   | 员工ID                 | 非必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) 或 CODE，**与 `type` 参数保持一致** |
+|**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 | - | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致** |
 |**editInChargers**                 | Array   | 预算编制负责人           | 非必填 | - | 负责该节点的预算编制，如不填写则默认与上级节点相同<br/>需开通【**预算编制**】功能方可见此字段 |
 |**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 非必填 | - | 与上面预算节点ID保持一致 |
-|**&emsp; ∟ staffIds**             | Array   | 员工ID                 | 非必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) 或 CODE，**与 `type` 参数保持一致**。 |
-|**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 | - | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**。 |
+|**&emsp; ∟ staffIds**             | Array   | 员工ID                 | 非必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) 或 CODE，**与 `type` 参数保持一致** |
+|**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 | - | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致** |
 |**version**                       | Long    | 预算包版本               | 非必填 | 1 | 不填写此参数默认为 `1` |
 
 :::tip
