@@ -14,10 +14,15 @@ timeline: true
 ---
 ## 1.6.3
 
-`2022-06-10`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+`2022-06-13`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+- 🆕 新增 [批量新增收款账户](/docs/open-api/pay/batch-new-payeeInfo) 接口。
+- 🚀 新增 [新增收款账户](/docs/open-api/pay/new-payeeInfo)、[更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口 `v2.1` 版本
+  - 新增了 `sort`（账号类别）参数，额外支持新增/更新 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。
 - 🐞 更新 [新增预算包](/docs/open-api/budget/add-budget)、[批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node) 接口
   - 新增了 `overControllerRate`（超标比例）接口参数和描述。
-  
+- 🐞 更新 [附件下载](/docs/open-api/attachment/attachment-download) 接口
+  - 优化了接口 **HTTP 500** 错误，输出报错信息。
+
 ---
 ## 1.6.2
 

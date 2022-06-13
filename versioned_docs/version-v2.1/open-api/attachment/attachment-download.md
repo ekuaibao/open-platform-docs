@@ -1,5 +1,5 @@
 # 附件下载
-通过附件的 `id` ， `key` 去获取附件的下载链接。
+通过附件的 `id`、`key` 去获取附件的下载链接。
 
 import Control from "@theme/Control";
 
@@ -7,6 +7,15 @@ import Control from "@theme/Control";
 method="POST"
 url="/api/openapi/v2/attachment/downloadurls"
 />
+
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+[**1.6.3**](/docs/open-api/notice/update-log#163) -> 🐞 优化了接口 **HTTP 500** 错误，输出报错信息。<br/>
+
+  </div>
+</details>
 
 ## Query Parameters
 
@@ -18,8 +27,8 @@ url="/api/openapi/v2/attachment/downloadurls"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id**         | String | 文件fileId    | 必填 | - | 可通过[获取单据详情](/docs/open-api/flows/get-forms-details-byCode)获取，对应单据详情中<br/>`attachments` 字段的 `fileId` |
-| **key**        | String | 文件key       | 必填 | - | 可通过[获取单据详情](/docs/open-api/flows/get-forms-details-byCode)获取，对应单据详情中<br/>`attachments` 字段的 `key` |
+| **id**         | String | 文件fileId    | 必填 | - | 可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取，对应单据详情中<br/>`attachments` 字段的 `fileId` |
+| **key**        | String | 文件key       | 必填 | - | 可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取，对应单据详情中<br/>`attachments` 字段的 `key` |
 | **expiration** | Number | 下载链接有效时间 | 必填 | - | 用户自定义，指下载链接在多长时间内有效，单位：秒 |
 
 ## CURL
