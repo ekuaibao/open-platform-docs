@@ -10,7 +10,9 @@ url="/api/openapi/v1/departments/update/$`departmentId`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 <b>成功响应</b> 中增加 <b>order</b>（排序序号）参数。<br/>
+
+  [**1.6.0**](/docs/open-api/notice/update-log#160) -> 🐞 **成功响应** 中增加 `order`（排序序号）参数。<br/>
+
   </div>
 </details>
 

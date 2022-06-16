@@ -4,13 +4,16 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1/flowDetails/allLogs"
+url="/api/openapi/v1.1/flowDetails/allLogs"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.0</b></a> -> 🆕 新增了本接口。
+
+  [**1.6.3**](/docs/open-api/notice/update-log#163) -> 🚀 接口升级 `v1.1` 版本，**成功响应** 中新增了 `action`（已办动作）参数。<br/>
+  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🆕 新增了本接口。<br/>
+
   </div>
 </details>
 
@@ -23,19 +26,12 @@ url="/api/openapi/v1/flowDetails/allLogs"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetails/allLogs?accessToken=ID_3zYtLIa1$gM:bwa3wajigF0WH0&flowId=ID_3zJ05rt0DY0'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDetails/allLogs?accessToken=ID_3zYtLIa1$gM:bwa3wajigF0WH0&flowId=ID_3zJ05rt0DY0'
 ```
 
 ## 成功响应
 :::tip
-`state`（任务状态）参数介绍：
-- **APPROVING**：待审批、待支付。
-- **PROCESSING**：支付中。
-- **PROCESSED**：处理完毕（审批完成、已支付）。
-- **CANCELED**：待办被取消。常见场景如下：
-  - 单据被撤回。
-  - A待办转交给B，A的待办被取消。
-  - 会签节点一人审批通过配置，一人审批完成，其余会签待办被取消。
+- `action`（已办动作）参数介绍请参考 [审批动作](/docs/open-api/flows/forms-state#审批动作审批日志中-action-字段)
 :::
 
 ```json
@@ -57,7 +53,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
             "flowId":"ID_3zE5G_0bRw0",                  //单据ID
             "logId":-1,                                 //-1：表示待办，需配合 state 使用，非-1：表示已办
             "type":"expense",                           //单据类型
-            "state":"PROCESSING",                       //任务状态，见 TIP 提示。
+            "state":"PROCESSING",                       //任务状态，见“参数介绍”。
             "remindEndTime":0,
             "rejectEndTime":0,
             "autoApproveType":"NONE",
@@ -66,6 +62,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
             "crossCorp":false,
             "nodeId":"FLOW:1929857819:80920352",        //节点ID，等于出站消息的“节点ID”（nodeId）
             "nodeName":"出纳支付",                      //节点名称
+            "action":null,                              //已办动作，待办时返回 null 
             "isUrgent":false
         },
         {
@@ -92,6 +89,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
             "crossCorp":false,
             "nodeId":"FLOW:447576403:261660833",
             "nodeName":"费用标准检查",
+            "action":"freeflow.submit",        //已办动作
             "isUrgent":false
         },
         {
@@ -118,6 +116,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
             "crossCorp":false,
             "nodeId":"FLOW:329509645:1805752558",
             "nodeName":"主管审批",
+            "action":"freeflow.agree",          //已办动作
             "isUrgent":false
         },
         {
@@ -144,6 +143,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
             "crossCorp":false,
             "nodeId":"FLOW:784050093:1182764294",
             "nodeName":"总经理审批",
+            "action":"freeflow.agree",          //已办动作
             "isUrgent":false
         },
         {
@@ -170,19 +170,33 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/flowDetai
             "crossCorp":false,
             "nodeId":"FLOW:452403684:1743733109",
             "nodeName":"财务复核",
+            "action":"freeflow.agree",          //已办动作
             "isUrgent":false
         }
     ]
 }
 ```
 
-所查单据ID为新建的草稿状态时，返回如下：
+所查单据ID为草稿状态时，返回如下：
 ```json
 {
     "count": 0,
     "items": []
 }
 ```
+
+### `state`(任务状态)参数介绍
+| 参数  | 备注 |
+| :--- | :--- |
+| **APPROVING**  | 待审批 |
+| **PAYING**     | 待支付 |
+| **PROCESSING** | 处理中（支付中） |
+| **PROCESSED**  | 已处理（审批完成、已支付） |
+| **CANCELED**   | 待办被取消。常见场景如下：<br/>&emsp;- 单据被撤回<br/>&emsp;- A待办转交给B，A的待办被取消<br/>&emsp;- 会签节点（一人审批通过节点完成），一人审批后，其余会签人员待办被取消 |
+| **SENDING**    | 待寄送 |
+| **RECEIVING**  | 待收单 |
+| **RECEIVING_EXCEP**  | 收单异常 |
+| **REQUISITION_PAID** | 临时状态（申请单支付时消息发送） |
 
 ## 失败响应
 `flowId`（单据ID）不存在时，报错如下：

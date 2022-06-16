@@ -10,8 +10,9 @@ url="/api/openapi/v1.1/cityGroup/detail/delete"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🚀 接口升级 <b>v1.1</b> 版本，新增了 <b>staffIds</b>（员工ID）与 <b>roleIds</b>（角色ID）列表不能同时为空的校验。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.135</b></a> -> 🆕 新增了本接口。<br/>
+
+  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `staffIds`（员工ID）与 `roleIds`（角色ID）列表不能同时为空的校验。<br/>
+  [**0.7.135**](/docs/open-api/notice/update-log#07135) -> 🆕 新增了本接口。<br/>
   </div>
 </details>
 

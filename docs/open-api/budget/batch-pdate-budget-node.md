@@ -11,8 +11,10 @@ url="/api/openapi/v2.1/budgets/$`budgetId`/batchUpdate"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0</b></a> -> 🚀 接口升级 <b>v2.1</b> 版本，新增 <b>type</b> 类型参数，支持 <b>id</b> 或 <b>code</b> 传参。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.1</b></a> -> 🐞 优化了接口校验逻辑，报错时会准确描述具体出错的节点和参数。<br/>
+
+  [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🚀 接口升级 `v2.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**1.1.1**](/docs/open-api/notice/update-log#111) -> 🐞 优化了接口校验逻辑，报错时会准确描述具体出错的节点和参数。<br/>
+
   </div>
 </details>
 

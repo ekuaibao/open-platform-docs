@@ -12,7 +12,7 @@ url="/api/openapi/v2/attachment/downloadurls"
   <summary><b>更新日志</b></summary>
   <div>
 
-[**1.6.3**](/docs/open-api/notice/update-log#163) -> 🐞 优化了接口 **HTTP 500** 错误，输出报错信息。<br/>
+  [**1.6.3**](/docs/open-api/notice/update-log#163) -> 🐞 优化了接口 **HTTP 500** 错误，输出报错信息。<br/>
 
   </div>
 </details>

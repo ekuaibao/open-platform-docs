@@ -11,7 +11,9 @@ url="/api/openapi/v4/payerInfos/$`id`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🆕 新增了本接口。<br/>
+
+  [**1.6.0**](/docs/open-api/notice/update-log#160) -> 🆕 新增了本接口。<br/>
+
   </div>
 </details>
 
