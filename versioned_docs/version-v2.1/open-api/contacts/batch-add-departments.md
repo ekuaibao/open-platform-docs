@@ -10,8 +10,10 @@ url="/api/openapi/v1/departments/batch/create"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 <b>成功响应</b> 中增加 <b>order</b>（排序序号）参数。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.125</b></a> -> 🆕 新增了本接口。
+
+  [**1.6.0**](/docs/open-api/notice/update-log#160) &emsp; -> 🐞 **成功响应** 中增加 `order`（排序序号）参数。<br/>
+  [**0.7.125**](/docs/open-api/notice/update-log#07125) -> 🆕 新增了本接口。
+
   </div>
 </details>
 

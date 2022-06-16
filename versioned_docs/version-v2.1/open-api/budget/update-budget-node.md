@@ -14,7 +14,7 @@ method="PUT"
 url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/update"
 />
 
-:::caution
+:::danger
 - 不推荐使用，接口废弃，不再更新维护。
 - 推荐使用【[批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node)】接口。
 :::

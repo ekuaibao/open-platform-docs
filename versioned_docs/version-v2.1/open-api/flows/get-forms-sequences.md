@@ -218,10 +218,10 @@ import TabItem from '@theme/TabItem';
                             "writtenOffMoney_standardNumCode":"156",
                             "writtenOffMoney_standardStrCode":"CNY"
                         },
-                        "invoiceCount":1,
-                        "taxAmount":null,
-                        "noTaxAmount":null,
-                        "invoices":[],
+                        "invoiceCount":1,   //发票数据
+                        "taxAmount":null,   //发票中的税额（合计）
+                        "noTaxAmount":null, //发票中的不含税金额（合计）
+                        "invoices":[],      
                         "payeeInfo":null
                     },
                     {
