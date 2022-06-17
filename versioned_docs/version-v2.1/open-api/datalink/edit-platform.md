@@ -10,7 +10,9 @@ url="/api/openapi/v2.1/datalink/editPlatform"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.0</b></a> -> 🚀 接口升级 <b>v2.1</b> 版本，新增了支持更新应用名称，对 <b>adminIds</b>（管理员ID）做参数真实性校验。<br/>
+
+  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🚀 接口升级 `v2.1` 版本，新增了支持更新应用名称，对 `adminIds`（管理员ID）做参数真实性校验。<br/>
+
   </div>
 </details>
 

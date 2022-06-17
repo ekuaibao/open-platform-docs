@@ -10,8 +10,10 @@ url="/api/openapi/v1/staffs"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 新增了 <b>startDate</b> 和 <b>endDate</b> 参数，根据 <b>更新时间</b> 过滤列表数据，并且返回值中增加 <b>createTime</b> 和 <b>updateTime</b> 参数。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.155</b></a> -> 🆕 新增了 <b>active</b>（是否启用）参数过滤员工列表。<br/>
+
+  [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
+  [**0.7.155**](/docs/open-api/notice/update-log#07155) -> 🆕 新增了 `active`（是否启用）参数过滤员工列表。<br/>
+
   </div>
 </details>
 

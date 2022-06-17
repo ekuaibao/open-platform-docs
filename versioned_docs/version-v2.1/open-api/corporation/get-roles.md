@@ -11,7 +11,9 @@ url="/api/openapi/v1/roledefs/$`roledefId`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.3.0</b></a> -> 🆕 <b>staffBy</b>（员工参数格式）新增了支持 <b>code</b>、<b>cellphone</b>、<b>email</b> 3种参数类型。<br/>
+
+  [**1.3.0**](/docs/open-api/notice/update-log#130) -> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
+
   </div>
 </details>
 

@@ -10,7 +10,9 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.123</b></a> -> 🆕 新增了本接口。
+
+  [**0.7.123**](/docs/open-api/notice/update-log#07123) -> 🆕 新增了本接口。
+
   </div>
 </details>
 
