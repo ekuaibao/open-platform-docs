@@ -10,9 +10,11 @@ url="/api/openapi/v1.1/dimensions/items/batch"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增 <b>type</b> 类型参数，支持 <b>id</b> 或 <b>code</b> 传参。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🚀 接口升级 <b>v1.1</b> 版本，新增了当 <b>fullVisible</b> = <b>false</b> 时，对 <b>staffs</b>、<b>roles</b>、<b>departments</b> 三个参数的必填及有效性校验。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.125</b></a> -> 🆕 新增了本接口。<br/>
+
+  [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了当 `fullVisible` = `fals` 时，对 `staffs`、`roles`、`departments` 三个参数的必填及有效性校验。<br/>
+  [**0.7.125**](/docs/open-api/notice/update-log#07125) -> 🆕 新增了本接口。<br/>
+
   </div>
 </details>
 

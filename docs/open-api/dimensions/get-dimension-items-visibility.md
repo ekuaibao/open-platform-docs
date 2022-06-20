@@ -10,7 +10,9 @@ url="/api/openapi/v1/dimensions/items/withVisibility"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.136</b></a> -> 🆕 新增了支持按 <b>dimensionId</b>（档案类别ID）参数过滤数据。<br/>
+
+  [**0.7.136**](/docs/open-api/notice/update-log#07136) -> 🆕 新增了支持按 `dimensionId`（档案类别ID）参数过滤数据。<br/>
+
   </div>
 </details>
 

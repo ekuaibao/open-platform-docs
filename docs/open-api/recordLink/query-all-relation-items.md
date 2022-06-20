@@ -10,10 +10,12 @@ url="/api/openapi/v2.1/recordLink/queryAllRecordLink"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增 <b>type</b> 类型参数，支持 <b>id</b> 或 <b>code</b> 传参。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.3.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🚀 接口升级 <b>v2.1</b> 版本，优化了报错输出。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.164</b></a> -> 🆕 新增了 <b>roleDefIds</b>（档案关系ID）、<b>orderBy</b>（结果排序字段）参数。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.127</b></a> -> 🆕 新增了本接口。<br/>
+
+  [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🚀 接口升级 `v2.1` 版本，优化了报错输出。<br/>
+  [**0.7.164**](/docs/open-api/notice/update-log#07164) -> 🆕 新增了 `roleDefIds`（档案关系ID）、`orderBy`（结果排序字段）参数。<br/>
+  [**0.7.127**](/docs/open-api/notice/update-log#07127) -> 🆕 新增了本接口。<br/>
+
   </div>
 </details>
 

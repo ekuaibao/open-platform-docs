@@ -10,13 +10,15 @@ url="/api/openapi/v2.1/recordLink/edit/$`id`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 更新了校验逻辑，档案关系类型共六种，全都做参数校验，若传入已删除参数则报错<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● <b>未激活/已移除</b> 员工，不能进行任何档案关系数据操作。<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● body参数里传多个值时，校验参数任意一个不存在则报错。<br/>
-                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 无效果的更新返回信息提示。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.3.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🚀 接口升级 <b>v2.1</b> 版本，新增 <b>type</b> 类型参数，支持 <b>id</b> 或 <b>code</b> 传参。<br/>
-                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 <b>editFlag</b>（更新标志）默认值从 <b>cover</b> 改为 <b>increment</b>。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.126</b></a> -> 🆕 新增了支持 <b>全量/增量</b> 更新档案关系数据。<br/>
+
+  [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🐞 更新了校验逻辑，档案关系类型共六种，全都做参数校验，若传入已删除参数则报错<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● **未激活/已移除** 员工，不能进行任何档案关系数据操作。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● body参数里传多个值时，校验参数任意一个不存在则报错。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 无效果的更新返回信息提示。<br/>
+  [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🚀 接口升级 `v2.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 `editFlag`（更新标志）默认值从 `cover` 改为 `increment`。<br/>
+  [**0.7.126**](/docs/open-api/notice/update-log#07126) -> 🆕 新增了支持 **全量/增量** 更新档案关系数据。<br/>
+
   </div>
 </details>
 

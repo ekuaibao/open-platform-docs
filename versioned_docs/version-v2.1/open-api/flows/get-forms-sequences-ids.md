@@ -11,9 +11,11 @@ url="/api/openapi/v1/docs/[`ids`]"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.1  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 优化了接口 <b>HTTP 500</b> 错误，更新接口 <b>失败响应</b> 示例。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 优化了单据费用明细和发票过多导致的 <b>HTTP 504</b> 超时问题。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.128</b></a> -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
+
+  [**1.4.1**](/docs/open-api/notice/update-log#141) &emsp; -> 🐞 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。<br/>
+  [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🐞 优化了单据费用明细和发票过多导致的 **HTTP 504** 超时问题。<br/>
+  [**0.7.128**](/docs/open-api/notice/update-log#07128) -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
+
   </div>
 </details>
 

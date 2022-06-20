@@ -11,7 +11,9 @@ url="/api/openapi/v1/requisition/getData"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.0</b></a> -> 🆕 新增了本接口。
+
+  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🆕 新增了本接口。
+
   </div>
 </details>
 

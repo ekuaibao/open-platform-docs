@@ -79,7 +79,7 @@ timeline: true
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
   - 新增了支持 **多收款人** 类型参数。
 - 🐞 更新 [获取单据PDF文件流](/docs/open-api/flows/get-flows-pdf) 接口
-  - 优化了接口 **HTTP 500** 错误，获取的单据超过 **32M**，输出报错信息。
+  - 优化了接口 **HTTP 500** 错误，获取的单据超过 **32M** 时输出报错信息。
 - 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
   - 新增了 `state`（任务状态）参数介绍。
 - 🐞 更新 [获取业务对象实例列表](/docs/open-api/datalink/get-entity-info) 接口
@@ -224,7 +224,7 @@ timeline: true
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
   - **更新某档案关系下的档案项数据** 接口，更新 `editFlag`（更新标志）默认值，从 `cover` 改为 `increment`。
 - 🚀 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.1` 版本
-  - 新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**paying（待支付）**】状态更新单据。
+  - 新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**`paying`（待支付）**】状态更新单据。
   - 修复了单据模板中配置【**必须关联申请单**】，**关联申请** 字段设置【**允许关联多个申请事项**】后，提示 **"关联申请单不存在，请补充申请单ID！"** 的BUG。
 - 🆕 新增 [审批动作（审批日志中action字段）](/docs/open-api/flows/forms-state#审批动作审批日志中-action-字段)参数列表。
 - 🐞 更新 [查询角色下员工信息](/docs/open-api/corporation/get-roles)、[更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口

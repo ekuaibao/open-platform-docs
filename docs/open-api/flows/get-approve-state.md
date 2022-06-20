@@ -11,7 +11,9 @@ url="/api/openapi/v1.1/approveStates/[`ids`]"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.0</b></a> -> 🚀 接口升级 <b>v1.1</b> 版本，新增了能获取到已删除的单据，并且显示 “<b>已删除</b>” 状态。<br/>
+
+  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🚀 接口升级 `v1.1` 版本，新增了能获取到已删除的单据，并且显示 “**已删除**” 状态。<br/>
+
   </div>
 </details>
 

@@ -10,9 +10,11 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了被委托人审批会签节点的单据（<b>pageType</b> = <b>form</b>）时，无审批按钮的BUG。 <br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🚀 接口升级 <b>v1.1</b> 版本，新增了 <b>pageType</b> = <b>frontPage</b> 类型，进入易快报 <b>首页</b>。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.130</b></a> -> 🆕 新增了 <b>approvalUrl</b>（审批完成后跳转地址）参数。<br/>
+
+  [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了被委托人审批会签节点的单据（`pageType` = `form`）时，无审批按钮的BUG。 <br/>
+  [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `pageType` = `frontPage` 类型，进入易快报 **首页**。<br/>
+  [**0.7.163**](/docs/open-api/notice/update-log#07163) -> 🆕 新增了 `approvalUrl`（审批完成后跳转地址）参数。<br/>
+
   </div>
 </details>
 

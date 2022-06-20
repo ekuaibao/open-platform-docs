@@ -11,7 +11,9 @@ url="/api/openapi/v1/docSequences"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.158</b></a> -> 🆕 新增了本接口。<br/>
+
+  [**0.7.158**](/docs/open-api/notice/update-log#07158) -> 🆕 新增了本接口。<br/>
+
   </div>
 </details>
 

@@ -10,8 +10,10 @@ url="/api/openapi/v1.1/property"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.3  </b></a>&nbsp;&nbsp;&nbsp; -> 🚀 接口升级 <b>v1.1</b> 版本，新增对 <b>type</b>（全局字段类型）的参数校验，非备注类型时，报错 ”<b>type参数不合法</b>“。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.131</b></a> -> 🆕 新增了本接口。<br/>
+
+  [**1.0.3**](/docs/open-api/notice/update-log#103) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增对 `type`（全局字段类型）的参数校验，非备注类型时，报错 **”type参数不合法“**。<br/>
+  [**0.7.131**](/docs/open-api/notice/update-log#07131) -> 🆕 新增了本接口。<br/>
+
   </div>
 </details>
 

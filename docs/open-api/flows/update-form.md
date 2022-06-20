@@ -11,13 +11,14 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0</b></a> -> 🐞 修复了 <b>待支付</b> 状态更新单据后，审批日志中无记录生成的BUG。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.0</b></a> -> 🆕 新增了 <b>editorId</b>（单据修改人）参数，修复了部分情况下无法更新单据的BUG<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ● <b>editorId</b> 传参时，审批日志记录为 <b>单据修改人</b> 修改了单据。<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ● <b>editorId</b> 不传时，审批日志默认记录为 <b>节点审批人（会签节点任选其一）</b> 修改了单据。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.3.0</b></a> -> 🚀 接口升级 <b>v2.1</b> 版本，新增了校验审批流节点是否配置【<b>允许审批人修改单据</b>】，支持【<b>paying（待支付）</b>】状态更新单据。<br/>
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 修复了单据模板中配置【<b>必须关联申请单</b>】，“<b>关联申请</b>“字段设置【<b>允许关联多个申请事项</b>】后，提示“<b>关联申请单不存在，请补充申请单ID！</b>“的BUG。<br/>
-                                
+
+  [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🐞 修复了 **待支付** 状态更新单据后，审批日志中无记录生成的BUG。<br/>
+  [**1.4.0**](/docs/open-api/notice/update-log#140) -> 🆕 新增了 `editorId`（单据修改人）参数，修复了部分情况下无法更新单据的BUG<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; ● `editorId` 传参时，审批日志记录为 **单据修改人** 修改了单据。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; ● `editorId` 不传时，审批日志默认记录为 **节点审批人（会签节点任选其一）** 修改了单据。<br/>
+  [**1.3.0**](/docs/open-api/notice/update-log#130) -> 🚀 接口升级 `v2.1` 版本，新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**`paying`（待支付）**】状态更新单据。<br/>
+  &emsp; &emsp; -> 🐞 修复了单据模板中配置【**必须关联申请单**】，**关联申请** 字段设置【**允许关联多个申请事项**】后，提示 **“关联申请单不存在，请补充申请单ID！“** 的BUG。<br/>
+
   </div>
 </details>
 

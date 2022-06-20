@@ -11,17 +11,19 @@ url="/api/openapi/v2.1/flow/data"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增了支持 <b>多收款人</b> 类型参数。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.5.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了单据配置 <b>必须关联申请单</b> 且 <b>关联申请</b> 字段已传值时，报 “<b>关联申请单不存在，请补充申请单ID！</b>” 的BUG。<br/>
-                                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 修复了业务对象类型字段 <b>联动赋值</b> 规则不生效的BUG。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.3.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🆕 新增了只允许用 <b>单据模板</b>、<b>费用类型模板</b> 最新的模板ID创建单据的校验。<br/>
-                                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 修复了费用类型必填字段传 <b>""</b> 可通过校验的BUG，共16种数据类型。<br/>
-                                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 修复了申请单开启借款金额字段并配置了 <b>系统计算</b> 时，计算结果小数位超过2位的BUG。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.2.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了 <b>离职人员</b> 可以成功创建单据的问题。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🐞 修复了部门类型字段设置取值规则为 <b>使用字段依赖性</b>，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
-                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> 🐞 修复了字段配置计算规则为 <b>从关联申请单中取值</b>，<b>关联申请</b> 字段为非必填但未传值时，无法通过校验的BUG。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.0.0  </b></a>&nbsp;&nbsp;&nbsp; -> 🚀 接口升级 <b>v2.1</b> 版本，修复了费用类型里的必填字段类型是 <b>自定义档案</b> 时，传 <b>""</b> 可通过校验的BUG，增加了非空校验。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>0.7.130</b></a> -> 🆕 新增了支持 <b>直接提审</b> 能力。<br/>
+
+  [**1.6.0**](/docs/open-api/notice/update-log#160) &emsp; -> 🆕 新增了支持 **多收款人** 类型参数。<br/>
+  [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了单据配置 **必须关联申请单** 且 **关联申请** 字段已传值时，报 “**关联申请单不存在，请补充申请单ID！**” 的BUG。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了业务对象类型字段 **联动赋值** 规则不生效的BUG。<br/>
+  [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🆕 新增了只允许用 **单据模板**、**费用类型模板** 最新的模板ID创建单据的校验。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了费用类型必填字段传 `""` 可通过校验的BUG，共16种数据类型。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了申请单开启借款金额字段并配置了 **系统计算** 时，计算结果小数位超过2位的BUG。<br/>
+  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🐞 修复了 **离职人员** 可以成功创建单据的问题。<br/>
+  [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🐞 修复了部门类型字段设置取值规则为 **使用字段依赖性**，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了字段配置计算规则为 **从关联申请单中取值**，**关联申请** 字段为非必填但未传值时，无法通过校验的BUG。<br/>
+  [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v2.1` 版本，修复了费用类型里的必填字段类型是 **自定义档案** 时，传 `""` 可通过校验的BUG，增加了非空校验。<br/>
+  [**0.7.130**](/docs/open-api/notice/update-log#07138) -> 🆕 新增了支持 **直接提审** 能力。<br/>
+
   </div>
 </details>
 

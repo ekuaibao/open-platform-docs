@@ -10,7 +10,9 @@ import Control from "@theme/Control";
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.1</b></a> -> 🆕 新增了本接口。<br/>
+
+  [**1.6.1**](/docs/open-api/notice/update-log#161) -> 🆕 新增了本接口。<br/>
+
   </div>
 </details>
 

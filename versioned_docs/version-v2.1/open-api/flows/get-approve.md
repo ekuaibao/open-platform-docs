@@ -16,8 +16,10 @@ url="/api/openapi/v1/docs/byApproverId/$`approverId`"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> ❌ 接口废弃。<br/>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.4.1</b></a> -> 🐞 优化了接口 <b>HTTP 500</b> 错误，更新接口 <b>失败响应</b> 示例。<br/>
+
+  [**1.6.0**](/docs/open-api/notice/update-log#160) -> ❌ 接口废弃。<br/>
+  [**1.4.1**](/docs/open-api/notice/update-log#141) -> 🐞 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。<br/>
+
   </div>
 </details>
 

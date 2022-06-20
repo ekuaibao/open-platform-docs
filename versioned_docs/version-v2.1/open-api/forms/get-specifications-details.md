@@ -11,7 +11,6 @@ url="/api/openapi/v1/specifications/$`id`"
 - 该接口只是提供历史版本模板信息。
 :::
 
-
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |

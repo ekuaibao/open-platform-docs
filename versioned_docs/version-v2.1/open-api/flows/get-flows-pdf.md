@@ -11,7 +11,9 @@ url="/api/openapi/v1/flowDetails/getFlowsPdf/[`ids`]"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.6.0</b></a> -> 🐞 优化了接口 <b>HTTP 500</b> 错误，获取的单据超过 <b>32M</b>，输出报错信息。<br/>
+
+  [**1.6.0**](/docs/open-api/notice/update-log#160) -> 🐞 优化了接口 **HTTP 500** 错误，获取的单据超过 **32M** 时输出报错信息。<br/>
+
   </div>
 </details>
 

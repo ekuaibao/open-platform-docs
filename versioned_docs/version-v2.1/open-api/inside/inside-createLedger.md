@@ -10,7 +10,9 @@ url="/api/openapi/v2.1/datalink/ledger/createLedger"
 <details>
   <summary><b>更新日志</b></summary>
   <div>
-    <a href="https://docs.ekuaibao.com/docs/open-api/notice/update-log" target="_blank"><b>1.1.0</b></a> -> 🚀 接口升级 <b>v2.1</b> 版本，新增了 <b>sumFieldName</b>（统计字段）、<b>statisticsEntityId</b>（关联业务对象ID）、<b>ataLinkEntityId</b>（业务对象ID）校验。<br/>
+
+  [**1.1.0**](/docs/open-api/notice/update-log#110) -> 🚀 接口升级 `v2.1` 版本，新增了 `sumFieldName`（统计字段）、`statisticsEntityId`（关联业务对象ID）、`ataLinkEntityId`（业务对象ID）校验。<br/>
+
   </div>
 </details>
 
