@@ -11,7 +11,7 @@ url="/api/openapi/v1.1/flowDetails/allLogs"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.3**](/docs/open-api/notice/update-log#163) -> 🚀 接口升级 `v1.1` 版本，**成功响应** 中新增了 `action`（已办动作）参数。<br/>
+  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🚀 接口升级 `v1.1` 版本，**成功响应** 中新增了 `action`（已办动作）参数。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🆕 新增了本接口。<br/>
 
   </div>

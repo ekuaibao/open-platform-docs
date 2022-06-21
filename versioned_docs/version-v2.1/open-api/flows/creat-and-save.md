@@ -12,6 +12,12 @@ url="/api/openapi/v2.1/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了 `code` 传值可以创建重复单据编号的BUG。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了 `detailId` 传值可以创建重复费用明细ID的BUG。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 优化了 **HTTP 400** 报错，必填字段不传时，提示字段必填。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● 单据必填文本、日期类型字段不传时，提示字段必填。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● 审批节点配置审批人为【**手动选择**】时，无法直接提审，并提示。<br/>
   [**1.6.0**](/docs/open-api/notice/update-log#160) &emsp; -> 🆕 新增了支持 **多收款人** 类型参数。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了单据配置 **必须关联申请单** 且 **关联申请** 字段已传值时，报 “**关联申请单不存在，请补充申请单ID！**” 的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了业务对象类型字段 **联动赋值** 规则不生效的BUG。<br/>
@@ -444,6 +450,17 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 {
     "errorCode": 412,
     "errorMessage": "单据数据包含不支持的字段：u_Z文本。",
+    "errorDetails": null,
+    "code": null,
+    "data": null
+}
+```
+
+审批节点配置审批人为【**手动选择**】时，无法直接提审，报错如下：
+```json
+{
+    "errorCode": 400,
+    "errorMessage": "openapi单据数据提交，审批节点[出纳支付]未设置审批人！",
     "errorDetails": null,
     "code": null,
     "data": null

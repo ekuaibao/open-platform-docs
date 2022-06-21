@@ -14,10 +14,27 @@ timeline: true
 ---
 ## 1.7.0
 
-`2022-06-22`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+`2022-06-21`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+
+- 🆕 新增 [获取单据列表(新)](/docs/open-api/flows/get-forms-details-byStaff) 接口
+  - 新接口由原来的 [根据员工ID批量获取单据详情](/docs/open-api/flows/get-forms-details-byStaff) 接口更名并改造而来，不影响原来的使用，并扩充了新功能。
+- ❌ 废弃 [获取单据列表(包含已删除单据)(废弃)](/docs/open-api/flows/get-forms-sequences) 接口。
+- ❌ 废弃 [获取指定状态单据列表(包含已删除单据)(废弃)](/docs/open-api/flows/get-forms-sequences-byState) 接口。
+- ❌ 废弃 [根据单据ID集合获取单据列表(废弃)](/docs/open-api/flows/get-forms-sequences-ids) 接口。
 - 🚀 新增 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口 `v1.1` 版本
   - **成功响应** 中新增了 `action`（已办动作）参数。
   - 更新了 `state`（任务状态）参数介绍。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
+  - 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。
+  - 修复了 `code` 传值可以创建重复单据编号的BUG。
+  - 修复了 `detailId` 传值可以创建重复费用明细ID的BUG。
+  - 优化了 **HTTP 400** 报错
+    - 单据必填文本、日期类型字段不传时，提示字段必填。
+    - 审批节点配置审批人为【**手动选择**】时，无法直接提审，并提示。
+- 🐞 更新 [根据员工ID获取待审批单据](/docs/open-api/flows/get-approve-new) 接口
+  - **成功响应** 中新增了 `count` 待办总数，用于分页。
+- 🐞 更新 [根据模版ID获取模板信息](/docs/open-api/forms/get-template-byId) 接口
+  - 修复了部分模板ID因为版本过多导致接口返回空的BUG。
 - 🐞 更新 所有接口的【**更新日志**】
   - 跳转方式优化，从 **新标签页打开** 调整为 **本页面内跳转**，并可准确跳转到对应文档版本。
 

@@ -60,7 +60,7 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 
 :::tip
 - `E_system_发票主体_发票类别` 是对 `invoice` 类型获取到的发票做补充解释
-- **非增值税发票**无法保存发票明细信息
+- **非增值税发票** 无法保存发票明细信息
 :::
 
 | 字段名 | 对应发票类型 |

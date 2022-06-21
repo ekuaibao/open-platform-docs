@@ -7,6 +7,15 @@ method="GET"
 url="/api/openapi/v2/specifications/byIds/[`ids`]"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🐞 修复了部分模板ID因为版本过多导致接口返回空的BUG。<br/>
+
+  </div>
+</details>
+
 :::caution
 - 只返回未停用、未删除的模版信息。
 :::

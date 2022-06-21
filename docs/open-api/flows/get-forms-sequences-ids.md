@@ -1,4 +1,10 @@
-# 根据单据ID集合获取单据列表
+---
+slug: get-forms-sequences-ids
+title: 根据单据ID集合获取单据列表(废弃)
+authors: [冯继成]
+---
+
+# ~~根据单据ID集合获取单据列表~~
 此接口通过单据ID集合，查询出各个ID对应单据最新状态的数据内容。
 
 import Control from "@theme/Control";
@@ -12,6 +18,7 @@ url="/api/openapi/v1/docs/[`ids`]"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
   [**1.4.1**](/docs/open-api/notice/update-log#141) &emsp; -> 🐞 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。<br/>
   [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🐞 优化了单据费用明细和发票过多导致的 **HTTP 504** 超时问题。<br/>
   [**0.7.128**](/docs/open-api/notice/update-log#07128) -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
@@ -19,7 +26,9 @@ url="/api/openapi/v1/docs/[`ids`]"
   </div>
 </details>
 
-:::caution
+:::danger
+- 不推荐使用，接口废弃，不再更新维护。
+- 推荐使用【[获取单据列表(新)](/docs/open-api/flows/get-forms-details-byStaff)】【[根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)】接口。
 - 单据状态为 **`draft` 草稿、已删除** 的单据无法被查询到，返回空数组。
 :::
 

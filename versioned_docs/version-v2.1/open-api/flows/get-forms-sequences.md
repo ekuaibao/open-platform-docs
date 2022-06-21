@@ -1,4 +1,10 @@
-# 获取单据列表(包含已删除单据)
+---
+slug: get-forms-sequences
+title: 获取单据列表(废弃)
+authors: [冯继成]
+---
+
+# ~~获取单据列表(包含已删除单据)~~
 
 import Control from "@theme/Control";
 
@@ -11,12 +17,15 @@ url="/api/openapi/v1/docSequences"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
   [**0.7.128**](/docs/open-api/notice/update-log#07128) -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
 
   </div>
 </details>
 
-:::caution
+:::danger
+- 不推荐使用，接口废弃，不再更新维护。
+- 推荐使用【[获取单据列表(新)](/docs/open-api/flows/get-forms-details-byStaff)】接口。
 - 此接口只能获取单据状态为 `REJECTED` 已驳回、`PAYING` 待支付、`PROCESSING` 支付中、`PAID` 已支付的单据（包含已删除的单据：进入”出纳支付“节点后再驳回删除的单据）。
 :::
 

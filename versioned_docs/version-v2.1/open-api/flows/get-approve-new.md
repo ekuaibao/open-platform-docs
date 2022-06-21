@@ -17,6 +17,7 @@ url="/api/openapi/v1/docs/byFlowId/$`approverId`"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🐞 **成功响应** 中新增了 `count` 待办总数，用于分页。<br/>
   [**1.6.0**](/docs/open-api/notice/update-log#160) -> 🆕 新增了本接口。<br/>
 
   </div>
@@ -45,6 +46,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byFl
 可以参考 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details) 返回信息，单据数据结构是一样的：
 ```json
 {
+    "count": 20,                                     //待办总数
     "items": [
         {
             "pipeline": 1,
