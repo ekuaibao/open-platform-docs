@@ -16,15 +16,15 @@ timeline: true
 
 `2022-06-21`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
 
-- 🆕 新增 [获取自建应用列表](/docs/open-api/datalink/get-platform) 接口
 - 🆕 新增 [获取单据列表(新)](/docs/open-api/flows/get-forms-details-byStaff) 接口
   - 由原来的 [根据员工ID批量获取单据详情](/docs/open-api/flows/get-forms-details-byStaff) 接口更名并改造而来，不影响原来的使用，并扩充了新功能。
     - 新增了 **报销单、收款单** 类型返回数据中 `writtenOffRecords`（核销借款记录）参数。
     - 新增了 **起止时间** 过滤参数，以及按照 `createTime` 、`updateTime` 、`submitDate` 、`payDate` 参数排序。
-    - 新增了 `specificationId` (**单据模板ID**)过滤参数。
-    - 新增了 `active` (**查询条件：单据是否删除**)过滤参数。
-    - 新增了支持返回 `PROCESSING` (**支付中**)状态的单据。
-    - 取消了 `powercode` (**功能授权码**)参数。
+    - 新增了 `specificationId`（**单据模板ID**）过滤参数。
+    - 新增了 `active`（**查询条件：单据是否删除**）过滤参数。
+    - 新增了支持返回 `PROCESSING`（**支付中**）状态的单据。
+    - 去掉了 `powercode`（**功能授权码**）参数。
+- 🆕 新增 [获取自建应用列表](/docs/open-api/datalink/get-platform) 接口
 - ❌ 废弃 [获取单据列表(包含已删除单据)(废弃)](/docs/open-api/flows/get-forms-sequences) 接口。
 - ❌ 废弃 [获取指定状态单据列表(包含已删除单据)(废弃)](/docs/open-api/flows/get-forms-sequences-byState) 接口。
 - ❌ 废弃 [根据单据ID集合获取单据列表(废弃)](/docs/open-api/flows/get-forms-sequences-ids) 接口。
@@ -46,12 +46,14 @@ timeline: true
   - **成功响应** 中新增了 `count` 待办总数，用于分页。
 - 🐞 更新 [根据模版ID获取模板信息](/docs/open-api/forms/get-template-byId) 接口
   - 修复了部分模板ID因为版本过多导致接口返回空的BUG。
-- 🐞 更新[获取发票主体信息](/docs/open-api/datalink-extend/get-entity-invoice)接口
-  - 优化 **发票类别介绍** 注意事项。
-- 🐞 更新[获取发票图片链接地址](/docs/open-api/datalink-extend/get-entity-invoice-img)接口
-  - 优化接口注意事项。
+- 🐞 更新 [获取发票主体信息](/docs/open-api/datalink-extend/get-entity-invoice) 接口
+  - 优化了 **发票类别介绍** 注意事项。
+- 🐞 更新 [获取发票图片链接地址](/docs/open-api/datalink-extend/get-entity-invoice-img) 接口
+  - 优化了接口注意事项描述：**图片链接有效期为一个小时**。
 - 🐞 更新 所有接口的【**更新日志**】
   - 跳转方式优化，从 **新标签页打开** 调整为 **本页面内跳转**，并可准确跳转到对应文档版本。
+- 🐞 更新【**自建应用**】模块
+  - 调整了模块下接口目录顺序。
 
 ---
 ## 1.6.3

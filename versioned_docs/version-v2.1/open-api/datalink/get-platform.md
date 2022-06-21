@@ -47,7 +47,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
             "active": true,                         //是否启用
             "createTime": 1649405531157,            //创建时间
             "updateTime": 1649748781020,            //更新时间
-            "name": "测试",                          //应用名称
+            "name": "测试",                         //应用名称
             "nameSpell": "CESHI",
             "code": "",
             "corporationId": "xgJ3wajigF25H0",      //企业ID
@@ -60,20 +60,20 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
                 "xgJ3wajigF25H0:dbc3wajigF1UH0",
                 "xgJ3wajigF25H0:Xfi3D10oPJ6DqM"
             ],
-            "type": "DATA_LINK",                    //应用类别(DATA_LINK : 业务对象)
+            "type": "DATA_LINK",                    //应用类别(DATA_LINK：业务对象)
             "groupType": "NORMAL",                  //应用类型(NORMAL：正常类型)
             "properties": null,                     //属性
             "desc": "",                             //备注
             "source": "CUSTOM_CREATE"               //来源（CUSTOM_CREATE：用户自建）
         },
-        {   //“消费明细” 数据为系统预置数据。
+        {   //“消费明细” 数据为系统预置应用。
             "pipeline": 1,
             "grayver": "9.8.0.0:A",
             "version": 1,
             "active": true,                         //是否启用
             "createTime": 1641969769414,            //创建时间
             "updateTime": 1641969769414,            //更新时间    
-            "name": "消费明细",                       //应用名称
+            "name": "消费明细",                      //应用名称
             "nameSpell": "XIAOFEIMINGXI",
             "code": "",
             "corporationId": "xgJ3wajigF25H0",      //企业ID
@@ -94,7 +94,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ```
 
 ## 失败响应
-`count` 大于100时，报错如下：
+当 `count` 大于 `100` 时，报错如下：
 ```json
 {
     "errorCode": 400,

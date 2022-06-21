@@ -11,7 +11,7 @@ url="/api/openapi/v1.1/flowDetails"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🚀 接口升级 `v1.1` 版本，**报销单、收款单**类型返回数据中新增了 `writtenOffRecords`（核销借款记录）参数。<br/>
+  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🐞 **报销单、收款单** 类型返回数据中新增了 `writtenOffRecords`（核销借款记录）参数。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🚀 接口升级 `v1.1` 版本，报销单类型返回数据中新增了 `expenseLink`（费用明细关联的申请单ID）参数。<br/>
 
   </div>
@@ -54,7 +54,7 @@ import TabItem from '@theme/TabItem';
         "active": true,                 //是否有效（或者理解为是否被删除） true：有效，false：无效
         "createTime": 1592289377126,    //创建时间(毫秒级时间戳)
         "updateTime": 1592289377125,    //更新时间(毫秒级时间戳)，单据审批、单据字段修改都会改变此字段值
-        "corporationId": "djg8LshfUkfM00",    //企业ID
+        "corporationId": "djg8LshfUkfM00",//企业ID
         "sourceCorporationId": null,
         "dataCorporationId": null,
         "form": {                    //单据详情
@@ -158,7 +158,7 @@ import TabItem from '@theme/TabItem';
             "paymentChannel": "OFFLINE",          //支付方式，支付完成的单据才有此字段，详细类型见“获取付款账户”接口
             "paymentAccountId": "IeMazu3jIksU00", //付款账户ID，支付完成的单据才有此字段
             "specificationId": "O6s8Mmqokkbk00:a444a2bd3c65fd0331a2a7c0c2d1b0d7cd7366b2",   //单据模版ID
-            "writtenOffMoney": {             //核销金额
+            "writtenOffMoney": {                  //核销金额
                 "standard": "0.00",
                 "standardUnit": "元",
                 "standardScale": "2",
@@ -694,7 +694,14 @@ import TabItem from '@theme/TabItem';
             },
             "specificationId": "ID_3sOtG3xVVkg:7202a3558f143a4b872502ef01fd1b5da2b10303",
             "expenseDepartment": "djg8LshfUkfM00",
-            "preNodeApprovedTime": 1638347590820
+            "preNodeApprovedTime": 1638347590820,
+            "writtenOffRecords": [                  //核销借款记录
+                {
+                    "id": "ID_3IZQnB$RUa0",         //借款包ID
+                    "amount": "222",                //核销金额
+                    "loanId": "ID_3I$b8tPgCdg"      //借款单ID
+                }
+            ]
         },
         "ownerId": "djg8LshfUkfM00:ID_3ruBvlxx7m0",
         "ownerDefaultDepartment": "djg8LshfUkfM00",
