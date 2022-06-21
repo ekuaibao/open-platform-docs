@@ -8,6 +8,7 @@ authors: [冯继成]
 
 本模块提供内部接口目录，便于查看内部接口。
 
+
 ---
 ## 单据模板
 ### [查询全局字段是否存在](/docs/open-api/inside/get-customs-param-checkProperty)
@@ -25,9 +26,11 @@ authors: [冯继成]
 ### [处理EAI插件拉取不到单据中间态问题（待支付、支付中）](/docs/open-api/inside/setDataBase)
 
 ---
+## 对外接口更新（暂不公布）
 
-
-
-
+:::tip
+- [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data)
+  - 1.6.3版本，业务对象、业务对象（多选）类型字段支持 `code` 传参。
+:::
 
 

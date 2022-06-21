@@ -8,7 +8,7 @@ url="/api/openapi/v2/extension/INVOICE/url"
 />
 
 :::caution
-- 图片链接是临时的，请勿永久保存。
+- 图片链接有效期为一个小时，请勿永久保存。
 :::
 
 ## Query Parameters

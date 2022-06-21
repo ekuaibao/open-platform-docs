@@ -56,7 +56,13 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 | **flightItinerary** | 航空运输电子客票行程单 |
 | **tolls**           | 过路费发票 |
 
-## 发票类别（E\_system\_发票主体\_发票类别）介绍如下，是对 `invoice` 类型获取到的发票做补充解释：
+## 发票类别(E\_system\_发票主体\_发票类别)介绍
+
+:::tip
+- `E_system_发票主体_发票类别` 是对 `invoice` 类型获取到的发票做补充解释
+- **非增值税发票**无法保存发票明细信息
+:::
+
 | 字段名 | 对应发票类型 |
 | :---  | :---      |
 | **DIGITAL_NORMAL**  | 增值税电子普票 |

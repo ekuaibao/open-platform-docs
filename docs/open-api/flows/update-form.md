@@ -12,6 +12,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🐞 修复了多个字段配置多层级的【字段依赖性】后（例：A->B->C->D），**待审批、待支付** 状态更新单据时偶发报错的BUG。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🐞 修复了 **待支付** 状态更新单据后，审批日志中无记录生成的BUG。<br/>
   [**1.4.0**](/docs/open-api/notice/update-log#140) -> 🆕 新增了 `editorId`（单据修改人）参数，修复了部分情况下无法更新单据的BUG<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● `editorId` 传参时，审批日志记录为 **单据修改人** 修改了单据。<br/>

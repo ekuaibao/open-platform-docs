@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/flowDetails/byCode"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🚀 接口升级 `v1.1` 版本，**报销单、收款单**类型返回数据中新增了 `writtenOffRecords`（核销借款记录）参数。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🚀 接口升级 `v1.1` 版本，报销单类型返回数据中新增了 `expenseLink`（费用明细关联的申请单ID）参数。<br/>
   [**0.7.160**](/docs/open-api/notice/update-log#07160) -> 🆕 新增了本接口。<br/>
 
@@ -167,7 +168,14 @@ import TabItem from '@theme/TabItem';
                 "standardStrCode": "CNY"
             },
             "expenseDepartment": "djg8LshfUkfM00",  //报销部门
-            "voucherCreateTime": 0
+            "voucherCreateTime": 0,
+            "writtenOffRecords": [                  //核销借款记录
+                {
+                    "id": "ID_3IZQnB$RUa0",         //借款包ID
+                    "amount": "222",                //核销金额
+                    "loanId": "ID_3I$b8tPgCdg"      //借款单ID
+                }
+            ]
         },
         "ownerId": "djg8LshfUkfM00:Dwk7NVkt7o1E00", //流程发起人ID
         "ownerDefaultDepartment": "djg8LshfUkfM00", //流程发起人默认部门ID

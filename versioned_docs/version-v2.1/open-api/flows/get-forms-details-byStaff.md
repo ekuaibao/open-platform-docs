@@ -1,16 +1,23 @@
-# 根据员工ID批量获取单据详情
+# 获取单据列表(新)
 
 import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1/docs/getApplyList"
+url="/api/openapi/v1.1/docs/getApplyList"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🚀 接口升级 `v1.1` 版本，由【根据员工ID批量获取单据详情】改名为【获取单据列表(新)】<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; ●新增了 **报销单、收款单** 类型返回数据中 `writtenOffRecords`（核销借款记录）参数。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; ●新增了 **起止时间** 过滤参数，以及按照 `createTime` 、`updateTime` 、`submitDate` 、`payDate` 参数排序。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; ●新增了 `specificationId` (**单据模板ID**)过滤参数。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; ●新增了 `active` (**查询条件：单据是否删除**)过滤参数。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; ●新增了支持返回 `PROCESSING` (**支付中**)状态的单据。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp; ●取消了 `powercode` (**功能授权码**)参数。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🆕 新增了本接口。<br/>
 
   </div>
@@ -21,16 +28,29 @@ url="/api/openapi/v1/docs/getApplyList"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token    | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **powerCode**   | String  | 功能授权码，传入<br/>219902或者219904即可 | 必填 | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |
 | **type**        | String  | 单据类型      | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单<br/>`permit` : 授权单(商城超标审批申请单) |
 | **uid**         | String  | 员工ID       | 非必填 | - | 值为[员工ID](/docs/open-api/corporation/get-staff-ids)，**不传查企业下全部单据** |
 | **state**       | String  | 单据状态      | 非必填 | - | [状态类型](/docs/open-api/flows/forms-state#单据状态单据详情中的-state-字段)，支持多种状态，用 `,` 分隔<br/>**不传查全部状态单据** |
 | **start**       | Number  | 分页查询起始值 | 必填 | - | 从 `0` 开始，**数据以单据 `创建时间` 倒序排列** |
-| **count**       | Number  | 查询数据条数   | 必填 | - | `0` < **count** ≤ `100` 
+| **count**       | Number  | 查询数据条数   | 必填 | - | `0` < **count** ≤ `100` |
+| **orderBy**     | String  |  排序字段     | 非必填 | createTime | `createTime` : 创建时间<br/>`updateTime` : 更新时间<br/>`submitDate` : 提交时间<br/>`payDate` : 支付时间（单据状态为 `paid` 、`archived` 时有效）|
+| **orderByType** | String  |  排序方式     | 非必填 | desc | `asc` ：正序<br/>`desc` ：倒序|
+| **startDate**   | String  |  起始时间     | 非必填 | - | 格式：`yyyy-MM-dd HH:mm:ss` |
+| **endDate**     | String  |  结束时间     | 非必填 | - | 格式：`yyyy-MM-dd HH:mm:ss` |
+| **specificationId** | String  |  单据模板ID(不带小版本号)   | 非必填 | - | 支持多个，用 `,`分割，**不传查所有模板**<br/>通过[根据企业ID获取单据模版列表](/docs/open-api/forms/get-template-list)获取<br/>例："Kk09lCDmlg3Q00" |
+| **active** | Boolean  |  查询条件：单据是否删除   | 非必填 | false | `true` : 未删除 &emsp; `false` : 已删除 |
+
+:::tip
+- `active` 参数传值分三种情况：
+    - `active` 参数和值均 `不传`，返回企业下 **全部单据**（包括已删除）；
+    - `active` 值传 `空串` 或 `false` 或 `非true外任意值`，返回企业下全部 **已删除** 的单据；；
+    - `active` 值传 `true`，返回企业下全部 **正常** 的单据。
+- `PROCESSING` (支付中)状态的单据无法直接传参查询，可以通过`state` 参数传 `paying` (待支付)状态查询，响应数据中包含了 `PROCESSING` (支付中)状态的数据。
+:::
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/getApplyList?powerCode=219902&type=requisition&start=0&count=10&state=paid&uid=EZA3rQTD1y23vw:eTM3rQTD1y20vw&accessToken=ID_3z35Otu8qpg:EZA3rQTD1y23vw'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/docs/getApplyList?powerCode=219902&type=requisition&start=0&count=10&state=paid&uid=EZA3rQTD1y23vw:eTM3rQTD1y20vw&accessToken=ID_3z35Otu8qpg:EZA3rQTD1y23vw'
 ```
 
 ## 成功响应
@@ -149,7 +169,14 @@ import TabItem from '@theme/TabItem';
                     "standardStrCode": "CNY"
                 },
                 "expenseDepartment": "djg8LshfUkfM00",  //报销部门
-                "voucherCreateTime": 0
+                "voucherCreateTime": 0,
+                "writtenOffRecords": [                  //报销单核销借款记录
+                    {
+                        "id": "ID_3IZQnB$RUa0",         //借款包ID
+                        "amount": "222",                //核销金额
+                        "loanId": "ID_3I$b8tPgCdg"      //借款单ID
+                    }
+                ]
             },
             "ownerId": "djg8LshfUkfM00:Dwk7NVkt7o1E00", //流程发起人ID
             "ownerDefaultDepartment": "djg8LshfUkfM00", // 流程发起人默认部门ID
@@ -684,7 +711,14 @@ import TabItem from '@theme/TabItem';
                 },
                 "specificationId": "ID_3sOtG3xVVkg:7202a3558f143a4b872502ef01fd1b5da2b10303",
                 "expenseDepartment": "djg8LshfUkfM00",
-                "preNodeApprovedTime": 1638347590820
+                "preNodeApprovedTime": 1638347590820,
+                "writtenOffRecords": [                  //报销单核销借款记录
+                    {
+                        "id": "ID_3IZQnB$RUa0",         //借款包ID
+                        "amount": "222",                //核销金额
+                        "loanId": "ID_3I$b8tPgCdg"      //借款单ID
+                    }
+                ]
             },
             "ownerId": "djg8LshfUkfM00:ID_3ruBvlxx7m0",
             "ownerDefaultDepartment": "djg8LshfUkfM00",
