@@ -1,5 +1,5 @@
 # 获取单据审批状态
-根据单据 ID 集合获取到当前单据执行到的审批流程信息。
+根据单据 ID 集合获取当前单据所处于的审批节点名称。
 
 import Control from "@theme/Control";
 
@@ -35,6 +35,12 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/approve
 ```
 
 ## 成功响应
+:::tip
+- `draft`（草稿）、`pending`（提交中）、`rejected`（已驳回）状态的单据 `stageName` 返回 **尚未提交**
+- `paid`（已支付/审批完成）、`archived`（归档）状态的单据 `stageName` 返回 **完成**
+- 其他状态的单据 `stageName` 返回 **节点名称**
+:::
+
 ```json
 {
     "items": [
