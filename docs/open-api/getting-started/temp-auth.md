@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.1**](/docs/open-api/notice/update-log#171) &emsp; -> 🆕 新增了 `authType`（授权方式）参数，控制单点链接可用次数。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了被委托人审批会签节点的单据（`pageType` = `form`）时，无审批按钮的BUG。 <br/>
   [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `pageType` = `frontPage` 类型，进入易快报 **首页**。<br/>
   [**0.7.163**](/docs/open-api/notice/update-log#07163) -> 🆕 新增了 `approvalUrl`（审批完成后跳转地址）参数。<br/>
@@ -31,6 +32,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 | **uid**                     | String  | 员工ID           | 非必填 | - |  当 `userId` 非必填时 `uid` 必填  |
 | **userId**                  | String  | 第三方员工ID      | 非必填 | - | 当 `uid` 非必填时 `userId` 必填 |
 | **pageType**                | String  | 登录页面类型       | 必填  | - | `frontPage` : 首页<br/>`home` : 我的单据<br/>`approve` : 待办列表<br/>`form` : 单据详情页<br/>`new` : 新建单据<br/>`mall` : 商城<br/>`backlogDetail` : 查看待办详情，同时底部菜单<br/>显示指定审批按钮(不支持移动端) |
+| **authType**                | String  | 授权方式          | 非必填 | - | `CODE` : 表示获得的单点链接仅可使用一次，二次使用需要重新登录<br/>**不传此参数表示单点链接在有效期内可无限使用**<br/>**不支持 `new`、`mall`、`backlogDetail` 类型** |
 | **expireDate**              | String  | 授权有效期        | 必填   | - |  单位：秒，最大不能超过 `604800` 秒（7天） |
 | **overdueTokenRedirect**    | String  | 重定向URL        | 非必填 | - | `expireDate` 过期后重定向到该地址 |
 | **isApplet**                | Boolean | 是否跳转app端     | 非必填 | `false` |  `true` : 跳转app端<br/>`false` : 跳转web端   |
@@ -118,4 +120,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/provis
         "message": "expireDate最多只能指定7天内的秒数！"
     }
 }
+```
+
+`authType` = `CODE` 时，重复使用单点链接，报错如下：
+```text
+临时访问地址已过期，请重新获取访问临时授权
 ```

@@ -154,35 +154,9 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 ```
 
 ## 失败响应
-`name`（员工姓名）不传或者传 `""` 时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "员工名称不能为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 员工名称不能为空 | 确认 `name`（员工姓名）是否不传或者传 `""`  | 
+| **400** | - | staffCustomForm中的u_测试1字段不属于员工自定义字段 | 确认 `staffCustomForm`（员工自定义字段）所传参数是否存在 | 
+| **400** | - | 根据字段[defaultDepartment]的code[002]不能定位到唯一部门 | `type` 值为 `code` 时，确认部门类型字段所传 **部门CODE** 在系统中是否重复或存在 | 
 
-`staffCustomForm`（员工自定义字段）所传参数不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "staffCustomForm中的u_测试1字段不属于员工自定义字段",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-`type` 值为 `code` 时，部门类型字段所传 **部门CODE** 在系统中重复或不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "根据字段[defaultDepartment]的code[002]不能定位到唯一部门",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
