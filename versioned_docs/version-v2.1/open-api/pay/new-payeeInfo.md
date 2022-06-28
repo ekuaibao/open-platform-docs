@@ -108,7 +108,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     //"province":"北京市",                     //银行所在省，此示例为通过“bankLinkNo”（银联号）自动回填          
     //"city":"北京市",                         //银行所在城市，此示例为通过“bankLinkNo”（银联号）自动回填              
     "certificateType":"11",                    //证件类型            
-    "certificateNo":"110110198512042345",      //证件类型   
+    "certificateNo":"110110198512042345",      //证件号码   
     "remark":"银行卡备注",                     //备注信息          
     "visibility":{                                      //可见性
         "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
@@ -133,7 +133,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     "name":"支付宝-测试",                      //开户名称  
     "cardNo":"88131234",                       //支付宝账号
     "certificateType":"11",                    //证件类型            
-    "certificateNo":"110110198512042345",      //证件类型   
+    "certificateNo":"110110198512042345",      //证件号码   
     "remark":"支付宝备注",                     //备注信息          
     "visibility":{                                      //可见性
         "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
@@ -163,7 +163,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     "bankCode": "88888",                      //联行号(Bank Code)
     "branchCode": "777777",                   //支行号(Branch Code)
     "certificateType":"11",                   //证件类型            
-    "certificateNo":"110110198512042345",     //证件类型   
+    "certificateNo":"110110198512042345",     //证件号码  
     "remark":"海外账号备注",                   //备注信息          
     "visibility":{                                      //可见性
         "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
@@ -188,7 +188,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     "name":"微信-测试",                        //开户名称  
     "cardNo":"18712341234",                   //微信账号
     "certificateType":"11",                   //证件类型            
-    "certificateNo":"110110198512042345",     //证件类型   
+    "certificateNo":"110110198512042345",     //证件号码   
     "remark":"微信备注",                      //备注信息          
     "visibility":{                                      //可见性
         "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
@@ -213,7 +213,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     "name":"其他-测试",                        //开户名称  
     "cardNo":"18712341234",                   //账号
     "certificateType":"11",                   //证件类型            
-    "certificateNo":"110110198512042345",     //证件类型   
+    "certificateNo":"110110198512042345",     //证件号码   
     "remark":"其他备注",                      //备注信息          
     "visibility":{                                      //可见性
         "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
@@ -235,14 +235,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
 ```
 
 ## 失败响应
-请勿重复添加同一账户，否则返回以下内容：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "该账户已存在，无法创建",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 该账户已存在，无法创建 | 检查 `name` 和 `cardNo` 在系统中是否存在  | 
 

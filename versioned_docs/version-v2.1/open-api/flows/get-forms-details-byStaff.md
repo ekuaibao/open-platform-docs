@@ -17,7 +17,10 @@ url="/api/openapi/v1.1/docs/getApplyList"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🚀 接口升级 `v1.1` 版本，由【根据员工ID批量获取单据详情】更名为【获取单据列表(新)】<br/>
+<!--
+  [**1.7.1**](/docs/open-api/notice/update-log#171) -> 🐞 优化了 `type` 参数必填校验提示信息。<br/>
+-->
+  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🚀 接口升级 `v1.1` 版本，由【根据员工ID批量获取单据详情】更名为【获取单据列表】<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● 新增了 **报销单、收款单** 类型返回数据中 `writtenOffRecords`（核销借款记录）参数。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● 新增了 **起止时间** 过滤参数，以及按照 `createTime` 、`updateTime` 、`submitDate` 、`payDate` 参数排序。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● 新增了 `specificationId`（**单据模板ID**）过滤参数。<br/>
@@ -39,7 +42,7 @@ url="/api/openapi/v1.1/docs/getApplyList"
 | **state**       | String  | 单据状态      | 非必填 | - | [状态类型](/docs/open-api/flows/forms-state#单据状态单据详情中的-state-字段)，支持多种状态，用 `,` 分隔<br/>**不传查全部状态单据** |
 | **start**       | Number  | 分页查询起始值 | 必填 | - | 从 `0` 开始 |
 | **count**       | Number  | 查询数据条数   | 必填 | - | `0` < **count** ≤ `100` |
-| **orderBy**     | String  |  排序字段     | 非必填 | createTime | `createTime` : 创建时间<br/>`updateTime` : 更新时间<br/>`submitDate` : 提交时间<br/>`payDate` : 支付时间（单据状态为 `paid` 、`archived` 时有效）|
+| **orderBy**     | String  |  排序字段     | 非必填 | createTime | `createTime` : 创建时间<br/>`updateTime` : 更新时间<br/>`submitDate` : 提交时间<br/>`payDate` : 支付时间（单据为 `paid` 、`archived` <br/>状态且 **经过出纳支付节点** 时有效）|
 | **orderByType** | String  |  排序方式     | 非必填 | desc | `asc` ：正序<br/>`desc` ：倒序|
 | **startDate**   | String  |  查询起始时间  | 非必填 | - | 格式：`yyyy-MM-dd HH:mm:ss` |
 | **endDate**     | String  |  查询结束时间  | 非必填 | - | 格式：`yyyy-MM-dd HH:mm:ss` |
@@ -782,14 +785,8 @@ import TabItem from '@theme/TabItem';
 ```
 
 ## 失败响应
-`type`（单据类型）不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "参数type无法识别",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 参数type无法识别 | 检查 `type` 参数是否正确  | 
+
 

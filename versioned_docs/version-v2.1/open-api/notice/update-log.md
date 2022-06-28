@@ -14,9 +14,11 @@ timeline: true
 ---
 ## 1.7.1
 
-`2022-06-24`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+`2022-06-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
 - 🆕 新增【**历史版本**】模块
   - 废弃接口移动到此模块下。
+- 🐞 更新 [批量新增收款账户](/docs/open-api/pay/batch-new-payeeInfo) 接口
+  - 优化了接口支持部分账户校验不通过时，其他账户可继续新增成功。
 - 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口
   - 新增了 `authType`（授权方式）参数，控制单点链接可用次数。
 - 🐞 更新 [获取单据审批状态](/docs/open-api/flows/get-approve-state) 接口
@@ -48,8 +50,6 @@ timeline: true
   - 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。
   - 修复了 `code` 传值可以创建重复单据编号的BUG。
   - 修复了 `detailId` 传值可以创建重复费用明细ID的BUG。
-- 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口
-  - 修复了多个字段配置多层级的【字段依赖性】后（例：A->B->C->D），**待审批、待支付** 状态更新单据时偶发报错的BUG。
 - 🐞 更新 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口
   - **报销单、收款单** 类型返回数据中新增了 `writtenOffRecords`（核销借款记录）参数。
 - 🐞 更新 [根据员工ID获取待审批单据](/docs/open-api/flows/get-approve-new) 接口

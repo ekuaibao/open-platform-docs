@@ -11,6 +11,7 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.1**](/docs/open-api/notice/update-log#171) -> 🐞 优化了接口支持部分账户校验不通过时，其他账户可继续新增成功。<br/>
   [**1.6.3**](/docs/open-api/notice/update-log#163) -> 🆕 新增了本接口。<br/>
 
   </div>
@@ -54,6 +55,7 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
 | **&emsp;&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属子部门是否可见 | 必填 | - | `true` : 可见 &emsp; `false` : 不可见 |
 
 :::tip
+- 新增收款账号最大不能超过 **100** 条。 
 - 当 `branch`（开户网点）不确定且必填时，可填写 ”1“（branch不可为null），并保证 `bankLinkNo`（银联号）正确，系统会根据银联号自动回填开户网点。
 - 当不需要线上支付时，可通过系统配置，关闭 “**开户网点**” 必填。
 
@@ -105,7 +107,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             //"province":"北京市",                     //银行所在省，此示例为通过“bankLinkNo”（银联号）自动回填          
             //"city":"北京市",                         //银行所在城市，此示例为通过“bankLinkNo”（银联号）自动回填              
             "certificateType":"11",                    //证件类型            
-            "certificateNo":"110110198512042345",      //证件类型   
+            "certificateNo":"110110198512042345",      //证件号码   
             "remark":"银行卡备注",                     //备注信息          
             "visibility":{                                      //可见性
                 "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
@@ -123,7 +125,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "name":"支付宝-测试0610",                  //开户名称  
             "cardNo":"88131234",                       //支付宝账号
             "certificateType":"11",                    //证件类型            
-            "certificateNo":"110110198512042345",      //证件类型   
+            "certificateNo":"110110198512042345",      //证件号码   
             "remark":"支付宝备注",                     //备注信息          
             "visibility":{                                      //可见性
                 "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
@@ -146,7 +148,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "bankCode": "88888",                      //联行号(Bank Code)
             "branchCode": "777777",                   //支行号(Branch Code)
             "certificateType":"11",                   //证件类型            
-            "certificateNo":"110110198512042345",     //证件类型   
+            "certificateNo":"110110198512042345",     //证件号码   
             "remark":"海外账号备注",                   //备注信息          
             "visibility":{                                      //可见性
                 "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
@@ -164,7 +166,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "name":"微信-测试0610",                    //开户名称  
             "cardNo":"18712340610",                   //微信账号
             "certificateType":"11",                   //证件类型            
-            "certificateNo":"110110198512042345",     //证件类型   
+            "certificateNo":"110110198512042345",     //证件号码   
             "remark":"微信备注",                      //备注信息          
             "visibility":{                                      //可见性
                 "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
@@ -182,7 +184,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "name":"其他-测试0613",                    //开户名称  
             "cardNo":"18712340610",                    //账号
             "certificateType":"11",                    //证件类型            
-            "certificateNo":"110110198512042345",      //证件类型   
+            "certificateNo":"110110198512042345",      //证件号码   
             "remark":"其他备注",                       //备注信息          
             "visibility":{                                      //可见性
                 "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
@@ -320,14 +322,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
 ```
 
 ## 失败响应
-请勿重复添加同一账户，否则返回以下内容：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "批量新增收款账号失败：该账户已存在，无法创建",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 该账户已存在，无法创建 | 检查 `name` 和 `cardNo` 在系统中是否存在  | 
+| **400** | - | 缺少开户行网点参数 | 检查 `branch` 参数 |
 
