@@ -322,7 +322,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
 ```
 
 ## 失败响应
-由于响应信息中会返回的错误信息较长，下面只提供失败原因描述。
+由于响应信息中返回的错误信息较长，下面只提供失败原因描述。
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |

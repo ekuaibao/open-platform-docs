@@ -31,7 +31,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **uid**                     | String  | 员工ID           | 非必填 | - |  当 `userId` 非必填时 `uid` 必填  |
 | **userId**                  | String  | 第三方员工ID      | 非必填 | - | 当 `uid` 非必填时 `userId` 必填 |
-| **pageType**                | String  | 登录页面类型       | 必填  | - | `frontPage` : 首页<br/>`home` : 我的单据<br/>`approve` : 待办列表<br/>`form` : 单据详情页<br/>`new` : 新建单据<br/>`mall` : 商城<br/>`backlogDetail` : 查看待办详情，同时底部菜单<br/>显示指定审批按钮(不支持移动端) |
+| **pageType**                | String  | 登录页面类型       | 必填  | - | `frontPage` : 首页<br/>`home` : 我的单据<br/>`approve` : 待办列表<br/>`form` : 单据详情页<br/>`new` : 新建单据<br/>`mall` : 商城(**不支持移动端**)<br/>`backlogDetail` : 查看待办详情，同时底部菜单<br/>显示指定审批按钮(**不支持移动端**) |
 | **authType**                | String  | 授权方式          | 非必填 | - | `CODE` : 表示获得的单点链接仅可使用一次，二次使用需要重新登录<br/>**不传此参数表示单点链接在有效期内可无限使用**<br/>**不支持 `new`、`mall`、`backlogDetail` 类型** |
 | **expireDate**              | String  | 授权有效期        | 必填   | - |  单位：秒，最大不能超过 `604800` 秒（7天） |
 | **overdueTokenRedirect**    | String  | 重定向URL        | 非必填 | - | `expireDate` 过期后重定向到该地址 |
@@ -47,7 +47,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
  - 当 `pageType` = `form` 时，`flowId` 参数必填，`approvalUrl` 参数选填；
  - 当 `pageType` = `new` 时，`pathname`、`specificationOriginalId` 参数必填；
  - 当 `pageType` = `mall` 时，用户必须已开通商城，否则该接口会返回错误提示；<br/>
-     &nbsp;&nbsp;&nbsp;&nbsp;且只需要传递 `uid`（或者 `userId` ）、 `isApplet` 和 `expireDate` 3个参数即可，其他均可忽略不传；
+ 且只需要传递 `uid`（或者 `userId` ）、 `isApplet` = `false`（不支持移动端）和 `expireDate` 3个参数即可，其他均可不传；
  - 当 `pageType` = `backlogDetail` 时，`isApplet` = `false`（不支持移动端），`flowId` 参数必填，`approvalUrl`、`action` 参数选填（action 不传显示默认的审批按钮，多个值用 “`,`” 分隔）。
 
  ![image](images/审批按钮显示效果.png)
@@ -112,17 +112,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/provis
 ```
 
 ## 失败响应
-`expireDate` 最大仅支持7天的秒数，即604800秒，若大于604800秒则返回以下信息：
-```json
-{
-    "value": {
-        "code": "false",
-        "message": "expireDate最多只能指定7天内的秒数！"
-    }
-}
-```
-
-`authType` = `CODE` 时，重复使用单点链接，报错如下：
-```text
-临时访问地址已过期，请重新获取访问临时授权
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | false | expireDate最多只能指定7天内的秒数！| `expireDate` 最大仅支持7天的秒数，即 `604800` 秒，确认是否大于 `604800` 秒 | 
+| **200** | - | 临时访问地址已过期，请重新获取访问临时授权 | `authType` = `CODE` 时，单点链接仅可使用一次，确认是否重复使用单点链接 | 

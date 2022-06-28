@@ -8,6 +8,15 @@ import Control from "@theme/Control";
 url="/api/openapi/v2/specifications/feeType/byIdsAndCodes"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  [**1.7.1**](/docs/open-api/notice/update-log#171) -> 🆕 **成功响应** 中新增了 `code`（费用类型编码）参数 。<br/>
+
+  </div>
+</details>
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
@@ -41,6 +50,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/specific
         "id": "LqY9lELfXs0000:office",       //费用类型ID
         "corporationId": "LqY9lELfXs0000",   //企业ID
         "name": "办公",                      //费用类型名称
+        "code": "CODE1",                     //费用类型编码
         "expenseSpecificationId": "LqY9lELfXs0000:office:expense:792110273014293af8b7c171057b33bd7a5b315a",          //报销字段版本ID,格式：费用类型ID + expense + 版本号
         "requisitionSpecificationId": "LqY9lELfXs0000:office:requisition:9613b88e57f83e6bde8a066fe4d173963f00d197",  //申请字段版本ID,格式：费用类型ID + requisition + 版本号
         "receiptSpecificationId": "LqY9lELfXs0000:office:receipt:cf9da8c731bf425d4b0586cb804193528f09f538",          //收款字段版本ID,格式：费用类型ID + receipt + 版本号（开通[收款单据]应用后才会返回）
@@ -196,13 +206,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/specific
 ```
 
 ## 失败响应
-
-```json
-{
-  "errorCode": 412,
-  "errorMessage": "查询的费用类型不存在, 请输入有效的查询条件",
-  "errorDetails": null,
-  "code": null,
-  "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 查询的费用类型不存在, 请输入有效的查询条件 | 确认 `ids` 或 `codes` 是否正确 |

@@ -1,4 +1,4 @@
-# 根据单据ID获取借款包
+# 根据单据ID获取借款包信息
 
 import Control from "@theme/Control";
 
@@ -26,18 +26,18 @@ url="/api/openapi/v1/loans/getLoanInfoByFlowId/$`flowId`"
 curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/loans/getLoanInfoByFlowId/$2a8bsS2qFgck00?accessToken=TNQbsyYQV80I00'
 ```
 
-## 成功响应(费用明细)
+## 成功响应
 ```json
 {
-    "value": {                         //借款包信息
-        "version": 1,                  //版本信息
-        "active": true,                //是否有效
-        "createTime": 1589272741621,   //创建时间(毫秒级时间戳)
-        "updateTime": 1589272741622,   //修改时间(毫秒级时间戳)
+    "value": {                            //借款包信息
+        "version": 1,                     //版本信息
+        "active": true,                   //是否有效
+        "createTime": 1589272741621,      //创建时间(毫秒级时间戳)
+        "updateTime": 1589272741622,      //更新时间(毫秒级时间戳)
         "corporationId": "nd8aNompiogg00",//企业ID
         "ownerId": "nd8aNompiogg00:mFw8PzLLpI0800",//借款包所属人员工ID
-        "id": "g3MaYlA9mc5c00",        //借款包ID
-        "total": 1000,                 //总金额
+        "id": "g3MaYlA9mc5c00",           //借款包ID
+        "total": 1000,                    //总金额
         "totalMoneyNode": {
             "standard": "1000",
             "standardUnit": "元",
@@ -46,17 +46,17 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/loans/get
             "standardNumCode": "156",
             "standardStrCode": "CNY"
         },
-        "reserved": 0,           //占用金额（未确认的还款的金额，还款申请提交中，出纳未确认收款）
-        "remain": 1000,          //余额（剩余待还金额）
-        "repayment": 0,          //确认金额（确认已还金额，出纳已确认收款）
-        "state": "REPAID",       //REPAID：待还款，PAID：已还清
-        "flowId": "xt0aYlzRI05w00",//单据ID
-        "title": "借款单 11",     //借款单标题
-        "repaymentDate": 1591951080000,//还款日期
-        "loanDate": 1589272680000,//借款日期
-        "source": "LOAN",         //借款来源, REQUISITION：申请，LOAN：借款-默认借款包是借款生成的
-        "loanInfoRemind": false,  //是否借款提醒
-        "config": {               //配置信息
+        "reserved": 0,                   //占用金额（未确认还款的金额，还款申请提交中，出纳未确认收款）
+        "remain": 1000,                  //余额（剩余待还金额）
+        "repayment": 0,                  //确认金额（确认已还金额，出纳已确认收款）
+        "state": "REPAID",               //REPAID：待还款，PAID：已还清
+        "flowId": "xt0aYlzRI05w00",      //单据ID
+        "title": "借款单 11",            //借款单标题
+        "repaymentDate": 1591951080000,  //还款日期
+        "loanDate": 1589272680000,       //借款日期
+        "source": "LOAN",                //借款来源, REQUISITION：申请单，LOAN：借款（默认借款包是借款生成的）
+        "loanInfoRemind": false,         //是否借款提醒
+        "config": {                      //配置信息
             "isLimitRepaymentDate": true,           //是否限制还款日期
             "allowModifyRepaymentDateConfig": null, //允许修改还款日期配置
             "limitRepaymentDateRange": null,        //还款日期范围
@@ -79,16 +79,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/loans/get
 ```
 
 ## 失败响应
-单据中没找到对应的借款包，需要去检查单据是否已生成了借款记录（借款单流程已完成），或者检查下这个单据是否存在：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "根据借款单Id:8ZAbsRr6_QfA00, 获取不到对应的借款包,请核查",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 根据借款单Id:8ZAbsRr6_QfA00, 获取不到对应的借款包,请核查 | 确认单据是否已生成了借款记录（借款单流程已完成）<br/>确认单据ID是否正确 | 
+
 
 
 
