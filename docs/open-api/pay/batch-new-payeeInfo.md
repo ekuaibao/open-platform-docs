@@ -55,7 +55,7 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
 | **&emsp;&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属子部门是否可见 | 必填 | - | `true` : 可见 &emsp; `false` : 不可见 |
 
 :::tip
-- 新增收款账号最大不能超过 **100** 条。 
+- 新增收款账户最大不能超过 **100** 条。 
 - 当 `branch`（开户网点）不确定且必填时，可填写 ”1“（branch不可为null），并保证 `bankLinkNo`（银联号）正确，系统会根据银联号自动回填开户网点。
 - 当不需要线上支付时，可通过系统配置，关闭 “**开户网点**” 必填。
 
@@ -322,8 +322,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
 ```
 
 ## 失败响应
+由于响应信息中会返回的错误信息较长，下面只提供失败原因描述。
+
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 该账户已存在，无法创建 | 检查 `name` 和 `cardNo` 在系统中是否存在  | 
-| **400** | - | 缺少开户行网点参数 | 检查 `branch` 参数 |
+| **400** | - | 该账户已存在，无法创建 | 确认 `name` 和 `cardNo` 在系统中是否存在  | 
+| **400** | - | 缺少staffId参数 | `owner` = `INDIVIDUAL` 时，该参数必填，请检查 |
+| **400** | - | 缺少开户行网点参数 | 确认系统中是否勾选【允许开户网点为非必填项】，未勾选则该参数必填 |
+| **400** | - | 开行网点不存在, 请联系管理员补充! | 确认 `branch` 参数是否正确或者是否在 [开户网点](/docs/open-api/pay/get-all-branch) 中 |
+| **400** | - | 证件类型输入有误 | 确认 `certificateType` 参数是否在【[证件类型对照表](/docs/open-api/pay/new-payeeInfo#证件类型对照表)】中 |
 
