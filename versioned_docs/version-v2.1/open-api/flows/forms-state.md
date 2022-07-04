@@ -19,15 +19,15 @@
 | 名称 | 类型 | 描述 |
 | :--- | :--- | :--- |
 | **draft**      | String  | 草稿 |
-| **pending**    | String  | 提交中（预算计算）|
+| **pending**    | String  | 提交中（预算计算，临时状态）|
 | **approving**  | String  | 审批中 |
 | **rejected**   | String  | 已驳回 |
 | **paying**     | String  | 待支付，仅用于报销单和有借款的申请单。<br/>没有借款时，单据跳过待支付状态直接变成已完成。 |
-| **PROCESSING** | String  | 支付中 |
-| **paid**       | String  | 已支付。审批完成，不是流程终结状态。 |
-| **archived**   | String  | 归档。完成的单据暂存用户首页列表显示。<br/>归档后放入"查看已完成"。 |
-| **sending**    | String  | 寄送中 |
-| **receiving**  | String  | 收单中 |
+| **`PROCESSING`** | String  | **支付中，非单据状态，属于业务状态** |
+| **paid**       | String  | 已支付/审批完成，不是单据最终状态。 |
+| **archived**   | String  | 归档，单据最终状态。<br/>审批完成的单据确认后表示归档（【我的单据】-【已完成单据】）。 |
+| **sending**    | String  | 寄送中（单据到达“**寄送节点**”时处于此状态，需要开通【**异地单据寄收管理**】功能方可配置此节点类型） |
+| **receiving**  | String  | 收单中（单据到达“**收单节点**”时处于此状态，需要开通【**异地单据寄收管理**】功能方可配置此节点类型）|
 
 ## 发票类型(费用明细中的 invoiceType 字段)
 

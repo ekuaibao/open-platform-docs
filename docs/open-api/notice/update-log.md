@@ -12,9 +12,20 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.7.2
+
+`2022-07-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+- 🚀 新增 [停用自定义档案项](/docs/open-api/dimensions/disable-dimension-items)、[启用自定义档案项](/docs/open-api/dimensions/enable-dimension-items) 接口 `v1.1` 版本
+  - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
+- 🐞 更新 [单据相关字段类型](/docs/open-api/flows/forms-state) 文档
+  - 更新了 **单据状态** 描述。
+- 🐞 更新 [获取发票主体信息](/docs/open-api/datalink-extend/get-entity-invoice)、[获取发票明细信息](/docs/open-api/datalink-extend/get-entity-invoic-details)、[批量获取发票明细](/docs/open-api/datalink-extend/get-entity-invoic-details-batch) 接口
+  - **成功响应** 中增加了 `active`（发票是否已使用）参数注释。
+
+---
 ## 1.7.1
 
-`2022-06-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+`2022-06-29`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
 - 🆕 新增 [根据借款包ID获取借款包信息](/docs/open-api/flows/get-flow-byLoanInfoId) 接口
 - 🆕 新增 [根据还款记录ID获取还款信息](/docs/open-api/flows/get-repayment-record) 接口
 - 🆕 新增【**历史版本**】模块

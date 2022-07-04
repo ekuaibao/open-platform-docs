@@ -169,11 +169,11 @@ import TabItem from '@theme/TabItem';
             "E_system_发票主体_购买方开户行及账号":"",
             "E_system_发票主体_购买方纳税人识别号":"91110116348294556H",
             "E_system_发票主体_销售方纳税人识别号":"91110108MA01G0FB09",
-            "active":false,
+            "active":false,   //发票主体是否已使用 true：未使用（爱发票、微信卡包、支付宝卡包） false：已使用（绑定了单据或者随手记）
             "entityId":"system_发票主体",
             "entity":{
                 "version":2,
-                "active":true,
+                "active":true,  //表示发票主体所保存在的那个业务对象的停启用状态  true：启用  false：停用
                 "createTime":1531810588185,
                 "updateTime":1531810588185,
                 "name":"发票主体",

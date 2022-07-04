@@ -49,9 +49,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
             "corporationId": "f1Q9VElpo01s00",
             "sourceCorporationId": null,
             "dataCorporationId": null,
-            "parentId": "",                               //档案值的父级id
-            "id": "ID_3w0G92wfSCw",                       //档案值id
-            "dimensionId": "f1Q9VElpo01s00:成本中心预置",  //所属档案类别id
+            "parentId": "",                               //档案值的父级ID
+            "id": "ID_3w0G92wfSCw",                       //档案值ID
+            "dimensionId": "f1Q9VElpo01s00:成本中心预置",  //所属档案类别ID
             "orders": 1641881657097,
             "visibility": {               //可见范围
                 "fullVisible": true,      //是否全部可见。在非全部可见的情况下，仅白名单内的员工可见。

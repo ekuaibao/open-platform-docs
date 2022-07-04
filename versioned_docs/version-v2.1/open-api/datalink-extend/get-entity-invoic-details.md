@@ -61,11 +61,11 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension
                 "standardNumCode": "156",
                 "standardStrCode": "CNY"
             },
-            "active": false,
+            "active": false,  //发票明细是否已使用 true：未使用（爱发票、微信卡包、支付宝卡包） false：已使用（绑定了单据或者随手记）
             "entityId": "system_发票明细",
             "entity": {
                 "version": 2,
-                "active": true,
+                "active": true,  //表示发票明细所保存在的那个业务对象的停启用状态  true：启用  false：停用
                 "createTime": 1531810588185,
                 "updateTime": 1531810588185,
                 "name": "发票明细",

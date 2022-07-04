@@ -39,10 +39,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
             "name": "台式电脑",            //档案值名称
             "nameSpell": "TAISHIDIANNAO",
             "code": "5-Desktop-PC",       //自定义档案值的编码
-            "corporationId": "JOYbpjPP-E2Q00", //企业id
-            "parentId": "",                    //档案的父级id
-            "id": "JOYbpjPP-E2Q00:desktopPC",  //档案值id
-            "dimensionId": "JOYbpjPP-E2Q00:固定资产类目", //所属档案类别id
+            "corporationId": "JOYbpjPP-E2Q00", //企业ID
+            "parentId": "",                    //档案的父级ID
+            "id": "JOYbpjPP-E2Q00:desktopPC",  //档案值ID
+            "dimensionId": "JOYbpjPP-E2Q00:固定资产类目", //所属档案类别ID
             "orders": 1585212226451,            //排序
             "visibility": {                     //可见范围
                 "fullVisible": false,           //是否全部可见。在非全部可见的情况下，仅白名单内的员工可见。
@@ -58,7 +58,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
                 ],
                 "departmentsIncludeChildren": true
             },
-            "payAccountIds": null  //支付账户id
+            "payAccountIds": null  //支付账户ID
         }
     ]
 }

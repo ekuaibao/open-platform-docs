@@ -60,7 +60,7 @@ url="/api/openapi/v1.1/docs/getApplyList"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/docs/getApplyList?powerCode=219902&type=requisition&start=0&count=10&state=paid&uid=EZA3rQTD1y23vw:eTM3rQTD1y20vw&accessToken=ID_3z35Otu8qpg:EZA3rQTD1y23vw'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/docs/getApplyList?type=requisition&start=0&count=10&state=paid&uid=EZA3rQTD1y23vw:eTM3rQTD1y20vw&accessToken=ID_3z35Otu8qpg:EZA3rQTD1y23vw'
 ```
 
 ## 成功响应
