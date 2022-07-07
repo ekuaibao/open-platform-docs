@@ -17,10 +17,16 @@ timeline: true
 `2022-07-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
 - 🚀 新增 [停用自定义档案项](/docs/open-api/dimensions/disable-dimension-items)、[启用自定义档案项](/docs/open-api/dimensions/enable-dimension-items) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
-- 🐞 更新 [单据相关字段类型](/docs/open-api/flows/forms-state) 文档
-  - 更新了 **单据状态** 描述。
+- 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
+  - 修复了待办任务自动同意时，接口报错 **HTTP 400** 的BUG。
+- 🐞 更新 [获取单据审批状态](/docs/open-api/flows/get-approve-state) 接口
+  - 修复了 **会签** 节点响应数据中返回全部审批人列表的问题，实际应只返回待审批人列表。
+- 🐞 更新 [新增自定义档案项](/docs/open-api/dimensions/creat-dimension-items)、[批量新增自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口
+  - 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。
 - 🐞 更新 [获取发票主体信息](/docs/open-api/datalink-extend/get-entity-invoice)、[获取发票明细信息](/docs/open-api/datalink-extend/get-entity-invoic-details)、[批量获取发票明细](/docs/open-api/datalink-extend/get-entity-invoic-details-batch) 接口
   - **成功响应** 中增加了 `active`（发票是否已使用）参数注释。
+- 🐞 更新 [单据相关字段类型](/docs/open-api/flows/forms-state) 文档
+  - 更新了 **单据状态** 描述。
 
 ---
 ## 1.7.1

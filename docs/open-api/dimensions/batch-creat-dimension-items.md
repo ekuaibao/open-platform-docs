@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/dimensions/items/batch"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.2**](/docs/open-api/notice/update-log#172) &emsp; -> 🆕 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
   [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了当 `fullVisible` = `fals` 时，对 `staffs`、`roles`、`departments` 三个参数的必填及有效性校验。<br/>
   [**0.7.125**](/docs/open-api/notice/update-log#07125) -> 🆕 新增了本接口。<br/>
@@ -77,18 +78,19 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
                 "projectManager": "bwa3wajigF0WH0:ID_3lokDfb1p5w",              //项目经理，值为员工ID或CODE，与 “type” 参数保持一致
                 "projectType": "ID_3FB3TN25jU0",                                //项目类型，值为【项目类型预置】档案实例ID或CODE，与 “type” 参数保持一致
                 //-----------------------------------------
-                //”职级预置“档案额外参数
+                //“职级预置”档案额外参数
                 "rankType":"ID_3D0v9XB1jpw",                                    //职级类型，值为【职级类型预置】档案实例ID或CODE，与 “type” 参数保持一致
                 //-----------------------------------------
-                //”岗位预置“档案额外参数
+                //“岗位预置”档案额外参数
                 "postType":"ID_3FB3TN25nU0",                                    //岗位类型，值为【岗位类型预置】档案实例ID或CODE，与 “type” 参数保持一致
                 //-----------------------------------------
-                //”法人实体“档案额外参数
+                //“法人实体”档案额外参数
+                "baseCurrencyId":"156",                                         //法人实体本位币数字代码，取值见币种设置，只可传系统内配置好的本位币，需要开通【法人实体多币种】功能        
                 "taxpayerType":"GeneralTaxpayer"                                //纳税人类型，GeneralTaxpayer:一般纳税人；SmallScaleTaxpayer：小规模纳税人
              },
-            //”法人实体“档案额外参数
+            //“法人实体”档案额外参数
             "payAccountIds":["bwa3wajigF0WH0:BANK"],          //可用支付账户
-            //”法人实体“，“成本中心预置”档案额外参数
+            //“法人实体”，“成本中心预置”档案额外参数
             "departments":["bwa3wajigF0WH0:ID_3E8KASS74ag"]   //所属部门ID或CODE，与 “type” 参数保持一致
         },
         {
@@ -133,18 +135,19 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
                 "projectManager": "9458",                                       //项目经理，值为员工ID或CODE，与 “type” 参数保持一致
                 "projectType": "CODE1",                                         //项目类型，值为【项目类型预置】档案实例ID或CODE，与 “type” 参数保持一致
                 //-----------------------------------------
-                //”职级预置“档案额外参数
+                //“职级预置”档案额外参数
                 "rankType":"CODE1",                                             //职级类型，值为【职级类型预置】档案实例ID或CODE，与 “type” 参数保持一致
                 //-----------------------------------------
-                //”岗位预置“档案额外参数
+                //“岗位预置”档案额外参数
                 "postType":"CODE1",                                             //岗位类型，值为【岗位类型预置】档案实例ID或CODE，与 “type” 参数保持一致
                 //-----------------------------------------
-                //”法人实体“档案额外参数
+                //“法人实体”档案额外参数
+                "baseCurrencyId":"156",                                         //法人实体本位币数字代码，取值见币种设置，只可传系统内配置好的本位币，需要开通【法人实体多币种】功能        
                 "taxpayerType":"GeneralTaxpayer"                                //纳税人类型，GeneralTaxpayer:一般纳税人；SmallScaleTaxpayer：小规模纳税人
              },
-            //”法人实体“档案额外参数
+            //“法人实体”档案额外参数
             "payAccountIds":["bwa3wajigF0WH0:BANK"],          //可用支付账户
-            //”法人实体“，“成本中心预置”档案额外参数
+            //“法人实体”，“成本中心预置”档案额外参数
             "departments":["BM001"]                           //所属部门ID或CODE，与 “type” 参数保持一致
         },
         {
@@ -228,48 +231,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
 - 本接口是从数组第一个参数开始校验，参数有问题就报错打断，直到全部通过校验才调用成功。 
 :::
 
-**父节点ID** 不存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "上级档案[ID_3yrzERx0Qf01]不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 根据code: [[CODE22]]不能找到唯一的档案项 | 确认档案项父级CODE参数是否正确 | 
+| **400** | - | baseCurrencyId对应的本位币在企业不存在，请检查 | 确认 `baseCurrencyId` 参数值对应的本位币在企业内是否配置 | 
+| **400** | - | 类型为法人实体时，baseCurrencyId是必填参数，请检查 | 开通了【**法人实体多币种**】功能后，`baseCurrencyId` 是必填参数 | 
+| **412** | - | 上级档案[ID_3yrzERx0Qf01]不存在        | 确认档案项父级ID参数是否正确 | 
+| **412** | - | 该档案项编码[XMCS001]导入重复           | 确认档案项CODE是否重复导入 | 
+| **412** | - | 根据code: [[100]]不能找到唯一的员工      | 确认员工CODE是否重复或者不存在 | 
 
-**父节点CODE** 不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "根据code: [[CODE22]]不能找到唯一的档案项",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-**档案项CODE** 重复时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "该档案项编码[XMCS001]导入重复",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-**员工CODE** 重复或者不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "根据code: [[100]]不能找到唯一的员工",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
 

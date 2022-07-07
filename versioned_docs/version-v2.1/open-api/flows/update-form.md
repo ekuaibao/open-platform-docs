@@ -136,7 +136,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
                             "specificationId": "joQbMsJBw01c00:报销部门&项目分摊:3188695b6e1209edef0b4ef8d4f12e351442d066"
                         }
                     ],
-                    "co`nsumptionReasons": ""
+                    "consumptionReasons": ""
                 }
             }
         ],

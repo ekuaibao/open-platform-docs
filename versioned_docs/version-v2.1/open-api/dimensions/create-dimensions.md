@@ -1,4 +1,4 @@
-# 新建自定义档案类别
+# 新增自定义档案类别
 
 import Control from "@theme/Control";
 

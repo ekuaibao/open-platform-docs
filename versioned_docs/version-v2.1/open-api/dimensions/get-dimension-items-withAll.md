@@ -43,7 +43,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
             "active": true,              //是否有效
             "createTime": 1641881657097,
             "updateTime": 1641881657097,
-            "name": "阿门",               //档案值名称
+            "name": "阿门",              //档案值名称
             "nameSpell": "AMEN",
             "code": "CODE3",             //档案值编码
             "corporationId": "f1Q9VElpo01s00",
@@ -52,6 +52,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
             "parentId": "",                               //档案值的父级ID
             "id": "ID_3w0G92wfSCw",                       //档案值ID
             "dimensionId": "f1Q9VElpo01s00:成本中心预置",  //所属档案类别ID
+            "channel": "MANUAL",                          //数据来源  MANUAL：系统创建  API：接口创建
             "orders": 1641881657097,
             "visibility": {               //可见范围
                 "fullVisible": true,      //是否全部可见。在非全部可见的情况下，仅白名单内的员工可见。
@@ -65,7 +66,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
                 "taxpayerType": "GeneralTaxpayer",  //“法人实体”档案额外参数，纳税人类型，GeneralTaxpayer：一般纳税人；SmallScaleTaxpayer：小规模纳税人
                 "postType": "",         //“岗位预置”档案额外参数，岗位类型，值为【岗位类型预置】档案实例ID
                 "rankType": "",         //“职级预置”档案额外参数，职级类型，值为【职级类型预置】档案实例ID
-                "baseCurrencyId": "",
+                "baseCurrencyId": "",   //“法人实体”档案额外参数，法人实体本位币数字代码，开通【法人实体多币种】功能并配置后此参数才有值。
                 "projectBase": "",      //“项目” 档案额外参数，项目所在地
                 "projectType": "",      //“项目” 档案额外参数，项目类型，值为【项目类型预置】档案实例ID
                 "projectManager": "",   //“项目” 档案额外参数，项目经理，值为员工ID

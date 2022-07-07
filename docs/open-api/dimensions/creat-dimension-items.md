@@ -1,4 +1,4 @@
-# 新建自定义档案项
+# 新增自定义档案项
 
 import Control from "@theme/Control";
 
@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/dimensions/items"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.2**](/docs/open-api/notice/update-log#172) -> 🆕 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。<br/>
   [**1.1.0**](/docs/open-api/notice/update-log#110) -> 🚀 接口升级 `v1.1` 版本，新增了当 `fullVisible` = `fals` 时，对 `staffs`、`roles`、`departments` 三个参数的必填及有效性校验。<br/>
 
   </div>
@@ -26,15 +27,15 @@ url="/api/openapi/v1.1/dimensions/items"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**dimensionId**           | String   | 档案类别ID	| 必填  | - | 可通过[获取自定义档案类别](/docs/open-api/dimensions/get-dimensions)来获取 |
+|**dimensionId**           | String   | 档案类别ID	| 必填  | - | 可通过 [获取自定义档案类别](/docs/open-api/dimensions/get-dimensions) 来获取 |
 |**name**                  | String   | 档案值名称	| 必填  | - | 档案值名称，最大不能超过300个字 |
 |**code**                  | String   | 档案值编码	| 必填  | - | 档案值编码 |
 |**visibility**            | Object   | 可见范围      | 非必填 | - | 可见范围 |
 |**&emsp; ∟ fullVisible** | Boolean  | 是否全部可见   | 非必填 | true | `true` : 全部可见 <br/>`false` : 非全部可见，此时**三个白名单至少必填一项**<br/>在非全部可见的情况下，仅白名单内的员工可见 |
-|**&emsp; ∟ staffs**      | Array    | 员工白名单	| 非必填 | - | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
-|**&emsp; ∟ roles**       | Array    | 角色白名单	| 非必填 | - | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
-|**&emsp; ∟ departments** | Array    | 部门白名单    | 非必填 | - | 值为[部门ID](/docs/open-api/corporation/get-departments) |
-|**parentId**              | String   | 档案值父级ID  | 必填   | - | 可通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)来获取。如果是根节点应填写 `""` |
+|**&emsp; ∟ staffs**      | Array    | 员工白名单	| 非必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) |
+|**&emsp; ∟ roles**       | Array    | 角色白名单	| 非必填 | - | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) |
+|**&emsp; ∟ departments** | Array    | 部门白名单    | 非必填 | - | 值为 [部门ID](/docs/open-api/corporation/get-departments) |
+|**parentId**              | String   | 档案值父级ID  | 必填   | - | 可通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 来获取。如果是根节点应填写 `""` |
 
 :::tip
 - 系统预置档案有一些额外字段，详细字段传参见CURL里面的注释。
@@ -72,6 +73,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
          "postType":"ID_3sjQzq30UL0",                                  //岗位类型，值为【岗位类型预置】档案实例ID
         //-----------------------------------------
         //“法人实体”档案额外参数
+        "baseCurrencyId":"156",                                        //法人实体本位币数字代码，取值见币种设置，只可传系统内配置好的本位币，需要开通【法人实体多币种】功能
         "taxpayerType":"GeneralTaxpayer"                               //纳税人类型，GeneralTaxpayer：一般纳税人；SmallScaleTaxpayer：小规模纳税人
         //-----------------------------------------
     },
@@ -90,60 +92,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
 ```
 
 ## 失败响应
-当档案值父级ID参数错误时：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "上级档案不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 上级档案不存在                     | 确认档案项父级ID参数是否正确 | 
+| **412** | - | 该档案项名称[项目2-1]导入重复        | 确认档案项是否重复导入 | 
+| **412** | - | 编码[XM2003]已经被占用             | 确认档案项编码是否已存在 | 
+| **412** | - | 当 `fullVisible` 为 `false` 时，请指定 `departments`、`roles` 或 `staffs` 的值 | 当 `fullVisible` 为 `false` 时，确认 `departments` 、`roles` 、`staffs` 参数是否都为空 | 
+| **412** | - | 参数staffs的值不存在或已被禁用[xxxx] | 确认 `departments` 、`roles` 、`staffs` 参数是否正确或已禁用 | 
 
-当重复导入时：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "该档案项名称[项目2-1]导入重复",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当档案值编码已存在时：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "编码[XM2003]已经被占用",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当 `fullVisible` 为 `false` ，`departments` 、`roles` 、`staffs` 参数都为空时：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "当fullVisible为false时，请指定departments、roles或staffs的值",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当 `departments` 、`roles` 、`staffs` 参数值不正确时：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "参数staffs的值不存在或已被禁用[xxxx]",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
 
 

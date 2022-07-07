@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/flowDetails/allLogs"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.7.2**](/docs/open-api/notice/update-log#172) -> 🐞 修复了待办任务自动同意时，接口报错 **HTTP 400** 的BUG。<br/>
   [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🚀 接口升级 `v1.1` 版本，**成功响应** 中新增了 `action`（已办动作）参数。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🆕 新增了本接口。<br/>
 
@@ -199,24 +200,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDet
 | **REQUISITION_PAID** | 临时状态（申请单支付时消息发送） |
 
 ## 失败响应
-`flowId`（单据ID）不存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "单据不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | Error 400 Bad Request | 代码处理未获取到唯一 `action`，此问题请反馈易快报技术人员 | 
+| **412** | - | 单据不存在 | 确认 `flowId`（单据ID）是否存在 | 
+| **412** | - | 单据已删除 | 确认 `flowId`（单据ID）是否已删除 | 
 
-`flowId`（单据ID）已删除时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "单据已删除",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```

@@ -50,6 +50,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
         "parentId": "",                     //档案的父级ID
         "id": "Urf3lsFgBp00gw:desktopPC",   //档案值ID
         "dimensionId": "Urf3lsFgBp00gw:固定资产类目",  //所属档案类别ID
+        "channel": "API",                   //数据来源  MANUAL：系统创建  API：接口创建
         "orders": 1585212226451,            //排序
         "visibility": {                     //可见范围
             "fullVisible": true,  //是否全部可见。在非全部可见的情况下，仅白名单内的员工可见。
