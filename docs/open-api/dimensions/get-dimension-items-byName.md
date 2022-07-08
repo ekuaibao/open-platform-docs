@@ -8,6 +8,15 @@ method="GET"
 url="/api/openapi/v1/dimensions/getDimensionByName"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🐞 **成功响应** 中可获取新增的 `channel`（数据来源）字段。<br/>
+
+  </div>
+</details>
+
 :::caution
 - 此接口并不区分档案类别，需要在获取到本地后再进行分类，通过 `dimensionId` 和[获取自定义档案类别](/docs/open-api/dimensions/get-dimensions)接口返回的id关联。
 :::

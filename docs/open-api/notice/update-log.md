@@ -12,6 +12,19 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.8.0
+
+`2022-07-12`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+- 🐞 更新 [新增自定义档案项](/docs/open-api/dimensions/creat-dimension-items)、[批量新增自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口
+  - 更新了系统逻辑，新增了 `channel`（数据来源）字段。
+    - `channel` = `API` ：来源为通过 **OpenAPI** 接口新增。
+    - `channel` = `MANUAL` ：来源为通过 **系统界面** 新增。
+  - [获取自定义档案项(所有字段值)](/docs/open-api/dimensions/get-dimension-items-withAll)、[根据ID获取自定义档案项](/docs/open-api/dimensions/get-dimension-items-byId)、[根据编码获取自定义档案项](/docs/open-api/dimensions/get-dimension-items-byCode)、[根据名称获取自定义档案项](/docs/open-api/dimensions/get-dimension-items-byName) 接口 **成功响应** 中可获取新增的 `channel` 字段。
+- 🐞 更新 [根据部门ID或编码获取部门信息](/docs/open-api/contacts/get-departments-idOrCode)、[根据部门名称获取部门信息](/docs/open-api/contacts/get-department-byName)、[根据部门路径获取部门信息](/docs/open-api/contacts/get-department-byPath)、[获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty)、[修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields) 接口
+  - 以上接口从【**通讯录同步**】模块迁移到【**企业通讯录**】模块。
+    - 【**通讯录同步**】模块下接口需要开通【**通讯录接口**】功能方可使用。
+
+---
 ## 1.7.2
 
 `2022-07-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
