@@ -253,13 +253,9 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
 </TabItem>
 </Tabs>
 
-
-
-
-
 ## 成功响应
 :::caution
-- 响应需要判断HTTP状态码来确定是否成功，响应成功时无内容返回。
+- 响应需要判断 **HTTP状态码** 来确定是否成功，响应成功时无内容返回。
 :::
 
 ```text
@@ -267,33 +263,11 @@ code 204
 ```
 
 ## 失败响应
-参数非全路径或员工信息不正确时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "数据错误:[0:路径不存在[部门], 0:人员不存在[EAQbauUqXweI00:YCgbc2y8_Ivg00]]",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **403** | - | 没有权限同步此角色 | 确认所操作的角色数据来源是否为【**API导入**】 | 
+| **412** | - | 找不到角色        | 确认所操作的角色ID是否正确或存在 | 
+| **412** | - | 数据错误:[0:路径不存在[部门], 0:人员不存在[EAQbauUqXweI00:YCgbc2y8_Ivg00]] | 确认 `path` 是否为完整路径参数<br/>确认员工信息是否正确 | 
+| **412** | - | 参数staffs不能为空 | 除了普通角色，`path`、`staffs` 不允许传 `null` | 
+| **412** | - | 参数path不能为空   | 除了普通角色，`path`、`staffs` 不允许传 `null` | 
 
-除了普通角色，`path`、`staffs` 不允许传 `null`，否则报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "参数staffs不能为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "参数path不能为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```

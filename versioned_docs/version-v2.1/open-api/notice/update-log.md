@@ -15,14 +15,27 @@ timeline: true
 ## 1.8.0
 
 `2022-07-12`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+- 🆕 新增 [关闭申请事项](/docs/open-api/flows/close-requisition) 接口。
+- 🆕 新增 [删除角色下员工信息](/docs/open-api/corporation/delete-roles) 接口。
+- 🚀 新增 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口 `v1.1` 版本
+  - 新增了 `cellphone`（手机号）参数校验，只允许传英文括号和数字。
 - 🐞 更新 [新增自定义档案项](/docs/open-api/dimensions/creat-dimension-items)、[批量新增自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口
   - 更新了系统逻辑，新增了 `channel`（数据来源）字段。
-    - `channel` = `API` ：来源为通过 **OpenAPI** 接口新增。
-    - `channel` = `MANUAL` ：来源为通过 **系统界面** 新增。
+    - `channel` = `API` ：来源为通过 **OpenAPI** 接口新增
+    - `channel` = `MANUAL` ：来源为通过 **系统界面** 新增
   - [获取自定义档案项(所有字段值)](/docs/open-api/dimensions/get-dimension-items-withAll)、[根据ID获取自定义档案项](/docs/open-api/dimensions/get-dimension-items-byId)、[根据编码获取自定义档案项](/docs/open-api/dimensions/get-dimension-items-byCode)、[根据名称获取自定义档案项](/docs/open-api/dimensions/get-dimension-items-byName) 接口 **成功响应** 中可获取新增的 `channel` 字段。
+- 🐞 更新 [新增预算包](/docs/open-api/budget/add-budget)、[批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node) 接口
+  - 修复了新增预算包同一层级节点是不同的自定义档案维度时可以调用成功的BUG。
+- 🐞 更新 [获取单据列表](/docs/open-api/flows/get-forms-details-byStaff) 接口
+  - 修复了 `orderBy` = `payDate` 时，`start` 和 `count` 分页参数不生效的BUG。
+  - 优化了 `type` 参数必填校验提示信息。
+- 🐞 更新 [获取单据附件](/docs/open-api/flows/get-flows-attachment) 接口
+  - 修复了获取智能拍票录入的发票，除了 **发票主体** 类型外，其他类型的 `invoiceNumber`（发票代码）和 `invoiceCode`（发票号码）返回 `null` 的BUG。
+- 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
+  - 修复了获取 `WEIXIN`（微信）、`OTHER`（其他）类型收款账户时，`certificateType`（证件类型 ）、`certificateNo`（证件号码）返回空的BUG。
 - 🐞 更新 [根据部门ID或编码获取部门信息](/docs/open-api/contacts/get-departments-idOrCode)、[根据部门名称获取部门信息](/docs/open-api/contacts/get-department-byName)、[根据部门路径获取部门信息](/docs/open-api/contacts/get-department-byPath)、[获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty)、[修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields) 接口
   - 以上接口从【**通讯录同步**】模块迁移到【**企业通讯录**】模块。
-    - 【**通讯录同步**】模块下接口需要开通【**通讯录接口**】功能方可使用。
+    - 【**通讯录同步**】模块下接口需要开通【**通讯录接口**】功能方可使用
 
 ---
 ## 1.7.2

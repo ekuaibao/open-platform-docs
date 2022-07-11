@@ -12,6 +12,7 @@ url="/api/openapi/v1/flowDetails/attachment"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🐞 修复了获取智能拍票录入的发票，除了 **发票主体** 类型外，其他类型的 `invoiceNumber`（发票代码）和 `invoiceCode`（发票号码）返回 `null` 的BUG。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🐞 修复了无法把费用明细里的系统无法识别的充当发票的图片当附件处理返回的问题。<br/>
 
   </div>
@@ -27,7 +28,7 @@ url="/api/openapi/v1/flowDetails/attachment"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowIds** | Array | 单据ID | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一)，一次最多能查询 **100** 个单据<br/>例如：[ "1s8cfnyBH8Jw00" , "1s8cfnyBH8Jw01" ] |
+| **flowIds** | Array | 单据ID | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一)，最大不允许超过 `100` 个单据查询<br/>例如：[ "1s8cfnyBH8Jw00" , "1s8cfnyBH8Jw01" ] |
 
 ## CURL
 ```json
@@ -60,8 +61,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
                 },
                 {
                     "type":"flow.free",                //单据费用详情附件
-                    "freeId":"r3gX9hMxRsvgAa",         //费用详情ID
-                    "attachmentUrls":[                 //费用详情附件
+                    "freeId":"r3gX9hMxRsvgAa",         //费用类型ID
+                    "attachmentUrls":[                 //费用类型附件
                         {
                             "key":"无发票号码-1611919424372-705.jpg",
                             "url":"https://vipimg.ekuaibao.com/%E6%97%A0%E5%8F%91%E7%A5%A8%E5%8F%B7%E7%A0%81-1611919424372-705.jpg?e=1612428089&token=hky7l9UOxMaLClIe5GV51aPS6KMpYBW2zLVpzfxi:KN9enR6649pNcF13Mq4S7Uuka50=",
@@ -74,7 +75,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
                             "key":"广东机打发票9000(1)-1611919551788-38.jpg",
                             "url":"https://vipimg.ekuaibao.com/%E5%B9%BF%E4%B8%9C%E6%9C%BA%E6%89%93%E5%8F%91%E7%A5%A89000%281%29-1611919551788-38.jpg?e=1612428089&token=hky7l9UOxMaLClIe5GV51aPS6KMpYBW2zLVpzfxi:f4bcE63ecFlQ8wdyYW0UNwsJ9d0=",
                             "fileId":"YrMcgINHfcfc00",
-                            "fileName":"广东机打发票9000(1).jpg"
+                            "fileName":"广东机打发票9000(1).jpg",
+                            "invoiceNumber": "144062070284",  //发票代码
+                            "invoiceCode": "00097977"         //发票号码
                         }
                     ]
                 },
@@ -179,11 +182,25 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 ```
 
 :::tip
-响应数据中附件的 `key`、`fileId`、`fileName` 不是必返回的，有些附件可能没有这些字段。
+- 响应数据中附件的 `key`、`fileId`、`fileName` 不是必返回的，有些附件可能没有这些字段。
+- **费用明细** 中智能拍票录入的 `invoiceNumber`（发票代码）和 `invoiceCode`（发票号码）介绍见下面的表格。
 :::
 
+| 发票类型 | 发票代码（invoiceNumber）有值 | 发票号码（invoiceCode）有值 |
+| :--- | :--- | :--- |
+| 发票主体            | √ | √ |
+| 机打发票            | √ | √ |
+| 过路费发票          | √ | √ |
+| 出租车票            | √ | √ |
+| 客运汽车发票         | √ | √ |
+| 定额发票            | √ | √（表示号码） |
+| 火车票              | × | √（表示车票号码） |
+| 航空运输电子客票行程单 | × | √（表示身份证号） |
+| 消费小票            | × | × |
+| 其他               | × | × |
+
 ## 失败响应
-单据不存在，一般是单据ID不对或者单据已经被删除了，请检查：
+单据不存在，一般是单据ID不正确或者单据已经被删除，请确认：
 ```json
 {
     "items": []  //表示没查到数据
@@ -195,6 +212,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 | 字段名 | 对应附件来源类型 |
 | :--- | :--- |
 | **flow.body**      | 单据详情附件 |
-| **flow.free**      | 单据费用详情附件 |
+| **flow.free**      | 单据费用明细附件 |
 | **flow.approving** | 单据审批附件（包含评论附件） |
 | **flow.receipt**   | 单据回单附件 |

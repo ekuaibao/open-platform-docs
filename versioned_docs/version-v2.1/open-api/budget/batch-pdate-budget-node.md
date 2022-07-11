@@ -12,6 +12,7 @@ url="/api/openapi/v2.1/budgets/$`budgetId`/batchUpdate"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🐞 修复了新增预算包同一层级节点是不同的自定义档案维度时可以调用成功的BUG。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🚀 接口升级 `v2.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
   [**1.1.1**](/docs/open-api/notice/update-log#111) -> 🐞 优化了接口校验逻辑，报错时会准确描述具体出错的节点和参数。<br/>
 
@@ -594,85 +595,13 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
 ```
 
 ## 失败响应
-当 `budgetId`（预算包ID）不存在时，报错如下：
-```json
-{
-    "value": {
-        "success": false,
-        "errmsg": "不存在的预算树"
-    }
-}
-```
-
-当新增节点与同一层级节点维度不一致时，报错如下：
-```json
-{
-    "value": {
-        "success": false,
-        "errmsg": "节点维度不统一, code=根节点"
-    }
-}
-```
-
-当 **参数必填却未填写** 或者 **父级参数存在，子级必填参数未填写** 时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "JSON请求参数不正确",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当 `moneys` 字段数量与预算包设置周期数不匹配时，报错如下：
-```json
-{
-    "value": {
-        "success": false,
-        "errmsg": "节点金额数量不匹配"
-    }
-}
-```
-
-当 `version`（预算版本）与当前预算包版本不相等时，报错如下：
-```json
-{
-    "value": {
-        "success": false,
-        "errmsg": "该预算已经变更请重新获取最新数据"
-    }
-}
-```
-
-当 `parentId`（父节点ID）不存在，预算节点比较少时，直接返回如下报错；<br/>
-当预算节点数据量大时，报错信息不返回，可通过 [获取预算异步执行结果](/docs/open-api/budget/get-BudgetInfo-State) 接口获取执行结果和报错信息：
-```json
-{
-    "value": {
-        "success": false,
-        "errmsg": "节点ID为1634112670003的父节点ID不存在, 请确认参数"
-    }
-}
-```
-
-当 `content`（节点维度信息）参数输入错误，或者与同级维度类型不一致时，报错如下：
-```json
-{
-    "value": {
-        "success": false,
-        "errmsg": "节点ID为1634112670004的维度信息错误, 请确认参数"
-    }
-}
-```
-
-当『员工』和『部门』的 `code` 在系统上不唯一时，传参重复的 `code` 或者 `code` 不存在，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "根据code: [[1002]]不能找到唯一的员工",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | 不存在的预算树 | 确认 `budgetId`（预算包ID）是否正确 | 
+| **200** | - | 节点维度不统一, code=根节点 | 确认新增节点与同一层级节点维度是否一致 | 
+| **200** | - | 节点金额数量不匹配 | 确认 `moneys` 字段数量与预算包设置周期数是否匹配 | 
+| **200** | - | 该预算已经变更请重新获取最新数据 | 确认 `version`（预算版本）参数与当前预算包版本是否一致 | 
+| **200** | - | 节点ID为1634112670003的父节点ID不存在, 请确认参数 | 确认 `parentId`（父节点ID）是否存在（**预算节点比较少时，返回此报错**）<br/>当预算节点数据量大时，报错信息不返回，可通过 [获取预算异步执行结果](/docs/open-api/budget/get-BudgetInfo-State) 接口获取执行结果和报错信息 | 
+| **200** | - | 节点ID为1634112670004的维度信息错误, 请确认参数 | 确认 `content`（节点维度信息）是否正确，或者同一层级节点维度是否一致 | 
+| **400** | - | 根据code: [[1002]]不能找到唯一的员工 | 确认『员工』或『部门』的 `code` 在系统上是否唯一<br/>确认传参的 `code` 是否重复或存在 | 
+| **412** | - | JSON请求参数不正确 | 确认必填参数是否填写，或者父级参数存在，子级必填参数未填写 | 

@@ -25,15 +25,15 @@ url="/api/openapi/v1/requisition/$`flowId`/share/[`staffIds`]"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **flowId**   | String | 申请单单据ID | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
-| **staffIds** | Array  | 被共享员工ID | 必填 | - | 通过[查询员工](/docs/open-api/corporation/get-staff-ids)获取 |
+| **staffIds** | Array  | 被共享员工ID | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | 通过[授权接口](/docs/open-api/getting-started/auth)获取 |
-| **staffId**     | String | 共享员工ID | 必填 | - | 通过[查询员工](/docs/open-api/corporation/get-staff-ids)获取 |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [授权接口](/docs/open-api/getting-started/auth) 获取 |
+| **staffId**     | String | 共享员工ID | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 
 ## CURL
 ```shell

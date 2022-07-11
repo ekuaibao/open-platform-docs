@@ -44,6 +44,7 @@
         "open-api/corporation/update-roledefs",
         "open-api/corporation/get-roles",
         "open-api/corporation/update-roles",
+        "open-api/corporation/delete-roles",
         "open-api/corporation/question-answer"
       ]
     },
@@ -154,6 +155,7 @@
         "open-api/flows/get-payment-records",
         "open-api/flows/get-requisition-all",
         "open-api/flows/share-requisition",
+        "open-api/flows/close-requisition",
         "open-api/flows/flow-approval",
         "open-api/flows/flow-approval-result",
         "open-api/flows/get-approve-state",

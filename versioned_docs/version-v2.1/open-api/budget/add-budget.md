@@ -11,6 +11,7 @@ url="/api/openapi/v2.1/budgets/create"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🐞 修复了新增预算包同一层级节点是不同的自定义档案维度时可以调用成功的BUG。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🚀 接口升级 `v2.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
 
   </div>
@@ -582,24 +583,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
 ```
 
 ## 失败响应
-当预算包名称重复时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "预算名称不可重复",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当『员工』和『部门』的 `code` 在系统上不唯一时，传参重复的 `code` 或者 `code` 不存在，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "根据code: [[1002]]不能找到唯一的员工",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 预算名称不可重复 | 确认预算包名称是否重复 | 
+| **400** | - | 根据code: [[1002]]不能找到唯一的员工 | 确认『员工』或『部门』的 `code` 在系统上是否唯一<br/>确认传参的 `code` 是否重复或存在 | 
+| **400** | - | 节点ID为20220711-1的维度信息错误, 请确认参数 | 确认 `content`（节点维度信息）是否正确，或者同一层级节点维度是否一致 | 

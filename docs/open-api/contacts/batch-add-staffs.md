@@ -5,13 +5,14 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v1/staffs/batch/create"
+url="/api/openapi/v1.1/staffs/batch/create"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.8.0**](/docs/open-api/notice/update-log#180) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `cellphone`（手机号）参数校验，只允许传英文括号和数字。<br/>
   [**0.7.140**](/docs/open-api/notice/update-log#07140) -> 🆕 新增了支持自定义字段保存。<br/>
   [**0.7.133**](/docs/open-api/notice/update-log#07133) -> 🆕 新增了控制发送邮件标识参数。<br/>
   [**0.7.125**](/docs/open-api/notice/update-log#07125) -> 🆕 新增了本接口。<br/>
@@ -37,7 +38,7 @@ url="/api/openapi/v1/staffs/batch/create"
 | **staffList**                    | Array  | 批量新增的员工     | 必填  | - | 员工信息数组 |
 | **&emsp; ∟ name**               | String | 员工姓名          | 必填  | - | 员工姓名 |
 | **&emsp; ∟ code**               | String | 工号             | 非必填 | - | 工号 |
-| **&emsp; ∟ cellphone**          | String | 手机号           | 必填   | - | 如果手机号为国外手机号，那么应为 : "(区号)手机号" |
+| **&emsp; ∟ cellphone**          | String | 手机号           | 必填   | - | 如果手机号为国外手机号，传参示例 : "(区号)手机号"<br/>**只允许传英文括号和数字** |
 | **&emsp; ∟ email**              | String | 邮箱             | 非必填 | - | 可以不传，但是不可以传 `""` |
 | **&emsp; ∟ note**               | String | 备注             | 非必填 | - | 备注 |
 | **&emsp; ∟ defaultDepartment**  | String | 默认部门ID        | 必填  | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
@@ -61,48 +62,48 @@ url="/api/openapi/v1/staffs/batch/create"
 
 ## CURL
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/batch/create?accessToken=ID_3tKTH780aqg:Tdk3tgber501v0' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/batch/create?accessToken=ID_3tKTH780aqg:Tdk3tgber501v0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "staffList":[
         {
-            "name":"批量新增-5",  //员工姓名
-            "code":"P1005",      //工号
-            "cellphone":"18888881005",      //手机号
-            "email":"18888881005@163.com",  //邮箱
+            "name":"批量新增-5",              //员工姓名
+            "code":"P1005",                  //工号
+            "cellphone":"18888881005",       //手机号
+            "email":"18888881005@163.com",   //邮箱
             "note":"批量新增",               //备注
             "defaultDepartment":"Tdk3tgber501v0:ID_3tgaWMa0hjg",  //默认部门ID
-            "departments":[  //兼职部门，请确保至少包含默认部门
+            "departments":[                                       //所在部门，请确保至少包含默认部门
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"  
             ],
-            "userid":"P1005",  //第三方平台人员ID	
+            "userid":"P1005",     //第三方平台人员ID	
             "useSendEmail":true,  //是否禁止发送邮件通知  true:禁止 false:不禁止
-            "staffCustomForm":{  //员工自定义字段
-                    "rankType":"ID_3tqvxwgjK6w",  //职级，值为职级档案项ID，一级        
-                    "postType":"ID_3tqvxwgjF6w",  //岗位，值为岗位档案项ID，经理
+            "staffCustomForm":{   //员工自定义字段
+                    "rankType":"ID_3tqvxwgjK6w",  //职级，值为职级档案项ID        
+                    "postType":"ID_3tqvxwgjF6w",  //岗位，值为岗位档案项ID
                     "base":"[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
-                    "u_花名":"法外狂徒",  //花名
-                    "u_项目":"ID_3tqvxwgjD6w"  //项目，米哈游项目
+                    "u_花名":"法外狂徒",           //自定义字段
+                    "u_项目":"ID_3tqvxwgjD6w"     //项目，值为项目档案项ID   
             }
         },
         {
-            "name":"批量新增-6",  //员工姓名
-            "code":"P1006",      //工号
-            "cellphone":"18888881006",      //手机号
-            "email":"18888881006@163.com",  //邮箱
+            "name":"批量新增-6",              //员工姓名
+            "code":"P1006",                  //工号
+            "cellphone":"18888881006",       //手机号
+            "email":"18888881006@163.com",   //邮箱
             "note":"批量新增",               //备注
             "defaultDepartment":"Tdk3tgber501v0:ID_3tgaWMa0hjg",  //默认部门ID
-            "departments":[  //兼职部门，请确保至少包含默认部门
+            "departments":[                                       //所在部门，请确保至少包含默认部门
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"  
             ],
-            "userid":"P1006",  //第三方平台人员ID	
+            "userid":"P1006",     //第三方平台人员ID	
             "useSendEmail":true,  //是否禁止发送邮件通知  true:禁止 false:不禁止
-            "staffCustomForm":{  //员工自定义字段
-                "rankType":"ID_3tqvxwgjK6w",  //职级，值为职级档案项ID，一级        
-                "postType":"ID_3tqvxwgjF6w",  //岗位，值为岗位档案项ID，经理
+            "staffCustomForm":{   //员工自定义字段
+                "rankType":"ID_3tqvxwgjK6w",  //职级，值为职级档案项ID      
+                "postType":"ID_3tqvxwgjF6w",  //岗位，值为岗位档案项ID
                 "base":"[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
-                "u_花名":"法外狂徒",  //花名
-                "u_项目":"ID_3tqvxwgjD6w"  //项目，米哈游项目
+                "u_花名":"法外狂徒",           //自定义字段
+                "u_项目":"ID_3tqvxwgjD6w"     //项目，值为项目档案项ID    
             }
         }
     ]
@@ -117,7 +118,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
             "id": "Tdk3tgber501v0:P1005",  //员工ID
             "name": "批量新增-5",          //员工姓名
             "code": "P1005",              //员工工号
-            "departments": [              //部门集合
+            "departments": [              //所在部门集合
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"
             ],
             "defaultDepartment": "Tdk3tgber501v0:ID_3tgaWMa0hjg",  //默认部门
@@ -126,13 +127,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
             "userId": "P1005",                                     //第三方平台人员ID
             "email": "18888881005@163.com",                        //邮箱
             "external": false,                                     //是否外部人员
-            "note": "批量新增",                                     //备注
+            "note": "批量新增",                                    //备注
             "staffCustomForm": {                                   //员工自定义字段
                 "rankType": "ID_3tqvxwgjK6w",                      //职级
                 "postType": "ID_3tqvxwgjF6w",                      //岗位
                 "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
-                "u_花名": "法外狂徒",
-                "u_项目": "ID_3tqvxwgjD6w"
+                "u_花名": "法外狂徒",                               //自定义字段
+                "u_项目": "ID_3tqvxwgjD6w"                          //项目
             }
         },
         {
@@ -162,23 +163,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/b
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "部门不能为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当新增员工的手机号/邮箱在系统中已存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "批量新增员工数据库异常：该userId已被绑定「18820220419」，请勿重复绑定",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 批量新增员工数据库异常：该userId已被绑定「18820220419」，请勿重复绑定 | 确认新增员工的手机号/邮箱在系统中是否已存在，且未停用 | 
+| **400** | - | 手机号格式不正确，只能包含数字和英文括号 | 确认手机号是否包含非法字符 | 
+| **403** | - | 部门不能为空 | 确认 `defaultDepartment` 或 `departments` 是否传参 | 
