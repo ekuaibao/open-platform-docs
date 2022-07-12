@@ -19,6 +19,9 @@ timeline: true
 - 🆕 新增 [删除角色下员工信息](/docs/open-api/corporation/delete-roles) 接口。
 - 🚀 新增 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口 `v1.1` 版本
   - 新增了 `cellphone`（手机号）参数校验，只允许传英文括号和数字。
+- 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口
+  - 优化了审批日志描述：`editorId` 不传时，默认记录为 **OpenAPI** 修改了单据。
+  - 修复了多个字段配置多层级的【字段依赖性】后（例：A->B->C->D），**待审批、待支付** 状态更新单据时偶发报错的BUG。
 - 🐞 更新 [新增自定义档案项](/docs/open-api/dimensions/creat-dimension-items)、[批量新增自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口
   - 更新了系统逻辑，新增了 `channel`（数据来源）字段。
     - `channel` = `API` ：来源为通过 **OpenAPI** 接口新增
@@ -33,6 +36,10 @@ timeline: true
   - 修复了获取智能拍票录入的发票，除了 **发票主体** 类型外，其他类型的 `invoiceNumber`（发票代码）和 `invoiceCode`（发票号码）返回 `null` 的BUG。
 - 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
   - 修复了获取 `WEIXIN`（微信）、`OTHER`（其他）类型收款账户时，`certificateType`（证件类型 ）、`certificateNo`（证件号码）返回空的BUG。
+- 🐞 更新 [获取单据审批状态](/docs/open-api/flows/get-approve-state) 接口
+  - 更新了注意事项。
+- 🐞 更新 [附件下载](/docs/open-api/attachment/attachment-download) 接口
+    - 更新了注意事项。
 - 🐞 更新 [根据部门ID或编码获取部门信息](/docs/open-api/contacts/get-departments-idOrCode)、[根据部门名称获取部门信息](/docs/open-api/contacts/get-department-byName)、[根据部门路径获取部门信息](/docs/open-api/contacts/get-department-byPath)、[获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty)、[修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields) 接口
   - 以上接口从【**通讯录同步**】模块迁移到【**企业通讯录**】模块。
     - 【**通讯录同步**】模块下接口需要开通【**通讯录接口**】功能方可使用

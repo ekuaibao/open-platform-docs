@@ -46,7 +46,8 @@ curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachmen
 
 ## 成功响应
 :::tip
-**url** 是文件下载路径，**thumbUrl** 是指缩略图的下载路径。
+- **url** 是文件下载路径，**thumbUrl** 是指缩略图的下载路径。
+- **thumbUrl** 只针对图片有效，PDF文件生成的链接是不可用的。
 :::
 
 ```json

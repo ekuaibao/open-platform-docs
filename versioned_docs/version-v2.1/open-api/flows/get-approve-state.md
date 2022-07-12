@@ -37,8 +37,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/approve
 
 ## 成功响应
 :::tip
-- `draft`（草稿）、`pending`（提交中）、`rejected`（已驳回）状态的单据 `stageName` 返回 **尚未提交**
-- `paid`（已支付/审批完成）、`archived`（归档）状态的单据 `stageName` 返回 **完成**
+- 由于接口是从缓存中获取数据，缓存更新偶尔会有不到1秒延迟，单据执行动作后建议等待几秒再调接口查询。
+- `draft`（草稿）、`pending`（提交中）、`rejected`（已驳回）状态的单据 `stageName` 返回 **尚未提交**。
+- `paid`（已支付/审批完成）、`archived`（归档）状态的单据 `stageName` 返回 **完成**。
 - 其他状态的单据 `stageName` 返回 **节点名称**
 :::
 
