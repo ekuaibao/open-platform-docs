@@ -25,15 +25,15 @@ url="/api/openapi/v1/charge/powers/authStaff"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **type**      | String | 员工标识类型	| 必填  | - | `id` : 员工id &emsp;  `code` : 工号 &emsp;  `cellphone` : 手机号  |
-| **addStaff**  | Array  | 激活的员工	    | 必填  | - | 可以为[]，如果 `type` = `id`，此处应传员工id，以此类推 |
-| **delStaff**  | Array  | 解除激活的员工	| 必填  | - | 可以为[]，如果 `type` = `id`，此处应传员工id，以此类推 |
+| **type**      | String | 员工标识类型	| 必填  | - | `id` : 员工ID &emsp;  `code` : 工号 &emsp;  `cellphone` : 手机号  |
+| **addStaff**  | Array  | 激活的员工	    | 必填  | - | 可以为[]，如果 `type` = `id`，此处应传员工ID，以此类推 |
+| **delStaff**  | Array  | 解除激活的员工	| 必填  | - | 可以为[]，如果 `type` = `id`，此处应传员工ID，以此类推 |
 
 ## CURL
 ```json

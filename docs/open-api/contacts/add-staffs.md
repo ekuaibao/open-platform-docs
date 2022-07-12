@@ -28,7 +28,7 @@ url="/api/openapi/v1.1/staffs"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token	| 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String  | 认证token	| 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
@@ -45,8 +45,8 @@ url="/api/openapi/v1.1/staffs"
 | **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | `true` : 启用 &emsp; `false` : 不启用 |
 | **useSendEmail**              | Boolean   | 是否禁止发送邮件通知 | 非必填  | false | `true` : 禁止 &emsp; `false` : 不禁止 |
 | **staffCustomForm**           | Object    | 自定义字段         | 非必填  | - | 自定义字段 |
-| **&emsp; ∟ rankType**  | String    | 职级档案项ID       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
-| **&emsp; ∟ postType**  | String    | 岗位档案项ID       | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
+| **&emsp; ∟ rankType**  | String    | 职级档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
+| **&emsp; ∟ postType**  | String    | 岗位档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
 | **&emsp; ∟ base**      | String    | 常驻地            | 非必填  | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
 | **&emsp; ∟ u_字段名**   | String    | 自定义字段         | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目 |
 

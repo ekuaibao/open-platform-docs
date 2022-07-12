@@ -15,13 +15,13 @@ url="/api/openapi/v2/currency/updateCurrencyRate"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth)  |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **strCode** | String | 货币字母代码 | 必填 | - | 可通过[获取企业当前生效的币种信息](/docs/open-api/currency/get-currency)获取，<br/>例如：美元 : `USD`  |
+| **strCode** | String | 货币字母代码 | 必填 | - | 通过 [获取企业当前生效的币种信息](/docs/open-api/currency/get-currency) 获取<br/>例如：美元 : `USD`  |
 | **rate**    | String | 汇率       | 必填 | - | 基于人民币的汇率 |
 
 ## CURL

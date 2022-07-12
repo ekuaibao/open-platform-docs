@@ -27,13 +27,13 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **IdOrCode** | String | 员工ID或CODE | 必填 | - | **与 `type` 保持一致**，可以通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)获取 | 
+| **IdOrCode** | String | 员工ID或CODE | 必填 | - | **与 `type` 保持一致**，可以通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 | 
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **type**        | String | 参数类型   | 非必填 | id | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』和『部门』的 `code` 在系统上允许为空和重复** |
 
 ## Body Parameters
@@ -50,8 +50,8 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
 | **modifyAccountPhone**        | Boolean | 是否修改登录手机号	| 非必填  | false | `true` : 修改登录手机号，修改的手机号为 `cellphone`，**不可修改成已注册企业的手机号**。<br/>`false` : 不修改登录手机号。 |
 | **modifyAccountEmail**        | Boolean | 是否修改登录邮箱	| 非必填  | false | `true` : 修改邮箱 &emsp; `false` : 不修改邮箱|
 | **staffCustomForm**           | Object  | 自定义字段	    | 非必填  | - | 员工自定义字段 |
-| **&emsp; ∟ rankType**  | String  | 职级	            | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
-| **&emsp; ∟ postType**  | String  | 岗位	            | 非必填  | - | [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) |
+| **&emsp; ∟ rankType**  | String  | 职级	            | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
+| **&emsp; ∟ postType**  | String  | 岗位	            | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
 | **&emsp; ∟ base**      | String  | 常驻地              | 非必填  | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
 | **&emsp; ∟ u_字段名**   | String  | 自定义字段	        | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目 |
 

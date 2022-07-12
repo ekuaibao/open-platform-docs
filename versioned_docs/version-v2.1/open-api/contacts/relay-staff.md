@@ -26,15 +26,15 @@ url="/api/openapi/v2.1/flows/relay"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **type**        | String | 参数类型   | 非必填 | id | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』的 `code` 在系统上允许为空和重复** |
 
 ## Body Parameters
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **staffId**             | String  | 操作人ID或CODE，**与 `type` 保持一致** | 必填 | - | 可通过[查询员工](/docs/open-api/corporation/get-staff-ids)接口获取 |
-| **originApproverId**    | String  | 离职人ID或CODE，**与 `type` 保持一致** | 必填 | - | 可通过[查询员工](/docs/open-api/corporation/get-staff-ids)接口获取 |
-| **relayApproverId**     | String  | 交接人ID或CODE，**与 `type` 保持一致** | 必填 | - | 可通过[查询员工](/docs/open-api/corporation/get-staff-ids)接口获取 |
+| **staffId**             | String  | 操作人ID或CODE，**与 `type` 保持一致** | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
+| **originApproverId**    | String  | 离职人ID或CODE，**与 `type` 保持一致** | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
+| **relayApproverId**     | String  | 交接人ID或CODE，**与 `type` 保持一致** | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 | **unboundInvoice**      | Boolean | 将待离职员工草稿及被驳回的单据<br/>删除、关联的发票解除关联 | 必填 | - | `true` : 解除 &emsp; `false` : 不解除<br/>**正常情况必填为`true`** |
 | **shareWaitingInvoice** | Boolean | 将待开发票共享给新交接人                              | 必填 | - | `true` : 共享 &emsp; `false` : 不共享<br/>**正常情况必填为`true`** |
 | **dataLinkFlag**        | Boolean | 如果是业务对象负责人或者管理员，<br/>交接到新交接人下面    | 必填 | - | `true` : 交接 &emsp; `false` : 不交接<br/>**正常情况必填为`true`** |

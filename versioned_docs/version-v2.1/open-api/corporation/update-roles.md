@@ -28,13 +28,13 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **roledefId** | String | 角色ID | 必填 | - | 在易快报桌面端「系统设置」>「角色管理」处查看 |
+| **roledefId** | String | 角色ID | 必填 | - | 在易快报桌面端「系统设置」>「角色管理」处查看<br/>通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token  | 必填  | -  | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token  | 必填  | -  | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **staffBy**     | String | 员工参数格式 | 非必填 | id | `id` : 传入完整员工ID，格式：`企业id : userId`<br/>`sourceId` : 传入 userId <br/>`code` : 员工工号<br/>`cellphone` : 手机号<br/>`email` : 邮箱 |
 
 ## Body Parameters
@@ -43,8 +43,8 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **contents**          | Array   | 角色配置情况     | 必填   | - | 每一个元素对应「角色管理」界面右侧列表的一行 |
 | **&emsp; ∟ pathType** | String | `name` 或 `code` 或 `id`  | 非必填 | name | 当 `pathType` = `name` 或不传时，`path` 传入部门或自定义档案项名称<br/>当 `pathType` = `code` 时，`path` 传入部门或自定义档案项编码<br/>当 `pathType` = `id` 时，`path` 传入部门或自定义档案项ID |
-| **&emsp; ∟ path**     | Array  | 部门或自定义档案值 | 必填 | - | 传入内容参考pathType，传入对应类型的全路径参数<br/>[注意事项](/docs/open-api/corporation/question-answer)<br/>**角色类型为「普通角色」时非必填** |
-| **&emsp; ∟ staffs**   | Array  | 员工集合         | 必填 | - | 值为[员工信息](/docs/open-api/corporation/get-all-staffs)<br/>**传入 `[]` 时会删除 `path` 值所对应的这条数据** |
+| **&emsp; ∟ path**     | Array  | 部门或自定义档案值 | 必填 | - | 传入内容参考 `pathType`，传入对应类型的 [全路径参数](/docs/open-api/corporation/question-answer)<br/>**角色类型为「普通角色」时非必填** |
+| **&emsp; ∟ staffs**   | Array  | 员工集合         | 必填 | - | **传入 `[]` 时会删除 `path` 值所对应的这条数据**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
 
 :::tip
 - 在系统上新建角色时，角色类型可按【部门】和【档案类别】划分，此接口中的 `path` 参数就传这个角色对应的类型值。

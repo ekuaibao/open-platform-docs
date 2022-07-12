@@ -20,7 +20,7 @@ url="/api/openapi/v1/roledefs"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token  | 必填  | -  | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token  | 必填  | -  | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
@@ -28,7 +28,7 @@ url="/api/openapi/v1/roledefs"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **name**          | String | 角色名称 | 必填   | - | 角色名称不能重复 |
 | **scope**         | String | 角色类型 | 必填   | - | 角色类型，**传值规则见下方TIP** |
-| **roleGroupId**   | String | 角色组ID | 非必填 | - | 角色组ID，通过[查询角色组和角色](/docs/open-api/corporation/get-roles-group)获取<br/>未传参时，默认分配到 **[未分组]** 角色组 |
+| **roleGroupId**   | String | 角色组ID | 非必填 | - | 未传参时，默认分配到 **[未分组]** 角色组<br/>通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
 | **sourceChannel** | String | 数据来源 | 必填   | - | `MANUAL` : 手动管理&emsp; `API` : API导入 |
 
 :::tip

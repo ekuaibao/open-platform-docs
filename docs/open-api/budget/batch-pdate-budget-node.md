@@ -24,13 +24,13 @@ url="/api/openapi/v2.1/budgets/$`budgetId`/batchUpdate"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String  |预算包ID | 必填 | - | [预算包ID获取](/docs/open-api/budget/get-budget-list) |
+| **budgetId** | String  |预算包ID | 必填 | - | 通过 [获取预算包列表](/docs/open-api/budget/get-budget-list) 获取 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **type**        | String | 参数类型   | 非必填 | id | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』和『部门』的 `code` 在系统上允许为空和重复** |
 
 ## Body Parameters
@@ -42,7 +42,7 @@ url="/api/openapi/v2.1/budgets/$`budgetId`/batchUpdate"
 |**&emsp; ∟ code**                 | String | 节点编码                 | 必填  | - | 可传 `""`，**长度不能超过20个字符** | 
 |**&emsp; ∟ content**              | Array  | 节点维度                 | 必填  | - | 预算分解依据，例如根据"费用类型"、"部门"分解<br/>**只有根节点允许有多个维度，其他子级节点有且仅有一个维度信息** | 
 |**&emsp; &emsp; ∟ dimensionType** | String | 维度种类                 | 必填  | - | `DEPART` : 费用承担部门<br/>`PROJECT` : 扩展档案<br/>`FEE_TYPE` : 费用类型<br/>`STAFF` : 员工 | 
-|**&emsp; &emsp; ∟ dimensionId**   | String | 维度种类的标识ID          | 必填  | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : 通过 [全局字段名称](/docs/open-api/forms/get-customs-param) 获取，见下方 **TIP**<br/>STAFF : `submitterId` | 
+|**&emsp; &emsp; ∟ dimensionId**   | String | 维度种类的标识ID          | 必填  | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : 通过 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 获取，见下方 **TIP**<br/>STAFF : `submitterId` | 
 |**&emsp; &emsp; ∟ mustLeaf**      | boolean | 维度是否必定为叶子节点(本部) | 必填  | false | `true` : 非本级 &emsp; `false` : 本级<br/>[什么是“维度是否必定为叶子节点(本部)”？](/docs/open-api/budget/question-answer#问题一) | 
 |**&emsp; &emsp; ∟ contentId**     | String | 维度内容ID               | 必填  | - | 对应维度种类下实例项的 **ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>例如：部门维度就是 **部门ID/CODE**，扩展档案维度就是 **档案项ID/CODE** | 
 |**&emsp; ∟ moneys**               | Array  | 节点金额                 | 必填  | - | 子预算项对应的预算金额 | 
@@ -57,24 +57,24 @@ url="/api/openapi/v2.1/budgets/$`budgetId`/batchUpdate"
 |**updateNodes**                    | Array  | 变更节点                 | 非必填 |- | 数据格式与 `addNodes`（追加节点）保持一致<br/>**节点维度无法变更，可不传**<br/>**节点预算金额不变更时，可不传** |
 |**deleteNodes**                    | Array  | 删除节点                 | 非必填 |- | 预算节点ID |
 |**visibilities**                   | Array  | 预算负责人数组            | 非必填 |- | 预算负责人能在相关报销单和预算报表中查看该预算节点的进度 |
-|**&emsp; ∟ id**                    | String | 预算负责人配置ID           | 非必填 |- | 更新已有预算负责人时需要传入，新增的节点传 `""`<br/>[节点负责人配置ID获取](/docs/open-api/budget/get-budget-details) |
-|**&emsp; ∟ corporationId**         | String | 企业ID                   | 非必填 |- | [企业ID获取](/docs/open-api/getting-started/origin)<br/> |
-|**&emsp; ∟ budgetId**              | String | 预算包ID                 | 非必填 |- | [获取预算包列表](/docs/open-api/budget/get-budget-list) 中的ID<br/> |
-|**&emsp; ∟ budgetVersion**         | String | 预算版本                 | 非必填 |- | [预算版本获取](/docs/open-api/budget/get-budget-details)<br/> |
+|**&emsp; ∟ id**                    | String | 预算负责人配置ID           | 非必填 |- | 更新已有预算负责人时需要传入，新增的节点传 `""`<br/>通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
+|**&emsp; ∟ corporationId**         | String | 企业ID                   | 非必填 |- | [企业ID如何获取](/docs/open-api/getting-started/origin#query-parameters) |
+|**&emsp; ∟ budgetId**              | String | 预算包ID                 | 非必填 |- | 通过 [获取预算包列表](/docs/open-api/budget/get-budget-list) 获取 |
+|**&emsp; ∟ budgetVersion**         | String | 预算版本                 | 非必填 |- | 通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
 |**&emsp; ∟ nodeId**                | String | 预算节点ID               | 非必填 |- | 要设置可见性的预算节点ID<br/>**配置 `visibilities`（预算负责人）时必填** |
-|**&emsp; ∟ staffIds**              | Array  | 员工ID                  | 非必填 |- | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) 或 CODE，**与 `type` 参数保持一致**<br/>**传 `[]` 空数组表示清空原数据** |
-|**&emsp; ∟ roleDefIds**            | Array  | 角色ID                  | 非必填 |- | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**<br/>**传 `[]` 空数组表示清空原数据** |
+|**&emsp; ∟ staffIds**              | Array  | 员工ID                  | 非必填 |- | **员工ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取<br/>**传 `[]` 空数组表示清空原数据** |
+|**&emsp; ∟ roleDefIds**            | Array  | 角色ID                  | 非必填 |- | **角色ID** 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**<br/>通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取<br/>**传 `[]` 空数组表示清空原数据** |
 |**editInChargers**                 | Array  | 预算编制人数组            | 非必填 |- | 负责该节点的预算编制<br/>需开通【**预算编制**】功能方可见此字段 |
-|**&emsp; ∟ id**                    | String | 预算编制人配置ID           | 非必填 |- | 更新已有预算编制人时需要传入，新增的节点传 `""`<br/>[预算编制人配置ID获取](/docs/open-api/budget/get-budget-details) |
-|**&emsp; ∟ corporationId**         | String | 企业ID                   | 非必填 |- | [企业ID获取](/docs/open-api/getting-started/origin)<br/> |
-|**&emsp; ∟ budgetId**              | String | 预算包ID                 | 非必填 |- | [获取预算包列表](/docs/open-api/budget/get-budget-list) 中的ID<br/> |
-|**&emsp; ∟ budgetVersion**         | String | 预算版本                 | 非必填 |- | [预算版本获取](/docs/open-api/budget/get-budget-details)<br/> |
+|**&emsp; ∟ id**                    | String | 预算编制人配置ID           | 非必填 |- | 更新已有预算编制人时需要传入，新增的节点传 `""`<br/>通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
+|**&emsp; ∟ corporationId**         | String | 企业ID                   | 非必填 |- | [企业ID如何获取](/docs/open-api/getting-started/origin#query-parameters) |
+|**&emsp; ∟ budgetId**              | String | 预算包ID                 | 非必填 |- | 通过 [获取预算包列表](/docs/open-api/budget/get-budget-list) 获取 |
+|**&emsp; ∟ budgetVersion**         | String | 预算版本                 | 非必填 |- | 通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
 |**&emsp; ∟ nodeId**                | String | 预算节点ID               | 非必填 |- | 要设置可见性的预算节点ID<br/>**配置 `editInChargers`（预算编制人）时必填** |
-|**&emsp; ∟ staffIds**              | Array  | 员工ID                  | 非必填 |- | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) 或 CODE，**与 `type` 参数保持一致**<br/>**传 `[]` 空数组表示清空原数据** |
-|**&emsp; ∟ roleDefIds**            | Array  | 角色ID                  | 非必填 |- | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**<br/>**传 `[]` 空数组表示清空原数据** |
+|**&emsp; ∟ staffIds**              | Array  | 员工ID                  | 非必填 |- | **员工ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取<br/>**传 `[]` 空数组表示清空原数据** |
+|**&emsp; ∟ roleDefIds**            | Array  | 角色ID                  | 非必填 |- | **角色ID** 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**<br/>通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取<br/>**传 `[]` 空数组表示清空原数据** |
 |**active**                         | Boolean | 是否为发布状态           | 必填  | false | `true` : 发布 &emsp; `false` : 草稿 <br/>**此参数作用于整个预算包，而非某个预算节点**|
 |**publish**                        | Boolean | 当前更新是否立即发布      | 必填  | false | `true` : 立即<br/> `false` : 加入缓存（用于多次批量更新，每次更新不立即发布，等到最后一次更新完再发布）<br/>**参数为 `true` 时才会在系统中显示** |
-|**version**                        | Long   | 当前预算包的版本          | 必填  |- | [预算版本获取](/docs/open-api/budget/get-budget-details) |
+|**version**                        | Long   | 当前预算包的版本          | 必填  |- | 通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
 
 :::tip
 - 除了 **变更预算包状态（发布/草稿）**场景外，`addNodes`（追加节点）、`updateNodes`（变更节点）、`deleteNodes`（删除节点）三个对象参数至少填写一个。

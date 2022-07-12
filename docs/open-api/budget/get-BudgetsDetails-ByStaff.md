@@ -22,20 +22,20 @@ url="/api/openapi/v2/budgets/$`budgetId`/staff/$`staffId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String | 预算包ID | 必填 | - | [预算包ID获取](/docs/open-api/budget/get-budget-list) |
-| **staffId**  | String | 员工ID   | 必填 | - | [员工ID获取](/docs/open-api/corporation/get-staff-ids) |
+| **budgetId** | String | 预算包ID | 必填 | - | 通过 [获取预算包列表](/docs/open-api/budget/get-budget-list) 获取 |
+| **staffId**  | String | 员工ID   | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **nodeIds** | Array | 指定查询的节点ID（可多个） | 必填 | - | [节点ID获取](/docs/open-api/budget/get-budget-details) |
+| **nodeIds** | Array | 指定查询的节点ID（可多个） | 必填 | - | 通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
 
 ## CURL
 ```json

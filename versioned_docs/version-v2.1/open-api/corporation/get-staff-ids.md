@@ -9,14 +9,14 @@ url="/api/openapi/v1/staffs/getStaffIds"
 />
 
 :::caution
-- 本接口只能查询到 **启用** 的员工信息，如果需要查询已停用的员工信息，请通过[获取员工列表](/docs/open-api/corporation/get-all-staffs)查询到全部已停用的员工列表，再进行匹配。
+- 本接口只能查询到 **启用** 的员工信息，如果需要查询已停用的员工信息，请通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 查询到全部已停用的员工列表，再进行匹配。
 :::
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 

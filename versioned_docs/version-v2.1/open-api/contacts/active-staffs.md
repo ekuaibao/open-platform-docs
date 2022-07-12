@@ -31,7 +31,7 @@ url="/api/openapi/v1.1/staffs/disableOrEnableStaff/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**   | String   | 认证token	                 | 必填  | -     | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken**   | String   | 认证token	                 | 必填  | -     | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **active**        | Boolean  | 停用或启用标识                 | 必填  | -     | `true` : 启用<br/>`false` : 停用，停用即表示已离职 | 
 | **doCheck**       | Boolean  | 停用时是否校验该员工<br/>名下有待办事项 | 非必填 | true | `true` : 校验 &emsp; `false` : 不校验 |
 | **type**          | String   | 参数类型                      | 非必填 | id   | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』的 `code` 在系统上允许为空和重复** |
