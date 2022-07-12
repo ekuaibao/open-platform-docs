@@ -22,8 +22,8 @@ url="/api/openapi/v1/dimensions/getDimensionById"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token	   | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **id**          | String | 自定义档案值的ID | 必填  | - | 可通过[获取自定义档案项](/docs/open-api/dimensions/get-dimension-items)获取 |
+| **accessToken** | String | 认证token	   | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+| **id**          | String | 自定义档案值的ID | 必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
 
 ## CURL
 ```shell

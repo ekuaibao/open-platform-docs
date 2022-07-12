@@ -23,7 +23,7 @@ url="/api/openapi/v2/datalink/add"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **editFlag**    | String | 更新标志   | 非必填 | cover | `increment` : 增量更新 &emsp; `cover` : 全量覆盖<br/>**只在更新数据时生效** |
 
 ## Body Parameters
@@ -35,13 +35,13 @@ url="/api/openapi/v2/datalink/add"
 | **dataLinks**                                  | Array   | 更新数据数组   | 必填  | -      | 要新增或修改的业务对象数据，**最大不能超过 `100` 条** |
 | **&emsp; ∟ count**                             | Number  | 最大引用次数  | 非必填 | 0      | 限制引用次数时必填。若设置的值小于已引用次数，则易快报系统会自动修正到已引用次数  |
 | **&emsp; ∟ disabled**                          | Boolean | 是否停用     | 非必填 | true   | `true` : 停用 &emsp; `false` : 启用|
-| **&emsp; ∟ ownerId**                           | String  | 负责人ID     | 非必填 | -      | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) |
+| **&emsp; ∟ ownerId**                           | String  | 负责人ID     | 非必填 | -      | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
 | **&emsp; ∟ data**                              | Object  | 字段值       | 必填   | -     | 格式为 { 字段名称 : 字段值 }。**字段名称** 是 [获取业务对象](/docs/open-api/datalink/get-entity-list) 返回值中 `fields` 里面的 `name` 值 |
 | **&emsp; ∟ visible**                           | Object  | 参与人配置    | 非必填 | -      | 业务对象**”参与人配置“**为**”部分人员参与“**时此参数才 **有效**，为**“全员参与”**时此参数 **不生效** |
 | **&emsp; &emsp; ∟ fullVisible**                | Boolean | 全员可见性    | 非必填 | false | `true` : 全部可见 &emsp; `false` : 参与人可见 |
-| **&emsp; &emsp; ∟ staffs**                     | Array   | 参与人ID     | 非必填 | -     | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) |
-| **&emsp; &emsp; ∟ roles**                      | Array   | 参与角色ID    | 非必填 | -     | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) |
-| **&emsp; &emsp; ∟ departments**                | Array   | 参与部门ID    | 非必填 | -     | 值为 [部门ID](/docs/open-api/corporation/get-departments) |
+| **&emsp; &emsp; ∟ staffs**                     | Array   | 参与人ID     | 非必填 | -     | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+| **&emsp; &emsp; ∟ roles**                      | Array   | 参与角色ID    | 非必填 | -     | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
+| **&emsp; &emsp; ∟ departments**                | Array   | 参与部门ID    | 非必填 | -     | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取 |
 | **&emsp; &emsp; ∟ departmentsIncludeChildren** | Boolean | 子部门是否可见 | 非必填 | true   | `true` : 可见 &emsp; `false` : 不可见 |
 
 :::caution

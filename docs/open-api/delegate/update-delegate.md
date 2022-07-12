@@ -11,20 +11,20 @@ url="/api/openapi/v2/organization/delegate/approve"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id**          | String  | 委托关系数据ID     | 必填   | - | [委托关系数据ID](/docs/open-api/delegate/get-delegate-byStaffId)获取 |
-| **staffId**     | String  | 授权发起人ID	   | 必填  | - | 即委托人[员工ID](/docs/open-api/corporation/get-staff-ids) |
-| **delegateeId** | String  | 被委托人ID	       | 必填  | - | 即被委托人[员工ID](/docs/open-api/corporation/get-staff-ids) |
+| **id**          | String  | 委托关系数据ID     | 必填   | - | 通过 [根据发起人ID获取委托审批授权数据](/docs/open-api/delegate/get-delegate-byStaffId) 获取 |
+| **staffId**     | String  | 授权发起人ID	   | 必填  | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
+| **delegateeId** | String  | 被委托人ID	       | 必填  | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 | **name**        | String  | 授权名称	       | 非必填 | - | 授权名称 |
 | **remark**      | String  | 备注	           | 非必填 | - | 备注 |
 | **startTime**   | String  | 授权开始时间	   | 非必填 | - | 毫秒级时间戳 |
 | **endTime**     | String  | 授权结束时间	   | 非必填 | - | 毫秒级时间戳 |
-| **originalIds** | Array   | 授权单据模板ID集合  | 非必填 | - | 授权[单据模板ID](/docs/open-api/forms/get-specifications-latest)集合 |
+| **originalIds** | Array   | 授权单据模板ID集合  | 非必填 | - | 通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 获取 |
 ## CURL
 ```json
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/organization/delegate/approve?accessToken=MwAcih69ycDo00' \

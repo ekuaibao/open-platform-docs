@@ -20,9 +20,9 @@ url="/api/openapi/v1/carbonCopy/getCarbonCopy"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token            | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token            | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **flowId**      | String | 单据ID               | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
-| **receiverId**  | String | 接收人（单据被抄送人）ID | 必填 | - | 通过[查询员工](/docs/open-api/corporation/get-staff-ids)获取 |
+| **receiverId**  | String | 接收人（单据被抄送人）ID | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 
 ## CURL
 ```shell

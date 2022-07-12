@@ -24,13 +24,13 @@ url="/api/openapi/v2/specifications/byIds/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 单据模版ID集合 | 必填 | - | 支持多个，数组方式，可通过[获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)，<br/>[根据企业ID获取单据模版列表](/docs/open-api/forms/get-template-list)接口获取 |
+| **ids** | Array | 单据模版ID集合 | 必填 | - | 支持多个，数组方式，通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)，<br/>[根据企业ID获取单据模版列表](/docs/open-api/forms/get-template-list) 获取 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## CURL
 ```shell

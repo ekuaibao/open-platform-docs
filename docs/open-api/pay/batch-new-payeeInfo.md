@@ -21,7 +21,7 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
@@ -31,11 +31,11 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
 | **&emsp; ∟ sort**            | String | 账号类别    | 非必填 | BANK | `BANK` : 银行卡<br/>`ALIPAY` : 支付宝<br/>`OVERSEABANK` : 海外账号<br/>`WEIXIN` : 微信<br/>`OTHER` : 其他 |
 | **&emsp; ∟ type**            | String | 账户类型    | 必填 | -| `PUBLIC` : 对公账户 &emsp; `PERSONAL` : 个人账户 |
 | **&emsp; ∟ owner**           | String | 所有者类型   | 必填 | - | `INDIVIDUAL` : 个人 &emsp; `CORPORATION` : 企业 |
-| **&emsp; ∟ staffId**         | String | 所有者ID    | 非必填 | - | 当 `owner` = `INDIVIDUAL` 时 **必填**<br/>当 `owner` = `CORPORATION` 时 **非必填**<br/>可以通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+| **&emsp; ∟ staffId**         | String | 所有者ID    | 非必填 | - | 当 `owner` = `INDIVIDUAL` 时 **必填**<br/>当 `owner` = `CORPORATION` 时 **非必填**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
 | **&emsp; ∟ name**            | String | 开户名称    | 必填 | - | 开户名称 |
 | **&emsp; ∟ cardNo**          | String | 账号       | 必填 | - | 银行卡号<br/>支付宝账号<br/>银行账号(Account No.)<br/>微信账号<br/>账号 |
 | **&emsp; ∟ bank**            | String | 银行名称<br/>**『银行卡』专属参数**    | 非必填 | - | **可通过 `branch` 或 `bankLinkNo` 自动回填，<br/>需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
-| **&emsp; ∟ branch**          | String | 开户网点<br/>**『银行卡』专属参数**    | 必填 | - | **`sort` = `BANK` 时，必填**。获取 [开户网点](/docs/open-api/pay/get-all-branch)<br/>可通过系统配置改为 ”**非必填**“，见下方**TIP** |
+| **&emsp; ∟ branch**          | String | 开户网点<br/>**『银行卡』专属参数**    | 必填 | - | **`sort` = `BANK` 时，必填**。<br/>获取 [开户网点](/docs/open-api/pay/get-all-branch)<br/>可通过系统配置改为 ”**非必填**“，见下方**TIP** |
 | **&emsp; ∟ bankLinkNo**      | String | 银联号<br/>**『银行卡』专属参数**      | 非必填 | - | **当开户网点与易快报系统不匹配时，<br/>可通过银联号匹配** |
 | **&emsp; ∟ province**        | String | 银行所在省<br/>**『银行卡』专属参数**   | 非必填 | - | **可通过 `branch` 或 `bankLinkNo` 自动回填，<br/>需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
 | **&emsp; ∟ city**            | String | 银行所在城市<br/>**『银行卡』专属参数** | 非必填 | - | **可通过 `branch` 或 `bankLinkNo` 自动回填，<br/>需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
@@ -49,9 +49,9 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
 | **&emsp; ∟ remark**          | String | 备注信息    | 非必填 | - | 备注信息 |
 | **&emsp; ∟ visibility**                          | Object   | 可见范围       | 非必填 | - | 可见范围对象 |
 | **&emsp;&emsp; ∟ fullVisible**                | Boolean | 是否全员可见    | 必填 | - | `true` : 全员可见 &emsp; `false` : 部分可见<br/>部分可见则仅有白名单中可见 |
-| **&emsp;&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) |
-| **&emsp;&emsp; ∟ staffs**                     | Array   | 员工白名单      | 必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) |
-| **&emsp;&emsp; ∟ departments**                | Array   | 部门白名单      | 必填 | - | 值为 [部门ID](/docs/open-api/corporation/get-departments) |
+| **&emsp;&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
+| **&emsp;&emsp; ∟ staffs**                     | Array   | 员工白名单      | 必填 | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+| **&emsp;&emsp; ∟ departments**                | Array   | 部门白名单      | 必填 | - | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取 |
 | **&emsp;&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属子部门是否可见 | 必填 | - | `true` : 可见 &emsp; `false` : 不可见 |
 
 :::tip

@@ -12,19 +12,19 @@ url="/api/openapi/v2/extension/DATA_LINK/object/`entityId`/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **entityId** | String | 业务对象ID | 必填 | - | [获取业务对象](/docs/open-api/datalink/get-entity-list) |
+| **entityId** | String | 业务对象ID | 必填 | - | 通过 [获取业务对象](/docs/open-api/datalink/get-entity-list) 获取 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters（Body不能为空）
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids**   | Array  | 业务对象实例ID数组   | 非必填 | - | 按照[业务对象实例的ID](/docs/open-api/datalink/get-entity-info)查询详情 |
+| **ids**   | Array  | 业务对象实例ID数组   | 非必填 | - | 通过 [获取业务对象实例列表](/docs/open-api/datalink/get-entity-info) 获取 |
 | **codes** | Array  | 业务对象实例CODE数组 | 非必填 | - | 按照业务对象实例的CODE查询详情 |
 | **index** | Number | 查询页数           | 非必填 | - | 从 `1` 开始，不可为 `0`<br/>**表示从第几页开始查询** |
 | **count** | Number | 查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `100` |

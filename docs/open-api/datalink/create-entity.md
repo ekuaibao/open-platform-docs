@@ -11,7 +11,7 @@ url="/api/openapi/v2/datalink/createDataLinkEntity"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
@@ -24,9 +24,9 @@ url="/api/openapi/v2/datalink/createDataLinkEntity"
 | **&emsp; ∟ ownerDepts**             | Boolean | 参与人是否默认为负责人的所在部门 | 非必填 | false | 当 `scoped` = `true` 时有效<br/>`true` : 是 &emsp; `false` : 否 |
 | **&emsp; ∟ visibility**             | Object  | 参与人白名单                 | 非必填 | -     | 当 `scoped` = `true` 时有效 |
 | **&emsp; &emsp; ∟ fullVisible**     | Boolean | 是否开启参与人白名单           | 非必填 | false | `true` : 开启 &emsp; `false` : 关闭 |
-| **&emsp; &emsp; ∟ staffs**          | Array   | 员工白名单                   | 非必填 | -     | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
-| **&emsp; &emsp; ∟ roles**           | Array   | 角色白名单                   | 非必填 | -     | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
-| **&emsp; &emsp; ∟ departments**     | Array   | 部门白名单                   | 非必填 | -     | 值为[部门ID](/docs/open-api/corporation/get-departments) |
+| **&emsp; &emsp; ∟ staffs**          | Array   | 员工白名单                   | 非必填 | -     | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+| **&emsp; &emsp; ∟ roles**           | Array   | 角色白名单                   | 非必填 | -     | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
+| **&emsp; &emsp; ∟ departments**     | Array   | 部门白名单                   | 非必填 | -     | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取 |
 | **&emsp; &emsp; ∟ departmentsIncludeChildren** | Boolean | 子部门是否可见     | 非必填 | true  | `true` : 可见 &emsp; `false` : 不可见 |
 | **&emsp; ∟ type**                   | String  | 业务对象类型                 | 必填   | -     | `DIMENSION` : 基础档案<br/>`BILL` : 单据<br/>`ORDER` : 订单 |
 | **&emsp; ∟ disableStrategy**        | String  | 停用方式                    | 必填   | -     | `MANUAL_ADMIN` : 管理员停启用<br/>`LIMIT_COUNT` : 限制引用次数 |

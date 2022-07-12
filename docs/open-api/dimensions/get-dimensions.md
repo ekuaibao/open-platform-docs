@@ -12,7 +12,7 @@ url="/api/openapi/v1/dimensions"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token	     | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String  | 认证token	     | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **start**       | Number  | 分页查询的起始序号 | 必填 | - | 从第几条数据开始查询 |
 | **count**       | Number  | 查询数据条数      | 必填 | - | 最大不能超过 `100` |
 

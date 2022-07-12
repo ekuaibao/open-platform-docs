@@ -25,8 +25,8 @@ url="/api/openapi/v2/auth/refreshToken/expireDate"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**  | String | 即将过期的授权码 | 必填 | - | [获取授权](/docs/open-api/getting-started/auth)返回的 `accessToken` 值 |
-| **refreshToken** | String | 刷新的授权码    | 必填 | - | [获取授权](/docs/open-api/getting-started/auth)返回的 `refreshToken` 值 |
+| **accessToken**  | String | 即将过期的授权码 | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+| **refreshToken** | String | 刷新的授权码    | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `refreshToken` |
 | **expireDate**   | String | 有效天数       | 必填 | - | 单位：天 |
 | **powerCode**    | String | 功能授权码      | 必填 | - | 传入 `219904` 即可 |
 

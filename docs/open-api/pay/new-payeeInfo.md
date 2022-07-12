@@ -20,7 +20,7 @@ url="/api/openapi/v2.1/payeeInfos"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
@@ -47,9 +47,9 @@ url="/api/openapi/v2.1/payeeInfos"
 | **remark**          | String | 备注信息    | 非必填 | - | 备注信息 |
 | **visibility**                          | Object   | 可见范围       | 非必填 | - | 可见范围对象 |
 | **&emsp; ∟ fullVisible**                | Boolean | 是否全员可见    | 必填 | - | `true` : 全员可见 &emsp; `false` : 部分可见<br/>部分可见则仅有白名单中可见 |
-| **&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) |
-| **&emsp; ∟ staffs**                     | Array   | 员工白名单      | 必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) |
-| **&emsp; ∟ departments**                | Array   | 部门白名单      | 必填 | - | 值为 [部门ID](/docs/open-api/corporation/get-departments) |
+| **&emsp; ∟ roles**                      | Array   | 角色白名单      | 必填 | - | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
+| **&emsp; ∟ staffs**                     | Array   | 员工白名单      | 必填 | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+| **&emsp; ∟ departments**                | Array   | 部门白名单      | 必填 | - | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取 |
 | **&emsp; ∟ departmentsIncludeChildren** | Boolean | 下属子部门是否可见 | 必填 | - | `true` : 可见 &emsp; `false` : 不可见 |
 
 :::tip

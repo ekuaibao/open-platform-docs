@@ -15,7 +15,7 @@ url="/api/openapi/v1/specifications/versionedByType"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**          | String  | 认证token	  | 必填   | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken**          | String  | 认证token	  | 必填   | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **type**                 | String  | 单据类型	  | 必填   | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`requisition` : 申请单<br/>`payment` : 付款单<br/>`custom` : 通用审批单(基础单据) |
 | **specificationGroupId** | String  | 单据模板组ID | 非必填 | - | 单据模板组ID |
 

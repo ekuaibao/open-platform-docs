@@ -25,13 +25,13 @@ url="/api/openapi/v2.1/recordLink/editSingle/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String | 档案关系ID | 必填 | - | [获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation) | 
+| **id** | String | 档案关系ID | 必填 | - | 通过 [获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation) 获取 | 
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **type**        | String | 参数类型   | 非必填 | id | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』和『部门』的 `code` 在系统上允许为空和重复** |
 
 ## Body Parameters
@@ -39,8 +39,8 @@ url="/api/openapi/v2.1/recordLink/editSingle/$`id`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **recordLinks**               | Array   | 批量更新项   | 必填 | - | 批量更新项 |
-| **&emsp; ∟ oldSourceValue**  | String  | 旧源维度值   | 必填 | - | 通过[获取某档案关系下的档案项数据](/docs/open-api/recordLink/get-dimension-relation-items)获取 |
-| **&emsp; ∟ oldPurposeValue** | String  | 旧目标维度值 | 必填 | - | 通过[获取某档案关系下的档案项数据](/docs/open-api/recordLink/get-dimension-relation-items)获取 |
+| **&emsp; ∟ oldSourceValue**  | String  | 旧源维度值   | 必填 | - | 通过[获取某档案关系下的档案项数据](/docs/open-api/recordLink/get-dimension-relation-items) 获取 |
+| **&emsp; ∟ oldPurposeValue** | String  | 旧目标维度值 | 必填 | - | 通过[获取某档案关系下的档案项数据](/docs/open-api/recordLink/get-dimension-relation-items) 获取 |
 | **&emsp; ∟ newSourceValue**  | String  | 新源维度值   | 必填 | - | 新源维度值 |
 | **&emsp; ∟ newPurposeValue** | String  | 新目标维度值 | 必填 | - | 新目标维度值 |
 

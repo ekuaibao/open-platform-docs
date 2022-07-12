@@ -14,7 +14,7 @@ timeline: true
 ---
 ## 1.8.0
 
-`2022-07-12`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+`2022-07-14`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
 - 🆕 新增 [关闭申请事项](/docs/open-api/flows/close-requisition) 接口。
 - 🆕 新增 [删除角色下员工信息](/docs/open-api/corporation/delete-roles) 接口。
 - 🚀 新增 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口 `v1.1` 版本

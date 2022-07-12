@@ -12,7 +12,7 @@ url="/api/openapi/v1/property/checkProperty"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**  | String | 认证token  | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken**  | String | 认证token  | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **type**         | String | 全局字段类型 | 必填  | STAFF | `STAFF` : 所有类型<br/>`flow.FlowForm` : 单据<br/>`datalink.form` : 业务对象<br/>`dimension.form` : 自定义档案<br/>`staff.form` : 员工<br/>`department.form` : 部门 | 
 | **propertyName** | String | 全局字段名称 | 必填  | - | 要查询的字段名称 |
 

@@ -20,13 +20,13 @@ url="/api/openapi/v2/datalink/plan/getPlan/$`dataId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **dataId** | String | 配置了台账和执行计划的业务对象实例ID | 必填 | - | 可通过[获取业务对象实例列表](/docs/open-api/datalink/get-entity-info)获取 |
+| **dataId** | String | 配置了台账和执行计划的业务对象实例ID | 必填 | - | 通过 [获取业务对象实例列表](/docs/open-api/datalink/get-entity-info) 获取 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## CURL
 ```shell

@@ -21,8 +21,8 @@ url="/api/openapi/v1/withNotes/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token	      | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **staffId**     | String  | 员工ID           | 必填  | - | 值为[员工ID](/docs/open-api/corporation/get-staff-ids) |
+| **accessToken** | String  | 认证token	      | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+| **staffId**     | String  | 员工ID           | 必填  | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 | **start**       | Number  | 分页查询的起始序号  | 必填  | - | 分页的起始值是从 `0` 开始 |
 | **count**       | Number  | 查询数据条数      | 必填  | - | 最大不能超过 `100` |
 | **stage**       | String  | 随手记类型        | 非必填  | expense | `expense` : 报销<br/>`requisition` : 申请 |

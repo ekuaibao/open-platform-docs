@@ -22,10 +22,10 @@ url="/api/openapi/v1/dimensions/items/withAll"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token	     | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String  | 认证token	     | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **start**       | Number  | 分页查询的起始序号 | 必填  | - | 从第几条数据开始查询 |
 | **count**       | Number  | 查询数据条数      | 必填  | - | 最大不能超过 `100` |
-| **dimensionId** | String  | 档案类别id       | 非必填 | - | [获取自定义档案类别](/docs/open-api/dimensions/get-dimensions)，通过此参数可查询<br/>指定档案类别下的档案项 |
+| **dimensionId** | String  | 档案类别id       | 非必填 | - | 通过 [获取自定义档案类别](/docs/open-api/dimensions/get-dimensions) 获取，通过此参数可查询<br/>指定档案类别下的档案项 |
 
 ## CURL
 ```shell

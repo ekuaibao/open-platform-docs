@@ -35,9 +35,9 @@ url="/api/openapi/v1.1/docs/getApplyList"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token    | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String  | 认证token    | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **type**        | String  | 单据类型      | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单<br/>`permit` : 授权单(商城超标审批申请单) |
-| **uid**         | String  | 员工ID       | 非必填 | - | 值为[员工ID](/docs/open-api/corporation/get-staff-ids)，**不传查企业下全部单据** |
+| **uid**         | String  | 员工ID       | 非必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-staff-ids)，**不传查企业下全部单据** |
 | **state**       | String  | 单据状态      | 非必填 | - | [状态类型](/docs/open-api/flows/forms-state#单据状态单据详情中的-state-字段)，支持多种状态，用 `,` 分隔<br/>**不传查全部状态单据** |
 | **start**       | Number  | 分页查询起始值 | 必填 | - | 从 `0` 开始 |
 | **count**       | Number  | 查询数据条数   | 必填 | - | `0` < **count** ≤ `100` |

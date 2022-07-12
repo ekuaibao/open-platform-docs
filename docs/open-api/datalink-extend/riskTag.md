@@ -11,13 +11,13 @@ url="/api/openapi/v2/invoice/risk/label/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 单据ID集合 | 必填 | - | [单据ID](/docs/open-api/flows/get-forms-details-byCode)获取 |
+| **ids** | Array | 单据ID集合 | 必填 | - | 通过 [根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## CURL
 ```shell

@@ -26,8 +26,8 @@ url="/api/openapi/v1.1/flowDetails/byCode"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token | 必填 | - |  [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **code**        | String  | 单据编号   | 必填 | - |  单据编号，可通过系统单据页面获取 |
+| **accessToken** | String  | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+| **code**        | String  | 单据编号   | 必填 | - | 单据编号，可通过系统单据页面获取 |
 
 :::tip
 - 单据编号是面向企业唯一，单据ID是面向系统唯一。

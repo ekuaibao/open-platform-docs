@@ -25,7 +25,7 @@ url="/api/openapi/v1/staffs/clearInfo"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**  | String | 认证token    | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken**  | String | 认证token    | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **clearType**    | String | 清空类型      | 非必填 | all | `all` : 清空手机号和邮箱<br/>`phone` : 清空手机号<br/>`email` : 清空邮箱 |
 | **type**         | String | 传参类型      | 必填  | - | `STAFFID` : 员工ID &emsp; `CODE` : 工号 |
 | **conditionIds** | Array  | 员工标识参数   | 非必填 | - | 多个之间用英文逗号 `,` 分隔 |
