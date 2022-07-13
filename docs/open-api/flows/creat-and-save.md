@@ -381,93 +381,19 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 ```
 
 ## 失败响应
-`form.specificationId`（单据模板ID）错误，需要确认单据模板ID是否为 **单据模板ID:小版本号** 的正确形式：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "单据模板不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-单据模板ID不是最新的，不允许创建单据，报错如下（请每次修改单据模板后都获取最新的模板ID再创建单据操作）：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "openapi单据数据保存，单据模板已删除, specificationId:ID_3zE5G_006w0:2d608a9b26944850c092953a92a214a84aff1da3",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 单据模板不存在 | `form.specificationId`（单据模板ID）错误，需要确认单据模板ID是否为 **单据模板ID:小版本号** 的正确形式  | 
+| **400** | - | openapi单据数据保存，单据模板已删除 | 单据模板ID不是最新的，不允许创建单据，请每次修改单据模板后都获取最新的模板ID再创建单据操作 | 
+| **400** | - | openapi单据数据保存，明细模板不存在 | `form.details.specificationId`（费用类型模板ID）错误，需要确认费用类型模板ID是否为 **费用类型模板ID:单据类型:小版本号** 的正确形式 | 
+| **400** | - | openapi单据数据保存，明细模板已删除 | 费用类型模板ID不是最新的，不允许创建单据，请每次修改费用类型模板后都获取最新的模板ID再创建单据操作 |
+| **400** | - | 'u_业务对象'字段[业务对象]字段为必填，值不能为空 | 确认必填字段是否传值 |
+| **400** | - | 提交人参数不合法，请检查该员工是否已离职 | 确认`submitterId` 字段对应员工是否离职 |
+| **400** | - | openapi单据数据提交，审批节点[出纳支付]未设置审批人 | 审批节点配置审批人为【**手动选择**】时，无法直接提审，请修改配置 |
+| **412** | - | 单据数据包含不支持的字段：u_Z文本。 | 确认 **业务对象** 类型字段配置的赋值规则中所选择的单据字段，在当前模板中是否存在 |
+| **412** | - | 你无法使用当前选择的"单据模板"，请重选 | 确认`submitterId` 字段对应员工是否在该单据模板可见范围内 |
 
-`form.details.specificationId`（费用类型模板ID）错误，需要确认费用类型模板ID是否为 **费用类型模板ID:单据类型:小版本号** 的正确形式：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "openapi单据数据保存，明细模板不存在, specificationId:ID_3BJKZuv0pow",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-费用类型模板ID不是最新的，不允许创建单据，报错如下（请每次修改费用类型模板后都获取最新的模板ID再创建单据操作）：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "openapi单据数据保存，明细模板已删除, specificationId:ID_3BJKZuv0pow:requisition:3f8fa0ca71fc1f33aceae7ad7d4cfa2fa845ac2c",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-必填字段没有传值时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "'u_业务对象'字段[业务对象]字段为必填，值不能为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-`submitterId` 字段所对应员工离职时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "提交人参数不合法，请检查该员工是否已离职",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-**业务对象** 类型字段配置的赋值规则中所选择的单据字段，在当前模板中不存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "单据数据包含不支持的字段：u_Z文本。",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-审批节点配置审批人为【**手动选择**】时，无法直接提审，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "openapi单据数据提交，审批节点[出纳支付]未设置审批人！",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
 ## 字段填写规则
 
