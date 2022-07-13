@@ -20,7 +20,7 @@ url="/api/openapi/v2.1/datalink/editPlatform"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth)  |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken`  |
 
 ## Body Parameters
 
@@ -28,7 +28,7 @@ url="/api/openapi/v2.1/datalink/editPlatform"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **id**       | String | 应用ID  | 必填 | - | 应用ID/自定义扩展ID |
 | **name**     | String | 应用名称 | 必填 | - | 应用名称/自定义扩展名称 |
-| **adminIds** | Array  | 管理员ID | 非必填 | - | [员工ID获取](/docs/open-api/corporation/get-staff-ids) |
+| **adminIds** | Array  | 管理员ID | 非必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 
 ## CURL
 ```json

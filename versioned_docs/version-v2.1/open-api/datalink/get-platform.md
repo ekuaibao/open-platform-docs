@@ -20,7 +20,7 @@ url="/api/openapi/v2/datalink/getPlatform"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token  | 必填   | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token  | 必填   | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **start**       | Number | 数据开始数  | 非必填  | 0 | 数据开始数 |
 | **count**       | Number | 每页总数    | 非必填 | 100 | 最大不能超过 `100` |
 

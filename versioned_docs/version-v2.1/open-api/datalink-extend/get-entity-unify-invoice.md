@@ -21,8 +21,8 @@ url="/api/openapi/v1/invoice/unify"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**               | String | 认证token    | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
-| **unifyInvoiceCorporationId** | String | 开票方ID     | 必填 | - | [获取统一开票方](/docs/open-api/datalink-extend/get-entity-unify-corporation) |
+| **accessToken**               | String | 认证token    | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+| **unifyInvoiceCorporationId** | String | 开票方ID     | 必填 | - | 通过 [获取统一开票方](/docs/open-api/datalink-extend/get-entity-unify-corporation) 获取 |
 | **index**                     | Number | 确认开票时间戳 | 必填 | - | 例如：当 `index` = `1612344239976` 时，会查询所有<br/>`index` > `1612344239976` 的开票信息 |
 | **count**                     | Number | 查询数据条数   | 必填 | - | 不可超过 `10` |
 

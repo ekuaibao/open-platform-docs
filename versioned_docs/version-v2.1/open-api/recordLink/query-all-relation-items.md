@@ -23,14 +23,14 @@ url="/api/openapi/v2.1/recordLink/queryAllRecordLink"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **type**        | String | 参数类型   | 非必填 | id | `id` : 返回id值 &emsp; `code` : 返回code值<br/>**请保证 `code` 唯一，『员工』和『部门』的 `code` 在系统上允许为空和重复** |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **roleDefIds** | Array  | 档案关系ID  | 非必填  | - | 通过[获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation)获取，通过传递此值，<br/>查询指定档案关系下全部数据 |
+| **roleDefIds** | Array  | 档案关系ID  | 非必填  | - | 通过 [获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation) 获取<br/>通过传递此值，查询指定档案关系下全部数据 |
 | **orderBy**    | String | 结果排序字段 | 非必填  | - | `updateTime` : 查询结果按更新时间倒序排列<br/>`createTime` : 查询结果按创建时间倒序排列 |
 | **start**      | Int    | 查询开始值  | 非必填  | 0 | 从 `0` 开始 |
 | **count**      | Int    | 查询记录数  | 必填    | - |  `0` < `count` ≤ `100` |

@@ -24,15 +24,15 @@ url="/api/openapi/v1.1/dimensions/items/$`id`/disable"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String  | 档案项ID或CODE | 必填| - | 可通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取，**与 `type` 参数保持一致**。 |
+| **id** | String  | 档案项ID或CODE | 必填| - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取，**与 `type` 参数保持一致**。 |
 
 #### Query Parameters:
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token   | 必填   | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token   | 必填   | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **type**        | String | 参数类型     | 非必填 | id | `id` : 传id值 &emsp; `code` : 传code值 |
-| **dimensionId** | String | 档案类别CODE | 非必填 | - | **`type` = `code` 时必填，否则不传。**<br/>此参数可避免系统内重复的档案项 `CODE` 报错。<br/>可通过 [获取档案类别](/docs/open-api/dimensions/get-dimensions) 来获取。 |
+| **dimensionId** | String | 档案类别CODE | 非必填 | - | **`type` = `code` 时必填，否则不传。**<br/>此参数可避免系统内重复的档案项 `CODE` 报错。<br/>通过 [获取自定义档案类别](/docs/open-api/dimensions/get-dimensions) 获取。 |
 
 ## CURL
 import Tabs from '@theme/Tabs';

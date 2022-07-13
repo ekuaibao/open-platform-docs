@@ -17,7 +17,7 @@ url="/api/openapi/v2/flow/data/submitFlow"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **flowId**      | String | 单据ID    | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
 
 ## Body Parameters
@@ -27,7 +27,7 @@ url="/api/openapi/v2/flow/data/submitFlow"
 |**isUrgent**                  | Boolean | 是否加急      | 必填   | - | `true` : 加急 &emsp; `false` : 不加急 |
 |**urgentReason**              | String  | 加急原因      | 非必填 | - | 加急原因 |
 |**nodes**                     | Array   | 节点信息      | 必填   | - | 至少一个节点信息 |
-|**&emsp; ∟ configNodeId**    | String  | 配置节点ID    | 必填   | - | [获取流程实例](/docs/open-api/flows/get-flow)响应数据中【node】数组的 `id` 字段 |
+|**&emsp; ∟ configNodeId**    | String  | 配置节点ID    | 必填   | - | 通过 [获取流程实例](/docs/open-api/flows/get-flow) 获取【node】数组的 `id` 字段 |
 |**&emsp; ∟ approverId**      | String  | 审批人Id     | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
 |**&emsp; ∟ counterSigners**  | Array   | 会签审批人列表 | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
 |**&emsp; &emsp; ∟ signerId** | String  | 会签审批人ID  | 非必填  | - | 当设置会签审批人列表时候必填|

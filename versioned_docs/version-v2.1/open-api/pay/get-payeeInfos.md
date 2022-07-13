@@ -24,7 +24,7 @@ url="/api/openapi/v2/payeeInfos"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token   | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String  | 认证token   | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **ids**         | String  | 收款账户ID   | 必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
 | **names**       | String  | 开户名称     | 必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
 | **cardNos**     | String  | 银行卡号     | 必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
@@ -60,7 +60,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
     "items": [
         {
             "sort": "ALIPAY",        //账户类别（BANK：银行卡，ALIPAY：支付宝，OVERSEABANK：海外账号，CHECK：支票，ACCEPTANCEBILL：承兑汇票，OTHER：其他，WALLET：钱包）
-            "id": "_iIaLyGGdM3I00",  //付款账户ID
+            "id": "_iIaLyGGdM3I00",  //收款账户ID
             "name": "He",            //开户名称
             "cardNo": "17000000000", //银行卡号或钱包号
             "type": "个人账户",       //账户类型（个人账户、对公账户）

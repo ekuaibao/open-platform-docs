@@ -12,7 +12,7 @@ url="/api/openapi/v2/specifications/addProperty"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**| String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken**| String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
@@ -20,7 +20,7 @@ url="/api/openapi/v2/specifications/addProperty"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 |**parameters**               | Array  | 字段信息     | 必填  | - | 字段详细信息 | 
 |**&emsp; ∟ propertyLabel** | String | 字段名称     | 必填  | - | 字段名称 | 
-|**&emsp; ∟ targetId**      | String | 单据模板id   | 必填  | - | 可通过[获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)接口获取 | 
+|**&emsp; ∟ targetId**      | String | 单据模板id   | 必填  | - | 通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 获取 | 
 |**&emsp; ∟ positionNum**   | Number | 字段添加位置  | 非必填 | - | 如果不填则在最后添加 | 
 
 :::tip

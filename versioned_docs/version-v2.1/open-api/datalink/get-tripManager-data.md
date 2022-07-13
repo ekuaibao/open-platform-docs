@@ -11,13 +11,13 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/byDataLinkIds"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 业务对象实例ID | 必填 | - | 可通过[获取行程管理业务对象列表](/docs/open-api/datalink/get-tripManager-order)获取 |
+| **ids** | Array | 业务对象实例ID | 必填 | - | 通过 [获取行程管理/订单管理业务对象列表](/docs/open-api/datalink/get-tripManager-order) 获取 |
 
 :::tip
 - 例如：**“行程管理”**的业务对象实例ID可以在单据详情里面获取到。

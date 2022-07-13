@@ -39,7 +39,7 @@ url="/api/openapi/v2.1/flow/data"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token                 | 必填   | -     | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String  | 认证token                 | 必填   | -     | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **isCommit**    | Boolean | 单据是否直接提审            | 非必填  | false | `true` : 单据直接提审 &emsp; `false` : 单据保存草稿  |
 | **isUpdate**    | Boolean | 直接提审失败时是否保存单据草稿 | 非必填  | false | `isCommit` 参数为 `true` 时该参数有效<br/>`true` : 提审失败时保存草稿<br/>`false` : 提审失败时不保存草稿 |
 

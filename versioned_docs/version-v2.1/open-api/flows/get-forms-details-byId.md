@@ -22,7 +22,7 @@ url="/api/openapi/v1.1/flowDetails/allLogs"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token    | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String  | 认证token    | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **flowId**      | String  | 单据ID       | 必填 | - | [单据ID获取方式](/docs/open-api/flows/question-answer#问题一) |
 
 ## CURL

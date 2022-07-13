@@ -20,14 +20,14 @@ url="/api/openapi/v1/requisition/closeRequisition/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids**   | Array | 申请事项ID | 必填 | - | [获取申请事项](/docs/open-api/flows/get-requisition-all) |
+| **ids**   | Array | 申请事项ID | 必填 | - | 通过 [获取申请事项](/docs/open-api/flows/get-requisition-all) 获取 |
 
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | 通过 [授权接口](/docs/open-api/getting-started/auth) 获取 |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## CURL
 ```shell

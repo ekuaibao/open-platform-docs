@@ -21,7 +21,7 @@ url="/api/openapi/v4/payerInfos/search"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token   | 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String  | 认证token   | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **ids**         | String  | 付款账户ID   | 必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
 | **names**       | String  | 开户名称，非账户备注名称 | 必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |
 | **cardNos**     | String  | 银行卡号     | 必填 | - | 可以无内容，多个值用英文逗号 `,` 进行分割 |

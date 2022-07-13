@@ -11,7 +11,7 @@ url="/api/openapi/v2/datalink/createPlatform"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
@@ -19,9 +19,9 @@ url="/api/openapi/v2/datalink/createPlatform"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **name**               | String | 应用名称   | 必填   | - | 不能超过20个字  |
 | **icon**               | Object | 应用图标   | 非必填 | - | 已上传到服务器的图标参数 |
-| **&emsp; ∟ key**      | String | 文件KEY   | 非必填  | - | 文件KEY，可通过[上传附件](/docs/open-api/attachment/attachment-upload)获取 |
-| **&emsp; ∟ fileId**   | String | 文件ID    | 非必填  | - | 文件ID，可通过[上传附件](/docs/open-api/attachment/attachment-upload)获取 |
-| **&emsp; ∟ fileName** | String | 文件名称   | 非必填  | - | 文件名称，可通过[上传附件](/docs/open-api/attachment/attachment-upload)获取 |
+| **&emsp; ∟ key**      | String | 文件KEY   | 非必填  | - | 文件KEY，通过 [上传附件](/docs/open-api/attachment/attachment-upload) 获取 |
+| **&emsp; ∟ fileId**   | String | 文件ID    | 非必填  | - | 文件ID，通过 [上传附件](/docs/open-api/attachment/attachment-upload) 获取 |
+| **&emsp; ∟ fileName** | String | 文件名称   | 非必填  | - | 文件名称，通过 [上传附件](/docs/open-api/attachment/attachment-upload) 获取 |
 | **type**               | String | 应用类别   | 非必填  | DATA_LINK | `DATA_LINK` : 业务对象<br/>`IKCRM` : 爱客CRM（爱客只能创建一个，name统一为爱客CRM） |
 | **adminIds**           | Array  | 管理员ID   | 非必填  | - | 管理员可以导入导出该应用的所有业务对象数据、修改每条数据的停启用状态、修改每条数据的信息以及负责人和参与人，值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
 | **iconUrl**            | String | 网络图片    | 非必填  | - | 如果填写则优先使用此图标。132*132px，大小不超过2M，格式可为jpg、jpeg、png |

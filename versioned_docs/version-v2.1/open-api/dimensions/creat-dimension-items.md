@@ -21,21 +21,21 @@ url="/api/openapi/v1.1/dimensions/items"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**accessToken**| String  | 认证token	| 必填  | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+|**accessToken**| String  | 认证token	| 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**dimensionId**           | String   | 档案类别ID	| 必填  | - | 可通过 [获取自定义档案类别](/docs/open-api/dimensions/get-dimensions) 来获取 |
+|**dimensionId**           | String   | 档案类别ID	| 必填  | - | 通过 [获取自定义档案类别](/docs/open-api/dimensions/get-dimensions) 获取 |
 |**name**                  | String   | 档案值名称	| 必填  | - | 档案值名称，最大不能超过300个字 |
 |**code**                  | String   | 档案值编码	| 必填  | - | 档案值编码 |
 |**visibility**            | Object   | 可见范围      | 非必填 | - | 可见范围 |
 |**&emsp; ∟ fullVisible** | Boolean  | 是否全部可见   | 非必填 | true | `true` : 全部可见 <br/>`false` : 非全部可见，此时**三个白名单至少必填一项**<br/>在非全部可见的情况下，仅白名单内的员工可见 |
-|**&emsp; ∟ staffs**      | Array    | 员工白名单	| 非必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) |
-|**&emsp; ∟ roles**       | Array    | 角色白名单	| 非必填 | - | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) |
-|**&emsp; ∟ departments** | Array    | 部门白名单    | 非必填 | - | 值为 [部门ID](/docs/open-api/corporation/get-departments) |
-|**parentId**              | String   | 档案值父级ID  | 必填   | - | 可通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 来获取。如果是根节点应填写 `""` |
+|**&emsp; ∟ staffs**      | Array    | 员工白名单	| 非必填 | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+|**&emsp; ∟ roles**       | Array    | 角色白名单	| 非必填 | - | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
+|**&emsp; ∟ departments** | Array    | 部门白名单    | 非必填 | - | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取 |
+|**parentId**              | String   | 档案值父级ID  | 必填   | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取。如果是根节点应填写 `""` |
 
 :::tip
 - 系统预置档案有一些额外字段，详细字段传参见CURL里面的注释。

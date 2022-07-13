@@ -11,13 +11,13 @@ url="/api/openapi/v2/organization/delegate/approve/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String | 委托关系数据ID | 必填 | - | [委托关系数据ID](/docs/open-api/delegate/get-delegate-byStaffId)获取 |
+| **id** | String | 委托关系数据ID | 必填 | - | 通过 [根据发起人ID获取委托审批授权数据](/docs/open-api/delegate/get-delegate-byStaffId) 获取 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## CURL
 ```shell

@@ -25,7 +25,7 @@ url="/api/openapi/v1/getFlowByCheckingId"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken**    | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken**    | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **checkingBillId** | String | 对账单ID  | 必填 | - | 对账结算中心 -> [对账结算中每条数据对应的ID](/docs/open-api/flows/get-flow-by-checkingId#系统中对账单所在位置) |
 
 ## CURL

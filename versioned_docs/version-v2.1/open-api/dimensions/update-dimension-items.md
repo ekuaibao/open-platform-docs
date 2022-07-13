@@ -20,13 +20,13 @@ url="/api/openapi/v1.1/dimensions/items/$`id`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String  | 档案项ID或CODE | 必填| - | 可通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取，**与 `type` 参数保持一致**。 |
+| **id** | String  | 档案项ID或CODE | 必填| - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取，**与 `type` 参数保持一致**。 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **type**        | String | 参数类型   | 非必填 | id | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』和『部门』的 `code` 在系统上允许为空和重复** |
 
 ## Body Parameters
@@ -38,10 +38,10 @@ url="/api/openapi/v1.1/dimensions/items/$`id`"
 | **code**                   | String  | 档案项编码	| 非必填  | -     | 档案项编码 |
 | **visibility**             | Object  | 可见范围	    | 非必填  | -     | 可见范围  |
 | **&emsp; ∟ fullVisible** | Boolean | 是否全部可见	| 非必填  | false | `true` : 全部可见 <br/>`false` : 非全部可见，此时**三个白名单至少必填一项。**<br/>在非全部可见的情况下，仅白名单内的员工可见。 |
-| **&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填  | -     | 值为 [员工ID](/docs/open-api/corporation/get-all-staffs) 或 CODE，**与 `type` 参数保持一致**。 |
+| **&emsp; ∟ staffs**      | Array   | 员工白名单	| 非必填  | -     | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 ID或CODE，**与 `type` 参数保持一致**。 |
 | **&emsp; ∟ roles**       | Array   | 角色白名单	| 非必填  | -     | 值为 [角色ID](/docs/open-api/corporation/get-roles-group) 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**。 |
-| **&emsp; ∟ departments** | Array   | 部门白名单	| 非必填  | -     | 值为 [部门ID](/docs/open-api/corporation/get-departments) 或 CODE，**与 `type` 参数保持一致**。 |
-| **parentId**             | String  | 父节点ID或CODE | 非必填  | -     | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 来获取。根节点请填写 `""`。<br/>**与 `type` 参数保持一致**。 |
+| **&emsp; ∟ departments** | Array   | 部门白名单	| 非必填  | -     | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取 ID或CODE，**与 `type` 参数保持一致**。 |
+| **parentId**             | String  | 父节点ID或CODE | 非必填  | -     | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取。根节点请填写 `""`。<br/>**与 `type` 参数保持一致**。 |
 
 :::tip
 - 系统预置档案有一些额外字段，详细字段传参见CURL里面的注释。
