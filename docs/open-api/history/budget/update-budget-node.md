@@ -17,23 +17,23 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/update"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String | 预算包ID         | 必填 | - | [预算包ID获取](/docs/open-api/budget/get-budget-list) |
-| **nodeId** | String   | 要更新的预算节点ID | 必填 | - | [预算节点ID获取](/docs/open-api/budget/get-budget-details) |
+| **budgetId** | String | 预算包ID         | 必填 | - | 通过 [获取预算包列表](/docs/open-api/budget/get-budget-list) 获取 |
+| **nodeId** | String   | 要更新的预算节点ID | 必填 | - | 通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**moneys**              | Object | 预算节点信息 | 必填   | - | 第N个[周期](/docs/open-api/budget/question-answer#问题二)的预算总额 | 
+|**moneys**              | Object | 预算节点信息 | 必填   | - | 第N个 [周期](/docs/open-api/budget/question-answer#问题二) 的预算总额 | 
 |**visibility**          | Object | 节点的负责人 | 必填   | - | 负责人能在相关报销单和预算报表中查看该预算节点的进度 |
-|**&emsp; ∟ staffIds**  | Array  | 员工ID      | 非必填 | - | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
-|**&emsp; ∟ roleDefIds**| Array  | 角色ID      | 非必填 | - | 值为[角色ID](/docs/open-api/corporation/get-roles-group) |
+|**&emsp; ∟ staffIds**  | Array  | 员工ID      | 非必填 | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+|**&emsp; ∟ roleDefIds**| Array  | 角色ID      | 非必填 | - | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取 |
 
 ## CURL
 ```json

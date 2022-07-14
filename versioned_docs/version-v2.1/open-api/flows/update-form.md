@@ -160,8 +160,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
 
 
 :::tip
-- 更新单据接口与创建单据接口参数一致，所有参数规则说明请参考创建单据接口里的说明（**暂不支持多收款人**）。
-- 返回信息与 [创建单据](/docs/open-api/flows/creat-and-save) 接口一致。
+- 更新单据接口与创建单据接口参数一致，所有参数规则说明请参考创建单据接口里的说明
+- 返回信息与 [创建单据](/docs/open-api/flows/creat-and-save) 接口一致
 :::
 
 ## 成功响应
@@ -291,8 +291,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
 
 ### (1) 多收款人字段
 单据的 `payPlan` 字段为 **多收款人** 模式的 **支付计划** 字段，传参示例如下：
-- 更新单据中的参数与创建单据略有差异，`payPlan` 字段中需要传 `dataLinkId` (支付计划ID)字段 <br/>
-- 当多收款人为 **按明细/按收款信息汇总明细金额** 类型时，`E_system_支付计划_收款信息` 与对应的费用明细中的收款信息字段（`details`->`feeTypeForm`->`feeDetailPayeeId`）必须保持一致。<br/>
+- 更新单据中的参数与创建单据略有差异，`payPlan` 字段中需要传 `dataLinkId`（支付计划ID，即对应收款账户的那个费用明细实例ID）字段 <br/>
+- 当多收款人为 **按明细/按收款信息汇总明细金额** 类型时，`E_system_支付计划_收款信息` 与对应的费用明细中的收款信息字段（`details` -> `feeTypeForm` -> `feeDetailPayeeId`）必须保持一致。<br/>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -304,7 +304,7 @@ import TabItem from '@theme/TabItem';
 "multiplePayeesMode": true,                   //是否开启多收款人模式，开启后默认 <按明细> 类型
 "payPlan": [                                  //支付计划，可传多条
     {
-        "dataLinkId": "rJs3wxjZgeX5Tf",       //支付计划ID
+        "dataLinkId": "rJs3wxjZgeX5Tf",       //支付计划ID，即对应收款账户的那个费用明细实例ID
         "dataLinkForm": {                     //每条支付计划中的支付金额和收款信息，必须与费用明细中的一致。
             "E_system_支付计划_支付金额": {    //支付金额
                 "standard": "13",
@@ -341,7 +341,7 @@ import TabItem from '@theme/TabItem';
 "payPlanMode": true,                          //是否选择 <按金额> 类型  true: 按金额   false: 按明细
 "payPlan": [                                  //支付计划，可传多条
     {
-        "dataLinkId": "VOhqgoArhm0BwF",       //支付计划ID
+        "dataLinkId": "VOhqgoArhm0BwF",       //支付计划ID，即对应收款账户的那个费用明细实例ID
         "dataLinkForm": {                     //每条支付计划中的支付金额和收款信息，必须与费用明细中的一致。
             "E_system_支付计划_支付金额": {    //支付金额
                 "standard": "11",
@@ -378,10 +378,10 @@ import TabItem from '@theme/TabItem';
 "payeePayPlan": true,                         //是否选择 <按收款信息汇总明细金额> 类型   true: 按收款信息汇总明细金额   false: 按明细
 "payPlan": [                                  //支付计划，可传多条
     {
-        "dataLinkId": "soVJz1y5U6aGtk",       //支付计划ID
+        "dataLinkId": "soVJz1y5U6aGtk",       //支付计划ID，即对应收款账户的那个费用明细实例ID
         "dataLinkForm": {                     //每条支付计划中的支付金额和收款信息，必须与费用明细中的一致。
             "E_system_支付计划_支付金额": {    //支付金额
-                "standard": "134",             //如果费用明细中存在多条收款人相同的明细，需要将对应明细的金额汇总传入。
+                "standard": "134",            //如果费用明细中存在多条收款人相同的明细，需要将对应明细的金额汇总传入。
                 "standardUnit": "元",
                 "standardScale": 2,
                 "standardSymbol": "¥",

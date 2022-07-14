@@ -17,14 +17,14 @@ url="/api/openapi/v2/budgets/$`budgetId`/node/$`nodeId`/del"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **budgetId** | String | 预算包ID      | 必填 | - | [预算包ID获取](/docs/open-api/budget/get-budget-list) |
-| **nodeId**   | String | 要删除的节点ID | 必填 | - | [预算节点ID获取](/docs/open-api/budget/get-budget-details) |
+| **budgetId** | String | 预算包ID      | 必填 | - | 通过 [获取预算包列表](/docs/open-api/budget/get-budget-list) 获取 |
+| **nodeId**   | String | 要删除的节点ID | 必填 | - | 通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
 
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token | 必填 | - | [通过授权接口获取](/docs/open-api/getting-started/auth) |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 
 ## CURL
 ```shell

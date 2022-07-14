@@ -39,8 +39,8 @@ url="/api/openapi/v2.1/recordLink/editSingle/$`id`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **recordLinks**               | Array   | 批量更新项   | 必填 | - | 批量更新项 |
-| **&emsp; ∟ oldSourceValue**  | String  | 旧源维度值   | 必填 | - | 通过[获取某档案关系下的档案项数据](/docs/open-api/recordLink/get-dimension-relation-items) 获取 |
-| **&emsp; ∟ oldPurposeValue** | String  | 旧目标维度值 | 必填 | - | 通过[获取某档案关系下的档案项数据](/docs/open-api/recordLink/get-dimension-relation-items) 获取 |
+| **&emsp; ∟ oldSourceValue**  | String  | 旧源维度值   | 必填 | - | 通过 [获取某档案关系下的档案项数据](/docs/open-api/recordLink/get-dimension-relation-items) 获取 |
+| **&emsp; ∟ oldPurposeValue** | String  | 旧目标维度值 | 必填 | - | 通过 [获取某档案关系下的档案项数据](/docs/open-api/recordLink/get-dimension-relation-items) 获取 |
 | **&emsp; ∟ newSourceValue**  | String  | 新源维度值   | 必填 | - | 新源维度值 |
 | **&emsp; ∟ newPurposeValue** | String  | 新目标维度值 | 必填 | - | 新目标维度值 |
 
