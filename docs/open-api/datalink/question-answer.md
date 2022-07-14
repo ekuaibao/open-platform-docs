@@ -47,9 +47,9 @@ A：【**自建应用**】->【**功能设置**】->【**业务对象**】->【*
 
 A：
 
-（1）通过[获取全局字段列表](/docs/open-api/forms/get-customs-param)接口返回的 `name` 参数获取。
+方法一：通过 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 接口返回的 `name` 参数获取。
 
-（2）可在易快报PC端对应页面通过操作返回数据查看 `targetField`。
+方法二：可在易快报PC端对应页面通过操作返回数据查看 `targetField`。
 
 ![赋值规则](images/赋值规则.png)
 

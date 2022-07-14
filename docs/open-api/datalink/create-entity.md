@@ -40,7 +40,7 @@ url="/api/openapi/v2/datalink/createDataLinkEntity"
 | **&emsp; &emsp; ∟ optional**        | Boolean | 字段是否必填                 | 必填   | true  | `true` : 选填 &emsp; `false` : 必填 |
 | **&emsp; &emsp; ∟ scale**           | Number  | 小数位数                    | 非必填 | -      | `type` = `number` 时必填 |
 | **&emsp; &emsp; ∟ unit**            | String  | 单位                       | 非必填 | -      | `type` = `number` 时必填 |
-| **&emsp; &emsp; ∟ rule**            | String  | 自动编号生成规则             | 非必填 | -      | `type` = `autoNumber` 时必填<br/>请查看[问题四](/docs/open-api/datalink/question-answer#问题四)，了解具体编码规则 |
+| **&emsp; &emsp; ∟ rule**            | String  | 自动编号生成规则             | 非必填 | -      | `type` = `autoNumber` 时必填<br/>请查看 [问题四](/docs/open-api/datalink/question-answer#问题四)，了解具体编码规则 |
 | **&emsp; &emsp; ∟ withTime**        | Boolean | 是否包含时间                | 非必填 | false  | `type` = `date` 或 `dateRange` 时必填<br/>`true` : 包含 &emsp; `false` : 不包含|
 | **&emsp; &emsp; ∟ entity**          | String  | 业务对象取值范围             | 非必填 | -      | `type` = `ref` 时必填 |
 | **&emsp; &emsp; ∟ formula**         | Boolean | 是否是自动计算类型            | 非必填 | false | `type` = `number` 或 `money`时有效<br/>`true` : 是 &emsp; `false` : 否 |

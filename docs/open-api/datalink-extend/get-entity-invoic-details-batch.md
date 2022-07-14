@@ -26,7 +26,7 @@ url="/api/openapi/v2/extension/INVOICE/object/invoice/detailBatch"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **invoiceIds** | Array | 发票ID数组 | 必填 | - | 通过 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)<br/>或 [根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice) 获取 |
+| **invoiceIds** | Array | 发票ID数组 | 必填 | - | 通过 [根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice)<br/>或 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details) 获取 |
 
 ## CURL
 ```json

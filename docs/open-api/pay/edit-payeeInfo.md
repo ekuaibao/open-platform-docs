@@ -12,6 +12,7 @@ url="/api/openapi/v2.1/payeeInfos/$`id`"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🐞 修复了更改员工可见性时，偶现的传入启用的员工ID，返回停用的同名员工ID的BUG。<br/>
   [**1.6.3**](/docs/open-api/notice/update-log#163) -> 🚀 接口升级 `v2.1` 版本，新增了 `sort`（账号类别）参数，额外支持更新 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。<br/>
 
   </div>
@@ -594,13 +595,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/payeeIn
 </Tabs>
 
 ## 失败响应
-当传入要修改的 **账户ID** 不正确时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "账户信息未找到",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 账户信息未找到 | 确认要修改的账户ID是否正确 | 

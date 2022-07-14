@@ -23,7 +23,7 @@ url="/api/openapi/v2/fieldMapping/dataLink"
 | **sourceEntityId**        | String | 业务对象ID   | 必填 | -  | 通过 [获取业务对象](/docs/open-api/datalink/get-entity-list) 获取 |
 | **fields**                | Object | 赋值字段     | 必填 | -  | 赋值字段  |
 | **&emsp; ∟ sourceField** | Object | 赋值源字段    | 必填 | -  | 为业务对象的字段 `name` 值，通过 [获取业务对象](/docs/open-api/datalink/get-entity-list) 获取  |
-| **&emsp; ∟ targetField** | Object | 赋值目标字段  | 必填 | -  | 请查看[问题五](/docs/open-api/datalink/question-answer#问题五)，了解如何获取目标字段 |
+| **&emsp; ∟ targetField** | Object | 赋值目标字段  | 必填 | -  | 请查看 [问题五](/docs/open-api/datalink/question-answer#问题五)，了解如何获取目标字段 |
 
 :::tip
 赋值源字段为该业务对象实体字段，该字段以 `name` 值为唯一标识，所以配置默认赋值规则时也以此作为 `sourceField` 参数。

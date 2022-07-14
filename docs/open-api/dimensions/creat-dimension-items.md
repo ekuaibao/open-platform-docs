@@ -31,7 +31,7 @@ url="/api/openapi/v1.1/dimensions/items"
 |**name**                  | String   | 档案值名称	| 必填  | - | 档案值名称，最大不能超过300个字 |
 |**code**                  | String   | 档案值编码	| 必填  | - | 档案值编码 |
 |**visibility**            | Object   | 可见范围      | 非必填 | - | 可见范围 |
-|**&emsp; ∟ fullVisible** | Boolean  | 是否全部可见   | 非必填 | true | `true` : 全部可见 <br/>`false` : 非全部可见，此时**三个白名单至少必填一项**<br/>在非全部可见的情况下，仅白名单内的员工可见 |
+|**&emsp; ∟ fullVisible** | Boolean  | 是否全部可见   | 非必填 | true | `true` : 全部可见 <br/>`false` : 非全部可见，以下**三个白名单至少必填一项**<br/>在非全部可见的情况下，仅白名单内的员工可见 |
 |**&emsp; ∟ staffs**      | Array    | 员工白名单	| 非必填 | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
 |**&emsp; ∟ roles**       | Array    | 角色白名单	| 非必填 | - | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
 |**&emsp; ∟ departments** | Array    | 部门白名单    | 非必填 | - | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取 |

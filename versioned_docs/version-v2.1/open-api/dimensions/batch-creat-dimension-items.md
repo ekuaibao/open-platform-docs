@@ -233,9 +233,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 根据code: [[CODE22]]不能找到唯一的档案项 | 确认档案项父级CODE参数是否正确 | 
 | **400** | - | baseCurrencyId对应的本位币在企业不存在，请检查 | 确认 `baseCurrencyId` 参数值对应的本位币在企业内是否配置 | 
 | **400** | - | 类型为法人实体时，baseCurrencyId是必填参数，请检查 | 开通了【**法人实体多币种**】功能后，`baseCurrencyId` 是必填参数 | 
+| **400** | - | 根据code: [[CODE22]]不能找到唯一的档案项 | 确认档案项父级CODE参数是否正确 | 
 | **412** | - | 上级档案[ID_3yrzERx0Qf01]不存在        | 确认档案项父级ID参数是否正确 | 
 | **412** | - | 该档案项编码[XMCS001]导入重复           | 确认档案项CODE是否重复导入 | 
 | **412** | - | 根据code: [[100]]不能找到唯一的员工      | 确认员工CODE是否重复或者不存在 | 

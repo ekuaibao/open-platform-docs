@@ -24,7 +24,7 @@ url="/api/openapi/v2/flow/data/submitFlow"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-|**isUrgent**                  | Boolean | 是否加急      | 必填   | - | `true` : 加急 &emsp; `false` : 不加急 |
+|**isUrgent**                  | Boolean | 是否加急      | 必填   | - | `true` : 加急 &emsp; `false` : 不加急<br/>**仅当流程配置允许加急时，`isUrgent` 才可为 `true`** |
 |**urgentReason**              | String  | 加急原因      | 非必填 | - | 加急原因 |
 |**nodes**                     | Array   | 节点信息      | 必填   | - | 至少一个节点信息 |
 |**&emsp; ∟ configNodeId**    | String  | 配置节点ID    | 必填   | - | 通过 [获取流程实例](/docs/open-api/flows/get-flow) 获取【node】数组的 `id` 字段 |
@@ -34,23 +34,18 @@ url="/api/openapi/v2/flow/data/submitFlow"
 
 ## 附加说明
 :::tip
-- `isUrgent` 字段表达是否加急；`urgentReason` 字段为加急原因； 仅当流程配置允许加急时，`isUrgent` 才可为"true"；
-
-- 在上一步获取的流程实例中，<br/>
-  &emsp; 若某节点的 type = "normal" 时，对应传入参数为 `approverId`；<br/>
-  &emsp; 若某节点的 type = "countersign" 时，对应传入参数为 `signerId`；
-
-- 在上一步获取的流程实例中，<br/>
-  &emsp; 若某节点的 type = "normal"，且 allStaffs = "true" 时，可传入企业内任意员工 ID，仅允许传入一个；<br/>
-  &emsp; 若某节点的 type = "countersign"，且 allStaffs = "true" 时，可传入企业内任意员工 ID，允许传入多个；
-
-- 在上一步获取的流程实例中，若某节点的 allstaffs = "false"，且 isauto = "false"：<br/>
-  &emsp; 当其 type = "normal" 时，需传入 staffIds 数组中的任意一个员工 ID；<br/>
-  &emsp; 当其 type = "countersign" 时，需传入 staffIds 数组中的任意员工 ID，允许传入多个；
-
-- 在上一步获取的流程实例中，若某节点的 allstaffs = "false"，且 isauto = "true"：<br/>
-  &emsp; 当其 type = "normal" 时，需传入 staffIds 数组中的任意一个员工 ID；<br/>
-  &emsp; 当其 type = "countersign" 时，需传入 staffIds 数组中的所有员工 ID；
+- 在上一步获取的流程实例中
+  - 若某节点的 `type` = `normal` 时，对应传入参数为 `approverId`
+  - 若某节点的 `type` = `countersign` 时，对应传入参数为 `signerId`
+- 在上一步获取的流程实例中
+  - 若某节点的 `type` = `normal`，且 `allStaffs` = `true` 时，可传入企业内任意员工 ID，仅允许传入一个
+  - 若某节点的 `type` = `countersign`，且 `allStaffs` = `true` 时，可传入企业内任意员工 ID，允许传入多个
+- 在上一步获取的流程实例中，若某节点的 `allstaffs` = `false`，且 `isauto` = `false`
+  - 当其 `type` = `normal` 时，需传入 `staffIds` 数组中的任意一个员工 ID
+  - 当其 `type` = `countersign` 时，需传入 `staffIds` 数组中的任意员工 ID，允许传入多个
+- 在上一步获取的流程实例中，若某节点的 `allstaffs` = `false`，且 `isauto` = `true`
+  - 当其 `type` = `normal` 时，需传入 `staffIds` 数组中的任意一个员工 ID
+  - 当其 `type` = `countersign` 时，需传入 `staffIds` 数组中的所有员工 ID
 :::
 
 ## CURL

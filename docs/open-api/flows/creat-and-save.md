@@ -389,10 +389,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 | **400** | - | openapi单据数据保存，明细模板不存在 | `form.details.specificationId`（费用类型模板ID）错误，需要确认费用类型模板ID是否为 **费用类型模板ID:单据类型:小版本号** 的正确形式 | 
 | **400** | - | openapi单据数据保存，明细模板已删除 | 费用类型模板ID不是最新的，不允许创建单据，请每次修改费用类型模板后都获取最新的模板ID再创建单据操作 |
 | **400** | - | 'u_业务对象'字段[业务对象]字段为必填，值不能为空 | 确认必填字段是否传值 |
-| **400** | - | 提交人参数不合法，请检查该员工是否已离职 | 确认`submitterId` 字段对应员工是否离职 |
+| **400** | - | 提交人参数不合法，请检查该员工是否已离职 | 确认 `submitterId` 字段对应员工是否离职 |
 | **400** | - | openapi单据数据提交，审批节点[出纳支付]未设置审批人 | 审批节点配置审批人为【**手动选择**】时，无法直接提审，请修改配置 |
 | **412** | - | 单据数据包含不支持的字段：u_Z文本。 | 确认 **业务对象** 类型字段配置的赋值规则中所选择的单据字段，在当前模板中是否存在 |
-| **412** | - | 你无法使用当前选择的"单据模板"，请重选 | 确认`submitterId` 字段对应员工是否在该单据模板可见范围内 |
+| **412** | - | 你无法使用当前选择的"单据模板"，请重选 | 确认 `submitterId` 字段对应员工是否在该单据模板可见范围内 |
 
 
 ## 字段填写规则
@@ -656,13 +656,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 ```
 
 - apportionMoney：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服，除「standard」外，其他内容请与示例保持一致。
-- 项目：是自定义档案--项目中的档案项ID，即[获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items)中返回的ID。
-- specificationId：费用分摊模板 ID，即[根据企业ID获取分摊模版列表](/docs/open-api/forms/get-apportion-template-list)中返回的ID。
+- 项目：是自定义档案--项目中的档案项ID，即 [获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items) 中返回的ID。
+- specificationId：费用分摊模板 ID，即 [根据企业ID获取分摊模版列表](/docs/open-api/forms/get-apportion-template-list) 中返回的ID。
 
 ### (17) 多收款人字段
 单据的 `payPlan` 字段为 **多收款人** 模式的 **支付计划** 字段，传参示例如下：
 - 使用 **多收款人** 功能，需要在单据模板中勾选 “**允许多收款人**”。<br/>
-- 当多收款人为 **按明细/按收款信息汇总明细金额** 类型时，费用明细中的收款信息字段（`details`->`feeTypeForm`->`feeDetailPayeeId`）**必填**。<br/>
+- 当多收款人为 **按明细/按收款信息汇总明细金额** 类型时，费用明细中的收款信息字段（`details` -> `feeTypeForm` -> `feeDetailPayeeId`）**必填**。<br/>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

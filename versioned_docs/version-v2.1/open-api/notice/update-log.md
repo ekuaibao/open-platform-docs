@@ -36,6 +36,10 @@ timeline: true
   - 修复了获取智能拍票录入的发票，除了 **发票主体** 类型外，其他类型的 `invoiceNumber`（发票代码）和 `invoiceCode`（发票号码）返回 `null` 的BUG。
 - 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
   - 修复了获取 `WEIXIN`（微信）、`OTHER`（其他）类型收款账户时，`certificateType`（证件类型 ）、`certificateNo`（证件号码）返回空的BUG。
+- 🐞 更新 [更新自定义档案项](/docs/open-api/dimensions/update-dimension-items) 接口
+  - 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。
+- 🐞 更新 [更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口
+  - 修复了更改员工可见性时，偶现的传入启用的员工ID，返回停用的同名员工ID的BUG。
 - 🐞 更新 [获取单据审批状态](/docs/open-api/flows/get-approve-state) 接口
   - 更新了注意事项。
 - 🐞 更新 [附件下载](/docs/open-api/attachment/attachment-download) 接口

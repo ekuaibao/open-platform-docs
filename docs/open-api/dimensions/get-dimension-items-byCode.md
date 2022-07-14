@@ -18,7 +18,7 @@ url="/api/openapi/v1/dimensions/getDimensionByCode"
 </details>
 
 :::caution
-- 此接口并不区分档案类别，需要在获取到本地后再进行分类，通过 `dimensionId` 和[获取自定义档案类别](/docs/open-api/dimensions/get-dimensions)接口返回的id关联。
+- 此接口并不区分档案类别，需要在获取到本地后再进行分类，通过 `dimensionId`（档案类别ID）区分。
 :::
 
 ## Query Parameters

@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/dimensions/items/$`id`"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🆕 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🚀 接口升级 `v1.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
 
   </div>
@@ -85,6 +86,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/dimensi
          "postType":"ID_3sjQzq30UL0",                                  //岗位类型，值为【岗位类型预置】档案实例ID或CODE，与 “type” 参数保持一致
         //-----------------------------------------
         //“法人实体”档案额外参数
+        "baseCurrencyId":"156",                                        //法人实体本位币数字代码，取值见币种设置，只可传系统内配置好的本位币，无法修改已配置的本位币，需要开通【法人实体多币种】功能        
         "taxpayerType":"GeneralTaxpayer"                               //纳税人类型，GeneralTaxpayer：一般纳税人；SmallScaleTaxpayer：小规模纳税人
         //-----------------------------------------
     },
@@ -128,6 +130,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/dimensi
          "postType":"CODE1",                                           //岗位类型，值为【岗位类型预置】档案实例ID或CODE，与 “type” 参数保持一致
         //-----------------------------------------
         //“法人实体”档案额外参数
+        "baseCurrencyId":"156",                                        //法人实体本位币数字代码，取值见币种设置，只可传系统内配置好的本位币，无法修改已配置的本位币，需要开通【法人实体多币种】功能        
         "taxpayerType":"GeneralTaxpayer"                               //纳税人类型，GeneralTaxpayer：一般纳税人；SmallScaleTaxpayer：小规模纳税人
         //-----------------------------------------
     },
@@ -150,46 +153,14 @@ code 204
 ```
 
 ## 失败响应
-**父节点ID** 不存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "上级档案[ID_3yrzERx0Qf01]不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | baseCurrencyId对应的本位币在企业不存在，请检查 | 确认 `baseCurrencyId` 参数值对应的本位币在企业内是否配置 | 
+| **400** | - | 类型为法人实体时，baseCurrencyId是必填参数，请检查 | 开通了【**法人实体多币种**】功能后，`baseCurrencyId` 是必填参数 | 
+| **400** | - | 类型为code时dimensionId是必填参数，请检查 | `type` = `code` 时，`dimensionId`（档案类别CODE) 是必填参数 | 
+| **400** | - | 根据code: [[CODE22]]不能找到唯一的档案项 | 确认档案项父级CODE参数是否正确 | 
+| **403** | - | 法人实体的多币种不允许修改 | 法人实体的多币种一经配置不允许修改 | 
+| **412** | - | 上级档案[ID_3yrzERx0Qf01]不存在        | 确认档案项父级ID参数是否正确 | 
+| **412** | - | 该档案项编码[XMCS001]导入重复           | 确认档案项CODE是否重复导入 | 
+| **412** | - | 根据code: [[100]]不能找到唯一的员工      | 确认员工CODE是否重复或者不存在 |
 
-**父节点CODE** 不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "根据code: [[CODE22]]不能找到唯一的档案项",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-`type` = `code` 时，不传 `dimensionId`（档案类别CODE) 报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "类型为code时dimensionId是必填参数，请检查",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-**员工CODE** 重复或者不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "根据code: [[100]]不能找到唯一的员工",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
