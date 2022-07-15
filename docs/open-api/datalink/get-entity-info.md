@@ -72,8 +72,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
                     "standardStrCode": "CNY"
                 }
             },
-            "totalCount": 0,           //总数量
-            "useCount": 0,             //用户数量
+            "totalCount": 0,           //最大引用次数
+            "useCount": 0,             //已引用次数
             "entityId": "8c500bdb8c4de2404000",  //业务对象ID
             "platformId": "66wbMPbmLwsE00", 
             "source": "EXCEL",         //来源
@@ -90,7 +90,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
             "ownerId": "",             //“负责人”ID
             "operatorId": "joQbMsJBw01c00:gwUbMbLvg4pA00",  //操作人ID
             "sourceId": "",            //来源ID
-            "flowCounts": {} 
+            "flowCounts": {}           //引用单据ID
         },
         {
             "id": "soobSWavrE2g00",

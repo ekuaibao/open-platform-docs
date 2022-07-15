@@ -12,6 +12,15 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.8.1
+
+`2022-07-18`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+- 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
+  - 修复了两个BUG。
+    - 单据撤回再提交，接口报 **HTTP 400** 的BUG
+    - 单据由管理员转交给他人后审批同意，接口报 **HTTP 500** 的BUG
+    
+---
 ## 1.8.0
 
 `2022-07-14`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
@@ -51,7 +60,7 @@ timeline: true
 ---
 ## 1.7.2
 
-`2022-07-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+`2022-07-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
 - 🚀 新增 [停用自定义档案项](/docs/open-api/dimensions/disable-dimension-items)、[启用自定义档案项](/docs/open-api/dimensions/enable-dimension-items) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
 - 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
@@ -68,7 +77,7 @@ timeline: true
 ---
 ## 1.7.1
 
-`2022-06-29`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+`2022-06-29`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
 - 🆕 新增 [根据借款包ID获取借款包信息](/docs/open-api/flows/get-flow-byLoanInfoId) 接口
 - 🆕 新增 [根据还款记录ID获取还款信息](/docs/open-api/flows/get-repayment-record) 接口
 - 🆕 新增【**历史版本**】模块
@@ -128,7 +137,7 @@ timeline: true
 ---
 ## 1.6.3
 
-`2022-06-13`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+`2022-06-13`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
 - 🆕 新增 [批量新增收款账户](/docs/open-api/pay/batch-new-payeeInfo) 接口。
 - 🚀 新增 [新增收款账户](/docs/open-api/pay/new-payeeInfo)、[更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口 `v2.1` 版本
   - 新增了 `sort`（账号类别）参数，额外支持新增/更新 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。
@@ -140,7 +149,7 @@ timeline: true
 ---
 ## 1.6.2
 
-`2022-06-06`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+`2022-06-06`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
 - 🐞 更新 [获取自建应用授权](/docs/open-api/getting-started/platform-auth) 接口
   - 更新了 `appKey`（接入账号）、`appSecurity`（接入密码）接口参数备注和 **失败响应** 示例。
 - 🐞 更新 [获取企业对账单列表](/docs/open-api/mall/find-pageData-billId)、[获取企业对账单详情](/docs/open-api/mall/find-billDetail-byId) 接口
@@ -153,7 +162,7 @@ timeline: true
 ---
 ## 1.6.1
 
-`2022-06-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+`2022-06-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
 - 🆕 新增 [获取自建应用授权](/docs/open-api/getting-started/platform-auth) 接口。
 - 🆕 新增【**商城接口**】模块
   - 🆕 新增 [获取企业对账单列表](/docs/open-api/mall/find-pageData-billId) 接口。
@@ -202,7 +211,7 @@ timeline: true
 ---
 ## 1.5.1
 
-`2022-05-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
+`2022-05-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5.2`
 
 - 🆕 新增 [获取随手记数据](/docs/open-api/flows/get-notes) 接口。
 - 🆕 新增 [获取企业微信OpenUserId](/docs/open-api/tools/staffs-getOpenUserId) 接口。
@@ -224,7 +233,7 @@ timeline: true
 ---
 ## 1.5.0
 
-`2022-05-12`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5-2`
+`2022-05-12`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5.2`
 
 - 🆕 【**所有接口**】增加了 **更新日志** 描述，方便查看接口上线版本和更新内容。
 - 🚀 新增 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口 `v1.1` 版本 
@@ -252,7 +261,7 @@ timeline: true
 ---
 ## 1.4.1
 
-`2022-04-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5-2`
+`2022-04-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5.1`
 
 - 🐞 更新 [通讯录同步-常见问题总结](/docs/open-api/contacts/question-answer) 文档
   - 新增了问题总结**“调用【修改员工信息】时，接口响应成功，但员工信息未修改成功？”**。
@@ -271,7 +280,7 @@ timeline: true
 ---
 ## 1.4.0
 
-`2022-04-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5-1`
+`2022-04-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5.1`
 
 - 🚀 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。

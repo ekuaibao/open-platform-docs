@@ -85,8 +85,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
                 "department": [],    //部门白名单
                 "role": []           //角色白名单
             },
-            "useCount": 0,
-            "totalCount": 0,
+            "useCount": 0,           //已引用次数
+            "totalCount": 0,         //最大引用次数
             "active": true,                      //是否停用
             "entityId": "b41a0b811ce2ef06ac00",  //业务对象ID
             "entity":{                           //业务对象数据

@@ -54,7 +54,7 @@ url="/api/openapi/v1.1/docs/getApplyList"
     - `active` 值传 `空串` 或 `false` 或 `非true外任意值`，返回企业下全部 **已删除** 的单据
     - `active` 值传 `true`，返回企业下全部 **正常** 的单据
 - `state` = `PROCESSING`（支付中）查询时，无数据返回，如果单据处于 `PROCESSING` 状态，传 `state` = `paying`（待支付），响应数据中会返回包含 `PROCESSING`（支付中）状态的数据。
-- `orderBy` = `payDate`（支付时间）需要结合 `startDate`、`endDate` 查询范围使用，至少传任意其一，否则无数据返回。
+- `orderBy` = `payDate`（支付时间）需要结合 `startDate`、`endDate` 查询范围使用，至少传任意其一，否则查询条件不生效。
 :::
 
 ## CURL
