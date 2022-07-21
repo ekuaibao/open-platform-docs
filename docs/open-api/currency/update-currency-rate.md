@@ -26,7 +26,7 @@ url="/api/openapi/v2/currency/updateCurrencyRate"
 
 ## CURL
 ```json
-curl --location --request PUT 'http://app.ekuaibao.com/api/openapi/v2/currency/updateCurrencyRate?accessToken=XRcbwWBTassg00' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/currency/updateCurrencyRate?accessToken=XRcbwWBTassg00' \
 --header 'Content-Type: application/json' \
 --data-raw '[
     {

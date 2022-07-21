@@ -37,7 +37,7 @@ form-data {
 
 ## CURL
 ```shell
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachment/upload?accessToken=XRcbwWBTassg00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/attachment/upload?accessToken=XRcbwWBTassg00' \
 --form 'name=kotlin简介.docx' \
 --form 'file=@/C:/Users/27537/Documents/kotlin简介.docx'
 ```

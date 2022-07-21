@@ -36,7 +36,7 @@ url="/api/openapi/v1.1/cityGroup/detail/delete"
 
 ## CURL
 ```json
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1.1/cityGroup/detail/delete?accessToken=FsYc5j4FlclU00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/cityGroup/detail/delete?accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{

@@ -14,12 +14,13 @@ timeline: true
 ---
 ## 1.8.1
 
-`2022-07-18`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+`2022-07-22`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
 - 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
-  - 修复了两个BUG。
-    - 单据撤回再提交，接口报 **HTTP 400** 的BUG
-    - 单据由管理员转交给他人后审批同意，接口报 **HTTP 500** 的BUG
-    
+  - 修复了单据撤回再提交，接口报 **HTTP 400** 的BUG
+  - 修复了单据由管理员转交给他人后审批同意，接口报 **HTTP 500** 的BUG
+  - 修复了单据支付中和支付完成状态缺失 `action` 的BUG
+- 🐞 更新 [单据相关字段类型](/docs/next/open-api/flows/forms-state) 文档
+  - 新增了 `nullify`（已作废）单据状态。 
 ---
 ## 1.8.0
 

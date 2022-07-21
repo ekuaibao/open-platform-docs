@@ -28,7 +28,7 @@ url="/api/openapi/v1/invoice/unify"
 
 ## CURL
 ```shell
-curl --location --request get 'http://app.ekuaibao.com/api/openapi/v1/invoice/unify?accessToken=ojkcqAnfM40g00&unifyInvoiceCorporationId=0KkcigsqylyI00&index=1612344239976&count=10'
+curl --location --request get 'https://app.ekuaibao.com/api/openapi/v1/invoice/unify?accessToken=ojkcqAnfM40g00&unifyInvoiceCorporationId=0KkcigsqylyI00&index=1612344239976&count=10'
 ```
 
 ## 成功响应

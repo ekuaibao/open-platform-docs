@@ -19,6 +19,7 @@
 | 名称 | 类型 | 描述 |
 | :--- | :--- | :--- |
 | **draft**      | String  | 草稿 |
+| **nullify**    | String  | 已作废**（不同于“已删除”）** |
 | **pending**    | String  | 提交中（预算计算，临时状态）|
 | **approving**  | String  | 审批中 |
 | **rejected**   | String  | 已驳回 |

@@ -33,7 +33,7 @@ url="/api/openapi/v2/attachment/downloadurls"
 
 ## CURL
 ```json
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/attachment/downloadurls?accessToken=UvsbtOEHTsk000' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/attachment/downloadurls?accessToken=UvsbtOEHTsk000' \
 --header 'Content-Type: application/json' \
 --data-raw '[
     {

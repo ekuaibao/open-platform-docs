@@ -36,7 +36,7 @@ url="/api/openapi/v1.1/property"
 
 ## CURL
 ```shell
-curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1.1/property?accessToken=ID_3sNZ1zd0jTw:PCx3rwm3aA00qM&type=department.form' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/property?accessToken=ID_3sNZ1zd0jTw:PCx3rwm3aA00qM&type=department.form' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```

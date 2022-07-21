@@ -77,7 +77,7 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 
 ## CURL
 ```json
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension/INVOICE/object/invoice/search?accessToken=ID_3tm4Nah54dg:djg8LshfUkfM00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extension/INVOICE/object/invoice/search?accessToken=ID_3tm4Nah54dg:djg8LshfUkfM00' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "ids":["djg8LshfUkfM00:044031900111:69872971"],  //发票ID

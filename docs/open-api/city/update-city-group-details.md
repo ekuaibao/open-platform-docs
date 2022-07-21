@@ -34,7 +34,7 @@ url="/api/openapi/v1/cityGroup/detail/save"
 
 ## CURL
 ```json
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v1/cityGroup/detail/save?accessToken=FsYc5j4FlclU00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/cityGroup/detail/save?accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{

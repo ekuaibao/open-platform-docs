@@ -24,7 +24,7 @@ url="/api/openapi/v1/staffs/getAllCustomeProperty"
 
 ## CURL
 ```shell
-curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/staffs/getAllCustomeProperty?accessToken=ID_3kVvb6B042U' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/getAllCustomeProperty?accessToken=ID_3kVvb6B042U' \
 --header 'Accept: application/json'
 ```
 

@@ -11,9 +11,9 @@ url="/api/openapi/v1.1/flowDetails/allLogs"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.8.1**](/docs/open-api/notice/update-log#172) -> 🐞 修复了两个BUG。<br/>
-  &emsp; &emsp; &emsp; &emsp; &emsp; ● 单据撤回再提交，接口报 **HTTP 400** 的BUG。<br/>
-  &emsp; &emsp; &emsp; &emsp; &emsp; ● 单据由管理员转交给他人后审批同意，接口报 **HTTP 500** 的BUG。<br/>
+  [**1.8.1**](/docs/open-api/notice/update-log#172) -> 🐞 修复了单据撤回再提交，接口报 **HTTP 400** 的BUG。<br/>
+  &emsp; &emsp; -> 🐞 修复了单据由管理员转交给他人后审批同意，接口报 **HTTP 500** 的BUG。<br/>
+  &emsp; &emsp; -> 🐞 修复了单据支付中和支付完成状态缺失 `action` 的BUG。<br/>
   [**1.7.2**](/docs/open-api/notice/update-log#172) -> 🐞 修复了待办任务自动同意时，接口报错 **HTTP 400** 的BUG。<br/>
   [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🚀 接口升级 `v1.1` 版本，**成功响应** 中新增了 `action`（已办动作）参数。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🆕 新增了本接口。<br/>

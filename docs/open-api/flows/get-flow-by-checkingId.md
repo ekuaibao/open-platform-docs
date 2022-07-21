@@ -30,7 +30,7 @@ url="/api/openapi/v1/getFlowByCheckingId"
 
 ## CURL
 ```shell
-curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v1/getFlowByCheckingId?checkingBillId=ID_3hCyl5N02eI&accessToken=FsYc5j4FlclU00' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/getFlowByCheckingId?checkingBillId=ID_3hCyl5N02eI&accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```

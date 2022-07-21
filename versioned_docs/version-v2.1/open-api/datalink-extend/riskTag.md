@@ -21,7 +21,7 @@ url="/api/openapi/v2/invoice/risk/label/[`ids`]"
 
 ## CURL
 ```shell
-curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v2/invoice/risk/label/[j7sbyDMhYUpU00]?accessToken=ZyEbyCA-_Auk00'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/invoice/risk/label/[j7sbyDMhYUpU00]?accessToken=ZyEbyCA-_Auk00'
 ```
 
 ## 成功响应

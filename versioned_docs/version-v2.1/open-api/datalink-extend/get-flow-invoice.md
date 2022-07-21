@@ -22,7 +22,7 @@ url="/api/openapi/v2/extension/flow/INVOICE/search"
 
 ## CURL
 ```json
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension/flow/INVOICE/search?accessToken=ZyEbyCA-_Auk00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extension/flow/INVOICE/search?accessToken=ZyEbyCA-_Auk00' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "type":"id",

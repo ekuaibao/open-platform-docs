@@ -37,7 +37,7 @@ url="/api/openapi/v1/cityGroup/update/$`id`"
 
 ## CURL
 ```json
-curl --location --request PUT 'http://app.ekuaibao.com/api/openapi/v1/cityGroup/update/$wC0cPu1DNY1400?accessToken=FsYc5j4FlclU00' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/cityGroup/update/$wC0cPu1DNY1400?accessToken=FsYc5j4FlclU00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{

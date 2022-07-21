@@ -30,7 +30,7 @@ url="/api/openapi/v2/recordLink/getRecordLinkList/$`id`"
 
 ## CURL
 ```json
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/recordLink/getRecordLinkList/$qyMbXMvgBgaU00?accessToken=73QbYDmzCc6I00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/recordLink/getRecordLinkList/$qyMbXMvgBgaU00?accessToken=73QbYDmzCc6I00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{

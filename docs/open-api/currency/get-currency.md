@@ -18,7 +18,7 @@ url="/api/openapi/v2/currency/active"
 
 ## CURL
 ```shell
-curl --location --request GET 'http://app.ekuaibao.com/api/openapi/v2/currency/active?accessToken=XRcbwWBTassg00'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/currency/active?accessToken=XRcbwWBTassg00'
 ```
 
 ## 成功响应

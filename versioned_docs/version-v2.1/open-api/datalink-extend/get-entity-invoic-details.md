@@ -21,7 +21,7 @@ url="/api/openapi/v2/extension/INVOICE/object/invoice/`invoiceId`/detail"
 
 ## CURL
 ```shell
-curl --location --request POST 'http://app.ekuaibao.com/api/openapi/v2/extension/INVOICE/object/invoice/0aM9AbvdhI0400:011001900111:07517347/detail?accessToken=w3UbyyG1Xsfc00'
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extension/INVOICE/object/invoice/0aM9AbvdhI0400:011001900111:07517347/detail?accessToken=w3UbyyG1Xsfc00'
 ```
 
 ## 成功响应
