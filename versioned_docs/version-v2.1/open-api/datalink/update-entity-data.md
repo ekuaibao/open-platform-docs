@@ -5,13 +5,14 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v2/datalink/add"
+url="/api/openapi/v2.1/datalink/add"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.8.1**](/docs/open-api/notice/update-log#181) &emsp; -> 🚀 接口升级 `v2.1` 版本，修复了增量更新( `editFlag` = `increment` )时，`ownerId` 、`visible` 不传，原数据被置空的BUG。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🆕 **金额** 类型字段支持多币种，使用此功能需要开通【**币种设置**】功能。<br/>
   [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
   [**0.7.138**](/docs/open-api/notice/update-log#07138) -> 🆕 新增了各类型字段值传参示例。<br/>
@@ -97,7 +98,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="全员可见&限制次数" label="全员可见&限制次数" default>
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "entityId": "ea9d0b6e522a25878000",
@@ -136,7 +137,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 <TabItem value="全员可见&管理员停启用" label="全员可见&管理员停启用">
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "entityId": "ea9d0b6e522a25878000",
@@ -173,7 +174,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 <TabItem value="部分可见&限制次数" label="部分可见&限制次数">
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "entityId": "ea9d0b6e522a25878000",
@@ -211,7 +212,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 <TabItem value="部分可见&管理员停启用" label="部分可见&管理员停启用">
 
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/datalink/add?accessToken=cxEbrzNJSA3A00&editFlag=cover' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "entityId": "ea9d0b6e522a25878000",
