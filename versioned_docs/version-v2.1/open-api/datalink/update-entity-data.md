@@ -12,7 +12,7 @@ url="/api/openapi/v2.1/datalink/add"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.8.1**](/docs/open-api/notice/update-log#181) &emsp; -> 🚀 接口升级 `v2.1` 版本，修复了增量更新( `editFlag` = `increment` )时，`ownerId` 、`visible` 不传，原数据被置空的BUG。<br/>
+  [**1.8.1**](/docs/open-api/notice/update-log#181) &emsp; -> 🚀 接口升级 `v2.1` 版本，修复了增量更新（`editFlag` = `increment`）时，`ownerId`、`visible` 不传，原数据被置空的BUG。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🆕 **金额** 类型字段支持多币种，使用此功能需要开通【**币种设置**】功能。<br/>
   [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
   [**0.7.138**](/docs/open-api/notice/update-log#07138) -> 🆕 新增了各类型字段值传参示例。<br/>

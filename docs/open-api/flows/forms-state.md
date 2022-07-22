@@ -78,6 +78,7 @@
 | **freeflow.shiftApprove** | String  | 转交审批    |
 | **freeflow.addSignNode**  | String  | 加签审批    |
 | **freeflow.select.approver**  | String  | 选择审批人 |
+| **freeflow.alter**        | String  | 单据变更 |
 
 
 

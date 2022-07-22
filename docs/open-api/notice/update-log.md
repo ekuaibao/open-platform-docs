@@ -16,13 +16,14 @@ timeline: true
 
 `2022-07-22`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
 - 🚀 新增 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口 `v2.1` 版本
-  - 修复了增量更新( `editFlag` = `increment` )时，`ownerId` 、`visible` 不传，原数据被置空的BUG。
+  - 修复了增量更新（`editFlag` = `increment`）时，`ownerId`、`visible` 不传，原数据被置空的BUG。
 - 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
   - 修复了单据撤回再提交，接口报 **HTTP 400** 的BUG
   - 修复了单据由管理员转交给他人后审批同意，接口报 **HTTP 500** 的BUG
   - 修复了单据支付中和支付完成状态缺失 `action` 的BUG
 - 🐞 更新 [单据相关字段类型](/docs/next/open-api/flows/forms-state) 文档
-  - 新增了 `nullify`（已作废）单据状态。 
+  - 新增了 `nullify`（已作废）单据状态。
+  - 新增了 `freeflow.alter`（单据变更）审批动作。
 ---
 ## 1.8.0
 
