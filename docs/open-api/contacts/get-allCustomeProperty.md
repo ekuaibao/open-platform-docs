@@ -66,12 +66,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/ge
 ```
 
 ## 失败响应
-```json
-{
-	"errorCode": 403,
-	"errorMessage": "未授权",
-	"errorDetails": null,
-	"code": null,
-	"data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期 | 

@@ -55,35 +55,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/attachme
 ```
 
 ## 失败响应
-附件最大不能超过30MB，否则报如下错误：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "上传附件大小不可超过30Mb",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-**Body Parameters** 参数 `file` 写成 `files` 时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "空指针异常",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-文件名不合法时，将会返回：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "参数name不能为空，且必须为合法的文件名",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- 
+| **400** | - | 参数name不能为空，且必须为合法的文件名 | 请确认 `name` 参数，不能包含：`\/:?*"<>`<code>&#124;</code> | 
+| **412** | - | 上传附件大小不可超过30Mb | 请确认上传附件大小 | 
+| **412** | - | 空指针异常 | 请确认所传参数key： `name`、`file` 拼写是否正确 | 

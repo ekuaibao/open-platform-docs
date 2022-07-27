@@ -48,7 +48,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/cityGr
 }'
 ```
 
-## 成功响应:
+## 成功响应
 ```json
 {
     "success": true,
@@ -56,36 +56,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/cityGr
 }
 ```
 
-## 失败响应:
-`staffIds`（员工ID）与 `roleIds`（角色ID）同时为空时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "员工和角色不允许同时为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+## 失败响应
 
-`staffIds`（员工ID）或 `roleIds`（角色ID）不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "ID为'bwa3wajigF0WH0:ID_3lokDfb1p5w-'的员工不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-要删除的 `staffIds`（员工ID）或 `roleIds`（角色ID）与系统中的数据不匹配时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "根据参数staffIds和roleIds找不到需要删除的数据",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 员工和角色不允许同时为空 | 请确认 `staffIds`（员工ID）与 `roleIds`（角色ID）不能同时为空 | 
+| **400** | - | ID为'xxx:xxx'的员工不存在 | 请确认 `staffIds`（员工ID）或 `roleIds`（角色ID）在系统中是否存在 | 
+| **400** | - | 根据参数staffIds和roleIds找不到需要删除的数据 | 请确认要删除的城市组数据与系统中的数据是否匹配 | 

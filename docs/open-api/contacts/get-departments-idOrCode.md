@@ -20,7 +20,7 @@ url="/api/openapi/v1/departments/$`idOrCode`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **idOrCode** | String | `部门ID` 或 `部门编码`| 必填 | - | 参数为 `部门ID` 或 `部门编码` | 
+| **idOrCode** | String | 部门ID或CODE| 必填 | - | **与 `departmentBy` 保持一致**，通过[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments)获取 | 
 
 ## Query Parameters
 
@@ -55,6 +55,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
 ```
 
 ## 失败响应
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 未找到对应部门 | 请确认 `idOrCode`（部门ID或CODE）是否正确 | 
 ```json
 {
     "errorCode": 400,

@@ -60,3 +60,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/cityGrou
     "message": "ok"
 }
 ```
+
+## 失败响应
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | ID_3LTziYdljXy数据不存在 | 请确认 `cityGroupId`（城市组ID）是否正确 |
+| **400** | - | 以下城市Id:[1234555],不存在, 请检查 | 请确认 `cityIds`（城市ID）是否正确 | 
+| **400** | - | 以下员工Id:[xgJ3wajigF25H0:ID_3E9sZ43hMw],不存在, 请检查 | 请确认 `staffIds`（人员ID）是否正确 | 
+| **400** | - | 以下角色Id:[ID_3BKMdBcNB7],不存在, 请检查 | 请确认 `roleIds`（角色ID）是否正确 | 

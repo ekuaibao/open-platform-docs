@@ -63,13 +63,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/departme
 ```
 
 ## 失败响应
-当同一层级部门重复时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "该部门在同级有相同的部门名称",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 该部门在同级有相同的部门名称 | 请确认对应层级是否有相同的部门名称 | 
+

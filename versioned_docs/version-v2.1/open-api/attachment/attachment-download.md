@@ -62,14 +62,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/attachme
 ```
 
 ## 失败响应
-当请求方式 Method 不为 POST 方式时，报错入下：
-```text
-Error 405 Method Not Allowed  
-```
 
-为空表示根据您所提供的附件查询信息没有找到对应的附件：
-```text
-[]
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | `[]` | 为空表示没有找到对应的附件，请确认所提供的附件查询信息是否正确 | 
 
 

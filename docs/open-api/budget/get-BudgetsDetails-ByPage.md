@@ -605,25 +605,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 ```
 
 ## 失败响应
-`budgetId`（预算包ID）不存在时， 返回如下响应结果：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "不存在的预算包",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-程序内部错误，返回此响应数据， 可尝试再次请求获取数据：
-```json
-{
-    "errorCode": 500,
-    "errorMessage": "Format specifier '%s'",
-    "errorDetails": "com.ekuaibao.exile.boot.UnexpectedException: Format specifier '%s'\n\tat ------.remote error from whispered-invoice-rest[release-rest-server-668745ddf6-g8j9d/172.70.23.176](Unknown Source)"
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 不存在的预算包 | 请确认 `budgetId` 参数值是否正确 |
+| **500** | - | Format specifier '%s' | 程序内部错误，返回此响应数据， 可尝试再次请求获取数据 |
+
 

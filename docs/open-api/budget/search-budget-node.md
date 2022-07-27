@@ -342,26 +342,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 ```
 
 ## 失败响应
-`name`（节点名称）和 `code`（节点编码）二者均为空时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "请输入预算节点的名称或编码!",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-整个 **Body Parameters** 参数为空时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "输入存在错误:\n- 缺少查询参数",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 请输入预算节点的名称或编码! | 请确认 `name`（节点名称）和 `code`（节点编码）二选一必填 |
+| **400** | - | 输入存在错误: <br/>- 缺少查询参数 | 请确认整个 **Body Parameters** 参数是否为空 |
+
 
 

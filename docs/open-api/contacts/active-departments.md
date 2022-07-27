@@ -63,14 +63,11 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/departmen
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "要停用部门下的员工，才能停用此部门",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 未找到对应部门 | 请确认 `departmentId`（部门ID）是否正确 | 
+| **412** | - | 要停用部门下的员工，才能停用此部门 | 请确认该部门下是否还有启用员工 | 
+
 
 

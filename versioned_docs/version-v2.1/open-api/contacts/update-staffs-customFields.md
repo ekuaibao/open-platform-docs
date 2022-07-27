@@ -114,13 +114,9 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 ```
 
 ## 失败响应
-自定义档案类型字段，所传值不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "字段rankType不合法，没有找到对应的数据",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 没有查到此员工信息 | 请确认 `IdOrCode`（员工ID或CODE）与 `type`（参数类型）保持一致 | 
+| **400** | - | 字段rankType不合法，没有找到对应的数据 | 请确认 `rankType`（员工ID或CODE）与 `type`（参数类型）保持一致，以及所传参数是否存在 | 
+| **400** | - | 字段postType不合法，没有找到对应的数据 | 请确认 `postType`（员工ID或CODE）与 `type`（参数类型）保持一致，以及所传参数是否存在 | 

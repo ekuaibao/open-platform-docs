@@ -54,7 +54,7 @@ url="/api/openapi/v2.1/budgets/create"
 |**&emsp; ∟ overControllerRate**   | String  | 超标比例                | 非必填  | 100 | 预算超标比例（百分比），`1` ≤ 传参 ≤ `1000` | 
 |**&emsp; ∟ control**              | String  | 节点控制方式             | 必填   | ALLOW | 当预算超额时的控制方式<br/> `ALLOW` : 允许单据提交，并显示警告<br/>`FORBID` : 禁止提交单据<br/>`IGNORED` : 允许单据提交，不显示警告 | 
 |**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 必填   | - | 与上面预算节点ID保持一致 | 
-|**&emsp; ∟ parentId**             | String  | 父节点ID                | 非必填 | - | 父节点ID，为空表示根节点 | 
+|**&emsp; ∟ parentId**             | String  | 父节点ID                | 非必填 | - | 父节点ID，传 `""` 表示根节点 | 
 |**visibilities**                   | Array   | 节点负责人              | 非必填 | - | 负责人能在相关报销单和预算报表中查看该预算节点的进度 |
 |**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 非必填 | - | 与上面预算节点ID保持一致 |
 |**&emsp; ∟ staffIds**             | Array   | 员工ID                 | 非必填 | - | **员工ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
@@ -156,7 +156,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
             ],
             "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
             "nodeId": "20220419",      //与上面预算节点ID保持一致
-            "parentId": ""             //父节点ID为空就是根节点
+            "parentId": ""             //父节点ID,传""表示根节点
         },
         {
             "id": "20220419-1",        //不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID
@@ -193,7 +193,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
             ],
             "control": "FORBID",    //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
             "nodeId": "20220419-1", //节点ID
-            "parentId": "20220419"  //父节点ID为空就是根节点
+            "parentId": "20220419"  //父节点ID,传""表示根节点
         },
         {
             "id": "20220419-2",
@@ -230,7 +230,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
             ],
             "control": "IGNORED",    //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
             "nodeId": "20220419-2",
-            "parentId": "20220419"   //父节点ID为空就是根节点
+            "parentId": "20220419"   //父节点ID,传""表示根节点
         },
         {
             "id": "20220419-1-1",
@@ -267,7 +267,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
             ],
             "control": "ALLOW",         //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
             "nodeId": "20220419-1-1",
-            "parentId": "20220419-1"    //父节点ID为空就是根节点
+            "parentId": "20220419-1"    //父节点ID,传""表示根节点
         }
     ],
     "visibilities": [                //预算节点负责人
@@ -395,7 +395,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
             ],
             "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
             "nodeId": "20220419",      //与上面预算节点ID保持一致
-            "parentId": ""             //父节点ID为空就是根节点
+            "parentId": ""             //父节点ID,传""表示根节点
         },
         {
             "id": "20220419-1",        //不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID
@@ -432,7 +432,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
             ],
             "control": "FORBID",    //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
             "nodeId": "20220419-1", //节点ID
-            "parentId": "20220419"  //父节点ID为空就是根节点
+            "parentId": "20220419"  //父节点ID,传""表示根节点
         },
         {
             "id": "20220419-2",
@@ -469,7 +469,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
             ],
             "control": "IGNORED",    //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
             "nodeId": "20220419-2",
-            "parentId": "20220419"   //父节点ID为空就是根节点
+            "parentId": "20220419"   //父节点ID,传""表示根节点
         },
         {
             "id": "20220419-1-1",
@@ -506,7 +506,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
             ],
             "control": "ALLOW",         //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
             "nodeId": "20220419-1-1",
-            "parentId": "20220419-1"    //父节点ID为空就是根节点
+            "parentId": "20220419-1"    //父节点ID,传""表示根节点
         }
     ],
     "visibilities": [                //预算节点负责人

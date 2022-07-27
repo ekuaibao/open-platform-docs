@@ -457,3 +457,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/city/get
     ]
 }
 ```
+
+## 失败响应
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | `[]` | 为空表示没有找到对应的城市数据，请确认所提供的查询信息是否正确 | 

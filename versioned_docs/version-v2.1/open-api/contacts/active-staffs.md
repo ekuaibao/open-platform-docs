@@ -116,12 +116,8 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staf
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "输入存在错误:\n- 开启或是停用参数不能为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **403** | - | 无效的员工信息 | 请确认 `idsOrCodes`（员工ID或CODE） 是否正确 | 
+| **403** | - | 根据工号（[xgJ3wajigF25H0:ID_3E97sZ44iMw]）找不到员工 | 请确认 `idsOrCodes`（员工ID或CODE）与 `type`（参数类型）是否一致 | 

@@ -89,13 +89,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/departme
 ```
 
 ## 失败响应
-当同一层级部门重复时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "该级目录名称「事业11部」已存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 该部门在同级有相同的部门名称 | 请确认对应层级是否有相同的部门名称 | 

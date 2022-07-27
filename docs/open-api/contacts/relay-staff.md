@@ -89,23 +89,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flows/
 ```
 
 ## 失败响应
-请保证员工ID真实存在，否则会报如下错误：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "员工不存在staffId",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-`staffId(操作人)` 不是“**系统管理员**“的话，报如下错误：
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "您没有权限执行此操作,需要『系统管理』权限",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 员工不存在staffId | 请确认 `staffId`（操作人ID或CODE）是否正确 | 
+| **400** | - | 交接员工不存在relayApproverId | 请确认 `relayApproverId`（交接人ID或CODE）是否正确 | 
+| **400** | - | 离职员工不存在originApproverId | 请确认 `originApproverId`（离职人ID或CODE）是否正确 | 
+| **403** | - | 您没有权限执行此操作,需要『系统管理』权限 | 请确认 `staffId`（操作人ID或CODE）是否为**系统管理员** | 

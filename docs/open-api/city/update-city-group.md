@@ -66,13 +66,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/cityGroup
 ```
 
 ## 失败响应
-`id`（城市组ID）不正确时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "ID_3wAjiZJ1h8M1数据不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | ID_3LTziYdljXy数据不存在 | 请确认 `id`（城市组ID）是否正确 | 
+

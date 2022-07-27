@@ -55,12 +55,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/charge/p
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "未知的type类型",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 未知的type类型 | 请确认 `type`（员工标识类型）值拼写是否正确 | 

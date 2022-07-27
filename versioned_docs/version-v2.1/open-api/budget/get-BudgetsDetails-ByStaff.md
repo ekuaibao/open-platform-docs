@@ -60,23 +60,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 ```
 
 ## 失败响应
-传入的 `nodeIds`（节点ID）均无权限时，返回如下：
-```json
-{
-    "items": []
-}
-```
 
-不传 `nodeIds`（节点ID）参数时，返回如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "输入存在错误:\n- 缺少预算参数",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | "items": [] | 请确认 `budgetId`、`staffId` 是否正确，以及 `nodeIds`（节点ID）是否有该员工权限 |
+| **400** | - | 输入存在错误: <br/>- must not be null | 请确认是否已传 `nodeIds`（节点ID）参数 |
 
 
 
