@@ -32,7 +32,7 @@ url="/api/openapi/v2/flow/data/submitFlow"
 |**&emsp; ∟ counterSigners**  | Array   | 会签审批人列表 | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
 |**&emsp; &emsp; ∟ signerId** | String  | 会签审批人ID  | 非必填  | - | 当设置会签审批人列表时候必填|
 
-## 附加说明
+### 附加说明
 :::tip
 - 在上一步获取的流程实例中
   - 若某节点的 `type` = `normal` 时，对应传入参数为 `approverId`
@@ -173,7 +173,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/dat
 }
 ```
 
-## 确认提交结果
+### 确认提交结果
 - 提交单据后，易快报预置的【**费用标准检查**】节点，会检查单据中的预算、费用标准等费控指标是否合规。
   - 如存在不合规，需要驳回时，该节点会自动驳回单据。 此时需调用【[根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)】接口查询结果。
   - 根据返回的 `state`，判断该单据是否被【**驳回**】，如返回 `state` 不为 `draft` 或 `rejected`，则该单据提交成功。

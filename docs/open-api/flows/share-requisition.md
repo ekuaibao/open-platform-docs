@@ -48,24 +48,9 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1/requis
 ```
 
 ## 失败响应
-当 `flowId` 和 `staffId`（共享员工ID）不正确时，请检查：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "申请事项不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 申请事项不存在 | 确认 `flowId` 和 `staffId`（共享员工ID）是否正确，`staffId` 是否停用 | 
+| **400** | - | 共享对象不存在 | 确认 `staffIds`（被共享员工ID）是否正确 | 
 
-当 `staffIds`（被共享员工ID）不正确时，请检查被共享员工ID：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "共享对象不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+

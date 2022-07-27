@@ -55,7 +55,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
  ![image](images/不传action时.png)
 :::
 
-### 审批按钮类型 `action` 的值如下（不支持移动端）
+### 审批按钮(`action`)类型
 
 | action | 说明 |
 | :--- | :--- |

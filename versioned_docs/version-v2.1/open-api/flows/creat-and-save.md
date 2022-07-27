@@ -398,7 +398,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 
 ## 字段填写规则
 
-### (1) 费用类型字段(details)  
+### (1) 费用类型字段(`details`)  
 单据中的 `details`，表达的是【费用明细】，是一个数组，支持多条，参考如下：
 ```json
 "details": [

@@ -64,7 +64,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
 }
 ```
 
-## 响应数据code参数含义
+### 响应数据code参数含义
 | 代码 | 含义 | 
 | :--- | :--- | 
 | **R00000** | 成功             |

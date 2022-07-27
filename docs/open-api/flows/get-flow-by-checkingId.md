@@ -199,7 +199,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/getFlowBy
 }
 ```
 
-## 系统中对账单所在位置
+### 系统中对账单所在位置
 - 企业对账单
  ![企业对账单](images/企业对账单.png)
 

@@ -40,7 +40,7 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 :::
 
 
-## objectId发票类型
+### 发票类型(`objectId`)
 可通过 [根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice) 接口得到的 `invoiceType` 参数确定
 
 | objectId | 发票类型 | 
@@ -56,7 +56,7 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 | **flightItinerary** | 航空运输电子客票行程单 |
 | **tolls**           | 过路费发票 |
 
-## 发票类别(E\_system\_发票主体\_发票类别)介绍
+### 发票类别(`E\_system\_发票主体\_发票类别`)
 
 :::tip
 - `E_system_发票主体_发票类别` 是对 `invoice` 类型获取到的发票做补充解释

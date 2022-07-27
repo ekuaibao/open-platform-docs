@@ -104,7 +104,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v4/payerInf
 }
 ```
 
-### 支付方式(channels)类型参考，需找支付人员确认
+### 支付方式(`channels`)类型
+:::caution
+- 仅供参考，实际需找支付人员确认
+:::
 | 类型 | 名称 |
 | :--- | :--- | 
 | **OFFLINE** | 线下支付 |

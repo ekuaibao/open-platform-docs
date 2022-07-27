@@ -189,7 +189,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDet
 }
 ```
 
-### `state`(任务状态)参数介绍
+### 任务状态(`state`)参数介绍
 | 参数  | 备注 |
 | :--- | :--- |
 | **APPROVING**  | 待审批 |

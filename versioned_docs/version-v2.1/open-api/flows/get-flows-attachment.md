@@ -199,6 +199,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 | 消费小票            | × | × |
 | 其他               | × | × |
 
+### 单据附件种类补充说明
+
+| 字段名 | 对应附件来源类型 |
+| :--- | :--- |
+| **flow.body**      | 单据详情附件 |
+| **flow.free**      | 单据费用明细附件 |
+| **flow.approving** | 单据审批附件（包含评论附件） |
+| **flow.receipt**   | 单据回单附件 |
+
 ## 失败响应
 单据不存在，一般是单据ID不正确或者单据已经被删除，请确认：
 ```json
@@ -207,11 +216,3 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 }
 ```
 
-## 单据附件种类补充说明
-
-| 字段名 | 对应附件来源类型 |
-| :--- | :--- |
-| **flow.body**      | 单据详情附件 |
-| **flow.free**      | 单据费用明细附件 |
-| **flow.approving** | 单据审批附件（包含评论附件） |
-| **flow.receipt**   | 单据回单附件 |

@@ -25,7 +25,16 @@ url="/api/openapi/v1/requisition/getData"
 | **staffId**     | String | 员工ID    | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 | **start**       | Number | 分页查询的起始序号 | 必填 | 0 | 分页的起始值是从 `0` 开始， 而不是传统的 `1` 开始 |
 | **count**       | Number | 查询数据条数      | 必填 | - | 最大不能超过 `100` |
-| **state**       | String | 申请事项状态      | 必填 | ALL | `FORCE_CLOSED` : 自动关闭<br/>`MANUAL_CLOSED` : 手工关闭<br/>`PROCESS` : 进行中<br/>`ALL` : 全部状态 |
+| **state**       | String | 申请事项状态      | 必填 | ALL | `FORCE_CLOSED` : 自动关闭/强制关闭<br/>`MANUAL_CLOSED` : 手工关闭/OpenAPI关闭<br/>`PROCESS` : 进行中<br/>`ALL` : 全部状态 |
+
+### 申请事项状态(`state`)场景
+| `FORCE_CLOSED` 状态场景 | `MANUAL_CLOSED` 状态场景 |
+| :--- | :--- |
+| 【申请管理】管理员关闭申请（强制关闭） | 申请人关闭申请（手动关闭） |
+| 报销金额≥申请金额时自动关闭         | OpenAPI 关闭申请 |
+| 达到报销次数自动关闭               | 系统自动关闭了申请，原因：申请单被变更 |
+| 关联报销单审批完成自动关闭          |  |
+| 超时自动关闭（行客）               |  |
 
 ## CURL
 ```shell
@@ -224,14 +233,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/requisit
 }
 ```
 ## 失败响应
-`staffId`（员工ID）不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "ID为'bwa3wajigF0WH0:ID_3lokDfb1p5w1'的员工不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | ID为'bwa3wajigF0WH0:ID_3lokDfb1p5w1'的员工不存在 | 确认 `staffId`（员工ID）是否存在 | 
+
 

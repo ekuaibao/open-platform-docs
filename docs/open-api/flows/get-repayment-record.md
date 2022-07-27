@@ -64,7 +64,7 @@ curl --location -g --request GET 'https://app.ekuaibao.com/api/openapi/v1/loan/r
 }
 ```
 
-### `repaymentType`(执行操作)参数介绍
+### 执行操作(`repaymentType`)参数介绍
 | 参数  | 备注 |
 | :--- | :--- |
 | **OBTAIN**     | 获得借款 |

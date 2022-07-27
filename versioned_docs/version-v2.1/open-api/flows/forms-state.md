@@ -1,6 +1,6 @@
 # 单据相关字段类型
 
-## 单据类型(单据详情中的 formType 字段)
+## 单据类型(单据详情中的 `formType` 字段)
 
 | 名称 | 类型 | 描述 |
 | :--- | :--- | :--- |
@@ -14,7 +14,7 @@
 | **permit**      | String  | 授权单 |
 | **custom**      | String  | 通用审批单 |
 
-## 单据状态(单据详情中的 state 字段)
+## 单据状态(单据详情中的 `state` 字段)
 
 | 名称 | 类型 | 描述 |
 | :--- | :--- | :--- |
@@ -30,30 +30,7 @@
 | **sending**    | String  | 寄送中（单据到达“**寄送节点**”时处于此状态，需要开通【**异地单据寄收管理**】功能方可配置此节点类型）|
 | **receiving**  | String  | 收单中（单据到达“**收单节点**”时处于此状态，需要开通【**异地单据寄收管理**】功能方可配置此节点类型）|
 
-## 发票类型(费用明细中的 invoiceType 字段)
-
-| 字段名 | 类型 | 对应发票类型 |
-| :--- | :--- | :--- |
-| **VATSpecialInvoice**     | String | 增值税专用发票 |
-| **VATOrdinaryInvoice**    | String | 增值税普通发票 |
-| **VATElectronicInvoice**  | String | 增值税电子普通发票  |
-| **VATVolumeTicket**       | String | 增值税普通发票（卷式） |
-| **GoodsTransportInvoice** | String | 货物运输业增值税专用发票 |
-| **MotorInvoice**          | String | 机动车销售统一发票 |
-| **SecondhandCarInvoice**  | String | 二手车销售统一发票 |
-| **BlockchainElectronicInvoice** | String | 区块链电子发票 |
-| **AircraftInvoice**       | String | 航空运输电子客票行程单 |
-| **TollInvoice**           | String | 通行费发票 |
-| **RoadTollInvoice**       | String | 过路费发票 |
-| **PassengerCarInvoice**   | String | 客运汽车票 |
-| **TaxiInvoice**           | String | 出租车票 |
-| **TrainInvoice**          | String | 火车票 |
-| **MachinePrintInvoice**   | String | 机打发票 |
-| **QuotaInvoice**          | String | 定额发票 |
-| **OtherInvoice**          | String | 其他发票 |
-| **ShoppingInvoice**       | String | 消费小票 |
-
-## 审批动作（审批日志中 action 字段）
+## 审批动作(审批日志中 `action` 字段)
 
 | 名称 | 类型 | 描述 |
 | :--- | :--- | :--- |
@@ -79,6 +56,67 @@
 | **freeflow.addSignNode**  | String  | 加签审批    |
 | **freeflow.select.approver**  | String  | 选择审批人 |
 | **freeflow.alter**        | String  | 单据变更 |
+
+## 枚举档案
+### 航班舱型
+| 名称 | 编码 |
+| :--- | :--- |
+| 经济舱 | ECONOMY |
+| 商务舱 | BUSINESS |
+| 头等舱 | FIRST |
+
+### 火车席别
+| 名称 | 编码 |
+| :--- | :--- |
+| 硬座 | YZ |
+| 软座 | RZ |
+| 硬卧 | YW |
+| 软卧 | RW |
+| 高级软卧 | GJRW |
+| 一等座  | YD |
+| 二等座  | ED |
+| 商务座  | SW |
+| 高铁动卧 | DW |
+
+### 轮船舱型
+| 名称 | 编码 |
+| :--- | :--- |
+| 一等舱 | YI  |
+| 二等舱 | ER  |
+| 三等舱 | SAN |
+| 四等舱 | SI  |
+
+### 发票类型
+| 名称 | 编码 |
+| :--- | :--- |
+| 增值税专用发票 | VATSpecialInvoice |
+| 增值税普通发票 | VATOrdinaryInvoice | 
+| 机动车销售统一发票 | MotorInvoice |
+| 货物运输业增值税专用发票 | GoodsTransportInvoice |
+| 二手车销售统一发票 | SecondhandCar | 
+| 增值税电子普通发票 | VATElectronicInvoice |
+| 增值税普通发票（卷式）| VATVolumeTicket |
+| 通行费发票 | TollInvoice |
+| 区块链电子发票 | BlockchainElectronicInvoice |
+| 火车票 | TrainInvoice |
+| 出租车票 | TaxiInvoice |
+| 定额发票 | QuotaInvoice |
+| 客运汽车票 | PassengerCarInvoice |
+| 航空运输电子客票行程单 | AircraftInvoice |
+| 过路费发票 | RoadTollInvoice |
+| 其他发票 | OtherInvoice |
+| 消费小票 | ShoppingInvoice |
+| 电子发票（普通发票）| FullDigitalNormal |
+| 电子发票（增值税专用发票）| FullDigitalSpecial |
+| 增值税电子专用发票 | VATElectronicSpecialInvoice | 
+
+### 纳税人类型
+| 名称 | 编码 |
+| :--- | :--- |
+| 一般纳税人 | GeneralTaxpayer |
+| 小规模纳税人 | SmallScaleTaxpayer |
+
+
 
 
 
