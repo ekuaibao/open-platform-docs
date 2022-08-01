@@ -94,13 +94,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
 ```
 
 ## 失败响应
-当 `accessToken` 失效时，得到如下回应：
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "未授权",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认调用接口地址前缀与您企业所在的环境是否保持一致 | 
+

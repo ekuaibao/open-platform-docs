@@ -73,13 +73,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
 ```
 
 ## 失败响应
-参数传值错误， 返回此响应结果：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "查询conditionIds不能为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 查询conditionIds不能为空 | 请确认 `conditionIds` 是否传值 | 
+| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认调用接口地址前缀与您企业所在的环境是否保持一致 | 
+
+

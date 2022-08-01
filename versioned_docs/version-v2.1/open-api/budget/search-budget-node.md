@@ -82,11 +82,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                         "periodTime": "1",         //第几个周期
                         "budgetMoney": 100.0,      //预算金额
                         "extendMoneys": {},
-                        "occupiedMoney": 0,        //占用金额
-                        "confirmedMoney": 0,       //已使用金额
+                        "occupiedMoney": 0,        //已占用金额（审批中和待支付的单据）
+                        "confirmedMoney": 0,       //已确认金额（已支付和已完成的单据）
                         "budgetMoneyRoll": 0,      //预算金额（滚动）
-                        "occupiedMoneyRoll": 0,    //占用金额（滚动）
-                        "confirmedMoneyRoll": 0    //已使用金额（滚动）
+                        "occupiedMoneyRoll": 0,    //已占用金额（滚动）
+                        "confirmedMoneyRoll": 0    //已确认金额（滚动）
                     },
                     {
                         "nodeId": "20220422-1-1",

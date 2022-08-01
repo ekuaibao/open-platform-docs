@@ -235,12 +235,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 ## 失败响应
-```json
-{
-      "errorCode": 400,
-      "errorMessage": "角色不存在",
-      "errorDetails": null,
-      "code": null,
-      "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 角色不存在 | 请确认 `roledefId`（角色ID）是否正确 | 
+

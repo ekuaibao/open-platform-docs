@@ -25,16 +25,18 @@ A：预算包的控制周期为：<br/>
 
 ---
 ## 问题三
-### Q：“批量更新(新增/修改/删除)预算节点”接口新增预算节点时等待时间长？
+### Q：预算余额如何获取？
 
-A：批量新增预算节点时，每新增一个预算节点，整个预算树都要计算一遍，然后再顺序新增下一个节点；预算树节点数量和服务性能都会影响计算时间，每个预算节点短则几秒，长则几分钟才能计算完毕，再继续新增下一个预算节点。
+A：<br/>
+已用金额 = 已确认金额（`confirmedMoney`）+ 占用金额（`occupiedMoney`）<br/>
+预算余额 = 预算金额（`budgetMoney`）- 已确认金额（`confirmedMoney`）- 占用金额（`occupiedMoney`）<br/>
+相关预算金额参数可通过【[获取预算节点和子节点详细信息](/docs/open-api/budget/get-BudgetsDetails-ByPage)】或【[获取预算节点配置和路径信息](/docs/next/open-api/budget/search-budget-node)】接口获取。
+  ![预算余额计算](images/预算余额计算.png)
 
 ---
 ## 问题四
-### Q：预算余额如何获取？
+### Q：第三方系统如何实时获取预算包数据？
 
-A：预算余额 = 预算金额（`budgetMoney`）- 已使用金额（`confirmedMoney`）- 占用金额（`occupiedMoney`）
-
-  ![预算余额计算](images/预算余额计算.png)
+A：【[获取预算包详细信息](/docs/open-api/budget/get-budget-details)】、【[获取预算节点和子节点详细信息](/docs/open-api/budget/get-BudgetsDetails-ByPage)】、【[获取预算节点配置和路径信息](/docs/next/open-api/budget/search-budget-node)】接口
 
 ---

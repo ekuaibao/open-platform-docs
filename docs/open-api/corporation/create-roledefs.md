@@ -61,25 +61,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/roledefs
 ```
 
 ## 失败响应
-角色名称已存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "此名称的角色已经存在，请更换名称",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 此名称的角色已经存在，请更换名称 | 请确认 `name`（角色名称）是否已存在 | 
+| **412** | - | 角色组不存在 | 请确认 `roleGroupId`（角色组ID）是否存在 | 
 
-角色组ID不存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "角色组不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 

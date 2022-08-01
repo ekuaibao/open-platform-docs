@@ -166,11 +166,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                 "sourceCorporationId": null,
                 "dataCorporationId": null,
                 "budgetMoney": 100.0,   //预算金额
-                "confirmedMoney": 0,    //已使用金额
-                "occupiedMoney": 0,     //占用金额
+                "confirmedMoney": 0,    //已确认金额（已支付和已完成的单据）
+                "occupiedMoney": 0,     //已占用金额（审批中和待支付的单据）
                 "budgetMoneyRoll": 0,   //预算金额（滚动）
-                "confirmedMoneyRoll": 0,//已使用金额（滚动）
-                "occupiedMoneyRoll": 0, //占用金额（滚动）
+                "confirmedMoneyRoll": 0,//已确认金额（滚动）
+                "occupiedMoneyRoll": 0, //已占用金额（滚动）
                 "dimensionContents": [  //预算节点占用的全维度
                     {
                         "dimensionType": "STAFF",      //维度种类（DEPART：部门，PROJECT：档案，FEE_TYPE：消费类型，STAFF：员工）

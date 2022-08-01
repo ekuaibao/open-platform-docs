@@ -15,8 +15,18 @@ timeline: true
 ## 1.9.0
 
 `2022-08-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.9`
+- 🐞 更新 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口
+  - 优化了修改登录手机号、邮箱逻辑。
+    - 若传参的登录手机号、邮箱没有注册任何企业或所有企业均解散，则允许修改成功
+- 🐞 更新 [新增自定义档案项](/docs/open-api/dimensions/creat-dimension-items) 接口
+  - 修复了不传 `visibility`（可见范围）非必填参数报错的BUG。
 - 🐞 更新 [获取申请事项](/docs/open-api/flows/get-requisition-all) 接口
   - 新增了 `state` （申请事项）参数介绍。
+- 🐞 更新 [预算-常见问题总结](/docs/open-api/budget/question-answer) 文档
+  - 新增了 **问题三：预算余额如何获取？**
+  - 新增了 **问题四：第三方系统如何实时获取预算包数据？**
+
+
 
 ---
 ## 1.8.1
