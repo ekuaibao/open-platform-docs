@@ -15,11 +15,19 @@ timeline: true
 ## 1.9.0
 
 `2022-08-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.9`
+- 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口
+    - 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
+    - 优化了部分场景下，失败响应信息不明确的问题。
+      - 文本、日期类型必填字段不传时，优化失败响应提示信息。
+      - 审批节点配置【**手动选择**】审批人导致无法直接提审时，优化失败响应提示信息。
 - 🐞 更新 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口
   - 优化了修改登录手机号、邮箱逻辑。
     - 若传参的登录手机号、邮箱没有注册任何企业或所有企业均解散，则允许修改成功
 - 🐞 更新 [新增自定义档案项](/docs/open-api/dimensions/creat-dimension-items) 接口
   - 修复了不传 `visibility`（可见范围）非必填参数报错的BUG。
+- 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
+  - 修复了首次调用接口报错后，使用相同错误参数再次调用时，返回成功响应的BUG。
 - 🐞 更新 [获取申请事项](/docs/open-api/flows/get-requisition-all) 接口
   - 新增了 `state` （申请事项）参数介绍。
 - 🐞 更新 [预算-常见问题总结](/docs/open-api/budget/question-answer) 文档

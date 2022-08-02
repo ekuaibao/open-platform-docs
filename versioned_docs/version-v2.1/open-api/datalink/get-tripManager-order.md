@@ -31,6 +31,7 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders"
 | **count**    | Int    | 查询总数            | 必填 | - | 最大不能超过 `100` 条 |
 
 :::tip
+
 - 【行程管理】、【订单管理】的“业务对象ID”获取见下图：
 
   ![image](images/行程管理业务对象获取.png)
@@ -57,6 +58,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 }'
 ```
 
+:::tip
+
+- 响应数据是根据 `xxxxxxxxxxx_code`（编号）倒序进行排序。
+:::
+
 ## 成功响应
 ```json
 {
@@ -75,14 +81,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
                         "department": [],    //部门ID集
                         "role": []           //角色ID集
                     },
-                    "E_79180b9ed9cade87e000_code": "14057744457",   //对象编码
+                    "E_79180b9ed9cade87e000_code": "14134724392",   //对象编码
                     "E_79180b9ed9cade87e000_name": "北京-北京站",    //对象名称
                     "E_79180b9ed9cade87e000_票号": "",
                     "E_79180b9ed9cade87e000_车型": "经济型",
                     "E_79180b9ed9cade87e000_出发地": "[{\"key\":\"1\",\"label\":\"北京市\"}]",
                     "E_79180b9ed9cade87e000_出行人": [],
                     "E_79180b9ed9cade87e000_到达地": "[{\"key\":\"1\",\"label\":\"北京市\"}]",
-                    "E_79180b9ed9cade87e000_订单号": "14057744457",
+                    "E_79180b9ed9cade87e000_订单号": "14134724392",
                     "E_79180b9ed9cade87e000_订票人": null,
                     "E_79180b9ed9cade87e000_车牌号": "",
                     "E_79180b9ed9cade87e000_关联行程": null,

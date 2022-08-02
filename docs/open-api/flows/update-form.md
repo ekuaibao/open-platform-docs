@@ -12,6 +12,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.9.0**](/docs/open-api/notice/update-log#190) -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#170) -> 🐞 优化了审批日志描述：`editorId` 不传时，默认记录为 **OpenAPI** 修改了单据。<br/>
   &emsp; &emsp;  -> 🐞 修复了多个字段配置多层级的【字段依赖性】后（例：A->B->C->D），**待审批、待支付** 状态更新单据时偶发报错的BUG。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🐞 修复了 **待支付** 状态更新单据后，审批日志中无记录生成的BUG。<br/>
@@ -40,6 +41,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **editorId**    | String | 单据修改人 | 非必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
+| **editFlag**    | String | 更新标志   | 非必填 | cover | `increment` : 增量更新 &emsp; `cover` : 全量覆盖 |
 
 ## Body Parameters
 不同表单类型参数各不相同，以下仅为示例，详见单据模板：
@@ -70,16 +72,23 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 
 :::tip
 - 与系统上的保存单据功能一样，按格式组织数据，更新单据信息，更新成功后会返回该单据实例信息。
-- **Body中不写的表单字段参数，表示清空该字段值**。
+- `editFlag` = `cover`，表示 `form` 中**必填字段**参数必传，不传的**非必填字段**清空对应字段值。
+- `editFlag` = `increment`，表示只更新 `form` 中传递的字段参数，不传的字段无变化（**不支持费用明细字段**）。
 - 这边只列举常用参数解释，如果需要其他单据具体字段信息，可参考获取单据详情接口。
 - 程序会校验请求参数及body数据格式是否正确：
     - 传参 **支持计算公式自动计算**，如果某个字段参数可以根据配置的计算公式在现有传参基础上计算出来结果参数，那么该字段可以 **不传值**；
-    - 传参 **支持求和公式自动计算**，如果某个金额字段参数可以根据配置的求和公式在现有金额参数上计算结果，那么该字段可以 **不传值**；
     - 传参 **支持档案关系关联参数**，如果某个字段参数可以根据配置的档案关系在现有传参基础上查询出关联结果参数，那么该字段可以 **不传值**；
     - 报销单传参 **支持关联申请单自动赋值**，如果某个字段参数配置根据关联申请单自动赋值，那么该字段可以 **不传值**。
 :::
 
 ## CURL
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="cover" label="全量更新" default>
+
 ```json
 curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/data/$flowId?accessToken=ID_3DujXpr0kCg:xgJ3wajigF25H0&editorId=xgJ3wajigF25H0:ID_3zE5G_06Ww0' \
 --header 'Content-Type: application/json' \
@@ -158,9 +167,32 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
 }'
 ```
 
+</TabItem>
+<TabItem value="increment" label="增量更新">
+
+```json
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/data/$ID_3MlFO4F8adf?accessToken=ID_3M6negW0Tfv:xgJ3wajigF25H0&editFlag=increment&editorId=xgJ3wajigF25H0:dbc3wajigF1UH0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "form": {
+        "u_Z员工": "xgJ3wajigF25H0:dbc3wajigF1UH0",
+        "u_Z开关": true,
+        "u_Z金额": {
+            "standard": "122.00",
+            "standardUnit": "元",
+            "standardScale": 2,
+            "standardSymbol": "¥",
+            "standardNumCode": "156",
+            "standardStrCode": "CNY"
+        }
+    }
+}'
+```
+</TabItem>
+</Tabs>
 
 :::tip
-- 更新单据接口与创建单据接口参数一致，所有参数规则说明请参考创建单据接口里的说明
+- 更新单据接口与创建单据接口参数格式一致，所有参数规则说明请参考创建单据接口里的说明
 - 返回信息与 [创建单据](/docs/open-api/flows/creat-and-save) 接口一致
 :::
 
@@ -294,8 +326,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
 - 更新单据中的参数与创建单据略有差异，`payPlan` 字段中需要传 `dataLinkId`（支付计划ID，即对应收款账户的那个费用明细实例ID）字段 <br/>
 - 当多收款人为 **按明细/按收款信息汇总明细金额** 类型时，`E_system_支付计划_收款信息` 与对应的费用明细中的收款信息字段（`details` -> `feeTypeForm` -> `feeDetailPayeeId`）必须保持一致。<br/>
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs>
 <TabItem value="default" label="按明细" default>

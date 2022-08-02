@@ -11,6 +11,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 修复了首次调用接口报错后，使用相同错误参数再次调用时，返回成功响应的BUG。<br/>
   [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
   &emsp; &emsp; &emsp; -> 🐞 兼容老版本，更新「**普通角色**」时 `path` 参数非必填。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🐞 修复了接口 **HTTP 500** 报错问题，增加了 `path`、`staffs` 不允许传 `null` 的校验。<br/>
@@ -265,9 +266,9 @@ code 204
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **403** | - | 没有权限同步此角色 | 确认所操作的角色数据来源是否为【**API导入**】 | 
-| **412** | - | 找不到角色        | 确认所操作的角色ID是否正确或存在 | 
-| **412** | - | 数据错误:[0:路径不存在[部门], 0:人员不存在[EAQbauUqXweI00:YCgbc2y8_Ivg00]] | 确认 `path` 是否为完整路径参数<br/>确认员工信息是否正确 | 
+| **403** | - | 没有权限同步此角色 | 请确认所操作的角色数据来源是否为【**API导入**】 | 
+| **412** | - | 找不到角色        | 请确认所操作的角色ID是否正确或存在 | 
+| **412** | - | 数据错误:[0:路径不存在[部门], 0:人员不存在<br/>[EAQbauUqXweI00:YCgbc2y8_Ivg00]] | 请确认 `path` 是否为完整路径参数<br/>请确认员工信息是否正确 | 
 | **412** | - | 参数staffs不能为空 | 除了普通角色，`path`、`staffs` 不允许传 `null` | 
 | **412** | - | 参数path不能为空   | 除了普通角色，`path`、`staffs` 不允许传 `null` | 
 
