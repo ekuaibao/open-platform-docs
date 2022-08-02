@@ -25,7 +25,7 @@ url="/api/openapi/v2.1/datalink/add"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
-| **editFlag**    | String | 更新标志   | 非必填 | cover | `increment` : 增量更新 &emsp; `cover` : 全量覆盖<br/>**只在更新数据时生效** |
+| **editFlag**    | String | 更新标志<br/>**更新数据时参数生效** | 非必填 | cover | `cover` : 全量覆盖，**必填字段参数必传，不传的非必填字段清空对应字段值**<br/>`increment` : 增量更新，**只更新传递的字段参数，不传的字段无变化** |
 
 ## Body Parameters
 
@@ -47,11 +47,7 @@ url="/api/openapi/v2.1/datalink/add"
 
 :::caution
 - 新增或更新业务对象数据最大不能超过 **100** 条。
-- `dataLinks.data` 中的 `code` 字段值为必填字段，新增数据时，如果code设置为 `自动编号`，传 `""` 即可，如果为 `文本` 类型，表示手动传入编号，不可为空。
-- 更新业务对象实例数据时注意事项：
-  - 新增或更新业务对象实例数据，“**自动计算**”字段可传 `""` 或者不传该字段，字段值自动计算。
-  - `editFlag` = `cover`，表示 `dataLinks.data` 中**必填字段**参数必传，不传的**非必填字段**清空对应字段值。
-  - `editFlag` = `increment`，表示只更新 `dataLinks.data` 中传递的字段参数，不传的字段无变化。
+- `dataLinks.data` 中的 `code` 字段值为必填字段，新增数据时，如果code设置为 `自动编号`，传 `""` 即可（**自动计算** 字段可传 `""` 或者不传该字段，字段值自动计算），如果为 `文本` 类型，表示手动传入编号，不可为空。
 - `dataLinks.visible` 参数需要配合业务对象”参与人配置“一起使用，只有”部分人员参与“时此参数才有效。
 
   ![image](images/visible.png)

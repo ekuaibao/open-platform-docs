@@ -41,7 +41,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **editorId**    | String | 单据修改人 | 非必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
-| **editFlag**    | String | 更新标志   | 非必填 | cover | `increment` : 增量更新 &emsp; `cover` : 全量覆盖 |
+| **editFlag**    | String | 更新标志   | 非必填 | cover | `cover` : 全量覆盖，**必填字段参数必传，不传的非必填字段清空对应字段值**<br/>`increment` : 增量更新，**目前只支持更新单据模板中配置的字段参数，不支持更新费用明细字段** |
 
 ## Body Parameters
 不同表单类型参数各不相同，以下仅为示例，详见单据模板：
@@ -72,8 +72,6 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
 
 :::tip
 - 与系统上的保存单据功能一样，按格式组织数据，更新单据信息，更新成功后会返回该单据实例信息。
-- `editFlag` = `cover`，表示 `form` 中**必填字段**参数必传，不传的**非必填字段**清空对应字段值。
-- `editFlag` = `increment`，表示只更新 `form` 中传递的字段参数，不传的字段无变化（**不支持费用明细字段**）。
 - 这边只列举常用参数解释，如果需要其他单据具体字段信息，可参考获取单据详情接口。
 - 程序会校验请求参数及body数据格式是否正确：
     - 传参 **支持计算公式自动计算**，如果某个字段参数可以根据配置的计算公式在现有传参基础上计算出来结果参数，那么该字段可以 **不传值**；
