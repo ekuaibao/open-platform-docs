@@ -29,7 +29,7 @@ url="/api/openapi/v2/attachment/downloadurls"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **id**         | String | 文件fileId    | 必填 | - | 可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取，对应单据详情中<br/>`attachments` 字段的 `fileId` |
 | **key**        | String | 文件key       | 必填 | - | 可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取，对应单据详情中<br/>`attachments` 字段的 `key` |
-| **expiration** | Number | 下载链接有效时间 | 必填 | - | 用户自定义，指下载链接在多长时间内有效，单位：秒 |
+| **expiration** | Number | 下载链接有效时间 | 必填 | - | 用户自定义，指下载链接在多长时间内有效，暂无上限，单位：秒 |
 
 ## CURL
 ```json

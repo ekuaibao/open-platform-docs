@@ -1,4 +1,4 @@
-# 简单单据事件处理
+# 撤销/删除单据
 提供【**撤销单据**】和【**删除单据**】操作。
 
 import Control from "@theme/Control";

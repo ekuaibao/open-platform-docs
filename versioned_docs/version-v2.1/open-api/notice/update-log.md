@@ -32,8 +32,9 @@ timeline: true
 - 🐞 更新 [预算-常见问题总结](/docs/open-api/budget/question-answer) 文档
   - 新增了 **问题三：预算余额如何获取？**
   - 新增了 **问题四：第三方系统如何实时获取预算包数据？**
-
-
+- 🐞 更新接口名称
+  - [简单单据事件处理](/docs/open-api/flows/do-action-flow) 改为 [撤销/删除单据](/docs/open-api/flows/do-action-flow)
+  - [填写单据审批流程(单据提交)](/docs/open-api/flows/flow-and-submit) 改为 [提交单据](/docs/open-api/flows/flow-and-submit)
 
 ---
 ## 1.8.1
