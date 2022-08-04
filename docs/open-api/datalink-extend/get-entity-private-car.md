@@ -1,4 +1,5 @@
 # 获取【私车公用】业务对象数据
+用于查询【**私车公用**】功能的行程数据。
 
 import Control from "@theme/Control";
 

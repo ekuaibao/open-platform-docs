@@ -11,8 +11,10 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
   <summary><b>更新日志</b></summary>
   <div>
 
+<!--
   [**1.9.0**](/docs/open-api/notice/update-log#190) -> 🐞 优化了修改登录手机号、邮箱逻辑<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● 若传参的登录手机号、邮箱没有注册任何企业或所有企业均解散，则允许修改成功。<br/>
+-->
   [**1.7.1**](/docs/open-api/notice/update-log#171) -> 🐞 修复了更改登录邮箱后，手机号无法登录的BUG。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🐞 修复了登录邮箱中包含大写字母，更新后无法登录的BUG。<br/>
   [**1.4.0**](/docs/open-api/notice/update-log#140) -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
@@ -49,8 +51,8 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
 | **note**                      | String  | 备注	            | 非必填  | - | 备注 |
 | **defaultDepartment**         | String  | 默认部门ID或CODE  | 非必填  | - | 所传默认部门必须在 `departments` 里 |
 | **departments**               | Array   | 所在部门ID或CODE，至少1个	| 非必填  | - | 与 `defaultDepartment` 参数须同时存在，都传或都不传 |
-| **modifyAccountPhone**        | Boolean | 是否修改登录手机号	| 非必填  | false | `true` : 是，修改后手机号为 `cellphone`<br/>**不可修改成已注册企业且企业启用中的手机号<br/>可以修改成未注册企业或企业均解散的手机号**<br/>`false` : 否 |
-| **modifyAccountEmail**        | Boolean | 是否修改登录邮箱	| 非必填  | false | `true` : 是，修改后邮箱为 `email`<br/>**不可修改成已注册企业且企业启用中的邮箱<br/>可以修改成未注册企业或企业均解散的邮箱**<br/>`false` : 否 |
+| **modifyAccountPhone**        | Boolean | 是否修改登录手机号	| 非必填  | false | `true` : 是，修改后手机号为 `cellphone`<br/>**不可修改成已注册企业且企业启用中的手机号**<br/><!--可以修改成未注册企业或企业均解散的手机号<br/>-->`false` : 否 |
+| **modifyAccountEmail**        | Boolean | 是否修改登录邮箱	| 非必填  | false | `true` : 是，修改后邮箱为 `email`<br/>**不可修改成已注册企业且企业启用中的邮箱**<br/><!--可以修改成未注册企业或企业均解散的邮箱<br/>-->`false` : 否 |
 | **staffCustomForm**           | Object  | 自定义字段	    | 非必填  | - | 员工自定义字段 |
 | **&emsp; ∟ rankType**  | String  | 职级	            | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
 | **&emsp; ∟ postType**  | String  | 岗位	            | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
@@ -162,6 +164,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 | **400** | - | 员工名称不能为空 | 请确认 `name`（员工姓名）是否不传或者传 `""`  | 
 | **400** | - | staffCustomForm中的u_测试1字段不属于员工自定义字段 | 请确认 `staffCustomForm`（员工自定义字段）所传参数是否存在 | 
 | **400** | - | 根据字段[defaultDepartment]的code[002]不能定位到唯一部门 | `type` 值为 `code` 时，请确认部门类型字段所传 **部门CODE** 在系统中是否重复或存在 | 
+<!--
 | **400** | - | 登录手机号已被其他企业使用，由于安全问题，无法修改 | 请确认要修改的登录手机号是否存在未解散的企业 | 
 | **400** | - | 登录邮箱已被其他企业使用，由于安全问题，无法修改 | 请确认要修改的登录邮箱是否存在未解散的企业 | 
-
+-->

@@ -33,7 +33,7 @@ url="/api/openapi/v1.1/staffs/disableOrEnableStaff/[`ids`]"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken**   | String   | 认证token	                 | 必填  | -     | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **active**        | Boolean  | 停用或启用标识                 | 必填  | -     | `true` : 启用<br/>`false` : 停用，停用即表示已离职 | 
-| **doCheck**       | Boolean  | 停用时是否校验该员工<br/>名下有待办事项 | 非必填 | true | `true` : 校验 &emsp; `false` : 不校验 |
+| **doCheck**       | Boolean  | 停用时是否校验该员工<br/>名下有待办事项 | 非必填 | true | `true` : 校验，有待办事项时不允许停用<br/>`false` : 不校验，有待办事项时允许强制停用 |
 | **type**          | String   | 参数类型                      | 非必填 | id   | `id` : 传id值 &emsp; `code` : 传code值<br/>**请保证 `code` 唯一，『员工』的 `code` 在系统上允许为空和重复** |
 
 ## CURL
@@ -121,3 +121,4 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staf
 | :--- | :--- | :--- | :--- |
 | **403** | - | 无效的员工信息 | 请确认 `idsOrCodes`（员工ID或CODE） 是否正确 | 
 | **403** | - | 根据工号（[xgJ3wajigF25H0:ID_3E97sZ44iMw]）找不到员工 | 请确认 `idsOrCodes`（员工ID或CODE）与 `type`（参数类型）是否一致 | 
+| **403** | - | 抱歉无法移除，原因：<br/>1.有待审批或待支付的单据需要被移除人处理<br/>2.被移除人名下还存在待处理的单据 | `doCheck` = `true` 时，要停用的员工有待办事项时不允许停用，可改为 `false` 强制停用，或者调用 [员工离职交接](/docs/open-api/contacts/relay-staff) 接口后再停用 | 

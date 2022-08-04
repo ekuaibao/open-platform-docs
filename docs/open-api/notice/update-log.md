@@ -14,15 +14,12 @@ timeline: true
 ---
 ## 1.9.0
 
-`2022-08-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.9`
+`2022-08-04`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.9`
 - 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口
     - 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
     - 优化了部分场景下，失败响应信息不明确的问题。
       - 文本、日期类型必填字段不传时，优化失败响应提示信息
-- 🐞 更新 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口
-  - 优化了修改登录手机号、邮箱逻辑。
-    - 若传参的登录手机号、邮箱没有注册任何企业或所有企业均解散，则允许修改成功
 - 🐞 更新 [新增自定义档案项](/docs/open-api/dimensions/creat-dimension-items) 接口
   - 修复了不传 `visibility`（可见范围）非必填参数报错的BUG。
 - 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
@@ -32,6 +29,8 @@ timeline: true
 - 🐞 更新 [预算-常见问题总结](/docs/open-api/budget/question-answer) 文档
   - 新增了 **问题三：预算余额如何获取？**
   - 新增了 **问题四：第三方系统如何实时获取预算包数据？**
+- 🐞 更新 [停启用员工](/docs/open-api/contacts/active-staffs) 接口
+  - 更新了接口参数介绍。
 - 🐞 更新接口名称
   - [简单单据事件处理](/docs/open-api/flows/do-action-flow) 改为 [撤销/删除单据](/docs/open-api/flows/do-action-flow)
   - [填写单据审批流程(单据提交)](/docs/open-api/flows/flow-and-submit) 改为 [提交单据](/docs/open-api/flows/flow-and-submit)
