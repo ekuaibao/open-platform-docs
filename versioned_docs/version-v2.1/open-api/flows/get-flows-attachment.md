@@ -209,10 +209,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 | **flow.receipt**   | 单据回单附件 |
 
 ## 失败响应
-单据不存在，一般是单据ID不正确或者单据已经被删除，请确认：
-```json
-{
-    "items": []  //表示没查到数据
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - |  单据不存在 | 请确认 `flowIds`（单据ID）是否正确 |
 

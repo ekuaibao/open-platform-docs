@@ -235,6 +235,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/requisit
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | ID为'bwa3wajigF0WH0:ID_3lokDfb1p5w1'的员工不存在 | 确认 `staffId`（员工ID）是否存在 | 
+| **400** | - | ID为'bwa3wajigF0WH0:ID_3lokDfb1p5w1'的员工不存在 | 请确认 `staffId`（员工ID）是否存在 | 
 
 

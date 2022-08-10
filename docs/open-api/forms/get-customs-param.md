@@ -72,14 +72,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/propert
 ```
 
 ## 失败响应
-`type` 参数不是备注中的固定值时，报错如下：
-```json
-{
-   "errorCode": 412,
-   "errorMessage": "type参数不合法",
-   "errorDetails": null,
-   "code": null,
-   "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | type参数不合法 | 请确认 `type`（全局字段类型）是否为 **备注** 中的固定值 | 
 

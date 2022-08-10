@@ -126,23 +126,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 ```
 
 ## 失败响应
-`budgetId`（预算包ID）不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "不存在的预算包",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-节点周期金额不完整，例如：季度控制，需要四个周期金额，只传了一个，报如下错误：
-```json
-{
-    "value": {
-        "success": false,
-        "errmsg": "节点金额数量不匹配"
-    }
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 不存在的预算包 | 请确认 `budgetId`（预算包ID）是否存在 |
+| **400** | - | 节点金额数量不匹配 | 请确认节点周期金额是否完整，例如：季度控制，需要四个周期金额，只传了一个 |

@@ -67,24 +67,8 @@ curl --location -g --request POST 'https://app.ekuaibao.com/api/openapi/v1/backl
 ```
 
 ## 失败响应
-当 `approveId`（审批人ID）填写错误时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "未设置指定人员",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-当 `flowIds` 对应的单据没有处于 **审批中** 状态时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "无待办审批事项",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 未设置指定人员 | 请确认 `approverId`（审批人Id）是否正确  | 
+| **400** | - | 无待办审批事项 | 请确认 `flowIds`（单据ID）对应的单据是否处于 **审批中** 状态  | 

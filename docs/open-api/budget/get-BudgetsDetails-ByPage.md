@@ -608,7 +608,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 不存在的预算包 | 请确认 `budgetId` 参数值是否正确 |
+| **400** | - | 不存在的预算包 | 请确认 `budgetId`（预算包ID）是否正确 |
 | **500** | - | Format specifier '%s' | 程序内部错误，返回此响应数据， 可尝试再次请求获取数据 |
 
 

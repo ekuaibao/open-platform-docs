@@ -237,13 +237,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 ```
 
 ## 失败响应
-请保证 `entityId`（业务对象ID）参数正确无误，否则报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "未找到对应的业务对象",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 未找到对应的业务对象 | 请确认 `entityId`（业务对象ID）是否真实存在 | 

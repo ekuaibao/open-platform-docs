@@ -87,12 +87,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/feeTypeI
 - 同一个业务对象ID只能添加一次，多次添加返回**“该业务对象导入已存在 : dataLink_xx”**。
 :::
 
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "无效的业务对象Id:dataLink_b e2ef06ac00",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 无效的业务对象Id:dataLink_b e2ef06ac00 | 请确认 `sourceId`（增加的业务对象ID）是否正确 |

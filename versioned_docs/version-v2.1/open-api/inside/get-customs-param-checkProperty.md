@@ -46,14 +46,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/property/
 }
 ```
 ## 失败响应
-不传 `propertyName`（全局字段名称）时，报错如下：
-```json
-{
-   "errorCode": 412,
-   "errorMessage": "请求参数不正确",
-   "errorDetails": null,
-   "code": null,
-   "data": null
-}
-```
 
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 请求参数不正确 | 请确认 `propertyName`（全局字段名称）是否正确 |

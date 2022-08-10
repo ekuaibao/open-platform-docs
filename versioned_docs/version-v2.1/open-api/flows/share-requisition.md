@@ -50,7 +50,7 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1/requis
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 申请事项不存在 | 确认 `flowId` 和 `staffId`（共享员工ID）是否正确，`staffId` 是否停用 | 
-| **400** | - | 共享对象不存在 | 确认 `staffIds`（被共享员工ID）是否正确 | 
+| **400** | - | 申请事项不存在 | 请确认 `flowId`（申请单单据ID）和 `staffId`（共享员工ID）是否正确，`staffId` 是否停用 | 
+| **400** | - | 共享对象不存在 | 请确认 `staffIds`（被共享员工ID）是否正确 | 
 
 

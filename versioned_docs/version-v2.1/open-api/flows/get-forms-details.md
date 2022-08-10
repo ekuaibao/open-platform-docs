@@ -749,23 +749,8 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 ## 失败响应
-`flowId` 不存在报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "单据不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-单据**“已删除”**报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "单据已删除",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 单据不存在 | 请确认 `flowId`（单据ID）是否正确 |
+| **412** | - | 单据已删除 | 请确认对应单据是否已删除 |

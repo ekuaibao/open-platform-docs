@@ -266,10 +266,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 ```
 
 ## 失败响应
-当 `invoiceId` 发票ID传值错误时，返回为空：
-```json
-{
-    "items": []
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | "items": [] | 返回空表示没有查询到实例数据，请确认 `invoiceId`（发票ID）是否正确 | 
+
 

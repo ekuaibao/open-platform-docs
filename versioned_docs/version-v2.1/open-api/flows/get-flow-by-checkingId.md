@@ -192,12 +192,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/getFlowBy
 ```
 
 ## 失败响应
-`checkingBillId`（对账单ID）错误或者不存在时，返回空数据：
-```json
-{
-    "items": []
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - |  "items": [] | 请确认 `checkingBillId`（对账单ID）是否正确 |
 
 ### 系统中对账单所在位置
 - 企业对账单

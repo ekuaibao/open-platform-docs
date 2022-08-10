@@ -107,12 +107,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "输入存在错误:\n- 开启或是停用参数不能为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 输入存在错误:<br/>- 开启或是停用参数不能为空 | 请确认 `active`（停用或启用标识）是否传入  | 
+| **412** | - | 数据错误: | 请确认 `id`（账户ID）是否正确 |

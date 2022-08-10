@@ -56,10 +56,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
     }
 }
 ```
-`name`（应用名称）不存在时，返回如下：
-```json
-{
-    "value": null
-}
-```
+
+## 失败响应
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | "value": null | 请确认`name`（应用名称）是否真实存在 | 
+
 

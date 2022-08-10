@@ -94,14 +94,7 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/mall-openapi/open
 | **requestId**           | String | 是 | 请求标识 |
 
 ## 失败响应
-`Authorization`（自建应用授权）失效或者传参错误时，报错如下：    
-```json
-{
-    "errorCode": 401,
-    "errorMessage": "请先登录",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **401** | - | 请先登录 | 请确认 `Authorization`（自建应用授权）是否失效或者传参错误 |

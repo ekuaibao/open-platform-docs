@@ -160,13 +160,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "不支持的业务对象「TRAVEL」",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 不支持的业务对象「TRAVEL」 | 请确认接口路径中的 `TRAVEL_MANAGEMENT` 拼写是否正确，该参数为固定值  | 
+| **400** | - | 查询的数据不存在 | 请确认 `ids`（业务对象实例ID）是否存在  | 
+
 

@@ -50,3 +50,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/outboundM
     ]
 }
 ```
+
+## 失败响应
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | "items": [] | 为空表示没有查询到相关的失败日志<br/>请确认 `messageType`（消息类型）是否为 **备注** 中的固定值<br/>请确认 `startDate`（开始时间）到 `endDate`（结束时间）范围内，是否有对应类型的失败日志 |

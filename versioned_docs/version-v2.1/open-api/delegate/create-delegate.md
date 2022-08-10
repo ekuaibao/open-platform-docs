@@ -51,12 +51,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/organiza
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "委托发起人与被委托人已存在委托关系",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 委托发起人与被委托人已存在委托关系 | 请确认所新增的委托关系在系统中是否已存在 |
+| **400** | - | 存在非法的人员id | 请确认 `staffId`（授权发起人ID）、`delegateeId`（被委托人ID）是否存在 |
+| **400** | - | 存在非法的源模板id | 请确认 `originalIds`（授权单据模板ID集合）是否存在 |

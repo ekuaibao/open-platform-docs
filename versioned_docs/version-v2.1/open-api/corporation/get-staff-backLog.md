@@ -57,6 +57,6 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认调用接口地址前缀与您企业所在的环境是否保持一致 | 
+| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认 **地址前缀** 是否与您的企业环境一致 | 
 | **412** | - | 未查找到此员工信息 | 请确认 `staffParam`（查询的员工参数）是否正确或者员工是否存在 | 
 

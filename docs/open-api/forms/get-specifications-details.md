@@ -44,24 +44,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifica
 ```
 
 ## 失败响应
-模板ID参数错误的情况下， 返回此响应数据：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "未知的模板",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-`type` 传值错误， 暂时只支持 `bill` 一种类型， 返回此响应数据：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "不支持的模板类型",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 未知的模板 | 请确认 `id`（模板ID）是否正确 |
+| **412** | - | 不支持的模板类型 | 请确认 `type`（模板类型）是否为 **备注** 中的固定值 |

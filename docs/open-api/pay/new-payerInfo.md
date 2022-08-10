@@ -137,14 +137,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v4/payerInf
 ```
 
 ## 失败响应
-请勿重复添加同一账户，否则返回以下内容：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "该账户已存在，无法创建",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 该账户已存在，无法创建 | 请确认 `name`（开户名称）和 `cardNo`（银行卡号）在系统中是否存在  |

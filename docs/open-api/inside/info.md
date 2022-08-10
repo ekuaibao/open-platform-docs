@@ -8,12 +8,13 @@ authors: [冯继成]
 
 本模块提供内部接口目录，便于查看内部接口。
 
-
 ---
 ## 单据模板
 ### [查询全局字段是否存在](/docs/open-api/inside/get-customs-param-checkProperty)
 
----
+## 单据
+### [根据ID获取单据详情(可返回关联数据)](/docs/open-api/inside/get-forms-details-linkdeData-byId)
+
 ## 业务对象
 ### [创建业务对象台账](/docs/open-api/inside/inside-createLedger)
 ### [获取业务对象台账](/docs/open-api/inside/get-entity-leader)

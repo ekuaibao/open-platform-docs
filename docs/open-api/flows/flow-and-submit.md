@@ -180,13 +180,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/dat
   - 根据返回的 `state`，判断该单据是否被【**驳回**】，如返回 `state` 不为 `draft` 或 `rejected`，则该单据提交成功。
 
 ## 失败响应
-添加的审批人ID不合规时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "openapi单据数据提交，审批节点[测试下一个操作人]，设置的人员没有审批权限，请核对审批流模板配置。", //添加的审批人ID不合规
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | openapi单据数据提交，审批节点[测试下一个操作人]，设置的人员没有审批权限，请核对审批流模板配置。 | 请确认 `approverId`（审批人Id）是否与审批流模板配置的审批人匹配  | 

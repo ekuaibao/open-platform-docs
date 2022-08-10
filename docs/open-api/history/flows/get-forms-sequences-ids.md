@@ -2507,34 +2507,11 @@ import TabItem from '@theme/TabItem';
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "未开通功能，无权访问",  //请检查powerCode参数是否正确：219902或219904
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-当单据类型错误时：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "type参数错误",  //请检查单据类型
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-当单据中有引用的数据被物理删除时（数据库中不存在），可以通过 [更新单据](/docs/open-api/flows/update-form) 清理脏数据：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "获取待审批单据异常：找不到依赖的实体：[{\"key\":\"2325\",\"label\":\"广西壮族自治区/桂林市/荔浦县\"}]",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **403** | - | 未开通功能，无权访问 | 请确认 `powerCode`（功能授权码）是否为 **备注** 中的固定值 |
+| **400** | - | type参数错误 | 请确认 `type`（单据类型）是否为 **备注** 中的固定值 |
+| **400** | - | 获取待审批单据异常：找不到依赖的实体：[{\"key\":\"2325\",\"label\":\"广西壮族自治区<br/>/桂林市/荔浦县\"}] | 当单据中有引用的数据被物理删除时（数据库中不存在），可通过 [更新单据](/docs/open-api/flows/update-form) 清理脏数据 |
 
 

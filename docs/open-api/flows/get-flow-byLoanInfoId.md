@@ -99,7 +99,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/loan/loan
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 根据借款包Id:ID_3HV7_Hq1yKw1, 获取不到对应的借款包,请核查 | 确认借款包ID是否正确 | 
+| **400** | - | 根据借款包Id:ID_3HV7_Hq1yKw1, 获取不到对应的借款包,请核查 | 请确认 `id`（借款包ID）是否正确 | 
 
 
 

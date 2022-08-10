@@ -511,24 +511,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 ```
 
 ## 失败响应
-`addfields` 列表中的字段以 `label` 为关键字，需要保证其唯一性，否则会返回如下响应：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "新增字段label重名[数量, 复制数量]，请输入有效字段名称",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-`delfields` 列表中的字段以 `label` 为关键字，需要保证其真实性，否则会返回如下响应：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "删除的字段label不存在[名称, 编码]，请输入有效字段名称",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 新增字段label重名[数量, 复制数量]，请输入有效字段名称 | 请确认`addfields` 列表中的 `label` 字段是否唯一 | 
+| **412** | - | 删除的字段label不存在[名称, 编码]，请输入有效字段名称 | 请确认`delfields` 列表中的 `label` 字段是否真实存在 | 

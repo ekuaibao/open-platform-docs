@@ -196,14 +196,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifica
 ```
 
 ## 失败响应
-单据模版 ID 参数错误的情况下，返回如下响应数据：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "查询的模版不存在, 请输入有效的查询条件",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 查询的模版不存在, 请输入有效的查询条件 | 请确认 `ids`（单据模版ID集合）是否正确 |

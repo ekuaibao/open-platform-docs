@@ -144,13 +144,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v4/payerInfo
 ```
 
 ## 失败响应
-当传入要修改的 **账户ID** 不正确时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "账户信息未找到",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 账户信息未找到 | 请确认 `id`（账户ID）是否正确 | 

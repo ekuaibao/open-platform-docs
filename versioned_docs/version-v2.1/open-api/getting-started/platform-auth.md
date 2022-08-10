@@ -48,26 +48,10 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/realms/auth' \
 ```
 
 ## 失败响应
-请确保 `appKey`（接入账号）的正确性，否则报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "realm not found",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-请确保 `appSecret`（接入密码）的正确性，否则报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "ak sk not match",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | realm not found | 请确认 `appKey`（接入账号）是否正确 |
+| **400** | - | ak sk not match | 请确认 `appSecurity`（接入密码）是否正确 |
 
 

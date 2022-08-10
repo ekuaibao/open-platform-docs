@@ -95,11 +95,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/dimens
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **412** | - | 上级档案不存在                     | 确认档案项父级ID参数是否正确 | 
-| **412** | - | 该档案项名称[项目2-1]导入重复        | 确认档案项是否重复导入 | 
-| **412** | - | 编码[XM2003]已经被占用             | 确认档案项编码是否已存在 | 
-| **412** | - | 当 `fullVisible` 为 `false` 时，请指定 `departments`、`roles` 或 `staffs` 的值 | 当 `fullVisible` 为 `false` 时，确认 `departments` 、`roles` 、`staffs` 参数是否都为空 | 
-| **412** | - | 参数staffs的值不存在或已被禁用[xxxx] | 确认 `departments` 、`roles` 、`staffs` 参数是否正确或已禁用 | 
+| **412** | - | 上级档案不存在                     | 请确认 `parentId`（档案值父级ID）是否正确 | 
+| **412** | - | 该档案项名称[项目2-1]导入重复        | 请确认 `name`（档案值名称）是否已存在 | 
+| **412** | - | 编码[XM2003]已经被占用             | 请确认 `code`（档案项编码）是否已存在 | 
+| **412** | - | 当 `fullVisible` 为 `false` 时，请指定 `departments`、`roles` 或 `staffs` 的值 | 请确认当 `fullVisible` 为 `false` 时，`departments`（部门白名单）、`roles`（角色白名单）、`staffs`（员工白名单）参数是否都为空 | 
+| **412** | - | 参数staffs的值不存在或已被禁用[xxxx] | 请确认 `departments`（部门白名单）、`roles`（角色白名单）、`staffs`（员工白名单）参数是否正确或已禁用 | 
 
 
 

@@ -52,27 +52,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/dimensio
 ```
 
 ## 失败响应
-当 `code` 编码在系统中已存在时创建失败并返回如下类似内容：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "此编码已经被占用",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-当 `name` 名称为空时返回如下类似内容：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "请填写显示名称",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 请填写显示名称   | 请确认`name`（档案类别名称）是否填写 | 
+| **412** | - | 此编码已经被占用 | 请确认`code`（档案类别编码）是否已存在 | 
 
 
 

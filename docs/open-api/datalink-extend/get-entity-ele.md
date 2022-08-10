@@ -150,13 +150,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 
 
 ## 失败响应
-`objectId` 不可传未支持的类型，否则报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "暂不支持此扩展类型查询",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 暂不支持此扩展类型查询 | `objectId` 不可传未支持的类型 | 

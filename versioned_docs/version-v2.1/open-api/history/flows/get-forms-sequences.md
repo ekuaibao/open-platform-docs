@@ -2030,22 +2030,8 @@ import TabItem from '@theme/TabItem';
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "未开通功能，无权访问",  //请检查powerCode参数是否正确：219902或219904
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-当单据类型错误时：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "type参数错误",      //请检查单据类型
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **403** | - | 未开通功能，无权访问 | 请确认 `powerCode`（功能授权码）是否为 **备注** 中的固定值 |
+| **400** | - | type参数错误 | 请确认 `type`（单据类型）是否为 **备注** 中的固定值 |

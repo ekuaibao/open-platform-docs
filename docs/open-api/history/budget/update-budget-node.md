@@ -65,17 +65,10 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
 ```
 
 ## 失败响应
-`budgetId`（预算包ID）不存在时，报错如下：
-```json
-{
-    "value": {
-        "success": false,
-        "errmsg": "不存在的预算包"
-    }
-}
-```
 
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 不存在的预算包 | 请确认 `budgetId`（预算包ID）是否存在 |
 
 
 

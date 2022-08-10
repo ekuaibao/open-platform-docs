@@ -572,23 +572,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byAp
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "不允许访问",  //检查员工ID是否属于此公司的
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-当某个单据中有引用的数据被物理删除时（数据库中不存在），可以通过 [更新单据](/docs/open-api/flows/update-form) 清理脏数据：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "获取待审批单据异常：找不到依赖的实体：ID_3EnD3w6uTe0",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 不允许访问 | 请确认 `approverId`（员工ID）是否属于此公司 |
+| **400** | - | 获取待审批单据异常：找不到依赖的实体：ID_3EnD3w6uTe0" | 当某个单据中有引用的数据被物理删除时（数据库中不存在），可通过 [更新单据](/docs/open-api/flows/update-form) 清理脏数据 |
 

@@ -206,6 +206,6 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDet
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
 | **400** | - | Error 400 Bad Request | 代码处理未获取到唯一 `action`，此问题请反馈易快报技术人员 | 
-| **412** | - | 单据不存在 | 确认 `flowId`（单据ID）是否存在 | 
-| **412** | - | 单据已删除 | 确认 `flowId`（单据ID）是否已删除 | 
+| **412** | - | 单据不存在 | 请确认 `flowId`（单据ID）是否存在 | 
+| **412** | - | 单据已删除 | 请确认对应单据是否已删除 | 
 

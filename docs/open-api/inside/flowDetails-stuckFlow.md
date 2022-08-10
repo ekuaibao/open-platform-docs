@@ -72,13 +72,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDet
 ```
 
 ## 失败响应
-`codes` 单据编号不正确时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "单据不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 单据不存在 | 请确认 `codes`（单据编号）是否正确 |

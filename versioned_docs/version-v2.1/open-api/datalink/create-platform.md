@@ -78,13 +78,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ```
 
 ## 失败响应
-自建应用的 `name` 值需要保证其唯一性，否则会返回如下响应：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "平台名称不能重复",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 平台名称不能重复 | 请确认自建应用的 `name` 是否唯一 | 

@@ -58,14 +58,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/fieldMap
 ```
 
 ## 失败响应
-注意规则设置中的源字段或目标字段的真实性，否则会返回如下报错信息：
-```json
-{
-    "value": {
-        "success": false,                                                  //设置失败
-        "id": "",
-        "errorMessage": "无效的赋值规则目标字段:E_ea9d0b6e522a25878000_name" //失败信息
-    }
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | 无效的赋值规则目标字段:<br/>E_ea9d0b6e522a25878000_name | 请确认规则设置中的 `sourceField` 源字段和 `targetField` 目标字段是否真实存在<br/>`targetField` 目标字段不存在也报此错误 | 
+
 

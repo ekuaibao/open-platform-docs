@@ -103,13 +103,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ```
 
 ## 失败响应
-请确保获取的 `platformId`（自建应用ID）输入正确，否则会返回如下报错：
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "该平台不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **403** | - | 该平台不存在 | 请确认 `platformId`（自建应用ID）是否真实存在 | 

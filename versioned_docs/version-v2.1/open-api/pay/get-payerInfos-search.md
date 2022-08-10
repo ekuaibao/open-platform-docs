@@ -132,8 +132,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v4/payerInf
 | **TMSPAY** | 财资大管家 |
 
 ## 失败响应
-请求参数未按要求填写完全，回应状态码 **HTTP 404**，并报错如下：
-```text
-Error 404 Not Found
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **404** | - | Error 404 Not Found | 请确认 **请求参数** 是否按要求填写完全 | 
 

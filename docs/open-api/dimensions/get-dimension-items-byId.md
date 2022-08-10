@@ -75,20 +75,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
 }
 ```
 
-**如果出现以下信息，表示没有对应 `id` 的档案项信息：**
-```json
-{
-    "value": null
-}
-```
-
 ## 失败响应
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "输入存在错误:\n- 缺少id参数",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | "value": null | 为空表示没有对应的档案项信息<br/>请确认 `id`（自定义档案值的ID）参数是否存在 | 
+| **400** | - | 输入存在错误:<br/>- 缺少id参数 | 请确认 `id` （自定义档案值的ID）参数是否传入 | 
+

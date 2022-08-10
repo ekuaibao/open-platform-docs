@@ -455,15 +455,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "输入存在错误:\n- 批次号不可为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 支付记录不存在 | 请确认 `channelTradeNos`（批次号ID）是否正确  | 
+
 
 
 

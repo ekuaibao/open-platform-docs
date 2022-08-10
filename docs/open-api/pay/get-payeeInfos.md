@@ -127,5 +127,5 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **404** | - | Error 404 Not Found | 确认是否按要求填写必填参数 | 
+| **404** | - | Error 404 Not Found | 请确认是否按要求填写必填参数 | 
 

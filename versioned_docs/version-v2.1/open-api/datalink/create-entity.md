@@ -627,23 +627,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 ```
 
 ## 失败响应
-业务对象的 `name` 值需要保证其唯一性，否则会返回如下响应：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "业务对象名称重复，请修改！",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-请确保 `platformId`（所属应用ID）是真实存在的，否则会返回如下响应：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "业务对象对应的扩展不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 业务对象名称重复，请修改！ | 请确认业务对象的 `name` 是否唯一 | 
+| **412** | - | 业务对象对应的扩展不存在 | 请确认 `platformId`（所属应用ID）是否真实存在 | 

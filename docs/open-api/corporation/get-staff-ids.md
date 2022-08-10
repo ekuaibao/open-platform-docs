@@ -76,6 +76,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
 | **400** | - | 查询conditionIds不能为空 | 请确认 `conditionIds` 是否传值 | 
-| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认调用接口地址前缀与您企业所在的环境是否保持一致 | 
+| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认 **地址前缀** 是否与您的企业环境一致 | 
 
 

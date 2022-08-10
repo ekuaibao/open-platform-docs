@@ -65,13 +65,9 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/organizat
 ```
 
 ## 失败响应
-**员工ID** 参数传值错误时，报错如下： 
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "存在非法的人员id", 
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 对应的委托关系不存在 | 请确认 `id`（委托关系数据ID）是否存在 |
+| **400** | - | 存在非法的人员id | 请确认 `staffId`（授权发起人ID）、`delegateeId`（被委托人ID）是否存在 |
+| **400** | - | 存在非法的源模板id | 请确认 `originalIds`（授权单据模板ID集合）是否存在 |

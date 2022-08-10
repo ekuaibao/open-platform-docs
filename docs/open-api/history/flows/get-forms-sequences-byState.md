@@ -1755,32 +1755,9 @@ import TabItem from '@theme/TabItem';
 ```
 
 ## 失败响应
-`powerCode` 输入错误时，报错如下：
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "未开通功能，无权访问",  //请检查powerCode参数是否正确：219902或219904
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-当过滤字段中包含不可置空的字段时报错如下，请检查过滤字段：
-:::caution
-已知不可置空字段：
-- docData.type
-- docData.flowPlan.id
-- docData.flowPlan.nodes.type
-:::
 
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "fields过滤字段解析出错,请参照文档设置可过滤字段",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **403** | - | 未开通功能，无权访问 | 请确认 `powerCode`（功能授权码）是否为 **备注** 中的固定值 |
+| **400** | - | fields过滤字段解析出错,请参照文档设置可过滤字段 | 请确认过滤字段中是否包含以下不可置空的字段：<br/>`docData.type`<br/>`docData.flowPlan.id`<br/>`docData.flowPlan.nodes.type` |
 

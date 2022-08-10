@@ -56,28 +56,17 @@ curl --location --request POST 'https://app.ekuaibao.com/api/outbound/v1/approva
 ```
 
 ## 失败响应
-```json
-{
-    "value": {
-        "code": "401",
-        "message": "签名秘钥错误企业"
-    }
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | 401 | 签名秘钥错误企业 | 请确认 `signKey`（签名秘钥）是否正确 |
+| **200** | 412 | 当前的审批节点不为:4F7CB33E-8959-43FC-9F3B-210033C8F198，请检查 | 请确认 `nodeId`（节点ID）是否正确 |
 
 :::caution
-- 调用【[更新单据](/docs/open-api/flows/update-form)】接口后立刻调用本接口，报错如下，原因是修改了单据，审批流会流转到系统预置的费用标准检查节点，校验通过后再流转回当前ebot节点，此时才能调用本接口执行回调操作。
+- 调用【[更新单据](/docs/open-api/flows/update-form)】接口后立刻调用本接口，报错：“当前的审批节点不为:xxxxxxxxxxxxxxxxxx”<br/>原因是修改了单据，审批流会流转到系统预置的费用标准检查节点，校验通过后再流转回当前ebot节点，此时才能调用本接口执行回调操作。
 
 ![image](images/Ebot回调注意事项.png)
 :::
-```json
-{
-    "value": {
-        "code": "412",
-        "message": "当前的审批节点不为:4F7CB33E-8959-43FC-9F3B-210033C8F198，请检查"
-    }
-}
-```
 
 ### `message` 补充说明
 

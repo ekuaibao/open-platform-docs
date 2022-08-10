@@ -208,4 +208,4 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/specific
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **412** | - | 查询的费用类型不存在, 请输入有效的查询条件 | 确认 `ids` 或 `codes` 是否正确 |
+| **412** | - | 查询的费用类型不存在, 请输入有效的查询条件 | 请确认 `ids`（费用类型ID）或 `codes`（费用类型编码CODE）是否正确 |

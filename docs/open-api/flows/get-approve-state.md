@@ -74,11 +74,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/approve
 }
 ```
 
-当 `ids` 对应的单据不存在时，返回空数组：
-```json
-{
-  "items": []   //请检查对应的单据ID是否正确
-}
-```
+## 失败响应
 
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - |  "items": [] | 返回空表示对应的单据不存在<br/>请确认 `ids`（单据ID）是否正确 |

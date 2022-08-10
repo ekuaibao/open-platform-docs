@@ -856,16 +856,12 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 ## 失败响应
-当 `index`（开始索引）= `0` 时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "当前页不能为0",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 不支持的业务对象「xxxxx」 | 请确认 `objectId`（发票类型）是否在提供的列表内 | 
+| **400** | - | 查询参数不能为空!!! | 请按照上面TIP注意事项正确传参 | 
+
 
 
 

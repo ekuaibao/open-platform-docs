@@ -206,24 +206,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/withNotes
 ```
 
 ## 失败响应
-当 `count`（查询数据条数）超过 `100` 时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "count参数不能大于100",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-当 `start` 传参大于等于实际总数据量时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "数据查询异常",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | count参数不能大于100 | 请确认 `count`（查询数据条数）是否大于 `100`  | 
+| **400** | - | 数据查询异常 | 请确认 `start`（分页查询的起始序号）是否小于实际总数据量  | 

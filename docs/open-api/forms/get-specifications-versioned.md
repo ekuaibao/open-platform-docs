@@ -52,3 +52,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifica
 }
 ```
 
+## 失败响应
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | "items": [] | 为空表示没有查询到对应类型的单据模板 |
+| **412** | - | type参数不合法 | 请确认 `type`（单据类型）是否为 **备注** 中提供固定值 |

@@ -126,12 +126,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/dat
 ```
 
 ## 失败响应
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "您没有权限执行此操作。可能是由于：\n1、单据已被撤回或驳回。\n2、单据当前所处审批环节根据流程配置，不允许撤回。",  //或者检查单据是否已提交
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **403** | - | 您没有权限执行此操作。可能是由于：<br/>1、单据已被撤回或驳回。<br/>2、单据当前所处审批环节根据流程配置，不允许撤回。 | 请按照提示进行检查  | 

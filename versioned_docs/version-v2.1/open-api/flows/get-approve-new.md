@@ -175,23 +175,12 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byFl
 }
 ```
 
-查询的员工无待审批的单据时，返回如下：
-```json
-{
-    "items": []
-}
-```
 ## 失败响应
-当 `approverId`（员工ID）不正确时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "员工不存在",  
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - |  "items": [] | 返回空表示查询的员工无待审批的单据  |
+| **400** | - | 员工不存在 | 请确认 `approverId`（员工ID）参数是否正确  |
 
 
 

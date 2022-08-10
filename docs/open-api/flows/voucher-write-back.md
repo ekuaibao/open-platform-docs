@@ -66,24 +66,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
 ```
 
 ## 失败响应
-当 `flowId`（单据ID）错误时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "不存在此单据[yd4bn1Z-YM900]",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-当单据不处于 **`paid` 已支付/审批完成** 状态时报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "单据Id:[[ID_3FQR$Yx5LWM]]的单据不是已支付状态，不能回写单据凭证，请检查",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 不存在此单据[yd4bn1Z-YM900] | 请确认 `flowId`（单据ID）是否正确  | 
+| **412** | - | 单据Id:[[ID_3FQR$Yx5LWM]]的单据不是已支付状态，不能回写单据凭证，请检查 | 请确认该单据是否处于 `paid`（**已支付/审批完成**）状态  | 

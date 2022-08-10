@@ -41,14 +41,3 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/feeTypes?
     ]
 }
 ```
-
-## 失败响应
-```json
-{
-    "errorCode": 403,
-    "errorMessage": "未授权",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```

@@ -51,13 +51,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/carbonCop
 ```
 
 ## 失败响应
-当单据没有抄送消息时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "单据抄送消息不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - |  单据抄送消息不存在 | 请确认对应单据是否有抄送消息 |

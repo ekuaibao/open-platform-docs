@@ -144,14 +144,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
 ```
 
 ## 失败响应
-请确保 `entityId`（业务对象ID）真实存在，否则会返回如下响应：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "26d60b5d6dd47f4350100 对应的业务对象不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 26d60b5d6dd47f4350100 对应的业务对象不存在 | 请确认 `entityId`（业务对象ID）是否真实存在 | 
 

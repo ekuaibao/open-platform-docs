@@ -174,7 +174,7 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/mall-openapi/open
 ```
 
 ### 返回参数列表
-| 字段名称 | 类型 | 是否必返回 | 备注
+| 字段名称 | 类型 | 是否必返回 | 备注 |
 | :--- | :--- | :--- | :--- |
 | **status**    | String | 是 | "00000"表示成功，其余标识均为失败 |
 | **msg**       | String | 是 | 响应描述，例如："请求成功" |
@@ -245,26 +245,8 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/mall-openapi/open
 | **10** | 企业购 |
 
 ## 失败响应
-`Authorization`（自建应用授权）失效或者传参错误时，报错如下：
-```json
-{
-    "errorCode": 401,
-    "errorMessage": "请先登录",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-出现下面错误时，请检查 `data` 、`requestId` 传参是否正确：
-```json
-{
-    "status": "S500",
-    "msg": "请求失败",
-    "data": null,
-    "requestId": null,
-    "time": 1654161102727
-}
-```
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | S500 | 请求失败 | 请确认 `data`（企业对账单ID集合）、`requestId`（请求标识）传参是否正确 |
+| **401** | - | 请先登录 | 请确认 `Authorization`（自建应用授权）是否失效或者传参错误 |

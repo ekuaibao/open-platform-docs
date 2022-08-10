@@ -86,18 +86,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/au
 }
 ```
 
-`start` 传参大于等于实际员工总数据量时，会得到如下响应，只显示总数据量 “count“，不显示员工信息：
-```json
-{
-    "count": 2,
-    "items": []
-}
-```
-
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认调用接口地址前缀与您企业所在的环境是否保持一致 | 
+| **200** | - | "count": 2,<br/>"items": [] | `count` 大于 `0`但返回员工信息为空时，<br/>请确认 `start`（分页查询的起始序号）是否小于实际员工总数据量 | 
+| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认 **地址前缀** 是否与您的企业环境一致 | 
 
 
 

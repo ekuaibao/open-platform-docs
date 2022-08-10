@@ -73,35 +73,9 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/datalin
 
 
 ## 失败响应
-请确保要更新的 `应用ID/平台ID` 是真实存在的，否则会返回如下响应：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "无效的平台id",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-当 `adminIds`（管理员ID）不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "ID为'bwa3wajigF0WH0:ID_3wlg6bv9UGg·'的员工不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当 `name`（应用名称）传 `""` 时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "自建应用名称不能为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 无效的平台id | 请确认要更新的 `应用ID/平台ID` 是否真实存在 | 
+| **400** | - | ID为'bwa3wajigF0WH0:ID_3wlg6bv9UGg·'的员工不存在 | 请确认 `adminIds`（管理员ID）是否真实存在 | 
+| **400** | - | 自建应用名称不能为空 | 请确认 `name`（应用名称）是否为空 | 

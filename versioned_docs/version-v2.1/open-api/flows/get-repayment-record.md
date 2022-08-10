@@ -84,10 +84,7 @@ curl --location -g --request GET 'https://app.ekuaibao.com/api/openapi/v1/loan/r
 | **REVISE**    | 手动修改借款 |
 
 ## 失败响应
-还款记录ID错误时，返回空：
-```json
-{
-    "items": []
-}
-```
 
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - |  "items": [] | 返回空表示没有查询到相关数据，请确认 `ids`（还款记录ID集合）是否存在  |

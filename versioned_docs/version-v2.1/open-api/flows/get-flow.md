@@ -129,24 +129,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/flow/plan
 ```
 
 ## 失败响应
-出现以下信息，请检查单据ID是否存在：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "单据不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-目前只有 **草稿** 和 **驳回** 的单据才能被查询到，否则报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "您没有权限获取该单据的流程实例",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - |  单据不存在 | 请确认 `flowId`（单据ID）是否正确 |
+| **412** | - |  您没有权限获取该单据的流程实例 | 请确认单据是否处于 **草稿** 和 **驳回** 状态 |

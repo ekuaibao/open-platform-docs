@@ -53,13 +53,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/ldap/syn
 ```
 
 ## 失败响应
-```json
-{
-    "value": {
-        "code": null,
-        "errorCode": "401",
-        "errorMessage": "请求参数无效"
-    }
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | 401 | 请求参数无效 | 请确认 `ldapUsers`（员工集合）中的参数是否正确 |
 

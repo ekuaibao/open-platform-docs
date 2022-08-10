@@ -1123,35 +1123,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 ```
 
 ## 失败响应
-请保证 `entityId`（业务对象ID）参数正确无误，否则报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "未找到对应的业务对象",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-当 `index`（开始索引）等于 `0` 时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "当前页不能为0",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当 `count`（查询数）大于 `100` 时，报错如下： 
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "超过单次最大查询数量100",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 未找到对应的业务对象 | 请确认 `entityId`（业务对象ID）是否正确 |
+| **400** | - | 当前页不能为0 | 请确认 `index`（开始索引）是否大于 `0` |
+| **412** | - | 超过单次最大查询数量100 | 请确认 `count`（查询数）是否小于 `100` |

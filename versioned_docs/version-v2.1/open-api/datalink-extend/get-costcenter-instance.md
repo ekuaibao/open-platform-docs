@@ -52,10 +52,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/travel/co
 }
 ```
 
-当无实例数据时，返回以下内容：
-```json
-{
-    "count": 0,
-    "items": []
-}
-```
+## 失败响应
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | "count": 0,<br/>"items": [] | 返回空表示没有查询到实例数据，请确认所传参数是否正确 | 

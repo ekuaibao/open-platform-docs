@@ -37,13 +37,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/auth/get
 ```
 
 ## 失败响应
-请确保接入账号和密码的正确性，否则返回以下结果：
-```json
-{
-    "value": {
-        "errorCode": 403,
-        "errorMessage": "密钥无效",
-        "errorDetail": null
-    }
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **403** | - | 密钥无效 | 请确认 `appKey`（接入账号）和 `appSecurity`（接入密码）是否正确<br/>请确认 **地址前缀** 是否与您的企业环境一致 |

@@ -1253,13 +1253,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docs/set
 ```
 
 ## 失败响应
-`type`（单据类型）不存在时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "参数type无法识别",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 参数type无法识别 | 请确认 `type`（单据类型）是否为 **备注** 中的固定值 |

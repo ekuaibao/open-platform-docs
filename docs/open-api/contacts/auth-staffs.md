@@ -58,4 +58,4 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/charge/p
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 未知的type类型 | 请确认 `type`（员工标识类型）值拼写是否正确 | 
+| **400** | - | 未知的type类型 | 请确认 `type`（员工标识类型）是否为 **备注** 中的固定值 | 
