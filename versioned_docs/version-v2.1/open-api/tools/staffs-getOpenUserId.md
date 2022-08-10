@@ -54,6 +54,3 @@ curl --location --request POST 'https://wx2.ekuaibao.com/api/openapi/v1/staffs/g
     ]
 }
 ```
-
-## 失败响应
-暂无。

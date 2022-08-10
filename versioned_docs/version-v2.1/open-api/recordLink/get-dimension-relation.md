@@ -84,13 +84,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 ```
 
 ## 失败响应
-企业下没有档案关系时，报错如下：
-```json
-{
-    "errorCode": 400,
-    "errorMessage": "查询结果不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 查询结果不存在 | 请确认企业下是否有档案关系 | 
+

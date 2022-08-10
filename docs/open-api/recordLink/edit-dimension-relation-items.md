@@ -88,85 +88,18 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 </Tabs>
 
 ## 成功响应
-```text
-关系更新成功
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | 关系更新成功 | - |
 
 ## 失败响应
-档案关系已删除时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "档案关系ID:ID_3BfDMDHeZ20不存在或已删除！",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-档案关系不存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "无效的档案关系ID",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当 `oldSourceValue`（旧源维度值）和 `oldPurposeValue`（旧目标维度值）对应的旧档案关系不存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "旧档案关系不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当 `newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）对应的新档案关系已存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "新档案关系已经存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当 `oldSourceValue`（旧源维度值）或 `oldPurposeValue`（旧目标维度值），`newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）不存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "维度值[CODE12]对应的数据不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当 `newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）值停用时报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "[code]为[CODE3]的数据已停用或删除",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-员工档案关系，当操作的员工（`newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值））**未激活/已移除** 时报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "[code]为[20220408]的员工未激活",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 档案关系ID:ID_3BfDMDHeZ20不存在或已删除！| 请确认档案关系ID是否已删除 | 
+| **412** | - | 无效的档案关系ID | 请确认档案关系ID是否存在 | 
+| **412** | - | 旧档案关系不存在 | 请确认 `oldSourceValue`（旧源维度值）和 `oldPurposeValue`（旧目标维度值）参数对应的旧档案关系是否存在 | 
+| **412** | - | 新档案关系已经存在 | 请确认 `newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）参数对应的新档案关系是否已存在 | 
+| **412** | - | 维度值[CODE12]对应的数据不存在 | 请确认 `oldSourceValue`（旧源维度值）或 `oldPurposeValue`（旧目标维度值），`newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）是否存在 | 
+| **412** | - | [code]为[CODE3]的数据已停用或删除 | 请确认 `newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）参数值是否停用 | 
+| **412** | - | [code]为[20220408]的员工未激活 | 包含员工类型的档案关系，请确认传参的员工（`newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值））是否激活或移除 |
 

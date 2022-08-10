@@ -25,7 +25,7 @@ url="/api/openapi/v1.1/staffs/disableOrEnableStaff/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **idsOrCodes** | Array | 员工ID或CODE集合 | 必填 | - | **与 `type` 保持一致**，可以填写多个 | 
+| **ids** | Array | 员工ID或CODE集合 | 必填 | - | **与 `type` 保持一致**，可以填写多个 | 
 
 ## Query Parameters
 
@@ -119,6 +119,6 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staf
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **403** | - | 无效的员工信息 | 请确认 `idsOrCodes`（员工ID或CODE） 是否正确 | 
-| **403** | - | 根据工号（[xgJ3wajigF25H0:ID_3E97sZ44iMw]）找不到员工 | 请确认 `idsOrCodes`（员工ID或CODE）与 `type`（参数类型）是否一致 | 
+| **403** | - | 无效的员工信息 | 请确认 `ids`（员工ID或CODE集合） 是否正确 | 
+| **403** | - | 根据工号（[xgJ3wajigF25H0:ID_3E97sZ44iMw]）找不到员工 | 请确认 `ids`（员工ID或CODE集合）与 `type`（参数类型）是否一致 | 
 | **403** | - | 抱歉无法移除，原因：<br/>1.有待审批或待支付的单据需要被移除人处理<br/>2.被移除人名下还存在待处理的单据 | `doCheck` = `true` 时，要停用的员工有待办事项时不允许停用，可改为 `false` 强制停用，或者调用 [员工离职交接](/docs/open-api/contacts/relay-staff) 接口后再停用 | 

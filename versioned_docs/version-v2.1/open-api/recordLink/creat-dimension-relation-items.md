@@ -84,67 +84,18 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 </Tabs>
 
 ## 成功响应
-```text
-关系新增成功
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | 关系新增成功 | - |
 
 ## 失败响应
-档案关系已删除时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "档案关系ID:ID_3BfDMDHeZ20不存在或已删除！",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | 传入的档案关系参数已存在，无法新增         | 请确认传入的档案关系参数是否已存在（例如，同一组参数重复调用）| 
+| **412** | - | 档案关系ID:ID_3BfDMDHeZ20不存在或已删除！| 请确认档案关系ID是否已删除 | 
+| **412** | - | 无效的档案关系ID                       | 请确认档案关系ID是否存在 | 
+| **412** | - | 维度值[sss]对应的数据不存在              | 请确认 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）参数是否存在 | 
+| **412** | - | [code]为[CODE3]的数据已停用或删除       | 请确认 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）参数值是否停用 | 
+| **412** | - | [code]为[20220408]的员工未激活         | 包含员工类型的档案关系，请确认传参的员工是否激活或移除 |
 
-档案关系不存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "无效的档案关系ID",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-当传入的档案关系已存在时（例如，同一组参数重复调用），报错如下：
-```text
-传入的档案关系参数已存在，无法新增
-```
-
-当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）不存在时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "维度值[sss]对应的数据不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-当 `sourceValues`（源维度值）或 `purposeValues`（目标维度值）值停用时报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "[code]为[CODE3]的数据已停用或删除",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
-
-员工档案关系，当操作的员工 **未激活/已移除** 时报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "[code]为[20220408]的员工未激活",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```

@@ -41,7 +41,7 @@ url="/api/openapi/v1.1/staffs"
 | **note**                      | String    | 备注              | 非必填 | - | 备注 |
 | **defaultDepartment**         | String    | 默认部门ID         | 必填   | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
 | **departments**               | Array     | 所在部门ID，至少1个  | 必填  | - | 兼职部门，请确保至少包含默认部门 |
-| **userid**                    | String    | 第三方平台的人员ID   | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数 |
+| **userid**                    | String    | 第三方平台的人员ID   | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数<br/>**如果 `cellphone` 参数在系统中已注册，本参数不生效，会返回 `cellphone` 对应的 `userid`** |
 | **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | `true` : 启用 &emsp; `false` : 不启用 |
 | **useSendEmail**              | Boolean   | 是否禁止发送邮件通知 | 非必填  | false | `true` : 禁止 &emsp; `false` : 不禁止 |
 | **staffCustomForm**           | Object    | 自定义字段         | 非必填  | - | 自定义字段 |
@@ -135,7 +135,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 该手机号已被其他员工使用，请勿重复绑定 | 请确认新增员工的手机号/邮箱在系统中是否已存在，且未停用 | 
 | **400** | - | 手机号格式不正确，只能包含数字和英文括号 | 请确认手机号是否包含非法字符 | 
+| **400** | - | 新增员工数据库异常：该手机号/邮箱账号已被其他员工使用，请勿重复绑定 | 请确认新增员工的手机号/邮箱账号在本企业中是否已存在，且未停用，可通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取确认 | 
+| **400** | - | 该账号已被其他员工使用，请勿重复绑定 | 请确认新增员工的 `userid` 在系统中是否已存在，可通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取确认<br/>**如果 `userid` 不是本企业占用，请更换 `userid`** | 
 | **403** | - | 部门不能为空 | 请确认 `defaultDepartment` 或 `departments` 是否传参 | 
 

@@ -31,7 +31,7 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **IdOrCode** | String | 员工ID或CODE | 必填 | - | **与 `type` 保持一致**，可以通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 | 
+| **staffId** | String | 员工ID或CODE | 必填 | - | **与 `type` 保持一致**，可以通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 | 
 
 ## Query Parameters
 

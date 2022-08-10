@@ -129,36 +129,11 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 ## 失败响应
-`count` 大于 `100` 时报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "超过最大查询数量100！",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 超过最大查询数量100！ | `count` 不允许大于 `100` | 
+| **412** | - | 档案关系不存在或已删除！ | 请确认档案关系ID是否已删除 | 
+| **412** | - | 档案关系不存在 | 请确认档案关系ID下是否有数据或 `start` 参数 ≥ 总记录数 | 
 
-当查询的档案关系ID不存在或已删除时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "档案关系不存在或已删除！",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 
-当查询的档案关系ID下无数据或 `start` 参数大于等于总记录数时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "档案关系不存在",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
 

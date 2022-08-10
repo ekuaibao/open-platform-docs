@@ -80,13 +80,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/cl
 ```
 
 ## 失败响应
-`conditionIds` 未传值时，报错如下：
-```json
-{
-    "errorCode": 412,
-    "errorMessage": "查询conditionIds不能为空",
-    "errorDetails": null,
-    "code": null,
-    "data": null
-}
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **412** | - | 查询conditionIds不能为空 | 请确认 `conditionIds` 是否传值 | 
+
+

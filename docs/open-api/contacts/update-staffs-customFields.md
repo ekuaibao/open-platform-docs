@@ -1,4 +1,4 @@
-# 修改员工自定义字段(所有平台)
+# 修改员工自定义字段(全环境)
 
 import Control from "@theme/Control";
 
@@ -21,7 +21,7 @@ url="/api/openapi/v1.1/staffs/$`staffId`/customFields"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **IdOrCode** | String | 员工ID或CODE | 必填 | - | **与 `type` 保持一致**，通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 | 
+| **staffId** | String | 员工ID或CODE | 必填 | - | **与 `type` 保持一致**，通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 | 
 
 ## Query Parameters
 
@@ -96,14 +96,14 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
         "departments": [                        //所在部门
             "xgJ3wajigF25H0:ID_3zE5G_06Ow0"
         ],
-        "defaultDepartment": "xgJ3wajigF25H0:ID_3zE5G_06Ow0",      //默认部门ID
+        "defaultDepartment": "xgJ3wajigF25H0:ID_3zE5G_06Ow0", //默认部门ID
         "cellphone": "17600109458",             //手机号
         "active": true,                         //是否停用
         "userId": "ID_3kpneISgylw",             //第三方ID
         "email": "",                            //邮箱
         "external": false,                      //是否外部人员
         "note": null,                           //备注
-        "staffCustomForm": {                    //员工自定义字段集合
+        "staffCustomForm": {                    //员工自定义字段对象
             "rankType": "ID_3jO67GBsl3I",       //职级
             "postType": "ID_3pp9B5CUgPg",       //岗位
             "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
@@ -117,6 +117,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 没有查到此员工信息 | 请确认 `IdOrCode`（员工ID或CODE）与 `type`（参数类型）保持一致 | 
-| **400** | - | 字段rankType不合法，没有找到对应的数据 | 请确认 `rankType`（员工ID或CODE）与 `type`（参数类型）保持一致，以及所传参数是否存在 | 
-| **400** | - | 字段postType不合法，没有找到对应的数据 | 请确认 `postType`（员工ID或CODE）与 `type`（参数类型）保持一致，以及所传参数是否存在 | 
+| **400** | - | 没有查到此员工信息 | 请确认 `staffId`（员工ID或CODE）与 `type`（参数类型）保持一致 | 
+| **400** | - | 字段rankType不合法，没有找到对应的数据 | 请确认 `rankType`（职级）与 `type`（参数类型）保持一致，以及所传参数是否存在 | 
+| **400** | - | 字段postType不合法，没有找到对应的数据 | 请确认 `postType`（岗位）与 `type`（参数类型）保持一致，以及所传参数是否存在 | 
