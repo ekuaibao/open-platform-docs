@@ -5,11 +5,11 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url=" /api/openapi/v2/flow/data/flowId/$flowId"
+url=" /api/openapi/v2/flow/data/flowId/$`flowId`"
 />
 
 :::caution
-- 接口目前支持 **员工、部门、收款账户、自定义档案、业务对象** 类型的字段以及类似 **关联申请（`expenseLink` ）、单据模板（ `specificationId` ）** 等**保存了关联数据ID的字段**的关联信息查询。
+- 接口目前支持 **员工、部门、收款账户、自定义档案、业务对象** 类型的字段以及类似 **`expenseLink`（关联申请）、`specificationId`（单据模板）** 等 **保存了关联数据ID的字段** 的关联信息查询。
 - 暂不支持 **多选类型** 以及 **费用明细** 中的字段。
 :::
 
@@ -27,7 +27,7 @@ url=" /api/openapi/v2/flow/data/flowId/$flowId"
 | **select** | String  | 关联字段信息查询 | 非必填 | - | 固定格式：form(字段名称(\`...\`),\`...\`)<br/>示例：form(u_Z员工(\`...\`),payeeId(\`...\`),\`...\`)<br/>**form(\`...\`) 表示单据最外层，可多层嵌套查询** |
 
 ## CURL
-```shell
+```json
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/data/flowId/$ID01i0CxWopBin?accessToken=ID01i0F4jf2k6X:xgJ3wajigF25H0' \
 --header 'Content-Type: application/json' \
 --data-raw '{

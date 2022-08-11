@@ -236,5 +236,5 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **500** | - | 服务器内部错误：查询返回结果过少 | 请确认`dataLinkId`（业务对象实例ID）是否存在 |
+| **500** | - | 服务器内部错误：查询返回结果过少 | 请确认 `dataLinkId`（业务对象实例ID）是否存在 |
 

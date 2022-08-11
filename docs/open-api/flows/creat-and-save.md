@@ -5,13 +5,14 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v2.1/flow/data"
+url="/api/openapi/v2.2/flow/data"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.9.1**](/docs/open-api/notice/update-log#191) &emsp; -> 🚀 接口升级 `v2.2` 版本，新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 优化了部分场景下，失败响应信息不明确的问题。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● 文本、日期类型必填字段不传时，优化失败响应提示信息<br/>
   [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。<br/>
@@ -46,6 +47,7 @@ url="/api/openapi/v2.1/flow/data"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 |**form**                                        | Object | 单据信息         | 必填  | - | 单据信息数据 |
+|**&emsp; ∟ outerCode**                          | String | 外部系统单据编号  | 非必填 | - | 第三方系统的单据唯一标识，不可重复 |
 |**&emsp; ∟ title**                              | String | 单据标题        | 必填   | - | 单据标题 |
 |**&emsp; ∟ submitterId**                        | String | 单据提交人ID    | 必填   | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
 |**&emsp; ∟ expenseDate**                        | String | 报销日期        | 非必填 | - | 毫秒级时间戳<br/>参数不传时，默认为 **当前日期** |
@@ -81,10 +83,11 @@ url="/api/openapi/v2.1/flow/data"
 ## CURL
 报销单示例：
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/data?accessToken=ID_3tLWHTx0B8g:PCx3rwm3aA00qM' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/data?accessToken=ID_3tLWHTx0B8g:PCx3rwm3aA00qM' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "form":{
+        "outerCode":"WB-10001",                       //外部系统单据编号
         "title":"测试日常报销单4",                     //单据标题
         "details":[                                   //费用明细
             {
@@ -213,6 +216,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
         "sourceCorporationId": null,
         "dataCorporationId": null,
         "form": {
+            "outerCode": "WB-10001",  
             "title": "测试日常报销单5",
             "details": [
                 {
@@ -381,9 +385,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 单据模板不存在 | `form.specificationId`（单据模板ID）错误，需要确认单据模板ID是否为 **单据模板ID:小版本号** 的正确形式  | 
+| **400** | - | 外部系统单据编号outerCode已存在单据，不允许重复，请检查 | 请确认 `outerCode` 在系统中是否已创建| 
+| **400** | - | 单据模板不存在 | `form.specificationId`（单据模板ID）错误，请确认单据模板ID是否为 **单据模板ID:小版本号** 的正确形式  | 
 | **400** | - | openapi单据数据保存，单据模板已删除 | 单据模板ID不是最新的，不允许创建单据，请每次修改单据模板后都获取最新的模板ID再创建单据操作 | 
-| **400** | - | openapi单据数据保存，明细模板不存在 | `form.details.specificationId`（费用类型模板ID）错误，需要确认费用类型模板ID是否为 **费用类型模板ID:单据类型:小版本号** 的正确形式 | 
+| **400** | - | openapi单据数据保存，明细模板不存在 | `form.details.specificationId`（费用类型模板ID）错误，请确认费用类型模板ID是否为 **费用类型模板ID:单据类型:小版本号** 的正确形式 | 
 | **400** | - | openapi单据数据保存，明细模板已删除 | 费用类型模板ID不是最新的，不允许创建单据，请每次修改费用类型模板后都获取最新的模板ID再创建单据操作 |
 | **400** | - | 'u_业务对象'字段[业务对象]字段为必填，值不能为空 | 确认必填字段是否传值 |
 | **400** | - | 提交人参数不合法，请检查该员工是否已离职 | 确认 `submitterId`（单据提交人ID）是否离职 |
@@ -391,6 +396,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flow/d
 | **400** | - | 输入存在错误: - 缺少Action参数 | 确认Body参数是否已传 |
 | **412** | - | 单据数据包含不支持的字段：u_Z文本。 | 确认 **业务对象** 类型字段配置的赋值规则中所选择的单据字段，在当前模板中是否存在 |
 | **412** | - | 你无法使用当前选择的"单据模板"，请重选 | 确认 `submitterId`（单据提交人ID）是否在该单据模板可见范围内 |
+| **400** | - | 'u_业务对象'字段[业务对象]字段为必填，值不能为空 | 请确认必填字段是否传值 |
+| **400** | - | 提交人参数不合法，请检查该员工是否已离职 | 请确认 `submitterId` 字段对应员工是否离职 |
+| **400** | - | openapi单据数据提交，审批节点[出纳支付]未设置审批人 | 审批节点配置审批人为【**手动选择**】时，无法直接提审，请修改配置 |
+| **400** | - | 输入存在错误: - 缺少Action参数 | 请确认Body参数是否已传 |
+| **412** | - | 单据数据包含不支持的字段：u_Z文本。 | 请确认 **业务对象** 类型字段配置的赋值规则中所选择的单据字段，在当前模板中是否存在 |
+| **412** | - | 你无法使用当前选择的"单据模板"，请重选 | 请确认 `submitterId` 字段对应员工是否在该单据模板可见范围内 |
 
 
 ## 字段填写规则
