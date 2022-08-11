@@ -61,6 +61,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/fieldMap
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **200** | - | 无效的赋值规则目标字段:<br/>E_ea9d0b6e522a25878000_name | 请确认规则设置中的 `sourceField` 源字段和 `targetField` 目标字段是否真实存在<br/>`targetField` 目标字段不存在也报此错误 | 
+| **200** | - | 无效的赋值规则目标字段:<br/>E_ea9d0b6e522a25878000_name | 请确认规则设置中的 `sourceField`（赋值源字段）和 `targetField`（赋值目标字段）是否存在 | 
 
 

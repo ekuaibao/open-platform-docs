@@ -240,4 +240,4 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 未找到对应的业务对象 | 请确认 `entityId`（业务对象ID）是否真实存在 | 
+| **400** | - | 未找到对应的业务对象 | 请确认 `entityId`（业务对象ID）是否存在 | 

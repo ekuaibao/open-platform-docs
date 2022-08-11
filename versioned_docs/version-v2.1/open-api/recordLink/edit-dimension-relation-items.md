@@ -95,11 +95,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/record
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **412** | - | 档案关系ID:ID_3BfDMDHeZ20不存在或已删除！| 请确认档案关系ID是否已删除 | 
-| **412** | - | 无效的档案关系ID | 请确认档案关系ID是否存在 | 
-| **412** | - | 旧档案关系不存在 | 请确认 `oldSourceValue`（旧源维度值）和 `oldPurposeValue`（旧目标维度值）参数对应的旧档案关系是否存在 | 
-| **412** | - | 新档案关系已经存在 | 请确认 `newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）参数对应的新档案关系是否已存在 | 
+| **412** | - | 档案关系ID:ID_3BfDMDHeZ20不存在或已删除！| 请确认 `id`（档案关系ID）是否已删除 | 
+| **412** | - | 无效的档案关系ID | 请确认 `id`（档案关系ID）是否存在 | 
+| **412** | - | 旧档案关系不存在 | 请确认 `oldSourceValue`（旧源维度值）和 `oldPurposeValue`（旧目标维度值）对应的旧档案关系是否存在 | 
+| **412** | - | 新档案关系已经存在 | 请确认 `newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）对应的新档案关系是否已存在 | 
 | **412** | - | 维度值[CODE12]对应的数据不存在 | 请确认 `oldSourceValue`（旧源维度值）或 `oldPurposeValue`（旧目标维度值），`newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）是否存在 | 
-| **412** | - | [code]为[CODE3]的数据已停用或删除 | 请确认 `newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）参数值是否停用 | 
+| **412** | - | [code]为[CODE3]的数据已停用或删除 | 请确认 `newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值）是否停用 | 
 | **412** | - | [code]为[20220408]的员工未激活 | 包含员工类型的档案关系，请确认传参的员工（`newSourceValue`（新源维度值）或 `newPurposeValue`（新目标维度值））是否激活或移除 |
 

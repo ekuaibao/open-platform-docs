@@ -64,10 +64,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDet
 
 查询发现单据状态并未有异常时，返回如下：
 ```json
-{
-    "count": 0,
-    "items": []
-}
+{"count": 0, "items": []}
 
 ```
 
@@ -75,4 +72,5 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDet
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
+| **200** | - | `{"count": 0, "items": []}` | 返回空表示所查询单据状态未有异常 |
 | **412** | - | 单据不存在 | 请确认 `codes`（单据编号）是否正确 |

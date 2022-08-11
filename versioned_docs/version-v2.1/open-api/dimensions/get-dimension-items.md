@@ -68,4 +68,4 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | "count": 0,<br/>"items": [] | 请确认`dimensionId`（档案类别ID）是否正确，以及<br/>`startDate`（查询开始时间）和 `endDate`（查询结束时间）格式是否正确 | 
+| **400** | - | `{"count": 0,"items": []}` | 请确认 `dimensionId`（档案类别ID）是否正确，以及<br/>`startDate`（查询开始时间）和 `endDate`（查询结束时间）格式是否正确 | 

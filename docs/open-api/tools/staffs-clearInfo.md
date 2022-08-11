@@ -82,6 +82,6 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/cl
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **412** | - | 查询conditionIds不能为空 | 请确认 `conditionIds` 是否传值 | 
+| **412** | - | 查询conditionIds不能为空 | 请确认 `conditionIds`（员工标识参数）是否传值 | 
 
 

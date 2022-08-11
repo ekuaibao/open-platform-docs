@@ -165,6 +165,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 手机号格式不正确，只能包含数字和英文括号 | 请确认手机号是否包含非法字符 | 
-| **400** | - | 批量新增员工数据库异常：该userId已被绑定「18820220419」，请勿重复绑定 | 请确认新增员工的手机号/邮箱账号/`userid` 在系统中是否已存在，且未停用，可通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取确认 | 
-| **403** | - | 部门不能为空 | 请确认 `defaultDepartment` 或 `departments` 是否传参 | 
+| **400** | - | 手机号格式不正确，只能包含数字和英文括号 | 请确认 `cellphone`（手机号）是否包含非法字符 | 
+| **400** | - | 批量新增员工数据库异常：该userId已被绑定「18820220419」，请勿重复绑定 | 请确认新增员工的 `cellphone`（手机号）/ `email`（邮箱）/`userid`（第三方平台的人员ID）在系统中是否已存在，且未停用，可通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取确认 | 
+| **403** | - | 部门不能为空 | 请确认 `defaultDepartment`（默认部门ID）或 `departments`（所在部门ID）是否传参 | 

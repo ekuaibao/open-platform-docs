@@ -1746,18 +1746,12 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-查询不到数据时返回如下：
-```json
-{
-    "count": 0,
-    "items": []   //表示没查到数据
-}
-```
 
 ## 失败响应
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
+| **200** | - | `{"count": 0, "items": []}` | 为空表示没有查询到单据数据 |
 | **403** | - | 未开通功能，无权访问 | 请确认 `powerCode`（功能授权码）是否为 **备注** 中的固定值 |
 | **400** | - | fields过滤字段解析出错,请参照文档设置可过滤字段 | 请确认过滤字段中是否包含以下不可置空的字段：<br/>`docData.type`<br/>`docData.flowPlan.id`<br/>`docData.flowPlan.nodes.type` |
 

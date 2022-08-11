@@ -62,5 +62,5 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **200** | - | "value": {} | 返回空表示没有查询到数据，请确认 `codeOrIds`（查询参数） 是否正确 | 
-| **400** | - | 不支持此类型type=name | 请确认 `type`（查询参数类型） 是否为固定值：`id` 或 `code` | 
+| **200** | - | `{"value": {}}` | 返回空表示没有查询到数据<br/>请确认 `codeOrIds`（查询参数） 是否正确 | 
+| **400** | - | 不支持此类型type=name | 请确认 `type`（查询参数类型） 是否为 **备注** 中的固定值 | 

@@ -56,4 +56,4 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/travel/co
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **200** | - | "count": 0,<br/>"items": [] | 返回空表示没有查询到实例数据，请确认所传参数是否正确 | 
+| **200** | - | `{"count": 0,"items": []}` | 返回空表示没有查询到实例数据<br/>请确认所传参数是否正确 | 

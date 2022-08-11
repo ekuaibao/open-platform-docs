@@ -61,6 +61,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **200** | - | "value": null | 请确认`name`（应用名称）是否真实存在 | 
+| **200** | - | `{"value": null}` | 为空表示没有查询到自建应用数据<br/>请确认 `name`（应用名称）是否存在 | 
 
 

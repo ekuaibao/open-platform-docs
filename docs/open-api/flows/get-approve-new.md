@@ -179,8 +179,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byFl
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **200** | - |  "items": [] | 返回空表示查询的员工无待审批的单据  |
-| **400** | - | 员工不存在 | 请确认 `approverId`（员工ID）参数是否正确  |
+| **200** | - |  `{"items": []}` | 返回空表示查询的员工无待审批的单据  |
+| **400** | - | 员工不存在 | 请确认 `approverId`（员工ID）是否正确  |
 
 
 

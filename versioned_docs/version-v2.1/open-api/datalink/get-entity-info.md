@@ -147,5 +147,5 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 26d60b5d6dd47f4350100 对应的业务对象不存在 | 请确认 `entityId`（业务对象ID）是否真实存在 | 
+| **400** | - | 26d60b5d6dd47f4350100 对应的业务对象不存在 | 请确认 `entityId`（业务对象ID）是否存在 | 
 

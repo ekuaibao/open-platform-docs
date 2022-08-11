@@ -81,7 +81,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/loans/get
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 根据借款单Id:8ZAbsRr6_QfA00, 获取不到<br/>对应的借款包,请核查 | 请确认单据是否已生成了借款记录（借款单流程已完成）<br/>请确认单据ID是否正确 | 
+| **400** | - | 根据借款单Id:8ZAbsRr6_QfA00, 获取不到<br/>对应的借款包,请核查 | 请确认单据是否已生成了借款记录（借款单流程已完成）<br/>请确认 `flowId`（借款单ID）是否正确 | 
 
 
 

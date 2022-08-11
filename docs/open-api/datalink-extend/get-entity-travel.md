@@ -190,4 +190,4 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 暂不支持此扩展类型查询 | `objectId` 不可传未支持的类型 | 
+| **400** | - | 暂不支持此扩展类型查询 | 请确认 `objectId`（行程类型）是否为 **备注** 中的固定值 | 

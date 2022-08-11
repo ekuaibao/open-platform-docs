@@ -57,7 +57,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/invoice/r
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **200** | - | "items": [] | 请确认 `ids`（单据ID集合）对应的单据是否有风险标签或是否存在 |
+| **200** | - | `{"items": []}` | 返回空表示没有查询到风险标签数据<br/>请确认 `ids`（单据ID集合）对应的单据是否有风险标签或是否存在 |
 
 
 

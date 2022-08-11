@@ -61,4 +61,4 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/organizat
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **200** | - | "items": [] | 返回空表示没有查询到数据<br/>请确认 `staffId`（授权发起人ID）是否正确或该用户下是否有委托审批授权数据 |
+| **200** | - | `{"items": []}` | 返回空表示没有查询到数据<br/>请确认 `staffId`（授权发起人ID）是否正确或该用户下是否有委托审批授权数据 |

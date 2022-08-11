@@ -64,4 +64,4 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 输入存在错误:<br/>- 缺少count参数 | 请确认 `count` （查询数据条数）参数是否传入 | 
+| **400** | - | 输入存在错误:<br/>- 缺少count参数 | 请确认 `count` （查询数据条数）是否传入 | 

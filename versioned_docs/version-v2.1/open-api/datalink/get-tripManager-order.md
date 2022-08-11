@@ -250,7 +250,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 | :--- | :--- | :--- | :--- |
 | **400** | - | 不支持的业务对象「TRAVEL」 | 请确认接口路径中的 `TRAVEL_MANAGEMENT` 拼写是否正确，该参数为固定值  | 
 | **400** | - | 业务对象模板不存在 | 请确认 `entityId`（行程管理的业务对象ID）是否存在  | 
-| **400** | - | 单次查询总数不得大于100 | 请确认 `count`（查询总数）是否大于 `100`  | 
+| **400** | - | 单次查询总数不得大于100 | `count`（查询总数）不允许大于 `100`  | 
 
 
 

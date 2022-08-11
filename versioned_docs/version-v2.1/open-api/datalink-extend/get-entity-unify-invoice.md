@@ -640,6 +640,6 @@ curl --location --request get 'https://app.ekuaibao.com/api/openapi/v1/invoice/u
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **200** | - | "items": [] | 返回空表示没有查询到实例数据<br/>请确认 `unifyInvoiceCorporationId`（开票方ID）是否正确 | 
+| **200** | - | `{"items": []}` | 返回空表示没有查询到实例数据<br/>请确认 `unifyInvoiceCorporationId`（开票方ID）是否正确 | 
 
 

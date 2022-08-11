@@ -631,4 +631,4 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
 | **400** | - | 业务对象名称重复，请修改！ | 请确认业务对象的 `name` 是否唯一 | 
-| **412** | - | 业务对象对应的扩展不存在 | 请确认 `platformId`（所属应用ID）是否真实存在 | 
+| **412** | - | 业务对象对应的扩展不存在 | 请确认 `platformId`（所属应用ID）是否存在 | 

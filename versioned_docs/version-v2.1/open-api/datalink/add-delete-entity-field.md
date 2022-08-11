@@ -514,5 +514,5 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **412** | - | 新增字段label重名[数量, 复制数量]，请输入有效字段名称 | 请确认`addfields` 列表中的 `label` 字段是否唯一 | 
-| **412** | - | 删除的字段label不存在[名称, 编码]，请输入有效字段名称 | 请确认`delfields` 列表中的 `label` 字段是否真实存在 | 
+| **412** | - | 新增字段label重名[数量, 复制数量]，请输入有效字段名称 | 请确认 `addfields`（增加字段）列表中的 `label`（字段名称）是否唯一 | 
+| **412** | - | 删除的字段label不存在[名称, 编码]，请输入有效字段名称 | 请确认 `delfields`（删除字段）列表中的 `label`字段名称是否存在 | 

@@ -106,4 +106,4 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **403** | - | 该平台不存在 | 请确认 `platformId`（自建应用ID）是否真实存在 | 
+| **403** | - | 该平台不存在 | 请确认 `platformId`（自建应用ID）是否存在 | 

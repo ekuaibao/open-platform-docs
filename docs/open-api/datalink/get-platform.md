@@ -97,6 +97,6 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | count参数不能大于100 | 请确认 `count`（每页总数）是否大于 `100`  | 
+| **400** | - | count参数不能大于100 | `count`（每页总数）不允许大于 `100`  | 
 
 

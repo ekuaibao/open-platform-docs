@@ -54,4 +54,4 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **200** | - | "items": [] | 返回空表示没有查询到实例数据，请确认 `invoiceId`（发票ID集合）是否正确 | 
+| **200** | - | `{"items": []}` | 返回空表示没有查询到实例数据<br/>请确认 `invoiceId`（发票ID集合）是否正确 | 

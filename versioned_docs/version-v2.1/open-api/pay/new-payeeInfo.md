@@ -240,5 +240,5 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
 | **400** | - | 该账户已存在，无法创建 | 请确认 `name`（开户名称）和 `cardNo`（账号）在系统中是否存在  |
 | **400** | - | 缺少staffId参数 | `owner` = `INDIVIDUAL` 时，请确认`staffId`（所有者ID）是否传入 |
 | **400** | - | 缺少开户行网点参数 | 请确认系统中是否勾选【允许开户网点为非必填项】，未勾选则该参数必填 |
-| **400** | - | 开行网点不存在, 请联系管理员补充! | 请确认 `branch`（开户网点）参数是否正确或者是否在 [开户网点](/docs/open-api/pay/get-all-branch) 中 |
-| **400** | - | 证件类型输入有误 | 请确认 `certificateType`（证件类型）参数是否在【[证件类型对照表](/docs/open-api/pay/new-payeeInfo#证件类型对照表)】中 |
+| **400** | - | 开行网点不存在, 请联系管理员补充! | 请确认 `branch`（开户网点）是否正确或者是否在 [开户网点](/docs/open-api/pay/get-all-branch) 中 |
+| **400** | - | 证件类型输入有误 | 请确认 `certificateType`（证件类型）是否在【[证件类型对照表](/docs/open-api/pay/new-payeeInfo#证件类型对照表)】中 |

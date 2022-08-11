@@ -63,7 +63,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **200** | - | "items": [] | 请确认 `budgetId`（预算包ID）、`staffId`（员工ID）是否正确，<br/>以及 `nodeIds`（节点ID）是否有该员工权限 |
+| **200** | - | `{"items": []}` | 为空表示没有查询到对应到的预算节点信息<br/>请确认 `budgetId`（预算包ID）、`staffId`（员工ID）是否正确，<br/>以及 `nodeIds`（节点ID）是否有该员工权限 |
 | **400** | - | 输入存在错误: <br/>- must not be null | 请确认 `nodeIds`（节点ID）是否传入 |
 
 
