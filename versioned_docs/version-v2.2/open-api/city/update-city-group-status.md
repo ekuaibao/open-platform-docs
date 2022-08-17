@@ -1,0 +1,61 @@
+# 启用/停用城市组
+
+import Control from "@theme/Control";
+
+<Control
+method="PUT"
+url="/api/openapi/v1/cityGroup/updateStatus/$`id`"
+/>
+
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  [**0.7.135**](/docs/open-api/notice/update-log#07135) -> 🆕 新增了本接口。<br/>
+
+  </div>
+</details>
+
+## Path Parameters
+
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **id** | String | 城市组ID | 必填 | - | 通过 [获取城市组列表](/docs/open-api/city/get-city-group) 获取 |
+
+## Query Parameters
+
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+
+## Body Parameters
+
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **status** | Boolean | 城市组状态 | 必填 | - | `true` : 启用 &emsp; `false` : 停用 |
+
+## CURL
+```json
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/cityGroup/updateStatus/$wC0cPu1DNY1400?accessToken=FsYc5j4FlclU00' \
+--header 'content-type: application/json' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "status": false
+}'
+```
+
+## 成功响应
+```json
+{
+    "value": {
+        "success": true,
+        "message": ""
+    }
+}
+```
+
+## 失败响应
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | ID_3LTziYdljXy数据不存在 | 请确认 `id`（城市组ID）是否正确 |
