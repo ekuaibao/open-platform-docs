@@ -12,7 +12,7 @@ url="/api/openapi/v2.2/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.9.1**](/docs/open-api/notice/update-log#191) &emsp; -> 🚀 接口升级 `v2.2` 版本，新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。<br/>
+  [**1.10.0**](/docs/open-api/notice/update-log#1100) &emsp; -> 🚀 接口升级 `v2.2` 版本，新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 优化了部分场景下，失败响应信息不明确的问题。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● 文本、日期类型必填字段不传时，优化失败响应提示信息<br/>
   [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。<br/>
@@ -394,7 +394,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 | **400** | - | 提交人参数不合法，请检查该员工是否已离职 | 请确认 `submitterId`（单据提交人ID）字段对应员工是否离职 |
 | **400** | - | openapi单据数据提交，审批节点[出纳支付]未设置审批人 | 审批节点配置审批人为【**手动选择**】时，无法直接提审，请修改配置 |
 | **400** | - | 输入存在错误: - 缺少Action参数 | 请确认Body参数是否已传 |
-| **412** | - | 单据数据包含不支持的字段：u_Z文本。 | 请确认 **业务对象** 类型字段配置的赋值规则中所选择的单据字段，在当前模板中是否存在 |
 | **412** | - | 你无法使用当前选择的"单据模板"，请重选 | 请确认 `submitterId`（单据提交人ID）字段对应员工是否在该单据模板可见范围内 |
 
 

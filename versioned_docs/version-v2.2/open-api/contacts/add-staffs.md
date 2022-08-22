@@ -42,7 +42,7 @@ url="/api/openapi/v1.1/staffs"
 | **defaultDepartment**         | String    | 默认部门ID         | 必填   | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
 | **departments**               | Array     | 所在部门ID，至少1个  | 必填  | - | 兼职部门，请确保至少包含默认部门 |
 | **userid**                    | String    | 第三方平台的人员ID   | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数<br/>**如果 `cellphone` 参数在系统中已注册，本参数不生效，会返回 `cellphone` 对应的 `userid`** |
-| **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | `true` : 启用 &emsp; `false` : 不启用 |
+| **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | 新增员工手机号被离职员工占用时<br/>`true` : 是，新建员工ID<br/>`false` : 否，重新启用离职员工ID并修改员工信息<br/> |
 | **useSendEmail**              | Boolean   | 是否禁止发送邮件通知 | 非必填  | false | `true` : 禁止 &emsp; `false` : 不禁止 |
 | **staffCustomForm**           | Object    | 自定义字段         | 非必填  | - | 自定义字段 |
 | **&emsp; ∟ rankType**  | String    | 职级档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |

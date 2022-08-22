@@ -96,382 +96,663 @@ import TabItem from '@theme/TabItem';
 <TabItem value="invoice" label="invoice" default>
 
 ```json
-{
-    "count":7,
-    "items":[
+[{
+    "count": 7,
+    "items": [
         {
-            "id":"gwobfjObAAno00:011001900711:07977720",
-            "useCount":0,
-            "totalCount":1,
-            "ownerId":null,
-            "visibility":{
-                "fullVisible":true,
-                "staff":[],
-                "department":[],
-                "role":[]
+            "id": "gwobfjObAAno00:011001900711:07977720",
+            "useCount": 0,
+            "totalCount": 1,
+            "ownerId": null,
+            "visibility": {
+                "fullVisible": true,
+                "staff": [],
+                "department": [],
+                "role": []
             },
-            "E_税额":{
-                "standard":"0.00",
-                "standardUnit":"元",
-                "standardScale":"2",
-                "standardSymbol":"¥",
-                "standardNumCode":"156",
-                "standardStrCode":"CNY"
+            "E_税额": {
+                "standard": "0.00",
+                "standardUnit": "元",
+                "standardScale": "2",
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
             },
-            "E_是否抵扣":true,
-            "E_不计税金额":{
-                "standard":"13.90",
-                "standardUnit":"元",
-                "standardScale":"2",
-                "standardSymbol":"¥",
-                "standardNumCode":"156",
-                "standardStrCode":"CNY"
+            "E_是否抵扣": true,
+            "E_不计税金额": {
+                "standard": "13.90",
+                "standardUnit": "元",
+                "standardScale": "2",
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
             },
-            "E_system_发票主体_PDF":null,
-            "E_system_发票主体_code":"011001900711",
-            "E_system_发票主体_name":"07977720",
-            "E_system_发票主体_cardId":null,
-            "E_system_发票主体_备注":"",
-            "E_system_发票主体_来源":"UPLOAD",
-            "E_system_发票主体_税额":{
-                "standard":"0.00",
-                "standardUnit":"元",
-                "standardScale":"2",
-                "standardSymbol":"¥",
-                "standardNumCode":"156",
-                "standardStrCode":"CNY"
+            "E_system_发票主体_OFD": null,
+            "E_system_发票主体_PDF": null,
+            "E_system_发票主体_code": "011001900711",
+            "E_system_发票主体_name": "07977720",
+            "E_system_发票主体_cardId": null,
+            "E_system_发票主体_图片": "46-2-1653463174620-501.pdf",
+            "E_system_发票主体_备注": "",
+            "E_system_发票主体_方向": 270,
+            "E_system_发票主体_来源": "UPLOAD",
+            "E_system_发票主体_税额": {
+                "standard": "0.00",
+                "standardUnit": "元",
+                "standardScale": "2",
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
             },
-            "E_system_发票主体_验真":true,
-            "E_system_发票主体_encryptCode":null,
-            "E_system_发票主体_价税合计":{
-                "standard":"13.90",
-                "standardUnit":"元",
-                "standardScale":"2",
-                "standardSymbol":"¥",
-                "standardNumCode":"156",
-                "standardStrCode":"CNY"
+            "E_system_发票主体_验真": true,
+            "E_system_发票主体_复核人": "邓建风",
+            "E_system_发票主体_开票人": "颜燕燕",
+            "E_system_发票主体_收款人": "喻亚婕",
+            "E_system_发票主体_校验码": "032891",
+            "E_system_发票主体_encryptCode": null,
+            "E_system_发票主体_价税合计": {
+                "standard": "13.90",
+                "standardUnit": "元",
+                "standardScale": "2",
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
             },
-            "E_system_发票主体_发票代码":"011001900711",
-            "E_system_发票主体_发票号码":"07977720",
-            "E_system_发票主体_发票日期":1594828800000,
-            "E_system_发票主体_发票类别":"DIGITAL_NORMAL",
-            "E_system_发票主体_发票金额":{
-                "standard":"13.90",
-                "standardUnit":"元",
-                "standardScale":"2",
-                "standardSymbol":"¥",
-                "standardNumCode":"156",
-                "standardStrCode":"CNY"
+            "E_system_发票主体_发票代码": "011001900711",
+            "E_system_发票主体_发票号码": "07977720",
+            "E_system_发票主体_发票日期": 1594828800000,
+            "E_system_发票主体_发票类别": "DIGITAL_NORMAL",
+            "E_system_发票主体_发票金额": {
+                "standard": "13.90",
+                "standardUnit": "元",
+                "standardScale": "2",
+                "standardSymbol": "¥",
+                "standardNumCode": "156",
+                "standardStrCode": "CNY"
             },
-            "E_system_发票主体_购买方名称":"北京腾讯方达制冷设备有限公司",
-            "E_system_发票主体_销售方名称":"北京滴滴出行科技有限公司",
-            "E_system_发票主体_购买方地址电话":"",
-            "E_system_发票主体_购买方开户行及账号":"",
-            "E_system_发票主体_购买方纳税人识别号":"91110116348294556H",
-            "E_system_发票主体_销售方纳税人识别号":"91110108MA01G0FB09",
-            "active":false,   //发票主体是否已使用 true：未使用（爱发票、微信卡包、支付宝卡包） false：已使用（绑定了单据或者随手记）
-            "entityId":"system_发票主体",
-            "entity":{
-                "version":2,
-                "active":true,  //表示发票主体所保存在的那个业务对象的停启用状态  true：启用  false：停用
-                "createTime":1531810588185,
-                "updateTime":1531810588185,
-                "name":"发票主体",
-                "nameSpell":"FAPIAOZHUTI",
-                "code":"",
-                "corporationId":"",
-                "ledgerIds":null,
-                "plannedIds":null,
-                "parentId":"",
-                "scoped":false,
-                "type":"DIMENSION",
-                "disableStrategy":"LIMIT_COUNT",
-                "maxUsageCount":1,
-                "writtenOffField":null,
-                "fields":[
+            "E_system_发票主体_识别范围": [
+                0,
+                0,
+                794,
+                1372
+            ],
+            "E_system_票据来源_sourceEntityId": "ID_3GTovF85XOM",
+            "E_system_发票主体_购买方名称": "北京腾讯方达制冷设备有限公司",
+            "E_system_发票主体_销售方名称": "北京滴滴出行科技有限公司",
+            "E_system_发票主体_购买方地址电话": "xxxx",
+            "E_system_发票主体_销售方地址电话": "xxxx",
+            "E_system_发票主体_购买方开户行及账号": "xxxx",
+            "E_system_发票主体_购买方纳税人识别号": "91110116348294556H",
+            "E_system_发票主体_销售方开户行及账号": "xxxx",
+            "E_system_发票主体_销售方纳税人识别号": "91110108MA01G0FB09",
+            "active": false,  //发票主体是否已使用 true：未使用（爱发票、微信卡包、支付宝卡包） false：已使用（绑定了单据或者随手记）
+            "updateTime": 1653463273235,
+            "createTime": 1653463219520,
+            "entityId": "system_发票主体",
+            "entity": {
+                "operateSource": "WRITE",
+                "operatorId": null,
+                "pipeline": 1,
+                "grayver": "",
+                "version": 2,
+                "active": true,  //表示发票主体所保存在的那个业务对象的停启用状态  true：启用  false：停用
+                "createTime": 1531810588185,
+                "updateTime": 1531810588185,
+                "name": "发票主体",
+                "nameSpell": "FAPIAOZHUTI",
+                "code": "",
+                "corporationId": "",
+                "sourceCorporationId": null,
+                "dataCorporationId": null,
+                "ledgerIds": null,
+                "plannedIds": null,
+                "parentId": "",
+                "scoped": false,
+                "source": "OTHER",
+                "multiCurrencyFlag": false,
+                "actions": [
                     {
-                        "name":"E_system_发票主体_验真",
-                        "label":"开关",
-                        "type":"switcher",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "修改次数上限",
+                        "desc": "业务对象被引用到上限制，超过后自动停用",
+                        "type": "DEFAULT",
+                        "context": null,
+                        "active": true
+                    },
+                    {
+                        "name": "详情",
+                        "desc": "点击可查看业务对象字段、台账等信息",
+                        "type": "DEFAULT",
+                        "context": null,
+                        "active": true
+                    },
+                    {
+                        "name": "编辑",
+                        "desc": "点击可编辑业务对象实例数据字段信息",
+                        "type": "DEFAULT",
+                        "context": null,
+                        "active": true
+                    },
+                    {
+                        "name": "更新",
+                        "desc": "重算业务对象数据实现下的台账信息",
+                        "type": "DEFAULT",
+                        "context": null,
+                        "active": true
+                    }
+                ],
+                "importOverrideStrategy": null,
+                "visibility": {
+                    "fullVisible": false,
+                    "staffs": [],
+                    "roles": [],
+                    "departments": [],
+                    "departmentsIncludeChildren": true
+                },
+                "type": "DIMENSION",
+                "disableStrategy": "LIMIT_COUNT",
+                "maxUsageCount": 1,
+                "writtenOffField": null,
+                "fields": [
+                    {
+                        "name": "E_system_发票主体_销售方地址电话",
+                        "label": "销售方地址电话",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": true,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_收票状态",
-                        "label":"收票状态",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":true,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_是否有发票原件",
+                        "label": "是否有发票原件",
+                        "type": "switcher",
+                        "source": "dataLink",
+                        "optional": true,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": true,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_税额",
-                        "label":"可抵扣税额",
-                        "type":"money",
-                        "source":"dataLink",
-                        "optional":true,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_购买方地址电话",
+                        "label": "购买方地址电话",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": true,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_name",
-                        "label":"名称",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_购买方开户行及账号",
+                        "label": "购买方开户行及账号",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_code",
-                        "label":"编码",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_验签",
+                        "label": "验签开关",
+                        "type": "switcher",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_发票代码",
-                        "label":"发票代码",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_验真",
+                        "label": "开关",
+                        "type": "switcher",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_发票号码",
-                        "label":"发票号码",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_收票状态",
+                        "label": "收票状态",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": true,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_发票日期",
-                        "label":"发票日期",
-                        "type":"date",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_税额",
+                        "label": "可抵扣税额",
+                        "type": "money",
+                        "source": "dataLink",
+                        "optional": true,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
+                        }
+                    },
+                    {
+                        "name": "E_system_发票主体_name",
+                        "label": "名称",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
+                        }
+                    },
+                    {
+                        "name": "E_system_发票主体_code",
+                        "label": "编码",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": true,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
+                        }
+                    },
+                    {
+                        "name": "E_system_发票主体_发票代码",
+                        "label": "发票代码",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": true,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
+                        }
+                    },
+                    {
+                        "name": "E_system_发票主体_发票号码",
+                        "label": "发票号码",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": true,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
+                        }
+                    },
+                    {
+                        "name": "E_system_发票主体_发票日期",
+                        "label": "发票日期",
+                        "type": "date",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": true,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         },
-                        "withTime":false
+                        "withTime": false
                     },
                     {
-                        "name":"E_system_发票主体_购买方名称",
-                        "label":"购买方名称",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_购买方名称",
+                        "label": "购买方名称",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_购买方纳税人识别号",
-                        "label":"购买方纳税人识别号",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_购买方纳税人识别号",
+                        "label": "购买方纳税人识别号",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_发票金额",
-                        "label":"发票金额",
-                        "type":"money",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_发票金额",
+                        "label": "发票金额",
+                        "type": "money",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_税额",
-                        "label":"税额",
-                        "type":"money",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_税额",
+                        "label": "税额",
+                        "type": "money",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_价税合计",
-                        "label":"价税合计",
-                        "type":"money",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_价税合计",
+                        "label": "价税合计",
+                        "type": "money",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_销售方名称",
-                        "label":"销售方名称",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_销售方名称",
+                        "label": "销售方名称",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_销售方纳税人识别号",
-                        "label":"销售方纳税人识别号",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_销售方纳税人识别号",
+                        "label": "销售方纳税人识别号",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_来源",
-                        "label":"来源",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_销售方开户行及账号",
+                        "label": "销售方开户行及账号",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_备注",
-                        "label":"备注",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_来源",
+                        "label": "发票导入方式",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     },
                     {
-                        "name":"E_system_发票主体_发票类别",
-                        "label":"发票类别",
-                        "type":"text",
-                        "source":"dataLink",
-                        "optional":false,
-                        "defaultValue":null,
-                        "formula":false,
-                        "calculation":{
-                            "dependencies":[],
-                            "dependenciesBy":[],
-                            "order":-1
+                        "name": "E_system_发票主体_备注",
+                        "label": "备注",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
+                        }
+                    },
+                    {
+                        "name": "E_system_发票主体_发票类别",
+                        "label": "发票类别",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": false,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
+                        }
+                    },
+                    {
+                        "name": "E_不计税金额",
+                        "label": "不计税金额",
+                        "type": "money",
+                        "source": "dataLink",
+                        "optional": true,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
+                        }
+                    },
+                    {
+                        "name": "E_税率",
+                        "label": "税率",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": true,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
+                        }
+                    },
+                    {
+                        "name": "E_system_发票主体_编号",
+                        "label": "编号",
+                        "type": "text",
+                        "source": "dataLink",
+                        "optional": true,
+                        "defaultValue": null,
+                        "formula": false,
+                        "index": false,
+                        "systemField": false,
+                        "childrenOptional": {},
+                        "calculation": {
+                            "dependencies": [],
+                            "dependenciesBy": [],
+                            "order": -1
                         }
                     }
                 ],
-                "defaultMappingRuleId":null,
-                "filterId":null,
-                "id":"system_发票主体",
-                "platformId":"system_发票平台",
-                "details":[
+                "defaultMappingRuleId": null,
+                "filterId": null,
+                "id": "system_发票主体",
+                "platformId": "system_发票平台",
+                "details": [
                     "system_发票明细"
                 ],
-                "homePageVisibleIds":null,
-                "homeVisibility":{
-                    "fullVisible":false,
-                    "staffs":null,
-                    "roles":null,
-                    "departments":null,
-                    "departmentsIncludeChildren":true
+                "homePageVisibleIds": null,
+                "homeVisibility": {
+                    "fullVisible": false,
+                    "staffs": [],
+                    "roles": [],
+                    "departments": [],
+                    "departmentsIncludeChildren": true
                 },
-                "showOnPage":true,
-                "importMethod":[
+                "exportVisibility": {
+                    "fullVisible": false,
+                    "staffs": [],
+                    "roles": [],
+                    "departments": [],
+                    "departmentsIncludeChildren": true
+                },
+                "ownerDepts": false,
+                "showOnPage": true,
+                "importMethod": [
                     "excel",
                     "api"
                 ],
-                "allowRecordLog":false,
-                "logFields":[],
-                "allowAddSubType":true
+                "allowRecordLog": false,
+                "logFields": [],
+                "showBook": false,
+                "allowAddSubType": true,
+                "dataFilter": false
             },
-            "ledgers":[],
-            "plans":[]
+            "ledgers": [],
+            "plans": []
         }
     ]
-}
+}]()
 ```
 </TabItem>
 <TabItem value="taxi" label="taxi">

@@ -8,6 +8,15 @@ method="POST"
 url="/api/openapi/v1/staffs/getStaffIds"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  [**1.10.0**](/docs/open-api/notice/update-log#1100) -> 🐞 新增了 `authState`（激活状态）成功响应返回参数。<br/>
+
+  </div>
+</details>
+
 :::caution
 - 本接口只能查询到 **启用** 的员工信息，如果需要查询已停用的员工信息，请通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 查询到全部已停用的员工列表，再进行匹配。
 :::
@@ -59,14 +68,18 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
             "cellphone": "18603000748",                           //手机号
             "active": true,                                       //是否停用
             "userId": "-Nwbu1ZI9s1Y00",                           //第三方平台人员ID
-            "email": "",
+            "email": "",                                          //邮箱
+            "note": "备注",                                       //备注
             "staffCustomForm":{                                               //员工自定义字段集合
                 "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
                 "postType":"ltUcxNyWSQ1o00",                                  //岗位
                 "rankType":"lUcctXntW82A00",                                  //职级
                 "u_数字字段":"1"                                              //员工自定义字段
             },
-            "external": false   //是否外部员工
+            "external": false,                        //是否外部员工
+            "authState": true,                        //激活状态，true：激活  false：未激活
+            "updateTime": "2022-08-05 14:59:19",      //更新时间
+            "createTime": "2022-08-05 14:59:19"       //创建时间
         }
     ]
 }
