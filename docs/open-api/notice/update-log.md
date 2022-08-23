@@ -21,6 +21,8 @@ timeline: true
   - 新增了 `authState`（激活状态）成功响应返回参数。
 - 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs) 接口
   - 更新了 `useNewAccount`（是否强制启用新用户）参数备注。
+- 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口
+  - 修复了业务对象**赋值规则**中配置了当前单据模板不存在的字段时更新单据报错的问题。
 - 🐞 更新 [获取发票主体信息](/docs/open-api/datalink-extend/get-entity-invoice) 接口
   - 更新了 `invoice` 发票类型成功响应返回参数的描述。
 - 🐞 更新所有接口 **失败响应** 示例。

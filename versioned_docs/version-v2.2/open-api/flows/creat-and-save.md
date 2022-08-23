@@ -12,7 +12,7 @@ url="/api/openapi/v2.2/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.10.0**](/docs/open-api/notice/update-log#1100) &emsp; -> 🚀 接口升级 `v2.2` 版本，新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。<br/>
+  [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🚀 接口升级 `v2.2` 版本，新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 优化了部分场景下，失败响应信息不明确的问题。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● 文本、日期类型必填字段不传时，优化失败响应提示信息<br/>
   [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。<br/>

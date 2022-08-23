@@ -23,6 +23,7 @@ authors: [冯继成]
 ---
 ## 单据
 ### [根据ID获取单据详情(可返回关联数据)](/docs/open-api/inside/get-forms-details-linkdeData-byId)
+### [根据ID获取单据详情(可返回关联数据)(新)](/docs/open-api/inside/get-forms-details-linkdeData-byId-new)
 
 ---
 ## 业务对象
