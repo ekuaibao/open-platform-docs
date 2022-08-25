@@ -12,7 +12,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🐞 修复了业务对象**赋值规则**中配置了当前单据模板不存在的字段时更新单据报错的问题。<br/>
+  [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🐞 修复了业务对象 **赋值规则** 中配置了当前单据模板不存在的字段时更新单据报错的问题。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 优化了审批日志描述：`editorId` 不传时，默认记录为 **OpenAPI** 修改了单据。<br/>
   &emsp;&emsp;&emsp;&emsp;-> 🐞 修复了多个字段配置多层级的【字段依赖性】后（例：A->B->C->D），**待审批、待支付** 状态更新单据时偶发报错的BUG。<br/>

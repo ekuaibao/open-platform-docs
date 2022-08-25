@@ -12,6 +12,12 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.10.1
+
+`2022-08-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.10`
+- 🐞 更新 [获取单据列表](/docs/open-api/flows/get-forms-details-byStaff) 接口
+  - 修复了根据 `specificationId`（单据模板ID）查询时，部分模板无法获取到数据的BUG。
+---
 ## 1.10.0
 
 `2022-08-23`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.10`
@@ -22,7 +28,7 @@ timeline: true
 - 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs) 接口
   - 更新了 `useNewAccount`（是否强制启用新用户）参数备注。
 - 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口
-  - 修复了业务对象**赋值规则**中配置了当前单据模板不存在的字段时更新单据报错的问题。
+  - 修复了业务对象 **赋值规则** 中配置了当前单据模板不存在的字段时更新单据报错的问题。
 - 🐞 更新 [获取发票主体信息](/docs/open-api/datalink-extend/get-entity-invoice) 接口
   - 更新了 `invoice` 发票类型成功响应返回参数的描述。
 - 🐞 更新所有接口 **失败响应** 示例。
