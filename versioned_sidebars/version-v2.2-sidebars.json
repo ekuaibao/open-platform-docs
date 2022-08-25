@@ -324,6 +324,7 @@
         "open-api/mall/info",
         "open-api/mall/find-pageData-billId",
         "open-api/mall/find-billDetail-byId",
+        "open-api/mall/get-flight-ticket-journey-byId",
         "open-api/mall/question-answer"
       ]
     },

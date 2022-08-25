@@ -18,16 +18,16 @@ url="/api/openapi/v1.1/docs/getApplyList"
   <div>
 
   [**1.10.1**](/docs/open-api/notice/update-log#1101) -> 🐞 修复了根据 `specificationId`（单据模板ID）查询时，部分模板无法获取到单据数据的BUG。<br/>
-  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🐞 修复了 `orderBy` = `payDate` 时，`start` 和 `count` 分页参数不生效的BUG。<br/>
-  &emsp; &emsp; -> 🐞 优化了 `type` 参数必填校验提示信息。<br/>
-  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🚀 接口升级 `v1.1` 版本，由【根据员工ID批量获取单据详情】更名为【获取单据列表】<br/>
-  &emsp; &emsp; &emsp; &emsp; &emsp; ● 新增了 **报销单、收款单** 类型返回数据中 `writtenOffRecords`（核销借款记录）参数。<br/>
-  &emsp; &emsp; &emsp; &emsp; &emsp; ● 新增了 **起止时间** 过滤参数，以及按照 `createTime` 、`updateTime` 、`submitDate` 、`payDate` 参数排序。<br/>
-  &emsp; &emsp; &emsp; &emsp; &emsp; ● 新增了 `specificationId`（**单据模板ID**）过滤参数。<br/>
-  &emsp; &emsp; &emsp; &emsp; &emsp; ● 新增了 `active`（**查询条件：单据是否删除**）过滤参数。<br/>
-  &emsp; &emsp; &emsp; &emsp; &emsp; ● 新增了支持返回 `PROCESSING`（**支付中**）状态的单据。<br/>
-  &emsp; &emsp; &emsp; &emsp; &emsp; ● 去掉了 `powercode`（**功能授权码**）参数。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🆕 新增了本接口。<br/>
+  [**1.8.0**](/docs/open-api/notice/update-log#180)&emsp;-> 🐞 修复了 `orderBy` = `payDate` 时，`start` 和 `count` 分页参数不生效的BUG。<br/>
+  &emsp; &emsp;&emsp;-> 🐞 优化了 `type` 参数必填校验提示信息。<br/>
+  [**1.7.0**](/docs/open-api/notice/update-log#170)&emsp;-> 🚀 接口升级 `v1.1` 版本，由【根据员工ID批量获取单据详情】更名为【获取单据列表】<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; ● 新增了 **报销单、收款单** 类型返回数据中 `writtenOffRecords`（核销借款记录）参数。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; ● 新增了 **起止时间** 过滤参数，以及按照 `createTime` 、`updateTime` 、`submitDate` 、`payDate` 参数排序。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; ● 新增了 `specificationId`（**单据模板ID**）过滤参数。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; ● 新增了 `active`（**查询条件：单据是否删除**）过滤参数。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; ● 新增了支持返回 `PROCESSING`（**支付中**）状态的单据。<br/>
+  &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; ● 去掉了 `powercode`（**功能授权码**）参数。<br/>
+  [**1.2.0**](/docs/open-api/notice/update-log#120)&emsp;-> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

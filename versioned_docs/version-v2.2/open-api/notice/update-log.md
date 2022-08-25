@@ -15,6 +15,7 @@ timeline: true
 ## 1.10.1
 
 `2022-08-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.10`
+- 🆕 新增 [查询机票状态](/docs/open-api/mall/get-flight-ticket-journey-byId) 接口。
 - 🐞 更新 [获取单据列表](/docs/open-api/flows/get-forms-details-byStaff) 接口
   - 修复了根据 `specificationId`（单据模板ID）查询时，部分模板无法获取到数据的BUG。
 ---
