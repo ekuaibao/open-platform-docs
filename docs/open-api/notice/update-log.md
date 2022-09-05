@@ -12,12 +12,21 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.11.0
+
+`2022-09-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.11`
+- 🚀 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.2` 版本。
+    - 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
+    - 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。
+---
 ## 1.10.1
 
 `2022-08-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.10`
 - 🆕 新增 [查询机票状态](/docs/open-api/mall/get-flight-ticket-journey-byId) 接口。
 - 🐞 更新 [获取单据列表](/docs/open-api/flows/get-forms-details-byStaff) 接口
   - 修复了根据 `specificationId`（单据模板ID）查询时，部分模板无法获取到数据的BUG。
+
 ---
 ## 1.10.0
 

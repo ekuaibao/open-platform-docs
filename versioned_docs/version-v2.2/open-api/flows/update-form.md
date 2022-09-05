@@ -5,13 +5,14 @@ import Control from "@theme/Control";
 
 <Control
 method="PUT"
-url="/api/openapi/v2.1/flow/data/$`flowId`"
+url="/api/openapi/v2.2/flow/data/$`flowId`"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🚀 接口升级 `v2.2` 版本，修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。<br/>
   [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🐞 修复了业务对象 **赋值规则** 中配置了当前单据模板不存在的字段时更新单据报错的问题。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 优化了审批日志描述：`editorId` 不传时，默认记录为 **OpenAPI** 修改了单据。<br/>
@@ -89,7 +90,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="cover" label="全量更新" default>
 
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/data/$flowId?accessToken=ID_3DujXpr0kCg:xgJ3wajigF25H0&editorId=xgJ3wajigF25H0:ID_3zE5G_06Ww0' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.2/flow/data/$flowId?accessToken=ID_3DujXpr0kCg:xgJ3wajigF25H0&editorId=xgJ3wajigF25H0:ID_3zE5G_06Ww0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "form": {
@@ -170,7 +171,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/da
 <TabItem value="increment" label="增量更新">
 
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/flow/data/$ID_3MlFO4F8adf?accessToken=ID_3M6negW0Tfv:xgJ3wajigF25H0&editFlag=increment&editorId=xgJ3wajigF25H0:dbc3wajigF1UH0' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.2/flow/data/$ID_3MlFO4F8adf?accessToken=ID_3M6negW0Tfv:xgJ3wajigF25H0&editFlag=increment&editorId=xgJ3wajigF25H0:dbc3wajigF1UH0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "form": {

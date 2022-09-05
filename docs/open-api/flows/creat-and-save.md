@@ -12,6 +12,7 @@ url="/api/openapi/v2.2/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。<br/>
   [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🚀 接口升级 `v2.2` 版本，新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 优化了部分场景下，失败响应信息不明确的问题。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● 文本、日期类型必填字段不传时，优化失败响应提示信息<br/>
