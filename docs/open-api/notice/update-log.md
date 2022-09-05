@@ -15,10 +15,15 @@ timeline: true
 ## 1.11.0
 
 `2022-09-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.11`
-- 🚀 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.2` 版本。
-    - 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。
+- 🆕 新增 [获取【纷享销客】业务对象数据](/docs/open-api/datalink-extend/get-entity-fxiaoke) 接口。
+- 🚀 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.2` 版本
+  - 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
-    - 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。
+  - 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。
+- 🚀 新增 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口 `v1.1` 版本
+  - 修复了 `pathType` = `id` 时，需要传ID全部门路径的问题，只传最终部门ID即可。
+  - 修复了 `body` 参数传空 `{}` 或者 `contents` 参数拼错，接口响应成功的BUG。
+
 ---
 ## 1.10.1
 

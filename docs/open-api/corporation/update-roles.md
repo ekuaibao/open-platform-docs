@@ -4,13 +4,15 @@ import Control from "@theme/Control";
 
 <Control
 method="PUT"
-url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
+url="/api/openapi/v1.1/roledefs/$`roledefId`/staffs"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🚀 接口升级 `v1.1` 版本，修复了 `pathType` = `id` 时，需要传全部门路径ID的问题，只传最终部门ID即可。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了 `body` 参数传空 `{}` 或者 `contents` 参数拼错，接口响应成功的BUG。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 修复了首次调用接口报错后，使用相同错误参数再次调用时，返回成功响应的BUG。<br/>
   [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
   &emsp; &emsp; &emsp; -> 🐞 兼容老版本，更新「**普通角色**」时 `path` 参数非必填。<br/>
@@ -44,7 +46,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **contents**          | Array   | 角色配置情况     | 必填   | - | 每一个元素对应「角色管理」界面右侧列表的一行 |
 | **&emsp; ∟ pathType** | String | `name` 或 `code` 或 `id`  | 非必填 | name | 当 `pathType` = `name` 或不传时，`path` 传入部门或自定义档案项名称<br/>当 `pathType` = `code` 时，`path` 传入部门或自定义档案项编码<br/>当 `pathType` = `id` 时，`path` 传入部门或自定义档案项ID |
-| **&emsp; ∟ path**     | Array  | 部门或自定义档案值 | 必填 | - | 传入内容参考 `pathType`，传入对应类型的 [全路径参数](/docs/open-api/corporation/question-answer)<br/>**角色类型为「普通角色」时非必填** |
+| **&emsp; ∟ path**     | Array  | 部门或自定义档案值 | 必填 | - | 传入内容参考 `pathType`，传入对应类型的 [全路径参数](/docs/open-api/corporation/question-answer)<br/>**`pathType` = `id` 时只传最终路径，角色类型为「普通角色」时非必填** |
 | **&emsp; ∟ staffs**   | Array  | 员工集合         | 必填 | - | **传入 `[]` 时会删除 `path` 值所对应的这条数据**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
 
 :::tip
@@ -60,7 +62,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="id" label="id" default>
 
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BFuV7KbNDw:bwa3wajigF0WH0&staffBy=id' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BFuV7KbNDw:bwa3wajigF0WH0&staffBy=id' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "contents": [  //角色配置情况
@@ -86,7 +88,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
         {
             "pathType": "id",                //当pathType传id时，path传入部门ID或者自定义档案项ID
             "path": [
-                "bwa3wajigF0WH0","bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID全路径
+                "bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID，无需全路径的部门ID
             ],
             "staffs": [
                 "bwa3wajigF0WH0:ID_3lokDfb1p5w"  //员工ID
@@ -99,7 +101,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
 <TabItem value="sourceId" label="sourceId">
 
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=sourceId' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=sourceId' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "contents": [  //角色配置情况
@@ -125,7 +127,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
         {
             "pathType": "id",                //当pathType传id时，path传入部门ID或者自定义档案项ID
             "path": [
-                "bwa3wajigF0WH0","bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID全路径
+                "bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID，无需全路径的部门ID
             ],
             "staffs": [
                 "ID_3lokDfb1p5w"             //员工USERID
@@ -138,7 +140,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
 <TabItem value="code" label="code">
 
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=code' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=code' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "contents": [  //角色配置情况
@@ -164,7 +166,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
         {
             "pathType": "id",                //当pathType传id时，path传入部门ID或者自定义档案项ID
             "path": [
-                "bwa3wajigF0WH0","bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID全路径
+                "bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID，无需全路径的部门ID
             ],
             "staffs": [
                 "9458"                       //员工CODE（工号）
@@ -177,7 +179,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
 <TabItem value="cellphone" label="cellphone">
 
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=cellphone' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=cellphone' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "contents": [  //角色配置情况
@@ -203,7 +205,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
         {
             "pathType": "id",                //当pathType传id时，path传入部门ID或者自定义档案项ID
             "path": [
-                "bwa3wajigF0WH0","bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID全路径
+                "bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID，无需全路径的部门ID
             ],
             "staffs": [
                 "15810011001"                //员工手机号
@@ -216,7 +218,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
 <TabItem value="email" label="email">
 
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=email' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3BJKZuv8iow:bwa3wajigF0WH0&staffBy=email' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "contents": [  //角色配置情况
@@ -242,7 +244,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/
         {
             "pathType": "id",                //当pathType传id时，path传入部门ID或者自定义档案项ID
             "path": [
-                "bwa3wajigF0WH0","bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID全路径
+                "bwa3wajigF0WH0:ID_3wUvB7G2d3w" //部门ID，无需全路径的部门ID
             ],
             "staffs": [
                 "youxiang3@123.com"          //员工邮箱
@@ -266,6 +268,7 @@ code 204
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
+| **400** | - | contents参数不能为空 | 请确认 `contents` 参数是否拼写正确 | 
 | **403** | - | 没有权限同步此角色 | 请确认所操作的角色数据来源是否为【**API导入**】 | 
 | **412** | - | 找不到角色        | 请确认 `roledefId`（角色ID）是否正确或存在 | 
 | **412** | - | 数据错误:[0:路径不存在[部门], 0:人员不存在[xxxxxxxxx:xxxx]] | 请确认 `path`（部门或自定义档案值）是否为完整路径参数<br/>请确认员工信息是否正确 | 

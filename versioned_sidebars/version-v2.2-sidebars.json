@@ -249,6 +249,7 @@
         "open-api/datalink-extend/get-entity-invoic-details-batch",
         "open-api/datalink-extend/get-entity-invoice-img",
         "open-api/datalink-extend/riskTag",
+        "open-api/datalink-extend/get-entity-fxiaoke",
         "open-api/datalink-extend/get-entity-private-car",
         "open-api/datalink-extend/get-entity-ele",
         "open-api/datalink-extend/get-entity-ik-crm",

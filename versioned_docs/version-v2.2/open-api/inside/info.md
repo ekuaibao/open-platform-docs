@@ -30,6 +30,7 @@ authors: [冯继成]
 ### [创建业务对象台账](/docs/open-api/inside/inside-createLedger)
 ### [获取业务对象台账](/docs/open-api/inside/get-entity-leader)
 ### [获取业务对象实例信息(自定义字段)](/docs/open-api/inside/get-entity-object-searchAnslysis)
+### [获取【行程管理/订单管理】业务对象数据](/docs/open-api/inside/get-entity-travelManager)
 
 ---
 ## 工具接口
