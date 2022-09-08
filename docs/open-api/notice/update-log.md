@@ -23,6 +23,8 @@ timeline: true
 - 🚀 新增 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口 `v1.1` 版本
   - 修复了 `pathType` = `id` 时，需要传ID全部门路径的问题，只传最终部门ID即可。
   - 修复了 `body` 参数传空 `{}` 或者 `contents` 参数拼错，接口响应成功的BUG。
+- 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments) 、[获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items) 、[获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
+  - 优化了成功响应数据按照 `updateTime`（更新时间）正序排序。
 
 ---
 ## 1.10.1

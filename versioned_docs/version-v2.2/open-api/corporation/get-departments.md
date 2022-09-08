@@ -11,6 +11,7 @@ url="/api/openapi/v1/departments"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 优化了成功响应数据按照 `updateTime`（更新时间）正序排序。<br/>
   [**1.6.0**](/docs/open-api/notice/update-log#160) -> 🐞 **成功响应** 中增加 `order`（排序序号）参数。<br/>
   [**1.1.0**](/docs/open-api/notice/update-log#110) -> 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
 
