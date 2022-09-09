@@ -11,7 +11,8 @@ url="/api/mall-openapi/open-api/finance/bill/findBillDetailById"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.1**](/docs/open-api/notice/update-log#161) -> 🆕 新增了本接口。<br/>
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 接口【**成功响应**】新增了 `bookerPhone`（预订人手机号）、`realTicketStart`（用车实际上车点）、`realTicketEnd`（用车实际下车点）、`costProject`（成本归属项目）4个非必返回参数。<br/>
+  [**1.6.1**](/docs/open-api/notice/update-log#161) &emsp; -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
@@ -105,7 +106,11 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/mall-openapi/open
             "paymentMethod": "企业",              //付款方式
             "payWayName": "后结账户",             //支付账户
             "costUnderDep": "【测试】玛格丽特",   //成本归属部门
-            "legalEntity": null                  //法人实体
+            "legalEntity": null,                 //法人实体
+            "bookerPhone": "18311111111",        //预订人手机号
+            "realTicketStart": "北京市昌平区龙泽园街道XXX",//用车实际上车点
+            "realTicketEnd": "13号线/龙泽地铁站A北口",    //用车实际下车点
+            "costProject": "项目1"                       //成本归属项目
         },
         {
             "id": 171692606,
@@ -230,6 +235,10 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/mall-openapi/open
 | **&emsp; ∟ payWayName**          | String      | 是 | 支付账户 |
 | **&emsp; ∟ costUnderDep**        | String      | 否 | 成本归属部门 |
 | **&emsp; ∟ legalEntity**         | String      | 否 | 法人实体 |
+| **&emsp; ∟ bookerPhone**         | String      | 否 | 预订人手机号 |
+| **&emsp; ∟ realTicketStart**     | String      | 否 | 用车实际上车点 |
+| **&emsp; ∟ realTicketEnd**       | String      | 否 | 用车实际下车点 |
+| **&emsp; ∟ costProject**         | String      | 否 | 成本归属项目 |
 
 ### 产品类型对照表
 | productTypeId | 名称
