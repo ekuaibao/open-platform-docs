@@ -22,9 +22,10 @@ timeline: true
   - 修复了 `pathType` = `id` 时，需要传ID全部门路径的问题，只传最终部门ID即可。
   - 修复了 `body` 参数传空 `{}` 或者 `contents` 参数拼错，接口响应成功的BUG。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
-  - 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。
+    - 新增了**创建草稿状态单据**（`isCommit` = `false`）时，`payeeId`（收款人信息ID）非必填的场景。
+    - 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。
 - 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments) 、[获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items) 、[获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
-  - 优化了成功响应数据按照 `updateTime`（更新时间）正序排序。
+  - 新增了 `orderBy` 和 `orderByType` 参数，成功响应数据可按照 `updateTime`（更新时间）正序排序。
 - 🐞 更新 [获取企业对账单详情](/docs/open-api/mall/find-billDetail-byId) 接口
   - 接口【**成功响应**】新增了 `bookerPhone`（预订人手机号）、`realTicketStart`（用车实际上车点）、`realTicketEnd`（用车实际下车点）、`costProject`（成本归属项目）4个非必返回参数。
 

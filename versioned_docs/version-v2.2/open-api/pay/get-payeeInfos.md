@@ -12,7 +12,7 @@ url="/api/openapi/v2/payeeInfos"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 优化了成功响应数据按照 `updateTime`（更新时间）正序排序。<br/>
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，成功响应数据可按照 `updateTime`（更新时间）正序排序。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180) &emsp; -> 🐞 修复了获取 `WEIXIN`（微信）、`OTHER`（其他）类型收款账户时，`certificateType`（证件类型 ）、`certificateNo`（证件号码）返回空的BUG。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🆕 新增了 `active` 参数描述，并且响应数据中增加了 `active` 参数。<br/>
   [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🆕 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
@@ -34,6 +34,8 @@ url="/api/openapi/v2/payeeInfos"
 | **active**      | Boolean | 账户是否启用  | 非必填 | false | `true` : 启用 &emsp; `false` : 停用 |
 | **startDate**   | String | 查询开始时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 | **endDate**     | String | 查询结束时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
+| **orderBy**     | String  | 排序字段    | 非必填 | - | `updateTime` : 更新时间 |
+| **orderByType** | String  | 排序方式    | 非必填 | asc | `asc` ：正序<br/>`desc` ：倒序 |
 
 :::tip
 - `active` 参数传值分三种情况：
@@ -49,9 +51,7 @@ url="/api/openapi/v2/payeeInfos"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfos?accessToken=ID_3uUlNBK01fM:PCx3rwm3aA00qM&count=100&start=0&names=&cardNos=&ids=&active=true&startDate=2022-01-17 18:08:07&endDate=' \
---header 'content-type: application/json' \
---header 'Accept: application/json'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfos?accessToken=ID01iWYs8eUjHV:xgJ3wajigF25H0&start=0&count=100&names&cardNos&ids&active=true&orderBy=updateTime&orderByType=desc'
 ```
 
 ## 成功响应
@@ -65,8 +65,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "name": "He",            //开户名称
             "cardNo": "17000000000", //银行卡号或钱包号
             "type": "个人账户",       //账户类型（个人账户、对公账户）
-            "createTime": 1588651544665, //创建时间
-            "updateTime": 1588651544665, //更新时间
+            "createTime": 1645605250592, //创建时间
+            "updateTime": 1645605250592, //更新时间
             "province": "",          //开户省份
             "city": "",              //开户城市
             "bank": "支付宝",        //开户行
@@ -96,8 +96,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "name": "张杰",
             "cardNo": "111",
             "type": "个人账户",
-            "createTime": 1585017203965, //创建时间
-            "updateTime": 1585017203965, //更新时间
+            "createTime": 1644398058965, //创建时间
+            "updateTime": 1644398058965, //更新时间
             "province": "广东省",
             "city": "深圳市",
             "bank": "建设银行",

@@ -12,7 +12,8 @@ url="/api/openapi/v2.2/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。<br/>
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了**创建草稿状态单据**（`isCommit` = `false`）时，`payeeId`（收款人信息ID）非必填的场景。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。<br/>
   [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🚀 接口升级 `v2.2` 版本，新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 优化了部分场景下，失败响应信息不明确的问题。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● 文本、日期类型必填字段不传时，优化失败响应提示信息<br/>
@@ -54,7 +55,7 @@ url="/api/openapi/v2.2/flow/data"
 |**&emsp; ∟ expenseDate**                        | String | 报销日期        | 非必填 | - | 毫秒级时间戳<br/>参数不传时，默认为 **当前日期** |
 |**&emsp; ∟ expenseDepartment**                  | String | 报销部门ID      | 非必填 | - | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取<br/>参数不传时，默认为 **提交人的默认部门** |
 |**&emsp; ∟ description**                        | String | 描述           | 非必填 | - | 描述 |
-|**&emsp; ∟ payeeId**                            | String | 收款人信息ID    | 必填   | - | 通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取 |
+|**&emsp; ∟ payeeId**                            | String | 收款人信息ID    | 必填   | - | 通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取<br/>`isCommit` = `false`（保存草稿）时**非必填** |
 |**&emsp; ∟ specificationId**                    | String | 单据模板ID      | 必填  | - | 通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 获取 **单据模板ID**<br/>然后通过 [根据模版ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取 **创建单据的模板ID** |
 |**&emsp; ∟ expenseLink**                        | String | 关联申请        | 非必填 | - | 需要关联的申请单ID |
 |**&emsp; ∟ details**                            | Array  | 费用明细        | 必填  | - | 费用明细 |
