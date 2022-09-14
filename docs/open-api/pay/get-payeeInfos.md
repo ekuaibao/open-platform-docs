@@ -12,7 +12,7 @@ url="/api/openapi/v2/payeeInfos"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，成功响应数据可按照 `updateTime`（更新时间）正序排序。<br/>
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180) &emsp; -> 🐞 修复了获取 `WEIXIN`（微信）、`OTHER`（其他）类型收款账户时，`certificateType`（证件类型 ）、`certificateNo`（证件号码）返回空的BUG。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🆕 新增了 `active` 参数描述，并且响应数据中增加了 `active` 参数。<br/>
   [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🆕 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
@@ -35,7 +35,7 @@ url="/api/openapi/v2/payeeInfos"
 | **startDate**   | String | 查询开始时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 | **endDate**     | String | 查询结束时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 | **orderBy**     | String  | 排序字段    | 非必填 | - | `updateTime` : 更新时间 |
-| **orderByType** | String  | 排序方式    | 非必填 | asc | `asc` ：正序<br/>`desc` ：倒序 |
+| **orderByType** | String  | 排序方式    | 非必填 | asc | `asc` ：正序 &emsp; `desc` ：倒序 |
 
 :::tip
 - `active` 参数传值分三种情况：
@@ -64,7 +64,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "id": "_iIaLyGGdM3I00",  //收款账户ID
             "name": "He",            //开户名称
             "cardNo": "17000000000", //银行卡号或钱包号
-            "type": "个人账户",       //账户类型（个人账户、对公账户）
+            "type": "个人账户",      //账户类型（个人账户、对公账户）
             "createTime": 1645605250592, //创建时间
             "updateTime": 1645605250592, //更新时间
             "province": "",          //开户省份

@@ -11,7 +11,7 @@ url="/api/openapi/v1/dimensions/items"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，成功响应数据可按照 `updateTime`（更新时间）正序排序。<br/>
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
   [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
   [**0.7.136**](/docs/open-api/notice/update-log#07136) -> 🆕 新增了支持按 `dimensionId`（档案类别ID）参数过滤数据。<br/>
 
@@ -29,7 +29,7 @@ url="/api/openapi/v1/dimensions/items"
 | **startDate**   | String | 查询开始时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 | **endDate**     | String | 查询结束时间 | 非必填 | - | 按数据 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 | **orderBy**     | String  | 排序字段    | 非必填 | - | `updateTime` : 更新时间 |
-| **orderByType** | String  | 排序方式    | 非必填 | asc | `asc` ：正序<br/>`desc` ：倒序 |
+| **orderByType** | String  | 排序方式    | 非必填 | asc | `asc` ：正序 &emsp; `desc` ：倒序 |
 
 ## CURL
 ```shell
@@ -43,10 +43,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
     "items": [
         {
             "id": "ID_3LRUarl0DDv",               //档案值ID
-            "name": "项目5",                       //档案值名称
+            "name": "项目5",                      //档案值名称
             "active": true,                       //是否有效
             "code": "CODE5",                      //档案值编码
-            "dimensionId": "xgJ3wajigF25H0:项目",  //所属档案类别ID
+            "dimensionId": "xgJ3wajigF25H0:项目", //所属档案类别ID
             "parentId": "",                       //档案值的父级ID
             "updateTime": "2022-07-26 16:36:57",  //更新时间
             "createTime": "2022-07-26 16:36:11"   //创建时间
