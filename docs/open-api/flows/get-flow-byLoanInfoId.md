@@ -65,7 +65,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/loan/loan
         "repaymentDate": 9007199254740991,     //还款日期
         "loanDate": 1647446400000,             //借款日期
         "source": "REQUISITION",               //借款来源, REQUISITION：申请单，LOAN：借款（默认借款包是借款生成的）
-        "sharedOwnerIds": [],
+        "sharedOwnerIds": [],                  //借款共享人（包含借款人）
         "notConfirmOwnerIds": [],
         "loanInfoRemind": false,               //是否借款提醒
         "config": {                            //配置信息
