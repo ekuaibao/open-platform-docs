@@ -14,7 +14,7 @@ timeline: true
 ---
 ## 1.11.0
 
-`2022-09-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.11`
+`2022-09-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.62.1`
 - 🆕 新增 [获取【纷享销客】业务对象数据](/docs/open-api/datalink-extend/get-entity-fxiaoke) 接口。
 - 🚀 新增 [更新单据](/docs/open-api/flows/update-form) 接口 `v2.2` 版本
   - 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。
@@ -34,7 +34,7 @@ timeline: true
 ---
 ## 1.10.1
 
-`2022-08-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.10`
+`2022-08-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.56.1`
 - 🆕 新增 [查询机票状态](/docs/open-api/mall/get-flight-ticket-journey-byId) 接口。
 - 🐞 更新 [获取单据列表](/docs/open-api/flows/get-forms-details-byStaff) 接口
   - 修复了根据 `specificationId`（单据模板ID）查询时，部分模板无法获取到数据的BUG。
@@ -42,7 +42,7 @@ timeline: true
 ---
 ## 1.10.0
 
-`2022-08-23`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.10`
+`2022-08-23`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.55.1`
 - 🚀 新增 [创建单据](/docs/open-api/flows/creat-and-save) 接口 `v2.2` 版本
   - 新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。
 - 🐞 更新 [查询员工](/docs/open-api/corporation/get-staff-ids) 接口
@@ -58,7 +58,7 @@ timeline: true
 ---
 ## 1.9.0
 
-`2022-08-04`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.9`
+`2022-08-04`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.51.0`
 - 🐞 更新 [更新单据](/docs/open-api/flows/update-form) 接口
     - 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
@@ -82,7 +82,7 @@ timeline: true
 ---
 ## 1.8.1
 
-`2022-07-22`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+`2022-07-22`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.47.2`
 - 🚀 新增 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口 `v2.1` 版本
   - 修复了增量更新（`editFlag` = `increment`）时，`ownerId`、`visible` 不传，原数据被置空的BUG。
 - 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
@@ -95,7 +95,7 @@ timeline: true
 ---
 ## 1.8.0
 
-`2022-07-14`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.8`
+`2022-07-14`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.43.5`
 - 🆕 新增 [关闭申请事项](/docs/open-api/flows/close-requisition) 接口。
 - 🆕 新增 [删除角色下员工信息](/docs/open-api/corporation/delete-roles) 接口。
 - 🚀 新增 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口 `v1.1` 版本
@@ -132,7 +132,7 @@ timeline: true
 ---
 ## 1.7.2
 
-`2022-07-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+`2022-07-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.43.1`
 - 🚀 新增 [停用自定义档案项](/docs/open-api/dimensions/disable-dimension-items)、[启用自定义档案项](/docs/open-api/dimensions/enable-dimension-items) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
 - 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
@@ -149,7 +149,7 @@ timeline: true
 ---
 ## 1.7.1
 
-`2022-06-29`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+`2022-06-29`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.39.4`
 - 🆕 新增 [根据借款包ID获取借款包信息](/docs/open-api/flows/get-flow-byLoanInfoId) 接口
 - 🆕 新增 [根据还款记录ID获取还款信息](/docs/open-api/flows/get-repayment-record) 接口
 - 🆕 新增【**历史版本**】模块
@@ -171,7 +171,7 @@ timeline: true
 ---
 ## 1.7.0
 
-`2022-06-21`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.7`
+`2022-06-21`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.38.0`
 - 🆕 新增 [获取单据列表(新)](/docs/open-api/flows/get-forms-details-byStaff) 接口
   - 由原来的 [根据员工ID批量获取单据详情](/docs/open-api/flows/get-forms-details-byStaff) 接口更名并改造而来，不影响原来的使用，并扩充了新功能。
     - 新增了 **报销单、收款单** 类型返回数据中 `writtenOffRecords`（核销借款记录）参数。
@@ -209,7 +209,7 @@ timeline: true
 ---
 ## 1.6.3
 
-`2022-06-13`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
+`2022-06-13`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.35.2`
 - 🆕 新增 [批量新增收款账户](/docs/open-api/pay/batch-new-payeeInfo) 接口。
 - 🚀 新增 [新增收款账户](/docs/open-api/pay/new-payeeInfo)、[更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口 `v2.1` 版本
   - 新增了 `sort`（账号类别）参数，额外支持新增/更新 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。
@@ -221,7 +221,7 @@ timeline: true
 ---
 ## 1.6.2
 
-`2022-06-06`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
+`2022-06-06`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.31.4`
 - 🐞 更新 [获取自建应用授权](/docs/open-api/getting-started/platform-auth) 接口
   - 更新了 `appKey`（接入账号）、`appSecurity`（接入密码）接口参数备注和 **失败响应** 示例。
 - 🐞 更新 [获取企业对账单列表](/docs/open-api/mall/find-pageData-billId)、[获取企业对账单详情](/docs/open-api/mall/find-billDetail-byId) 接口
@@ -234,7 +234,7 @@ timeline: true
 ---
 ## 1.6.1
 
-`2022-06-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
+`2022-06-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.31.3`
 - 🆕 新增 [获取自建应用授权](/docs/open-api/getting-started/platform-auth) 接口。
 - 🆕 新增【**商城接口**】模块
   - 🆕 新增 [获取企业对账单列表](/docs/open-api/mall/find-pageData-billId) 接口。
@@ -251,7 +251,7 @@ timeline: true
 ---
 ## 1.6.0
 
-`2022-05-31`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
+`2022-05-31`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.31.1`
 
 - 🆕 新增 [获取付款账户](/docs/open-api/pay/get-payerInfos-search) 接口。
 - 🆕 新增 [新增付款账户](/docs/open-api/pay/new-payerInfo) 接口。
@@ -283,7 +283,7 @@ timeline: true
 ---
 ## 1.5.1
 
-`2022-05-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5.2`
+`2022-05-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.29.1`
 
 - 🆕 新增 [获取随手记数据](/docs/open-api/flows/get-notes) 接口。
 - 🆕 新增 [获取企业微信OpenUserId](/docs/open-api/tools/staffs-getOpenUserId) 接口。
@@ -305,7 +305,7 @@ timeline: true
 ---
 ## 1.5.0
 
-`2022-05-12`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5.2`
+`2022-05-12`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.28.2`
 
 - 🆕 【**所有接口**】增加了 **更新日志** 描述，方便查看接口上线版本和更新内容。
 - 🚀 新增 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口 `v1.1` 版本 
@@ -333,7 +333,7 @@ timeline: true
 ---
 ## 1.4.1
 
-`2022-04-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5.1`
+`2022-04-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.27.1`
 
 - 🐞 更新 [通讯录同步-常见问题总结](/docs/open-api/contacts/question-answer) 文档
   - 新增了问题总结**“调用【修改员工信息】时，接口响应成功，但员工信息未修改成功？”**。
@@ -352,7 +352,7 @@ timeline: true
 ---
 ## 1.4.0
 
-`2022-04-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.5.1`
+`2022-04-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.23.1`
 
 - 🚀 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
@@ -386,7 +386,7 @@ timeline: true
 
 ## 1.3.1
 
-`2022-03-31`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.4`
+`2022-03-31`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.20.2`
 
 - 🐞 更新 [开始使用通讯录同步](/docs/open-api/contacts/info) 文档
   - 更新了开通【**通讯录同步**】功能描述。
@@ -400,7 +400,7 @@ timeline: true
 ---
 ## 1.3.0
 
-`2022-03-24`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.4`
+`2022-03-24`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.18.1`
 
 - 🆕 新增 [新增角色](/docs/open-api/corporation/create-roledefs)、[更新角色](/docs/open-api/corporation/update-roledefs) 接口。
 - 🚀 新增 [获取企业下档案关系列表](/docs/open-api/recordLink/get-dimension-relation)、[获取企业下档案项数据](/docs/open-api/recordLink/query-all-relation-items) 接口 `v2.1` 版本
@@ -423,7 +423,7 @@ timeline: true
 ---
 ## 1.2.2
 
-`2022-03-14`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.3`
+`2022-03-14`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.16.5`
 
 - 🆕 新增 [获取所有开户网点信息](/docs/open-api/pay/get-all-branch) 接口。
 - 🐞 更新 [新增收款账户](/docs/open-api/pay/new-payeeInfo)、[更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口
@@ -442,7 +442,7 @@ timeline: true
 ---
 ## 1.2.1
 
-`2022-03-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.3`
+`2022-03-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.15.1`
 
 - 🚀 新增 [修改员工信息](/docs/open-api/contacts/update-staffs) 接口 `v1.1` 版本
   - 员工自定义字段值的保存做增量更新（`v1` 版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。
@@ -455,7 +455,7 @@ timeline: true
 ---  
 ## 1.2.0
 
-`2022-03-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.3`
+`2022-03-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.15.1`
 
 - 🆕 新增 [根据员工ID批量获取单据详情](/docs/open-api/flows/get-forms-details-byStaff) 接口。
 - 🆕 新增 [获取申请事项](/docs/open-api/flows/get-requisition-all) 接口。
@@ -482,7 +482,7 @@ timeline: true
 ---
 ## 1.1.1
 
-`2022-02-18`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.2`
+`2022-02-18`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.11.105`
 
 - 🐞 更新 [批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node) 接口
   - 优化了接口校验逻辑，报错时会准确描述具体出错的节点和参数。
@@ -492,7 +492,7 @@ timeline: true
 ---
 ## 1.1.0
 
-`2022-02-11`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.2`
+`2022-02-11`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.10.103`
 
 - 🚀 新增 [新建自定义档案项](/docs/open-api/dimensions/creat-dimension-items) 、[批量新建自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口 `v1.1` 版本
   - 新增了当 `fullVisible` = `false` 时，对 `staffs` 、`roles` 、`departments` 三个参数的必填及有效性校验。
@@ -505,7 +505,7 @@ timeline: true
 ---
 ## 1.0.5
 
-`2022-02-09`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
+`2022-02-09`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.9.3`
 
 - 🐞 优化【**企业收付款账户**】模块下全部接口文档的描述及排版。
 - 🐞 优化【**预算**】模块下全部接口文档的描述及排版。
@@ -514,7 +514,7 @@ timeline: true
 ---
 ## 1.0.4
 
-`2022-01-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
+`2022-01-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.9.0`
 
 - 🐞 优化【**自建应用**】模块下全部接口文档的描述及排版。
 - 🐞 优化【**扩展中心**】模块下全部接口文档的描述及排版。
@@ -527,7 +527,7 @@ timeline: true
 ---
 ## 1.0.3
 
-`2022-01-27`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
+`2022-01-27`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.9.0`
 
 - 🚀 新增 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 接口 `v1.1` 版本
   - 新增了对 `type`（全局字段类型）的参数校验，非备注类型时，报错 **”type参数不合法“**。
@@ -545,7 +545,7 @@ timeline: true
 ---
 ## 1.0.2
 
-`2022-01-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
+`2022-01-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.113`
 
 - 🐞 更新 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 接口
   - 新增了 `type` 参数所对应全局字段的位置图片。
@@ -554,7 +554,7 @@ timeline: true
 ---
 ## 1.0.1
 
-`2022-01-24`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
+`2022-01-24`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.112`
 
 - 🐞 更新 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 接口
   - 更新了 `type` 参数描述。
@@ -564,7 +564,7 @@ timeline: true
 ---
 ## 1.0.0
 
-`2022-01-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.1`
+`2022-01-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.109`
 
 - 🆕 【**文档多版本**】上线。
 - 🆕 新增 [根据模板组名称获取模板组信息](/docs/open-api/forms/get-specifications-byName) 接口。
@@ -579,14 +579,14 @@ timeline: true
 ---
 ## 0.7.165
 
-`2022-01-13`
+`2022-01-13`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.37`
 
 - 🆕 【**更新日志**】上线。
 
 ---
 ## 0.7.164
 
-`2022-01-12`
+`2022-01-12`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.34`
 
 - 🐞 更新 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口 
   - **申请单** 类型响应数据中新增了 `linkRequisitionInfo`（补充申请单的原单据ID）描述。
@@ -598,7 +598,7 @@ timeline: true
 ---
 ## 0.7.163
 
-`2022-01-07`
+`2022-01-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.30`
 
 - 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口
   - 新增了 `approvalUrl`（审批完成后跳转地址）参数。
@@ -608,7 +608,7 @@ timeline: true
 ---
 ## 0.7.162
 
-`2022-01-07`
+`2022-01-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.30`
 
 - 🆕 新增 [刷新授权(指定有效时间)](/docs/open-api/getting-started/refresh-auth-expireDate) 接口。
 - 🐞 更新 [刷新授权](/docs/open-api/getting-started/refresh-auth) 接口
@@ -617,14 +617,14 @@ timeline: true
 ---
 ## 0.7.161
 
-`2021-12-30`
+`2021-12-30`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.24`
 
 - 🆕 新增 [获取已激活员工列表](/docs/open-api/corporation/get-all-auth-staffs) 接口。
 
 ---
 ## 0.7.160
 
-`2021-12-28` 
+`2021-12-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.22`
 
 - 🆕 新增 [根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 接口。
 - 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
@@ -633,21 +633,21 @@ timeline: true
 ---
 ## 0.7.159
  
-`2021-12-23`
+`2021-12-23`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.18`
 
 - 🆕 新增 [根据ID获取自定义档案项](/docs/open-api/dimensions/get-dimension-items-byId) 接口。
 
 ---
 ## 0.7.158
 
-`2021-12-21` 
+`2021-12-21`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.15`
 
 - 🆕 新增 [获取指定状态单据列表(包含已删除单据)](/docs/open-api/history/flows/get-forms-sequences-byState) 接口。
 
 ---
 ## 0.7.157
 
-`2021-12-10` 
+`2021-12-10`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.8.0`
 
 - 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new) 文档
   - 新增了 **重试时间间隔** 和 **日志类型展示** 介绍。
@@ -655,14 +655,14 @@ timeline: true
 ---
 ## 0.7.156
  
-`2021-12-02` 
+`2021-12-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.7.116`
 
 - 🆕 新增 [员工离职交接](/docs/open-api/contacts/relay-staff) 接口。
 
 ---
 ## 0.7.155
 
-`2021-11-24` 
+`2021-11-24`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.7.107`
 
 - 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 接口
   - 新增了 `active`（是否启用）参数过滤员工列表。
@@ -670,14 +670,14 @@ timeline: true
 ---
 ## 0.7.154
 
-`2021-11-15` 
+`2021-11-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.7.52`
 
 - 🆕 新增 [获取指定员工对应权限的预算节点列表](/docs/open-api/budget/get-BudgetsDetails-ByStaff) 接口。 
 
 ---
 ## 0.7.153
 
-`2021-11-02` 
+`2021-11-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.7.30`
 
 - 🆕 新增 [Postman使用](/docs/open-api/getting-started/postman-use) 文档。
 - 🆕 新增 [获取业务对象执行计划](/docs/open-api/datalink/get-entity-plan) 接口。
@@ -685,7 +685,7 @@ timeline: true
 ---
 ## 0.7.152
  
-`2021-10-29`    
+`2021-10-29`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.7.27`
 
 - 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口
   - 更新了接口参数描述及注意事项。 
@@ -693,7 +693,7 @@ timeline: true
 ---
 ## 0.7.151
 
-`2021-10-25`   
+`2021-10-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.7.19`
 
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口 
   - 更新了接口参数描述。
@@ -701,7 +701,7 @@ timeline: true
 ---
 ## 0.7.150
 
-`2021-10-21`   
+`2021-10-21`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.7.15`
 
 - 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new) 文档
   - 新增了 **HTTP200**、**HTTP201** 成功状态码。
@@ -709,14 +709,14 @@ timeline: true
 ---
 ## 0.7.149
 
-`2021-10-20`
+`2021-10-20`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.7.11`
 
 - 🆕 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields) 接口。	
 
 ---
 ## 0.7.148
 
-`2021-10-15`     
+`2021-10-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.7.1`
 
 - 🐞 更新 [新增预算包](/docs/open-api/budget/add-budget) 接口
   - 新增了接口注意事项。
@@ -725,7 +725,7 @@ timeline: true
 ---
 ## 0.7.147
 
-`2021-10-13`  
+`2021-10-13`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.6.41`
 
 - 🐞 更新 [新增预算包](/docs/open-api/budget/add-budget) 接口
   - 更新了接口参数描述。
@@ -733,14 +733,14 @@ timeline: true
 ---
 ## 0.7.146
 
-`2021-10-11`  
+`2021-10-11`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.6.40`
 
 - 🆕 新增 [共享申请事项](/docs/open-api/flows/share-requisition) 接口。
 
 ---
 ## 0.7.145
 
-`2021-10-09`     
+`2021-10-09`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.6.36`
 
 - 🐞 更新 [开始使用-常见问题总结](/docs/open-api/getting-started/question-answer)
   - 新增了 **重定向URL功能** 介绍。
@@ -748,7 +748,7 @@ timeline: true
 ---
 ## 0.7.144
 
-`2021-09-29`  
+`2021-09-29`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.6.30`
 
 - 🐞 更新 [开始使用-常见问题总结](/docs/open-api/getting-started/question-answer)
   - 更新了新版应用中心获取 **接入账号** 和 **密码** 路径。
@@ -756,14 +756,14 @@ timeline: true
 ---
 ## 0.7.143
 
-`2021-09-15`
+`2021-09-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.6.11`
 
 - 🆕 新增 [新建自定义档案类别](/docs/open-api/dimensions/create-dimensions) 接口。
 
 ---
 ## 0.7.142
 
-`2021-09-13` 
+`2021-09-13`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.6.7`
 
 - 🐞 更新 [获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items) 接口
   - 更新了接口参数描述。
@@ -771,14 +771,14 @@ timeline: true
 ---
 ## 0.7.141
 
-`2021-09-03` 
+`2021-09-03`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.8.20009`
 
 - 🆕 新增 [获取预算节点配置和路径信息](/docs/open-api/budget/search-budget-node) 接口。
 
 ---
 ## 0.7.140
 
-`2021-08-25`  
+`2021-08-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.8.12002`
 
 - 🆕 新增 [获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty) 接口。
 - 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口
@@ -787,7 +787,7 @@ timeline: true
 ---
 ## 0.7.139
 
-`2021-08-19`   
+`2021-08-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.8.10026`
 
 - 🆕 新增 [获取企业对账单管理的子对账单](/docs/open-api/flows/get-flow-by-checkingId) 接口
   - 可根据对账单ID获取企业对账单管理的子对账单有哪些。
@@ -795,7 +795,7 @@ timeline: true
 ---
 ## 0.7.138
  
-`2021-07-21`    
+`2021-07-21`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.8.2007`
 
 - 🆕 新增 [批量获取发票明细](/docs/open-api/datalink-extend/get-entity-invoic-details-batch) 接口。
 - 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口
@@ -806,7 +806,7 @@ timeline: true
 ---
 ## 0.7.137
 
-`2021-07-13`      
+`2021-07-13`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.8.1006`
 
 - 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
   - 新增了 `pathType`（路径类型）参数。
@@ -814,7 +814,7 @@ timeline: true
 ---
 ## 0.7.136
 
-`2021-06-29` 
+`2021-06-29`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.7.0`
 
 - 🐞 更新 [获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items)、[获取自定义档案项(带可见范围)](/docs/open-api/dimensions/get-dimension-items-visibility) 接口
   - 新增了支持按 `dimensionId`（档案类别ID）参数过滤数据。
@@ -822,7 +822,7 @@ timeline: true
 ---
 ## 0.7.135
 
-`2021-05-19` 
+`2021-05-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.4.46`
 
 - 🆕 新增 [【城市管理】](/docs/open-api/city/info) 模块
   - 新增 [获取城市组列表](/docs/open-api/city/get-city-group) 接口。
@@ -837,7 +837,7 @@ timeline: true
 ---
 ## 0.7.134
 
-`2021-05-17`  
+`2021-05-17`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.4.44`
 
 - 🆕 新增 [授权员工](/docs/open-api/contacts/auth-staffs) 接口
   - 批量 **激活/解除** 员工。
@@ -845,7 +845,7 @@ timeline: true
 ---
 ## 0.7.133
 
-`2021-05-14` 
+`2021-05-14`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.4.43`
 
 - 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs) 接口
   - 新增了控制发送邮件标识参数。
@@ -853,7 +853,7 @@ timeline: true
 ---
 ## 0.7.132
 
-`2021-05-08`  
+`2021-05-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.4.30`
 
 - 🐞 更新 [删除某档案关系下的档案项数据](/docs/open-api/recordLink/delete-dimension-relation-items) 接口
   - 新增了支持两种维度取交集删除。	
@@ -863,7 +863,7 @@ timeline: true
 ---
 ## 0.7.131
 
-`2021-03-05`  
+`2021-03-05`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.1.75`
 
 - 🆕 新增 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 接口。	
 - 🆕 新增 [获取统一开票信息](/docs/open-api/datalink-extend/get-entity-unify-invoice) 接口。	
@@ -872,7 +872,7 @@ timeline: true
 ---
 ## 0.7.130
 
-`2021-02-23`  	 
+`2021-02-23`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.1.61`
 
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
   - 新增了支持 **直接提审** 能力。
@@ -880,14 +880,14 @@ timeline: true
 ---
 ## 0.7.129
 
-`2021-02-18` 
+`2021-02-18`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.1.57`
 
 - 🆕 新增 [获取单据抄送消息](/docs/open-api/flows/get-carboncopy) 接口。
 
 ---
 ## 0.7.128
 
-`2021-02-07` 
+`2021-02-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.1.54`
 
 - 🐞 更新 [根据单据ID集合获取单据列表](/docs/open-api/history/flows/get-forms-sequences-ids)、[获取单据列表(包含已删除单据)](/docs/open-api/history/flows/get-forms-sequences) 接口
   - 相关单据响应中收款信息新增备注字段。	
@@ -895,14 +895,14 @@ timeline: true
 ---
 ## 0.7.127
 
-`2021-01-14`	  
+`2021-01-14`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：8.1.6`
 
 - 🆕 新增 [获取企业下档案项数据](/docs/open-api/recordLink/query-all-relation-items) 接口。	
 
 ---
 ## 0.7.126
 
-`2021-01-07` 
+`2021-01-07`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：6.9.63` 
 
 - 🐞 更新 [更新某档案关系下的档案项数据](/docs/open-api/recordLink/update-dimension-relation-items) 接口
   - 新增了支持 **全量/增量** 更新档案关系数据。 
@@ -910,7 +910,7 @@ timeline: true
 ---
 ## 0.7.125
 
-`2021-01-05` 
+`2021-01-05`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：6.9.60`
 
 - 🆕 新增 [批量新增自定义档案项](/docs/open-api/dimensions/batch-creat-dimension-items) 接口。 
 - 🆕 新增 [批量新增部门](/docs/open-api/contacts/batch-add-departments)	接口。	
@@ -920,14 +920,14 @@ timeline: true
 ---
 ## 0.7.124
 
-`2020-12-25` 
+`2020-12-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：6.9.49` 
 
 - 🆕 新增 [获取城市列表数据](/docs/open-api/basedata/get-basedata-city) 接口。	
 
 ---
 ## 0.7.123
 
-`2020-12-17` 
+`2020-12-17`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：6.9.42`
 
 - 🆕 新增 [获取行程管理业务对象列表](/docs/open-api/datalink/get-tripManager-order) 接口。	
 
