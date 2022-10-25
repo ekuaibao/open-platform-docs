@@ -183,6 +183,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/flowDeta
 
 :::tip
 - 响应数据中附件的 `key`、`fileId`、`fileName` 不是必返回的，有些附件可能没有这些字段。
+- 响应数据中附件的下载链接有效期 **1个小时**。
 - **费用明细** 中智能拍票录入的 `invoiceNumber`（发票代码）和 `invoiceCode`（发票号码）介绍见下面的表格。
 :::
 

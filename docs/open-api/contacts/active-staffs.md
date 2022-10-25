@@ -74,16 +74,18 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staf
             ],
             "defaultDepartment": "xgJ3wajigF25H0",    //默认部门ID
             "cellphone": "15588881010",               //手机号
-            "active": false,                          //true：在职，false：已离职
+            "active": false,                          //true：在职，false：已离职（账号逻辑删除，在系统上不可见）
             "userId": "ID_3Be8RKT03bg",               //第三方平台人员ID
-            "email": "15588881010@163.com",           //邮箱
+            "email": "15588881010@163.com",           //登录邮箱（大写字母全转换为小写字母）
+            "showEmail": "15588881010@163.com",       //员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                        //是否外部员工
-            "note": "Code修改",
-            "staffCustomForm": {                      //员工自定义字段集合
+            "authState": false,                       //是否激活，表示账号是否可用
+            "note": "Code修改",                       //备注
+            "staffCustomForm": {                      //员工自定义字段
                 "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
                 "postType": "ID_3D5RavktVRM",         //岗位
                 "rankType": "ID_3D5RavktTRM",         //职级
-                "u_张国阳001": "ID_3yrzERx1pf0"       //员工自定义字段
+                "u_张国阳001": "ID_3yrzERx1pf0"       //自定义字段
             },
             "updateTime": "2022-04-11 16:15:10",      //更新时间
             "createTime": "2022-03-16 11:34:42"       //创建时间
@@ -97,16 +99,18 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staf
             ],
             "defaultDepartment": "xgJ3wajigF25H0:ID_3zE5G_06Ow0",   //默认部门ID
             "cellphone": "14444444444",               //手机号
-            "active": false,                          //true：在职，false：已离职
-            "userId": "ID_3zE5G_06Ww0",               //第三方ID
-            "email": "14444444444@163.com",           //邮箱
+            "active": false,                          //true：在职，false：已离职（账号逻辑删除，在系统上不可见）
+            "userId": "ID_3zE5G_06Ww0",               //第三方平台人员ID
+            "email": "14444444444@163.com",           //登录邮箱（大写字母全转换为小写字母）
+            "showEmail": "14444444444@163.com",       //员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                        //是否外部员工
+            "authState": false,                       //是否激活，表示账号是否可用
             "note": "批量新增",
-            "staffCustomForm": {                      //员工自定义字段集合
+            "staffCustomForm": {                      //员工自定义字段
               "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
               "postType": "ID_3D5RavktVRM",           //岗位
               "rankType": "ID_3D5RavktTRM",           //职级
-              "u_张国阳001": "ID_3yrzERx1pf0"         //员工自定义字段
+              "u_张国阳001": "ID_3yrzERx1pf0"         //自定义字段
             },
             "updateTime": "2022-02-24 16:28:59",      //更新时间
             "createTime": "2022-02-24 16:24:55"       //创建时间

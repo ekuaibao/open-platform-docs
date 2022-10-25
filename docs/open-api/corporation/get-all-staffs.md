@@ -58,11 +58,12 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
             ],
             "defaultDepartment": "xgJ3wajigF25H0",  //默认部门ID
             "cellphone": "15811394394",             //手机号
-            "active": true,                         //是否停用
+            "active": true,                         //true：在职，false：已离职（账号逻辑删除，在系统上不可见）
             "userId": "BNMcEO0f11oo00",             //第三方平台人员ID
-            "email": null,                          //邮箱
+            "email": "cmzhouxiaofen@xxx.com.cn",    //登录邮箱（大写字母全转换为小写字母）
+            "showEmail": "Cmzhouxiaofen@xxx.com.cn",//员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                      //是否外部员工
-            "authState": true,                      //是否激活
+            "authState": true,                      //是否激活，表示账号是否可用
             "note": "备注",                         //备注
             "staffCustomForm": null,                //员工自定义字段
             "updateTime": "2022-09-05 10:43:56",    //更新时间
@@ -79,7 +80,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
             "cellphone": "18515257800",
             "active": true,
             "userId": "SOV3Dvxff1m$kw",
-            "email": null,
+            "email": "fd16@xxx.com.cn",
+            "showEmail": "fd16@xxx.com.cn",
             "external": false,
             "authState": true,
             "note": "备注",
@@ -98,7 +100,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
             "cellphone": "18879049226",
             "active": true,
             "userId": "ID01irfEujULyD",
-            "email": "18879049226@qq.com",
+            "email": "1364007577@bb.com",
+            "showEmail": "1364007577@bb.com",
             "external": false,
             "authState": true,
             "note": "备注",
@@ -117,7 +120,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
             "cellphone": "18879049225",
             "active": true,
             "userId": "ID01irfEujUKL5",
-            "email": "18879049225@qq.com",
+            "email": "fd18@xxx.com.cn",
+            "showEmail": "fd18@xxx.com.cn",
             "external": false,
             "authState": true,
             "note": "备注",
@@ -136,7 +140,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?ac
             "cellphone": "18879049224",
             "active": true,
             "userId": "ID01irfEujUJXx",
-            "email": "18879049224@qq.com",
+            "email": "mfujiancdm2@xxx.com.cn",
+            "showEmail": "mfujianCDM2@xxx.com.cn",
             "external": false,
             "authState": true,
             "note": "备注",

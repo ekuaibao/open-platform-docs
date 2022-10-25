@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/flowDetails/allLogs"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.11.1**](/docs/open-api/notice/update-log#1111)&emsp;-> 🐞 修复了管理员回退单据到上一节点，上一节点审批人驳回单据，接口报 **HTTP 400** 的BUG。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 修复了申请单变更申请，接口报 **HTTP 400** 的BUG。<br/>
   [**1.8.1**](/docs/open-api/notice/update-log#172) &emsp; -> 🐞 修复了单据撤回再提交，接口报 **HTTP 400** 的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了单据由管理员转交给他人后审批同意，接口报 **HTTP 500** 的BUG。<br/>

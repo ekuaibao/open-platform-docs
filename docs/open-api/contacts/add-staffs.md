@@ -68,7 +68,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
     "name":"张三", 
     "code":"36987",
     "cellphone":"15070403486",
-    "email":"2777481917@163.com",
+    "email":"Cmzhouxiaofeng@xxx.com.cn",
     "note":"备注",
     "defaultDepartment":"JOYbpjPP-E2Q00:pAwbwH_W7sec00",  //默认部门
     "departments":[                                       //所在部门
@@ -100,17 +100,18 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
     "value": {
         "id": "JOYbpjPP-E2Q00:IIEbwYgR2E5M00",  //员工ID
         "name": "张三",                         //员工姓名
-        "code": "36987",                        //员工工号
-        "departments": [                        //所在部门
+        "code": "36987",                       //员工工号
+        "departments": [                       //所在部门
             "JOYbpjPP-E2Q00:pAwbwH_W7sec00"
         ],
         "defaultDepartment": "JOYbpjPP-E2Q00:pAwbwH_W7sec00", //默认部门
         "cellphone": "15070403486",             //手机号
-        "staffCustomForm":null,                 //员工自定义字段
-        "active": true,                         //true：在职，false：已离职
+        "active": true,                         //true：在职，false：已离职（账号逻辑删除，在系统上不可见）
         "userId": "sQgbwYgR2E5s00",             //第三方平台人员ID
-        "email": "2777481917@163.com",          //邮箱
+        "email": "cmzhouxiaofeng@xxx.com.cn",   //登录邮箱（大写字母全转换为小写字母）
+        "showEmail": "Cmzhouxiaofeng@xxx.com.cn",//员工个人信息显示邮箱（大写字母保持不变）
         "external": false,                      //是否外部员工
+        "note": "备注",                         //备注
         "staffCustomForm": {                    //员工自定义字段
             "rankType":"lUcctXntW82A00",        //职级档案项ID        
             "postType":"ltUcxNyWSQ1o00",        //岗位档案项ID
@@ -127,7 +128,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
                 "standardScale": 2
             },
             "u_date1": 1624896000000
-        }
+        },
+        "updateTime": "2022-08-05 14:59:19",    //更新时间
+        "createTime": "2022-08-05 14:59:19"     //创建时间
     }
 }
 ```

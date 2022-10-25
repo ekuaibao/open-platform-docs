@@ -92,23 +92,27 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
     "value": {
         "id": "xgJ3wajigF25H0:ID_3Be8RKT03bg",  //员工ID
         "name": "赵六-改",                      //员工姓名
-        "code": "00005",                        //员工工号
-        "departments": [                        //所在部门
+        "code": "00005",                       //员工工号
+        "departments": [                       //所在部门
             "xgJ3wajigF25H0:ID_3zE5G_06Ow0"
         ],
         "defaultDepartment": "xgJ3wajigF25H0:ID_3zE5G_06Ow0", //默认部门ID
         "cellphone": "17600109458",             //手机号
-        "active": true,                         //是否停用
+        "active": true,                         //true：在职，false：已离职（账号逻辑删除，在系统上不可见）
         "userId": "ID_3kpneISgylw",             //第三方ID
-        "email": "",                            //邮箱
+        "email": "cmzhouxiaofen@xxx.com.cn",    //登录邮箱（大写字母全转换为小写字母）
+        "showEmail": "Cmzhouxiaofen@xxx.com.cn",//员工个人信息显示邮箱（大写字母保持不变）
         "external": false,                      //是否外部人员
+        "authState": true,                      //是否激活，表示账号是否可用
         "note": null,                           //备注
-        "staffCustomForm": {                    //员工自定义字段对象
+        "staffCustomForm": {                    //员工自定义字段
             "rankType": "ID_3jO67GBsl3I",       //职级
             "postType": "ID_3pp9B5CUgPg",       //岗位
             "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
-            "u_张国阳001": "ID_3yrzERx1pf0"     //员工自定义字段
-        }
+            "u_张国阳001": "ID_3yrzERx1pf0"     //自定义字段
+        },
+        "updateTime": "2022-08-05 14:59:19",    //更新时间
+        "createTime": "2022-08-05 14:59:19"     //创建时间
     }
 }
 ```

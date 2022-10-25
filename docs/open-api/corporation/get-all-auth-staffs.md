@@ -54,15 +54,19 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/au
             ],
             "defaultDepartment": "PCx3rwm3aA00qM:ID_3rw$2RXc5lM",  //默认部门
             "cellphone": "",                         //手机号
-            "active": true,                          //true：在职，false：已离职
+            "active": true,                          //true：在职，false：已离职（账号逻辑删除，在系统上不可见）
             "userId": "ID_3rAZNCY2U$g",              //第三方平台人员ID
-            "email": "17777777777@163.com",          //邮箱
+            "email": "cmzhouxiaofeng@xxx.com.cn",    //登录邮箱（大写字母全转换为小写字母）
+            "showEmail": "Cmzhouxiaofeng@xxx.com.cn",//员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                       //是否外部员工
+            "authState": true,                       //是否激活，表示账号是否可用
             "note": "notea",                         //备注
             "staffCustomForm": {                     //员工自定义字段
               "base": "[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",  //常驻地
               "u_数字字段": "1"
-            }
+            },
+            "updateTime": "2022-09-05 10:43:56",    //更新时间
+            "createTime": "2022-09-05 10:43:56"     //创建时间
         },
         {
             "id": "PCx3rwm3aA00qM:ID_3rAZNCY2X$g",
@@ -75,12 +79,16 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/au
             "cellphone": "18888888888",
             "active": true,
             "userId": "ID_3rAZNCY2W$g",
-            "email": "18888888888@163.com",
+            "email": "mshanxidd1@xxx.com.cn",
+            "showEmail": "mshanxidd1@xxx.com.cn",
             "external": false,
+            "authState": true,
             "note": null,
             "staffCustomForm": {
               "u_爱好": ""
-            }
+            },
+            "updateTime": "2022-10-25 04:10:09",
+            "createTime": "2021-11-03 00:11:08"
         }
     ]
 }

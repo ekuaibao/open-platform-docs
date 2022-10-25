@@ -123,9 +123,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
             ],
             "defaultDepartment": "Tdk3tgber501v0:ID_3tgaWMa0hjg",  //默认部门
             "cellphone": "18888881005",                            //手机号
-            "active": true,                                        //员工状态
+            "active": true,                                        //true：在职，false：已离职（账号逻辑删除，在系统上不可见）
             "userId": "P1005",                                     //第三方平台人员ID
-            "email": "18888881005@163.com",                        //邮箱
+            "email": "18888881005@163.com",                        //登录邮箱（大写字母全转换为小写字母）
+            "showEmail": "18888881005@163.com",                    //员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                                     //是否外部人员
             "note": "批量新增",                                    //备注
             "staffCustomForm": {                                   //员工自定义字段
@@ -134,7 +135,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
                 "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
                 "u_花名": "法外狂徒",                               //自定义字段
                 "u_项目": "ID_3tqvxwgjD6w"                          //项目
-            }
+            },
+            "updateTime": "2022-08-05 14:59:19",    //更新时间
+            "createTime": "2022-08-05 14:59:19"     //创建时间
         },
         {
             "id": "Tdk3tgber501v0:P1006",
@@ -148,6 +151,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
             "active": true,
             "userId": "P1006",
             "email": "18888881006@163.com",
+            "showEmail": "18888881006@163.com",
             "external": false,
             "note": "批量新增",
             "staffCustomForm": {
@@ -156,7 +160,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
                 "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",
                 "u_花名": "法外狂徒",
                 "u_项目": "ID_3tqvxwgjD6w"
-            }
+            },
+            "updateTime": "2022-10-25 17:29:04",
+            "createTime": "2022-10-25 17:29:04"
         }
     ]
 }

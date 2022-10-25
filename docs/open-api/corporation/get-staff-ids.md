@@ -58,26 +58,27 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
         {
             "id": "JOYbpjPP-E2Q00:pt4bu1ZI9s2000",  //员工ID
             "name": "二号员工",                     //员工姓名
-            "code": "1002",                         //员工工号
-            "departments": [                        //所属部门ID集合
+            "code": "1002",                        //员工工号
+            "departments": [                       //所属部门ID集合
                 "JOYbpjPP-E2Q00:ZNEbwH_W7sc000",
                 "JOYbpjPP-E2Q00:pAwbwH_W7sec00",
                 "JOYbpjPP-E2Q00"
             ],
             "defaultDepartment": "JOYbpjPP-E2Q00:ZNEbwH_W7sc000", //默认部门ID
             "cellphone": "18603000748",                           //手机号
-            "active": true,                                       //是否停用
+            "active": true,                                       //true：在职，false：已离职（账号逻辑删除，在系统上不可见）
             "userId": "-Nwbu1ZI9s1Y00",                           //第三方平台人员ID
-            "email": "",                                          //邮箱
-            "note": "备注",                                       //备注
-            "staffCustomForm":{                                               //员工自定义字段集合
+            "email": "cmzhouxiaofeng@xxx.com.cn",                 //登录邮箱（大写字母全转换为小写字母）
+            "showEmail": "Cmzhouxiaofeng@xxx.com.cn",             //员工个人信息显示邮箱（大写字母保持不变）
+            "external": false,                                    //是否外部员工
+            "authState": true,                                    //是否激活，表示账号是否可用
+            "note": "备注",                                        //备注
+            "staffCustomForm":{                                               //员工自定义字段
                 "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
                 "postType":"ltUcxNyWSQ1o00",                                  //岗位
                 "rankType":"lUcctXntW82A00",                                  //职级
                 "u_数字字段":"1"                                              //员工自定义字段
             },
-            "external": false,                        //是否外部员工
-            "authState": true,                        //激活状态，true：激活  false：未激活
             "updateTime": "2022-08-05 14:59:19",      //更新时间
             "createTime": "2022-08-05 14:59:19"       //创建时间
         }
