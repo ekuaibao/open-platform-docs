@@ -28,7 +28,7 @@ url="/api/openapi/v2/flow/data/submitFlow"
 |**isUrgent**                  | Boolean | 是否加急      | 必填   | - | `true` : 加急 &emsp; `false` : 不加急<br/>**仅当流程配置允许加急时，`isUrgent` 才可为 `true`** |
 |**urgentReason**              | String  | 加急原因      | 非必填 | - | 加急原因 |
 |**nodes**                     | Array   | 节点信息      | 必填   | - | 至少一个节点信息 |
-|**&emsp; ∟ configNodeId**    | String  | 配置节点ID    | 必填   | - | 通过 [获取流程实例](/docs/open-api/flows/get-flow) 获取【node】数组的 `id` 字段 |
+|**&emsp; ∟ configNodeId**    | String  | 配置节点ID    | 必填   | - | 通过 [获取流程实例](/docs/open-api/flows/get-flow) 获取【node】数组的 `configNodeId` 字段 |
 |**&emsp; ∟ approverId**      | String  | 审批人Id     | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
 |**&emsp; ∟ counterSigners**  | Array   | 会签审批人列表 | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
 |**&emsp; &emsp; ∟ signerId** | String  | 会签审批人ID  | 非必填  | - | 当设置会签审批人列表时候必填|

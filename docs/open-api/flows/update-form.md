@@ -12,6 +12,7 @@ url="/api/openapi/v2.2/flow/data/$`flowId`"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 修复了 `editFlag` = `increment`（增量更新）时，`loanWrittenOff`（核销借款）参数不传，数据会被清空的BUG。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🚀 接口升级 `v2.2` 版本，修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。<br/>
   [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🐞 修复了业务对象 **赋值规则** 中配置了当前单据模板不存在的字段时更新单据报错的问题。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
@@ -29,6 +30,7 @@ url="/api/openapi/v2.2/flow/data/$`flowId`"
 
 :::caution
 - 目前本接口只支持修改 **`draft` 草稿、`approving` 审批中、`paying` 待支付** 状态的单据，并且对应节点要配置 ”**允许审批人修改单据**“。
+- 使用 `editFlag` = `cover`（全量更新）时，单据中有核销借款数据，则 **`loanWrittenOff`（核销借款）参数必填，否则原数据会被清空**。
 :::
 
 ## Path Parameters
@@ -71,6 +73,8 @@ url="/api/openapi/v2.2/flow/data/$`flowId`"
 |**&emsp; &emsp; &emsp; ∟ consumptionReasons**  | String | 消费事由        | 非必填 | - | 消费事由 |
 |**&emsp; &emsp; &emsp; ∟ apportions**          | Array  | 分摊明细        | 非必填 | - | 根据单据模板决定 |
 |**&emsp; &emsp; &emsp; &emsp; ∟ apportionForm**| Object |	分摊明细具体信息 | 非必填 | - | 分摊明细具体信息 |
+|**params**                                      | Object | 单据其他信息     | 非必填 | - | 单据其他信息数据 |
+|**&emsp; ∟ loanWrittenOff**                     | Array  | 核销借款信息     | 非必填 | - | 详细参数见下方示例<br/>**全量更新时该参数必填，否则原数据会被清空** |
 
 :::tip
 - 与系统上的保存单据功能一样，按格式组织数据，更新单据信息，更新成功后会返回该单据实例信息。
@@ -439,3 +443,21 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.2/flow/da
 ```
 </TabItem>
 </Tabs>
+
+### (2) 核销借款字段
+字段的 `params` 里的 `loanWrittenOff` 为核销借款字段:
+```json
+"params": {
+    "loanWrittenOff": [                     //表示报销单中的核销借款字段
+        {
+            "loanInfoId": "ID_3sJUjsRJUrw", //借款包ID
+            "title": "测试",                //借款单标题
+            "repaymentDate": 1641724500000, //还款日期
+            "fromApply": false,
+            "flowId": "ID_3seTcgi0qrg",     //借款单ID
+            "hasImported": false,
+            "amount": "222"                 //核销金额
+        }
+    ]
+}
+```

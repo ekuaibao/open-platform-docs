@@ -71,7 +71,8 @@ url="/api/openapi/v2.2/flow/data"
 |**&emsp; &emsp; &emsp; ∟ consumptionReasons**   | String | 消费事由        | 非必填 | - | 消费事由 |
 |**&emsp; &emsp; &emsp; ∟ apportions**           | Array  | 分摊明细        | 非必填 | - | 根据单据模板决定 |
 |**&emsp; &emsp; &emsp; &emsp; ∟ apportionForm** |	Object | 分摊明细具体信息 | 非必填 | - | 分摊明细具体信息 |
-|**params**                                      | Object | 核销借款信息     | 非必填 | - | 详细参数见下方示例 |
+|**params**                                       | Object | 单据其他信息     | 非必填 | - | 单据其他信息数据 |
+|**&emsp; ∟ loanWrittenOff**                     | Array  | 核销借款信息     | 非必填 | - | 详细参数见下方示例<br/>**全量更新时该参数必填，否则原数据会被清空** |
 
 :::tip
 - 与系统上的保存单据功能一样，按格式组织数据，保存单据信息，保存成功后，会返回该单据实例信息。
@@ -88,7 +89,7 @@ url="/api/openapi/v2.2/flow/data"
 curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/data?accessToken=ID_3tLWHTx0B8g:PCx3rwm3aA00qM' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "form":{
+    "form":{
         "outerCode":"WB-10001",                       //外部系统单据编号
         "title":"测试日常报销单4",                     //单据标题
         "details":[                                   //费用明细
@@ -181,7 +182,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
                     "E_cb0dbe8855a794ff5800_name":"ZGY自定义3",
                     "E_cb0dbe8855a794ff5800_所在部门":"PCx3rwm3aA00qM"
                 },
-                "dataLinkTemplateId":"ID_3rW8lqul4Rw"
+                "dataLinkTemplateId":"ID_3rW8lqul4Rw"     //业务对象模板ID
             }
         ],
         "expenseDepartment":"PCx3rwm3aA00qM"   //报销部门
