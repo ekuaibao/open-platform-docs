@@ -31,7 +31,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`"
 
 ## CURL
 ```json
-curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/ID_3BKMdBcP07g?accessToken=ID_3BKMdBcO$7g:xgJ3wajigF25H0&name=ZGY职级预置角色1' \
+curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BKMdBcP07g?accessToken=ID_3BKMdBcO$7g:xgJ3wajigF25H0&name=ZGY职级预置角色1' \
 --header 'Content-Type: text/plain' \
 --header 'content-type: application/json'
 ```

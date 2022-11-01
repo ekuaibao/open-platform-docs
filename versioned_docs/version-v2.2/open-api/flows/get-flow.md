@@ -44,8 +44,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/flow/plan
                 "skippedType": "NO_SKIPPED",     //跳过类型【不跳过：NO_SKIPPED,匹配不到审批人：APPROVER_NOT_FOUND,通过角色或部门主管匹配不到审批人：APPROVER_NOT_FOUND_BY_ROLE,不具有该节点能力：NO_ABILITY】
                 "agreeType": "NO_AUTO_AGREE",    //自动同意类型【不自动同意：NO_AUTO_AGREE,自动同意失败：FAILED_AUTO_AGREE,审批人与提交人相同：APPROVER_SAME_AS_SUBMITTER,审批人重复：APPROVER_REPEATED】
                 "staffIds": null,                //当前节点候选人列表
-                "type": "ebot",                  //节点类型
-                "policy": null,                  //会签策略，当type="countersign"时，该字段有值
+                "type": "ebot",                  //节点类型，countersign：会签节点
+                "policy": null,                  //会签策略，ANY：表示或签；ALL：表示与签，当type="countersign"时，该字段有值
                 "skipWhenApproverNonMatched": false,            //匹配不到审批人时，是否跳过
                 "autoAgreeWhenApproverRepeated": false,         //审批人重复时，是否自动同意
                 "autoAgreeWhenApproverSameAsSubmitter": false,  //审批人与提交人相同时，是否自动同意
