@@ -4,8 +4,7 @@
 ## 什么是Postman？
 
 Postman 是一个用于构建和使用 API 的 API 平台。Postman 简化了 API 生命周期的每个步骤并简化了协作，因此您可以更快地创建更好的 API。<br/>
-下载地址：https://www.postman.com
-
+[Postman软件下载地址](https://www.postman.com)
 ![image](images/postman/下载地址.png)
 
 ---
@@ -71,5 +70,25 @@ Postman 是一个用于构建和使用 API 的 API 平台。Postman 简化了 AP
 
 ##### （2）导入接口集合
 ![image](images/postman/导入接口集合.png)
+
+---
+### 5.导入易快报接口集合并使用
+##### （1）下载整理好的易快报接口集合 （[易快报接口集合下载地址](https://hose2019.feishu.cn/drive/folder/fldcnCLGn8ucOYL9Icrvf3F9p0W?from=space_persnoal_filelist)）
+
+![image](images/postman/下载易快报接口集合.png)
+
+---
+
+##### （2）在Postman中导入易快报接口集合
+![image](images/postman/Postman导入全部接口.png)
+
+---
+##### （3）在Postman中配置环境变量
+![image](images/postman/配置环境变量.png)
+
+---
+##### （4）开始调用
+![image](images/postman/accessToken变量.png)
+![image](images/postman/选择环境变量.png)
 
 ---

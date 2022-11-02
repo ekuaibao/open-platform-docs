@@ -556,6 +556,15 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 "u_测试城市": "[{\"key\":\"3\",\"label\":\"北京市/东城区\"}]"
 ```
 
+:::tip
+- 参数拼接说明：<br/>
+  通过 **[获取城市列表数据](/docs/open-api/basedata/get-basedata-city)** 接口获取数据后，找到对应城市。
+    - `id` 对应 `key`
+    - `fullName` 对应 `label`
+
+![城市字段拼接示例](images/城市字段拼接示例.png)
+:::
+
 ### (9) 枚举类型字段
 字段的「type」为【select】，且「valueFrom」为【basedata.Enum.CabinType】或【basedata.Enum.TrainSeatType】或【basedata.Enum.CruiseCabinType】的，为枚举类型字段：
 ```json

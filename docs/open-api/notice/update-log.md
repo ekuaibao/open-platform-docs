@@ -12,9 +12,12 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
-## 1.12.0
+## 1.11.1
 
-`2022-12-01`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xx.x`
+`2022-11-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.74.1`
+- 🆕 新增 [易快报接口集合](/docs/open-api/getting-started/postman-use#5导入易快报接口集合并使用) ，可导入全部Openapi接口，直接使用
+- 🚀 新增 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 接口 `v1.1` 版本
+  - 新增了 `external`（是否外部员工）过滤参数，支持按照 **是否外部员工** 过滤。
 - 🐞 更新 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口
   - 修复了管理员回退单据到上一节点，上一节点审批人驳回单据，接口报 **HTTP 400** 的BUG。
 - 🐞 更新 [获取单据附件](/docs/open-api/flows/get-flows-attachment) 接口

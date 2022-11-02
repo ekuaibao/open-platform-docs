@@ -136,7 +136,7 @@ import TabItem from '@theme/TabItem';
                         }
                     }
                 ],
-                "payeeId": "ED0b7ANNOwlI00",    //收款人ID
+                "payeeId": "ED0b7ANNOwlI00",    //收款账户ID
                 "payMoney": {                   //支付金额
                     "standard": "33.00",
                     "standardUnit": "元",
@@ -389,7 +389,7 @@ import TabItem from '@theme/TabItem';
             "form": {
                 "code": "Z21000001",
                 "title": "测试付款",
-                "payeeId": "ID_3r0cTleWAZw",
+                "payeeId": "ID_3r0cTleWAZw",  //收款账户ID
                 "payMoney": {   //支付金额
                     "standard": "666",
                     "standardUnit": "元",
