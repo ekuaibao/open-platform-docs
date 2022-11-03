@@ -72,23 +72,26 @@ Postman 是一个用于构建和使用 API 的 API 平台。Postman 简化了 AP
 ![image](images/postman/导入接口集合.png)
 
 ---
-### 5.导入易快报接口集合并使用
-##### （1）下载整理好的易快报接口集合 （[易快报接口集合下载地址](https://hose2019.feishu.cn/drive/folder/fldcnCLGn8ucOYL9Icrvf3F9p0W?from=space_persnoal_filelist)）
+### 5.一键导入易快报接口集合并使用
+##### （1）下载整理好的易快报【接口集合】和【环境变量】（[下载地址](https://hose2019.feishu.cn/drive/folder/fldcnQiqSXImHLrjL0Kld4Gutgg)）
 
-![image](images/postman/下载易快报接口集合.png)
-
----
-
-##### （2）在Postman中导入易快报接口集合
-![image](images/postman/Postman导入全部接口.png)
+![image](images/postman/接口集合和环境变量.png)
 
 ---
-##### （3）在Postman中配置环境变量
-![image](images/postman/配置环境变量.png)
+
+##### （2）在Postman中导入易快报【接口集合】
+![image](images/postman/Postman导入全部接口.png)<br/>
+
+![image](images/postman/导入后的效果.png)
+
+---
+##### （3）同上在Postman中导入【环境变量】
+![image](images/postman/导入环境变量后效果.png)
 
 ---
 ##### （4）开始调用
-![image](images/postman/accessToken变量.png)
+![image](images/postman/accessToken变量.png)<br/>
+
 ![image](images/postman/选择环境变量.png)
 
----
+--- 
