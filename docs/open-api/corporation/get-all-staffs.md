@@ -4,7 +4,7 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1/staffs"
+url="/api/openapi/v1.1/staffs"
 />
 
 <details>
@@ -47,7 +47,7 @@ url="/api/openapi/v1/staffs"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs?accessToken=ID01iWYs8eUjHV:xgJ3wajigF25H0&start=1&count=5&active=true&external=false&orderBy=updateTime&orderByType=desc'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs?accessToken=ID01iWYs8eUjHV:xgJ3wajigF25H0&start=1&count=5&active=true&external=false&orderBy=updateTime&orderByType=desc'
 ```
 
 ## 成功响应
