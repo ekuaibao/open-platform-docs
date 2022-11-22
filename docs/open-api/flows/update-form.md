@@ -1,5 +1,5 @@
 # 更新单据
-数据结构和创建单据接口一样，此接口后面的字段说明，请参考创建单据接口。
+数据结构和创建单据接口一样，此接口后面的字段说明，请参考 [创建单据](/docs/open-api/flows/creat-and-save) 接口。
 
 import Control from "@theme/Control";
 

@@ -64,9 +64,9 @@ url="/api/openapi/v2.2/flow/data"
 |**&emsp; &emsp; ∟ feeTypeForm**                 | Object | 费用信息        | 必填  | - | 费用信息，具体传参请见获取费用模板接口返回值 |
 |**&emsp; &emsp; &emsp; ∟ amount**               | Object | 报销金额        | 必填  | - | 报销金额 |
 |**&emsp; &emsp; &emsp; ∟ feeDate**              | String | 费用日期        | 必填  | - | 毫秒级时间戳 |
-|**&emsp; &emsp; &emsp; ∟ invoiceForm**          | Object | 发票相关信息     | 非必填 | - | 根据单据模板决定 |
 |**&emsp; &emsp; &emsp; ∟ feeDetailPayeeId**     | String | 收款信息ID      | 非必填 | - | 多收款人模式下，**按明细/按收款信息汇总明细金额** 类型时 **必填**<br/>通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取 |
-|**&emsp; &emsp; &emsp; &emsp; ∟ type**          | String | 发票开票类型     | 必填  | - | 发票相关信息参数存在时有效<br/>`unify` : 统一开票 &emsp; `wait` : 待开发票<br/>`exist` : 已有发票 &emsp; `noExist` : 无发票<br/>`noWrite` : 无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
+|**&emsp; &emsp; &emsp; ∟ invoiceForm**          | Object | 发票相关信息     | 非必填 | - | 发票参数 |
+|**&emsp; &emsp; &emsp; &emsp; ∟ type**          | String | 发票开票类型     | 非必填  | - | `unify` : 统一开票 &emsp; `wait` : 待开发票<br/>`exist` : 已有发票 &emsp; `noExist` : 无发票<br/>`noWrite` : 无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
 |**&emsp; &emsp; &emsp; &emsp; ∟ attachments**   | Array  | 发票附件        | 非必填 | - | **无法对发票附件进行验真查重或者OCR处理**<br/>需要先通过 [上传附件](/docs/open-api/attachment/attachment-upload) 上传数据，然后使用接口返回值为参数 |
 |**&emsp; &emsp; &emsp; ∟ consumptionReasons**   | String | 消费事由        | 非必填 | - | 消费事由 |
 |**&emsp; &emsp; &emsp; ∟ apportions**           | Array  | 分摊明细        | 非必填 | - | 根据单据模板决定 |

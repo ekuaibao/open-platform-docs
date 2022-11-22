@@ -752,7 +752,7 @@ import TabItem from '@theme/TabItem';
             "plans": []
         }
     ]
-}]()
+}]
 ```
 </TabItem>
 <TabItem value="taxi" label="taxi">

@@ -67,10 +67,10 @@ url="/api/openapi/v2.1/datalink/add"
 | 金额 | "12.35" |  |
 | 金额(多币种) | "USD12.35" | 拼接结构：货币字母代码 + 金额值<br/>需要开通【**币种设置**】功能 |
 | 开关 | true |  |
-| 附件 | "{\"key\": \"openapib9e51730-f778-4b81-b108-d6ca27d44ad9-登录密码.txt\",<br/> \"fileId\": \"zEIb-kGNMsoc00\", \"fileName\": \"登录密码.txt\"}" | 转义后的json格式字符串<br/>多个附件时用 `;` 分隔<br/>**`fileName` 要避免使用 `;`，否则无法成功上传** |
+| 附件 | "{\"key\": \"openapib9e51730-f778-4b81-b108-d6ca27d44ad9-登录密码.txt\",<br/> \"fileId\": \"zEIb-kGNMsoc00\", \"fileName\": \"登录密码.txt\"}" | 转义后的json格式字符串<br/>多个附件时用 `;` 分隔<br/>**`fileName` 不要使用 `;` 否则无法成功上传** |
 | 人员(多选) | "Urf3lsFgBp00gw:Msy3lYjbQ103KM,Urf3lsFgBp00gw:mRI3oQU9lg02q0" | 多个人员时用 `,` 分隔 |
-| 业务对象(多选) | "ID_3Cy8NYL4rnM,ID_3Cy8NYL4BnM,ID_3Cy8NYL4wnM" | 多个业务对象时用 `,` 分隔   |
-| 城市 | "14" | 【获取城市列表数据】接口中响应数据的 `id`|
+| 业务对象(多选) | "ID_3Cy8NYL4rnM,ID_3Cy8NYL4BnM,ID_3Cy8NYL4wnM" | 多个业务对象时用 `,` 分隔 |
+| 城市 | "14" | [获取城市列表数据](/docs/open-api/basedata/get-basedata-city) 接口响应数据中的 `id` |
 
 ## CURL
 根据业务对象的 **数据权限**、**停用方式** 配置不同，所需Body Parameters的数据结构略有差异，请根据配置选择合适的示例。

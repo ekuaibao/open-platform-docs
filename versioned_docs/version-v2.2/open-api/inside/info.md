@@ -33,6 +33,10 @@ authors: [冯继成]
 ### [获取【行程管理/订单管理】业务对象数据](/docs/open-api/inside/get-entity-travelManager)
 
 ---
+## 扩展中心
+### [发票OCR识别+查重验真](/docs/open-api/datalink-extend/invoice-multiple_items)
+
+---
 ## 工具接口
 ### [处理EAI插件拉取不到单据最终态问题（已完成、单据当前状态）](/docs/open-api/inside/flowDetails-stuckFlow)
 ### [处理EAI插件拉取不到单据中间态问题（待支付、支付中）](/docs/open-api/inside/setDataBase)

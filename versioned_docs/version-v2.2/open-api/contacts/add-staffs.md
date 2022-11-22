@@ -52,8 +52,8 @@ url="/api/openapi/v1.1/staffs"
 
 :::tip
 - 员工ID生成格式规则：
-  - `useNewAccount` 不传或传 **false** 时，默认按照 **企业ID：userId** 格式进行拼接；
-  - `useNewAccount`传 **true** 时,系统会自动生成新的ID，按照 **企业ID：系统生成的ID** 格式进行拼接。
+  - `useNewAccount` 不传或传 **false** 时，默认按照 **企业ID:userId** 格式进行拼接
+  - `useNewAccount` 传 **true** 时，系统会自动生成新的ID，按照 **企业ID:系统生成的ID** 格式进行拼接
 
 - `base`（常驻地）参数拼接说明：<br/>
   通过 **[获取城市列表数据](/docs/open-api/basedata/get-basedata-city)** 接口获取数据后，找到对应城市。
