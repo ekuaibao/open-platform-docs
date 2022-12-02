@@ -126,14 +126,7 @@ import TabItem from '@theme/TabItem';
                             },
                             "consumptionReasons": ""          //消费原因
                         },
-                        "specificationId": "djg8LshfUkfM00:office:expense:f284154aee2445c230a436cc44798ada2becf250",    //费用类型模版ID
-                        "feeType": {
-                            "id": "djg8LshfUkfM00:office",  //费用类型ID
-                            "name": "办公|测试|测试|测试",   //费用类型名称
-                            "parentId": "",                 //父级费用类型ID，无表示一级类型
-                            "active": true,                 //是否启用，false=停用
-                            "code": "COST1"                 //费用类型编码
-                        }
+                        "specificationId": "djg8LshfUkfM00:office:expense:f284154aee2445c230a436cc44798ada2becf250"   //费用类型模版ID
                     }
                 ],
                 "payeeId": "ED0b7ANNOwlI00",    //收款账户ID
@@ -694,14 +687,7 @@ import TabItem from '@theme/TabItem';
                             "attachments": [],
                             "consumptionReasons": "11"
                         },
-                        "specificationId": "NOsaY-HisUbc00:receipt:ef71b5af6a4d1516f827d829fb6025fbd1cdc0a4",
-                        "feeType": {
-                            "id": "NOsaY-HisUbc00",
-                            "name": "813测试",
-                            "parentId": "",
-                            "active": true,
-                            "code": "COST16"
-                        }
+                        "specificationId": "NOsaY-HisUbc00:receipt:ef71b5af6a4d1516f827d829fb6025fbd1cdc0a4"
                     }
                 ],
                 "printCount": "0",

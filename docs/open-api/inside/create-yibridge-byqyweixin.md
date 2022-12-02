@@ -1,4 +1,5 @@
-# 配置企微单点原生授权信息
+# 配置新增或更新企微单点原生授权信息
+新增或更新企微单点原生授权信息时，以 `corpId`、`qwCorpId` 为依据，不存在就新增数据，存在则更新数据。
 
 import Control from "@theme/Control";
 

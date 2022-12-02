@@ -63,17 +63,19 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 - **非增值税发票** 无法保存发票明细信息
 :::
 
-| 字段名 | 对应发票类型 |
-| :---  | :---      |
-| **DIGITAL_NORMAL**  | 增值税电子普票 |
-| **DIGITAL_SPECIAL** | 增值税电子专票 |
-| **PAPER_NORMAL**    | 增值税纸质普票 |
-| **PAPER_SPECIAL**   | 增值税纸质专票 |
-| **PAPER_CAR**       | 机动车专用发票 |
-| **PAPER_ROLL**      | 卷式发票      |
-| **PAPER_FEE**       | 通行费发票    |
-| **BLOCK_CHAIN**     | 区块链发票    |
-| **SECOND_CAR**      | 二手车发票    |
+| 字段名                      | 对应发票类型        |
+|:-------------------------|:--------------|
+| **FULL_DIGITAl_NORMAL**  | 电子发票（普通发票）    |
+| **FULL_DIGITAl_SPECIAL** | 电子发票（增值税专用发票） |
+| **DIGITAL_NORMAL**       | 增值税电子普通发票     |
+| **DIGITAL_SPECIAL**      | 增值税电子专用发票     |
+| **PAPER_NORMAL**         | 增值税纸质普通发票     |
+| **PAPER_SPECIAL**        | 增值税纸质专用发票     |
+| **PAPER_CAR**            | 机动车销售统一发票     |
+| **PAPER_ROLL**           | 增值税普通发票（卷式）  |
+| **PAPER_FEE**            | 通行费发票         |
+| **BLOCK_CHAIN**          | 区块链发票         |
+| **SECOND_CAR**           | 二手车销售统一发票     |
 
 ## CURL
 ```json

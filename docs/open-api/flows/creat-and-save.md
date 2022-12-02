@@ -51,13 +51,14 @@ url="/api/openapi/v2.2/flow/data"
 |**form**                                        | Object | 单据信息         | 必填  | - | 单据信息数据 |
 |**&emsp; ∟ outerCode**                          | String | 外部系统单据编号  | 非必填 | - | 第三方系统的单据唯一标识，不可重复 |
 |**&emsp; ∟ title**                              | String | 单据标题        | 必填   | - | 单据标题 |
-|**&emsp; ∟ submitterId**                        | String | 单据提交人ID    | 必填   | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+|**&emsp; ∟ submitterId**                        | String | 单据提交人ID    | 必填   | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取|
 |**&emsp; ∟ expenseDate**                        | String | 报销日期        | 非必填 | - | 毫秒级时间戳<br/>参数不传时，默认为 **当前日期** |
 |**&emsp; ∟ expenseDepartment**                  | String | 报销部门ID      | 非必填 | - | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取<br/>参数不传时，默认为 **提交人的默认部门** |
 |**&emsp; ∟ description**                        | String | 描述           | 非必填 | - | 描述 |
 |**&emsp; ∟ payeeId**                            | String | 收款账户ID      | 必填   | - | 通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取<br/>当 `isCommit` = `false`（保存草稿）时，**允许非必填** |
 |**&emsp; ∟ specificationId**                    | String | 单据模板ID      | 必填  | - | 通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 获取 **单据模板ID**<br/>然后通过 [根据模版ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取 **创建单据的模板ID** |
 |**&emsp; ∟ expenseLink**                        | String | 关联申请        | 非必填 | - | 需要关联的申请单ID |
+| **&emsp; ∟ linkRequisitionInfo**                | String | 补充申请     | 非必填 | - | 申请单**补充申请**时使用，值为需要补充的申请单ID |
 |**&emsp; ∟ details**                            | Array  | 费用明细        | 必填  | - | 费用明细 |
 |**&emsp; &emsp; ∟ feeTypeId**                   | String | 费用类型ID      | 必填  | - | 通过 [获取费用类型列表(包含停用)](/docs/open-api/feetype/get-feetypes-list) 获取 |
 |**&emsp; &emsp; ∟ specificationId**             | String | 费用类型模板ID   | 必填  | - | 通过 [根据ID或CODE获取费用类型模板信息](/docs/open-api/feetype/get-feetypes) 获取 |
