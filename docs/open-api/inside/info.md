@@ -40,7 +40,7 @@ authors: [冯继成]
 ## 工具接口
 ### [处理EAI插件拉取不到单据最终态问题（已完成、单据当前状态）](/docs/open-api/inside/flowDetails-stuckFlow)
 ### [处理EAI插件拉取不到单据中间态问题（待支付、支付中）](/docs/open-api/inside/setDataBase)
-### [配置企微单点原生授权信息](/docs/open-api/inside/create-yibridge-byqyweixin)
+### [新增或更新企微单点原生授权配置信息](/docs/open-api/inside/create-yibridge-byqyweixin)
 
 ---
 ## 对外接口更新（暂不公布）

@@ -12,8 +12,9 @@ url="/api/openapi/v1/flowDetails/attachment"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🐞 修复了获取智能拍票录入的发票，除了 **发票主体** 类型外，其他类型的 `invoiceNumber`（发票代码）和 `invoiceCode`（发票号码）返回 `null` 的BUG。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🐞 修复了无法把费用明细里的系统无法识别的充当发票的图片当附件处理返回的问题。<br/>
+  [**1.11.3**](/docs/open-api/notice/update-log#1113) -> 🐞 修复了无法获取到 **回单附件** 的BUG。<br/>
+  [**1.8.0**](/docs/open-api/notice/update-log#180)&emsp;-> 🐞 修复了获取智能拍票录入的发票，除了 **发票主体** 类型外，其他类型的 `invoiceNumber`（发票代码）和 `invoiceCode`（发票号码）返回 `null` 的BUG。<br/>
+  [**1.2.0**](/docs/open-api/notice/update-log#120)&emsp;-> 🐞 修复了无法把费用明细里的系统无法识别的充当发票的图片当附件处理返回的问题。<br/>
 
   </div>
 </details>

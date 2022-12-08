@@ -5,15 +5,16 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1.1/approveStates/[`ids`]"
+url="/api/openapi/v2/approveStates/[`ids`]"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.2**](/docs/open-api/notice/update-log#172) -> 🐞 修复了 **会签** 节点响应数据中返回全部审批人列表的问题，实际应只返回待审批人列表。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🚀 接口升级 `v1.1` 版本，新增了能获取到已删除的单据，并且显示 “**已删除**” 状态。<br/>
+  [**1.11.3**](/docs/open-api/notice/update-log#1113) -> 🚀 接口升级 `v2` 版本，更新了 `rejected`（已驳回）状态的单据，`stageName` 从 **尚未提交** 改为 **拒绝**。<br/>
+  [**1.7.2**](/docs/open-api/notice/update-log#172)&emsp;-> 🐞 修复了 **会签** 节点响应数据中返回全部审批人列表的问题，实际应只返回待审批人列表。<br/>
+  [**1.2.0**](/docs/open-api/notice/update-log#120)&emsp;-> 🚀 接口升级 `v1.1` 版本，新增了能获取到已删除的单据，并且显示 **已删除** 状态。<br/>
 
   </div>
 </details>
@@ -32,15 +33,12 @@ url="/api/openapi/v1.1/approveStates/[`ids`]"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/approveStates/[ID_3zE5G_07ew0,ID_3zJ05rt0DY0]?accessToken=UvsbtOEHTsk000'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/approveStates/[ID_3zE5G_07ew0,ID_3zJ05rt0DY0]?accessToken=UvsbtOEHTsk000'
 ```
 
 ## 成功响应
 :::tip
-- 由于接口是从缓存中获取数据，缓存更新偶尔会有不到1秒延迟，单据执行动作后建议等待几秒再调接口查询。
-- `draft`（草稿）、`pending`（提交中）、`rejected`（已驳回）状态的单据 `stageName` 返回 **尚未提交**。
-- `paid`（已支付/审批完成）、`archived`（归档）状态的单据 `stageName` 返回 **完成**。
-- 其他状态的单据 `stageName` 返回 **节点名称**
+- 由于接口是从缓存中获取数据，缓存更新偶尔会有不到1秒的延迟，单据执行动作后建议等待几秒再调接口查询。
 :::
 
 ```json
@@ -69,10 +67,30 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/approve
             "stageName": "已删除",
             "operators": [],
             "delegateData": []
+        },
+        {
+            "flowId": "ID01lc8ik1zc5x",
+            "stageName": "尚未提交",
+            "operators": [],
+            "delegateData": []
+        },
+        {
+            "flowId": "ID01l8FxSJxa5V",
+            "stageName": "拒绝",
+            "operators": [],
+            "delegateData": []
         }
     ]
 }
 ```
+
+### 审批节点名称(`stageName`)
+| 单据状态 | stageName |
+|:--- |:--- |
+| `draft`（草稿）、`pending`（提交中） | **尚未提交** |
+| `rejected`（已驳回）               | **拒绝** |
+| `paid`（已支付/审批完成）、`archived`（归档） | **完成** |
+| 其他状态的单据 | 当前单据所处的 **节点名称** |
 
 ## 失败响应
 

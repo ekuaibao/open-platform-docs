@@ -71,11 +71,11 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 | **DIGITAL_SPECIAL**      | 增值税电子专用发票     |
 | **PAPER_NORMAL**         | 增值税纸质普通发票     |
 | **PAPER_SPECIAL**        | 增值税纸质专用发票     |
+| **PAPER_ROLL**           | 增值税纸质普通发票（卷式）  |
 | **PAPER_CAR**            | 机动车销售统一发票     |
-| **PAPER_ROLL**           | 增值税普通发票（卷式）  |
+| **SECOND_CAR**           | 二手车销售统一发票     |
 | **PAPER_FEE**            | 通行费发票         |
 | **BLOCK_CHAIN**          | 区块链发票         |
-| **SECOND_CAR**           | 二手车销售统一发票     |
 
 ## CURL
 ```json

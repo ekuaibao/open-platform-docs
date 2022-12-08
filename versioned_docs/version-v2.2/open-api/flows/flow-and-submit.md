@@ -11,7 +11,10 @@ url="/api/openapi/v2/flow/data/submitFlow"
 :::caution
 - 经由【[创建单据](/docs/open-api/flows/creat-and-save)】接口，正确保存数据后，配置审批人，调用此接口提交单据。
 - 程序会对请求参数、body数据格式以及流程节点进行完整性与合法性校验。
-- 与业务画面上的提交单据功能一样，需要按格式组织审批流程节点信息数据，提交单据信息。
+- 与系统页面上的提交单据功能一样，需要按格式组织审批流程节点信息数据，提交单据信息。
+- 提交 `rejected`（驳回）状态的单据时，会根据驳回配置提交到相应节点，配置如下：
+  - 重审时，从当前节点开始审批（提交时 `isUrgent`、`urgentReason` 与上一次提交不一致的话，**参数不生效，以上一次参数为准**） 
+  - 重审时，从提交人节点开始审批（提交时 `isUrgent`、`urgentReason` 与上一次提交不一致的话，**参数生效**）
 :::
 
 ## Query Parameters
@@ -29,9 +32,9 @@ url="/api/openapi/v2/flow/data/submitFlow"
 |**urgentReason**              | String  | 加急原因      | 非必填 | - | 加急原因 |
 |**nodes**                     | Array   | 节点信息      | 必填   | - | 至少一个节点信息 |
 |**&emsp; ∟ configNodeId**    | String  | 配置节点ID    | 必填   | - | 通过 [获取流程实例](/docs/open-api/flows/get-flow) 获取【node】数组的 `configNodeId` 字段 |
-|**&emsp; ∟ approverId**      | String  | 审批人Id     | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
-|**&emsp; ∟ counterSigners**  | Array   | 会签审批人列表 | 非必填  | - | 根据配置的审批流配置去判断是否需要传送|
-|**&emsp; &emsp; ∟ signerId** | String  | 会签审批人ID  | 非必填  | - | 当设置会签审批人列表时候必填|
+|**&emsp; ∟ approverId**      | String  | 审批人Id     | 非必填  | - | 根据审批流配置判断是否需要传参 |
+|**&emsp; ∟ counterSigners**  | Array   | 会签审批人列表 | 非必填  | - | 根据审批流配置判断是否需要传参 |
+|**&emsp; &emsp; ∟ signerId** | String  | 会签审批人ID  | 非必填  | - | 当设置会签审批人列表时必填 |
 
 ### 附加说明
 :::tip
