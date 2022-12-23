@@ -12,6 +12,23 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.12.1
+
+`2023-01-04`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xx.x`
+- 🆕 新增 [单据暂挂](/docs/open-api/flows/flow-hangUp) 接口。
+- 🚀 新增 [更新币种汇率](/docs/open-api/currency/update-currency-rate) 接口 `v2.1` 版本
+  - 更新了接口路径并支持了可更新不同本位币对应不同原币的汇率（需开通【**法人实体多币种**】）。
+- 🚀 新增 [获取企业当前生效的币种信息](/docs/open-api/currency/get-currency) 接口 `v2.1` 版本
+  - 更新了接口路径并支持了可按本位币获取对应的原币配置。
+- 🐞 更新 [获取申请事项](/docs/open-api/flows/get-requisition-all) 接口
+  - 接口 **成功响应** 新增了 `details`（申请事项费用明细信息）字段。
+- 🐞 更新 [查询角色下员工信息](/docs/open-api/corporation/get-roles) 接口
+  - 新增了 `pathType`（查询角色路径信息类型）参数，支持 `id`、`name`、`code` 3种参数类型。
+- 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口
+  - 新增了 `pageType` = `payment` 类型，进入易快报 **待我支付** 页面。
+  - 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。
+  
+---
 ## 1.11.3
 
 `2022-12-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.84.2`

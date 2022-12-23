@@ -12,7 +12,8 @@ url="/api/openapi/v1/requisition/getData"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🆕 新增了本接口。
+  [**1.12.1**](/docs/open-api/notice/update-log#1121) -> 🐞 接口 **成功响应** 新增了 `details`（申请事项费用明细信息）字段。<br/>
+  [**1.2.0**](/docs/open-api/notice/update-log#120)&emsp;-> 🆕 新增了本接口。
 
   </div>
 </details>
@@ -101,7 +102,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/requisit
                 }
             ],
             "version": 9,
-            "closeLog": null,
+            "closeLog": null, //关闭日志
             "pipeline": 1,
             "nameSpell": "22",
             "changeLogs": [  //历史记录
@@ -148,7 +149,36 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/requisit
                 "standardNumCode": "156",
                 "standardStrCode": "CNY"
             },
-            "ignoreUsageSpecificationIds": []
+            "ignoreUsageSpecificationIds": [],
+            "details": [              //申请事项费用明细信息
+                {
+                    "feeTypeId": "bwa3wajigF0WH0:office",  //费用类型ID
+                    "feeTypeForm": {  //费用明细字段
+                        "amount": {   //费用金额
+                            "standard": "20.00",
+                            "standardUnit": "元",
+                            "standardScale": 2,
+                            "standardSymbol": "¥",
+                            "standardNumCode": "156",
+                            "standardStrCode": "CNY"
+                        },
+                        "品类": "bwa3wajigF0WH0:paper",
+                        "detailId": "ID_3zE5G_02Bw0",  //费用明细实例ID
+                        "quantity": "20",
+                        "unitPrice": {
+                            "standard": "1",
+                            "standardUnit": "元",
+                            "standardScale": 2,
+                            "standardSymbol": "¥",
+                            "standardNumCode": "156",
+                            "standardStrCode": "CNY"
+                        },
+                        "attachments": [],
+                        "consumptionReasons": ""
+                    },
+                    "specificationId": "bwa3wajigF0WH0:office:requisition:9a0d167c9a8deedcca0b39e42ef1a33d19824fa6"  //费用类型模板ID
+                }
+            ]
         },
         {
             "id": "ID_3zE5G_00rw0",
@@ -219,7 +249,26 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/requisit
                 "standardNumCode": "156",
                 "standardStrCode": "CNY"
             },
-            "ignoreUsageSpecificationIds": []
+            "ignoreUsageSpecificationIds": [],
+            "details": [
+                {
+                    "feeTypeId": "bwa3wajigF0WH0:teamBuilding",
+                    "feeTypeForm": {
+                        "amount": {
+                            "standard": "100",
+                            "standardUnit": "元",
+                            "standardScale": 2,
+                            "standardSymbol": "¥",
+                            "standardNumCode": "156",
+                            "standardStrCode": "CNY"
+                        },
+                        "detailId": "ID_3zE5G_00ww0",
+                        "attachments": [],
+                        "consumptionReasons": ""
+                    },
+                    "specificationId": "bwa3wajigF0WH0:teamBuilding:requisition:bd498ab4ec17d069d79f63ab22c7c55fcbbaa686"
+                }
+            ]
         }
     ]
 }

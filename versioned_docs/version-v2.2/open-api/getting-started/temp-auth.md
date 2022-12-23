@@ -11,6 +11,8 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.12.1**](/docs/open-api/notice/update-log#1121)&emsp;-> 🆕 新增了 `pageType` = `payment` 类型，进入易快报 **待我支付** 页面。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。<br/>
   [**1.7.1**](/docs/open-api/notice/update-log#171) &emsp; -> 🆕 新增了 `authType`（授权方式）参数，控制单点链接可用次数。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了被委托人审批会签节点的单据（`pageType` = `form`）时，无审批按钮的BUG。 <br/>
   [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `pageType` = `frontPage` 类型，进入易快报 **首页**。<br/>
@@ -31,8 +33,8 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **uid**                     | String  | 员工ID           | 非必填 | - |  当 `userId` 非必填时 `uid` 必填  |
 | **userId**                  | String  | 第三方员工ID      | 非必填 | - | 当 `uid` 非必填时 `userId` 必填 |
-| **pageType**                | String  | 登录页面类型       | 必填  | - | `frontPage` : 首页<br/>`home` : 我的单据<br/>`approve` : 待办列表<br/>`form` : 单据详情页<br/>`new` : 新建单据<br/>`mall` : 商城（**不支持移动端**）<br/>`backlogDetail` : 查看待办详情，同时底部菜单<br/>显示指定审批按钮（**不支持移动端**） |
-| **authType**                | String  | 授权方式          | 非必填 | - | `CODE` : 表示获得的单点链接仅可使用一次，不能二次使用<br/>（使用此参数实际上是返回另一个接口 `url`，重定向到原地址隐藏掉 `url` 里面的 `accessToken`，从而实现仅可使用一次）<br/>**不传此参数表示单点链接在有效期内可无限使用**<br/>**不支持 `new`、`mall`、`backlogDetail` 类型** |
+| **pageType**                | String  | 登录页面类型       | 必填  | - | `frontPage` : 首页<br/>`home` : 我的单据<br/>`approve` : 待我审批<br/>`payment` : 待我支付<br/>`form` : 单据详情页<br/>`new` : 新建单据<br/>`mall` : 商城（**不支持移动端**）<br/>`backlogDetail` : 查看待办详情，同时底部菜单<br/>显示指定审批按钮（**不支持移动端**） |
+| **authType**                | String  | 授权方式          | 非必填 | - | `CODE` : 表示获得的单点链接仅可使用一次，不能二次使用<br/>**如果不传此参数则生成的URL链接在有效期内可无限次访问；此参数传 `CODE` 则生成的URL链接仅可访问一次**<br/> |
 | **expireDate**              | String  | 授权有效期        | 必填   | - |  单位：秒，最大不能超过 `604800` 秒（7天） |
 | **overdueTokenRedirect**    | String  | 重定向URL        | 非必填 | - | `expireDate` 过期后重定向到该地址 |
 | **isApplet**                | Boolean | 是否跳转app端     | 非必填 | `false` |  `true` : 跳转app端<br/>`false` : 跳转web端   |
@@ -48,7 +50,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
  - 当 `pageType` = `new` 时，`pathname`、`specificationOriginalId` 参数必填；
  - 当 `pageType` = `mall` 时，用户必须已开通商城，否则该接口会返回错误提示；<br/>
  且只需要传递 `uid`（或者 `userId` ）、 `isApplet` = `false`（不支持移动端）和 `expireDate` 3个参数即可，其他均可不传；
- - 当 `pageType` = `backlogDetail` 时，`isApplet` = `false`（不支持移动端），`flowId` 参数必填，`approvalUrl`、`action` 参数选填（action 不传显示默认的审批按钮，多个值用 `,` 分隔）。
+ - 当 `pageType` = `backlogDetail` 时，`isApplet` = `false`（不支持移动端），`flowId` 参数必填，`approvalUrl`、`action` 参数选填（`action` 不传显示默认的审批按钮，多个值用 `,` 分隔）。
 
  ![image](images/审批按钮显示效果.png)
  

@@ -44,7 +44,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/extensio
 ```json
 {
     "count": 1,
-    "items": [
+    "items": [   //返回结果按【创建时间】倒序排列
         {
             "id": "uzobyZz2qgcc00",         //业务对象ID
             "ownerId": null,

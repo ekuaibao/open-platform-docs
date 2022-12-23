@@ -12,7 +12,8 @@ url="/api/openapi/v1/roledefs/$`roledefId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.3.0**](/docs/open-api/notice/update-log#130) -> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
+  [**1.12.1**](/docs/open-api/notice/update-log#1121) -> 🆕 新增了 `pathType`（查询角色路径信息类型）参数，支持 `id`、`name`、`code` 3种参数类型。<br/>
+  [**1.3.0**](/docs/open-api/notice/update-log#130)&emsp;-> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
 
   </div>
 </details>
@@ -29,6 +30,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token	      | 必填   | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **staffBy**     | String | 查询员工信息显示类型 | 非必填 | id | `id` : 显示完整员工ID，格式：`企业id : userId`<br/>`sourceId` : 只显示 userId<br/>`code` : 员工工号<br/>`cellphone` : 手机号<br/>`email` : 邮箱 |
+| **pathType**    | String | 查询角色路径信息类型 | 非必填 | name | `id` : `path` 返回角色路径ID信息<br/>`name` : `path` 返回角色路径名称信息<br/>`code` : `path` 返回角色路径编码信息 |
 
 :::tip
 - 角色ID获取如下所示
@@ -37,7 +39,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$JOYbpjPP-E2Q00:leader?accessToken=RCIbwHcnF0kg00&staffBy=id' \
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$JOYbpjPP-E2Q00:leader?accessToken=RCIbwHcnF0kg00&staffBy=id&pathType=name' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json'
 ```
@@ -56,8 +58,8 @@ import TabItem from '@theme/TabItem';
         "name": "测试部门角色",    //角色名称
         "contents": [             //角色配置情况，每一个元素对应「角色管理」界面右侧列表的一行
             {
-                "pathType": null,
-                "path": [          //如果是普通角色，返回空数组。这个节点通过全路径名称来表示一个部门或自定义档案值
+                "pathType": "name",//查询角色路径信息类型
+                "path": [          //如果是普通角色，返回空数组。这个节点通过全路径信息来表示一个部门（部门角色）或自定义档案值（档案角色）
                     "测试接口专用",
                     "部门1",
                     "部门1-1"
@@ -69,13 +71,24 @@ import TabItem from '@theme/TabItem';
                 "staffsType": "id" //查询员工信息显示类型
             },
             {
-                "pathType": null,
+                "pathType": "id",  //不同传参返回不同的类型，这里为了方便展示放在一个成功响应里
                 "path": [
-                    "测试接口专用",
-                    "部门2-修改1"
+                    "bwa3wajigF0WH0",
+                    "bwa3wajigF0WH0:ID_3wUvB7G2d3w"
                 ],
                 "staffs": [
                     "bwa3wajigF0WH0:IqQ3wlg6bv9QGg"
+                ],
+                "staffsType": "id"
+            },
+            {
+                "pathType": "code", //不同传参返回不同的类型，这里为了方便展示放在一个成功响应里
+                "path": [
+                    "GS001",
+                    "BM003"
+                ],
+                "staffs": [
+                    "bwa3wajigF0WH0:12"
                 ],
                 "staffsType": "id"
             }
@@ -93,8 +106,8 @@ import TabItem from '@theme/TabItem';
         "name": "测试部门角色",    //角色名称
         "contents": [             //角色配置情况，每一个元素对应「角色管理」界面右侧列表的一行
             {
-                "pathType": null,
-                "path": [          //如果是普通角色，返回空数组。这个节点通过全路径名称来表示一个部门或自定义档案值
+                "pathType": "name",
+                "path": [          //如果是普通角色，返回空数组。这个节点通过全路径信息来表示一个部门（部门角色）或自定义档案值（档案角色）
                     "测试接口专用",
                     "部门1",
                     "部门1-1"
@@ -106,10 +119,10 @@ import TabItem from '@theme/TabItem';
                 "staffsType": "sourceId" //查询员工信息显示类型
             },
             {
-                "pathType": null,
+                "pathType": "id",
                 "path": [
-                    "测试接口专用",
-                    "部门2-修改1"
+                    "bwa3wajigF0WH0",
+                    "bwa3wajigF0WH0:ID_3wUvB7G2d3w"
                 ],
                 "staffs": [
                     "IqQ3wlg6bv9QGg"
@@ -130,8 +143,8 @@ import TabItem from '@theme/TabItem';
         "name": "测试部门角色",    //角色名称
         "contents": [             //角色配置情况，每一个元素对应「角色管理」界面右侧列表的一行
             {
-                "pathType": null,
-                "path": [          //如果是普通角色，返回空数组。这个节点通过全路径名称来表示一个部门或自定义档案值
+                "pathType": "name",
+                "path": [          //如果是普通角色，返回空数组。这个节点通过全路径信息来表示一个部门（部门角色）或自定义档案值（档案角色）
                     "测试接口专用",
                     "部门1",
                     "部门1-1"
@@ -143,10 +156,10 @@ import TabItem from '@theme/TabItem';
                 "staffsType": "code" //查询员工信息显示类型
             },
             {
-                "pathType": null,
+                "pathType": "id",
                 "path": [
-                    "测试接口专用",
-                    "部门2-修改1"
+                    "bwa3wajigF0WH0",
+                    "bwa3wajigF0WH0:ID_3wUvB7G2d3w"
                 ],
                 "staffs": [
                     "1002"
@@ -167,8 +180,8 @@ import TabItem from '@theme/TabItem';
         "name": "测试部门角色",    //角色名称
         "contents": [             //角色配置情况，每一个元素对应「角色管理」界面右侧列表的一行
             {
-                "pathType": null,
-                "path": [          //如果是普通角色，返回空数组。这个节点通过全路径名称来表示一个部门或自定义档案值
+                "pathType": "name",
+                "path": [          //如果是普通角色，返回空数组。这个节点通过全路径信息来表示一个部门（部门角色）或自定义档案值（档案角色）
                     "测试接口专用",
                     "部门1",
                     "部门1-1"
@@ -180,10 +193,10 @@ import TabItem from '@theme/TabItem';
                 "staffsType": "cellphone" //查询员工信息显示类型
             },
             {
-                "pathType": null,
+                "pathType": "id",
                 "path": [
-                    "测试接口专用",
-                    "部门2-修改1"
+                    "bwa3wajigF0WH0",
+                    "bwa3wajigF0WH0:ID_3wUvB7G2d3w"
                 ],
                 "staffs": [
                     "18811110002"
@@ -204,8 +217,8 @@ import TabItem from '@theme/TabItem';
         "name": "测试部门角色",    //角色名称
         "contents": [             //角色配置情况，每一个元素对应「角色管理」界面右侧列表的一行
             {
-                "pathType": null,
-                "path": [          //如果是普通角色，返回空数组。这个节点通过全路径名称来表示一个部门或自定义档案值
+                "pathType": "name",
+                "path": [          //如果是普通角色，返回空数组。这个节点通过全路径信息来表示一个部门（部门角色）或自定义档案值（档案角色）
                     "测试接口专用",
                     "部门1",
                     "部门1-1"
@@ -217,10 +230,10 @@ import TabItem from '@theme/TabItem';
                 "staffsType": "email" //查询员工信息显示类型
             },
             {
-                "pathType": null,
+                "pathType": "id",
                 "path": [
-                    "测试接口专用",
-                    "部门2-修改1"
+                    "bwa3wajigF0WH0",
+                    "bwa3wajigF0WH0:ID_3wUvB7G2d3w"
                 ],
                 "staffs": [
                     "youxiang@123.com"
@@ -238,4 +251,5 @@ import TabItem from '@theme/TabItem';
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
 | **400** | - | 角色不存在 | 请确认 `roledefId`（角色ID）是否正确 | 
+| **400** | - | pathType只支持id,name,code类型 | 请确认 `pathType` 传参符合要求 | 
 

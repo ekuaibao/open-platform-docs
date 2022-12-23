@@ -68,15 +68,20 @@
 ### 火车席别
 | 名称 | 编码 |
 | :--- | :--- |
-| 硬座 | YZ |
-| 软座 | RZ |
-| 硬卧 | YW |
-| 软卧 | RW |
+| 硬座 | YZ   |
+| 软座 | RZ   |
+| 硬卧 | YW   |
+| 软卧 | RW   |
+| 一等座  | YD   |
+| 二等座  | ED   |
+| 商务座  | SW   |
 | 高级软卧 | GJRW |
-| 一等座  | YD |
-| 二等座  | ED |
-| 商务座  | SW |
-| 高铁动卧 | DW |
+| 高铁动卧 | DW   |
+| 动卧    | DW2  |
+| 新空调硬座 | XKTYZ   |
+| 新空调硬卧 | XKTYW   |
+| 新空调软卧 | XKTRW   |
+| 软卧代软座 | RWDRZ   |
 
 ### 轮船舱型
 | 名称 | 编码 |
@@ -93,7 +98,7 @@
 | 增值税普通发票 | VATOrdinaryInvoice | 
 | 机动车销售统一发票 | MotorInvoice |
 | 货物运输业增值税专用发票 | GoodsTransportInvoice |
-| 二手车销售统一发票 | SecondhandCar | 
+| 二手车销售统一发票 | SecondhandCarInvoice | 
 | 增值税电子普通发票 | VATElectronicInvoice |
 | 增值税普通发票（卷式）| VATVolumeTicket |
 | 通行费发票 | TollInvoice |
