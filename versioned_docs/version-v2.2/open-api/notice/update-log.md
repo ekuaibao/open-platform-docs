@@ -27,6 +27,8 @@ timeline: true
 - 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口
   - 新增了 `pageType` = `payment` 类型，进入易快报 **待我支付** 页面。
   - 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。
+- 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new.md) 接口
+  - 新增了 **站内信** 出站消息类型。
   
 ---
 ## 1.11.3
