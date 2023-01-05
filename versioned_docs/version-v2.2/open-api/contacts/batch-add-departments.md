@@ -31,7 +31,7 @@ url="/api/openapi/v1/departments/batch/create"
 | **&emsp; ∟ code**       | String    | 部门编码      | 必填  | - | 可传 `""`，不可传重复的值 |
 | **&emsp; ∟ name**       | String    | 部门名称      | 必填  | - | 不可传 `""`，不可传重复的值 |
 | **&emsp; ∟ parentId**   | String    | 上级部门ID    | 必填  | - | 根部门为 `""` |
-| **&emsp; ∟ order**      | Number    | 排序         | 非必填 | 0 | code为空，order相同时，按创建时间排序<br/>code为空，order不同时，按order排序<br/>code不为空时，按code排序 |
+| **&emsp; ∟ order**      | Number    | 排序         | 非必填 | 0 | `code` 为空，`order` 相同时，按 **创建时间** 排序<br/>`code` 为空，`order` 不同时，按 `order` 排序<br/>`code` 不为空时，按 `code` 排序 |
 
 ## CURL
 ```json
@@ -93,3 +93,4 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/departme
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
 | **400** | - | 该部门在同级有相同的部门名称 | 请确认对应层级是否有相同的部门名称 | 
+| **400** | - | 该部门编码「cs-1」已存在   | 请确认 `code` 是否与启用部门重复 | 

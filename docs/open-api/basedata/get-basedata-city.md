@@ -128,14 +128,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/city/get
                             "parentId": "1354",
                             "treeLevel": 3,
                             "extendInfo": {
-                            "trainCode": [
-                                "jxi:进贤",
-                                "jxn:进贤南"
-                            ],
-                            "airportCode": [
-                                "KHN:昌北国际机场"
-                            ],
-                            "cityExtendCode": "1501"
+                                "trainCode": [
+                                    "jxi:进贤",
+                                    "jxn:进贤南"
+                                ],
+                                "airportCode": [
+                                    "KHN:昌北国际机场"
+                                ],
+                                "cityExtendCode": "1501"
                             },
                             "haveFlight": false,
                             "haveTrain": false,
@@ -162,14 +162,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/city/get
                             "parentId": "1354",
                             "treeLevel": 3,
                             "extendInfo": {
-                            "trainCode": [
-                                "nch:南昌",
-                                "ncx:南昌西"
-                            ],
-                            "airportCode": [
-                                "KHN:昌北国际机场"
-                            ],
-                            "cityExtendCode": "1501"
+                                "trainCode": [
+                                    "nch:南昌",
+                                    "ncx:南昌西"
+                                ],
+                                "airportCode": [
+                                    "KHN:昌北国际机场"
+                                ],
+                                "cityExtendCode": "1501"
                             },
                             "haveFlight": false,
                             "haveTrain": false,
@@ -196,14 +196,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/city/get
                             "parentId": "1354",
                             "treeLevel": 3,
                             "extendInfo": {
-                            "trainCode": [
-                                "nch:南昌",
-                                "ncx:南昌西"
-                            ],
-                            "airportCode": [
-                                "KHN:昌北国际机场"
-                            ],
-                            "cityExtendCode": "1501"
+                                "trainCode": [
+                                    "nch:南昌",
+                                    "ncx:南昌西"
+                                ],
+                                "airportCode": [
+                                    "KHN:昌北国际机场"
+                                ],
+                                "cityExtendCode": "1501"
                             },
                             "haveFlight": false,
                             "haveTrain": false,
@@ -230,14 +230,14 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/city/get
                             "parentId": "1354",
                             "treeLevel": 3,
                             "extendInfo": {
-                            "trainCode": [
-                                "nch:南昌",
-                                "ncx:南昌西"
-                            ],
-                            "airportCode": [
-                                "KHN:昌北国际机场"
-                            ],
-                            "cityExtendCode": "1501"
+                                "trainCode": [
+                                    "nch:南昌",
+                                    "ncx:南昌西"
+                                ],
+                                "airportCode": [
+                                    "KHN:昌北国际机场"
+                                ],
+                                "cityExtendCode": "1501"
                             },
                             "haveFlight": false,
                             "haveTrain": false,

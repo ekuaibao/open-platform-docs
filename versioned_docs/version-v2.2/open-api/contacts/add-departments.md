@@ -26,10 +26,10 @@ url="/api/openapi/v1/departments"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **code**     | String  | 部门编码	| 必填   | - | 可传 `""`，不可传重复的值 |
+| **code**     | String  | 部门编码	| 必填   | - | 可传 `""`，不可传重复的值<br/>若传参的 `code` 与停用部门重复，则新增部门<br/>若传参的 `code` 与启用部门重复，则会修改部门的下列三个参数 |
 | **name**     | String  | 部门名称	| 必填   | - | 不可传 `""`，不可传重复的值 |
 | **parentId** | String  | 上级部门ID	| 必填   | - | 根部门为 `""` |
-| **order**    | Number  | 排序	    | 非必填 | 0 | code为空，order相同时，按创建时间排序<br/>code为空，order不同时，按order排序<br/>code不为空时，按code排序 |
+| **order**    | Number  | 排序	    | 非必填 | 0 | `code` 为空，`order` 相同时，按 **创建时间** 排序<br/>`code` 为空，`order` 不同时，按 `order` 排序<br/>`code` 不为空时，按 `code` 排序 |
 
 ## CURL
 ```json

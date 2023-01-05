@@ -14,7 +14,7 @@ timeline: true
 ---
 ## 1.12.1
 
-`2023-01-04`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xx.x`
+`2023-01-05`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.94.0`
 - 🆕 新增 [单据暂挂](/docs/open-api/flows/flow-hangUp) 接口。
 - 🚀 新增 [更新币种汇率](/docs/open-api/currency/update-currency-rate) 接口 `v2.1` 版本
   - 更新了接口路径并支持了可更新不同本位币对应不同原币的汇率（需开通【**法人实体多币种**】）。
@@ -27,8 +27,10 @@ timeline: true
 - 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口
   - 新增了 `pageType` = `payment` 类型，进入易快报 **待我支付** 页面。
   - 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。
-- 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new.md) 接口
+- 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new) 接口
   - 新增了 **站内信** 出站消息类型。
+- 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments) 接口
+  - 更新了 `code` 参数介绍。
   
 ---
 ## 1.11.3
