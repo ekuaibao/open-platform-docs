@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/roledefs/$`roledefId`/staffs"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.13.0**](/docs/open-api/notice/update-log#1122)&emsp;-> 🐞 开放了接口可以更新数据来源为 **【手动管理】** 的角色数据的权限，系统页面仍保留无法手动更新数据来源为 **【API导入】** 的角色数据。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🚀 接口升级 `v1.1` 版本，修复了 `pathType` = `id` 时，需要传全部门路径ID的问题，只传最终部门ID即可。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 `body` 参数传空 `{}` 或者 `contents` 参数拼错，接口响应成功的BUG。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 修复了首次调用接口报错后，使用相同错误参数再次调用时，返回成功响应的BUG。<br/>
@@ -24,7 +25,7 @@ url="/api/openapi/v1.1/roledefs/$`roledefId`/staffs"
 </details>
 
 :::caution
-- 覆盖更新，非增量，只有数据来源为【**[API导入](/docs/open-api/corporation/info#新建角色)**】的角色才能使用此接口更新角色。
+- 此接口为覆盖更新，所传参数会覆盖之前的参数。
 :::
 
 ## Path Parameters
@@ -268,8 +269,7 @@ code 204
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | contents参数不能为空 | 请确认 `contents` 参数是否拼写正确 | 
-| **403** | - | 没有权限同步此角色 | 请确认所操作的角色数据来源是否为【**API导入**】 | 
+| **400** | - | contents参数不能为空 | 请确认 `contents` 参数是否拼写正确 |
 | **412** | - | 找不到角色        | 请确认 `roledefId`（角色ID）是否正确或存在 | 
 | **412** | - | 数据错误:[0:路径不存在[部门], 0:人员不存在[xxxxxxxxx:xxxx]] | 请确认 `path`（部门或自定义档案值）是否为完整路径参数<br/>请确认员工信息是否正确 | 
 | **412** | - | 参数staffs不能为空 | 除了普通角色，`path`（部门或自定义档案值）、`staffs`（员工集合）不允许传 `null` | 

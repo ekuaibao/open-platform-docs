@@ -339,6 +339,18 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "开票信息",
+      items: [
+        "open-api/payerInfo/info",
+        "open-api/payerInfo/get-payerInfo-list",
+        "open-api/payerInfo/batch-new-payerInfo",
+        "open-api/payerInfo/batch-update-payerInfo",
+        "open-api/payerInfo/batch-delete-payerInfo",
+        "open-api/payerInfo/question-answer"
+      ],
+    },
+    {
+      type: "category",
       label: "商城接口",
       items: [
         "open-api/mall/info",

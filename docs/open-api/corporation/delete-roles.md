@@ -4,21 +4,18 @@ import Control from "@theme/Control";
 
 <Control
 method="DELETE"
-url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
+url="/api/openapi/v1.1/roledefs/$`roledefId`/staffs"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🆕 新增了本接口。<br/>
+  [**1.13.0**](/docs/open-api/notice/update-log#1122)&emsp;-> 🚀 接口升级 `v1.1` 版本，开放了接口可以删除数据来源为 **【手动管理】** 的角色数据的权限，系统页面仍保留无法手动删除数据来源为 **【API导入】** 的角色数据。<br/>
+  [**1.8.0**](/docs/open-api/notice/update-log#180) &emsp; -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
-
-:::caution
-- 只有数据来源为【**[API导入](/docs/open-api/corporation/info#新建角色)**】的角色才能使用此接口更新角色。
-:::
 
 ## Path Parameters
 
@@ -34,7 +31,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 
 ## CURL
 ```shell
-curl --location --request DELETE 'https://app.ekuaibao.com/api/openapi/v1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3KGdB6S01Z0:bwa3wajigF0WH0'
+curl --location --request DELETE 'https://app.ekuaibao.com/api/openapi/v1.1/roledefs/$ID_3BJKZuv0Dow/staffs?accessToken=ID_3KGdB6S01Z0:bwa3wajigF0WH0'
 ```
 
 ## 成功响应
@@ -49,5 +46,4 @@ code 204
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **403** | - | 没有权限同步此角色 | 请确认所操作的角色数据来源是否为【**API导入**】 | 
 | **412** | - | 找不到角色 | 请确认 `roledefId`（角色ID）是否正确或存在 | 
