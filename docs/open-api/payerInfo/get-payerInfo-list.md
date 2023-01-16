@@ -11,7 +11,7 @@ url="/api/openapi/v2/payerinfo/list"
   <summary><b>更新日志</b></summary>
   <div>
 
-[**1.13.0**](/docs/open-api/notice/update-log#1122) -> 🆕 新增了本接口。<br/>
+  [**1.13.0**](/docs/open-api/notice/update-log#1122) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
@@ -34,7 +34,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payerinfo
         {
             "pipeline": 1,
             "grayver": "9.95.0.0-prd",
-            "id": "ID01mjYkgH8y5N",
+            "id": "ID01mjYkgH8y5N",           //开票信息ID
             "version": 1,                     //版本号
             "active": true,                   //是否启用（true：启用，false：停用）
             "createTime": 1673430378740,      //创建时间
@@ -57,7 +57,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payerinfo
                 "departmentsIncludeChildren": true    //可见部门是否包含子部门（true：是，false：否）
                 },
             "historicalName": "曾用名北京合思信息有限责任公司",  //曾用企业名称
-            "historicalNameExpirationTime": 1640966399000  //曾用企业名称失效时间
+            "historicalNameExpirationTime": 1640966399000     //曾用企业名称失效时间
         } 
     ]
 }

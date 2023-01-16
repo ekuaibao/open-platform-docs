@@ -258,13 +258,9 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/roledef
 </Tabs>
 
 ## 成功响应
-:::caution
-- 响应需要判断 **HTTP状态码** 来确定是否成功，响应成功时无内容返回。
-:::
-
-```text
-code 204
-```
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **204** | - | (响应需要判断 **HTTP状态码** 来确定是否成功，响应成功时无内容返回) | - |
 
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |

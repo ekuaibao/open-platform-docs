@@ -14,16 +14,16 @@ timeline: true
 ---
 ## 1.13.0
 
-`2023-01-12`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.95.0`
+`2023-01-17`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xx.0`
 - 🆕 新增【**开票信息**】模块
     - 新增 [获取开票信息列表](/docs/open-api/payerInfo/get-payerInfo-list) 接口。
     - 新增 [批量新增开票信息](/docs/open-api/payerInfo/batch-new-payerInfo) 接口。
     - 新增 [批量更新开票信息](/docs/open-api/payerInfo/batch-update-payerInfo) 接口。
     - 新增 [批量删除开票信息](/docs/open-api/payerInfo/batch-delete-payerInfo) 接口。
 - 🚀 新增 [删除角色下员工信息](/docs/open-api/corporation/delete-roles) 接口 `v1.1` 版本
-    - 开放了接口可以删除数据来源为 **【手动管理】** 的角色数据的权限，系统页面仍保留无法手动删除数据来源为 **【API导入】** 的角色数据。
+    - 开放了接口可以删除数据来源为【**手动管理**】的角色数据的权限，系统页面仍保留无法手动删除数据来源为【**API导入**】的角色数据。
 - 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
-    - 开放了接口可以更新数据来源为 **【手动管理】** 的角色数据的权限，系统页面仍保留无法手动更新数据来源为 **【API导入】** 的角色数据。
+    - 开放了接口可以更新数据来源为【**手动管理**】的角色数据的权限，系统页面仍保留无法手动更新数据来源为【**API导入**】的角色数据。
 
 ---
 ## 1.12.1
