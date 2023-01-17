@@ -14,8 +14,8 @@ timeline: true
 ---
 ## 1.13.0
 
-`2023-01-17`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xx.0`
-- 🆕 新增【**开票信息**】模块
+`2023-01-17`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.95.0`
+- 🆕 新增【**开票信息**】模块 
     - 新增 [获取开票信息列表](/docs/open-api/payerInfo/get-payerInfo-list) 接口。
     - 新增 [批量新增开票信息](/docs/open-api/payerInfo/batch-new-payerInfo) 接口。
     - 新增 [批量更新开票信息](/docs/open-api/payerInfo/batch-update-payerInfo) 接口。
