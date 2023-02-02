@@ -29,7 +29,7 @@ url="/api/openapi/v1/departments/batch/create"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **departmentList**            | Array     | 新增部门的集合 | 必填  | - | 新增部门的集合 |
 | **&emsp; ∟ code**       | String    | 部门编码      | 必填  | - | 可传 `""`，不可传重复的值 |
-| **&emsp; ∟ name**       | String    | 部门名称      | 必填  | - | 不可传 `""`，不可传重复的值 |
+| **&emsp; ∟ name**       | String    | 部门名称      | 必填  | - | 不可传 `""`，同一层级不可传重复的值 |
 | **&emsp; ∟ parentId**   | String    | 上级部门ID    | 必填  | - | 根部门为 `""` |
 | **&emsp; ∟ order**      | Number    | 排序         | 非必填 | 0 | `code` 为空，`order` 相同时，按 **创建时间** 排序<br/>`code` 为空，`order` 不同时，按 `order` 排序<br/>`code` 不为空时，按 `code` 排序 |
 

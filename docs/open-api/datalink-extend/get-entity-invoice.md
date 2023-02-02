@@ -65,9 +65,9 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 
 | 字段名                      | 对应发票类型        |
 |:-------------------------|:--------------|
-| **FULL_DIGITAl_NORMAL**  | 电子发票（普通发票）    |
-| **FULL_DIGITAl_SPECIAL** | 电子发票（增值税专用发票） |
-| **FULL_DIGITAl_PAPER**   | 全电纸质发票（增值税专用发票） |
+| **FULL_DIGITAL_NORMAL**  | 电子发票（普通发票）    |
+| **FULL_DIGITAL_SPECIAL** | 电子发票（增值税专用发票） |
+| **FULL_DIGITAL_PAPER**   | 全电纸质发票（增值税专用发票） |
 | **DIGITAL_NORMAL**       | 增值税电子普通发票     |
 | **DIGITAL_SPECIAL**      | 增值税电子专用发票     |
 | **PAPER_NORMAL**         | 增值税普通发票        |
