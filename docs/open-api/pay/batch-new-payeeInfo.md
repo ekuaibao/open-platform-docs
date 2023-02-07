@@ -11,8 +11,9 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.1**](/docs/open-api/notice/update-log#171) -> 🐞 优化了接口支持部分账户校验不通过时，其他账户可继续新增成功。<br/>
-  [**1.6.3**](/docs/open-api/notice/update-log#163) -> 🆕 新增了本接口。<br/>
+  [**1.13.1**](/docs/open-api/notice/update-log#1131) -> 🐞 新增了 `nationCode`（银行所在地区代码）参数描述。<br/>
+  [**1.7.1**](/docs/open-api/notice/update-log#171)&emsp;-> 🐞 优化了接口支持部分账户校验不通过时，其他账户可继续新增成功。<br/>
+  [**1.6.3**](/docs/open-api/notice/update-log#163)&emsp;-> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
@@ -40,7 +41,8 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
 | **&emsp; ∟ province**        | String | 银行所在省<br/>**『银行卡』专属参数**   | 非必填 | - | **可通过 `branch` 或 `bankLinkNo` 自动回填，<br/>需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
 | **&emsp; ∟ city**            | String | 银行所在城市<br/>**『银行卡』专属参数** | 非必填 | - | **可通过 `branch` 或 `bankLinkNo` 自动回填，<br/>需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
 | **&emsp; ∟ bankName**        | String | 银行名称<br/>**『海外账号』专属参数** | 非必填 | - | 银行名称(Bank Name) |
-| **&emsp; ∟ swiftCode**       | String | 银行国际代码<br/>**『海外账号』专属参数** | 非必填 | - | 银行国际代码(Swift Code) |
+| **&emsp; ∟ swiftCode**       | String | 银行国际代码<br/>**『海外账号』专属参数** | 必填 | - | 银行国际代码(Swift Code) |
+| **&emsp; ∟ nationCode**      | String | 银行所在地区代码<br/>**『海外账号』专属参数** | 必填 | - | 银行所在地区代码(Nation Code)<br/>传参为 [国家地区代码](https://baike.baidu.com/item/%E4%B8%96%E7%95%8C%E5%90%84%E5%9B%BD%E5%92%8C%E5%9C%B0%E5%8C%BA%E5%90%8D%E7%A7%B0%E4%BB%A3%E7%A0%81/6560023?fromtitle=%E5%9B%BD%E5%AE%B6%E5%9C%B0%E5%8C%BA%E4%BB%A3%E7%A0%81&fromid=52038508&fr=aladdin#2 ) 的国家数字代码 |
 | **&emsp; ∟ routingNumber**   | String | 汇款路线号码<br/>**『海外账号』专属参数** | 非必填 | - | 汇款路线号码(Routing No.) |
 | **&emsp; ∟ bankCode**        | String | 联行号<br/>**『海外账号』专属参数** | 非必填 | - | 联行号(Bank Code) |
 | **&emsp; ∟ branchCode**      | String | 支行号<br/>**『海外账号』专属参数** | 非必填 | - | 支行号(Branch Code) |
@@ -144,6 +146,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "cardNo":"7713123400610",                  //银行账号(Account No.)
             "bankName": "海外银行名称",                //银行名称(Bank Name)
             "swiftCode": "海外银行国际代码",           //银行国际代码(Swift Code)
+            "nationCode": "840",                      //银行所在地区代码(Nation Code)，传参为国家数字代码，840：美国
             "routingNumber": "99999",                 //汇款路线号码(Routing No.)
             "bankCode": "88888",                      //联行号(Bank Code)
             "branchCode": "777777",                   //支行号(Branch Code)

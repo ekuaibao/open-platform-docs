@@ -94,7 +94,8 @@ import TabItem from '@theme/TabItem';
                                         "standardStrCode": "CNY"
                                     }
                                 }
-                            ]
+                            ],
+                            "invoiceConfirm": "true"     //待开发票补充发票后，是否已确认发票
                         },
                         "consumptionReasons": "",          //消费原因
                         "linkDetailEntities": [            //报销单关联申请事项数据
