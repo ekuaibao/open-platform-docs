@@ -11,7 +11,8 @@ url="/api/openapi/v1/departments/update/$`departmentId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.0**](/docs/open-api/notice/update-log#160) -> 🐞 **成功响应** 中增加 `order`（排序序号）参数。<br/>
+  [**1.13.1**](/docs/open-api/notice/update-log#1131)&emsp;-> 🐞 新增了 `form` 参数，支持传入**部门自定义字段**<br/>
+  [**1.6.0**](/docs/open-api/notice/update-log#160) &emsp; -> 🐞 **成功响应** 中增加 `order`（排序序号）参数。<br/>
 
   </div>
 </details>
@@ -35,6 +36,10 @@ url="/api/openapi/v1/departments/update/$`departmentId`"
 | **code**      | String  | 部门编码        | 必填  | - | 可传 `""`，不可传重复的值 |
 | **name**      | String  | 部门名称        | 必填  | - | 不可传 `""`，不可传重复的值 |
 | **parentId**  | String  | 上级部门ID      | 必填  | - | 根部门为 `""` |
+| **form**      | Object  | 自定义字段	    | 非必填  | - | 部门自定义字段 |
+| **&emsp; ∟ costCenter**  | String  | 成本中心ID   | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
+| **&emsp; ∟ legalEntity** | String  | 法人实体ID   | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
+| **&emsp; ∟ u_字段名**     | String  | 自定义字段	   | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目<br/>可通过 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 获取字段名 |
 | **order**     | Number  | 排序           | 非必填 | 0 | code为空，order相同时，按创建时间排序<br/>code为空，order不同时，按order排序<br/>code不为空时，按code排序 |
 
 ## CURL
@@ -46,6 +51,10 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1/departmen
     "code": "00301",
     "name": "测试事业部1",
     "parentId": "PCx3rwm3aA00qM:ID_3rLjlEB09rg",
+    "form": {
+        "costCenter": "cc0dbcd46cf6d0444c00",
+        "legalEntity": "ID_3rPkrfrfv4M"
+    },
     "order": 0
 }'
 ```

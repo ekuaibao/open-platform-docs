@@ -15,6 +15,7 @@ authors: [冯继成]
 ---
 ## 通讯录同步
 ### [修改员工登录手机号](/docs/open-api/inside/update-staffs-phone)
+### [新增员工/部门扩展字段](/docs/open-api/inside/create-custom-field-staffOrDepearment)
 
 ---
 ## 单据模板

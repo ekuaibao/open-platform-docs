@@ -22,7 +22,7 @@ url="/api/openapi/v2/datalink/getPlatform"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token  | 必填   | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
 | **start**       | Number | 数据开始数  | 非必填  | 0 | 数据开始数 |
-| **count**       | Number | 每页总数    | 非必填 | 100 | 最大不能超过 `100` |
+| **count**       | Number | 每页总数    | 非必填 | 20 | 最大不能超过 `100` |
 
 :::tip
 - 只返回 **启用** 的自建应用，如果自建应用已停用，则不返回。

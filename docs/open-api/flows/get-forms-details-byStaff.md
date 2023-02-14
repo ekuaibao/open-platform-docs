@@ -46,7 +46,7 @@ url="/api/openapi/v1.1/docs/getApplyList"
 | **orderByType** | String  | 排序方式      | 非必填 | desc | `asc` ：正序<br/>`desc` ：倒序|
 | **startDate**   | String  | 查询起始时间   | 非必填 | - | 格式：`yyyy-MM-dd HH:mm:ss` |
 | **endDate**     | String  | 查询结束时间   | 非必填 | - | 格式：`yyyy-MM-dd HH:mm:ss` |
-| **specificationId** | Array | 单据模板ID<br/>**不带小版本号** | 非必填 | - | 支持多个，用 `,` 分割，**不传查所有模板**<br/>通过 [根据企业ID获取单据模版列表](/docs/open-api/forms/get-template-list) 获取<br/>例："Kk09lCDmlg3Q00" |
+| **specificationId** | String | 单据模板ID<br/>**不带小版本号** | 非必填 | - | 支持多个，用 `,` 分割，**不传查所有模板**<br/>通过 [根据企业ID获取单据模版列表](/docs/open-api/forms/get-template-list) 获取<br/>例："Kk09lCDmlg3Q00" |
 | **active** | Boolean  |  查询条件：单据是否删除   | 非必填 | false | `true` : 未删除 &emsp; `false` : 已删除 |
 
 :::tip
