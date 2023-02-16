@@ -12,14 +12,15 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
-## 1.13.1
+## 1.14.0
 
-`2023-02-xx`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xx.0`
+`2023-02-23`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xx.0`
 - 🐞 更新 [新增收款账户](/docs/open-api/pay/new-payeeInfo)、[批量新增收款账户](/docs/open-api/pay/batch-new-payeeInfo)、[更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口
   - 新增了 `nationCode`（银行所在地区代码）参数描述。
 - 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments) 、[批量新增部门](/docs/open-api/contacts/batch-add-departments) 、[修改部门信息](/docs/open-api/contacts/batch-add-departments) 接口
-    - 新增了 `form` 参数，支持传入**部门自定义字段**
-
+    - 新增了 `form` 参数，支持传入 **部门自定义字段**。
+- 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new) 文档
+  - 新增了Ebot、审批事件类型支持 **自定义档案（多选）** 字段出站配置。
 ---
 ## 1.13.0
 
@@ -35,7 +36,7 @@ timeline: true
     - 开放了接口可以更新数据来源为【**手动管理**】的角色数据的权限，系统页面仍保留无法手动更新数据来源为【**API导入**】的角色数据。
 
 ---
-## 1.12.1
+## 1.12.0
 
 `2023-01-05`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.94.0`
 - 🆕 新增 [单据暂挂](/docs/open-api/flows/flow-hangUp) 接口。
@@ -50,7 +51,7 @@ timeline: true
 - 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口
   - 新增了 `pageType` = `payment` 类型，进入易快报 **待我支付** 页面。
   - 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。
-- 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new) 接口
+- 🐞 更新 [配置出站消息](/docs/open-api/outbound-message/outbound-new) 文档
   - 新增了 **站内信** 出站消息类型。
 - 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments) 接口
   - 更新了 `code` 参数介绍。

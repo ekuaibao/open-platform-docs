@@ -19,14 +19,14 @@ url="/api/openapi/v2/property/addPropertySet"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 |**useField**                | String   | 字段所属类型   | 必填  | - | `STAFF`：员工<br/>`DEPARTMENT`：部门 | 
 |**properties**              | Array   | 字段信息       | 必填  | - | 字段信息 | 
-|**&emsp; ∟ cnLabel**        | String  | 字段显示名称   | 必填  | - | 字段显示名称 | 
+|**&emsp; ∟ cnLabel**        | String  | 字段显示名称   | 必填  | - | 不可传 `""`，不可传重复的值 | 
 |**&emsp; ∟ enLabel**        | String  | 字段英文名称   | 非必填 | - | 字段英文名称 | 
-|**&emsp; ∟ canAsDimension** | Boolean | 是否自定义档案 | 非必填 | - | 是否自定义档案 | 
+|**&emsp; ∟ canAsDimension** | Boolean | 是否自定义档案 | 非必填 | false | `true` : 是，档案类型字段必填为 `true`<br/>`false` : 否，其他类型字段为 `false` | 
 |**&emsp; ∟ dataType**       | Object  | 数据类型      | 必填  | - | 数据类型 | 
-|**&emsp;&emsp; ∟ type**     | String  | 字段类别      | 必填  | - | 所支持类别：<br/>`text`：文本 &emsp;&emsp; `number`：数字 &emsp;&emsp; `money`：金额<br/>`date`：日期 &emsp;&emsp; `ref`：引用类型 | 
-|**&emsp;&emsp; ∟ entity**   | String  | 引用对象      | 非必填 | - | `type` = `ref` 时必填，可参考"CURL示例"<br/> 格式为：**basedata.Dimension.+档案类别名称** |
+|**&emsp;&emsp; ∟ type**     | String  | 字段类别      | 必填  | - | 所支持类别：<br/>`text`：文本 &emsp;&emsp; `number`：数字 &emsp;&emsp; `money`：金额<br/>`date`：日期 &emsp;&emsp; `ref`：引用类型（自定义档案） | 
+|**&emsp;&emsp; ∟ entity**   | String  | 引用对象      | 非必填 | - | `type` = `ref` 时必填，可参考"CURL示例"<br/> 格式为：**basedata.Dimension.** + **档案类别名称** |
 |**&emsp;&emsp; ∟ unit**     | String  | 单位         | 非必填 | - | `type` = `number` 时选填，可参考"CURL示例"<br/>如：`kg`、`cm` 等 | 
-|**&emsp;&emsp; ∟ scale**    | Number  | 小数位数      | 非必填 | - | `type` = `number` 时必填，可参考"CURL示例" | 
+|**&emsp;&emsp; ∟ scale**    | Number  | 精度         | 非必填 | - | `type` = `number` 时必填，可参考"CURL示例"<br/>传入 `0` 即精度为整数，最多支持8位小数 | 
 
 :::tip
 - 数据类型有多种情况，可参考"CURL示例"。
@@ -64,7 +64,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/property
             "dataType":{
                 "type":"number",//数字
                 "unit":"kg",    //单位
-                "scale": 2    //小数位数
+                "scale": 2      //小数位数
             }
         },
         {
@@ -91,11 +91,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/property
 ```json
 {
     "items": [
-      "档案项目测试01",
-      "文本01",
-      "数字01",
-      "金额01",
-      "日期01"
+        "档案项目测试01",
+        "文本01",
+        "数字01",
+        "金额01",
+        "日期01"
     ]
 }
 ```

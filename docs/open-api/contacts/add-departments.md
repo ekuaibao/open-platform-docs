@@ -11,7 +11,7 @@ url="/api/openapi/v1/departments"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.13.1**](/docs/open-api/notice/update-log#1131)&emsp;-> 🐞 新增了 `form` 参数，支持传入**部门自定义字段**<br/>
+  [**1.14.0**](/docs/open-api/notice/update-log#1140)&emsp;-> 🐞 新增了 `form` 参数，支持传入 **部门自定义字段**。<br/>
   [**1.6.0**](/docs/open-api/notice/update-log#160) &emsp; -> 🐞 **成功响应** 中增加 `order`（排序序号）参数。<br/>
 
   </div>
@@ -60,9 +60,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/departme
         "id": "JOYbpjPP-E2Q00:NJ4bwJTotQiA00", //部门ID
         "name": "事业部",                      //部门名称
         "parentId": "JOYbpjPP-E2Q00",         //上级部门ID
-        "form":{                              //部门关联法人实体ID和成本中心ID
-            "costCenter":"NzMcynfBJ43M00",      //成本中心ID
-            "legalEntity":"11YcypdGzoEo00"      //法人实体ID
+        "form":{                              //部门关联法人实体ID和成本中心ID以及自定义字段
+            "costCenter":"NzMcynfBJ43M00",    //成本中心ID
+            "legalEntity":"11YcypdGzoEo00"    //法人实体ID
         },
         "active": true,                       //是否停用
         "order": 0,                           //排序序号

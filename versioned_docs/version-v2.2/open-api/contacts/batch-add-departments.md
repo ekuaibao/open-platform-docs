@@ -11,7 +11,7 @@ url="/api/openapi/v1/departments/batch/create"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.13.1**](/docs/open-api/notice/update-log#1131)&emsp;-> 🐞 新增了 `form` 参数，支持传入**部门自定义字段**<br/>
+  [**1.14.0**](/docs/open-api/notice/update-log#1140)&emsp;-> 🐞 新增了 `form` 参数，支持传入 **部门自定义字段**。<br/>
   [**1.6.0**](/docs/open-api/notice/update-log#160) &emsp; -> 🐞 **成功响应** 中增加 `order`（排序序号）参数。<br/>
   [**0.7.125**](/docs/open-api/notice/update-log#07125) -> 🆕 新增了本接口。
 
@@ -74,23 +74,23 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/departme
 {
     "items":[
         {
-            "id":"U_gb_X4Yr8aY00:YSYc6_Ipx8uI00",
-            "name":"事业部11111",
-            "parentId":"U_gb_X4Yr8aY00:NTIc6przKo2s00",
-            "active":true,
-            "form":{                            //部门关联法人实体id和成本中心id
-                "costCenter":"NzMcynfBJ43M00",  //成本中心ID
-                "legalEntity":"11YcypdGzoEo00"  //法人实体ID
+            "id":"U_gb_X4Yr8aY00:YSYc6_Ipx8uI00",       //部门ID
+            "name":"事业部11111",                       //部门名称
+            "parentId":"U_gb_X4Yr8aY00:NTIc6przKo2s00", //上级部门ID
+            "active":true,                              //是否停用
+            "form":{                                    //部门关联法人实体ID和成本中心ID以及自定义字段
+                "costCenter":"NzMcynfBJ43M00",          //成本中心ID
+                "legalEntity":"11YcypdGzoEo00"          //法人实体ID
             },
-            "order": 1,                         //排序序号
-            "code":"233434342121111"
+            "order": 1,                                 //排序序号
+            "code":"233434342121111"                    //部门编码
         },
         {
             "id":"U_gb_X4Yr8aY00:Ty8c6_Ipx8uM00",
             "name":"事业部11112",
             "parentId":"U_gb_X4Yr8aY00:NTIc6przKo2s00",
             "active":true,
-            "form":{                            //部门关联法人实体id和成本中心id
+            "form":{                            //部门关联法人实体ID和成本中心ID以及自定义字段
                 "costCenter":"NzMcynfBJ43M00",  //成本中心ID
                 "legalEntity":"11YcypdGzoEo00"  //法人实体ID
             },

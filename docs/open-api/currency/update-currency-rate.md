@@ -15,7 +15,7 @@ url="/api/openapi/v2.1/currency/currencyRate"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.12.1**](/docs/open-api/notice/update-log#1121) -> 🚀 接口升级 `v2.1` 版本，更新了接口路径并支持了可更新不同本位币对应不同原币的汇率（需开通【**法人实体多币种**】）。<br/>
+  [**1.12.0**](/docs/open-api/notice/update-log#1120) -> 🚀 接口升级 `v2.1` 版本，更新了接口路径并支持了可更新不同本位币对应不同原币的汇率（需开通【**法人实体多币种**】）。<br/>
 
   </div>
 </details>

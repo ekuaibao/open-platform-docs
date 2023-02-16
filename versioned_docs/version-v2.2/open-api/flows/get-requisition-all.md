@@ -12,7 +12,7 @@ url="/api/openapi/v1/requisition/getData"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.12.1**](/docs/open-api/notice/update-log#1121) -> 🐞 接口 **成功响应** 新增了 `details`（申请事项费用明细信息）字段。<br/>
+  [**1.12.0**](/docs/open-api/notice/update-log#1120) -> 🐞 接口 **成功响应** 新增了 `details`（申请事项费用明细信息）字段。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120)&emsp;-> 🆕 新增了本接口。
 
   </div>

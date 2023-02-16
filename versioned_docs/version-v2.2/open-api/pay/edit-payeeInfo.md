@@ -12,7 +12,7 @@ url="/api/openapi/v2.1/payeeInfos/$`id`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.13.1**](/docs/open-api/notice/update-log#1131) -> 🐞 新增了 `nationCode`（银行所在地区代码）参数描述。<br/>
+  [**1.14.0**](/docs/open-api/notice/update-log#1140) -> 🐞 新增了 `nationCode`（银行所在地区代码）参数描述。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180)&emsp;-> 🐞 修复了更改员工可见性时，偶现的传入启用的员工ID，返回停用的同名员工ID的BUG。<br/>
   [**1.6.3**](/docs/open-api/notice/update-log#163)&emsp;-> 🚀 接口升级 `v2.1` 版本，新增了 `sort`（账号类别）参数，额外支持更新 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。<br/>
 

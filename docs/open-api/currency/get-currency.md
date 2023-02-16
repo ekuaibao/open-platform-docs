@@ -15,7 +15,7 @@ url="/api/openapi/v2.1/currency"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.12.1**](/docs/open-api/notice/update-log#1121) -> 🚀 接口升级 `v2.1` 版本，更新了接口路径并支持了可按本位币获取对应的原币配置。<br/>
+  [**1.12.0**](/docs/open-api/notice/update-log#1120) -> 🚀 接口升级 `v2.1` 版本，更新了接口路径并支持了可按本位币获取对应的原币配置。<br/>
 
   </div>
 </details>

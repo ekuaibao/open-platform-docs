@@ -11,7 +11,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.12.1**](/docs/open-api/notice/update-log#1121)&emsp;-> 🆕 新增了 `pageType` = `payment` 类型，进入易快报 **待我支付** 页面。<br/>
+  [**1.12.0**](/docs/open-api/notice/update-log#1120)&emsp;-> 🆕 新增了 `pageType` = `payment` 类型，进入易快报 **待我支付** 页面。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。<br/>
   [**1.7.1**](/docs/open-api/notice/update-log#171) &emsp; -> 🆕 新增了 `authType`（授权方式）参数，控制单点链接可用次数。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了被委托人审批会签节点的单据（`pageType` = `form`）时，无审批按钮的BUG。 <br/>

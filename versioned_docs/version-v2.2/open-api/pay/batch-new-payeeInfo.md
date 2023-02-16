@@ -11,7 +11,7 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.13.1**](/docs/open-api/notice/update-log#1131) -> 🐞 新增了 `nationCode`（银行所在地区代码）参数描述。<br/>
+  [**1.14.0**](/docs/open-api/notice/update-log#1140) -> 🐞 新增了 `nationCode`（银行所在地区代码）参数描述。<br/>
   [**1.7.1**](/docs/open-api/notice/update-log#171)&emsp;-> 🐞 优化了接口支持部分账户校验不通过时，其他账户可继续新增成功。<br/>
   [**1.6.3**](/docs/open-api/notice/update-log#163)&emsp;-> 🆕 新增了本接口。<br/>
 
