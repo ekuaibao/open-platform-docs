@@ -14,7 +14,7 @@ timeline: true
 ---
 ## 1.14.0
 
-`2023-02-23`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xx.0`
+`2023-02-23`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.96.0`
 - 🐞 更新 [新增收款账户](/docs/open-api/pay/new-payeeInfo)、[批量新增收款账户](/docs/open-api/pay/batch-new-payeeInfo)、[更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口
   - 新增了 `nationCode`（银行所在地区代码）参数描述。
 - 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments) 、[批量新增部门](/docs/open-api/contacts/batch-add-departments) 、[修改部门信息](/docs/open-api/contacts/batch-add-departments) 接口
