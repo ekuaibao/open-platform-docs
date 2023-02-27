@@ -9,7 +9,9 @@ url="/api/openapi/v2/flow/data/submitFlow"
 />
 
 :::caution
-- 经由【[创建单据](/docs/open-api/flows/creat-and-save)】接口，正确保存数据后，配置审批人，调用此接口提交单据。
+- 经由【[创建单据](/docs/open-api/flows/creat-and-save)】接口创建的单据草稿，调用此接口配置审批人提交单据
+  - 各节点审批人可通过【[获取流程实例](/docs/open-api/flows/get-flow)】获取。
+  - **自动选择** 的审批节点，也要传参，否则节点审批人会被清空。
 - 程序会对请求参数、body数据格式以及流程节点进行完整性与合法性校验。
 - 与系统页面上的提交单据功能一样，需要按格式组织审批流程节点信息数据，提交单据信息。
 - 提交 `rejected`（驳回）状态的单据时，会根据驳回配置提交到相应节点，配置如下：

@@ -1,5 +1,5 @@
-# 根据批次号ID获取支付记录
-根据单据的批次号获取支付信息。
+# 根据支付批次号获取单据详情
+根据单据的支付批次号获取单据详情。
 
 import Control from "@theme/Control";
 
@@ -18,7 +18,7 @@ url="/api/openapi/v1/paymentRecord/getFlowInfo"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **channelTradeNos** | Array | 批次号ID | 必填 | - | 批次号ID |
+| **channelTradeNos** | Array | 支付批次号 | 必填 | - | 可通过【待我支付-支付中】页面获取 |
 
 ## CURL
 ```json
@@ -458,7 +458,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **400** | - | 支付记录不存在 | 请确认 `channelTradeNos`（批次号ID）是否正确  | 
+| **400** | - | 支付记录不存在 | 请确认 `channelTradeNos`（支付批次号）是否正确  | 
 
 
 
