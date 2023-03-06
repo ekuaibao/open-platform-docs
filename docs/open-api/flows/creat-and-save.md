@@ -57,7 +57,8 @@ url="/api/openapi/v2.2/flow/data"
 |**&emsp; ∟ description**                        | String | 描述           | 非必填 | - | 描述 |
 |**&emsp; ∟ payeeId**                            | String | 收款账户ID      | 必填   | - | 通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取<br/>当 `isCommit` = `false`（保存草稿）时，**允许非必填** |
 |**&emsp; ∟ specificationId**                    | String | 单据模板ID      | 必填  | - | 通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 获取 **单据模板ID**<br/>然后通过 [根据模版ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取 **创建单据的模板ID** |
-|**&emsp; ∟ expenseLink**                        | String | 关联申请        | 非必填 | - | 需要关联的申请单ID |
+|**&emsp; ∟ expenseLink**                        | String | 关联的申请单ID   | 非必填 | - | 【按申请事项整体报销】时传递的参数，[关联申请](/docs/open-api/flows/creat-and-save#14-关联申请字段) 时2选1 |
+|**&emsp; ∟ expenseLinks**                       | Array  | 关联的申请单ID   | 非必填 | - | 【按申请明细分别报销】时传递的参数，[关联申请](/docs/open-api/flows/creat-and-save#14-关联申请字段) 时2选1 |
 |**&emsp; ∟ linkRequisitionInfo**                | String | 补充申请        | 非必填 | - | 申请单 **补充申请** 时使用，值为需要补充的申请单ID |
 |**&emsp; ∟ details**                            | Array  | 费用明细        | 必填  | - | 费用明细 |
 |**&emsp; &emsp; ∟ feeTypeId**                   | String | 费用类型ID      | 必填  | - | 通过 [获取费用类型列表(包含停用)](/docs/open-api/feetype/get-feetypes-list) 获取 |
@@ -162,7 +163,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
         ],
         "description":"123",            //描述
         "expenseDate":1639324800000,    //报销日期
-        "expenseLink":"ID_3twRddlb0$w", //关联申请单ID，如单据无需关联申请单，可不在form对象中添加该字段
+        "expenseLink":"ID_3twRddlb0$w", //关联的申请单ID（【按申请事项整体报销】时传递的参数），如单据无需关联申请单，可不在form对象中添加该字段
         "submitterId":"PCx3rwm3aA00qM:VWf3rvZHCb0ghM",  //提交人ID
         "specificationId":"ID_3rwlFm523WM:2f01211a2447e29378d078e1219a51899eff7d36",    //单据模板ID
         "u_Z业务对象":"ID_3tLfV302QDw",
@@ -624,10 +625,96 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 ```
 
 ### (14) 关联申请字段
-字段的「type」为【select】且「valueFrom」为【requisition.RequisitionInfo】的，为关联申请字段，需传入申请事项(申请单)的ID：
+字段的「type」为【select】且「valueFrom」为【requisition.RequisitionInfo】的，为关联申请字段，需传入申请单(申请事项)的ID：
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="default" label="按申请明细分别报销" default>
+
 ```json
-"expenseLink": "ID_3twRddlb0$w"
+{
+    "form": {
+        "title": "测试报销-接口",
+        "details": [
+            {
+                "feeTypeId": "Tdk3tgber501v0:office",
+                "feeTypeForm": {
+                    "amount": {
+                        "standard": "10",
+                        "standardUnit": "元",
+                        "standardScale": 2,
+                        "standardSymbol": "¥",
+                        "standardNumCode": "156",
+                        "standardStrCode": "CNY"
+                    },
+                    "feeDate": 1677841791653,
+                    "linkDetailEntities": [       //报销单关联申请事项数据（报销规则：【按申请明细分别报销】时需要传递的参数，【按申请事项整体报销】不需要传递此参数）
+                        {
+                            "amount": {
+                                "standard": "10", //报销金额
+                                "standardUnit": "元",
+                                "standardScale": 2,
+                                "standardSymbol": "¥",
+                                "standardNumCode": "156",
+                                "standardStrCode": "CNY"
+                            },
+                            "linkDetailEntityId": "ID01nF6040EJyf"  //关联申请事项明细的明细实例ID，可通过【根据申请事项ID获取申请事项】接口获取
+                        }
+                    ]
+                },
+                "specificationId": "Tdk3tgber501v0:office:expense:f4bad538999725fc7da0154490804a275e049eff"
+            }
+        ],
+        "payeeId": "ID_3tRmmAdwXQw",
+        "description": "",
+        "expenseDate": 1677772800000,
+        "submitterId": "Tdk3tgber501v0:AvT3lntT8zzpWw",
+        "expenseLinks": [  //关联的申请单ID
+            "ID01nF6040EJyf"
+        ],
+        "specificationId": "ID01nrAmUbaUtp:f0a20c668b139ec1ed87d813db0911f316183138",
+        "expenseDepartment": "Tdk3tgber501v0"
+    }
+}
 ```
+</TabItem>
+<TabItem value="payPlanMode" label="按申请事项整体报销">
+
+```json
+{
+    "form": {
+        "title": "测试报销-接口",
+        "details": [
+            {
+                "feeTypeId": "Tdk3tgber501v0:office",
+                "feeTypeForm": {
+                    "amount": {
+                        "standard": "10",
+                        "standardUnit": "元",
+                        "standardScale": 2,
+                        "standardSymbol": "¥",
+                        "standardNumCode": "156",
+                        "standardStrCode": "CNY"
+                    },
+                    "feeDate": 1677841791653
+                },
+                "specificationId": "Tdk3tgber501v0:office:expense:f4bad538999725fc7da0154490804a275e049eff"
+            }
+        ],
+        "payeeId": "ID_3tRmmAdwXQw",
+        "description": "",
+        "expenseDate": 1677772800000,
+        "submitterId": "Tdk3tgber501v0:AvT3lntT8zzpWw",
+        "expenseLink": "ID_3twRddlb0$w",  //关联的申请单ID
+        "specificationId": "ID01nrAmUbaUtp:f0a20c668b139ec1ed87d813db0911f316183138",
+        "expenseDepartment": "Tdk3tgber501v0"
+    }
+}
+```
+</TabItem>
+</Tabs>
 
 ### (15) 核销借款字段
 字段的 `params` 里的 `loanWrittenOff` 为核销借款字段:
@@ -679,9 +766,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 单据的 `payPlan` 字段为 **多收款人** 模式的 **支付计划** 字段，传参示例如下：
 - 使用 **多收款人** 功能，需要在单据模板中勾选 “**允许多收款人**”。<br/>
 - 当多收款人为 **按明细/按收款信息汇总明细金额** 类型时，费用明细中的收款信息字段（`details` -> `feeTypeForm` -> `feeDetailPayeeId`）**必填**。<br/>
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs>
 <TabItem value="default" label="按明细" default>

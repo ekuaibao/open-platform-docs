@@ -12,6 +12,7 @@ url="/api/openapi/v1/requisition/getData"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.15.0**](/docs/open-api/notice/update-log#1150) -> 🐞 接口 **成功响应** `details` 下新增了 `linkDetailEntityId`（费用明细实例ID）字段，用于报销单【按申请明细分别报销】时关联使用。<br/>
   [**1.12.0**](/docs/open-api/notice/update-log#1120) -> 🐞 接口 **成功响应** 新增了 `details`（申请事项费用明细信息）字段。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120)&emsp;-> 🆕 新增了本接口。
 
@@ -48,13 +49,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/requisit
     "count": 2,                     //所查询状态类型的申请事项总数
     "items": [
         {
-            "id": "ID_3zE5G_02rw0", //申请事项ID
+            "id": "ID_3zE5G_02rw0", //申请事项ID = 申请单ID
             "code": "S22000002",    //申请单编号
             "name": "22",           //申请事项名称
             "state": "PROCESS",     //申请事项状态
             "title": "22",          //申请单标题
             "active": true,
-            "flowId": "ID_3zE5G_02rw0",  //申请单ID
+            "flowId": "ID_3zE5G_02rw0",  //申请单ID = 申请事项ID
             "grayver": "9.10.0.0:A",
             "ownerId": "bwa3wajigF0WH0:ID_3lokDfb1p5w",  //申请事项所有人
             "related": [  //关联单据
@@ -163,7 +164,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/requisit
                             "standardStrCode": "CNY"
                         },
                         "品类": "bwa3wajigF0WH0:paper",
-                        "detailId": "ID_3zE5G_02Bw0",  //费用明细实例ID
+                        "detailId": "ID_3zE5G_02Bw0",           //费用明细ID
+                        "linkDetailEntityId": "ID01netPh7VTH1", //费用明细实例ID，用于报销单【按申请明细分别报销】时关联使用
                         "quantity": "20",
                         "unitPrice": {
                             "standard": "1",
@@ -262,7 +264,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/requisit
                             "standardNumCode": "156",
                             "standardStrCode": "CNY"
                         },
-                        "detailId": "ID_3zE5G_00ww0",
+                        "detailId": "ID_3zE5G_00ww0",           //费用明细ID
+                        "linkDetailEntityId": "ID01netPh7sdg5", //费用明细实例ID，用于报销单【按申请明细分别报销】时关联使用
                         "attachments": [],
                         "consumptionReasons": ""
                     },

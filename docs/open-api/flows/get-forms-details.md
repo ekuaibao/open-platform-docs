@@ -98,7 +98,7 @@ import TabItem from '@theme/TabItem';
                             "invoiceConfirm": "true"     //待开发票补充发票后，是否已确认发票
                         },
                         "consumptionReasons": "",          //消费原因
-                        "linkDetailEntities": [            //报销单关联申请事项数据
+                        "linkDetailEntities": [            //报销单关联申请事项数据（报销规则：【按申请明细分别报销】时才会返回的参数，【按申请事项整体报销】不会返回此参数）
                             {
                                 "amount": {
                                     "standard": "0",       //报销金额
@@ -108,8 +108,8 @@ import TabItem from '@theme/TabItem';
                                     "standardNumCode": "156",
                                     "standardStrCode": "CNY"
                                 },
-                            "linkDetailEntityId": "ID_3zE5G_00Mw0",
-                            "expenseLink": "ID_3zE5G_00rw0" //申请单ID
+                            "linkDetailEntityId": "ID_3zE5G_00Mw0",  //关联申请事项明细的明细实例ID
+                            "expenseLink": "ID_3zE5G_00rw0"          //申请单ID，也是申请事项ID
                             }
                         ]
                     },
@@ -123,6 +123,10 @@ import TabItem from '@theme/TabItem';
                     }
                 }
             ],
+            "expenseLinks": [  //关联的申请单ID（报销规则：【按申请明细分别报销】时返回数组参数）
+              "ID_3zE5G_00rw0"
+            ],
+            //"expenseLink": "ID_3zE5G_00rw0",  //关联的申请单ID（报销规则：【按申请事项整体报销】时返回单个参数） 
             "payeeId": "ED0b7ANNOwlI00",    //收款账户ID
             "payMoney": {                   //支付金额
                 "standard": "33.00",

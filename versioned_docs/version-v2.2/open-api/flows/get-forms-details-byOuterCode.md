@@ -1,19 +1,17 @@
-# 根据单据编号获取单据详情
+# 根据单据outerCode获取单据详情
 
 import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1.1/flowDetails/byCode"
+url="/api/openapi/v1.1/flowDetails/outerCode"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 **报销单、收款单** 类型返回数据中新增了 `writtenOffRecords`（核销借款记录）参数。<br/>
-  [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🚀 接口升级 `v1.1` 版本，报销单类型返回数据中新增了 `expenseLink`（费用明细关联的申请单ID）参数。<br/>
-  [**0.7.160**](/docs/open-api/notice/update-log#07160) -> 🆕 新增了本接口。<br/>
+  [**1.15.0**](/docs/open-api/notice/update-log#1150) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
@@ -27,15 +25,11 @@ url="/api/openapi/v1.1/flowDetails/byCode"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String  | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
-| **code**        | String  | 单据编号   | 必填 | - | 单据编号，可通过系统单据页面获取 |
-
-:::tip
-- 单据编号是面向企业唯一，单据ID是面向系统唯一。
-:::
+| **outerCode**   | String  | 外部系统单据编号 | 必填 | - | 第三方系统的单据唯一标识，不可重复 |
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/flowDetails/byCode?code=S21000002&accessToken=ID_3uTOGXa04Vw:PCx3rwm3aA00qM'
+xxx
 ```
 
 ## 成功响应
@@ -125,7 +119,7 @@ import TabItem from '@theme/TabItem';
                 }
             ],
             "expenseLinks": [  //关联的申请单ID（报销规则：【按申请明细分别报销】时返回数组参数）
-              "ID_3zE5G_00rw0"
+                "ID_3zE5G_00rw0"
             ],
             //"expenseLink": "ID_3zE5G_00rw0",  //关联的申请单ID（报销规则：【按申请事项整体报销】时返回单个参数） 
             "payeeId": "ED0b7ANNOwlI00",    //收款账户ID
@@ -754,7 +748,7 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-## 失败响应
+## 失败响应---------（需要确认）
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |

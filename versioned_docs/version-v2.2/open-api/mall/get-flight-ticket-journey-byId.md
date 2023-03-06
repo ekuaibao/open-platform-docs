@@ -22,6 +22,7 @@ url="/api/mall-openapi/open-api/flight/ticket/journey/query"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **Authorization** | String | 自建应用授权 | 必填 | - | 通过 [获取自建应用授权](/docs/open-api/getting-started/platform-auth) 获取 `accessToken`<br/>[传参格式](/docs/open-api/mall/question-answer#问题一) 固定为：`Bearer` + **空格** + `accessToken` |
+
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
