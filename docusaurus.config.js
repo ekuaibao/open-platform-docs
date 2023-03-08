@@ -83,7 +83,7 @@ const config = {
             position: "left",
             activeBaseRegex: "/block-ui/",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
           {
             type: "docsVersionDropdown",
             position: "right",
@@ -93,39 +93,39 @@ const config = {
       },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "社区",
-            items: [
-              {
-                label: "论坛",
-                href: "https://github.com/ekuaibao/open-platform-docs/discussions",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/ekuaibao/open-platform-docs",
-              },
-            ],
-          },
-        ],
+        // links: [
+        //   {
+        //     title: "Docs",
+        //     items: [
+        //       {
+        //         label: "Tutorial",
+        //         to: "/docs/intro",
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: "社区",
+        //     items: [
+        //       {
+        //         label: "论坛",
+        //         href: "https://github.com/ekuaibao/open-platform-docs/discussions",
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: "More",
+        //     items: [
+        //       {
+        //         label: "Blog",
+        //         to: "/blog",
+        //       },
+        //       {
+        //         label: "GitHub",
+        //         href: "https://github.com/ekuaibao/open-platform-docs",
+        //       },
+        //     ],
+        //   },
+        // ],
         copyright: `Copyright © ${new Date().getFullYear()} Open-Platform Team, Ekuaibao Inc. Built with Docusaurus.`,
       },
       prism: {
