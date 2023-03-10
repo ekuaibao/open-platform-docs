@@ -173,6 +173,7 @@ const sidebars = {
         "open-api/flows/get-payment-results",
         "open-api/flows/get-payment-records",
         "open-api/flows/get-requisition-all",
+        "open-api/flows/get-requisition-byId",
         "open-api/flows/share-requisition",
         "open-api/flows/close-requisition",
         "open-api/flows/flow-approval",

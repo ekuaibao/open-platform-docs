@@ -14,8 +14,9 @@ timeline: true
 ---
 ## 1.15.0
 
-`2023-03-xx`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xx.0`
+`2023-03-10`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.97.0`
 - 🆕 新增 [根据单据outerCode获取单据详情](/docs/open-api/flows/get-forms-details-byOuterCode) 接口。
+- 🆕 新增 [根据申请事项ID获取申请事项](/docs/open-api/flows/get-requisition-byId) 接口。
 - 🐞 更新 [获取申请事项](/docs/open-api/flows/get-requisition-all) 接口
   - 接口 **成功响应** `details` 下新增了 `linkDetailEntityId`（费用明细实例ID）字段，用于报销单【按申请明细分别报销】时关联使用。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口

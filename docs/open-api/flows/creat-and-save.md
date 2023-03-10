@@ -12,6 +12,7 @@ url="/api/openapi/v2.2/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🐞 新增了 **报销单关联申请** 传参示例。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 **创建草稿状态单据**（`isCommit` = `false`）时，`payeeId`（收款账户ID）允许非必填的场景。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。<br/>
   [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🚀 接口升级 `v2.2` 版本，新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。<br/>

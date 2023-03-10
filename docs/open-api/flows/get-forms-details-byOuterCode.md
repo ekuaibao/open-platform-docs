@@ -29,7 +29,7 @@ url="/api/openapi/v1.1/flowDetails/outerCode"
 
 ## CURL
 ```shell
-xxx
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/flowDetails/outerCode?outerCode=ZGYTEST001&accessToken=ID01w4CALHuHh5:djg8LshfUkfM00'
 ```
 
 ## 成功响应
@@ -47,15 +47,16 @@ import TabItem from '@theme/TabItem';
         "grayver": "",
         "version": 1,                   //版本号
         "active": true,                 //是否有效（或者理解为是否被删除） true：有效，false：无效
-        "createTime": 1592289377126,    //创建时间(毫秒级时间戳)
-        "updateTime": 1592289377125,    //更新时间(毫秒级时间戳)，单据审批、单据字段修改都会改变此字段值
+        "createTime": 1678348732561,    //创建时间(毫秒级时间戳)
+        "updateTime": 1678348736586,    //更新时间(毫秒级时间戳)，单据审批、单据字段修改都会改变此字段值
         "corporationId": "djg8LshfUkfM00",//企业ID
         "sourceCorporationId": null,
         "dataCorporationId": null,
-        "form": {                    //单据详情
-            "code": "B20000001",     //单据编码
-            "title": "33",           //单据标题
-            "details": [             //消费明细
+        "form": {                       //单据详情
+            "code": "B23000042",        //单据编码
+            "title": "测试外部系统单001",  //单据标题
+            "outerCode": "ZGYTEST001",  //外部系统编号
+            "details": [                //消费明细
                 {
                     "feeTypeId": "djg8LshfUkfM00:office",      //费用类型ID，通过【获取费用类型列表】接口可获得，通过【根据ID或CODE获取费用类型模板信息】查询类型详情
                     "feeTypeForm": {    //费用类型数据明细
@@ -247,6 +248,7 @@ import TabItem from '@theme/TabItem';
         "form": {
             "code": "J20000002",
             "title": "test",
+            "outerCode": "ZGYTEST002",
             "loanDate": 1600095120000,
             "payMoney": {   //支付金额
                 "standard": "100.00",
@@ -371,6 +373,7 @@ import TabItem from '@theme/TabItem';
         "form": {
             "code": "Z21000001",
             "title": "测试付款",
+            "outerCode": "ZGYTEST003",
             "payeeId": "ID_3r0cTleWAZw",  //收款账户ID
             "payMoney": {   //支付金额
                 "standard": "666",
@@ -462,6 +465,7 @@ import TabItem from '@theme/TabItem';
         "form": {
             "code": "S20000001",
             "title": "22",
+            "outerCode": "ZGYTEST004",
             "voucherNo": "",
             "printCount": "0",
             "printState": "noPrint",
@@ -551,6 +555,7 @@ import TabItem from '@theme/TabItem';
         "form": {
             "code": "F20000006",
             "title": "郑永欠2020-05-06入住北京审批",
+            "outerCode": "ZGYTEST005",
             "printCount": "0",
             "printState": "noPrint",
             "submitDate": 1588758585629,
@@ -650,6 +655,7 @@ import TabItem from '@theme/TabItem';
         "form": {
             "code": "A21000001",
             "title": "测试收款单",
+            "outerCode": "ZGYTEST006",
             "details": [    //消费明细
                 {
                     "feeTypeId": "NOsaY-HisUbc00",
@@ -748,9 +754,9 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-## 失败响应---------（需要确认）
+## 失败响应
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **412** | - | 单据不存在 | 请确认 `code`（单据编号）是否正确 |
+| **412** | - | 单据不存在 | 请确认 `outerCode`（外部系统单据编号）是否正确 |
 | **412** | - | 单据已删除 | 请确认对应单据是否已删除 |
