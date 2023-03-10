@@ -3,7 +3,7 @@
 import Control from "@theme/Control";
 
 <Control
-method="POST"
+method="GET"
 url="/api/openapi/v1/requisition/requisition/$`id`"
 />
 
