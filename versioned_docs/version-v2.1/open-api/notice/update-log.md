@@ -24,7 +24,7 @@ timeline: true
   - 修复了不传 `visibility`（可见范围）非必填参数报错的BUG。
 - 🐞 更新 [更新角色下员工信息](/docs/open-api/corporation/update-roles) 接口
   - 修复了首次调用接口报错后，使用相同错误参数再次调用时，返回成功响应的BUG。
-- 🐞 更新 [获取申请事项](/docs/open-api/flows/get-requisition-all) 接口
+- 🐞 更新 [获取申请事项列表](/docs/open-api/flows/get-requisition-all) 接口
   - 新增了 `state` （申请事项）参数介绍。
 - 🐞 更新 [预算-常见问题总结](/docs/open-api/budget/question-answer) 文档
   - 新增了 **问题三：预算余额如何获取？**
@@ -414,7 +414,7 @@ timeline: true
 `2022-03-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.3`
 
 - 🆕 新增 [根据员工ID批量获取单据详情](/docs/open-api/flows/get-forms-details-byStaff) 接口。
-- 🆕 新增 [获取申请事项](/docs/open-api/flows/get-requisition-all) 接口。
+- 🆕 新增 [获取申请事项列表](/docs/open-api/flows/get-requisition-all) 接口。
 - 🆕 新增 [根据单据ID查询所有待办已办事项](/docs/open-api/flows/get-forms-details-byId) 接口。
 - 🚀 新增 [更新自建应用](/docs/open-api/datalink/edit-platform) 接口 `v2.1` 版本
   - 新增了支持更新应用名称，对 `adminIds`（管理员ID）做参数真实性校验。

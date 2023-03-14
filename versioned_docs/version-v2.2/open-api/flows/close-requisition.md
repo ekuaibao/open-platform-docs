@@ -20,7 +20,7 @@ url="/api/openapi/v1/requisition/closeRequisition/[`ids`]"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids**   | Array | 申请事项ID | 必填 | - | 通过 [获取申请事项](/docs/open-api/flows/get-requisition-all) 获取 |
+| **ids**   | Array | 申请事项ID | 必填 | - | 通过 [获取申请事项列表](/docs/open-api/flows/get-requisition-all) 获取 |
 
 
 ## Query Parameters

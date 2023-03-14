@@ -11,7 +11,7 @@ url="/api/openapi/v1/requisition/requisition/$`id`"
   <summary><b>更新日志</b></summary>
   <div>
 
-[**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🆕 新增了本接口。
+  [**1.15.0**](/docs/open-api/notice/update-log#1150) -> 🆕 新增了本接口。
 
   </div>
 </details>
@@ -21,7 +21,7 @@ url="/api/openapi/v1/requisition/requisition/$`id`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
-| **id**          | String | 申请事项ID | 必填 | - | **申请事项ID = 申请单ID**<br/>可通过 [获取单据列表](/docs/open-api/flows/get-forms-details-byStaff)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode)、[获取申请事项](/docs/open-api/flows/get-requisition-all) 获取 |
+| **id**          | String | 申请事项ID | 必填 | - | **申请事项ID = 申请单ID**<br/>可通过 [获取单据列表](/docs/open-api/flows/get-forms-details-byStaff)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode)、[获取申请事项列表](/docs/open-api/flows/get-requisition-all) 获取 |
 
 ## CURL
 ```shell

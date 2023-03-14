@@ -1,4 +1,4 @@
-# 获取申请事项
+# 获取申请事项列表
 根据员工ID和状态查询申请事项列表接口。
 
 import Control from "@theme/Control";

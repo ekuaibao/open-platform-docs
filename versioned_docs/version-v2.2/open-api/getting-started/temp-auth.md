@@ -34,7 +34,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **uid**                     | String  | 员工ID           | 非必填 | - |  当 `userId` 非必填时 `uid` 必填  |
 | **userId**                  | String  | 第三方员工ID      | 非必填 | - | 当 `uid` 非必填时 `userId` 必填 |
-| **pageType**                | String  | 登录页面类型       | 必填  | - | `frontPage` : 首页<br/>`home` : 我的单据<br/>`approve` : 待我审批<br/>`payment` : 待我支付<br/>`form` : 单据详情页<br/>`new` : 新建单据<br/>`mall` : 商城（**不支持移动端**）<br/>`backlogDetail` : 查看待办详情，同时底部菜单<br/>显示指定审批按钮（**不支持移动端**）<br/>`assistPlatform` : 协助链接授权（**只支持移动端**） |
+| **pageType**                | String  | 登录页面类型       | 必填  | - | `frontPage` : 首页<br/>`home` : 我的单据<br/>`approve` : 待我审批<br/>`payment` : 待我支付<br/>`form` : 单据详情页<br/>`new` : 新建单据<br/>`mall` : 商城（**不支持移动端**）<br/>`backlogDetail` : 查看待办详情，同时底部菜单<br/>显示指定审批按钮（**不支持移动端**）<br/>`assistPlatform` : 协助链接授权页面（**只支持移动端**） |
 | **authType**                | String  | 授权方式          | 非必填 | - | `CODE` : 表示获得的单点链接仅可使用一次，不能二次使用<br/>**如果不传此参数则生成的URL链接在有效期内可无限次访问；此参数传 `CODE` 则生成的URL链接仅可访问一次**<br/> |
 | **expireDate**              | String  | 授权有效期        | 必填   | - |  单位：秒，最大不能超过 `604800` 秒（7天） |
 | **overdueTokenRedirect**    | String  | 重定向URL        | 非必填 | - | `expireDate` 过期后重定向到该地址 |
