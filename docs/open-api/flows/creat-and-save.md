@@ -57,7 +57,7 @@ url="/api/openapi/v2.2/flow/data"
 |**&emsp; ∟ expenseDepartment**                  | String | 报销部门ID      | 非必填 | - | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取<br/>参数不传时，默认为 **提交人的默认部门** |
 |**&emsp; ∟ description**                        | String | 描述           | 非必填 | - | 描述 |
 |**&emsp; ∟ payeeId**                            | String | 收款账户ID      | 必填   | - | 通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取<br/>当 `isCommit` = `false`（保存草稿）时，**允许非必填** |
-|**&emsp; ∟ specificationId**                    | String | 单据模板ID      | 必填  | - | 通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 获取 **单据模板ID**<br/>然后通过 [根据模版ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取 **创建单据的模板ID** |
+|**&emsp; ∟ specificationId**                    | String | 单据模板ID      | 必填  | - | 通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 获取 **单据模板ID**<br/>然后通过 [根据模板ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取 **创建单据的模板ID** |
 |**&emsp; ∟ expenseLink**                        | String | 关联的申请单ID   | 非必填 | - | 【按申请事项整体报销】时传递的参数，[关联申请](/docs/open-api/flows/creat-and-save#14-关联申请字段) 时2选1 |
 |**&emsp; ∟ expenseLinks**                       | Array  | 关联的申请单ID   | 非必填 | - | 【按申请明细分别报销】时传递的参数，[关联申请](/docs/open-api/flows/creat-and-save#14-关联申请字段) 时2选1 |
 |**&emsp; ∟ linkRequisitionInfo**                | String | 补充申请        | 非必填 | - | 申请单 **补充申请** 时使用，值为需要补充的申请单ID |
@@ -761,7 +761,7 @@ import TabItem from '@theme/TabItem';
 
 - apportionMoney：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系易快报技术客服，除「standard」外，其他内容请与示例保持一致。
 - 项目：是自定义档案--项目中的档案项ID，即 [获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items) 中返回的 id。
-- specificationId：费用分摊模板ID，即 [根据企业ID获取分摊模版列表](/docs/open-api/forms/get-apportion-template-list) 中返回的 id，再调用 [根据模版ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取最新版本的分摊模板 id。
+- specificationId：费用分摊模板ID，即 [根据企业ID获取分摊模板列表](/docs/open-api/forms/get-apportion-template-list) 中返回的 id，再调用 [根据模板ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取最新版本的分摊模板 id。
 
 ### (17) 多收款人字段
 单据的 `payPlan` 字段为 **多收款人** 模式的 **支付计划** 字段，传参示例如下：

@@ -14,15 +14,14 @@ timeline: true
 ---
 ## 1.15.0
 
-`2023-03-10`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.97.0`
+`2023-03-16`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.104.2`
 - 🆕 新增 [根据单据outerCode获取单据详情](/docs/open-api/flows/get-forms-details-byOuterCode) 接口。
 - 🆕 新增 [根据申请事项ID获取申请事项](/docs/open-api/flows/get-requisition-byId) 接口。
 - 🐞 更新 [获取申请事项列表](/docs/open-api/flows/get-requisition-all) 接口
   - 接口 **成功响应** `details` 下新增了 `linkDetailEntityId`（费用明细实例ID）字段，用于报销单【按申请明细分别报销】时关联使用。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
   - 新增 [报销单关联申请](/docs/open-api/flows/creat-and-save#14-关联申请字段) 传参示例。
-
-
+  
 ---
 ## 1.14.0
 
@@ -301,7 +300,7 @@ timeline: true
   - **报销单、收款单** 类型返回数据中新增了 `writtenOffRecords`（核销借款记录）参数。
 - 🐞 更新 [根据员工ID获取待审批单据](/docs/open-api/flows/get-approve-new) 接口
   - **成功响应** 中新增了 `count` 待办总数，用于分页。
-- 🐞 更新 [根据模版ID获取模板信息](/docs/open-api/forms/get-template-byId) 接口
+- 🐞 更新 [根据模板ID获取模板信息](/docs/open-api/forms/get-template-byId) 接口
   - 修复了部分模板ID因为版本过多导致接口返回空的BUG。
 - 🐞 更新 [获取发票主体信息](/docs/open-api/datalink-extend/get-entity-invoice) 接口
   - 优化了 **发票类别介绍** 注意事项。

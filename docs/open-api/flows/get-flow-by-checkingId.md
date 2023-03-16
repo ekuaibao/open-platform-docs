@@ -109,7 +109,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/getFlowBy
                     "standardStrCode": "CNY"
                 },
                 "voucherStatus": "未生成",
-                "specificationId": "NXAcoInh6A0000:system:对账单:f5dcb4ed5447b79c55ed5c183602877659124fef", //单据模版ID
+                "specificationId": "NXAcoInh6A0000:system:对账单:f5dcb4ed5447b79c55ed5c183602877659124fef", //单据模板ID
                 "writtenOffMoney": {                  //核销金额
                     "standard": "0.00",
                     "standardUnit": "元",

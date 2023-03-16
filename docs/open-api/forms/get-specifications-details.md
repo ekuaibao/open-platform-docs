@@ -1,4 +1,4 @@
-# 根据模版类型和ID获取历史模板信息
+# 根据模板类型和ID获取历史模板信息
 
 import Control from "@theme/Control";
 

@@ -63,7 +63,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/paymentRe
                             },
                             "consumptionReasons": ""
                         },
-                        "specificationId": "3Qobu2l0cs6k00:office:expense:d862ab2944ebe9369de5cafd548796be16a0dc19" //单据模版ID
+                        "specificationId": "3Qobu2l0cs6k00:office:expense:d862ab2944ebe9369de5cafd548796be16a0dc19" //单据模板ID
                     }
                 ],
                 "payDate": 1599469765921, 

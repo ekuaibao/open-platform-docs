@@ -1,4 +1,4 @@
-# 根据模版ID获取模板信息
+# 根据模板ID获取模板信息
 
 import Control from "@theme/Control";
 
@@ -17,14 +17,14 @@ url="/api/openapi/v2/specifications/byIds/[`ids`]"
 </details>
 
 :::caution
-- 只返回未停用、未删除的模版信息。
+- 只返回未停用、未删除的模板信息。
 :::
 
 ## Path Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **ids** | Array | 单据模版ID集合 | 必填 | - | 支持多个，数组方式，通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)，<br/>[根据企业ID获取单据模版列表](/docs/open-api/forms/get-template-list) 获取 |
+| **ids** | Array | 单据模板ID集合 | 必填 | - | 支持多个，数组方式，通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest)，<br/>[根据企业ID获取单据模板列表](/docs/open-api/forms/get-template-list) 获取 |
 
 ## Query Parameters
 
@@ -47,8 +47,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifica
             "id": "C20bu2n6osbc00:ebd338960d9053892b3fd86dfa6f31690d014de7", //模板ID
             "corporationId": "3Qobu2l0cs6k00",                               //企业ID
             "name": "差旅报销单",                                             //模板名称
-            "state": "PUBLISHED",                                            //单据模版状态 (PUBLISHED:可用；DRAFT:草稿) 
-            "form": [                       //单据模版下配置的字段
+            "state": "PUBLISHED",                                            //单据模板状态 (PUBLISHED:可用；DRAFT:草稿) 
+            "form": [                       //单据模板下配置的字段
                 {
                     "title": {
                         "label": "标题",    //字段显示名称
@@ -189,7 +189,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifica
                     }
                 }
             ],
-            "flowType": "expense"       //单据模版类型
+            "flowType": "expense"       //单据模板类型
         }
     ]
 }
@@ -199,4 +199,4 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifica
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **412** | - | 查询的模版不存在, 请输入有效的查询条件 | 请确认 `ids`（单据模版ID集合）是否正确 |
+| **412** | - | 查询的模板不存在, 请输入有效的查询条件 | 请确认 `ids`（单据模板ID集合）是否正确 |

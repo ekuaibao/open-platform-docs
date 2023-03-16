@@ -48,7 +48,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifica
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **412** | - | 单据模版组不存在 | 请确认 `name`（模板组名称）是否正确 |
+| **412** | - | 单据模板组不存在 | 请确认 `name`（模板组名称）是否正确 |
 
 ## 单据模板组位置
 

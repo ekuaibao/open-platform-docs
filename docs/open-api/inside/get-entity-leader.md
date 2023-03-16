@@ -77,7 +77,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
                     "consumptionReasons":"",       //消费原因
                     "u_测试费用导入":"ID_3v7IN7M5pT0" //自定义字段
                 },
-                "specificationId":"ID_3BDKWQqqq8g:expense:484c25ad502a1b0c4817ccd0b157430c9d20d2a4"   //费用类型模版ID
+                "specificationId":"ID_3BDKWQqqq8g:expense:484c25ad502a1b0c4817ccd0b157430c9d20d2a4"   //费用类型模板ID
             },
             "flowId":"ID_3BEqPWzQgaw",          //单据ID
             "feeDate":1647792000000,            //消费时间(毫秒级时间戳)

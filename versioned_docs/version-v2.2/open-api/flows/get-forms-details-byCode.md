@@ -114,7 +114,7 @@ import TabItem from '@theme/TabItem';
                             }
                         ]
                     },
-                    "specificationId": "djg8LshfUkfM00:office:expense:f284154aee2445c230a436cc44798ada2becf250",    //费用类型模版ID
+                    "specificationId": "djg8LshfUkfM00:office:expense:f284154aee2445c230a436cc44798ada2becf250",    //费用类型模板ID
                     "feeType": {
                         "id": "djg8LshfUkfM00:office",  //费用类型ID
                         "name": "办公|测试|测试|测试",   //费用类型名称
@@ -163,7 +163,7 @@ import TabItem from '@theme/TabItem';
             },
             "paymentChannel": "OFFLINE",          //支付方式，支付完成的单据才有此字段，详细类型见“获取付款账户”接口
             "paymentAccountId": "IeMazu3jIksU00", //付款账户ID，支付完成的单据才有此字段
-            "specificationId": "O6s8Mmqokkbk00:a444a2bd3c65fd0331a2a7c0c2d1b0d7cd7366b2",   //单据模版ID
+            "specificationId": "O6s8Mmqokkbk00:a444a2bd3c65fd0331a2a7c0c2d1b0d7cd7366b2",   //单据模板ID
             "writtenOffMoney": {                  //核销金额
                 "standard": "0.00",
                 "standardUnit": "元",
@@ -280,7 +280,7 @@ import TabItem from '@theme/TabItem';
             "repaymentDate": 9007199254740991,  //还款日
             "voucherStatus": "未生成",           //凭证状态
             "loanDepartment": "djg8LshfUkfM00:LcEb0AGaYs1000",  //借款部门
-            "specificationId": "Zp4bxmeHjAj400:02e4cad692c302a4600916a52283d5cc294d9b80",  //费用类型模版ID
+            "specificationId": "Zp4bxmeHjAj400:02e4cad692c302a4600916a52283d5cc294d9b80",  //费用类型模板ID
             "voucherCreateTime": 0,             //凭证生成时间
             "preNodeApprovedTime": 1638296463889
         },

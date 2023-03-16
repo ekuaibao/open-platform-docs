@@ -1,4 +1,4 @@
-# 根据企业ID获取分摊模版列表
+# 根据企业ID获取分摊模板列表
 
 import Control from "@theme/Control";
 
@@ -8,7 +8,7 @@ url="/api/openapi/v2/specifications/apportion"
 />
 
 :::caution
-- 只返回未停用、未删除的模版信息。
+- 只返回未停用、未删除的模板信息。
 :::
 
 ## Query Parameters

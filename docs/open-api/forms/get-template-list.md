@@ -1,4 +1,4 @@
-# 根据企业ID获取单据模版列表
+# 根据企业ID获取单据模板列表
 
 import Control from "@theme/Control";
 
@@ -8,7 +8,7 @@ url="/api/openapi/v2/specifications"
 />
 
 :::caution
-- 只返回未停用、未删除的模版信息。
+- 只返回未停用、未删除的模板信息。
 :::
 
 ## Query Parameters
@@ -29,8 +29,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifica
 {
     "items": [
         {
-            "id": "Kk09lCDmlg3Q00",  //单据模版ID
-            "name": "日常报销单",     //单据模版名称
+            "id": "Kk09lCDmlg3Q00",  //单据模板ID
+            "name": "日常报销单",     //单据模板名称
             "type": "expense"        //单据类型：requisition：申请单、 expense：报销单、 loan：借款单、 custom：通用审批单(基础单据)、 payment：付款单
         },
         {

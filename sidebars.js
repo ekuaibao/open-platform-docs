@@ -26,6 +26,14 @@ const sidebars = {
         "open-api/notice/update-log"
       ],
     },
+    // {
+    //   type: "category",
+    //   label: "V3",
+    //   items: [
+    //     "open-api/getting-started/authV3",
+    //     "open-api/getting-started/refresh-authV3",
+    //   ],
+    // },
     {
       type: "category",
       label: "开始使用",

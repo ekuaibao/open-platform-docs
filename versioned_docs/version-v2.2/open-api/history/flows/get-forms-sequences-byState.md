@@ -74,7 +74,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/docSeque
             "dataType":"",         //数据类型
             "project":"",          //项目信息
             "updateTime":"",       //更新时间
-            "specificationId":"",  //单据模版ID
+            "specificationId":"",  //单据模板ID
             "owner": {             //提交人信息
                 "id":"", 
                 "name":"",

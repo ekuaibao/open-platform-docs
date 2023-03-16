@@ -29,9 +29,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/auth/get
 {
     "value": {
         "accessToken": "u-E4PVy28Q0400",  // 授权码，后续所有模块开发需要依赖此返回值
-        "refreshToken": "asg4PVy28Q0800", // 只有调用刷新有效期接口时需要传的token
+        "refreshToken": "asg4PVy28Q0800", // 调用【刷新授权】接口时需要传的token
         "expireTime": 1531046137469,      // 授权码过期日期时间戳(默认2小时后到期)
-        "corporationId": "34A73EyI8A0w00" // 企业id
+        "corporationId": "34A73EyI8A0w00" // 企业ID
     }
 }
 ```

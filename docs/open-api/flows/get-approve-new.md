@@ -79,7 +79,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byFl
                             "u_业务对象": "",             //自定义字段
                             "consumptionReasons": "11"    //消费事由
                         },
-                        "specificationId": "ID_3BJKZuv0pow:requisition:87f34911c8972ee6d3a313c481594aa99a0092ae"  //费用类型模版ID
+                        "specificationId": "ID_3BJKZuv0pow:requisition:87f34911c8972ee6d3a313c481594aa99a0092ae"  //费用类型模板ID
                     }
                 ],
                 "payeeId": "ID_3wlg6bv4TGg",   //收款人ID
@@ -110,7 +110,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byFl
                 "voucherStatus": "未生成",
                 "onlyOwnerPrint": false,
                 "requisitionDate": 1647446400000,  //申请日期
-                "specificationId": "ID_3zE5G_006w0:0c7a731ccded39dfb4a19e29de9038114881e102",  //单据模版ID
+                "specificationId": "ID_3zE5G_006w0:0c7a731ccded39dfb4a19e29de9038114881e102",  //单据模板ID
                 "requisitionMoney": {              //申请金额
                     "standard": "10.00",
                     "standardUnit": "元",
