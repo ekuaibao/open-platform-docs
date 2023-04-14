@@ -12,7 +12,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.png",
   organizationName: "ekuaibao", // Usually your GitHub org/user name.
   projectName: "open-platform-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
@@ -67,7 +67,7 @@ const config = {
         title: "文档中心",
         logo: {
           alt: "开放平台文档中心 Logo",
-          src: "img/logo.svg",
+          src: "img/logo.png",
         },
         items: [
           {
