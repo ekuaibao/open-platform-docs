@@ -11,6 +11,7 @@ url="/api/openapi/v1/docSequences"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.16.0**](/docs/open-api/notice/update-log#1160)&emsp;-> 🐞 接口响应 `items` 下，新增 `orgSumAmount`（报销金额（原币））、`orgWriteOffAmount`（核销金额（原币））参数，需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空。<br/>
   [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
   [**0.7.128**](/docs/open-api/notice/update-log#07128) -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
 
@@ -122,9 +123,11 @@ import TabItem from '@theme/TabItem';
                 "project":null,      //项目信息
                 "logs":null,
                 "flowPlan":null,
-                "sumAmount":280,     //报销总金额
-                "writeOffAmount":0,  //核销总金额
-                "expenseDate":1545640124664,  //报销日期时间戳(毫秒级)
+                "sumAmount":280,               //报销金额
+                "writeOffAmount":0,            //核销金额
+                "orgSumAmount": null,          //报销金额（原币），需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空
+                "orgWriteOffAmount": null,     //核销金额（原币），需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空   
+                "expenseDate":1545640124664,   //报销日期时间戳(毫秒级)
                 "details":[
                     {
                         "amount":"80.00",

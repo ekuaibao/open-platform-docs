@@ -11,26 +11,30 @@ authors: [冯继成]
 ---
 ## 企业通讯录
 ### [修改员工工号(全环境)](/docs/open-api/corporation/update-staffs-code)
+### [根据自定义字段查询员工信息(易桥专用)](/docs/open-api/corporation/get-staffs-staffCustom)
+### [根据自定义字段查询部门信息(易桥专用)](/docs/open-api/corporation/get-departments-deptCustom)
+
 
 ---
 ## 通讯录同步
 ### [修改员工登录手机号](/docs/open-api/inside/update-staffs-phone)
-### [新增员工/部门扩展字段](/docs/open-api/inside/create-custom-field-staffOrDepearment)
+### [新增员工/部门扩展字段(易桥专用)](/docs/open-api/inside/create-custom-field-staffOrDepearment)
 
 ---
 ## 单据模板
-### [查询全局字段是否存在](/docs/open-api/inside/get-customs-param-checkProperty)
+### [查询全局字段是否存在(自动化专用)](/docs/open-api/inside/get-customs-param-checkProperty)
 
 ---
 ## 单据
-### [根据ID获取单据详情(可返回关联数据)](/docs/open-api/inside/get-forms-details-linkdeData-byId)
-### [根据ID获取单据详情(可返回关联数据)(新)](/docs/open-api/inside/get-forms-details-linkdeData-byId-new)
+### [根据ID获取单据详情(可返回关联数据)--(电子档案专用)](/docs/open-api/inside/get-forms-details-linkdeData-byId)
+### [根据ID获取单据详情(可返回关联数据)(新)--(电子档案专用)](/docs/open-api/inside/get-forms-details-linkdeData-byId-new)
 
 ---
 ## 业务对象
 ### [创建业务对象台账](/docs/open-api/inside/inside-createLedger)
-### [获取业务对象台账](/docs/open-api/inside/get-entity-leader)
-### [获取业务对象实例信息(自定义字段)](/docs/open-api/inside/get-entity-object-searchAnslysis)
+### [获取业务对象台账(自动化专用)](/docs/open-api/inside/get-entity-leader)
+### [获取业务对象实例信息(自定义字段)--(自动化专用)](/docs/open-api/inside/get-entity-object-searchAnslysis)
+### [获取业务对象实例列表(排序)--(自动化专用)](/docs/open-api/inside/get-entity-object-search-order)
 ### [获取【行程管理/订单管理】业务对象数据](/docs/open-api/inside/get-entity-travelManager)
 
 ---
@@ -39,9 +43,9 @@ authors: [冯继成]
 
 ---
 ## 工具接口
-### [处理EAI插件拉取不到单据最终态问题（已完成、单据当前状态）](/docs/open-api/inside/flowDetails-stuckFlow)
-### [处理EAI插件拉取不到单据中间态问题（待支付、支付中）](/docs/open-api/inside/setDataBase)
-### [新增或更新企微单点原生授权配置信息](/docs/open-api/inside/create-yibridge-byqyweixin)
+### [处理EAI插件拉取不到单据最终态问题(已完成、单据当前状态)](/docs/open-api/inside/flowDetails-stuckFlow)
+### [处理EAI插件拉取不到单据中间态问题(待支付、支付中)](/docs/open-api/inside/setDataBase)
+### [新增或更新企微单点原生授权配置信息(易桥专用)](/docs/open-api/inside/create-yibridge-byqyweixin)
 
 ---
 ## 对外接口更新（暂不公布）

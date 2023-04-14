@@ -65,7 +65,7 @@ import TabItem from '@theme/TabItem';
 {
     "code": "500",
     "msg": "system error",
-    "data": "",
+    "data": null,
     "traceId": "03ccfaa793524e4ea9dc568090267bca"  //研发用于排查问题使用
 }
 ```

@@ -12,6 +12,7 @@ url="/api/openapi/v1/docSequences"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.16.0**](/docs/open-api/notice/update-log#1160)&emsp;-> 🐞 接口响应 `items` 下，新增 `orgSumAmount`（报销金额（原币））、`orgWriteOffAmount`（核销金额（原币））参数，需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空。<br/>
   [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
   [**0.7.158**](/docs/open-api/notice/update-log#07158) -> 🆕 新增了本接口。<br/>
 
@@ -37,21 +38,21 @@ url="/api/openapi/v1/docSequences"
 
 ## Body Parameters(以下为部分示例参数仅供参考)
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-|**fields**                     | Object | 过滤字段            | 非必填  | - | 指定过滤掉的字段返回空值，<br/>从而缩小响应数据 |
-|**&emsp; ∟ docData**             | Object | 单据数据            | 非必填  | - | 包含所有单据数据 |
-|**&emsp; &emsp; ∟ code**        | String | 单据编号            | 非必填 | -  | 单据编号 |
-|**&emsp; &emsp; ∟ title**       | String | 单据标题            | 非必填 | -  | 单据标题 |
-|**&emsp; &emsp; ∟ state**       | String | 单据状态            | 非必填 | -  | 单据状态 |
-|**&emsp; &emsp; ∟ remark**      | String | 备注               | 非必填  | - | 备注 |
-|**&emsp; &emsp; ∟ ownerId**     | String | 流程发起人ID(员工ID) | 非必填  | - | 流程发起人ID(员工ID) |
-|**&emsp; &emsp; ∟ owner**       | Object | 提交人信息          | 非必填  | - | 提交人信息 |
-|**&emsp; &emsp; ∟ department**  | Object | 部门信息            | 非必填 | -  | 部门信息 |
-|**&emsp; &emsp; ∟ userProps**   | Object | 自定义字段集         | 非必填 | -  | 自定义字段集 |
-|**&emsp; &emsp; ∟ details**     | Object | 单据明细信息         | 非必填 | -  | 单据明细信息 |
-|**&emsp; &emsp; ∟ logs**        | Object | 审批日志            | 非必填 | -  | 审批日志 |
-|**&emsp; &emsp; ∟ flowPlane**   | Object | 审批流信息          | 非必填 | -  | 审批流信息 |
+| 名称                             | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+|:-------------------------------| :--- | :--- | :--- |:--- | :--- |
+| **fields**                     | Object | 过滤字段            | 非必填  | - | 指定过滤掉的字段返回空值，<br/>从而缩小响应数据 |
+| **&emsp; ∟ docData**           | Object | 单据数据            | 非必填  | - | 包含所有单据数据 |
+| **&emsp; &emsp; ∟ code**       | String | 单据编号            | 非必填 | -  | 单据编号 |
+| **&emsp; &emsp; ∟ title**      | String | 单据标题            | 非必填 | -  | 单据标题 |
+| **&emsp; &emsp; ∟ state**      | String | 单据状态            | 非必填 | -  | 单据状态 |
+| **&emsp; &emsp; ∟ remark**     | String | 备注               | 非必填  | - | 备注 |
+| **&emsp; &emsp; ∟ ownerId**    | String | 流程发起人ID(员工ID) | 非必填  | - | 流程发起人ID(员工ID) |
+| **&emsp; &emsp; ∟ owner**      | Object | 提交人信息          | 非必填  | - | 提交人信息 |
+| **&emsp; &emsp; ∟ department** | Object | 部门信息            | 非必填 | -  | 部门信息 |
+| **&emsp; &emsp; ∟ userProps**  | Object | 自定义字段集         | 非必填 | -  | 自定义字段集 |
+| **&emsp; &emsp; ∟ details**    | Object | 单据明细信息         | 非必填 | -  | 单据明细信息 |
+| **&emsp; &emsp; ∟ logs**       | Object | 审批日志            | 非必填 | -  | 审批日志 |
+| **&emsp; &emsp; ∟ flowPlan**   | Object | 审批流信息          | 非必填 | -  | 审批流信息 |
 
 :::tip
 - **index 这个值实际是一个时间戳（毫秒级），是单据状态改变的时间**，即单据审批后，单据状态变更为 `rejected` 已驳回、`paying` 待支付、`PROCESSING` 支付中、`paid` 已支付，四种状态中任意一种的时间。最开始查询可以根据自己需求设定的 **时间范围** 查询，大概从什么时间开始，会返回大于该时间的单据。
@@ -332,8 +333,10 @@ import TabItem from '@theme/TabItem';
                     "configVersion": 0,
                     "hasCrossCorpNode": false
                 },
-                "sumAmount": 316,
-                "writeOffAmount": 0,
+                "sumAmount": 316,              //报销金额
+                "writeOffAmount": 0,           //核销金额
+                "orgSumAmount": null,          //报销金额（原币），需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空
+                "orgWriteOffAmount": null,     //核销金额（原币），需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空              
                 "expenseDate": 1601308800000,
                 "details": null,
                 "writtenOffRecords": [],

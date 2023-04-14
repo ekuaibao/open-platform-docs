@@ -11,8 +11,9 @@ url="/api/openapi/v1/docs/byApproverId/$`approverId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.0**](/docs/open-api/notice/update-log#160) -> ❌ 接口废弃。<br/>
-  [**1.4.1**](/docs/open-api/notice/update-log#141) -> 🐞 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。<br/>
+  [**1.16.0**](/docs/open-api/notice/update-log#1160)&emsp;-> 🐞 接口响应 `items` 下，新增 `orgSumAmount`（报销金额（原币））、`orgWriteOffAmount`（核销金额（原币））参数，需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空。<br/>
+  [**1.6.0**](/docs/open-api/notice/update-log#160)&emsp; -> ❌ 接口废弃。<br/>
+  [**1.4.1**](/docs/open-api/notice/update-log#141)&emsp; -> 🐞 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。<br/>
 
   </div>
 </details>

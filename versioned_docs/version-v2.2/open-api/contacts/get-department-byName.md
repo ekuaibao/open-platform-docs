@@ -44,6 +44,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/departmen
             "parentId": "JOYbpjPP-E2Q00",         //上级部门ID
             "active": true,                       //是否启用
             "code": "1003",                       //部门编码
+            "updateTime": "2022-01-11 17:43:59",  //更新时间
+            "createTime": "2022-01-11 17:43:59",  //创建时间
             "form":{                              //部门关联法人实体ID和成本中心ID
                 "costCenter":"NzMcynfBJ43M00",    //成本中心ID
                 "legalEntity":"11YcypdGzoEo00"    //法人实体ID
