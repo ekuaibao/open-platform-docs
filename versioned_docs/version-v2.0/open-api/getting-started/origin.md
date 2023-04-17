@@ -1,5 +1,5 @@
 # 获取地址前缀
-由于接口地址会根据易快报系统版本发生变动，故使用此接口来获取最新的地址前缀。
+由于接口地址会根据合思系统版本发生变动，故使用此接口来获取最新的地址前缀。
 
 import Control from "@theme/Control";
 
@@ -12,7 +12,7 @@ url="/api/openapi/v2/location"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **corpId** | String |  企业ID  | 必填 | - | 通过易快报桌面端「我的企业信息」界面查看 |
+| **corpId** | String |  企业ID  | 必填 | - | 通过合思桌面端「我的企业信息」界面查看 |
 
 ![如何获取验证码](images/corpId.png)
 
@@ -27,7 +27,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/location?
 
 | 平台 | 地址 |
 | :--- | :--- |
-| 易快报独立版     | `https://app.ekuaibao.com` |
+| 合思独立版     | `https://app.ekuaibao.com` |
 | 钉钉           | `https://dd2.ekuaibao.com` |
 | 企业微信        | `https://wx2.ekuaibao.com` |
 | 云之家          | `https://kdcloud2.ekuaibao.com` |

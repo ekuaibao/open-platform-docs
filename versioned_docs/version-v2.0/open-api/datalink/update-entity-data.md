@@ -21,7 +21,7 @@ url="/api/openapi/v2/datalink/add"
 | **entityId**                                   | String  | 业务对象ID    | 必填   | -     | [业务对象ID获取](/docs/open-api/datalink/question-answer#问题一) |
 | **importPart**                                 | Boolean | 是否部分导入   | 非必填 | false | 当有一条数据导入失败后，其他数据是否继续导入。<br/>**当导入附件时，此项必填为 `true`** |
 | **dataLinks**                                  | Array   | 更新数据数组   | 必填  | -      | 要新增或修改的业务对象数据 |
-| **&emsp; ∟ count**                             | Number  | 最大引用次数  | 非必填 | 0      | 限制引用次数时必填。若设置的值小于已引用次数，则易快报系统会自动修正到已引用次数  |
+| **&emsp; ∟ count**                             | Number  | 最大引用次数  | 非必填 | 0      | 限制引用次数时必填。若设置的值小于已引用次数，则合思系统会自动修正到已引用次数  |
 | **&emsp; ∟ disabled**                          | Boolean | 是否停用     | 非必填 | true   | `true` : 停用 &emsp; `false` : 启用|
 | **&emsp; ∟ ownerId**                           | String  | 负责人ID     | 非必填 | -      | 值为[员工ID](/docs/open-api/corporation/get-all-staffs) |
 | **&emsp; ∟ data**                              | Object  | 字段值       | 必填   | -     | 格式为 {字段名称 : 字段值}。 `字段名称` 是[获取业务对象](/docs/open-api/datalink/get-entity-list)返回值中 `fields` 里面的 `name` 值|

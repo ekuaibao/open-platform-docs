@@ -38,7 +38,7 @@ url="/api/openapi/v4/payerInfos/$`id`"
 | **cardNo**          | String | 银行卡号    | 必填 | - | 银行卡号 |
 | **bank**            | String | 银行名称    | 非必填 | - | 银行名称，**可通过 `branch` 或 `bankLinkNo` 自动回填，<br/>需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
 | **branch**          | String | 开户网点    | 非必填 | - | **`sort` = `BANK` 时，必填**。获取 [开户网点](/docs/open-api/pay/get-all-branch) |
-| **bankLinkNo**      | String | 银联号      | 非必填 | - | **当开户网点与易快报系统不匹配时，可通过银联号匹配** |
+| **bankLinkNo**      | String | 银联号      | 非必填 | - | **当开户网点与合思系统不匹配时，可通过银联号匹配** |
 | **province**        | String | 银行所在省   | 非必填 | - | 银行所在省，**可通过 `branch` 或 `bankLinkNo` 自动回填，需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
 | **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市，**可通过 `branch` 或 `bankLinkNo` 自动回填，需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
 | **remark**          | String | 备注信息    | 非必填 | - | 备注信息 |

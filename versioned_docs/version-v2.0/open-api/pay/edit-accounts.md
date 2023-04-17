@@ -32,7 +32,7 @@ url="/api/openapi/v2/payeeInfos/$`id`"
 | **owner**           | String | 所属类型    | 必填 | - | `INDIVIDUAL` : 个人<br/>`CORPORATION` : 企业 |
 | **city**            | String | 银行所在城市 | 非必填 | - | 银行所在城市 |
 | **province**        | String | 银行所在省   | 非必填 | - | 银行所在省 |
-| **bankLinkNo**      | String | 银联号      | 非必填 | - | 当支行名称与易快报系统不匹配时，<br/>可通过银联号匹配 |
+| **bankLinkNo**      | String | 银联号      | 非必填 | - | 当支行名称与合思系统不匹配时，<br/>可通过银联号匹配 |
 | **certificateType** | String | 证件类型    | 非必填 | - | 详细信息见下方【证件类型对照表】|
 | **certificateNo**   | String | 证件号     | 非必填 | - | 证件号 |
 | **remark**          | String | 备注       | 非必填 | - | 备注信息 |

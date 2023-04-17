@@ -11,12 +11,12 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🆕 新增了 `pageType` = `assistPlatform` 类型，进入易快报 **协助链接授权** 页面。<br/>
-  [**1.12.0**](/docs/open-api/notice/update-log#1120)&emsp;-> 🆕 新增了 `pageType` = `payment` 类型，进入易快报 **待我支付** 页面。<br/>
+  [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🆕 新增了 `pageType` = `assistPlatform` 类型，进入合思 **协助链接授权** 页面。<br/>
+  [**1.12.0**](/docs/open-api/notice/update-log#1120)&emsp;-> 🆕 新增了 `pageType` = `payment` 类型，进入合思 **待我支付** 页面。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。<br/>
   [**1.7.1**](/docs/open-api/notice/update-log#171) &emsp; -> 🆕 新增了 `authType`（授权方式）参数，控制单点链接可用次数。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了被委托人审批会签节点的单据（`pageType` = `form`）时，无审批按钮的BUG。 <br/>
-  [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `pageType` = `frontPage` 类型，进入易快报 **首页**。<br/>
+  [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `pageType` = `frontPage` 类型，进入合思 **首页**。<br/>
   [**0.7.163**](/docs/open-api/notice/update-log#07163) -> 🆕 新增了 `approvalUrl`（审批完成后跳转地址）参数。<br/>
 
   </div>
@@ -100,7 +100,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/provis
 ```json
 {
     "value": {
-      "message": "https://app.ekuaibao.com/applet/thirdparty.html?accessToken=SGYqVpXcuhIIYQJkd0w2G0&ekbCorpId=34A73EyI8A0w00&pageType=home&overdueTokenRedirect=[https://www.ekuaibao.com](https://www.ekuaibao.com)", //第三方临时访问易快报URL
+      "message": "https://app.ekuaibao.com/applet/thirdparty.html?accessToken=SGYqVpXcuhIIYQJkd0w2G0&ekbCorpId=34A73EyI8A0w00&pageType=home&overdueTokenRedirect=[https://www.ekuaibao.com](https://www.ekuaibao.com)", //第三方临时访问合思URL
       "code": "true" // 请求状态
     }
 }

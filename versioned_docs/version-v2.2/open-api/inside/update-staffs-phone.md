@@ -28,7 +28,7 @@ url="/api/openapi/v1/staffs/$`staffId`/phone"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
-| **secretMsg**   | String | 企业随机串 | 必填 | - | 提供企业ID，咨询易快报实施顾问获取 |
+| **secretMsg**   | String | 企业随机串 | 必填 | - | 提供企业ID，咨询合思实施顾问获取 |
 
 ## Body Parameters
 

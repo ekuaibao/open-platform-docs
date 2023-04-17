@@ -18,7 +18,7 @@ url="/api/openapi/v1/yibridge"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **corpId**            | String | 易快报企业ID | 必填 | - | 易快报企业ID |
+| **corpId**            | String | 合思企业ID | 必填 | - | 合思企业ID |
 | **qwCorpId**          | String | 企业微信企业ID | 必填 | - | 企业微信管理后台获取（**必须是明文的企业ID**） |
 | **qwCorpName**        | String | 企业微信企业名称 | 必填 | - | 企业微信管理后台获取 |
 | **agentId**           | String | 企业微信应用的agentId | 必填 | - | 企业微信管理后台获取 |

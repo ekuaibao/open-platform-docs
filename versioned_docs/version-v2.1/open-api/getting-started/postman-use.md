@@ -17,7 +17,7 @@ Postman 是一个用于构建和使用 API 的 API 平台。Postman 简化了 AP
 
 ---
 
-### 2.如何添加易快报OpenAPI接口进行测试？
+### 2.如何添加合思OpenAPI接口进行测试？
 
 #### 2.1 创建接口集合
 ![image](images/postman/创建接口集合.png)<br/>

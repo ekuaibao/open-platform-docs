@@ -15,7 +15,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **roledefId** | String | 角色ID | 必填 | - | 在易快报桌面端「系统设置」>「角色管理」处查看 |
+| **roledefId** | String | 角色ID | 必填 | - | 在合思桌面端「系统设置」>「角色管理」处查看 |
 
 ## Query Parameters
 

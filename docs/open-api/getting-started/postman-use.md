@@ -16,7 +16,7 @@ Postman 是一个用于构建和使用 API 的 API 平台。Postman 简化了 AP
 
 ---
 
-### 2.如何添加易快报OpenAPI接口进行测试？
+### 2.如何添加合思OpenAPI接口进行测试？
 
 #### 2.1 创建接口集合
 ![image](images/postman/创建接口集合.png)<br/>
@@ -72,14 +72,14 @@ Postman 是一个用于构建和使用 API 的 API 平台。Postman 简化了 AP
 ![image](images/postman/导入接口集合.png)
 
 ---
-### 5.一键导入易快报接口集合并使用
-##### （1）下载整理好的易快报【接口集合】和【环境变量】（[下载地址](https://hose2019.feishu.cn/drive/folder/fldcnQiqSXImHLrjL0Kld4Gutgg)）
+### 5.一键导入合思接口集合并使用
+##### （1）下载整理好的合思【接口集合】和【环境变量】（[下载地址](https://hose2019.feishu.cn/drive/folder/fldcnQiqSXImHLrjL0Kld4Gutgg)）
 
 ![image](images/postman/接口集合和环境变量.png)
 
 ---
 
-##### （2）在Postman中导入易快报【接口集合】
+##### （2）在Postman中导入合思【接口集合】
 ![image](images/postman/Postman导入全部接口.png)<br/>
 
 ![image](images/postman/导入后的效果.png)

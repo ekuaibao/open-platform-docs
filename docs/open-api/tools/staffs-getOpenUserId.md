@@ -49,7 +49,7 @@ curl --location --request POST 'https://wx2.ekuaibao.com/api/openapi/v1/staffs/g
     "items":[
         {
             "userid":"userID",          //企微的明文userId
-            "open_userid":"open_userid" //易快报获取到的open_userid
+            "open_userid":"open_userid" //合思获取到的open_userid
         }
     ]
 }

@@ -36,7 +36,7 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
 | **&emsp; ∟ cardNo**          | String | 账号       | 必填 | - | 银行卡号<br/>支付宝账号<br/>银行账号(Account No.)<br/>微信账号<br/>账号 |
 | **&emsp; ∟ bank**            | String | 银行名称<br/>**『银行卡』专属参数**    | 非必填 | - | **可通过 `branch` 或 `bankLinkNo` 自动回填，<br/>需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
 | **&emsp; ∟ branch**          | String | 开户网点<br/>**『银行卡』专属参数**    | 必填 | - | **`sort` = `BANK` 时，必填**。<br/>获取 [开户网点](/docs/open-api/pay/get-all-branch)<br/>可通过系统配置改为 ”**非必填**“，见下方**TIP** |
-| **&emsp; ∟ bankLinkNo**      | String | 银联号<br/>**『银行卡』专属参数**      | 非必填 | - | **当开户网点与易快报系统不匹配时，<br/>可通过银联号匹配** |
+| **&emsp; ∟ bankLinkNo**      | String | 银联号<br/>**『银行卡』专属参数**      | 非必填 | - | **当开户网点与合思系统不匹配时，<br/>可通过银联号匹配** |
 | **&emsp; ∟ province**        | String | 银行所在省<br/>**『银行卡』专属参数**   | 非必填 | - | **可通过 `branch` 或 `bankLinkNo` 自动回填，<br/>需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
 | **&emsp; ∟ city**            | String | 银行所在城市<br/>**『银行卡』专属参数** | 非必填 | - | **可通过 `branch` 或 `bankLinkNo` 自动回填，<br/>需保证 `branch` 在 [开户网点](/docs/open-api/pay/get-all-branch) 内** |
 | **&emsp; ∟ bankName**        | String | 银行名称<br/>**『海外账号』专属参数** | 非必填 | - | 银行名称(Bank Name) |

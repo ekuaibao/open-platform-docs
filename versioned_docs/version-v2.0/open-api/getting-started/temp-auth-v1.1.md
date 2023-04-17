@@ -10,7 +10,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 <details>
   <summary>v1.1版本特性</summary>
   <div>
-    - 🆕 新增 pageType = frontPage 类型，进入易快报“首页”。
+    - 🆕 新增 pageType = frontPage 类型，进入合思“首页”。
   </div>
 </details>
 
@@ -90,7 +90,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/provisio
 ```json
 {
     "value": {
-      "message": "https://app.ekuaibao.com/applet/thirdparty.html?accessToken=SGYqVpXcuhIIYQJkd0w2G0&ekbCorpId=34A73EyI8A0w00&pageType=home&overdueTokenRedirect=[https://www.ekuaibao.com](https://www.ekuaibao.com)", //第三方临时访问易快报URL
+      "message": "https://app.ekuaibao.com/applet/thirdparty.html?accessToken=SGYqVpXcuhIIYQJkd0w2G0&ekbCorpId=34A73EyI8A0w00&pageType=home&overdueTokenRedirect=[https://www.ekuaibao.com](https://www.ekuaibao.com)", //第三方临时访问合思URL
       "code": "true" // 请求状态
     }
 }

@@ -180,7 +180,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/flow/dat
 ```
 
 ### 确认提交结果
-- 提交单据后，易快报预置的【**费用标准检查**】节点，会检查单据中的预算、费用标准等费控指标是否合规。
+- 提交单据后，合思预置的【**费用标准检查**】节点，会检查单据中的预算、费用标准等费控指标是否合规。
   - 如存在不合规，需要驳回时，该节点会自动驳回单据。 此时需调用【[根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)】接口查询结果。
   - 根据返回的 `state`，判断该单据是否被【**驳回**】，如返回 `state` 不为 `draft` 或 `rejected`，则该单据提交成功。
 

@@ -4,7 +4,7 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1/requisition/requisition/$`id`"
+url="/api/openapi/v1/requisition/$`id`"
 />
 
 <details>

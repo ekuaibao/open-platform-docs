@@ -4,10 +4,10 @@
 在调用接口之前，您需要先确认以下操作：
 
 1. 确保企业已经开启了【[开放接口(新)](/docs/open-api/getting-started/question-answer#问题一)】功能。您可以联系您的实施顾问来开通此功能。
-2. 取得 [地址前缀](/docs/open-api/getting-started/origin)。开放接口地址会随着易快报系统升级而变化，因此要确保每次调用使用的都是最新的地址前缀。
+2. 取得 [地址前缀](/docs/open-api/getting-started/origin)。开放接口地址会随着合思系统升级而变化，因此要确保每次调用使用的都是最新的地址前缀。
 3. 通过 [获取授权](/docs/open-api/getting-started/auth) 取得 `accessToken`。开放接口均使用 `accessToken` 鉴权，请妥善保管。
 
-以上完成后，即可开始使用易快报开放平台。祝体验愉快。
+以上完成后，即可开始使用合思开放平台。祝体验愉快。
 
 ---
 ## 文档目录结构
@@ -22,7 +22,7 @@
 开发中您可能会遇到一些问题，可在此查找相关解答。如有其他问题，请联系技术人员支持。
 
 :::tip
-- 易快报Open API为系统接口，不支持浏览器直接调用接口。如需测试，建议使用接口测试软件(例如：Postman)来进行简单模拟。
+- 合思Open API为系统接口，不支持浏览器直接调用接口。如需测试，建议使用接口测试软件(例如：Postman)来进行简单模拟。
 - 请注意接口路径的传参方式。例如 “/api/openapi/v2/budgets/$`budgetId`/node/`nodeId`/add”。`budgetId` 前必须加 `$`，`nodeId` 前则不需要。
 - 请注意接口分页的传参数据。例如 `start=0&count=10` 代表每页10条数据，第一页数据开始于 `start = 0`，则第二页数据开始于 `start = 10`。
 :::
