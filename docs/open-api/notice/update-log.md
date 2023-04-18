@@ -16,15 +16,6 @@ timeline: true
 
 `2023-03-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.108.0`
 - 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments) 接口
-    - 更新了 `code` 参数介绍。
-- 🐞 更新 [获取发票主体信息](/docs/open-api/datalink-extend/get-entity-invoice) 接口
-    - 更新了 **发票类别** 参数介绍。
-
----
-## 1.16.0
-
-`2023-03-28`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.108.0`
-- 🐞 更新 [新增部门](/docs/open-api/contacts/add-departments) 接口
   - 更新了 `code` 参数介绍。
 - 🐞 更新 [获取发票主体信息](/docs/open-api/datalink-extend/get-entity-invoice) 接口
   - 更新了 **发票类别** 参数介绍。
