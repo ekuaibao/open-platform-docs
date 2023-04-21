@@ -374,20 +374,20 @@ import TabItem from '@theme/TabItem';
 ### 返回参数列表（部分）
 | 字段名称 | 类型 | 是否必返回 | 备注 |
 | :--- | :--- | :--- | :--- |
-| **items**    | List<Data\> | 是 | 发票数据集合，可能一张图片包含多张发票 |
-| **master**   | Data | 是 | 发票主体数据 |
+| **items**    | Array | 是 | 发票数据集合，可能一张图片包含多张发票 |
+| **master**   | Object | 是 | 发票主体数据 |
 | **&emsp; ∟ entityId**| String | 是 | 发票种类<br/>`system_其他`<br/>`system_出租车票`<br/>`system_医疗发票`<br/>`system_发票主体`<br/>`system_发票明细`<br/>`system_定额发票`<br/>`system_客运汽车发票`<br/>`system_机打发票`<br/>`system_消费小票`<br/>`system_火车票`<br/>`system_航空运输电子客票行程单`<br/>`system_过路费发票` |
-| **&emsp; ∟ form**    | Data   | 是 | 发票主体数据 |
+| **&emsp; ∟ form**    | Object   | 是 | 发票主体数据 |
 | **&emsp; &emsp; ∟ E\_system\_发票主体\_图片**    | String | 是 | 发票图片key |
 | **&emsp; &emsp; ∟ E\_system\_发票主体\_发票代码** | String | 是 | 发票代码 |
 | **&emsp; &emsp; ∟ E\_system\_发票主体\_发票号码** | String | 是 | 发票号码 |
 | **&emsp; &emsp; ∟ E\_system\_发票主体\_发票类别** | String | 否 | 当 `entityId` = `system_发票主体` 时，发票的细分类别<br/>`DIGITAL_NORMAL`  : 增值税电子普通发票<br/>`PAPER_ROLL` : 增值税普通发票（卷式）<br/>`FULL_DIGITAl_NORMAL` : 电子发票（普通发票）<br/>`FULL_DIGITAl_SPECIAL` : 电子发票（增值税专用发票）<br/>`FULL_DIGITAl_PAPER` : 全电纸质发票（增值税专用发票）<br/>`PAPER_FEE` : 通行费发票<br/>`PAPER_NORMAL` : 增值税普通发票<br/>`DIGITAL_SPECIAL` : 增值税电子专用发票<br/>`PAPER_SPECIAL` : 增值税专用发票<br/>`PAPER_CAR` : 机动车销售统一发票<br/>`SECOND_CAR` : 二手车销售统一发票<br/>`BLOCK_CHAIN` : 区块链发票  |
-| **&emsp; &emsp; ∟ E\_system\_发票主体\_价税合计** | Data   | 是 | 发票金额 |
-| **&emsp; &emsp; ∟ E\_system\_发票主体\_税额**    | Data   | 是 | 发票主体税额 |
-| **&emsp; &emsp; ∟ E\_system\_发票主体\_发票金额** | Data   | 是 | 发票不含税金额 |
-| **details**  | List<Data\> | 否 | 发票明细数据<br/>**增值税发票** 可能包含多条明细数据<br/>**非增值税发票** 明细数据为空 |
-| **&emsp; ∟ form**    | Data   | 否 | 发票明细数据 |
-| **&emsp; &emsp; ∟ E\_system\_发票明细\_税率** | Data   | 否 | 发票明细税率 |
+| **&emsp; &emsp; ∟ E\_system\_发票主体\_价税合计** | Object | 是 | 发票金额 |
+| **&emsp; &emsp; ∟ E\_system\_发票主体\_税额**    | Object | 是 | 发票主体税额 |
+| **&emsp; &emsp; ∟ E\_system\_发票主体\_发票金额** | Object | 是 | 发票不含税金额 |
+| **details**  | Array | 否 | 发票明细数据<br/>**增值税发票** 可能包含多条明细数据<br/>**非增值税发票** 明细数据为空 |
+| **&emsp; ∟ form**    | Object   | 否 | 发票明细数据 |
+| **&emsp; &emsp; ∟ E\_system\_发票明细\_税率** | Integer   | 否 | 发票明细税率 |
 | **message**  | String | 是 | 当前发票返回的使用提示信息 |
 | **status**   | String | 是 | 当前发票是否可以被编辑的状态 |
 | **ischeck**  | Boolean | 是 | 当前发票是否可以使用<br/>`true` : 可以使用<br/>`false` : 不可以使用，具体原因可以看 `message` |
@@ -462,13 +462,13 @@ import TabItem from '@theme/TabItem';
 
 | 字段名称 | 类型 | 是否必填 | 备注 |
 | :--- | :--- | :--- | :--- |
-| **invoiceForm**    | Data | 否 | 发票字段信息 |
-| **&emsp; ∟ type** | String | 是 | [发票开票类型](/docs/open-api/flows/creat-and-save#12-发票发票形式字段) |
-| **&emsp; ∟ invoices** | List<Data\> | 是 | 发票关联信息 |
+| **invoiceForm**    | Object | 否 | 发票字段信息 |
+| **&emsp; ∟ type** | String | 是 | `unify` : 统一开票 &emsp; `wait` : 待开发票<br/>`exist` : 已有发票 &emsp; `noExist` : 无发票<br/>`noWrite` : 无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
+| **&emsp; ∟ invoices** | Array | 是 | 发票关联信息 |
 | **&emsp; &emsp; ∟ invoiceId** | String | 是 | 发票ID |
-| **&emsp; &emsp; ∟ itemIds**   | List<Data\> | 否 | 发票明细ID |
+| **&emsp; &emsp; ∟ itemIds**   | Array | 否 | 发票明细ID |
 | **&emsp; &emsp; ∟ taxRate**   | Integer | 是 | 发票主体税率<br/>**增值税发票** 无主体税率，有明细税率<br/>**非增值税发票** 有主体税率，无发票明细 |
-| **&emsp; &emsp; ∟ taxAmount** | Data | 是 | 可抵扣税额（发票金额 * 税率） |
+| **&emsp; &emsp; ∟ taxAmount** | Object | 是 | 可抵扣税额（发票金额 * 税率） |
 | **invoiceType**    | String | 否 | [发票类型](/docs/open-api/flows/forms-state#发票类型)，当费用明细上绑定多个发票，取最新的发票类型进行赋值 |
 
 

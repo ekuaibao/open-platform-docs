@@ -264,6 +264,7 @@ const sidebars = {
         "open-api/datalink/update-entity-data",
         "open-api/datalink/get-tripManager-order",
         "open-api/datalink/get-tripManager-data",
+        "open-api/datalink/get-tripManager-data-byCode",
         "open-api/datalink/question-answer"
       ],
     },

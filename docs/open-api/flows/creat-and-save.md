@@ -2,6 +2,8 @@
 根据获取的单据模板和费用模板，按格式要求组织参数后，调用此接口保存单据信息。
 
 import Control from "@theme/Control";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Control
 method="POST"
@@ -12,6 +14,7 @@ url="/api/openapi/v2.2/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.17.0**](/docs/open-api/notice/update-log#1170)&emsp;-> 🐞 完善了 **发票字段** 传参示例。<br/>
   [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🐞 新增了 **报销单关联申请** 传参示例。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 **创建草稿状态单据**（`isCommit` = `false`）时，`payeeId`（收款账户ID）允许非必填的场景。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。<br/>
@@ -70,7 +73,8 @@ url="/api/openapi/v2.2/flow/data"
 |**&emsp; &emsp; &emsp; ∟ feeDetailPayeeId**     | String | 收款信息ID      | 非必填 | - | 多收款人模式下，**按明细/按收款信息汇总明细金额** 类型时 **必填**<br/>通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取 |
 |**&emsp; &emsp; &emsp; ∟ invoiceForm**          | Object | 发票相关信息     | 非必填 | - | 发票参数 |
 |**&emsp; &emsp; &emsp; &emsp; ∟ type**          | String | 发票开票类型     | 非必填  | - | `unify` : 统一开票 &emsp; `wait` : 待开发票<br/>`exist` : 已有发票 &emsp; `noExist` : 无发票<br/>`noWrite` : 无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
-|**&emsp; &emsp; &emsp; &emsp; ∟ attachments**   | Array  | 发票附件        | 非必填 | - | **无法对发票附件进行验真查重或者OCR处理**<br/>需要先通过 [上传附件](/docs/open-api/attachment/attachment-upload) 上传数据，然后使用接口返回值为参数 |
+|**&emsp; &emsp; &emsp; &emsp; ∟ invoices**      | Array  | 发票信息        | 非必填 | - | 通过 `智能拍票` 、`电子发票文件(PC端)` 、`手工录入` 、`微信发票` 、`医疗发票` 、`扫描发票(移动端)` 、`爱发票` 、`支付宝卡包`方式OCR查验发票后，将发票信息绑定到此参数中，传参格式见[发票字段填写规则](/docs/next/open-api/flows/creat-and-save#12-发票发票形式字段) |
+|**&emsp; &emsp; &emsp; &emsp; ∟ attachments**   | Array  | 发票附件        | 非必填 | - | 通过`发票照片`方式导入时，发票信息传此参数，传参格式见[发票字段填写规则](/docs/next/open-api/flows/creat-and-save#12-发票发票形式字段)<br/>**该方式无法对发票附件进行验真查重或者OCR处理** |
 |**&emsp; &emsp; &emsp; ∟ consumptionReasons**   | String | 消费事由        | 非必填 | - | 消费事由 |
 |**&emsp; &emsp; &emsp; ∟ apportions**           | Array  | 分摊明细        | 非必填 | - | 根据单据模板决定 |
 |**&emsp; &emsp; &emsp; &emsp; ∟ apportionForm** |	Object | 分摊明细具体信息 | 非必填 | - | 分摊明细具体信息 |
@@ -587,7 +591,43 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 ```
 
 ### (12) 发票(发票形式)字段
-字段的「type」为【invoice】时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件：
+字段的「type」为【invoice】时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件<br/>
+
+发票的导入方式有：`智能拍票`、`扫描发票(移动端)`、`电子发票文件(PC端)`、`发票照片`、`手工录入`、`微信发票`、`医疗发票`、`支付宝卡包`、`爱发票`<br/>其中 `发票照片` 方式与其他方式传参不同，并且该方式无法对发票附件进行验真查重或者OCR处理，示例如下：
+
+<Tabs>
+<TabItem value="other" label="OCR查验" default>
+
+```json
+"invoiceForm": {
+    "type": "exist",  //已有发票
+    "invoices":[           //发票关联信息
+        {
+            "itemIds":[    //发票明细ID
+                "ID01kotXPShAmj",
+                "ID01kotXPShACP",
+                "ID01kotXPShATl"
+            ],
+            "taxRate":0,     //发票主体税率
+            "invoiceId":"rGN3lum_4o00hM:012002000104:14504550:4",  //发票ID
+            "taxAmount":{    //可抵扣税额
+                "standard":57.02,
+                "standardUnit":"元",
+                "standardScale":2,
+                "standardSymbol":"¥",
+                "standardNumCode":"156",
+                "standardStrCode":"CNY"
+            }
+        }
+    ]
+}
+```
+
+</TabItem>
+<TabItem value="Invoice Photo" label="发票照片">
+
+`attachments` 为发票文件，发票附件可通过 [上传附件](/docs/open-api/attachment/attachment-upload) 接口，先上传文件到服务器后，然后在请求回应中拿到上传附件的文件key等参数。
+
 ```json
 "invoiceForm": {
     "type": "exist",  //已有发票
@@ -600,24 +640,48 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
     ]
 }
 ```
-- type可选值: 
-  - `unify` : 统一开票
-  - `wait` : 待开发票
-  - `exist` : 已有发票
-  - `noExist` : 无发票
-  - `noWrite` : 无需填写(当费用类型 发票字段设置的不可编辑时，默认为此项)
 
-【**统一开票**】类型示例：
+</TabItem>
+</Tabs>
+
+发票类型( `type` )传参示例:
+
+<Tabs>
+<TabItem value="unify" label="统一开票" default>
+
 ```json
 "invoiceForm": {
     "type": "unify",  //统一开票
     "invoices": [],
-    "invoiceCorporationId": "H50cghSyeQxw00"  //开票方企业ID，暂无接口可获取
+    "invoiceCorporationId": "H50cghSyeQxw00"  //开票方企业ID，对应【获取统一开票方】接口中的id
 }
 ```
+</TabItem>
+<TabItem value="wait" label="待开发票">
 
-- `attachments` 为发票文件，发票附件可通过 [上传附件](/docs/open-api/attachment/attachment-upload) 接口，先上传文件到服务器后，然后在请求回应中拿到上传附件的文件key等参数。
-- 当 `invoiceForm` 整个对象都不传入时，会赋默认值「noWrite」(无需填写)。
+```json
+"invoiceForm": {
+    "type": "wait"  //待开发票
+}
+```
+</TabItem>
+<TabItem value="noExist" label="无发票">
+
+```json
+"invoiceForm": {
+    "type": "noExist"  //无发票
+}
+```
+</TabItem>
+<TabItem value="noWrite" label="无需填写">
+
+```json
+"invoiceForm": {
+    "type": "noWrite"  //无需填写
+}
+```
+</TabItem>
+</Tabs>
 
 ### (13) 收款信息字段
 字段的「type」为【select】且「valueFrom」为【pay.PayeeInfo】的，为收款信息字段，需传入收款信息的 ID，可通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口获取：
@@ -627,9 +691,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 
 ### (14) 关联申请字段
 字段的「type」为【select】且「valueFrom」为【requisition.RequisitionInfo】的，为关联申请字段，需传入申请单(申请事项)的ID：
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs>
 <TabItem value="default" label="按申请明细分别报销" default>

@@ -4,13 +4,14 @@ import Control from "@theme/Control";
 
 <Control
 method="POST"
-url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders"
+url="/api/openapi/v2.1/datalink/TRAVEL_MANAGEMENT/searchOrders"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.17.0**](/docs/open-api/notice/update-log#1170) &emsp; -> 🚀 接口升级 `v2.1` 版本，新增了 `startDate` 和 `endDate` 参数，根据 **创建时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
   [**0.7.123**](/docs/open-api/notice/update-log#07123) -> 🆕 新增了本接口。
 
   </div>
@@ -26,9 +27,11 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders"
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
-| **entityId** | String | 行程管理的业务对象ID  | 必填 | - | 行程管理的业务对象ID |
+| **entityId** | String | 业务对象ID  | 必填 | - | 行程/订单管理的业务对象ID |
 | **start**    | Int    | 起始值              | 必填 | - | 从 `0` 开始搜索  |
 | **count**    | Int    | 查询总数            | 必填 | - | 最大不能超过 `100` 条 |
+| **startDate**   | String | 查询开始时间 | 非必填 | - | 按数据 **创建时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
+| **endDate**     | String | 查询结束时间 | 非必填 | - | 按数据 **创建时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 
 :::tip
 
@@ -48,13 +51,15 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders"
 
 ## CURL
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders?accessToken=VQoc2fnagU8c00' \
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/datalink/TRAVEL_MANAGEMENT/searchOrders?accessToken=VQoc2fnagU8c00' \
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
     "entityId": "79180b9ed9cade87e000",
     "start": 0,
-    "count": 100
+    "count": 100,
+    "startDate":"2023-02-22 00:00:00",
+    "endDate":"2023-04-22 23:59:59"
 }'
 ```
 
@@ -118,6 +123,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
                     "E_79180b9ed9cade87e000_实际到达地点": "北京站",
                     "E_79180b9ed9cade87e000_用车出行方式": "马上用车",
                     "active": true,
+                    "updateTime": 1677753063538,
+                    "createTime": 1677753063532,
                     "entityId": "5bc40b9edcc64ec0f400" 
                 },
                 "ledger": {},
@@ -175,6 +182,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
                     "E_79180b9ed9cade87e000_出行人类型": "",
                     "E_79180b9ed9cade87e000_申请单编号": "S20001081",
                     "active": true,
+                    "updateTime": 1677753063538,
+                    "createTime": 1677753063532,
                     "entityId": "61570b9edcc64ec09c00"
                 },
                 "ledger": {},
@@ -232,6 +241,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/datalink
                     "E_79180b9ed9cade87e000_出行人类型": "",
                     "E_79180b9ed9cade87e000_申请单编号": "S20001096",
                     "active": true,
+                    "updateTime": 1677753063538,
+                    "createTime": 1677753063532,
                     "entityId": "61570b9edcc64ec09c00"
                 },
                 "ledger": {},

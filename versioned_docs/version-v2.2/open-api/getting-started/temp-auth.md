@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.17.0**](/docs/open-api/notice/update-log#1170)&emsp;-> 🆕 新增了 `pageType` = `edit` 类型，单据处于 **草稿、驳回** 状态时可 **编辑/提交**。<br/>
   [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🆕 新增了 `pageType` = `assistPlatform` 类型，进入合思 **协助链接授权** 页面。<br/>
   [**1.12.0**](/docs/open-api/notice/update-log#1120)&emsp;-> 🆕 新增了 `pageType` = `payment` 类型，进入合思 **待我支付** 页面。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。<br/>
@@ -34,12 +35,12 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **uid**                     | String  | 员工ID           | 非必填 | - |  当 `userId` 非必填时 `uid` 必填  |
 | **userId**                  | String  | 第三方员工ID      | 非必填 | - | 当 `uid` 非必填时 `userId` 必填 |
-| **pageType**                | String  | 登录页面类型       | 必填  | - | `frontPage` : 首页<br/>`home` : 我的单据<br/>`approve` : 待我审批<br/>`payment` : 待我支付<br/>`form` : 单据详情页<br/>`new` : 新建单据<br/>`mall` : 商城（**不支持移动端**）<br/>`backlogDetail` : 查看待办详情，同时底部菜单<br/>显示指定审批按钮（**不支持移动端**）<br/>`assistPlatform` : 协助链接授权页面（**只支持移动端**） |
+| **pageType**                | String  | 登录页面类型       | 必填  | - | `frontPage` : 首页<br/>`home` : 我的单据<br/>`approve` : 待我审批<br/>`payment` : 待我支付<br/>`form` : 单据详情页<br/>`new` : 新建单据<br/>`edit` : 编辑/提交草稿、驳回的单据<br/>`mall` : 商城（**不支持移动端**）<br/>`backlogDetail` : 查看待办详情，同时底部菜单<br/>显示指定审批按钮（**不支持移动端**）<br/>`assistPlatform` : 协助链接授权页面（**只支持移动端**） |
 | **authType**                | String  | 授权方式          | 非必填 | - | `CODE` : 表示获得的单点链接仅可使用一次，不能二次使用<br/>**如果不传此参数则生成的URL链接在有效期内可无限次访问；此参数传 `CODE` 则生成的URL链接仅可访问一次**<br/> |
 | **expireDate**              | String  | 授权有效期        | 必填   | - |  单位：秒，最大不能超过 `604800` 秒（7天） |
 | **overdueTokenRedirect**    | String  | 重定向URL        | 非必填 | - | `expireDate` 过期后重定向到该地址 |
 | **isApplet**                | Boolean | 是否跳转app端     | 非必填 | `false` |  `true` : 跳转app端<br/>`false` : 跳转web端   |
-| **flowId**                  | String  | 单据ID           | 非必填 | - | 当「 `pageType` = `form` 或 `backlogDetail` 」时<br/>必填，表示需要访问的单据详情页 |
+| **flowId**                  | String  | 单据ID           | 非必填 | - | 当「 `pageType` = `form` 或 `backlogDetail` 或 `edit` 」时<br/>必填，表示需要访问的单据详情页 |
 | **approvalUrl**             | String  | 审批完成后跳转地址 | 非必填 | - | 当「 `pageType` = `form` 或 `backlogDetail` 」时<br/>参数有效，表示单据审批完成后跳转的地址 |
 | **action**                  | String  | 审批按钮类型      | 非必填 | - | 仅当「 `pageType` = `backlogDetail` 」时参数<br/>有效，表示审批待办时想要显示的按钮类型 |
 | **pathname**                | String  | 授权路径         | 非必填 | - |  当 `pageType` = `new` 时，填值<br/>`/web/billentry.html` 或者<br/>`/applet/thirdparty.html`，视平台而定 |
@@ -50,6 +51,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
  - `uid` 与 `userId` 只需要填写一个即可，若都填写，以 `uid` 为准进行操作；
  - 当 `pageType` = `form` 时，`flowId` 参数必填，`approvalUrl` 参数选填；
  - 当 `pageType` = `new` 时，`pathname`、`specificationOriginalId` 参数必填；
+ - 当 `pageType` = `edit` 时，`flowId` 参数必填；
  - 当 `pageType` = `mall` 时，用户必须已开通商城，否则该接口会返回错误提示；<br/>
  且只需要传递 `uid`（或者 `userId` ）、 `isApplet` = `false`（不支持移动端）和 `expireDate` 3个参数即可，其他均可不传；
  - 当 `pageType` = `backlogDetail` 时，`isApplet` = `false`（不支持移动端），`flowId` 参数必填，`approvalUrl`、`action` 参数选填（`action` 不传显示默认的审批按钮，多个值用 `,` 分隔）。
@@ -118,5 +120,5 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/provis
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-    | **200** | false | expireDate最多只能指定7天内的秒数！| `expireDate` 最大仅支持7天的秒数，即 `604800` 秒，请确认是否大于 `604800` 秒 | 
+| **200** | false | expireDate最多只能指定7天内的秒数！| `expireDate` 最大仅支持7天的秒数，即 `604800` 秒，请确认是否大于 `604800` 秒 | 
 | **200** | - | 临时访问地址已过期，请重新获取访问临时授权 | `authType` = `CODE` 时，单点链接仅可使用一次，请确认是否重复使用单点链接 | 

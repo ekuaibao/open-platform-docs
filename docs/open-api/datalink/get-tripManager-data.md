@@ -1,4 +1,4 @@
-# 获取行程管理/订单管理业务对象实例
+# 根据实例ID获取行程管理/订单管理业务对象实例
 
 import Control from "@theme/Control";
 
@@ -92,7 +92,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 				"departmentsIncludeChildren": false
 			},
 			"visible": true,
-			"ownerId": "kRsbl5WsyMmg00:pgEbDN7NbIg000",    //员工ID
+			"ownerId": "kRsbl5WsyMmg00:pgEbDN7NbIg000",    //所属人ID
 			"operatorId": "kRsbl5WsyMmg00:pgEbDN7NbIg000", //操作者ID
 			"sourceId": "MCAbDPTiSA2w00",
 			"flowCounts": {}
