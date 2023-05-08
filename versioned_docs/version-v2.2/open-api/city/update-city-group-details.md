@@ -29,7 +29,7 @@ url="/api/openapi/v1/cityGroup/detail/save"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **cityGroupId** | String | 城市组ID   | 必填  | - | 通过 [获取城市组列表](/docs/open-api/city/get-city-group) 获取 |
 | **cityIds**     | Array  | 城市ID列表 | 必填   | - | 通过 [获取城市列表数据](/docs/open-api/basedata/get-basedata-city) 获取 |
-| **staffIds**    | Array  | 人员ID列表 | 非必填 | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+| **staffIds**    | Array  | 人员ID列表 | 必填   | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
 | **roleIds**     | Array  | 角色ID列表 | 非必填 | - | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
 
 ## CURL
