@@ -7421,9 +7421,9 @@
   dependencies:
     "@babel/runtime" "^7.10.3"
 
-"react-loadable@npm:@docusaurus/react-loadable@5.5.2":
-  "integrity" "sha1-garg24Hsr72u42UfEoBFgIaPps4="
-  "resolved" "https://npm.ekuaibao.com/@docusaurus%2freact-loadable/-/react-loadable-5.5.2.tgz"
+"react-loadable@*", "react-loadable@npm:@docusaurus/react-loadable@5.5.2":
+  "integrity" "sha512-A3dYjdBGuy0IGT+wyLIGIKLRE+sAk1iNk0f1HjNDysO7u8lhL4N3VEm+FAubmJbAztn94F7MxBTPmnixbiyFdQ=="
+  "resolved" "https://registry.npmjs.org/@docusaurus/react-loadable/-/react-loadable-5.5.2.tgz"
   "version" "5.5.2"
   dependencies:
     "@types/react" "*"
