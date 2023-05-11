@@ -11,8 +11,8 @@ authors: [冯继成]
 ---
 ## 企业通讯录
 ### [修改员工工号(全环境)](/docs/open-api/corporation/update-staffs-code)
-### [根据自定义字段查询员工信息(易桥专用)](/docs/open-api/corporation/get-staffs-staffCustom)
-### [根据自定义字段查询部门信息(易桥专用)](/docs/open-api/corporation/get-departments-deptCustom)
+### [根据自定义字段查询员工信息(易桥专用)](/docs/open-api/inside/get-staffs-staffCustom)
+### [根据自定义字段查询部门信息(易桥专用)](/docs/open-api/inside/get-departments-deptCustom)
 
 
 ---

@@ -1,5 +1,5 @@
 # 处理单据列表接口拉取单据的状态不一致问题
-通过[获取单据列表](/docs/open-api/flows/get-forms-sequences)/[获取指定状态单据列表](/docs/open-api/flows/get-forms-sequences-byState)
+通过[获取单据列表](/docs/v2.0/open-api/flows/get-forms-sequences)/[获取指定状态单据列表](/docs/v2.0/open-api/flows/get-forms-sequences-byState)
 获取到最新的单据状态可能会和系统上的单据状态不一致问题（系统上已“支付完成”，接口获取到的数据还是“支付中”状态），可通过此工具接口处理。
 
 import Control from "@theme/Control";

@@ -25,12 +25,12 @@ url="/api/openapi/v1/cityGroup/detail/save"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **cityGroupId** | String | 城市组ID   | 必填  | - | 通过 [获取城市组列表](/docs/open-api/city/get-city-group) 获取 |
+| 名称 | 类型 | 描述     | 是否必填 | 默认值 | 备注 |
+| :--- | :--- |:-------|:-----|:--- | :--- |
+| **cityGroupId** | String | 城市组ID  | 必填   | - | 通过 [获取城市组列表](/docs/open-api/city/get-city-group) 获取 |
 | **cityIds**     | Array  | 城市ID列表 | 必填   | - | 通过 [获取城市列表数据](/docs/open-api/basedata/get-basedata-city) 获取 |
-| **staffIds**    | Array  | 人员ID列表 | 必填   | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
-| **roleIds**     | Array  | 角色ID列表 | 非必填 | - | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
+| **staffIds**    | Array  | 员工ID列表 | 必填   | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+| **roleIds**     | Array  | 角色ID列表 | 非必填  | - | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
 
 ## CURL
 ```json
@@ -63,9 +63,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/cityGrou
 
 ## 失败响应
 
-| HTTP状态码 | 错误码 | 描述 | 排查建议 |
-| :--- | :--- | :--- | :--- |
+| HTTP状态码 | 错误码 | 描述 | 排查建议                         |
+| :--- | :--- | :--- |:-----------------------------|
 | **400** | - | ID_3LTziYdljXy数据不存在 | 请确认 `cityGroupId`（城市组ID）是否正确 |
-| **400** | - | 以下城市Id:[1234555],不存在, 请检查 | 请确认 `cityIds`（城市ID）是否正确 | 
-| **400** | - | 以下员工Id:[xgJ3wajigF25H0:ID_3E9sZ43hMw],不存在, 请检查 | 请确认 `staffIds`（人员ID）是否正确 | 
-| **400** | - | 以下角色Id:[ID_3BKMdBcNB7],不存在, 请检查 | 请确认 `roleIds`（角色ID）是否正确 | 
+| **400** | - | 员工不允许为空 | 请确认 `staffIds`（员工ID列表）是否传值   |
+| **400** | - | 以下城市Id:[1234555],不存在, 请检查 | 请确认 `cityIds`（城市ID列表）是否正确    | 
+| **400** | - | 以下员工Id:[xgJ3wajigF25H0:ID_3E9sZ43hMw],不存在, 请检查 | 请确认 `staffIds`（员工ID列表）是否正确   | 
+| **400** | - | 以下角色Id:[ID_3BKMdBcNB7],不存在, 请检查 | 请确认 `roleIds`（角色ID列表）是否正确    | 

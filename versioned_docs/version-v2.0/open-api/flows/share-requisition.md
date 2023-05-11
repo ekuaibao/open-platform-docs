@@ -13,10 +13,10 @@ url="/api/openapi/v1/requisition/$`flowId`/share/[`staffIds`]"
 
 ## Path Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **flowId**   | String | 申请单单据id | 必填 | - | [通过获取单据列表接口获取](/docs/open-api/flows/get-forms-sequences)或者出站消息|
-| **staffIds** | Array  | 被共享员工id | 必填 | - | [通过获取员工列表接口获取](/docs/open-api/corporation/get-all-staffs) |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                  |
+| :--- | :--- | :--- | :--- |:--- |:--------------------------------------------------------------------|
+| **flowId**   | String | 申请单单据id | 必填 | - | [通过获取单据列表接口获取](/docs/v2.0/open-api/flows/get-forms-sequences)或者出站消息 |
+| **staffIds** | Array  | 被共享员工id | 必填 | - | [通过获取员工列表接口获取](/docs/open-api/corporation/get-all-staffs)           |
 
 
 ## Query Parameters

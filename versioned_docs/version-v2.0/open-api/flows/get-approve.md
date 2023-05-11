@@ -28,7 +28,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byAp
 ```
 
 ## 成功响应
-可以参考[根据单据ID集合获取单据列表](/docs/open-api/flows/get-forms-sequences-ids)返回信息，单据数据结构是一样的。
+可以参考[根据单据ID集合获取单据列表](/docs/v2.0/open-api/flows/get-forms-sequences-ids)返回信息，单据数据结构是一样的。
 ```json
 {
     "items":[

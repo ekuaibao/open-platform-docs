@@ -12,9 +12,10 @@ url="/api/openapi/v2/payeeInfos"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🚀 接口升级 `v2.1` 版本，接口 **成功响应** 中新增了 `nationCode`（银行所在地区代码（海外账户））参数，参数介绍见 [新增收款账户](/docs/open-api/pay/new-payeeInfo)。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180) &emsp; -> 🐞 修复了获取 `WEIXIN`（微信）、`OTHER`（其他）类型收款账户时，`certificateType`（证件类型 ）、`certificateNo`（证件号码）返回空的BUG。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🆕 新增了 `active` 参数描述，并且响应数据中增加了 `active` 参数。<br/>
+  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🆕 新增了 `active` 参数描述，并且接口 **成功响应** 中增加了 `active` 参数。<br/>
   [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🆕 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
   [**0.7.160**](/docs/open-api/notice/update-log#07160) -> 🆕 新增了 `active`（账户是否启用）参数过滤收款账户信息。<br/>
 
@@ -77,6 +78,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "unionBank": "",         //简洁录入开户行
             "bankName": "",          //海外银行名称（海外账户）
             "swiftCode": "",         //银行国际代码（海外账户）
+            "nationCode": "",        //银行所在地区代码（海外账户），参数介绍见【新增收款账户】
             "bankCode": "",          //联行号（海外账户）
             "branchCode": "",        //支行号（海外账户）
             "visibility": {          //可见性
@@ -91,25 +93,26 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "operatorId": "PtgbQUtfE08400:dIEbu2mgTs6o00" //账户创建者ID
         },
         {
-            "sort": "BANK",
-            "id": "_KcaHhblbk0A00",
-            "name": "张杰",
+            "sort": "OVERSEABANK",
+            "id": "ID01ptA3IGvCYn",
+            "name": "海外账户",
             "cardNo": "111",
             "type": "个人账户",
             "createTime": 1644398058965, //创建时间
             "updateTime": 1644398058965, //更新时间
-            "province": "广东省",
-            "city": "深圳市",
-            "bank": "建设银行",
-            "branch": "中国建设银行股份有限公司深圳招商支行",
+            "province": "",
+            "city": "",
+            "bank": "海外",
+            "branch": "",
             "certificateType": null,
-            "certificateNo": "220182199502270011",
-            "bankLinkNo": "105584000554",
-            "unionBank": null,
-            "bankName": "",
-            "swiftCode": "",
-            "bankCode": "",
-            "branchCode": "",
+            "certificateNo": null,
+            "bankLinkNo": null,
+            "unionBank": "",
+            "bankName": "11",
+            "swiftCode": "111",
+            "nationCode": "090",
+            "bankCode": "12345",
+            "branchCode": "111",
             "visibility": {                     //可见性
                         "fullVisible": true,    //是否全部可见（true：全部可见，false：指定人员可见）
                         "staffs": [],           //可见员工ID
@@ -118,7 +121,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
                         "departmentsIncludeChildren": true  //可见部门是否包含子部门（true：是，false：否）
             },
             "remark": "remark",                           //备注
-            "active": true,                               //账户状态，true：启用；false：停用
+            "active": true,                               //账户状态，true：启用  false：停用
             "operatorId": "PtgbQUtfE08400:dIEbu2mgTs6o00" //账户创建者ID
         }
     ]

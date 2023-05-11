@@ -12,6 +12,18 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.18.0
+
+`2023-05-10`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
+- 🆕 新增 [获取企业下所有待审批单据](/docs/open-api/flows/get-approve-corporation) 接口。
+- 🚀 新增 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口 `v2.1` 版本
+  - 接口 **成功响应** 中新增了 `nationCode`（银行所在地区代码（海外账户））参数，参数介绍见 [新增收款账户](/docs/open-api/pay/new-payeeInfo)。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save)、[更新单据](/docs/open-api/flows/update-form) 接口
+  - 更新了允许 `apportionPercent`（分摊比例）设置负数。
+- 🐞 更新 [获取申请事项列表](/docs/open-api/flows/get-requisition-all)、[根据申请事项ID获取申请事项](/docs/open-api/flows/get-requisition-byId) 接口
+  - 接口 **成功响应** `details` 下新增了 `writtenOffAmount`（核销金额）、`unwrittenOffAmount`（未核销金额）字段，用于报销单【按申请明细分别报销】时关联使用。
+
+---
 ## 1.17.0
 
 `2023-04-21`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.110.3`

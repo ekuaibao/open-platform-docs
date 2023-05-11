@@ -14,9 +14,9 @@ url="/api/openapi/v1/specifications/$`id`"
 
 ## Path Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **id** | String | 模板ID | 必填 | - | 如果类型为 bill，则传[获取单据列表](/docs/open-api/flows/get-forms-sequences)中单据信息里 `docData.specificationId` 的值 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                      |
+| :--- | :--- | :--- | :--- |:--- |:--------------------------------------------------------------------------------------------------------|
+| **id** | String | 模板ID | 必填 | - | 如果类型为 bill，则传[获取单据列表](/docs/v2.0/open-api/flows/get-forms-sequences)中单据信息里 `docData.specificationId` 的值 |
 
 ## Query Parameters
 
