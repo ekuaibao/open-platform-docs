@@ -1,10 +1,12 @@
 ---
 slug: get-approve-new
-title: 根据员工ID获取待审批单据(新)
+title: 根据员工ID获取待审批单据
 authors: [冯继成]
 ---
 
 # 根据员工ID获取待审批单据
+
+根据待办生成时间 **倒序** 排序返回待办单据详情。
 
 import Control from "@theme/Control";
 
@@ -29,7 +31,7 @@ url="/api/openapi/v1/docs/byFlowId/$`approverId`"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **approverId** | String | 员工ID | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 
-#### Query Parameters:
+## Query Parameters:
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |

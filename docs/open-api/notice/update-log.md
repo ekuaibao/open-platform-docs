@@ -15,13 +15,13 @@ timeline: true
 ## 1.18.0
 
 `2023-05-10`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
-- 🆕 新增 [根据实例编号获取行程管理/订单管理业务对象实例](/docs/open-api/datalink/get-tripManager-data-byCode) 接口。
-- 🚀 新增 [获取行程管理/订单管理业务对象列表](/docs/open-api/datalink/get-tripManager-order) 接口 `v2.1` 版本
-  - 新增了 `startDate` 和 `endDate` 参数，根据 **创建时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。
-- 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口
-  - 新增了 `pageType` = `edit` 类型，单据处于 **草稿、驳回** 状态时可 **编辑/提交**。
-- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
-  - 完善了 `发票字段` 参数传参示例。
+- 🆕 新增 [获取企业下所有待审批单据](/docs/open-api/flows/get-approve-corporation) 接口。
+- 🚀 新增 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口 `v2.1` 版本
+  - 接口 **成功响应** 中新增了 `nationCode`（银行所在地区代码（海外账户））参数，参数介绍见 [新增收款账户](/docs/open-api/pay/new-payeeInfo)。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save)、[更新单据](/docs/open-api/flows/update-form) 接口
+  - 更新了允许 `apportionPercent`（分摊比例）设置负数。
+- 🐞 更新 [获取申请事项列表](/docs/open-api/flows/get-requisition-all)、[根据申请事项ID获取申请事项](/docs/open-api/flows/get-requisition-byId) 接口
+  - 接口 **成功响应** `details` 下新增了 `writtenOffAmount`（核销金额）、`unwrittenOffAmount`（未核销金额）字段，用于报销单【按申请明细分别报销】时关联使用。
 
 ---
 ## 1.17.0

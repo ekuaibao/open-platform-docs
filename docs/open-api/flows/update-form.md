@@ -12,6 +12,7 @@ url="/api/openapi/v2.2/flow/data/$`flowId`"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 修复了 `editFlag` = `increment`（增量更新）时，`loanWrittenOff`（核销借款）参数不传，数据会被清空的BUG。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🚀 接口升级 `v2.2` 版本，修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。<br/>
   [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🐞 修复了业务对象 **赋值规则** 中配置了当前单据模板不存在的字段时更新单据报错的问题。<br/>
@@ -48,7 +49,7 @@ url="/api/openapi/v2.2/flow/data/$`flowId`"
 | **editFlag**    | String | 更新标志   | 非必填 | cover | `cover` : 全量覆盖，**必填字段参数必传，不传的非必填字段清空对应字段值**<br/>`increment` : 增量更新，**目前只支持更新单据模板中配置的字段参数，不支持更新费用明细字段** |
 
 ## Body Parameters
-不同表单类型参数各不相同，以下仅为示例，详见单据模板：
+传参请参考 [创建单据](/docs/open-api/flows/creat-and-save) 文档的各类型字段参数说明，不同表单类型参数各不相同，以下仅为示例，详见单据模板配置：
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
@@ -195,15 +196,10 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.2/flow/da
 </TabItem>
 </Tabs>
 
-:::tip
-- 更新单据接口与创建单据接口参数格式一致，所有参数规则说明请参考创建单据接口里的说明
-- 返回信息与 [创建单据](/docs/open-api/flows/creat-and-save) 接口一致
-:::
-
 ## 成功响应
 ```json
 {
-    "value":"",
+    "value":"",                      //与【创建单据】接口返回一致
     "type":-1,
     "flow":{
         "version":1,

@@ -1,35 +1,24 @@
----
-slug: get-approve-new
-title: 根据员工ID获取待审批单据(新)
-authors: [冯继成]
----
+# 获取企业下所有待审批单据
 
-# 根据员工ID获取待审批单据
+根据待办生成时间 **倒序** 排序返回待办单据详情。
 
 import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1/docs/byFlowId/$`approverId`"
+url="/api/openapi/v1/docs/backlog"
 />
 
 <details>
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🐞 **成功响应** 中新增了 `count` 待办总数，用于分页。<br/>
-  [**1.6.0**](/docs/open-api/notice/update-log#160) -> 🆕 新增了本接口。<br/>
+  [**1.18.0**](/docs/open-api/notice/update-log#1180) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
 
-## Path Parameters
-
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **approverId** | String | 员工ID | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
-
-#### Query Parameters:
+## Query Parameters:
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
@@ -39,7 +28,8 @@ url="/api/openapi/v1/docs/byFlowId/$`approverId`"
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byFlowId/$bwa3wajigF0WH0:ID_3lokDfb1p5w?accessToken=ID_3GIu1pV0diM:bwa3wajigF0WH0&index=0&count=10'
+curl --location 'https://app.ekuaibao.com/api/openapi/v1/docs/backlog?accessToken=ID01pvxgeBk5pA%3ATdk3tgber501v0&count=100&index=0' \
+--header 'Content-Type: application/json'
 ```
 
 ## 成功响应
@@ -177,10 +167,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byFl
 
 ## 失败响应
 
-| HTTP状态码 | 错误码 | 描述 | 排查建议 |
-| :--- | :--- | :--- | :--- |
-| **200** | - |  `{"items": []}` | 返回空表示查询的员工无待审批的单据  |
-| **400** | - | 员工不存在 | 请确认 `approverId`（员工ID）是否正确  |
+| HTTP状态码 | 错误码 | 描述                          | 排查建议                                           |
+|:--------| :--- |:----------------------------|:-----------------------------------------------|
+| **200** | - | `{"count": 20,"items": []}` | 请确认 `count` 参数是否传值，或者 `index` 传参在返回的所有待审批数据范围内 |
 
 
 

@@ -12,6 +12,7 @@ url="/api/openapi/v1/requisition/getData"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.18.0**](/docs/open-api/notice/update-log#1180) -> 🐞 接口 **成功响应** `details` 下新增了 `writtenOffAmount`（核销金额）、`unwrittenOffAmount`（未核销金额）字段，用于报销单【按申请明细分别报销】时关联使用。<br/>
   [**1.15.0**](/docs/open-api/notice/update-log#1150) -> 🐞 接口 **成功响应** `details` 下新增了 `linkDetailEntityId`（费用明细实例ID）字段，用于报销单【按申请明细分别报销】时关联使用。<br/>
   [**1.12.0**](/docs/open-api/notice/update-log#1120) -> 🐞 接口 **成功响应** 新增了 `details`（申请事项费用明细信息）字段。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120)&emsp;-> 🆕 新增了本接口。
@@ -163,6 +164,22 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/requisit
                             "standardNumCode": "156",
                             "standardStrCode": "CNY"
                         },
+                        "writtenOffAmount": {  //核销金额
+                            "standard": "0.00",
+                            "standardUnit": "元",
+                            "standardScale": 2,
+                            "standardSymbol": "¥",
+                            "standardNumCode": "156",
+                            "standardStrCode": "CNY"
+                        },
+                        "unwrittenOffAmount": { //未核销金额
+                            "standard": "20.00",
+                            "standardUnit": "元",
+                            "standardScale": 2,
+                            "standardSymbol": "¥",
+                            "standardNumCode": "156",
+                            "standardStrCode": "CNY"
+                        },
                         "品类": "bwa3wajigF0WH0:paper",
                         "detailId": "ID_3zE5G_02Bw0",           //费用明细ID
                         "linkDetailEntityId": "ID01netPh7VTH1", //费用明细实例ID，用于报销单【按申请明细分别报销】时关联使用
@@ -258,6 +275,22 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/requisit
                     "feeTypeForm": {
                         "amount": {
                             "standard": "100",
+                            "standardUnit": "元",
+                            "standardScale": 2,
+                            "standardSymbol": "¥",
+                            "standardNumCode": "156",
+                            "standardStrCode": "CNY"
+                        },
+                        "writtenOffAmount": {  //核销金额
+                            "standard": "0.00",
+                            "standardUnit": "元",
+                            "standardScale": 2,
+                            "standardSymbol": "¥",
+                            "standardNumCode": "156",
+                            "standardStrCode": "CNY"
+                        },
+                        "unwrittenOffAmount": { //未核销金额
+                            "standard": "100.00",
                             "standardUnit": "元",
                             "standardScale": 2,
                             "standardSymbol": "¥",

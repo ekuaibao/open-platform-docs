@@ -14,6 +14,7 @@ url="/api/openapi/v2.2/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>
   [**1.17.0**](/docs/open-api/notice/update-log#1170)&emsp;-> 🐞 完善了 **发票字段** 传参示例。<br/>
   [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🐞 新增了 **报销单关联申请** 传参示例。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 **创建草稿状态单据**（`isCommit` = `false`）时，`payeeId`（收款账户ID）允许非必填的场景。<br/>
@@ -32,7 +33,7 @@ url="/api/openapi/v2.2/flow/data"
   &emsp; &emsp; &emsp; -> 🐞 修复了申请单开启借款金额字段并配置了 **系统计算** 时，计算结果小数位超过2位的BUG。<br/>
   [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🐞 修复了 **离职人员** 可以成功创建单据的问题。<br/>
   [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🐞 修复了部门类型字段设置取值规则为 **使用字段依赖性**，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
-  &emsp; &emsp; &emsp; -> 🐞 修复了字段配置计算规则为 **从关联申请单中取值**，**关联申请** 字段为非必填但未传值时，无法通过校验的BUG。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了字段配置计算规则为 **从关联申请单中取值**，**关联申请** 字段为非必填且未传值时，无法通过校验的BUG。<br/>
   [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v2.1` 版本，修复了费用类型里的必填字段类型是 **自定义档案** 时，传 `""` 可通过校验的BUG，增加了非空校验。<br/>
   [**0.7.130**](/docs/open-api/notice/update-log#07138) -> 🆕 新增了支持 **直接提审** 能力。<br/>
 
@@ -48,7 +49,7 @@ url="/api/openapi/v2.2/flow/data"
 | **isUpdate**    | Boolean | 直接提审失败时是否保存单据草稿 | 非必填  | false | `isCommit` 参数为 `true` 时该参数有效<br/>`true` : 提审失败时保存草稿<br/>`false` : 提审失败时不保存草稿 |
 
 ##  Body Parameters
-不同表单类型参数各不相同，以下仅为示例，详见单据模板：
+不同表单类型参数各不相同，以下仅为示例，详见单据模板配置：
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
@@ -407,7 +408,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 | **412** | - | 你无法使用当前选择的"单据模板"，请重选 | 请确认 `submitterId`（单据提交人ID）字段对应员工是否在该单据模板可见范围内 |
 
 
-## 字段填写规则
+## 各类型字段参数说明
 
 ### (1) 费用类型字段(`details`)  
 单据中的 `details`，表达的是【费用明细】，是一个数组，支持多条，参考如下：
@@ -803,7 +804,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 "apportions": [
    {
        "apportionForm": {        //费用分摊明细
-           "apportionMoney": {   //分摊金额
+           "apportionMoney": {   //分摊金额，分摊比例是负数的话，分摊金额必须也是负数
                "standard": "5000",
                "standardStrCode": "CNY",
                "standardNumCode": "156",
@@ -811,7 +812,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
                "standardUnit": "元",
                "standardScale": 2
             },
-           "apportionPercent": "50.00",  //分摊比例（0.01~100.00）
+           "apportionPercent": "50.00",  //分摊比例，允许设置负数
            "expenseDepartment": "joQbMsJBw01c00:2J4bMvXHTY8U00", //报销部门
            "项目": "PvobMPbmLw3I00"      //分摊项目ID
        },
