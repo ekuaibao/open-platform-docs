@@ -7,6 +7,15 @@ import Control from "@theme/Control";
   url="/api/openapi/v1/auth/getAccessToken"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  [**1.17.0**](/docs/open-api/notice/update-log#1170) -> 🐞 修复了 **获取授权** 后立即使用 `accessToken` 报 **HTTP403** 的BUG，提供添加延迟后返回 `accessToken` 的处理。<br/>
+
+  </div>
+</details>
+
 ## Body Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
