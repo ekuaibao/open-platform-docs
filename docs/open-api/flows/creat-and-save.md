@@ -17,6 +17,7 @@ url="/api/openapi/v2.2/flow/data"
   [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>
   &emsp; &emsp; &emsp; -> 🐞 优化了 **金额** 类型字段的传参格式检验和报错信息。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了支持 [按申请明细分别报销](/docs/open-api/flows/creat-and-save#14-关联申请字段) 类型的关联申请自动赋值规则。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了 `submitterId` （提交人）未激活时，可创建单据的BUG。<br/>
   [**1.17.0**](/docs/open-api/notice/update-log#1170)&emsp;-> 🐞 完善了 **发票字段** 传参示例。<br/>
   [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🐞 新增了 **报销单关联申请** 传参示例。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 **创建草稿状态单据**（`isCommit` = `false`）时，`payeeId`（收款账户ID）允许非必填的场景。<br/>
@@ -405,7 +406,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 | **400** | - | openapi单据数据保存，明细模板不存在 | `form.details.specificationId`（费用类型模板ID）错误，请确认费用类型模板ID是否为 **费用类型模板ID:单据类型:小版本号** 的正确形式 | 
 | **400** | - | openapi单据数据保存，明细模板已删除 | 费用类型模板ID不是最新的，不允许创建单据，请每次修改费用类型模板后都获取最新的模板ID再创建单据操作                                    |
 | **400** | - | 'u_业务对象'字段[业务对象]字段为必填，值不能为空 | 请确认必填字段是否传值                                                                            |
-| **400** | - | 提交人参数不合法，请检查该员工是否已离职 | 请确认 `submitterId`（单据提交人ID）字段对应员工是否离职                                                   |
+| **400** | - | 提交人参数不合法，请检查该员工是否已离职 | 请确认 `submitterId`（单据提交人ID）字段对应员工是否离职或未激活                                                  |
 | **400** | - | openapi单据数据提交，审批节点[出纳支付]未设置审批人 | 审批节点配置审批人为【**手动选择**】时，无法直接提审，请修改配置                                                     |
 | **400** | - | 输入存在错误: - 缺少Action参数 | 请确认Body参数是否已传                                                                          |
 | **412** | - | 你无法使用当前选择的"单据模板"，请重选 | 请确认 `submitterId`（单据提交人ID）字段对应员工是否在该单据模板可见范围内                                          |

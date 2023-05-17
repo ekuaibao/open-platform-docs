@@ -12,6 +12,7 @@ url="/api/openapi/v2.1/flows/relay"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 接口新增了 `entityIds`（业务对象ID）、`ids`（业务对象实例ID）参数，可交接指定业务对象下全部实例或指定实例数据的参与人和负责人。 <br/>
   [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🚀 接口升级 `v2.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
   [**0.7.156**](/docs/open-api/notice/update-log#07156) -> 🆕 新增了本接口。<br/>
 
@@ -37,8 +38,18 @@ url="/api/openapi/v2.1/flows/relay"
 | **relayApproverId**     | String  | 交接人ID或CODE，**与 `type` 保持一致** | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 | **unboundInvoice**      | Boolean | 将待离职员工草稿及被驳回的单据<br/>删除、关联的发票解除关联 | 必填 | - | `true` : 解除 &emsp; `false` : 不解除<br/>**正常情况必填为`true`** |
 | **shareWaitingInvoice** | Boolean | 将待开发票共享给新交接人                              | 必填 | - | `true` : 共享 &emsp; `false` : 不共享<br/>**正常情况必填为`true`** |
-| **dataLinkFlag**        | Boolean | 如果是业务对象负责人或者管理员，<br/>交接到新交接人下面    | 必填 | - | `true` : 交接 &emsp; `false` : 不交接<br/>**正常情况必填为`true`** |
+| **dataLinkFlag**        | Boolean | 如果是业务对象参与人、负责人、管理员，<br/>交接到新交接人下面 | 必填 | - | `true` : 交接 &emsp; `false` : 不交接<br/>**正常情况必填为`true`** |
+| **entityIds**           | Array   | 业务对象ID                                         | 非必填 | - | `type` = `id` 且 `dataLinkFlag` = `true` 时有效 |
+| **ids**                 | Array   | 业务对象实例ID                                      | 非必填 | - | `type` = `id` 且 `dataLinkFlag` = `true` 时有效 |
 
+:::tip
+- `entityIds` 与 `ids` 只在 `type` = `id` 且 `dataLinkFlag` = `true` 时有效；
+  - 只传 `entityIds` 时，更新 **所传业务对象下的所有实例数据** 的参与人和负责人；
+  - 只传 `ids` 时，只更新 **所传实例数据** 的参与人和负责人；
+  - `entityIds` 与 `ids` 同时传入时，只更新 **两者取交集范围内的实例数据** 的参与人和负责人；
+  - 传入这两个参数时，业务对象 **管理员** 仍会变更为新交接人。
+
+:::
 
 ## CURL
 
@@ -58,6 +69,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flows/
     "unboundInvoice": true,       //将待离职员工草稿及被驳回的单据删除、关联的发票解除关联，TRUE表示交接，FALSE表示不交接  必填为true
     "shareWaitingInvoice": true,  //将待开发票共享给新交接人，TRUE表示交接，FALSE表示不交接  必填为true
     "dataLinkFlag": true          //如果是业务对象负责人或者管理员，交接到新交接人下面，TRUE表示交接，FALSE表示不交接  必填为true
+    "entityIds":["e70e7649f5774bb6bc00","f90e85e70e019eb8e000"], //业务对象ID
+    "ids":["ID01w4CAUYA8eX","ID01w4CAJc0x1d"]                    //业务对象实体id
 }'
 ```
 </TabItem>

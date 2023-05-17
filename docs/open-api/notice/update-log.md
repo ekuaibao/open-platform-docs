@@ -14,7 +14,7 @@ timeline: true
 ---
 ## 1.18.0
 
-`2023-05-10`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
+`2023-05-17`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.112.6`
 - 🆕 新增 [获取企业下所有待审批单据](/docs/open-api/flows/get-approve-corporation) 接口。
 - 🚀 新增 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口 `v2.1` 版本
   - 接口 **成功响应** 中新增了 `nationCode`（银行所在地区代码（海外账户））参数，参数介绍见 [新增收款账户](/docs/open-api/pay/new-payeeInfo)。
@@ -22,8 +22,13 @@ timeline: true
   - 更新了允许 `apportionPercent`（分摊比例）设置负数。
   - 优化了 **金额** 类型字段的传参格式检验和报错信息。
   - 更新了支持 [按申请明细分别报销](/docs/open-api/flows/creat-and-save#14-关联申请字段) 类型的关联申请自动赋值规则。
+  - 修复了 `submitterId` （提交人）未激活时，可创建单据的BUG。
+- 🐞 更新 [获取单据列表](/docs/open-api/flows/get-forms-details-byStaff)
+  - 修复了单据到达 `PROCESSING`（支付中）状态时，再执行评论或打印等操作后，接口返回的是 `paying`（待支付）状态的BUG。
 - 🐞 更新 [获取申请事项列表](/docs/open-api/flows/get-requisition-all)、[根据申请事项ID获取申请事项](/docs/open-api/flows/get-requisition-byId) 接口
   - 接口 **成功响应** `details` 下新增了 `writtenOffAmount`（核销金额）、`unwrittenOffAmount`（未核销金额）字段，用于报销单【按申请明细分别报销】时关联使用。
+- 🐞 更新 [员工离职交接](/docs/open-api/contacts/relay-staff)
+  - 新增了 `entityIds`（业务对象ID）、`ids`（业务对象实例ID）参数，可交接指定业务对象下全部实例或指定实例数据的参与人和负责人。
 
 ---
 ## 1.17.0

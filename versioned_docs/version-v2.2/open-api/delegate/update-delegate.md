@@ -20,7 +20,7 @@ url="/api/openapi/v2/organization/delegate/approve"
 | **id**          | String  | 委托关系数据ID     | 必填   | - | 通过 [根据发起人ID获取委托审批授权数据](/docs/open-api/delegate/get-delegate-byStaffId) 获取 |
 | **staffId**     | String  | 授权发起人ID	   | 必填  | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 | **delegateeId** | String  | 被委托人ID	       | 必填  | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
-| **name**        | String  | 授权名称	       | 非必填 | - | 授权名称 |
+| **name**        | String  | 授权名称	       | 必填  | - | 授权名称 |
 | **remark**      | String  | 备注	           | 非必填 | - | 备注 |
 | **startTime**   | String  | 授权开始时间	   | 非必填 | - | 毫秒级时间戳 |
 | **endTime**     | String  | 授权结束时间	   | 非必填 | - | 毫秒级时间戳 |
