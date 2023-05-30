@@ -1,4 +1,4 @@
-# 附件下载
+# 下载附件
 通过附件的 `id`、`key` 去获取附件的下载链接。
 
 import Control from "@theme/Control";
@@ -25,11 +25,11 @@ url="/api/openapi/v2/attachment/downloadurls"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **id**         | String | 文件fileId    | 必填 | - | 可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取，对应单据详情中<br/>`attachments` 字段的 `fileId` |
-| **key**        | String | 文件key       | 必填 | - | 可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取，对应单据详情中<br/>`attachments` 字段的 `key` |
-| **expiration** | Number | 下载链接有效时间 | 必填 | - | 用户自定义，指下载链接在多长时间内有效，暂无上限，单位：秒 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                                                                                                    |
+| :--- | :--- | :--- | :--- |:--- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **id**         | String | 文件fileId    | 必填 | - | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `fileId` 字段<br/>**接口下载单据上的附件时**，可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取 `attachments` 字段的 `fileId` 值 |
+| **key**        | String | 文件key       | 必填 | - | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `key` 字段<br/>**接口下载单据上的附件时**，可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取 `attachments` 字段的 `key` 值       |
+| **expiration** | Number | 下载链接有效时间 | 必填 | - | 用户自定义，指下载链接在多长时间内有效，暂无上限，单位：秒                                                                                                                                                         |
 
 ## CURL
 ```json

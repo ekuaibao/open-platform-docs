@@ -16,7 +16,7 @@ url="/api/openapi/v2.2/flow/data/$`flowId`"
   &emsp; &emsp; &emsp; -> 🐞 优化了 **金额** 类型字段的传参格式检验和报错信息。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了支持 [按申请明细分别报销](/docs/open-api/flows/creat-and-save#14-关联申请字段) 类型的关联申请自动赋值规则。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 修复了 `editFlag` = `increment`（增量更新）时，`loanWrittenOff`（核销借款）参数不传，数据会被清空的BUG。<br/>
-  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🚀 接口升级 `v2.2` 版本，修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。<br/>
+  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🚀 接口升级 `v2.2` 版本，修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，非必填的计算结果被接口拦截为必填并报错的BUG。<br/>
   [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🐞 修复了业务对象 **赋值规则** 中配置了当前单据模板不存在的字段时更新单据报错的问题。<br/>
   [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 优化了审批日志描述：`editorId` 不传时，默认记录为 **OpenAPI** 修改了单据。<br/>

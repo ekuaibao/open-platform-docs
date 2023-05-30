@@ -79,7 +79,7 @@ timeline: true
   - 修复了更改员工可见性时，偶现的传入启用的员工ID，返回停用的同名员工ID的BUG。
 - 🐞 更新 [获取单据审批状态](/docs/open-api/flows/get-approve-state) 接口
   - 更新了注意事项。
-- 🐞 更新 [附件下载](/docs/open-api/attachment/attachment-download) 接口
+- 🐞 更新 [下载附件](/docs/open-api/attachment/attachment-download) 接口
     - 更新了注意事项。
 - 🐞 更新 [根据部门ID或编码获取部门信息](/docs/open-api/contacts/get-departments-idOrCode)、[根据部门名称获取部门信息](/docs/open-api/contacts/get-department-byName)、[根据部门路径获取部门信息](/docs/open-api/contacts/get-department-byPath)、[获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty)、[修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields) 接口
   - 以上接口从【**通讯录同步**】模块迁移到【**企业通讯录**】模块。
@@ -171,7 +171,7 @@ timeline: true
   - 新增了 `sort`（账号类别）参数，额外支持新增/更新 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。
 - 🐞 更新 [新增预算包](/docs/open-api/budget/add-budget)、[批量更新(新增/修改/删除)预算节点](/docs/open-api/budget/batch-pdate-budget-node) 接口
   - 新增了 `overControllerRate`（超标比例）接口参数和描述。
-- 🐞 更新 [附件下载](/docs/open-api/attachment/attachment-download) 接口
+- 🐞 更新 [下载附件](/docs/open-api/attachment/attachment-download) 接口
   - 优化了接口 **HTTP 500** 错误，输出报错信息。
 
 ---

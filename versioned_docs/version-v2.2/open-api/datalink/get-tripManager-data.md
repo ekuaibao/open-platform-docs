@@ -52,6 +52,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 			"form": {
 				"E_0ee20b9ed9cade87bc00_code": "TRIP202009240000000002",    //业务对象实例编码
 				"E_0ee20b9ed9cade87bc00_name": "广东省/广州市/广州市区",     //业务对象实例名称
+                "E_0ee20b9ed9cade87bc00_订单": [  //行程实例关联的订单实例ID，在产生订单后才会回写此字段，此处仅做示例演示
+                    "ID01pSGWl1FGLd"
+                ],
 				"E_0ee20b9ed9cade87bc00_住宿地": "[{\"key\":\"2123\",\"label\":\"广州市区\"}]",
 				"E_0ee20b9ed9cade87bc00_出行人": [
 					"kRsbl5WsyMmg00:pgEbDN7NbIg000"
@@ -63,15 +66,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink/
 				"E_0ee20b9ed9cade87bc00_离店日期": 1601028941371,
 				"E_0ee20b9ed9cade87bc00_订购状态": "待订购",
 				"E_0ee20b9ed9cade87bc00_申请单标题": "北京申请单",
-				"E_0ee20b9ed9cade87bc00_申请单编码": "S20000002",
-				"E_0ee20b9ed9cade87bc00_申请单预算金额": {
-					"standard": "88.00",
-					"standardUnit": "元",
-					"standardScale": 2,
-					"standardSymbol": "¥",
-					"standardNumCode": "156",
-					"standardStrCode": "CNY"
-				}
+				"E_0ee20b9ed9cade87bc00_申请单编码": "S20000002"
 			},
 			"ledgerAmount": null,
 			"ledgerAmountModel": null,

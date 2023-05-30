@@ -27,11 +27,12 @@ url="/api/openapi/v2/invoice/multiple_items"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **fileName** | String | 文件名  | 必填 | - | 文件名称 |
-| **fileUrl**  | String | 文件url | 必填 | - | 即 [附件下载](/docs/open-api/attachment/attachment-download) 接口返回的 `url` 参数 |
-| **staffId**  | String | 查验员工ID | 必填 | - | 可通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
+| 名称 | 类型      | 描述       | 是否必填 | 默认值  | 备注                                                                    |
+| :--- |:--------|:---------|:-----|:-----|:----------------------------------------------------------------------|
+| **fileName** | String  | 文件名      | 必填   | -    | [下载附件](/docs/open-api/attachment/attachment-download) 接口返回的 `key` 参数                                                                  |
+| **fileUrl**  | String  | 文件url    | 必填   | -    | [下载附件](/docs/open-api/attachment/attachment-download) 接口返回的 `url` 参数  |
+| **staffId**  | String  | 查验员工ID   | 必填   | -    | 可通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取               |
+| **isExOcr**  | Boolean | OCR供应商类型 | 非必填  | true | `true` : 易道博识 &emsp; `false` : 企业所属环境默认供应商                            |
 
 ## CURL
 ```json

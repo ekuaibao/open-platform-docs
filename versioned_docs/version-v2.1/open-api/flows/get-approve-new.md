@@ -74,7 +74,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byFl
                                 "standardStrCode": "CNY"  //本位币字母代码
                             },
                             "detailId": "ID_3BPNpAnjHGw", //明细ID
-                            "attachments": [],            //附件，可用附件信息的数据通过调用【附件下载】接口来获取附件文件下载链接
+                            "attachments": [],            //附件，可用附件信息的数据通过调用【下载附件】接口来获取附件文件下载链接
                             "description": "11",          //描述
                             "u_业务对象": "",             //自定义字段
                             "consumptionReasons": "11"    //消费事由

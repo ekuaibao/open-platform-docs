@@ -1,4 +1,4 @@
-# 附件下载
+# 下载附件
 通过附件的 `id`、`key` 去获取附件的下载链接。
 
 import Control from "@theme/Control";

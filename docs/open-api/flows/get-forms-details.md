@@ -75,7 +75,7 @@ import TabItem from '@theme/TabItem';
                         "feeDate": 1592236800000,    //消费时间(毫秒级时间戳)
                         "invoice": "1",              //发票(非必返回字段)
                         "detailId": "g8Ub7AO5So4k00",//明细ID
-                        "attachments": [],           //附件，可用附件信息的数据通过调用【附件下载】接口来获取附件文件下载链接
+                        "attachments": [],           //附件，可用附件信息的数据通过调用【下载附件】接口来获取附件文件下载链接
                         "invoiceForm": {             //发票信息(非必返回字段)
                             "type":"exist",          //发票类型
                             "invoices": [            //发票关联信息
