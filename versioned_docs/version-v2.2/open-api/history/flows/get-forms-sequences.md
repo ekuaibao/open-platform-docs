@@ -227,9 +227,65 @@ import TabItem from '@theme/TabItem';
                             "writtenOffMoney_standardStrCode":"CNY"
                         },
                         "invoiceCount":1,   //发票数据
-                        "taxAmount":null,   //发票中的税额（合计）
-                        "noTaxAmount":null, //发票中的不含税金额（合计）
-                        "invoices":[],      
+                        "taxAmount":0,   //发票中的税额（合计）
+                        "noTaxAmount":0.01, //发票中的不含税金额（合计）
+                        "invoices":[        //发票信息
+                            {
+                                "invoiceId": "djg8LshfUkfM00:144031909110:13220597:2",   //发票ID
+                                "type": "BLOCK_CHAIN",                                   //发票类别
+                                "type2": "BLOCK_CHAIN",
+                                "taxAmount": 0,                                          //发票税额
+                                "taxDeductible": 0,                                      //免税金额
+                                "noTaxAmount": 0.01,                                     //发票不计税金额
+                                "amount": 0.01,                                          //发票金额
+                                "orderId": "ID_3zCIFdiTCYw",
+                                "code": "144031909110",                                  //发票代码
+                                "number": "13220597",                                    //发票号码
+                                "deductible": false,                                     //是否免税
+                                "invoiceConfirm": null,
+                                "invoiceMainBody": null,
+                                "invoiceDetail": {                                       //发票明细类型
+                                    "id": "ID_3quUcHF9bsg",
+                                    "active": false,
+                                    "ownerId": null,
+                                    "entityId": "system_发票明细",
+                                    "masterId": "djg8LshfUkfM00:144031909110:13220597:2",
+                                    "useCount": 0,
+                                    "totalCount": 1,
+                                    "E_system_发票明细_code": "ID_3pBUG_FTVjg",
+                                    "E_system_发票明细_name": "*玩具*填充类玩具",
+                                    "E_system_发票明细_单价": {
+                                        "standard": "0.01",
+                                        "standardUnit": "元",
+                                        "standardScale": 2,
+                                        "standardSymbol": "¥",
+                                        "standardNumCode": "156",
+                                        "standardStrCode": "CNY"
+                                    },
+                                    "E_system_发票明细_数量": "1.00",
+                                    "E_system_发票明细_税率": "3%",
+                                    "E_system_发票明细_税额": {
+                                        "standard": "0.00",
+                                        "standardUnit": "元",
+                                        "standardScale": 2,
+                                        "standardSymbol": "¥",
+                                        "standardNumCode": "156",
+                                        "standardStrCode": "CNY"
+                                    },
+                                    "E_system_发票明细_金额": {
+                                        "standard": "0.01",
+                                        "standardUnit": "元",
+                                        "standardScale": 2,
+                                        "standardSymbol": "¥",
+                                        "standardNumCode": "156",
+                                        "standardStrCode": "CNY"
+                                    },
+                                    "E_system_发票明细_规格型号": null
+                                },
+                                "invoiceType": "invoice"        //发票类型
+                            }
+                        ],
+                        "invoiceFormType": "exist",
                         "payeeInfo":null
                     },
                     {

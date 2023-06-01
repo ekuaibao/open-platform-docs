@@ -7,6 +7,16 @@ method="PUT"
 url="/api/openapi/v2/organization/delegate/approve"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 优化了 `name`（授权名称） 必填问题。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了 `delegateeId`（被委托人ID）未校验是否本企业员工的BUG。<br/>
+
+  </div>
+</details>
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |

@@ -1,4 +1,4 @@
-# 修改员工信息
+# 修改员工
 
 import Control from "@theme/Control";
 
@@ -15,10 +15,11 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
   [**1.9.0**](/docs/open-api/notice/update-log#190) -> 🐞 优化了修改登录手机号、邮箱逻辑<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● 若传参的登录手机号、邮箱没有注册任何企业或所有企业均解散，则允许修改成功。<br/>
 -->
-  [**1.7.1**](/docs/open-api/notice/update-log#171) -> 🐞 修复了更改登录邮箱后，手机号无法登录的BUG。<br/>
-  [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🐞 修复了登录邮箱中包含大写字母，更新后无法登录的BUG。<br/>
-  [**1.4.0**](/docs/open-api/notice/update-log#140) -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
-  [**1.2.1**](/docs/open-api/notice/update-log#121) -> 🚀 接口升级 `v1.1` 版本，员工自定义字段值的保存做增量更新（`v1` 版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。<br/>
+  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
+  [**1.7.1**](/docs/open-api/notice/update-log#171) &emsp; -> 🐞 修复了更改登录邮箱后，手机号无法登录的BUG。<br/>
+  [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了登录邮箱中包含大写字母，更新后无法登录的BUG。<br/>
+  [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**1.2.1**](/docs/open-api/notice/update-log#121) &emsp; -> 🚀 接口升级 `v1.1` 版本，员工自定义字段值的保存做增量更新（`v1` 版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。<br/>
 
   </div>
 </details>
@@ -119,8 +120,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
     "modifyAccountPhone": false,            //是否修改员工手机号
     "modifyAccountEmail": false,            //是否修改员工邮箱
     "staffCustomForm": {                    //员工自定义字段集合
-        "rankType": "CODE1",                //职级
         "postType": "CODE1",                //岗位
+        "rankType": "CODE1",                //职级
         "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",//常驻地
         "u_张国阳001": "CODE1"               //员工自定义字段
     }
@@ -147,6 +148,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
         "showEmail": "15588881010@163.com",       //员工个人信息显示邮箱（大写字母保持不变）
         "external": false,                        //是否外部员工
         "authState": true,                        //是否激活，表示账号是否可用
+        "globalRoaming": "+86",                   //国际区号
         "note": "Code修改",                       //备注                  
         "staffCustomForm": {                      //员工自定义字段
             "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地

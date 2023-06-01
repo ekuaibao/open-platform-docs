@@ -12,7 +12,8 @@ url="/api/openapi/v1/staffs/getStaffIds"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.10.0**](/docs/open-api/notice/update-log#1100) -> 🐞 新增了 `authState`（激活状态）成功响应返回参数。<br/>
+  [**1.19.0**](/docs/open-api/notice/update-log#1190) &emsp; -> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
+  [**1.10.0**](/docs/open-api/notice/update-log#1100) &emsp; -> 🐞 新增了 `authState`（激活状态）成功响应返回参数。<br/>
 
   </div>
 </details>
@@ -72,6 +73,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
             "showEmail": "Cmzhouxiaofeng@xxx.com.cn",             //员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                                    //是否外部员工
             "authState": true,                                    //是否激活，表示账号是否可用
+            "globalRoaming": "+86",                               //国际区号
             "note": "备注",                                        //备注
             "staffCustomForm":{                                               //员工自定义字段
                 "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地

@@ -12,6 +12,7 @@ url="/api/openapi/v1.1/staffs/batch/create"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `cellphone`（手机号）参数校验，只允许传英文括号和数字。<br/>
   [**0.7.140**](/docs/open-api/notice/update-log#07140) -> 🆕 新增了支持自定义字段保存。<br/>
   [**0.7.133**](/docs/open-api/notice/update-log#07133) -> 🆕 新增了控制发送邮件标识参数。<br/>
@@ -132,7 +133,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
             "email": "18888881005@163.com",                        //登录邮箱（大写字母全转换为小写字母）
             "showEmail": "18888881005@163.com",                    //员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                                     //是否外部人员
-            "note": "批量新增",                                    //备注
+            "authState": true,                                     //是否激活，表示账号是否可用
+            "globalRoaming": "+86",                                //国际区号
+            "note": "批量新增",                                     //备注
             "staffCustomForm": {                                   //员工自定义字段
                 "rankType": "ID_3tqvxwgjK6w",                      //职级
                 "postType": "ID_3tqvxwgjF6w",                      //岗位
@@ -157,6 +160,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
             "email": "18888881006@163.com",
             "showEmail": "18888881006@163.com",
             "external": false,
+            "globalRoaming": "+86",                   
+            "note": "批量新增",                    
             "note": "批量新增",
             "staffCustomForm": {
                 "rankType": "ID_3tqvxwgjK6w",

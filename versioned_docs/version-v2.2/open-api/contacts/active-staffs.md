@@ -12,7 +12,8 @@ url="/api/openapi/v1.1/staffs/disableOrEnableStaff/[`ids`]"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.4.0**](/docs/open-api/notice/update-log#140) -> 🚀 接口升级 `v1.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
+  [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
 
   </div>
 </details>
@@ -80,7 +81,8 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staf
             "showEmail": "15588881010@163.com",       //员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                        //是否外部员工
             "authState": false,                       //是否激活，表示账号是否可用
-            "note": "Code修改",                       //备注
+            "globalRoaming": "+86",                   //国际区号
+            "note": "Code修改",                        //备注
             "staffCustomForm": {                      //员工自定义字段
                 "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
                 "postType": "ID_3D5RavktVRM",         //岗位
@@ -105,6 +107,7 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staf
             "showEmail": "14444444444@163.com",       //员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                        //是否外部员工
             "authState": false,                       //是否激活，表示账号是否可用
+            "globalRoaming": "+86",                   //国际区号
             "note": "批量新增",
             "staffCustomForm": {                      //员工自定义字段
               "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地

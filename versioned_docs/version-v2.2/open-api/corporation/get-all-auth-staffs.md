@@ -17,7 +17,8 @@ url="/api/openapi/v1/staffs/authorized"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.161**](/docs/open-api/notice/update-log#07161) -> 🆕 新增了本接口。<br/>
+  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
+  [**0.7.161**](/docs/open-api/notice/update-log#07161) &emsp; -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
@@ -60,6 +61,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/au
             "showEmail": "Cmzhouxiaofeng@xxx.com.cn",//员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                       //是否外部员工
             "authState": true,                       //是否激活，表示账号是否可用
+            "globalRoaming": "+86",                  //国际区号
             "note": "notea",                         //备注
             "staffCustomForm": {                     //员工自定义字段
               "base": "[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",  //常驻地
@@ -83,6 +85,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/au
             "showEmail": "mshanxidd1@xxx.com.cn",
             "external": false,
             "authState": true,
+            "globalRoaming": "+86",   
             "note": null,
             "staffCustomForm": {
               "u_爱好": ""

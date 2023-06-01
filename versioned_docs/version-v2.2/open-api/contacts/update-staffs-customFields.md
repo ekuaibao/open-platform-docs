@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/staffs/$`staffId`/customFields"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
   [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
   [**0.7.149**](/docs/open-api/notice/update-log#07149) -> 🆕 新增了本接口。<br/>
 
@@ -104,6 +105,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
         "showEmail": "Cmzhouxiaofen@xxx.com.cn",//员工个人信息显示邮箱（大写字母保持不变）
         "external": false,                      //是否外部人员
         "authState": true,                      //是否激活，表示账号是否可用
+        "globalRoaming": "+86",                 //国际区号
         "note": null,                           //备注
         "staffCustomForm": {                    //员工自定义字段
             "rankType": "ID_3jO67GBsl3I",       //职级

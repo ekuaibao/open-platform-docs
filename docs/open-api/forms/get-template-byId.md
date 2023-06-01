@@ -11,7 +11,8 @@ url="/api/openapi/v2/specifications/byIds/[`ids`]"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.0**](/docs/open-api/notice/update-log#170) -> 🐞 修复了部分模板ID因为版本过多导致接口返回空的BUG。<br/>
+  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `visibility`（可见性范围）字段。<br/>
+  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 修复了部分模板ID因为版本过多导致接口返回空的BUG。<br/>
 
   </div>
 </details>
@@ -115,6 +116,21 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifica
                     }
                 }
             ],
+            "visibility": {                 //可见性范围
+                "fullVisible": false,
+                "staffs": [
+                    "xgJ3wajigF25H0:dbc3wajigF1UH0",
+                    "xgJ3wajigF25H0:ID01iOBVJdZ93F",
+                    "xgJ3wajigF25H0:ID01iOBVJdZiEf",
+                    "xgJ3wajigF25H0:eTM3rQTD1y20vw",
+                    "xgJ3wajigF25H0:ID_3Dvxff1n3kw"
+                ],
+                "roles": [],
+                "departments": [
+                    "xgJ3wajigF25H0"
+                ],
+                "departmentsIncludeChildren": true
+            },
             "flowType": "expense"
         },
         {
@@ -189,6 +205,15 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifica
                     }
                 }
             ],
+            "visibility": {
+                "fullVisible": false,
+                "staffs": [],
+                "roles": [],
+                "departments": [
+                    "TsI3tt8KjF4S7M"
+                ],
+                "departmentsIncludeChildren": true
+            },
             "flowType": "expense"       //单据模板类型
         }
     ]

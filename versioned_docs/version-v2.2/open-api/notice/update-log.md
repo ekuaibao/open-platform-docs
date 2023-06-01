@@ -12,6 +12,19 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.19.0
+
+`2023-05-31`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.113.7`
+- 🆕 新增 [批量修改员工](/docs/open-api/contacts/batch-update-staffs) 接口。
+- 🐞 更新 [新增委托审批授权](/docs/open-api/delegate/create-delegate)、[更新委托审批授权](/docs/open-api/delegate/update-delegate) 接口
+    - 优化了 `name`（授权名称） 必填问题。
+    - 修复了 `delegateeId`（被委托人ID）未校验是否本企业员工的BUG。
+- 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取已激活员工列表](/docs/open-api/corporation/get-all-auth-staffs)、[查询员工](/docs/open-api/corporation/get-staff-ids)、[修改员工自定义字段(全环境)](/docs/open-api/contacts/update-staffs-customFields)、[新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs)、[修改员工](/docs/open-api/contacts/update-staffs)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口
+    - 响应信息中新增了 `globalRoaming`（国际区号）字段。
+- 🐞 更新 [根据模板ID获取模板信息](/docs/open-api/forms/get-template-byId) 接口
+    - 响应信息中新增了 `visibility`（可见性范围）字段。
+
+---
 ## 1.18.0
 
 `2023-05-17`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.112.6`

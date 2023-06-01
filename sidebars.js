@@ -86,6 +86,7 @@ const sidebars = {
         "open-api/contacts/add-staffs",
         "open-api/contacts/batch-add-staffs",
         "open-api/contacts/update-staffs",
+        "open-api/contacts/batch-update-staffs",
         "open-api/contacts/relay-staff",
         "open-api/contacts/active-staffs",
         "open-api/contacts/auth-staffs",

@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/staffs"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
   [**1.11.1**](/docs/open-api/notice/update-log#1111)&emsp;-> 🚀 接口升级 `v1.1` 版本，新增了 `external`（是否外部员工）过滤参数，支持按照 **是否外部员工** 过滤。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
   [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
@@ -70,6 +71,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs?
             "showEmail": "Cmzhouxiaofen@xxx.com.cn",//员工个人信息显示邮箱（大写字母保持不变）
             "external": false,                      //是否外部员工
             "authState": true,                      //是否激活，表示账号是否可用
+            "globalRoaming": "+86",                 //国际区号
             "note": "备注",                         //备注
             "staffCustomForm": null,                //员工自定义字段
             "updateTime": "2022-09-05 10:43:56",    //更新时间
@@ -90,6 +92,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs?
             "showEmail": "fd16@xxx.com.cn",
             "external": false,
             "authState": true,
+            "globalRoaming": "+86", 
             "note": "备注",
             "staffCustomForm": null,
             "updateTime": "2022-09-02 17:39:32",
@@ -110,6 +113,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs?
             "showEmail": "1364007577@bb.com",
             "external": false,
             "authState": true,
+            "globalRoaming": "+86",         
             "note": "备注",
             "staffCustomForm": {},
             "updateTime": "2022-08-19 17:18:17",
@@ -130,6 +134,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs?
             "showEmail": "fd18@xxx.com.cn",
             "external": false,
             "authState": true,
+            "globalRoaming": "+86",               
             "note": "备注",
             "staffCustomForm": {},
             "updateTime": "2022-08-19 17:17:57",
@@ -150,6 +155,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs?
             "showEmail": "mfujianCDM2@xxx.com.cn",
             "external": false,
             "authState": true,
+            "globalRoaming": "+86", 
             "note": "备注",
             "staffCustomForm": {},
             "updateTime": "2022-08-19 16:44:10",
