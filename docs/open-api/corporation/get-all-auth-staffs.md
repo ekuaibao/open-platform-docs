@@ -17,6 +17,7 @@ url="/api/openapi/v1/staffs/authorized"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.20.0**](/docs/open-api/notice/update-log#1200) &emsp; -> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
   [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
   [**0.7.161**](/docs/open-api/notice/update-log#07161) &emsp; -> 🆕 新增了本接口。<br/>
 
@@ -49,6 +50,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/au
         {
             "id": "PCx3rwm3aA00qM:ID_3rAZNCY2V$g",   //员工ID
             "name": "李四",                          //员工姓名
+            "nickName": "老四",                      //员工别名
             "code": "",                              //员工工号
             "departments": [                         //所在部门
               "PCx3rwm3aA00qM:ID_3rw$2RXc5lM"
@@ -73,6 +75,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/au
         {
             "id": "PCx3rwm3aA00qM:ID_3rAZNCY2X$g",
             "name": "王五",
+            "nickName": "老五",
             "code": "00008",
             "departments": [
               "PCx3rwm3aA00qM:ID_3rw$2RXc5lM"

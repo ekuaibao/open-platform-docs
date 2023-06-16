@@ -11,6 +11,26 @@ timeline: true
 - 次版本号：每月发布一个带有新特性的向下兼容的版本。
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
+
+---
+## 1.20.0
+
+`2023-06-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：***`
+- 🆕 新增 [根据员工ID获取已审批单据](/docs/open-api/flows/get-approved-byStaff) 接口。
+- 🆕 新增 [根据员工ID获取已支付单据](/docs/open-api/flows/get-delivered-byStaff) 接口。
+- 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs)、[修改员工](/docs/open-api/contacts/update-staffs)、[批量修改员工](/docs/open-api/contacts/batch-update-staffs) 接口
+    - 接口支持传入 `nickName`（员工别名）字段，且响应信息中新增了该字段。
+- 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取已激活员工列表](/docs/open-api/corporation/get-all-auth-staffs)、[查询员工](/docs/open-api/corporation/get-staff-ids)、[修改员工自定义字段(全环境)](/docs/open-api/contacts/update-staffs-customFields)、、[停启用员工](/docs/open-api/contacts/active-staffs) 接口
+    - 响应信息中新增了 `nickName`（员工别名）字段。
+- 🐞 更新 [批量新增收款账户](/docs/open-api/pay/batch-new-payeeInfo)、[更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口
+    - 接口支持传入 `customFields`（自定义字段），且响应信息中新增了该字段。
+- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-payeeInfo) 接口
+    - 接口支持传入 `customFields`（自定义字段）。
+- 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
+    - 响应信息中新增了 `customFields`（自定义字段）。
+- 🐞 更新 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 接口
+    - 响应信息中新增了 `visibility`（可见范围）字段。
+
 ---
 ## 1.19.0
 

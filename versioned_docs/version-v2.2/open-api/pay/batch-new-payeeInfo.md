@@ -11,6 +11,7 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🐞 接口支持传入 `customFields`（自定义字段），且响应信息中新增了该字段。<br/>
   [**1.14.0**](/docs/open-api/notice/update-log#1140) -> 🐞 新增了 `nationCode`（银行所在地区代码）参数描述。<br/>
   [**1.7.1**](/docs/open-api/notice/update-log#171)&emsp;-> 🐞 优化了接口支持部分账户校验不通过时，其他账户可继续新增成功。<br/>
   [**1.6.3**](/docs/open-api/notice/update-log#163)&emsp;-> 🆕 新增了本接口。<br/>
@@ -49,6 +50,7 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
 | **&emsp; ∟ certificateType** | String | 证件类型    | 非必填  | -     | 详细信息见下方【[证件类型对照表](/docs/open-api/pay/new-payeeInfo#证件类型对照表)】|
 | **&emsp; ∟ certificateNo**   | String | 证件号码    | 非必填  | -     | 证件号码 |
 | **&emsp; ∟ remark**          | String | 备注信息    | 非必填  | -     | 备注信息 |
+| **&emsp; ∟ customFields**    | Object | 自定义字段  | 非必填   | -     | 自定义字段 |
 | **&emsp; ∟ visibility**                          | Object   | 可见范围       | 非必填  | -     | 可见范围对象，本参数不传，**默认为全员不可见**  |
 | **&emsp;&emsp; ∟ fullVisible**                | Boolean | 是否全员可见    | 非必填  | false | `true` : 全员可见 &emsp; `false` : 部分可见<br/>部分可见则仅有白名单中可见 |
 | **&emsp;&emsp; ∟ roles**                      | Array   | 角色白名单      | 非必填  | -     | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
@@ -110,7 +112,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             //"city":"北京市",                         //银行所在城市，此示例为通过“bankLinkNo”（银联号）自动回填              
             "certificateType":"11",                    //证件类型            
             "certificateNo":"110110198512042345",      //证件号码   
-            "remark":"银行卡备注",                     //备注信息          
+            "remark":"银行卡备注",                     //备注信息        
+            "customFields": {                        //自定义字段  
+                "u_是否超标": "11",
+                "u_原因": "11"
+            },
             "visibility":{                                      //可见性
                 "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
                 "roles":["bwa3wajigF0WH0:leader"],              //可见角色ID
@@ -128,7 +134,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "cardNo":"88131234",                       //支付宝账号
             "certificateType":"11",                    //证件类型            
             "certificateNo":"110110198512042345",      //证件号码   
-            "remark":"支付宝备注",                     //备注信息          
+            "remark":"支付宝备注",                     //备注信息       
+            "customFields": {                        //自定义字段  
+                "u_是否超标": "11",
+                "u_原因": "11"
+            },
             "visibility":{                                      //可见性
                 "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
                 "roles":["bwa3wajigF0WH0:leader"],              //可见角色ID
@@ -152,7 +162,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "branchCode": "777777",                   //支行号(Branch Code)
             "certificateType":"11",                   //证件类型            
             "certificateNo":"110110198512042345",     //证件号码   
-            "remark":"海外账号备注",                   //备注信息          
+            "remark":"海外账号备注",                   //备注信息  
+            "customFields": {                        //自定义字段  
+                "u_是否超标": "11",
+                "u_原因": "11"
+            },
             "visibility":{                                      //可见性
                 "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
                 "roles":["bwa3wajigF0WH0:leader"],              //可见角色ID
@@ -170,7 +184,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "cardNo":"18712340610",                   //微信账号
             "certificateType":"11",                   //证件类型            
             "certificateNo":"110110198512042345",     //证件号码   
-            "remark":"微信备注",                      //备注信息          
+            "remark":"微信备注",                      //备注信息     
+            "customFields": {                        //自定义字段  
+                "u_是否超标": "11",
+                "u_原因": "11"
+            },
             "visibility":{                                      //可见性
                 "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
                 "roles":["bwa3wajigF0WH0:leader"],              //可见角色ID
@@ -188,7 +206,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "cardNo":"18712340610",                    //账号
             "certificateType":"11",                    //证件类型            
             "certificateNo":"110110198512042345",      //证件号码   
-            "remark":"其他备注",                       //备注信息          
+            "remark":"其他备注",                       //备注信息        
+            "customFields": {                        //自定义字段  
+                "u_是否超标": "11",
+                "u_原因": "11"
+            },
             "visibility":{                                      //可见性
                 "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
                 "roles":["bwa3wajigF0WH0:leader"],              //可见角色ID
@@ -226,7 +248,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
                 ],
                 "departmentsIncludeChildren": true  //下属子部门是否可见
             },
-            "remark": "银行卡备注"           //备注
+            "remark": "银行卡备注",           //备注
+            "customFields": {                        //自定义字段  
+                "u_是否超标": "11",
+                "u_原因": "11"
+            },
         },
         {
             "sort": "ALIPAY",
@@ -249,7 +275,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
                 ],
                 "departmentsIncludeChildren": true
             },
-            "remark": "支付宝备注"
+            "remark": "支付宝备注",
+            "customFields": {            
+                "u_是否超标": "11",
+                "u_原因": "11"
+            },
         },
         {
             "sort": "OVERSEABANK",
@@ -272,7 +302,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
                 ],
                 "departmentsIncludeChildren": true
             },
-            "remark": "海外账号备注"
+            "remark": "海外账号备注",
+            "customFields": {        
+                "u_是否超标": "11",
+                "u_原因": "11"
+            },
         },
         {
             "sort": "WEIXIN",
@@ -295,7 +329,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
                 ],
                 "departmentsIncludeChildren": true
             },
-            "remark": "微信备注"
+            "remark": "微信备注",
+            "customFields": {         
+                "u_是否超标": "11",
+                "u_原因": "11"
+            },
         },
         {
             "sort": "OTHER",
@@ -318,7 +356,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
                 ],
                 "departmentsIncludeChildren": true
             },
-            "remark": "其他备注"
+            "remark": "其他备注",
+            "customFields": {        
+                "u_是否超标": "11",
+                "u_原因": "11"
+            },
         }
     ]
 }

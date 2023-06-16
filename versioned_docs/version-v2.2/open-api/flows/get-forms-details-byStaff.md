@@ -130,6 +130,7 @@ import TabItem from '@theme/TabItem';
                         "specificationId": "djg8LshfUkfM00:office:expense:f284154aee2445c230a436cc44798ada2becf250"   //费用类型模板ID
                     }
                 ],
+                "payDate": 1686859601005,       //支付时间
                 "payeeId": "ED0b7ANNOwlI00",    //收款账户ID
                 "payMoney": {                   //支付金额
                     "standard": "33.00",
@@ -145,6 +146,7 @@ import TabItem from '@theme/TabItem';
                 "submitDate": 1592289361103,     //提交时间
                 "description": "",               //说明
                 "expenseDate": 1592236800000,    //报销时间
+                "flowEndTime": 1686859602348,    //单据完成时间（单据状态成为paid的时间）
                 "submitterId": "djg8LshfUkfM00:Dwk7NVkt7o1E00", //提交人ID
                 "expenseMoney": {                //报销金额
                     "standard": "33.00",
@@ -154,6 +156,7 @@ import TabItem from '@theme/TabItem';
                     "standardNumCode": "156",
                     "standardStrCode": "CNY"
                 },
+                "reviewStatus": "ALL",
                 "voucherStatus": "未生成",
                 "companyRealPay": {              //企业已付金额
                     "standard": "0.00",
@@ -163,6 +166,8 @@ import TabItem from '@theme/TabItem';
                     "standardNumCode": "156",
                     "standardStrCode": "CNY"
                 },
+                "onlyOwnerPrint": false,
+                "paymentChannel": "OFFLINE",
                 "specificationId": "O6s8Mmqokkbk00:a444a2bd3c65fd0331a2a7c0c2d1b0d7cd7366b2",   //单据模板ID
                 "writtenOffMoney": {             //核销金额
                     "standard": "0.00",
@@ -172,8 +177,12 @@ import TabItem from '@theme/TabItem';
                     "standardNumCode": "156",
                     "standardStrCode": "CNY"
                 },
+                "paymentAccountId": "ID01p4zRadPLd5",
                 "expenseDepartment": "djg8LshfUkfM00",  //报销部门
                 "voucherCreateTime": 0,
+                "preNodeApprovedTime": 1686859601005,
+                "timeToEnterPendingPayment": 1686859461832,
+                "ownerAndApproverPrintNodeFlag": false,
                 "writtenOffRecords": [                  //报销单核销借款记录
                     {
                         "id": "ID_3IZQnB$RUa0",         //借款包ID
@@ -184,7 +193,7 @@ import TabItem from '@theme/TabItem';
             },
             "ownerId": "djg8LshfUkfM00:Dwk7NVkt7o1E00", //流程发起人ID
             "ownerDefaultDepartment": "djg8LshfUkfM00", // 流程发起人默认部门ID
-            "state": "rejected",    //流程状态 pending-提交中 approving-审批中 rejected-已驳回 paying-待支付 PROCESSING-支付中 paid-已支付 archived-归档 sending-寄送中 receiving-收单中
+            "state": "paid",    //流程状态 pending-提交中 approving-审批中 rejected-已驳回 paying-待支付 PROCESSING-支付中 paid-已支付 archived-归档 sending-寄送中 receiving-收单中
             "flowType": "freeflow", //流程类型
             "formType": "expense",  //单据类型 expense-报销单 loan-借款单 payment-付款单 requisition-申请单 custom-通用审批单 receipt-收款单
             "logs": [   //审批记录
@@ -221,13 +230,81 @@ import TabItem from '@theme/TabItem';
                         }
                     ],
                     "attachments": []           //附件
+                },
+                {
+                    "action": "freeflow.agree",
+                    "state": "paying",
+                    "operatorId": "djg8LshfUkfM00:ID01qnMg5BcjV5",
+                    "byDelegateId": null,
+                    "operatorDefaultDepartment": "djg8LshfUkfM00",
+                    "nextOperatorId": "djg8LshfUkfM00:ID01qnMg5BcjV5",
+                    "nextOperatorIds": [],
+                    "time": 1686859461832,
+                    "attributes": {
+                        "nextId": "FLOW:1412813128:1997769931",
+                        "nodeId": "FLOW:438149376:1843632411",
+                        "comment": "同意",
+                        "complete": true,
+                        "nextName": "出纳支付",
+                        "nodeName": "审批A",
+                        "expressNum": null,
+                        "isEbotNode": false,
+                        "counterSign": false,
+                        "isRecalNode": false,
+                        "oldFlowPlanId": null,
+                        "nextCounterSign": false,
+                        "autographImageId": "sign-image-1686639408590-962.png"
+                    },
+                    "modifyFlowLog": null,
+                    "attachments": []
+                },
+                {
+                    "action": "freeflow.paying",
+                    "state": "paying",
+                    "operatorId": "djg8LshfUkfM00:ID01qnMg5BcjV5",
+                    "byDelegateId": null,
+                    "operatorDefaultDepartment": "djg8LshfUkfM00",
+                    "nextOperatorId": null,
+                    "nextOperatorIds": [],
+                    "time": 1686859591210,
+                    "attributes": {
+                        "nodeId": "FLOW:1412813128:1997769931",
+                        "comment": null,
+                        "failureReason": null,
+                        "channelTradeNo": "OFFLINE2023000063",
+                        "paymentChannel": "OFFLINE",
+                        "autographImageId": "sign-image-1686639408590-962.png",
+                        "paymentAccountId": "ID01p4zRadPLd5"
+                    },
+                    "modifyFlowLog": null,
+                    "attachments": []
+                },
+                {
+                    "action": "freeflow.pay",
+                    "state": "paid",
+                    "operatorId": "djg8LshfUkfM00:ID01qnMg5BcjV5",
+                    "byDelegateId": null,
+                    "operatorDefaultDepartment": "djg8LshfUkfM00",
+                    "nextOperatorId": null,
+                    "nextOperatorIds": [],
+                    "time": 1686859601005,
+                    "attributes": {
+                        "nodeId": "FLOW:1412813128:1997769931",
+                        "comment": "",
+                        "failureReason": "",
+                        "channelTradeNo": "OFFLINE2023000063",
+                        "paymentChannel": "OFFLINE",
+                        "autographImageId": "sign-image-1686639408590-962.png",
+                        "paymentAccountId": "ID01p4zRadPLd5"
+                    },
+                    "modifyFlowLog": null,
+                    "attachments": []
                 }
             ],
             "actions": {                        //操作人可执行到动作  `key`是操作人的员工ID；`value`是动作名称
                 "djg8LshfUkfM00:Dwk7NVkt7o1E00": [
-                    "freeflow.delete",
-                    "freeflow.edit",
-                    "freeflow.submit"
+                    "freeflow.archive",
+                    "freeflow.copy"
                 ]
             },
             "invoiceRemind": false,

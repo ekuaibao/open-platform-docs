@@ -15,6 +15,7 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
   [**1.9.0**](/docs/open-api/notice/update-log#190) -> 🐞 优化了修改登录手机号、邮箱逻辑<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● 若传参的登录手机号、邮箱没有注册任何企业或所有企业均解散，则允许修改成功。<br/>
 -->
+  [**1.20.0**](/docs/open-api/notice/update-log#1200)&emsp;-> 🐞 接口支持传入 `nickName`（员工别名）字段，且响应信息中新增了该字段。<br/>
   [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
   [**1.7.1**](/docs/open-api/notice/update-log#171) &emsp; -> 🐞 修复了更改登录邮箱后，手机号无法登录的BUG。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了登录邮箱中包含大写字母，更新后无法登录的BUG。<br/>
@@ -46,6 +47,7 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **name**                      | String  | 员工姓名          | 必填   | - | 员工姓名 |
+| **nickName**                  | String  | 员工别名          | 非必填 | - | 员工别名 |
 | **code**                      | String  | 工号             | 非必填  | - | 工号 |
 | **cellphone**                 | String  | 手机号           | 非必填  | - | 如果手机号为国外手机号，那么应为 : "(区号)手机号" |
 | **email**                     | String  | 邮箱	            | 非必填  | - | 可以不传，但是不可以传 `""` |
@@ -83,6 +85,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "赵六",                         //员工姓名
+    "nickName": "老六",                     //员工别名
     "code": "",                             //员工工号
     "cellphone": "15588881010",             //手机号
     "email": "15588881010@163.com",         //邮箱
@@ -109,6 +112,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "赵六",                         //员工姓名
+    "nickName": "老六",                     //员工别名
     "code": "",                             //员工工号
     "cellphone": "15588881010",             //手机号
     "email": "15588881010@163.com",         //邮箱
@@ -136,6 +140,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
     "value": {
         "id": "xgJ3wajigF25H0:ID_3Be8RKT03bg",    //员工ID
         "name": "赵六",                           //员工姓名
+        "nickName": "老六",                       //员工别名
         "code": "00005",                          //员工工号
         "departments": [                          //所在部门
             "xgJ3wajigF25H0"

@@ -7,6 +7,15 @@ method="GET"
 url="/api/openapi/v1/specifications/latestByType"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+[**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🐞 响应信息中新增了 `visibility`（可见范围）字段。<br/>
+
+  </div>
+</details>
+
 :::caution
 - 单据模板最后一次修改保存后的版本为当前版本，最后一次修改之前的版本都为历史版本。
 :::
@@ -31,19 +40,46 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/specifica
 {
     "items": [
         {
-            "id": "C20bu2n6osbc00", //单据模板ID
-            "name": "差旅报销单",   //单据模板名称
-            "active": true          //是否启用
+            "id": "C20bu2n6osbc00",  //单据模板ID
+            "name": "差旅报销单",      //单据模板名称
+            "active": true,          //是否启用
+            "visibility": {          //可见范围
+                "fullVisible": false,
+                "staffs": [
+                    "xgJ3wajigF25H0:dbc3wajigF1UH0",
+                    "xgJ3wajigF25H0:ID01iOBVJdZ93F",
+                    "xgJ3wajigF25H0:ID01iOBVJdZiEf",
+                    "xgJ3wajigF25H0:eTM3rQTD1y20vw",
+                    "xgJ3wajigF25H0:ID_3Dvxff1n3kw"
+                ],
+                "roles": [],
+                "departments": [],
+                "departmentsIncludeChildren": true
+            }
         },
         {
             "id": "GQgbu2n6osbI00",
             "name": "日常报销单",
-            "active": true
+            "active": true,
+            "visibility": {
+                "fullVisible": true,
+                "staffs": [],
+                "roles": [],
+                "departments": [],
+                "departmentsIncludeChildren": true
+            }
         },
         {
             "id": "Zvobu2n6osbQ00",
             "name": "团建报销",
-            "active": true
+            "active": true,
+            "visibility": {
+                "fullVisible": true,
+                "staffs": [],
+                "roles": [],
+                "departments": [],
+                "departmentsIncludeChildren": true
+            }
         }
     ]
 }

@@ -12,6 +12,7 @@ url="/api/openapi/v1.1/staffs"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.20.0**](/docs/open-api/notice/update-log#1200)&emsp;-> 🐞 接口支持传入 `nickName`（员工别名）字段，且响应信息中新增了该字段。<br/>
   [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `cellphone`（手机号）参数校验，只允许传英文括号和数字。<br/>
   [**0.7.140**](/docs/open-api/notice/update-log#07140) -> 🆕 新增了支持自定义字段保存。<br/>
@@ -36,6 +37,7 @@ url="/api/openapi/v1.1/staffs"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **name**                      | String    | 员工姓名           | 必填  | - | 员工姓名 |
+| **nickName**                  | String    | 员工别名           | 非必填 | - | 员工别名 |
 | **code**                      | String    | 工号              | 非必填 | - | 工号 |
 | **cellphone**                 | String    | 手机号            | 非必填 | - | 如果手机号为国外手机号，传参示例 : "(区号)手机号"<br/>原生环境手机号或邮箱必须至少填一个<br/>**只允许传英文括号和数字** |
 | **email**                     | String    | 邮箱              | 非必填 | - | 可以不传，但是不可以传 `""`<br/>原生环境手机号或邮箱必须至少填一个 |
@@ -70,7 +72,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
 --header 'content-type: application/json' \
 --header 'Accept: application/json' \
 --data-raw '{
-    "name":"张三", 
+    "name":"张三",
+    "nickName": "老三",
     "code":"36987",
     "cellphone":"15070403486",
     "email":"Cmzhouxiaofeng@xxx.com.cn",
@@ -105,6 +108,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
     "value": {
         "id": "JOYbpjPP-E2Q00:IIEbwYgR2E5M00",  //员工ID
         "name": "张三",                         //员工姓名
+        "nickName": "老三",                     //员工别名
         "code": "36987",                       //员工工号
         "departments": [                       //所在部门
             "JOYbpjPP-E2Q00:pAwbwH_W7sec00"

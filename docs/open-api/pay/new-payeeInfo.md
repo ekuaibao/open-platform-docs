@@ -11,6 +11,7 @@ url="/api/openapi/v2.1/payeeInfos"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🐞 接口支持传入 `customFields`（自定义字段）。<br/>
   [**1.14.0**](/docs/open-api/notice/update-log#1140) -> 🐞 新增了 `nationCode`（银行所在地区代码）参数描述。<br/>
   [**1.6.3**](/docs/open-api/notice/update-log#163)&emsp;-> 🚀 接口升级 `v2.1` 版本，新增了 `sort`（账号类别）参数，额外支持新增 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。<br/>
 
@@ -47,6 +48,7 @@ url="/api/openapi/v2.1/payeeInfos"
 | **certificateType** | String | 证件类型    | 非必填  | -     | 详细信息见下方【[证件类型对照表](/docs/open-api/pay/new-payeeInfo#证件类型对照表)】                                                                                                                                                                                                                            |
 | **certificateNo**   | String | 证件号码    | 非必填  | -     | 证件号码                                                                                                                                                                                                                                                                                    |
 | **remark**          | String | 备注信息    | 非必填  | -     | 备注信息                                                                                                                                                                                                                                                                                    |
+| **customFields**    | Object | 自定义字段  | 非必填   | -     | 自定义字段                                                                                                                                                                                                                                                                                    |
 | **visibility**                          | Object   | 可见范围       | 非必填  | -     | 可见范围对象，本参数不传，**默认为全员不可见**                                                                                                                                                                                                                                                                   |
 | **&emsp; ∟ fullVisible**                | Boolean | 是否全员可见    | 非必填  | false | `true` : 全员可见 &emsp; `false` : 部分可见<br/>部分可见则仅有白名单中可见                                                                                                                                                                                                                                   |
 | **&emsp; ∟ roles**                      | Array   | 角色白名单      | 非必填  | -     | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取                                                                                                                                                                                                                            |
@@ -111,7 +113,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     //"city":"北京市",                         //银行所在城市，此示例为通过“bankLinkNo”（银联号）自动回填              
     "certificateType":"11",                    //证件类型            
     "certificateNo":"110110198512042345",      //证件号码   
-    "remark":"银行卡备注",                     //备注信息          
+    "remark":"银行卡备注",                     //备注信息         
+    "customFields": {                        //自定义字段  
+        "u_是否超标": "11",
+        "u_原因": "11"
+    },
     "visibility":{                                      //可见性
         "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
         "roles":["bwa3wajigF0WH0:leader"],              //可见角色ID
@@ -136,7 +142,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     "cardNo":"88131234",                       //支付宝账号
     "certificateType":"11",                    //证件类型            
     "certificateNo":"110110198512042345",      //证件号码   
-    "remark":"支付宝备注",                     //备注信息          
+    "remark":"支付宝备注",                     //备注信息
+    "customFields": {                        //自定义字段  
+        "u_是否超标": "11",
+        "u_原因": "11"
+    },
     "visibility":{                                      //可见性
         "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
         "roles":["bwa3wajigF0WH0:leader"],              //可见角色ID
@@ -167,7 +177,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     "branchCode": "777777",                   //支行号(Branch Code)
     "certificateType":"11",                   //证件类型            
     "certificateNo":"110110198512042345",     //证件号码  
-    "remark":"海外账号备注",                   //备注信息          
+    "remark":"海外账号备注",                   //备注信息        
+    "customFields": {                        //自定义字段  
+        "u_是否超标": "11",
+        "u_原因": "11"
+    },
     "visibility":{                                      //可见性
         "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
         "roles":["bwa3wajigF0WH0:leader"],              //可见角色ID
@@ -192,7 +206,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     "cardNo":"18712341234",                   //微信账号
     "certificateType":"11",                   //证件类型            
     "certificateNo":"110110198512042345",     //证件号码   
-    "remark":"微信备注",                      //备注信息          
+    "remark":"微信备注",                      //备注信息      
+    "customFields": {                        //自定义字段  
+        "u_是否超标": "11",
+        "u_原因": "11"
+    },
     "visibility":{                                      //可见性
         "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
         "roles":["bwa3wajigF0WH0:leader"],              //可见角色ID
@@ -218,6 +236,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     "certificateType":"11",                   //证件类型            
     "certificateNo":"110110198512042345",     //证件号码   
     "remark":"其他备注",                      //备注信息          
+    "customFields": {                        //自定义字段  
+        "u_是否超标": "11",
+        "u_原因": "11"
+    },
     "visibility":{                                      //可见性
         "fullVisible":false,                            //是否全员可见（true：全部可见，false：指定人员可见）
         "roles":["bwa3wajigF0WH0:leader"],              //可见角色ID

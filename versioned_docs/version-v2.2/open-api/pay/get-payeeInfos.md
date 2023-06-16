@@ -12,6 +12,7 @@ url="/api/openapi/v2/payeeInfos"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.20.0**](/docs/open-api/notice/update-log#1200)&emsp;-> 🐞 响应信息中新增了 `customFields`（自定义字段）。<br/>
   [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🚀 接口升级 `v2.1` 版本，接口 **成功响应** 中新增了 `nationCode`（银行所在地区代码（海外账户））参数，参数介绍见 [新增收款账户](/docs/open-api/pay/new-payeeInfo)。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180) &emsp; -> 🐞 修复了获取 `WEIXIN`（微信）、`OTHER`（其他）类型收款账户时，`certificateType`（证件类型 ）、`certificateNo`（证件号码）返回空的BUG。<br/>
@@ -90,7 +91,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             },
             "remark": "remark",                           //备注
             "active": true,                               //账户状态，true：启用，false：停用
-            "operatorId": "PtgbQUtfE08400:dIEbu2mgTs6o00" //账户创建者ID
+            "operatorId": "PtgbQUtfE08400:dIEbu2mgTs6o00", //账户创建者ID
+            "customFields": {                             //自定义字段
+                "u_原因": "22",
+                "u_是否超标": "11"
+            }
         },
         {
             "sort": "OVERSEABANK",
@@ -114,15 +119,19 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "bankCode": "12345",
             "branchCode": "111",
             "visibility": {                     //可见性
-                        "fullVisible": true,    //是否全部可见（true：全部可见，false：指定人员可见）
-                        "staffs": [],           //可见员工ID
-                        "roles": [],            //可见角色ID
-                        "departments": [],      //可见部门ID
-                        "departmentsIncludeChildren": true  //可见部门是否包含子部门（true：是，false：否）
+                "fullVisible": true,    //是否全部可见（true：全部可见，false：指定人员可见）
+                "staffs": [],           //可见员工ID
+                "roles": [],            //可见角色ID
+                "departments": [],      //可见部门ID
+                "departmentsIncludeChildren": true  //可见部门是否包含子部门（true：是，false：否）
             },
             "remark": "remark",                           //备注
             "active": true,                               //账户状态，true：启用  false：停用
-            "operatorId": "PtgbQUtfE08400:dIEbu2mgTs6o00" //账户创建者ID
+            "operatorId": "API",                          //账户创建者ID
+            "customFields": {                             //自定义字段
+                "u_原因": "22",
+                "u_是否超标": "11"
+            }
         }
     ]
 }

@@ -11,6 +11,7 @@ url="/api/openapi/v1.1/staffs/batch/update"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🐞 接口支持传入 `nickName`（员工别名）字段，且响应信息中新增了该字段。<br/>
   [**1.19.0**](/docs/open-api/notice/update-log#1190) -> 🆕 新增了本接口。<br/>
 
   </div>
@@ -33,6 +34,7 @@ url="/api/openapi/v1.1/staffs/batch/update"
 | **staffList**                          | Array  | 批量修改的员工         | 必填  | - | 员工信息数组, **最大不能超过 `100` 条** |
 | **&emsp; ∟ id**                        | String  | 员工ID             | 必填   | - | 可以通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
 | **&emsp; ∟ name**                      | String  | 员工姓名            | 必填   | - | 员工姓名 |
+| **&emsp; ∟ nickName**                  | String  | 员工别名            | 非必填 | - | 员工别名 |
 | **&emsp; ∟ code**                      | String  | 工号               | 非必填  | - | 工号 |
 | **&emsp; ∟ cellphone**                 | String  | 手机号             | 非必填  | - | 如果手机号为国外手机号，那么应为 : "(区号)手机号" |
 | **&emsp; ∟ email**                     | String  | 邮箱	            | 非必填  | - | 可以不传，但是不可以传 `""` |
@@ -66,6 +68,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
         {
             "id": "TsI3tt8KjF4S7M:1222234",         //员工ID
             "name": "测试1",                         //员工姓名
+            "nickName": "测1",                      //员工别名
             "code": "00001",                        //员工工号
             "cellphone": "17711111126",             //手机号
             "email": "17718535962@163.com",         //邮箱
@@ -85,6 +88,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
         {
             "id": "TsI3tt8KjF4S7M:BbP3CdaKi$VcRw",
             "name": "张国阳小号",
+            "nickName": "小阳",
             "code": "00002",
             "cellphone": "18515257800",
             "email": "18515257800@163.com",
@@ -112,6 +116,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
         {
             "id": "TsI3tt8KjF4S7M:1222234",           //员工ID
             "name": "测试1",                           //员工姓名
+            "nickName": "测1",                        //员工别名
             "code": "00001",                          //员工工号
             "departments": [                          //所在部门
                 "TsI3tt8KjF4S7M"
@@ -137,6 +142,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
         {
             "id": "TsI3tt8KjF4S7M:BbP3CdaKi$VcRw",    //员工ID
             "name": "张国阳小号",                       //员工姓名
+            "nickName": "小阳",                        //员工别名
             "code": "00002",                          //员工工号
             "departments": [                          //所在部门
                 "TsI3tt8KjF4S7M"

@@ -12,6 +12,7 @@ url="/api/openapi/v1.1/staffs/batch/create"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.20.0**](/docs/open-api/notice/update-log#1200)&emsp;-> 🐞 接口支持传入 `nickName`（员工别名）字段，且响应信息中新增了该字段。<br/>
   [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `cellphone`（手机号）参数校验，只允许传英文括号和数字。<br/>
   [**0.7.140**](/docs/open-api/notice/update-log#07140) -> 🆕 新增了支持自定义字段保存。<br/>
@@ -38,6 +39,7 @@ url="/api/openapi/v1.1/staffs/batch/create"
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **staffList**                    | Array  | 批量新增的员工     | 必填  | - | 员工信息数组 |
 | **&emsp; ∟ name**               | String | 员工姓名          | 必填  | - | 员工姓名 |
+| **&emsp; ∟ nickName**           | String | 员工别名          | 非必填 | - | 员工别名 |
 | **&emsp; ∟ code**               | String | 工号             | 非必填 | - | 工号 |
 | **&emsp; ∟ cellphone**          | String | 手机号           | 必填   | - | 如果手机号为国外手机号，传参示例 : "(区号)手机号"<br/>**只允许传英文括号和数字** |
 | **&emsp; ∟ email**              | String | 邮箱             | 非必填 | - | 可以不传，但是不可以传 `""` |
@@ -73,6 +75,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
     "staffList":[
         {
             "name":"批量新增-5",              //员工姓名
+            "nickName": "老5",               //员工别名
             "code":"P1005",                  //工号
             "cellphone":"18888881005",       //手机号
             "email":"18888881005@163.com",   //邮箱
@@ -93,6 +96,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
         },
         {
             "name":"批量新增-6",              //员工姓名
+            "nickName": "老6",
             "code":"P1006",                  //工号
             "cellphone":"18888881006",       //手机号
             "email":"18888881006@163.com",   //邮箱
@@ -122,6 +126,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
         {
             "id": "Tdk3tgber501v0:P1005",  //员工ID
             "name": "批量新增-5",          //员工姓名
+            "nickName": "老5",               //员工别名
             "code": "P1005",              //员工工号
             "departments": [              //所在部门集合
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"
@@ -149,6 +154,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
         {
             "id": "Tdk3tgber501v0:P1006",
             "name": "批量新增-6",
+            "nickName": "老6",
             "code": "P1006",
             "departments": [
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"

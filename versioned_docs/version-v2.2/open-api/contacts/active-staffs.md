@@ -12,6 +12,7 @@ url="/api/openapi/v1.1/staffs/disableOrEnableStaff/[`ids`]"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.20.0**](/docs/open-api/notice/update-log#1200)&emsp;-> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
   [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
   [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
 
@@ -69,6 +70,7 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staf
         {
             "id": "xgJ3wajigF25H0:ID_3Be8RKT03bg",    //员工ID
             "name": "赵六",                           //员工姓名
+            "nickName": "老六",                       //员工别名
             "code": "00005",                          //员工工号
             "departments": [                          //所在部门
                 "xgJ3wajigF25H0"

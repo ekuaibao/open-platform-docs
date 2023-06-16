@@ -12,6 +12,7 @@ url="/api/openapi/v1/staffs/getStaffIds"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.20.0**](/docs/open-api/notice/update-log#1200) &emsp; -> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
   [**1.19.0**](/docs/open-api/notice/update-log#1190) &emsp; -> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
   [**1.10.0**](/docs/open-api/notice/update-log#1100) &emsp; -> 🐞 新增了 `authState`（激活状态）成功响应返回参数。<br/>
 
@@ -58,7 +59,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
     "items": [
         {
             "id": "JOYbpjPP-E2Q00:pt4bu1ZI9s2000",  //员工ID
-            "name": "二号员工",                     //员工姓名
+            "name": "二号员工",                      //员工姓名
+            "nickName": "老四",                     //员工别名
             "code": "1002",                        //员工工号
             "departments": [                       //所属部门ID集合
                 "JOYbpjPP-E2Q00:ZNEbwH_W7sc000",
