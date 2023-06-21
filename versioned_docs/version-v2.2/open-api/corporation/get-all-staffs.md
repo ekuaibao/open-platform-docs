@@ -11,7 +11,7 @@ url="/api/openapi/v1.1/staffs"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.20.0**](/docs/open-api/notice/update-log#1200) &emsp; -> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
+  [**1.20.0**](/docs/open-api/notice/update-log#1200)&emsp;-> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
   [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
   [**1.11.1**](/docs/open-api/notice/update-log#1111)&emsp;-> 🚀 接口升级 `v1.1` 版本，新增了 `external`（是否外部员工）过滤参数，支持按照 **是否外部员工** 过滤。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
@@ -59,8 +59,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs?
     "items": [
         {
             "id": "xgJ3wajigF25H0:ID01iOBVJdZiEf",  //员工ID
-            "name": "张大宝",                        //员工姓名
-            "nickName": "老六",                      //员工别名
+            "name": "张大宝",                       //员工姓名
+            "nickName": "老六",                     //员工别名
             "code": "",                             //员工工号
             "departments": [                        //所属部门ID集合
                 "xgJ3wajigF25H0"

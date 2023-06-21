@@ -113,7 +113,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "certificateType":"11",                    //证件类型            
             "certificateNo":"110110198512042345",      //证件号码   
             "remark":"银行卡备注",                     //备注信息        
-            "customFields": {                        //自定义字段  
+            "customFields": {                          //自定义字段  
                 "u_是否超标": "11",
                 "u_原因": "11"
             },
@@ -135,7 +135,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "certificateType":"11",                    //证件类型            
             "certificateNo":"110110198512042345",      //证件号码   
             "remark":"支付宝备注",                     //备注信息       
-            "customFields": {                        //自定义字段  
+            "customFields": {                          //自定义字段  
                 "u_是否超标": "11",
                 "u_原因": "11"
             },
@@ -163,7 +163,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "certificateType":"11",                   //证件类型            
             "certificateNo":"110110198512042345",     //证件号码   
             "remark":"海外账号备注",                   //备注信息  
-            "customFields": {                        //自定义字段  
+            "customFields": {                         //自定义字段  
                 "u_是否超标": "11",
                 "u_原因": "11"
             },
@@ -185,7 +185,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "certificateType":"11",                   //证件类型            
             "certificateNo":"110110198512042345",     //证件号码   
             "remark":"微信备注",                      //备注信息     
-            "customFields": {                        //自定义字段  
+            "customFields": {                         //自定义字段  
                 "u_是否超标": "11",
                 "u_原因": "11"
             },
@@ -207,7 +207,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "certificateType":"11",                    //证件类型            
             "certificateNo":"110110198512042345",      //证件号码   
             "remark":"其他备注",                       //备注信息        
-            "customFields": {                        //自定义字段  
+            "customFields": {                          //自定义字段  
                 "u_是否超标": "11",
                 "u_原因": "11"
             },
@@ -249,10 +249,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
                 "departmentsIncludeChildren": true  //下属子部门是否可见
             },
             "remark": "银行卡备注",           //备注
-            "customFields": {                        //自定义字段  
+            "customFields": {                 //自定义字段  
                 "u_是否超标": "11",
                 "u_原因": "11"
-            },
+            }
         },
         {
             "sort": "ALIPAY",
@@ -279,7 +279,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "customFields": {            
                 "u_是否超标": "11",
                 "u_原因": "11"
-            },
+            }
         },
         {
             "sort": "OVERSEABANK",
@@ -306,7 +306,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "customFields": {        
                 "u_是否超标": "11",
                 "u_原因": "11"
-            },
+            }
         },
         {
             "sort": "WEIXIN",
@@ -333,7 +333,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "customFields": {         
                 "u_是否超标": "11",
                 "u_原因": "11"
-            },
+            }
         },
         {
             "sort": "OTHER",
@@ -360,7 +360,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
             "customFields": {        
                 "u_是否超标": "11",
                 "u_原因": "11"
-            },
+            }
         }
     ]
 }

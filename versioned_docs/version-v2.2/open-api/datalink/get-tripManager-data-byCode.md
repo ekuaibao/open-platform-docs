@@ -11,7 +11,7 @@ url="/api/openapi/v2.1/datalink/TRAVEL_MANAGEMENT/byDataLinkCodes"
   <summary><b>更新日志</b></summary>
   <div>
 
-[**1.17.0**](/docs/open-api/notice/update-log#1170) &emsp; -> 🆕 新增了本接口。
+[**1.17.0**](/docs/open-api/notice/update-log#1170) -> 🆕 新增了本接口。
 
   </div>
 </details>

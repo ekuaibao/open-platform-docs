@@ -158,7 +158,7 @@ curl --location --request get 'https://app.ekuaibao.com/api/openapi/v1/invoice/u
                         "flowCounts": {},
                         "sourceMessage": ""
                     },
-                    "details": [	//发票详情
+                    "details": [	//发票明细
                         {
                             "version": 2,
                             "active": false,

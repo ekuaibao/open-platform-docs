@@ -97,6 +97,7 @@ curl --location -g --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staf
         {
             "id": "xgJ3wajigF25H0:ID_3zE5G_06Ww0",    //员工ID
             "name": "李四",                           //员工姓名
+            "nickName": "老七",                       //员工别名
             "code": "00003",                          //员工工号
             "departments": [                          //所在部门
                 "xgJ3wajigF25H0:ID_3zE5G_06Ow0"

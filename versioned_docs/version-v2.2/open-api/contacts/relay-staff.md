@@ -103,9 +103,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/flows/
 
 ## 失败响应
 
-| HTTP状态码 | 错误码 | 描述 | 排查建议 |
-| :--- | :--- | :--- | :--- |
-| **400** | - | 员工不存在staffId | 请确认 `staffId`（操作人ID或CODE）是否正确 | 
-| **400** | - | 交接员工不存在relayApproverId | 请确认 `relayApproverId`（交接人ID或CODE）是否正确 | 
+| HTTP状态码 | 错误码 | 描述 | 排查建议                                   |
+| :--- | :--- | :--- |:---------------------------------------|
+| **400** | - | 员工不存在staffId | 请确认 `staffId`（操作人ID或CODE）是否正确          | 
+| **400** | - | 交接员工不存在relayApproverId | 请确认 `relayApproverId`（交接人ID或CODE）是否正确  | 
 | **400** | - | 离职员工不存在originApproverId | 请确认 `originApproverId`（离职人ID或CODE）是否正确 | 
-| **403** | - | 您没有权限执行此操作,需要『系统管理』权限 | 请确认 `staffId`（操作人ID或CODE）是否为**系统管理员** | 
+| **403** | - | 您没有权限执行此操作,需要『系统管理』权限 | 请确认 `staffId`（操作人ID或CODE）是否为 **系统管理员** | 

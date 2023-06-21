@@ -18,8 +18,8 @@ url="/api/openapi/v1/staffs/authorized"
   <div>
 
   [**1.20.0**](/docs/open-api/notice/update-log#1200) &emsp; -> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
-  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
-  [**0.7.161**](/docs/open-api/notice/update-log#07161) &emsp; -> 🆕 新增了本接口。<br/>
+  [**1.19.0**](/docs/open-api/notice/update-log#1190) &emsp; -> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
+  [**0.7.161**](/docs/open-api/notice/update-log#07161)&emsp;-> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

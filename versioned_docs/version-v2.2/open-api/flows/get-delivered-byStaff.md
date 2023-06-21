@@ -6,7 +6,7 @@ authors: [张国阳]
 
 # 根据员工ID获取已支付单据
 
-根据单据更新时间 **倒序** 排序返回已审批单据详情。
+根据单据更新时间 **倒序** 排序返回已支付单据详情。
 
 import Control from "@theme/Control";
 
@@ -40,7 +40,7 @@ url="/api/openapi/v1.1/docs/delivered/$`approverId`"
 
 ## CURL
 ```shell
-curl --location 'https://open-01.k8s03.ekuaibao.net/api/openapi/v1.1/docs/delivered/$xgJ3wajigF25H0:dbc3wajigF1UH0?accessToken=ID01w4CAZC7P6n%3AxgJ3wajigF25H0&index=0&count=10'
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/docs/delivered/$xgJ3wajigF25H0:dbc3wajigF1UH0?accessToken=ID01w4CAZC7P6n%3AxgJ3wajigF25H0&index=0&count=10'
 ```
 
 ## 成功响应
@@ -61,7 +61,7 @@ curl --location 'https://open-01.k8s03.ekuaibao.net/api/openapi/v1.1/docs/delive
             "dataCorporationId": null,
             "form": {                                //单据详情
                 "code": "J23000004",                 //单据编码 
-                "title": "借款_02",                   //单据标题
+                "title": "借款_02",                  //单据标题
                 "payDate": 1678878104230,            //支付时间
                 "payPlan": [                         //支付计划
                     {
@@ -140,10 +140,10 @@ curl --location 'https://open-01.k8s03.ekuaibao.net/api/openapi/v1.1/docs/delive
             },
             "ownerId": "xgJ3wajigF25H0:dbc3wajigF1UH0",  //流程发起人ID
             "ownerDefaultDepartment": "xgJ3wajigF25H0",  //流程发起人默认部门ID
-            "state": "paid",      //流程状态 pending-提交中 approving-审批中 rejected-已驳回 paying-待支付 PROCESSING-支付中 paid-已支付 archived-归档 sending-寄送中 receiving-收单中                      
-            "flowType": "freeflow",    //流程类型
-            "formType": "loan", //单据类型 expense-报销单 loan-借款单 payment-付款单 requisition-申请单 custom-通用审批单 receipt-收款单
-            "logs": [                  //审批记录
+            "state": "paid",        //流程状态 pending-提交中 approving-审批中 rejected-已驳回 paying-待支付 PROCESSING-支付中 paid-已支付 archived-归档 sending-寄送中 receiving-收单中                      
+            "flowType": "freeflow", //流程类型
+            "formType": "loan",     //单据类型 expense-报销单 loan-借款单 payment-付款单 requisition-申请单 custom-通用审批单 receipt-收款单
+            "logs": [               //审批记录
                 { 
                     "action": "freeflow.submit",     //动作名称
                     "state": "approving",            //操作后到流程状态
@@ -238,7 +238,7 @@ curl --location 'https://open-01.k8s03.ekuaibao.net/api/openapi/v1.1/docs/delive
                     "attachments": []
                 }
             ],
-            "actions": {                   //操作人可执行的动作  key是操作人的员工ID；value是动作名称
+            "actions": {           //操作人可执行的动作  key是操作人的员工ID；value是动作名称
                 "xgJ3wajigF25H0:dbc3wajigF1UH0": [
                     "freeflow.archive",
                     "freeflow.copy"

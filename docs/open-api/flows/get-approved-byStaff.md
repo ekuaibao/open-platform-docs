@@ -40,7 +40,7 @@ url="/api/openapi/v1.1/docs/approved/$`approverId`"
 
 ## CURL
 ```shell
-curl --location 'https://open-01.k8s03.ekuaibao.net/api/openapi/v1.1/docs/approved/$xgJ3wajigF25H0:dbc3wajigF1UH0?accessToken=ID01w4CAZC7P6n%3AxgJ3wajigF25H0&index=0&count=10'
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/docs/approved/$xgJ3wajigF25H0:dbc3wajigF1UH0?accessToken=ID01w4CAZC7P6n%3AxgJ3wajigF25H0&index=0&count=10'
 ```
 
 ## 成功响应
@@ -61,7 +61,7 @@ curl --location 'https://open-01.k8s03.ekuaibao.net/api/openapi/v1.1/docs/approv
             "dataCorporationId": null,
             "form": {                                //单据详情
                 "code": "B23000211",                 //单据编码 
-                "title": "测试11111",           //单据标题
+                "title": "测试11111",               //单据标题
                 "details": [                        //消费明细
                     {
                         "feeTypeId": "xgJ3wajigF25H0:office", //费用类型ID，通过【获取费用类型列表】接口可获得，通过【根据ID或CODE获取费用类型模板信息】查询类型详情
@@ -127,9 +127,9 @@ curl --location 'https://open-01.k8s03.ekuaibao.net/api/openapi/v1.1/docs/approv
             },
             "ownerId": "xgJ3wajigF25H0:dbc3wajigF1UH0",  //流程发起人ID
             "ownerDefaultDepartment": "xgJ3wajigF25H0",  //流程发起人默认部门ID
-            "state": "rejected",      //流程状态 pending-提交中 approving-审批中 rejected-已驳回 paying-待支付 PROCESSING-支付中 paid-已支付 archived-归档 sending-寄送中 receiving-收单中                      
+            "state": "rejected",       //流程状态 pending-提交中 approving-审批中 rejected-已驳回 paying-待支付 PROCESSING-支付中 paid-已支付 archived-归档 sending-寄送中 receiving-收单中                      
             "flowType": "freeflow",    //流程类型
-            "formType": "expense", //单据类型 expense-报销单 loan-借款单 payment-付款单 requisition-申请单 custom-通用审批单 receipt-收款单
+            "formType": "expense",     //单据类型 expense-报销单 loan-借款单 payment-付款单 requisition-申请单 custom-通用审批单 receipt-收款单
             "logs": [                  //审批记录
                 { 
                     "action": "freeflow.submit",     //动作名称
@@ -189,7 +189,7 @@ curl --location 'https://open-01.k8s03.ekuaibao.net/api/openapi/v1.1/docs/approv
                     "attachments": []
                 }
             ],
-            "actions": {                   //操作人可执行的动作  key是操作人的员工ID；value是动作名称
+            "actions": {           //操作人可执行的动作  key是操作人的员工ID；value是动作名称
                 "xgJ3wajigF25H0:dbc3wajigF1UH0": [
                     "freeflow.delete",
                     "freeflow.edit",

@@ -67,12 +67,12 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
     "staffList": [
         {
             "id": "TsI3tt8KjF4S7M:1222234",         //员工ID
-            "name": "测试1",                         //员工姓名
+            "name": "测试1",                        //员工姓名
             "nickName": "测1",                      //员工别名
             "code": "00001",                        //员工工号
             "cellphone": "17711111126",             //手机号
             "email": "17718535962@163.com",         //邮箱
-            "note": "批量修改",                       //备注
+            "note": "批量修改",                     //备注
             "defaultDepartment": "TsI3tt8KjF4S7M",  //默认部门
             "departments": [                        //所在部门
                 "TsI3tt8KjF4S7M"
@@ -115,7 +115,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
     "items": [
         {
             "id": "TsI3tt8KjF4S7M:1222234",           //员工ID
-            "name": "测试1",                           //员工姓名
+            "name": "测试1",                          //员工姓名
             "nickName": "测1",                        //员工别名
             "code": "00001",                          //员工工号
             "departments": [                          //所在部门
@@ -130,7 +130,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
             "external": false,                        //是否外部员工
             "authState": true,                        //是否激活，表示账号是否可用
             "globalRoaming": "+86",                   //国际区号
-            "note": "批量修改",                        //备注                  
+            "note": "批量修改",                       //备注                  
             "staffCustomForm": {                      //员工自定义字段
                 "base": "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]",  //常驻地
                 "postType": "ID_3D5RavktVRM",         //岗位
@@ -141,8 +141,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
         },
         {
             "id": "TsI3tt8KjF4S7M:BbP3CdaKi$VcRw",    //员工ID
-            "name": "张国阳小号",                       //员工姓名
-            "nickName": "小阳",                        //员工别名
+            "name": "张国阳小号",                     //员工姓名
+            "nickName": "小阳",                       //员工别名
             "code": "00002",                          //员工工号
             "departments": [                          //所在部门
                 "TsI3tt8KjF4S7M"

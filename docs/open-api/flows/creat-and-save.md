@@ -54,36 +54,36 @@ url="/api/openapi/v2.2/flow/data"
 ##  Body Parameters
 不同表单类型参数各不相同，以下仅为示例，详见单据模板配置：
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-|**form**                                        | Object | 单据信息         | 必填  | - | 单据信息数据 |
-|**&emsp; ∟ outerCode**                          | String | 外部系统单据编号  | 非必填 | - | 第三方系统的单据唯一标识，不可重复 |
-|**&emsp; ∟ title**                              | String | 单据标题        | 必填   | - | 单据标题 |
-|**&emsp; ∟ submitterId**                        | String | 单据提交人ID    | 必填   | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
-|**&emsp; ∟ expenseDate**                        | String | 报销日期        | 非必填 | - | 毫秒级时间戳<br/>参数不传时，默认为 **当前日期** |
-|**&emsp; ∟ expenseDepartment**                  | String | 报销部门ID      | 非必填 | - | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取 |
-|**&emsp; ∟ description**                        | String | 描述           | 非必填 | - | 描述 |
-|**&emsp; ∟ payeeId**                            | String | 收款账户ID      | 必填   | - | 通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取<br/>当 `isCommit` = `false`（保存草稿）时，**允许非必填** |
-|**&emsp; ∟ specificationId**                    | String | 单据模板ID      | 必填  | - | 通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 获取 **单据模板ID**<br/>然后通过 [根据模板ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取 **创建单据的模板ID** |
-|**&emsp; ∟ expenseLink**                        | String | 关联的申请单ID   | 非必填 | - | 【按申请事项整体报销】时传递的参数，[关联申请](/docs/open-api/flows/creat-and-save#14-关联申请字段) 时2选1 |
-|**&emsp; ∟ expenseLinks**                       | Array  | 关联的申请单ID   | 非必填 | - | 【按申请明细分别报销】时传递的参数，[关联申请](/docs/open-api/flows/creat-and-save#14-关联申请字段) 时2选1 |
-|**&emsp; ∟ linkRequisitionInfo**                | String | 补充申请        | 非必填 | - | 申请单 **补充申请** 时使用，值为需要补充的申请单ID |
-|**&emsp; ∟ details**                            | Array  | 费用明细        | 必填  | - | 费用明细 |
-|**&emsp; &emsp; ∟ feeTypeId**                   | String | 费用类型ID      | 必填  | - | 通过 [获取费用类型列表(包含停用)](/docs/open-api/feetype/get-feetypes-list) 获取 |
-|**&emsp; &emsp; ∟ specificationId**             | String | 费用类型模板ID   | 必填  | - | 通过 [根据ID或CODE获取费用类型模板信息](/docs/open-api/feetype/get-feetypes) 获取 |
-|**&emsp; &emsp; ∟ feeTypeForm**                 | Object | 费用信息        | 必填  | - | 费用信息，具体传参请见获取费用模板接口返回值 |
-|**&emsp; &emsp; &emsp; ∟ amount**               | Object | 报销金额        | 必填  | - | 报销金额 |
-|**&emsp; &emsp; &emsp; ∟ feeDate**              | String | 费用日期        | 必填  | - | 毫秒级时间戳 |
-|**&emsp; &emsp; &emsp; ∟ feeDetailPayeeId**     | String | 收款信息ID      | 非必填 | - | 多收款人模式下，**按明细/按收款信息汇总明细金额** 类型时 **必填**<br/>通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取 |
-|**&emsp; &emsp; &emsp; ∟ invoiceForm**          | Object | 发票相关信息     | 非必填 | - | 发票参数 |
-|**&emsp; &emsp; &emsp; &emsp; ∟ type**          | String | 发票开票类型     | 非必填  | - | `unify` : 统一开票 &emsp; `wait` : 待开发票<br/>`exist` : 已有发票 &emsp; `noExist` : 无发票<br/>`noWrite` : 无需填写(当费用类型发票字段设置的不可编辑时，默认为此项) |
-|**&emsp; &emsp; &emsp; &emsp; ∟ invoices**      | Array  | 发票信息        | 非必填 | - | 通过 `智能拍票` 、`电子发票文件(PC端)` 、`手工录入` 、`微信发票` 、`医疗发票` 、`扫描发票(移动端)` 、`爱发票` 、`支付宝卡包`方式OCR查验发票后，将发票信息绑定到此参数中，传参格式见[发票字段填写规则](/docs/next/open-api/flows/creat-and-save#12-发票发票形式字段) |
-|**&emsp; &emsp; &emsp; &emsp; ∟ attachments**   | Array  | 发票附件        | 非必填 | - | 通过`发票照片`方式导入时，发票信息传此参数，传参格式见[发票字段填写规则](/docs/next/open-api/flows/creat-and-save#12-发票发票形式字段)<br/>**该方式无法对发票附件进行验真查重或者OCR处理** |
-|**&emsp; &emsp; &emsp; ∟ consumptionReasons**   | String | 消费事由        | 非必填 | - | 消费事由 |
-|**&emsp; &emsp; &emsp; ∟ apportions**           | Array  | 分摊明细        | 非必填 | - | 根据单据模板决定 |
-|**&emsp; &emsp; &emsp; &emsp; ∟ apportionForm** |	Object | 分摊明细具体信息 | 非必填 | - | 分摊明细具体信息 |
-|**params**                                       | Object | 单据其他信息     | 非必填 | - | 单据其他信息数据 |
-|**&emsp; ∟ loanWrittenOff**                     | Array  | 核销借款信息     | 非必填 | - | 详细参数见下方示例<br/>**全量更新时该参数必填，否则原数据会被清空** |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                                                                                         |
+| :--- | :--- | :--- | :--- |:--- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|**form**                                        | Object | 单据信息         | 必填  | - | 单据信息数据                                                                                                                                                                     |
+|**&emsp; ∟ outerCode**                          | String | 外部系统单据编号  | 非必填 | - | 第三方系统的单据唯一标识，不可重复                                                                                                                                                          |
+|**&emsp; ∟ title**                              | String | 单据标题        | 必填   | - | 单据标题                                                                                                                                                                       |
+|**&emsp; ∟ submitterId**                        | String | 单据提交人ID    | 必填   | - | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取                                                                                                                  |
+|**&emsp; ∟ expenseDate**                        | String | 报销日期        | 非必填 | - | 毫秒级时间戳<br/>参数不传时，默认为 **当前日期**                                                                                                                                              |
+|**&emsp; ∟ expenseDepartment**                  | String | 报销部门ID      | 非必填 | - | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取                                                                                                                 |
+|**&emsp; ∟ description**                        | String | 描述           | 非必填 | - | 描述                                                                                                                                                                         |
+|**&emsp; ∟ payeeId**                            | String | 收款账户ID      | 必填   | - | 通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取<br/>当 `isCommit` = `false`（保存草稿）时，**允许非必填**                                                                              |
+|**&emsp; ∟ specificationId**                    | String | 单据模板ID      | 必填  | - | 通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 获取 **单据模板ID**<br/>然后通过 [根据模板ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取 **创建单据的模板ID**           |
+|**&emsp; ∟ expenseLink**                        | String | 关联的申请单ID   | 非必填 | - | 【按申请事项整体报销】时传递的参数，[关联申请](/docs/open-api/flows/creat-and-save#14-关联申请字段) 时2选1                                                                                               |
+|**&emsp; ∟ expenseLinks**                       | Array  | 关联的申请单ID   | 非必填 | - | 【按申请明细分别报销】时传递的参数，[关联申请](/docs/open-api/flows/creat-and-save#14-关联申请字段) 时2选1                                                                                               |
+|**&emsp; ∟ linkRequisitionInfo**                | String | 补充申请        | 非必填 | - | 申请单 **补充申请** 时使用，值为需要补充的申请单ID                                                                                                                                              |
+|**&emsp; ∟ details**                            | Array  | 费用明细        | 必填  | - | 费用明细                                                                                                                                                                       |
+|**&emsp; &emsp; ∟ feeTypeId**                   | String | 费用类型ID      | 必填  | - | 通过 [获取费用类型列表(包含停用)](/docs/open-api/feetype/get-feetypes-list) 获取                                                                                                           |
+|**&emsp; &emsp; ∟ specificationId**             | String | 费用类型模板ID   | 必填  | - | 通过 [根据ID或CODE获取费用类型模板信息](/docs/open-api/feetype/get-feetypes) 获取                                                                                                           |
+|**&emsp; &emsp; ∟ feeTypeForm**                 | Object | 费用信息        | 必填  | - | 费用信息，具体传参请见获取费用模板接口返回值                                                                                                                                                     |
+|**&emsp; &emsp; &emsp; ∟ amount**               | Object | 报销金额        | 必填  | - | 报销金额                                                                                                                                                                       |
+|**&emsp; &emsp; &emsp; ∟ feeDate**              | String | 费用日期        | 必填  | - | 毫秒级时间戳                                                                                                                                                                     |
+|**&emsp; &emsp; &emsp; ∟ feeDetailPayeeId**     | String | 收款信息ID      | 非必填 | - | 多收款人模式下，**按明细/按收款信息汇总明细金额** 类型时 **必填**<br/>通过 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 获取                                                                               |
+|**&emsp; &emsp; &emsp; ∟ invoiceForm**          | Object | 发票相关信息     | 非必填 | - | 发票参数                                                                                                                                                                       |
+|**&emsp; &emsp; &emsp; &emsp; ∟ type**          | String | 发票开票类型     | 非必填  | - | `unify` : 统一开票 &emsp; `wait` : 待开发票<br/>`exist` : 已有发票 &emsp; `noExist` : 无发票<br/>`noWrite` : 无需填写(当费用类型发票字段设置的不可编辑时，默认为此项)                                                |
+|**&emsp; &emsp; &emsp; &emsp; ∟ invoices**      | Array  | 发票信息        | 非必填 | - | 通过 `智能拍票` 、`电子发票文件(PC端)` 、`手工录入` 、`微信发票` 、`医疗发票` 、`扫描发票(移动端)` 、`爱发票` 、`支付宝卡包` 等方式查验发票后，将发票信息绑定到此参数中，传参格式见 [发票字段填写规则](/docs/next/open-api/flows/creat-and-save#12-发票发票形式字段) |
+|**&emsp; &emsp; &emsp; &emsp; ∟ attachments**   | Array  | 发票附件        | 非必填 | - | 通过 `发票照片` 方式导入时，发票信息绑定此参数，传参格式见 [发票字段填写规则](/docs/next/open-api/flows/creat-and-save#12-发票发票形式字段)<br/>**该方式无法对发票附件进行OCR处理以及验真查重**                                           |
+|**&emsp; &emsp; &emsp; ∟ consumptionReasons**   | String | 消费事由        | 非必填 | - | 消费事由                                                                                                                                                                       |
+|**&emsp; &emsp; &emsp; ∟ apportions**           | Array  | 分摊明细        | 非必填 | - | 根据单据模板决定                                                                                                                                                                   |
+|**&emsp; &emsp; &emsp; &emsp; ∟ apportionForm** |	Object | 分摊明细具体信息 | 非必填 | - | 分摊明细具体信息                                                                                                                                                                   |
+|**params**                                       | Object | 单据其他信息     | 非必填 | - | 单据其他信息数据                                                                                                                                                                   |
+|**&emsp; ∟ loanWrittenOff**                     | Array  | 核销借款信息     | 非必填 | - | 详细参数见下方示例<br/>**全量更新时该参数必填，否则原数据会被清空**                                                                                                                                     |
 
 :::tip
 - 与系统上的保存单据功能一样，按格式组织数据，保存单据信息，保存成功后，会返回该单据实例信息。
@@ -598,16 +598,17 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 ```
 
 ### (12) 发票(发票形式)字段
-字段的「type」为【invoice】时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件<br/>
+字段的「type」为【invoice】时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件。
 
-发票的导入方式有：`智能拍票`、`扫描发票(移动端)`、`电子发票文件(PC端)`、`发票照片`、`手工录入`、`微信发票`、`医疗发票`、`支付宝卡包`、`爱发票`<br/>其中 `发票照片` 方式与其他方式传参不同，并且该方式无法对发票附件进行验真查重或者OCR处理，示例如下：
+发票的导入方式有：`智能拍票`、`扫描发票(移动端)`、`电子发票文件(PC端)`、`发票照片`、`手工录入`、`微信发票`、`医疗发票`、`支付宝卡包`、`爱发票`<br/>
+其中 `发票照片` 方式与其他方式传参不同，并且该方式 **无法对发票附件进行OCR处理以及验真查重**，示例如下：
 
 <Tabs>
 <TabItem value="other" label="OCR查验" default>
 
 ```json
 "invoiceForm": {
-    "type": "exist",  //已有发票
+    "type": "exist",       //已有发票
     "invoices":[           //发票关联信息
         {
             "itemIds":[    //发票明细ID
@@ -633,12 +634,12 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 </TabItem>
 <TabItem value="Invoice Photo" label="发票照片">
 
-`attachments` 为发票文件，发票附件可通过 [上传附件](/docs/open-api/attachment/attachment-upload) 接口，先上传文件到服务器后，然后在请求回应中拿到上传附件的文件key等参数。
+`attachments` 为发票文件，可通过 [上传附件](/docs/open-api/attachment/attachment-upload) 接口，上传文件到服务器，然后在响应信息中拿到上传附件的文件 `key` 等参数。
 
 ```json
 "invoiceForm": {
     "type": "exist",  //已有发票
-    "attachments": [  //如果没有附件,不传此字段(附件先通过“上传附件”接口上传数据)
+    "attachments": [  //如果没有附件，不传此字段（附件先通过“上传附件”接口上传数据）
         {
             "key": "openapi04d91616-c6d0-4e98-a784-0b95c0c03a93-发票2.pdf",
             "fileId": "ID_3tcjusD0qHg",
@@ -651,7 +652,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 </TabItem>
 </Tabs>
 
-发票类型( `type` )传参示例:
+发票类型( `type` )其他传参示例:
 
 <Tabs>
 <TabItem value="unify" label="统一开票" default>
@@ -660,7 +661,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 "invoiceForm": {
     "type": "unify",  //统一开票
     "invoices": [],
-    "invoiceCorporationId": "H50cghSyeQxw00"  //开票方企业ID，对应【获取统一开票方】接口中的id
+    "invoiceCorporationId": "H50cghSyeQxw00"  //开票方企业ID，对应【获取统一开票方】接口中的ID
 }
 ```
 </TabItem>
@@ -684,7 +685,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 
 ```json
 "invoiceForm": {
-    "type": "noWrite"  //无需填写
+    "type": "noWrite"  //无需填写，当费用类型发票字段设置的不可编辑时，默认为此项
 }
 ```
 </TabItem>
@@ -698,6 +699,11 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 
 ### (14) 关联申请字段
 字段的「type」为【select】且「valueFrom」为【requisition.RequisitionInfo】的，为关联申请字段，需传入申请单(申请事项)的ID：
+
+:::caution
+- 报销单传参 **支持从关联的申请单自动赋值**，如果某个字段参数配置根据关联申请单取值，那么该字段可以 **不传值**。
+  - 在 **允许关联多个申请事项** 配置下，自动赋值不生效。
+:::
 
 <Tabs>
 <TabItem value="default" label="按申请明细分别报销" default>

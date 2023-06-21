@@ -126,7 +126,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/staffs
         {
             "id": "Tdk3tgber501v0:P1005",  //员工ID
             "name": "批量新增-5",          //员工姓名
-            "nickName": "老5",               //员工别名
+            "nickName": "老5",            //员工别名
             "code": "P1005",              //员工工号
             "departments": [              //所在部门集合
                 "Tdk3tgber501v0:ID_3tgaWMa0hjg"

@@ -227,7 +227,7 @@ import TabItem from '@theme/TabItem';
                             "writtenOffMoney_standardStrCode":"CNY"
                         },
                         "invoiceCount":1,   //发票数据
-                        "taxAmount":0,   //发票中的税额（合计）
+                        "taxAmount":0,      //发票中的税额（合计）
                         "noTaxAmount":0.01, //发票中的不含税金额（合计）
                         "invoices":[        //发票信息
                             {
@@ -407,7 +407,7 @@ import TabItem from '@theme/TabItem';
                     "branchCode": "BranchCode001",
                     "certificateNo": "",
                     "certificateType": "",
-                    "remark": "remark"  //备注
+                    "remark": "remark"       //备注
                 },
                 "payorId":"p448pNvlUA4g00",  //收款信息ID
                 "paymentChannel":null,       //付款渠道（方式），出纳进行支付操作才会有

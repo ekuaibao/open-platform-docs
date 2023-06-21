@@ -32,7 +32,10 @@ url="/api/openapi/v2.2/flow/data/$`flowId`"
 </details>
 
 :::caution
-- 本接口不支持在 **Ebot节点** 上使用，目前只支持修改 **`draft` 草稿、`approving` 审批中、`paying` 待支付** 状态且处于 **审批节点** 的单据，并且对应节点要勾选 **“允许审批人修改单据”** 配置。
+- 本接口不支持在 **Ebot节点** 上使用。
+- 本接口使用条件如下：
+  - `state`（单据状态） = **`draft` 草稿/`rejected` 已驳回（驳回到提交人）**。
+  - `state`（单据状态） = **`rejected` 已驳回（驳回到其他审批人）/`approving` 审批中/`paying` 待支付** 且单据处于勾选了 **“允许审批人修改单据”** 的 **审批节点**。
 - 使用 `editFlag` = `cover`（全量更新）时，单据中有核销借款数据，则 **`loanWrittenOff`（核销借款）参数必填，否则原数据会被清空**。
 :::
 

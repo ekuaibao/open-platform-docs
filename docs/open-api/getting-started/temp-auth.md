@@ -12,7 +12,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
   <div>
 
   [**1.17.0**](/docs/open-api/notice/update-log#1170)&emsp;-> 🆕 新增了 `pageType` = `edit` 类型，单据处于 **草稿、驳回** 状态时可 **编辑/提交**。<br/>
-  [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🆕 新增了 `pageType` = `assistPlatform` 类型，进入合思 **协助链接授权** 页面。<br/>
+  [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🆕 新增了 `pageType` = `assistPlatform` 类型，进入合思 **协助授权链接** 页面。<br/>
   [**1.12.0**](/docs/open-api/notice/update-log#1120)&emsp;-> 🆕 新增了 `pageType` = `payment` 类型，进入合思 **待我支付** 页面。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。<br/>
   [**1.7.1**](/docs/open-api/notice/update-log#171) &emsp; -> 🆕 新增了 `authType`（授权方式）参数，控制单点链接可用次数。<br/>

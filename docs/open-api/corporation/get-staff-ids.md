@@ -59,8 +59,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
     "items": [
         {
             "id": "JOYbpjPP-E2Q00:pt4bu1ZI9s2000",  //员工ID
-            "name": "二号员工",                      //员工姓名
-            "nickName": "老四",                     //员工别名
+            "name": "二号员工",                     //员工姓名
+            "nickName": "老四",                    //员工别名
             "code": "1002",                        //员工工号
             "departments": [                       //所属部门ID集合
                 "JOYbpjPP-E2Q00:ZNEbwH_W7sc000",
@@ -76,7 +76,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
             "external": false,                                    //是否外部员工
             "authState": true,                                    //是否激活，表示账号是否可用
             "globalRoaming": "+86",                               //国际区号
-            "note": "备注",                                        //备注
+            "note": "备注",                                       //备注
             "staffCustomForm":{                                               //员工自定义字段
                 "base":"[{\"key\":\"7370\",\"label\":\"山西省/长治/上党区\"}]",//常驻地
                 "postType":"ltUcxNyWSQ1o00",                                  //岗位

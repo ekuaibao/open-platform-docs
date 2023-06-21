@@ -5,7 +5,7 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v2/payeeInfos"
+url="/api/openapi/v2.1/payeeInfos"
 />
 
 <details>
@@ -118,7 +118,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "nationCode": "090",
             "bankCode": "12345",
             "branchCode": "111",
-            "visibility": {                     //可见性
+            "visibility": {             //可见性
                 "fullVisible": true,    //是否全部可见（true：全部可见，false：指定人员可见）
                 "staffs": [],           //可见员工ID
                 "roles": [],            //可见角色ID
