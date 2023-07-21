@@ -151,13 +151,14 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v1.1/dimensi
 
 ## 失败响应
 
-| HTTP状态码 | 错误码 | 描述 | 排查建议 |
-| :--- | :--- | :--- | :--- |
-| **400** | - | baseCurrencyId对应的本位币在企业不存在，请检查 | 请确认 `baseCurrencyId` 参数值对应的本位币在企业内是否配置 | 
-| **400** | - | 类型为法人实体时，baseCurrencyId是必填参数，请检查 | 开通了【**法人实体多币种**】功能后，`baseCurrencyId` 是必填参数 | 
-| **400** | - | 类型为code时dimensionId是必填参数，请检查 | `type` = `code` 时，`dimensionId`（档案类别CODE) 是必填参数 | 
-| **400** | - | 根据code: [[CODE22]]不能找到唯一的档案项 | `type` = `code` 时，请确认 `parentId`（父节点CODE）是否正确 | 
-| **403** | - | 法人实体的多币种不允许修改 | 法人实体的多币种一经配置不允许修改 | 
-| **412** | - | 上级档案[ID_3yrzERx0Qf01]不存在        | `type` = `id` 时，请确认 `parentId`（父节点ID）是否正确 | 
+| HTTP状态码 | 错误码 | 描述 | 排查建议                                               |
+| :--- | :--- | :--- |:---------------------------------------------------|
+| **400** | - | baseCurrencyId对应的本位币在企业不存在，请检查 | 请确认 `baseCurrencyId` 参数值对应的本位币在企业内是否配置             | 
+| **400** | - | 类型为法人实体时，baseCurrencyId是必填参数，请检查 | 开通了【**法人实体多币种**】功能后，`baseCurrencyId` 是必填参数         | 
+| **400** | - | 类型为code时dimensionId是必填参数，请检查 | `type` = `code` 时，`dimensionId`（档案类别CODE) 是必填参数    | 
+| **400** | - | 根据code: [[CODE22]]不能找到唯一的档案项 | `type` = `code` 时，请确认 `parentId`（父节点CODE）是否正确      | 
+| **403** | - | 法人实体的多币种不允许修改 | 法人实体的多币种一经配置不允许修改                                  | 
+| **412** | - | 上级档案[ID_3yrzERx0Qf01]不存在        | `type` = `id` 时，请确认 `parentId`（父节点ID）是否正确          | 
 | **412** | - | 根据code: [[100]]不能找到唯一的员工      | `type` = `code` 时，请确认 `staffs`（员工白名单）在系统中是否重复或者不存在 |
+| **412** | - | 编码[CODE1]已经被占用      | 要修改的CODE已经存在启用的档案                                  |
 

@@ -20,12 +20,12 @@ url="/api/openapi/v1.1/flowDetails/stuckFlow"
 
 ## Query Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                              |
+| :--- | :--- | :--- | :--- |:--- |:----------------------------------------------------------------|
 | **accessToken** | String | 认证token  | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
-| **codes**       | String | 单据编号    | 必填  | - | 单据CODE，多个用英文逗号 `,` 分隔 |
-| **isUpdate**    | String | 是否处理    | 非必填 | true | `true` : 处理<br/>`false` : 不处理，只返回异常单据信息 |
-| **isForce**     | String | 是否重复触发 | 非必填 | false | `true` : 重复触发<br/>`false` : 不触发 |
+| **codes**       | String | 单据编号    | 必填  | - | 单据CODE，多个用英文逗号 `,` 分隔，**最大支持 100 条**                                          |
+| **isUpdate**    | String | 是否处理    | 非必填 | true | `true` : 处理<br/>`false` : 不处理，只返回异常单据信息                         |
+| **isForce**     | String | 是否重复触发 | 非必填 | false | `true` : 重复触发<br/>`false` : 不触发                                 |
 
 ## CURL
 ```shell

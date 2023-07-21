@@ -17,7 +17,7 @@ url="/api/openapi/v2.2/flow/data"
   [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>
   &emsp; &emsp; &emsp; -> 🐞 优化了 **金额** 类型字段的传参格式检验和报错信息。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了支持 [按申请明细分别报销](/docs/open-api/flows/creat-and-save#14-关联申请字段) 类型的关联申请自动赋值规则。<br/>
-  &emsp; &emsp; &emsp; -> 🐞 修复了 `submitterId` （提交人）未激活时，可创建单据的BUG。<br/>
+  &emsp; &emsp; &emsp; -> 🐞 修复了 `submitterId`（提交人）未激活时，可创建单据的BUG。<br/>
   [**1.17.0**](/docs/open-api/notice/update-log#1170)&emsp;-> 🐞 完善了 **发票字段** 传参示例。<br/>
   [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🐞 新增了 **报销单关联申请** 传参示例。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 **创建草稿状态单据**（`isCommit` = `false`）时，`payeeId`（收款账户ID）允许非必填的场景。<br/>
@@ -34,7 +34,7 @@ url="/api/openapi/v2.2/flow/data"
   [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🆕 新增了只允许用 **单据模板**、**费用类型模板** 最新的模板ID创建单据的校验。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了费用类型必填字段传 `""` 可通过校验的BUG，共16种数据类型。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了申请单开启借款金额字段并配置了 **系统计算** 时，计算结果小数位超过2位的BUG。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🐞 修复了 **离职人员** 可以成功创建单据的问题。<br/>
+  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🐞 修复了 `submitterId`（提交人）已移除时，可创建单据的BUG。<br/>
   [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🐞 修复了部门类型字段设置取值规则为 **使用字段依赖性**，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了字段配置计算规则为 **从关联申请单中取值**，**关联申请** 字段为非必填且未传值时，无法通过校验的BUG。<br/>
   [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v2.1` 版本，修复了费用类型里的必填字段类型是 **自定义档案** 时，传 `""` 可通过校验的BUG，增加了非空校验。<br/>

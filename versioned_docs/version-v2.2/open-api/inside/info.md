@@ -39,7 +39,10 @@ authors: [冯继成]
 
 ---
 ## 扩展中心
-### [发票OCR识别+查重验真](/docs/open-api/datalink-extend/invoice-multiple_items)
+### [发票OCR识别](/docs/next/open-api/datalink-extend/invoice-ocr)
+### [发票OCR识别+验真](/docs/open-api/datalink-extend/invoice-multiple_items)
+### [发票四要素验真](/docs/next/open-api/datalink-extend/invoice-validate)
+### [发票ID验真](/docs/next/open-api/datalink-extend/invoice-validate-byInvoiceId)
 
 ---
 ## 工具接口

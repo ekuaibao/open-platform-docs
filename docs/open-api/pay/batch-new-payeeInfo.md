@@ -50,7 +50,7 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
 | **&emsp; ∟ certificateType** | String | 证件类型    | 非必填  | -     | 详细信息见下方【[证件类型对照表](/docs/open-api/pay/new-payeeInfo#证件类型对照表)】|
 | **&emsp; ∟ certificateNo**   | String | 证件号码    | 非必填  | -     | 证件号码 |
 | **&emsp; ∟ remark**          | String | 备注信息    | 非必填  | -     | 备注信息 |
-| **&emsp; ∟ customFields**    | Object | 自定义字段  | 非必填   | -     | 自定义字段 |
+| **&emsp; ∟ customFields**    | Object | 自定义字段  | 非必填   | -     | 目前仅支持文本类型（`type` = `text`）的字段<br/>可通过 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 获取 |
 | **&emsp; ∟ visibility**                          | Object   | 可见范围       | 非必填  | -     | 可见范围对象，本参数不传，**默认为全员不可见**  |
 | **&emsp;&emsp; ∟ fullVisible**                | Boolean | 是否全员可见    | 非必填  | false | `true` : 全员可见 &emsp; `false` : 部分可见<br/>部分可见则仅有白名单中可见 |
 | **&emsp;&emsp; ∟ roles**                      | Array   | 角色白名单      | 非必填  | -     | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |

@@ -469,6 +469,7 @@ import TabItem from '@theme/TabItem';
             "code": "S20000001",
             "title": "22",
             "voucherNo": "",
+            "alterFlag": "0",  //变更标识，没有变更过的申请单没有这个字段。0：表示单据变更过，并且处于已完成（paid）状态或归档（archived）状态  1：表示单据发起变更，现在处于草稿（draft）状态。
             "printCount": "0",
             "printState": "noPrint",
             "submitDate": 1588496639197,

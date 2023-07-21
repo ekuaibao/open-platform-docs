@@ -9,13 +9,13 @@ url="/api/openapi/v1/docs/setDataBase"
 
 ## Query Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String | 认证token  | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
-| **powerCode**   | String | 功能授权码，传入<br/>219902或者219904即可 | 必填 | true | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |
-| **state**       | String | 要修复的单据状态  | 必填  | - | `PAYING` : 待支付<br/>`PROCESSING` : 支付中 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                                                           |
+| :--- | :--- | :--- | :--- |:--- |:---------------------------------------------------------------------------------------------------------------------------------------------|
+| **accessToken** | String | 认证token  | 必填  | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken`                                                                              |
+| **powerCode**   | String | 功能授权码，传入<br/>219902或者219904即可 | 必填 | true | `219902` : 开放接口 &emsp; `219904` : 开放接口(新)                                                                                                    |
+| **state**       | String | 要修复的单据状态  | 必填  | - | `PAYING` : 待支付<br/>`PROCESSING` : 支付中                                                                                                        |
 | **type**        | String | 单据类型         | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`repayment` : 还款记录<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单 |
-| **codes**       | String | 单据编号    | 必填  | - | 单据CODE，多个用英文逗号 `,` 分隔 |
+| **codes**       | String | 单据编号    | 必填  | - | 单据CODE，多个用英文逗号 `,` 分隔，**最大支持 100 条**                                                                                                             |
 
 ## CURL
 ```shell

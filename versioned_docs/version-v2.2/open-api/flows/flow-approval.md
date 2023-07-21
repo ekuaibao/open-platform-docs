@@ -8,7 +8,7 @@ url="/api/openapi/v1/backlog/data/[`flowIds`]"
 />
 
 :::caution
-需要开通【**单据审批**】功能，且单据处于 **`approving` 审批中** 状态下，方可使用本接口。
+- 需要开通【**单据审批**】功能，且单据处于 **`approving` 审批中** 状态下，方可使用本接口。
 :::
 
 ## Path Parameters
