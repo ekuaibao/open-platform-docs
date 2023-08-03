@@ -183,6 +183,7 @@ const sidebars = {
         "open-api/flows/flow-and-submit",
         "open-api/flows/do-action-flow",
         "open-api/flows/flow-approval",
+        "open-api/flows/flow-comment",
         "open-api/flows/flow-approval-result",
         "open-api/flows/get-approve-state",
         "open-api/flows/flow-hangUp",

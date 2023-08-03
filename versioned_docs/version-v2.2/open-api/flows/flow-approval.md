@@ -1,4 +1,4 @@
-# 单据审批
+# 审批单据
 
 import Control from "@theme/Control";
 

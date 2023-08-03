@@ -12,9 +12,18 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.22.0
+
+`2023-08-09`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
+- 🆕 新增 [评论单据](/docs/open-api/flows/flow-comment) 接口。
+- 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口
+  - 更新了 **增量更新** 的注意事项。
+  - 新增了 **原币币种** 传参示例。
+
+---
 ## 1.21.0
 
-`2023-07-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
+`2023-07-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.117.2`
 - 🚀 新增 [操作单据](/docs/open-api/flows/do-action-flow) 接口 `v2.1` 版本
   - 新增了支持申请单 **变更申请** 操作。
 - 🐞 更新 [获取单据列表](/docs/open-api/flows/get-forms-details-byStaff)、[根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details)、[根据单据编号获取单据详情](/docs/open-api/flows/get-forms-details-byCode)、[根据单据outerCode获取单据详情](/docs/open-api/flows/get-forms-details-byOuterCode) 接口
