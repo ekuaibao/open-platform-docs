@@ -55,4 +55,4 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/auth/ref
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
-| **403** | - | 未授权 | 请确认 `accessToken`（即将过期的授权码）仍在有效使用时间之内<br/>请确认 **地址前缀** 是否与您的企业环境一致 |
+| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认 **地址前缀** 与您的企业环境一致 |

@@ -89,6 +89,6 @@ curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/staffCustom?ac
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
 | **400** | - | 查询参数不能为空 | 请确认 `Body Parameters` 是否传值 | 
-| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认 **地址前缀** 是否与您的企业环境一致 | 
+| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认 **地址前缀** 与您的企业环境一致 | 
 
 
