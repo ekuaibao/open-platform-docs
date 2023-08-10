@@ -32,17 +32,16 @@ url="/api/openapi/v2.2/flow/data/comment/$`flowId`"
 
 ## Body Parameters
 
-| 名称                             | 类型      | 描述        | 是否必填 | 默认值   | 备注                                                                      |
-|:-------------------------------|:--------|:----------|:-----|:------|:------------------------------------------------------------------------|
-| **params**                     | Object  | 评论参数      | 必填   | -     | 评论参数                                                                    |
-| **&emsp; ∟ comment**           | String  | 评论内容      | 必填   | -     | 评论内容                                                                    |
-| **&emsp; ∟ participants**      | Array   | 被@的人      | 非必填  | -     | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取               |
-| **&emsp; ∟ attachments**       | Array   | 评论附件      | 非必填  | -     | 通过 [上传附件](/docs/open-api/attachment/attachment-upload) 获取               |
-| **&emsp; &emsp; ∟ key**        | String  | 文件key     | 必填   | -     | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `key` 字段      |
-| **&emsp; &emsp; ∟ fileName**   | String  | 文件名称      | 必填   | -     | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `fileName` 字段 |
-| **&emsp; &emsp; ∟ fileId**     | String  | 文件id      | 必填   | -     | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `fileId` 字段   |
-| **&emsp; ∟ keepItSecret**      | Boolean | 是否仅被@的人可见 | 非必填  | false | `true` : 是 &emsp;&emsp; `false` : 否                                     |
-| **name**                       | String  | 评论动作固定值   | 必填   | -     | 必填为 `freeflow.comment`                                                  |
+| 名称                             | 类型      | 描述        | 是否必填 | 默认值 | 备注                                                                                                                 |
+|:-------------------------------|:--------|:----------|:-----|:----|:-------------------------------------------------------------------------------------------------------------------|
+| **params**                     | Object  | 评论参数      | 必填   | -   | 评论参数                                                                                                               |
+| **&emsp; ∟ comment**           | String  | 评论内容      | 必填   | -   | 评论中@其他员工传参示例：`"请 {staffId} {staffId} 查看"`<br/>`staffId` 可通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
+| **&emsp; ∟ attachments**       | Array   | 评论附件      | 非必填  | -   | 通过 [上传附件](/docs/open-api/attachment/attachment-upload) 获取                                                          |
+| **&emsp; &emsp; ∟ key**        | String  | 文件key     | 必填   | -   | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `key` 字段                                                 |
+| **&emsp; &emsp; ∟ fileName**   | String  | 文件名称      | 必填   | -   | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `fileName` 字段                                            |
+| **&emsp; &emsp; ∟ fileId**     | String  | 文件id      | 必填   | -   | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `fileId` 字段                                              |
+| **&emsp; ∟ keepItSecret**      | Boolean | 是否仅被@的人可见 | 非必填  | -   | `true` : 是 &emsp;&emsp; `false` : 否                                                                                |
+| **name**                       | String  | 评论动作固定值   | 必填   | -   | 必填为 `freeflow.comment`                                                                                             |
 
 ## CURL
 ```json
@@ -51,10 +50,6 @@ curl --location 'https://app.ekuaibao.com/api/openapi/v2.2/flow/data/comment/$ID
 --data '{
     "params": {
         "comment": "全电发票 {bwa3wajigF0WH0:ID01irfEujUR9t} {bwa3wajigF0WH0:ID01irfEujURX1}",
-        "participants": [
-            "bwa3wajigF0WH0:ID01irfEujUR9t",
-            "bwa3wajigF0WH0:ID01irfEujURX1"
-        ],
         "attachments": [
             {
                 "key": "openapic6d3a829-67a9-4aa4-90f9-fb2e43a1c358-全电发票.pdf",
