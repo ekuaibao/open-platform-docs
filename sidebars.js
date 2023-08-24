@@ -136,6 +136,7 @@ const sidebars = {
         "open-api/feetype/info",
         "open-api/feetype/get-feetypes-list",
         "open-api/feetype/get-feetypes",
+        "open-api/feetype/get-travelTemplate",
         "open-api/feetype/default-feetypes-import",
         "open-api/feetype/question-answer"
       ],
@@ -278,6 +279,10 @@ const sidebars = {
       label: "扩展中心",
       items: [
         "open-api/datalink-extend/introduce",
+        "open-api/datalink-extend/invoice-ocr",
+        "open-api/datalink-extend/invoice-multiple_items",
+        "open-api/datalink-extend/invoice-validate",
+        "open-api/datalink-extend/invoice-validate-byInvoiceId",
         "open-api/datalink-extend/get-flow-invoice",
         "open-api/datalink-extend/get-entity-invoice",
         "open-api/datalink-extend/get-entity-invoic-details",
@@ -383,6 +388,7 @@ const sidebars = {
         "open-api/tools/info",
         "open-api/tools/staffs-clearInfo",
         "open-api/tools/staffs-getOpenUserId",
+        "open-api/tools/get-charge-powers",
         "open-api/tools/question-answer"
       ],
     },

@@ -13,13 +13,13 @@ url="/api/openapi/v2/invoice/validateByInvoiceId"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.21.0**](/docs/open-api/notice/update-log#1210) -> 🆕 新增了本接口。<br/>
+  [**1.22.0**](/docs/open-api/notice/update-log#1220) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
 
 :::caution
-- 需要开通【**发票查验**】功能，方可使用本接口。
+- 需要开通【**发票查验功能**】，方可使用本接口。
 - 本接口限制 **QPS=1**（1次/秒）。
 :::
 

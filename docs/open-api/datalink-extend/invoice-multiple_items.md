@@ -13,14 +13,13 @@ url="/api/openapi/v2/invoice/multiple_items"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.21.0**](/docs/open-api/notice/update-log#1210) -> 🐞 新增了商品计次验证，商品可用次数为0时，无法使用本接口。<br/>
-  [**1.17.0**](/docs/open-api/notice/update-log#1170) -> 🆕 新增了本接口。<br/>
+  [**1.22.0**](/docs/open-api/notice/update-log#1220) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
 
 :::caution
-- 需要开通【**OCR智能识别**】和【**发票查验**】功能，方可使用本接口。
+- 需要开通【**OCR智能识别**】和【**发票查验功能**】，方可使用本接口。
 - 本接口限制 **QPS=1**（1次/秒）。
 :::
 

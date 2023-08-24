@@ -14,6 +14,7 @@ url="/api/openapi/v2.2/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.22.0**](/docs/open-api/notice/update-log#1220)&emsp;-> 🐞 新增了支持 **行程规划** 类型参数。<br/>
   [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>
   &emsp; &emsp; &emsp; -> 🐞 优化了 **金额** 类型字段的传参格式检验和报错信息。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了支持 [按申请明细分别报销](/docs/open-api/flows/creat-and-save#14-关联申请字段) 类型的关联申请自动赋值规则。<br/>
@@ -28,7 +29,7 @@ url="/api/openapi/v2.2/flow/data"
   [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 `code` 传值可以创建重复单据编号的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 `detailId` 传值可以创建重复费用明细ID的BUG。<br/>
-  [**1.6.0**](/docs/open-api/notice/update-log#160) &emsp; -> 🆕 新增了支持 **多收款人** 类型参数。<br/>
+  [**1.6.0**](/docs/open-api/notice/update-log#160) &emsp; -> 🐞 新增了支持 **多收款人** 类型参数。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了单据配置 **必须关联申请单** 且 **关联申请** 字段已传值时，报 “**关联申请单不存在，请补充申请单ID！**” 的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了业务对象类型字段 **联动赋值** 规则不生效的BUG。<br/>
   [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🆕 新增了只允许用 **单据模板**、**费用类型模板** 最新的模板ID创建单据的校验。<br/>
@@ -949,3 +950,110 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 </TabItem>
 </Tabs>
 
+### (18) 行程规划字段
+系统预置的 `u_行程规划` 字段，各类型行程示例如下：
+
+<Tabs>
+<TabItem value="plane" label="飞机" default>
+
+```json
+"u_行程规划": [
+    {
+        "dataLinkId": null,
+        "dataLinkTemplateId": "ID01iTAGu7263J",
+        "dataLinkForm": {
+            "E_ac0dd823890c7d2a1800_name": "北京市/北京市区 - 上海市/上海市区",
+            "E_ac0dd823890c7d2a1800_出发地": "[{\"key\":\"2\",\"label\":\"北京市/北京市区\"}]",
+            "E_ac0dd823890c7d2a1800_目的地": "[{\"key\":\"858\",\"label\":\"上海市/上海市区\"}]",
+            "E_ac0dd823890c7d2a1800_行程日期": 1691424000000
+        }
+    }
+]
+```
+</TabItem>
+<TabItem value="hotel" label="酒店">
+
+```json
+"u_行程规划": [
+    {
+        "dataLinkId": null,
+        "dataLinkTemplateId": "ID_3twzygNZxxw",
+        "dataLinkForm": {
+            "E_ac0dd823890c7d2a1800_name": "北京市/北京市区",
+            "E_ac0dd823890c7d2a1800_住宿地": "[{\"key\":\"2\",\"label\":\"北京市/北京市区\"}]",
+            "E_ac0dd823890c7d2a1800_入住日期":1691424000000,
+            "E_ac0dd823890c7d2a1800_离店日期": 1691424000000
+        }
+    }
+]
+```
+</TabItem>
+<TabItem value="train" label="火车">
+
+```json
+"u_行程规划": [
+    {
+        "dataLinkId": null,
+        "dataLinkTemplateId": "ID_3twzygNZDxw",
+        "dataLinkForm": {
+            "E_ac0dd823890c7d2a1800_name": "广东省/广州市/广州市区 - 广东省/广州市/广州市区",
+            "E_ac0dd823890c7d2a1800_出发地": "[{\"key\":\"2123\",\"label\":\"广东省/广州市/广州市区\"}]",
+            "E_ac0dd823890c7d2a1800_目的地": "[{\"key\":\"2123\",\"label\":\"广东省/广州市/广州市区\"}]",
+            "E_ac0dd823890c7d2a1800_行程日期": 1691424000000
+        }
+    }
+]
+```
+</TabItem>
+<TabItem value="drive" label="用车">
+
+```json
+"u_行程规划": [
+    {
+        "dataLinkId": null,
+        "dataLinkTemplateId": "ID_3twzygNZJxw",
+        "dataLinkForm": {
+            "E_ac0dd823890c7d2a1800_name": "四川省/成都市/成都市区",
+            "E_ac0dd823890c7d2a1800_住宿地": "[{\"key\":\"2494\",\"label\":\"四川省/成都市/成都市区\"}]",
+            "E_ac0dd823890c7d2a1800_入住日期":1691424000000,
+            "E_ac0dd823890c7d2a1800_离店日期": 1691424000000
+        }
+    }
+]
+```
+</TabItem>
+<TabItem value="repast" label="餐饮">
+
+```json
+"u_行程规划": [
+    {
+        "dataLinkId": null,
+        "dataLinkTemplateId": "ID_3twzygNZPxw",
+        "dataLinkForm": {
+            "E_ac0dd823890c7d2a1800_name": "重庆市/重庆市区",
+            "E_ac0dd823890c7d2a1800_住宿地": "[{\"key\":\"2452\",\"label\":\"重庆市/重庆市区\"}]",
+            "E_ac0dd823890c7d2a1800_入住日期":1691424000000,
+            "E_ac0dd823890c7d2a1800_离店日期": 1691424000000
+        }
+    }
+]
+```
+</TabItem>
+<TabItem value="general" label="通用">
+
+```json
+"u_行程规划": [
+    {
+        "dataLinkId": null,
+        "dataLinkTemplateId": "ID_3twzygNZVxw",
+        "dataLinkForm": {
+            "E_ac0dd823890c7d2a1800_name": "浙江省/杭州市/杭州市区",
+            "E_ac0dd823890c7d2a1800_住宿地": "[{\"key\":\"1000\",\"label\":\"浙江省/杭州市/杭州市区\"}]",
+            "E_ac0dd823890c7d2a1800_入住日期":1691424000000,
+            "E_ac0dd823890c7d2a1800_离店日期": 1691424000000
+        }
+    }
+]
+```
+</TabItem>
+</Tabs>

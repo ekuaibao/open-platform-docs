@@ -104,7 +104,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/staffs/au
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
 | **200** | - | `{"count": 2,"items": []}` | `count` 大于 `0`但返回员工信息为空时，<br/>请确认 `start`（分页查询的起始序号）是否小于实际员工总数据量 | 
-| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认 **地址前缀** 是否与您的企业环境一致 | 
+| **403** | - | 未授权 | 请确认 `accessToken`（认证token）是否已过期<br/>请确认 **地址前缀** 与您的企业环境一致 | 
 
 
 

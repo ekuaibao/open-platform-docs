@@ -14,8 +14,16 @@ timeline: true
 ---
 ## 1.22.0
 
-`2023-08-09`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
+`2023-08-09`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.117.5`
 - 🆕 新增 [评论单据](/docs/open-api/flows/flow-comment) 接口。
+- 🆕 新增 [获取行程模版](/docs/open-api/feetype/get-travelTemplate) 接口。
+- 🆕 新增 [发票OCR识别](/docs/open-api/datalink-extend/invoice-ocr) 接口。
+- 🆕 新增 [发票OCR识别+验真](/docs/open-api/datalink-extend/invoice-multiple_items) 接口。
+- 🆕 新增 [发票四要素验真](/docs/open-api/datalink-extend/invoice-validate) 接口。
+- 🆕 新增 [发票ID验真](/docs/open-api/datalink-extend/invoice-validate-byInvoiceId) 接口。
+- 🆕 新增 [获取企业商品授权信息](/docs/open-api/tools/get-charge-powers) 接口。
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
+  - 支持传入 **行程规划** 类型参数。
 - 🐞 更新 [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data) 接口
   - 更新了 **增量更新** 的注意事项。
   - 新增了 **原币币种** 传参示例。
