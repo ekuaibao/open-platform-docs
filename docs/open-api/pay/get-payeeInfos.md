@@ -95,7 +95,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "customFields": {                             //自定义字段
                 "u_原因": "22",
                 "u_是否超标": "11"
-            }
+            },
+            "staffId": ""                                 //属于个人的个人账户所有者ID
         },
         {
             "sort": "OVERSEABANK",
@@ -131,7 +132,8 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "customFields": {                             //自定义字段
                 "u_原因": "22",
                 "u_是否超标": "11"
-            }
+            },
+            "staffId": ""                                 //属于个人的个人账户所有者ID
         }
     ]
 }
