@@ -34,7 +34,7 @@ url="/api/openapi/v1/staffs/getStaffIds"
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **type**         | String | 查询方式    | 必填 | - | `STAFFID` : 员工ID<br/>`CODE` : 工号<br/>`CELLPHONE` : 手机号<br/>`MAIL` : 邮箱<br/>`USERID` : 第三方ID |
-| **conditionIds** | Array  | 要查询条件值 | 必填 | - | 支持多个 |
+| **conditionIds** | Array  | 要查询条件值 | 必填 | - | 支持多个，最多不能超过 `100`个|
 
 :::tip
 - 第三方ID指钉钉ID、企业微信open ID、云之家ID等，合思原生版本没有第三方ID。

@@ -12,6 +12,17 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## 1.23.0
+
+`** `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：**`
+- 🆕 新增 [获取外部部门列表](/docs/open-api/corporation/get-external-department) 接口。
+- 🆕 新增 [上传待开具发票-销项开票](/docs/open-api/datalink-extend/push-ArInvoicePre-OutPutTax) 接口。
+- 🆕 新增 [获取已开具发票-销项开票](/docs/open-api/datalink-extend/get-ArInvoice-OutPutTax) 接口。
+- 🆕 新增 [同步订单管理信息](/docs/open-api/datalink/synTravelOrder) 接口。
+- 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs) 接口
+    - 支持新增 **外部人员**。
+
+---
 ## 1.22.0
 
 `2023-08-09`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.117.5`

@@ -271,6 +271,7 @@ const sidebars = {
         "open-api/datalink/get-tripManager-order",
         "open-api/datalink/get-tripManager-data",
         "open-api/datalink/get-tripManager-data-byCode",
+        "open-api/datalink/synTravelOrder",
         "open-api/datalink/question-answer"
       ],
     },
@@ -300,6 +301,8 @@ const sidebars = {
         "open-api/datalink-extend/get-costcenter-instance",
         "open-api/datalink-extend/get-entity-unify-corporation",
         "open-api/datalink-extend/get-entity-unify-invoice",
+        "open-api/datalink-extend/push-ArInvoicePre-OutPutTax",
+        "open-api/datalink-extend/get-ArInvoice-OutPutTax",
         "open-api/datalink-extend/question-answer"
       ],
     },

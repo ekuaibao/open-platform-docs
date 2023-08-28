@@ -21,7 +21,7 @@ import Control from "@theme/Control";
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
 | :--- | :--- | :--- | :--- |:--- | :--- |
 | **appKey**       | String | 接入账号 | 必填 | - | [获取接入账号，见问题四](/docs/open-api/getting-started/question-answer#问题四) |
-| **appSecurity**  | String | 接入密码 | 必填 | - | [获取接入密码，见问题四](/docs/open-api/getting-started/question-answer#问题四) |
+| **appSecret**    | String | 接入密码 | 必填 | - | [获取接入密码，见问题四](/docs/open-api/getting-started/question-answer#问题四) |
 
 ## CURL
 :::caution
