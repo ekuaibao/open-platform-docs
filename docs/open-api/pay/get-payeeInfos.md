@@ -62,7 +62,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
     "count": 2,                      //查询结果总数
     "items": [
         {
-            "sort": "ALIPAY",        //账户类别（BANK：银行卡，ALIPAY：支付宝，OVERSEABANK：海外账号，CHECK：支票，ACCEPTANCEBILL：承兑汇票，OTHER：其他，WALLET：钱包）
+            "sort": "ALIPAY",        //账户类别（BANK：银行卡  ALIPAY：支付宝  OVERSEABANK：海外账号  CHECK：支票  ACCEPTANCEBILL：承兑汇票  OTHER：其他  WALLET：钱包）
             "id": "_iIaLyGGdM3I00",  //收款账户ID
             "name": "He",            //开户名称
             "cardNo": "17000000000", //银行卡号或钱包号
@@ -83,21 +83,21 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "bankCode": "",          //联行号（海外账户）
             "branchCode": "",        //支行号（海外账户）
             "visibility": {          //可见性
-                "fullVisible": true, //是否全部可见（true：全部可见，false：指定人员可见）
+                "fullVisible": true, //是否全部可见（true：全部可见  false：指定人员可见）
                 "staffs": [],        //可见员工ID
                 "roles": [],         //可见角色ID
                 "departments": [],   //可见部门ID
-                "departmentsIncludeChildren": true  //可见部门是否包含子部门（true：是，false：否）
+                "departmentsIncludeChildren": true  //可见部门是否包含子部门（true：是  false：否）
             },
             "remark": "remark",                           //备注
-            "active": true,                               //账户状态，true：启用，false：停用
+            "active": true,                               //账户状态（true：启用  false：停用）
             "operatorId": "PtgbQUtfE08400:dIEbu2mgTs6o00", //账户创建者ID
             "customFields": {                             //自定义字段
                 "u_原因": "22",
                 "u_是否超标": "11"
             },
             "staffId": "",                                 //属于个人的个人账户所有者ID
-            "owner": "CORPORATION"                         //所有者类型
+            "owner": "CORPORATION"                         //所有者类型（INDIVIDUAL：个人  CORPORATION：企业）
         },
         {
             "sort": "OVERSEABANK",
@@ -121,11 +121,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/payeeInfo
             "bankCode": "12345",
             "branchCode": "111",
             "visibility": {             //可见性
-                "fullVisible": true,    //是否全部可见（true：全部可见，false：指定人员可见）
+                "fullVisible": true,    //是否全部可见（true：全部可见  false：指定人员可见）
                 "staffs": [],           //可见员工ID
                 "roles": [],            //可见角色ID
                 "departments": [],      //可见部门ID
-                "departmentsIncludeChildren": true  //可见部门是否包含子部门（true：是，false：否）
+                "departmentsIncludeChildren": true  //可见部门是否包含子部门（true：是  false：否）
             },
             "remark": "remark",                           //备注
             "active": true,                               //账户状态，true：启用  false：停用

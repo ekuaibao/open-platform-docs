@@ -11,7 +11,7 @@ url="/api/openapi/v2/specifications/byTravelTemplate"
   <summary><b>更新日志</b></summary>
   <div>
 
-[**1.22.0**](/docs/open-api/notice/update-log#1220)&emsp;-> 🆕 新增了本接口。<br/>
+  [**1.22.0**](/docs/open-api/notice/update-log#1220) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
@@ -26,8 +26,7 @@ url="/api/openapi/v2/specifications/byTravelTemplate"
 
 ## CURL
 ```shell
-curl --location 'https://app.ekuaibao.com/api/openapi/v2/specifications/byTravelTemplate?accessToken=ID01rUGpVFGuiH%3ATsI3tt8KjF4S7M' \
---header 'Cookie: HWWAFSESID=2bd231cf3e005b6c645; HWWAFSESTIME=1691466484715'
+curl --location 'https://app.ekuaibao.com/api/openapi/v2/specifications/byTravelTemplate?accessToken=ID01swZqg9Hr5Y%3ATdk3tgber501v0'
 ```
 
 ## 成功响应

@@ -11,7 +11,7 @@ url="/api/openapi/v1/departments/external/department"
   <summary><b>更新日志</b></summary>
   <div>
 
-[**1.23.0**](/docs/open-api/notice/update-log#1230)&emsp;-> 🆕 新增了本接口。<br/>
+  [**1.23.0**](/docs/open-api/notice/update-log#1230) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

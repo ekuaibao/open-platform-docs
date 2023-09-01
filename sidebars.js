@@ -56,6 +56,7 @@ const sidebars = {
         "open-api/corporation/info",
         "open-api/corporation/corporation-info",
         "open-api/corporation/get-departments",
+        "open-api/corporation/get-external-department",
         "open-api/contacts/get-departments-idOrCode",
         "open-api/contacts/get-department-byName",
         "open-api/contacts/get-department-byPath",

@@ -951,7 +951,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 </Tabs>
 
 ### (18) 行程规划字段
-系统预置的 `u_行程规划` 字段，各类型行程示例如下：
+目前仅支持系统预置的 `u_行程规划` 字段，行程模板可通过 [获取行程模版](/docs/open-api/feetype/get-travelTemplate) 获取，各类型行程传参示例如下：
 
 <Tabs>
 <TabItem value="plane" label="飞机" default>

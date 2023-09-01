@@ -37,25 +37,25 @@ url="/api/openapi/v1.1/staffs"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **name**                      | String    | 员工姓名           | 必填  | - | 员工姓名 |
-| **nickName**                  | String    | 员工别名           | 非必填 | - | 员工别名 |
-| **code**                      | String    | 工号              | 非必填 | - | 工号 |
-| **cellphone**                 | String    | 手机号            | 非必填 | - | 如果手机号为国外手机号，传参示例 : "(区号)手机号"<br/>原生环境手机号或邮箱必须至少填一个<br/>当 `external` = `true` 时，**手机号必填**<br/>**只允许传英文括号和数字** |
-| **email**                     | String    | 邮箱              | 非必填 | - | 可以不传，但是不可以传 `""`<br/>原生环境手机号或邮箱必须至少填一个 |
-| **external**                  | Boolean   | 是否外部员工       | 非必填 | false | `true` : 外部员工 &emsp; `false` : 内部员工 |
-| **note**                      | String    | 备注              | 非必填 | - | 备注 |
-| **defaultDepartment**         | String    | 默认部门ID         | 必填   | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门<br/>当 `external` = `true` 时，只能传**外部部门ID**，与 `departments`**任选一个必填即可**，通过 [获取外部部门列表](/docs/open-api/corporation/get-external-department) 获取 |
-| **departments**               | Array     | 所在部门ID，至少1个  | 必填  | - | 兼职部门，请确保至少包含默认部门<br/>当 `external` = `true` 时，只能传**外部部门ID**，与 `defaultDepartment`**任选一个必填即可**，通过 [获取外部部门列表](/docs/open-api/corporation/get-external-department) 获取 |
-| **userid**                    | String    | 第三方平台的人员ID   | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数<br/>**如果 `cellphone` 参数在系统中已注册，本参数不生效，会返回 `cellphone` 对应的 `userid`** |
-| **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | 新增员工手机号被离职员工占用时<br/>`true` : 是，新建员工ID<br/>`false` : 否，重新启用离职员工ID并修改员工信息<br/> |
-| **useSendEmail**              | Boolean   | 是否禁止发送邮件通知 | 非必填  | false | `true` : 禁止 &emsp; `false` : 不禁止 |
-| **staffCustomForm**           | Object    | 自定义字段         | 非必填  | - | 自定义字段 |
-| **&emsp; ∟ rankType**  | String    | 职级档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
-| **&emsp; ∟ postType**  | String    | 岗位档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
-| **&emsp; ∟ base**      | String    | 常驻地            | 非必填  | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
-| **&emsp; ∟ u_字段名**   | String    | 自定义字段         | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目<br/>可通过 [获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty) 获取字段名 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                                                                                                                       |
+| :--- | :--- | :--- | :--- |:--- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **name**                      | String    | 员工姓名           | 必填  | - | 员工姓名                                                                                                                                                                                                     |
+| **nickName**                  | String    | 员工别名           | 非必填 | - | 员工别名                                                                                                                                                                                                     |
+| **code**                      | String    | 工号              | 非必填 | - | 工号                                                                                                                                                                                                       |
+| **cellphone**                 | String    | 手机号            | 非必填 | - | 如果手机号为国外手机号，传参示例 : "(区号)手机号"<br/>手机号或邮箱必须至少填一个<br/>当 `external` = `true` 时，**手机号必填**<br/>**只允许传英文括号和数字**                                                                                                 |
+| **email**                     | String    | 邮箱              | 非必填 | - | 可以不传，但是不可以传 `""`<br/>手机号或邮箱必须至少填一个                                                                                                                                                                       |
+| **external**                  | Boolean   | 是否外部员工       | 非必填 | false | `true` : 外部员工 &emsp; `false` : 内部员工                                                                                                                                                                      |
+| **note**                      | String    | 备注              | 非必填 | - | 备注                                                                                                                                                                                                       |
+| **defaultDepartment**         | String    | 默认部门ID         | 必填   | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门<br/>当 `external` = `true` 时，只能传 **外部部门ID**，与 `departments`** 任选一个必填即可**，通过 [获取外部部门列表](/docs/open-api/corporation/get-external-department) 获取 |
+| **departments**               | Array     | 所在部门ID，至少1个  | 必填  | - | 兼职部门，请确保至少包含默认部门<br/>当 `external` = `true` 时，只能传 **外部部门ID**，与 `defaultDepartment`** 任选一个必填即可**，通过 [获取外部部门列表](/docs/open-api/corporation/get-external-department) 获取                                      |
+| **userid**                    | String    | 第三方平台的人员ID   | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数<br/>**如果 `cellphone` 参数在系统中已注册，本参数不生效，会返回 `cellphone` 对应的 `userid`**                                                                                                        |
+| **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | 新增员工手机号被离职员工占用时<br/>`true` : 是，新建员工ID<br/>`false` : 否，重新启用离职员工ID并修改员工信息<br/>                                                                                                                             |
+| **useSendEmail**              | Boolean   | 是否禁止发送邮件通知 | 非必填  | false | `true` : 禁止 &emsp; `false` : 不禁止                                                                                                                                                                         |
+| **staffCustomForm**           | Object    | 自定义字段         | 非必填  | - | 自定义字段                                                                                                                                                                                                    |
+| **&emsp; ∟ rankType**  | String    | 职级档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取                                                                                                                                          |
+| **&emsp; ∟ postType**  | String    | 岗位档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取                                                                                                                                          |
+| **&emsp; ∟ base**      | String    | 常驻地            | 非必填  | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]"                                                                                                                                                         |
+| **&emsp; ∟ u_字段名**   | String    | 自定义字段         | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目<br/>可通过 [获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty) 获取字段名                                                                                                   |
 
 :::tip
 - 员工ID生成格式规则：
@@ -122,7 +122,7 @@ curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/staffs?accessToken=ID
     "cellphone":"15588881024",        //手机号	
     "email":"15588881024@163.com",    //邮箱
     "external":true                   //是否外部员工
-    "note":"新增外部员工",              //备注
+    "note":"新增外部员工",             //备注
     "defaultDepartment":"xgJ3wajigF25H0:ID01w4CBfaWeTB:external",  //默认部门
     "departments":[                                                //所在部门
         "xgJ3wajigF25H0:ID_3wajigF2aH0:external",  
