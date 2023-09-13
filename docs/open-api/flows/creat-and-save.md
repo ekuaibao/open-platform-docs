@@ -635,16 +635,17 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 </TabItem>
 <TabItem value="Invoice Photo" label="发票照片">
 
-`attachments` 为发票文件，可通过 [上传附件](/docs/open-api/attachment/attachment-upload) 接口，上传文件到服务器，然后在响应信息中拿到上传附件的文件 `key` 等参数。
+`attachments` 为发票文件，可通过 [上传附件](/docs/open-api/attachment/attachment-upload) 接口，上传文件到服务器，然后在响应信息中拿到上传附件的文件 `key` 等参数。<br/>
+**仅支持绑定图片类型的附件**
 
 ```json
 "invoiceForm": {
     "type": "exist",  //已有发票
     "attachments": [  //如果没有附件，不传此字段（附件先通过“上传附件”接口上传数据）
         {
-            "key": "openapi04d91616-c6d0-4e98-a784-0b95c0c03a93-发票2.pdf",
+            "key": "openapi04d91616-c6d0-4e98-a784-0b95c0c03a93-发票2.png",
             "fileId": "ID_3tcjusD0qHg",
-            "fileName": "发票2.pdf"
+            "fileName": "发票2.png"
         }
     ]
 }
