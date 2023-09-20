@@ -2,6 +2,10 @@
 
 import Control from "@theme/Control";
 
+:::caution
+- 防止插入失败，希望用户可以通过 **先查询是否存在，如果不存在再插入** 的方式处理
+:::
+
 <Control
 method="POST"
 url="/api/openapi/v2.1/payeeInfos"

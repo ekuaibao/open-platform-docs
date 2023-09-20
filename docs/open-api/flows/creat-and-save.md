@@ -602,7 +602,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 字段的「type」为【invoice】时，为发票(发票形式)字段，发票字段以对象传入，内容包括发票形式、发票文件。
 
 发票的导入方式有：`智能拍票`、`扫描发票(移动端)`、`电子发票文件(PC端)`、`发票照片`、`手工录入`、`微信发票`、`医疗发票`、`支付宝卡包`、`爱发票`<br/>
-其中 `发票照片` 方式与其他方式传参不同，并且该方式 **无法对发票附件进行OCR处理以及验真查重**，示例如下：
+其中 `发票照片` 方式与其他方式传参不同，**仅支持绑定图片类型的附件**，并且该方式 **无法对发票附件进行OCR处理以及验真查重**，示例如下：
 
 <Tabs>
 <TabItem value="other" label="OCR查验" default>
@@ -636,7 +636,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 <TabItem value="Invoice Photo" label="发票照片">
 
 `attachments` 为发票文件，可通过 [上传附件](/docs/open-api/attachment/attachment-upload) 接口，上传文件到服务器，然后在响应信息中拿到上传附件的文件 `key` 等参数。<br/>
-**仅支持绑定图片类型的附件**
+
 
 ```json
 "invoiceForm": {

@@ -11,6 +11,14 @@ timeline: true
 - 次版本号：每月发布一个带有新特性的向下兼容的版本。
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
+## 1.23.1
+
+`2023-09-20`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.122.7`
+- 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
+  - 更新了 **发票(发票形式)字段** 使用注意事项。
+- 🐞 更新 [新增收款账户](/docs/open-api/pay/new-payeeInfo)、 [批量新增收款账户](/docs/open-api/pay/batch-new-payeeInfo) 接口
+  - 更新了接口使用注意事项。
+
 ---
 ## 1.23.0
 
