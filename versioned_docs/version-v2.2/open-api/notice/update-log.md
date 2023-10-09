@@ -11,6 +11,19 @@ timeline: true
 - 次版本号：每月发布一个带有新特性的向下兼容的版本。
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
+[comment]: 1 (## 1.24.0)
+
+[comment]: 1 (`2023-XX-XX`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：XXX`)
+
+[comment]: 1 (- 🚀 新增 [获取业务对象实例列表]&#40;/docs/open-api/datalink/get-entity-info&#41; 接口 `v2.1` 版本)
+
+[comment]: 1 (    - 接口支持传入 `active`（是否全部数据）字段，支持查询包含已停用的全部数据。)
+
+[comment]: 1 (- 🐞 更新 [查询员工]&#40;/docs/open-api/corporation/get-staff-ids&#41; 接口)
+
+[comment]: 1 (    - 响应信息中新增了 `roles`（角色信息）字段。)
+
+[comment]: 1 (---)
 ## 1.23.1
 
 `2023-09-20`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.122.7`
@@ -263,7 +276,8 @@ timeline: true
 ## 1.10.1
 
 `2022-08-25`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.56.1`
-- 🆕 新增 [查询机票状态](/docs/open-api/mall/get-flight-ticket-journey-byId) 接口。
+
+[comment]: 1 (- 🆕 新增 [查询机票状态]&#40;/docs/open-api/mall/get-flight-ticket-journey-byId&#41; 接口。)
 - 🐞 更新 [获取单据列表](/docs/open-api/flows/get-forms-details-byStaff) 接口
   - 修复了根据 `specificationId`（单据模板ID）查询时，部分模板无法获取到数据的BUG。
 
@@ -463,12 +477,18 @@ timeline: true
 ## 1.6.1
 
 `2022-06-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.31.3`
-- 🆕 新增 [获取自建应用授权](/docs/open-api/getting-started/platform-auth) 接口。
-- 🆕 新增【**商城接口**】模块
-  - 🆕 新增 [获取企业对账单列表](/docs/open-api/mall/find-pageData-billId) 接口。
-  - 🆕 新增 [获取企业对账单详情](/docs/open-api/mall/find-billDetail-byId) 接口。
-  - 🆕 新增 [商城接口-常见问题总结](/docs/next/open-api/mall/question-answer#问题一) 文档
-    - 新增了 **问题一：如何使用 获取自建应用授权 获取的accessToken？**
+
+[comment]: 1 (- 🆕 新增 [获取自建应用授权]&#40;/docs/open-api/getting-started/platform-auth&#41; 接口。)
+
+[comment]: 1 (- 🆕 新增【**商城接口**】模块)
+
+[comment]: 1 (  - 🆕 新增 [获取企业对账单列表]&#40;/docs/open-api/mall/find-pageData-billId&#41; 接口。)
+
+[comment]: 1 (  - 🆕 新增 [获取企业对账单详情]&#40;/docs/open-api/mall/find-billDetail-byId&#41; 接口。)
+
+[comment]: 1 (  - 🆕 新增 [商城接口-常见问题总结]&#40;/docs/next/open-api/mall/question-answer#问题一&#41; 文档)
+
+[comment]: 1 (    - 新增了 **问题一：如何使用 获取自建应用授权 获取的accessToken？**)
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save)、[更新单据](/docs/open-api/flows/update-form) 接口
   - 更新了 `specificationId`（单据模板ID）参数备注。
 - 🐞 更新 [根据编码获取自定义档案项](/docs/open-api/dimensions/get-dimension-items-byCode) 接口

@@ -16,7 +16,6 @@
         "open-api/getting-started/postman-use",
         "open-api/getting-started/origin",
         "open-api/getting-started/auth",
-        "open-api/getting-started/platform-auth",
         "open-api/getting-started/refresh-auth",
         "open-api/getting-started/refresh-auth-expireDate",
         "open-api/getting-started/temp-auth",
@@ -346,17 +345,6 @@
         "open-api/payerInfo/batch-update-payerInfo",
         "open-api/payerInfo/batch-delete-payerInfo",
         "open-api/payerInfo/question-answer"
-      ]
-    },
-    {
-      "type": "category",
-      "label": "商城接口",
-      "items": [
-        "open-api/mall/info",
-        "open-api/mall/find-pageData-billId",
-        "open-api/mall/find-billDetail-byId",
-        "open-api/mall/get-flight-ticket-journey-byId",
-        "open-api/mall/question-answer"
       ]
     },
     {

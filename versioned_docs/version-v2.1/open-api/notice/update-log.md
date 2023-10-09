@@ -191,12 +191,18 @@ timeline: true
 ## 1.6.1
 
 `2022-06-02`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：v9.6`
-- 🆕 新增 [获取自建应用授权](/docs/open-api/getting-started/platform-auth) 接口。
-- 🆕 新增【**商城接口**】模块
-  - 🆕 新增 [获取企业对账单列表](/docs/open-api/mall/find-pageData-billId) 接口。
-  - 🆕 新增 [获取企业对账单详情](/docs/open-api/mall/find-billDetail-byId) 接口。
-  - 🆕 新增 [商城接口-常见问题总结](/docs/next/open-api/mall/question-answer#问题一) 文档
-    - 新增了 **问题一：如何使用 获取自建应用授权 获取的accessToken？**
+
+[comment]: 1 (- 🆕 新增 [获取自建应用授权]&#40;/docs/open-api/getting-started/platform-auth&#41; 接口。)
+
+[comment]: 1 (- 🆕 新增【**商城接口**】模块)
+
+[comment]: 1 (  - 🆕 新增 [获取企业对账单列表]&#40;/docs/open-api/mall/find-pageData-billId&#41; 接口。)
+
+[comment]: 1 (  - 🆕 新增 [获取企业对账单详情]&#40;/docs/open-api/mall/find-billDetail-byId&#41; 接口。)
+
+[comment]: 1 (  - 🆕 新增 [商城接口-常见问题总结]&#40;/docs/next/open-api/mall/question-answer#问题一&#41; 文档)
+
+[comment]: 1 (    - 新增了 **问题一：如何使用 获取自建应用授权 获取的accessToken？**)
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save)、[更新单据](/docs/open-api/flows/update-form) 接口
   - 更新了 `specificationId`（单据模板ID）参数备注。
 - 🐞 更新 [根据编码获取自定义档案项](/docs/open-api/dimensions/get-dimension-items-byCode) 接口

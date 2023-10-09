@@ -42,7 +42,7 @@ const sidebars = {
         "open-api/getting-started/postman-use",
         "open-api/getting-started/origin",
         "open-api/getting-started/auth",
-        "open-api/getting-started/platform-auth",
+        // "open-api/getting-started/platform-auth",
         "open-api/getting-started/refresh-auth",
         "open-api/getting-started/refresh-auth-expireDate",
         "open-api/getting-started/temp-auth",
@@ -374,7 +374,7 @@ const sidebars = {
         "open-api/payerInfo/question-answer"
       ],
     },
-    {
+    /*{
       type: "category",
       label: "商城接口",
       items: [
@@ -384,7 +384,7 @@ const sidebars = {
         "open-api/mall/get-flight-ticket-journey-byId",
         "open-api/mall/question-answer"
       ],
-    },
+    },*/
     {
       type: "category",
       label: "工具接口",
