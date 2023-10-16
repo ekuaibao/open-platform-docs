@@ -4,8 +4,18 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v2/datalink"
+url="/api/openapi/v2.1/datalink"
 />
+
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+[**1.24.0**](/docs/open-api/notice/update-log#1240) &emsp; -> 🚀 接口升级 `v1.1` 版本，接口支持传入 `active`（是否全部数据）字段，支持查询包含已停用的全部数据。<br/>
+
+  </div>
+</details>
+
 
 ## Query Parameters
 
@@ -17,16 +27,17 @@ url="/api/openapi/v2/datalink"
 | **count**       | Number | 每页总数    | 非必填 | 100 | 最大不能超过 `100` |
 | **startDate**   | String | 查询开始时间 | 非必填 | - | 按业务对象实例 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
 | **endDate**     | String | 查询结束时间 | 非必填 | - | 按业务对象实例 **更新时间** 查询，格式：yyyy-MM-dd HH:mm:ss |
+| **active**      | Boolean| 查询条件：是否全部数据 | 非必填 | true | `true` : 查询启用数据 &emsp; `false` : 查询全部数据 |
 
 :::tip
- - 只返回 **未停用** 的业务对象，如果业务对象已停用，则不返回。
+ - 注意`active=false` 时，返回的是 **全部数据**，不只是停用数据。
  - `startDate` 查询规则是”大于等于“， `endDate` 查询规则是“小于等于”（”毫秒级时间戳“与“日期”转换的影响，导致取值结果往往是”小于“，没有等于）。查询结果按照 **创建时间** 排序。
  - `start=0&count=10` 代表每页10条数据，第一页数据开始于 `start = 0` ，则第二页数据开始于 `start = 10`。
 :::
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?accessToken=cxEbrzNJSA3A00&entityId=26d60b5d6dd47f435000&count=10&start=0'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2.1/datalink?accessToken=cxEbrzNJSA3A00&entityId=26d60b5d6dd47f435000&count=10&start=0&active=false'
 ```
 
 ## 成功响应
@@ -95,7 +106,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/datalink?
         {
             "id": "soobSWavrE2g00",
             "version": 3,
-            "active": true,
+            "active": false,
             "createTime": 1604995509693,
             "updateTime": 1604995509693,
             "name": "上海",
