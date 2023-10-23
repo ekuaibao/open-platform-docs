@@ -12,6 +12,7 @@ url="/api/openapi/v2.2/flow/data/$`flowId`"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.24.0**](/docs/open-api/notice/update-log#1240)&emsp;-> 🐞 修改了单据明细字段校验逻辑，当明细字段设置为必填项+默认值，参数传空情况下会优先校验必填项，提示字段不能为空。调整为：优先默认值赋值后，再做必填项校验。<br/>
   [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>
   &emsp; &emsp; &emsp; -> 🐞 优化了 **金额** 类型字段的传参格式检验和报错信息。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了支持 [按申请明细分别报销](/docs/open-api/flows/creat-and-save#14-关联申请字段) 类型的关联申请自动赋值规则。<br/>

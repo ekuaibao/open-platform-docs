@@ -45,6 +45,10 @@ authors: [冯继成]
 ### [发票ID验真](/docs/next/open-api/datalink-extend/invoice-validate-byInvoiceId)
 
 ---
+## 基础数据
+### [根据ID查询城市信息](/docs/open-api/basedata/get-basedata-cityById)
+
+---
 ## 工具接口
 ### [处理EAI插件拉取不到单据最终态问题(已完成、单据当前状态)](/docs/open-api/inside/flowDetails-stuckFlow)
 ### [处理EAI插件拉取不到单据中间态问题(待支付、支付中)](/docs/open-api/inside/setDataBase)

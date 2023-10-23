@@ -23,12 +23,12 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 
 ## Body Parameters（Body不能为空）
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                 |
+| :--- | :--- | :--- | :--- |:--- |:---------------------------------------------------------------------------------------------------|
 | **ids**   | Array  |  业务对象实例ID数组   | 非必填 | - | 通过 [根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice) 获取<br/>发票实体保存在系统预置业务对象里 |
-| **codes** | Array  |  业务对象实例CODE数组 | 非必填 | - | 按照业务对象实例的CODE查询详情<br/>发票实体保存在系统预置业务对象里 |
-| **index** | Number |  开始索引           | 非必填 | - | 从 `1` 开始，不可为 `0` |
-| **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `100` |
+| **codes** | Array  |  业务对象实例CODE数组 | 非必填 | - | 按照业务对象实例的CODE查询详情<br/>发票实体保存在系统预置业务对象里<br/>格式：`发票代码:发票号码`（全电票没有发票代码）                               |
+| **index** | Number |  开始索引           | 非必填 | - | 从 `1` 开始，不可为 `0`                                                                                   |
+| **count** | Number |  查询数             | 非必填 | - | 每页查询数据量，最大不能超过 `100`                                                                               |
 
 :::tip
 - 业务对象实例ID（即发票ID）可以通过[获取单据详情](/docs/open-api/flows/get-forms-details)接口或[根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice)接口获取。

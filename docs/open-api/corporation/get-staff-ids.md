@@ -12,10 +12,10 @@ url="/api/openapi/v1/staffs/getStaffIds"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.24.0**](/docs/open-api/notice/update-log#1240) &emsp; -> 🐞 响应信息中新增了 `roles`（角色信息）字段。<br/>
-  [**1.20.0**](/docs/open-api/notice/update-log#1200) &emsp; -> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
-  [**1.19.0**](/docs/open-api/notice/update-log#1190) &emsp; -> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
-  [**1.10.0**](/docs/open-api/notice/update-log#1100) &emsp; -> 🐞 新增了 `authState`（激活状态）成功响应返回参数。<br/>
+  [**1.24.0**](/docs/open-api/notice/update-log#1240) -> 🐞 响应信息中新增了 `roles`（角色信息）字段。<br/>
+  [**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
+  [**1.19.0**](/docs/open-api/notice/update-log#1190) -> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
+  [**1.10.0**](/docs/open-api/notice/update-log#1100) -> 🐞 新增了 `authState`（激活状态）成功响应返回参数。<br/>
 
   </div>
 </details>
@@ -87,18 +87,30 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1/staffs/g
             "updateTime": "2022-08-05 14:59:19",      //更新时间
             "createTime": "2022-08-05 14:59:19",      //创建时间
             "roles": [                                //角色信息
-              {
+                {
                     "roleDefId": "TsI3tt8KjF4S7M:admin",  //角色定义ID
                     "properties": {}                      //角色属性，普通角色该值为空
                 },
                 {
-                    "roleDefId": "ID_3twRn$sszLg",          //角色定义ID
-                    "properties": {}                        //角色属性，普通角色该值为空
+                    "roleDefId": "ID_3twRn$sszLg",        //角色定义ID
+                    "properties": {}                      //角色属性，普通角色该值为空
                 },
                 {
-                    "roleDefId": "TsI3tt8KjF4S7M:leader",    //角色定义ID
-                    "properties": {                          //角色属性，部门角色
-                        "departmentId": "TsI3tt8KjF4S7M:ID01omyu2Lbk4f"    // key固定值，value: 部门ID
+                    "roleDefId": "TsI3tt8KjF4S7M:leader",  //角色定义ID
+                    "properties": {                        //角色属性，部门角色
+                        "departmentId": "TsI3tt8KjF4S7M:ID01omyu2Lbk4f" //key固定值（departmentId），value: 部门ID
+                    }
+                },
+                {
+                    "roleDefId": "ID01tMVw9kXWh1",         //角色定义ID
+                    "properties": {                        //角色属性，法人实体角色
+                        "法人实体": "ID_3tqvxwgjI6w"       //key固定值（法人实体），value: 法人实体ID
+                    }
+                },
+                {
+                    "roleDefId": "ID01tMVw9kXX4z",          //角色定义ID
+                    "properties": {                         //角色属性，自定义档案角色
+                        "费用分类": "ID01pDLUgk2y51"        //key固定值（自定义档案名称），value: 档案ID
                     }
                 }
             ]
