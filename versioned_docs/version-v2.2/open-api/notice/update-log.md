@@ -11,6 +11,13 @@ timeline: true
 - 次版本号：每月发布一个带有新特性的向下兼容的版本。
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
+## 1.25.0
+
+`2023-XX-XX`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：XX`
+
+- 🆕 新增 [查询人员信用分数](/docs/open-api/datalink-extend/get-credit-byStaffId) 接口。
+
+---
 ## 1.24.0
 
 `2023-10-20`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.123.10`
@@ -25,7 +32,6 @@ timeline: true
   - 修改了单据明细字段校验逻辑，当明细字段设置为必填项+默认值，参数传空情况下会优先校验必填项，提示字段不能为空。调整为：优先默认值赋值后，再做必填项校验。
 - 🐞 更新 [获取付款账户](/docs/open-api/pay/get-payerInfos-search) 接口
   - 修复了根据 `cardNos`（银行卡号）查询对应的付款账户信息时，查询条件不生效的BUG。
-
 
 ---
 ## 1.23.1

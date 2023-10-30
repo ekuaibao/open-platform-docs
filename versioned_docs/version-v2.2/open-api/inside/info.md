@@ -9,11 +9,15 @@ authors: [冯继成]
 本模块提供内部接口目录，便于查看内部接口。
 
 ---
+## 开始使用
+### [获取自建应用授权（新）](/docs/open-api/getting-started/auth-getAppAccessToken)
+
+---
 ## 企业通讯录
 ### [修改员工工号(全环境)](/docs/open-api/corporation/update-staffs-code)
 ### [根据自定义字段查询员工信息(易桥专用)](/docs/open-api/inside/get-staffs-staffCustom)
 ### [根据自定义字段查询部门信息(易桥专用)](/docs/open-api/inside/get-departments-deptCustom)
-
+### [查询商城管理员列表](/docs/open-api/inside/get-Permission-StaffIds)
 
 ---
 ## 通讯录同步
