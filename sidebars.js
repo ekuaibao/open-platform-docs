@@ -42,10 +42,10 @@ const sidebars = {
         "open-api/getting-started/postman-use",
         "open-api/getting-started/origin",
         "open-api/getting-started/auth",
-        // "open-api/getting-started/platform-auth",
         "open-api/getting-started/refresh-auth",
-        "open-api/getting-started/refresh-auth-expireDate",
-        "open-api/getting-started/temp-auth",
+          "open-api/getting-started/refresh-auth-expireDate",
+          "open-api/getting-started/auth-getAppAccessToken",
+          "open-api/getting-started/temp-auth",
         "open-api/getting-started/question-answer"
       ],
     },

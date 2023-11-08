@@ -1,4 +1,4 @@
-# 获取自建应用授权（新）
+# 获取自建应用授权
 
 import Control from "@theme/Control";
 

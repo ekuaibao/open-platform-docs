@@ -10,7 +10,7 @@ authors: [冯继成]
 
 ---
 ## 开始使用
-### [获取自建应用授权（新）](/docs/open-api/getting-started/auth-getAppAccessToken)
+### [获取自建应用授权（旧）](/docs/open-api/getting-started/platform-auth)
 
 ---
 ## 企业通讯录

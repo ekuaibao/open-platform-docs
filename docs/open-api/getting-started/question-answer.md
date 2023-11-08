@@ -46,30 +46,23 @@ A：此处设置的重定向URL为所有跳转链接的前站，一般为二开�
 
 ---
 
-[//]: # (## 问题四)
+## 问题四
 
-[//]: # (### Q：[获取自建应用授权]&#40;/docs/open-api/getting-started/platform-auth&#41; 时如何获取接入账号和密码？)
+### Q：[获取自建应用授权](/docs/open-api/getting-started/auth-getAppAccessToken) 时如何获取接入账号和密码？
 
-[//]: # ()
-[//]: # (A：需要进入【合思】→【合思+】→【自建应用】，查看应用凭证的 App ID 和 App Secret。具体操作步骤如下：<br/>)
+A：需要进入【合思】→【合思+】→【自建应用】，查看应用凭证的 App ID 和 App Secret。具体操作步骤如下：<br/>
 
-[//]: # ()
-[//]: # (#### （1）【合思+】入口)
+#### （1）【合思+】入口
 
-[//]: # ()
-[//]: # (![image]&#40;images/getAccessTokenNew1.png&#41;)
+![image](images/getAccessTokenNew1.png)
 
-[//]: # ()
-[//]: # (#### （2）点击“自建应用”，选择任意一个应用进入)
+#### （2）点击“自建应用”，选择任意一个应用进入
 
-[//]: # ()
-[//]: # (![image]&#40;images/自建应用位置.png&#41;)
+![image](images/自建应用位置.png)
 
-[//]: # ()
-[//]: # (#### （3）查看应用凭证，点击“显示”，获取 App ID 和 App Secret)
+#### （3）查看应用凭证，点击“显示”，获取 App ID 和 App Secret
 
-[//]: # ()
-[//]: # (![image]&#40;images/接入账号和密码.png&#41;)
+![image](images/接入账号和密码.png)
 
-[//]: # ()
-[//]: # (---)
+
+---

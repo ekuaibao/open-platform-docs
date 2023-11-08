@@ -19,7 +19,7 @@ url="/api/openapi/v2/invoice/validate"
 </details>
 
 :::caution
-- 需要开通【**发票查验功能**】，方可使用本接口。
+- 需要开通【**发票查验**】功能，方可使用本接口。
 - 本接口限制 **QPS=1**（1次/秒）。
 :::
 

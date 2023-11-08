@@ -19,7 +19,7 @@ url="/api/openapi/v2/invoice/multiple_items"
 </details>
 
 :::caution
-- 需要开通【**OCR智能识别**】和【**发票查验功能**】，方可使用本接口。
+- 需要开通【**OCR智能识别**】和【**发票查验**】功能，方可使用本接口。
 - 本接口限制 **QPS=1**（1次/秒）。
 :::
 

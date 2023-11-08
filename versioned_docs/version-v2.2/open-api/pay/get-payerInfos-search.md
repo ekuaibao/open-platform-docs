@@ -39,7 +39,7 @@ url="/api/openapi/v4/payerInfos/search"
 
 ## CURL
 ```shell
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v4/payerInfos/search?accessToken=ID_3GTWsF30aqg:Urf3lsFgBp00gw&ids=&names=&cardNos=&start=0&count=100&active=true'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v4/payerInfos/search?accessToken=ID01u8vU7V5leC%3ATdk3tgber501v0&ids=&names=&cardNos=&start=0&count=10&active=true'
 ```
 
 ## 成功响应
