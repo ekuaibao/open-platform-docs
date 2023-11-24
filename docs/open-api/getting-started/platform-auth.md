@@ -1,4 +1,4 @@
-# 获取自建应用授权（旧）
+# 获取自建应用授权(旧)
 
 import Control from "@theme/Control";
 
@@ -32,8 +32,8 @@ import Control from "@theme/Control";
 curl --location --request POST 'https://unity.ekuaibao.com/api/realms/auth' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "appKey":"sQxFwPipduIQCdYrpzWFhnrKKCiwmXtr",
-    "appSecret":"iAJtQdIjtiTCNegSaeqvqArgKHXSNjJj"
+    "appKey":"xxxx-xxxx-xxx-xxxxx",
+    "appSecret":"xxxx-xxxx-xxx-xxxxx"
 }'
 ```
 

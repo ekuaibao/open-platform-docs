@@ -304,7 +304,6 @@ const sidebars = {
         "open-api/datalink-extend/get-entity-unify-invoice",
         "open-api/datalink-extend/push-ArInvoicePre-OutPutTax",
         "open-api/datalink-extend/get-ArInvoice-OutPutTax",
-        "open-api/datalink-extend/get-credit-byStaffId",
         "open-api/datalink-extend/question-answer"
       ],
     },
@@ -360,6 +359,7 @@ const sidebars = {
       items: [
         "open-api/basedata/info",
         "open-api/basedata/get-basedata-city",
+        "open-api/basedata/get-credit-byStaffId",
         "open-api/basedata/question-answer"
       ],
     },

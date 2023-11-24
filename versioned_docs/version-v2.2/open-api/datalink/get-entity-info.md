@@ -73,10 +73,10 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2.1/datalin
                     "standardStrCode": "CNY"
                 }
             },
-            "ledgerAmount": {         //台账金额
+            "ledgerAmount": {         //台账金额（包含已删除的台账配置字段）
                 "E_ID_3GYgoz67FLw_测试台账接口_L": "66.00000000"
             },
-            "ledgerAmountModel": {    //台账金额字段
+            "ledgerAmountModel": {    //台账金额字段（包含已删除的台账配置字段）
                 "E_ID_3GYgoz67FLw_测试台账接口_L": {
                     "standard": "66.00",
                     "standardUnit": "元",

@@ -1,4 +1,4 @@
-# 创建业务对象台账
+# 创建业务对象台账字段
 
 import Control from "@theme/Control";
 

@@ -13,10 +13,10 @@ timeline: true
 
 ## 1.25.0
 
-`2023-11-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.123.5`
+`2023-11-08`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.124.5`
 
 - 🆕 新增 [获取自建应用授权](/docs/open-api/getting-started/auth-getAppAccessToken) 接口。
-- 🆕 新增 [查询人员信用分数](/docs/open-api/datalink-extend/get-credit-byStaffId) 接口。
+- 🆕 新增 [查询员工信用分数](/docs/open-api/basedata/get-credit-byStaffId) 接口。
 
 ---
 ## 1.24.0

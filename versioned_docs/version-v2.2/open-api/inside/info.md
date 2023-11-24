@@ -10,14 +10,14 @@ authors: [冯继成]
 
 ---
 ## 开始使用
-### [获取自建应用授权（旧）](/docs/open-api/getting-started/platform-auth)
+### [获取自建应用授权(旧)](/docs/open-api/getting-started/platform-auth)
 
 ---
 ## 企业通讯录
 ### [修改员工工号(全环境)](/docs/open-api/corporation/update-staffs-code)
 ### [根据自定义字段查询员工信息(易桥专用)](/docs/open-api/inside/get-staffs-staffCustom)
 ### [根据自定义字段查询部门信息(易桥专用)](/docs/open-api/inside/get-departments-deptCustom)
-### [查询商城管理员列表](/docs/open-api/inside/get-Permission-StaffIds)
+### [获取权限配置员工列表](/docs/open-api/inside/get-permission-staffIds)
 
 ---
 ## 通讯录同步
@@ -35,18 +35,12 @@ authors: [冯继成]
 
 ---
 ## 业务对象
-### [创建业务对象台账](/docs/open-api/inside/inside-createLedger)
-### [获取业务对象台账(自动化专用)](/docs/open-api/inside/get-entity-leader)
+### [获取业务对象台账字段](/docs/open-api/inside/get-entity-ledgerConfig)
+### [创建业务对象台账字段](/docs/open-api/inside/inside-createLedger)
+### [获取业务对象台账数据(自动化专用)](/docs/open-api/inside/get-entity-ledger)
 ### [获取业务对象实例信息(自定义字段)--(自动化专用)](/docs/open-api/inside/get-entity-object-searchAnslysis)
 ### [获取业务对象实例列表(排序)--(自动化专用)](/docs/open-api/inside/get-entity-object-search-order)
 ### [获取【行程管理/订单管理】业务对象数据](/docs/open-api/inside/get-entity-travelManager)
-
----
-## 扩展中心
-### [发票OCR识别](/docs/next/open-api/datalink-extend/invoice-ocr)
-### [发票OCR识别+验真](/docs/open-api/datalink-extend/invoice-multiple_items)
-### [发票四要素验真](/docs/next/open-api/datalink-extend/invoice-validate)
-### [发票ID验真](/docs/next/open-api/datalink-extend/invoice-validate-byInvoiceId)
 
 ---
 ## 基础数据

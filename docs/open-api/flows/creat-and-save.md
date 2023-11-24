@@ -415,6 +415,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 | **412** | - | 你无法使用当前选择的"单据模板"，请重选 | 请确认 `submitterId`（单据提交人ID）字段对应员工是否在该单据模板可见范围内                                                                                         |
 | **412** | - | '发票金额'值不符合金额格式 | 请确认 `发票金额` 字段传参符合 [金额类型字段](/docs/open-api/flows/creat-and-save#2-金额类型字段) 标准格式                                                         |
 | **412** | - | 单据字段【发票金额】计算不正确，请检查 | 请确认 `发票金额` 字段传参与配置的计算公式计算结果是否一致                                                                                                       |
+| **412** | - | '金额'外币转换为本位币计算错误 | 金额字段传外币时，请注意 `rate`（自定义外币汇率）= 本位币金额/外币金额                                                                                              |
 
 
 ## 各类型字段参数说明
@@ -517,7 +518,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
     "foreignStrCode": "USD",  //外币文本编码
     "foreignSymbol": "$",     //外币符号
     "foreignUnit": "美元",    //外币单位
-    "rate": "8.00",           //外币汇率（自定义）
+    "rate": "8.00",           //外币汇率（自定义，与系统配置汇率不一致时，金额字段会有提示）
     "standard": "800",        //本币（人民币）金额，必须等于 外币 * 汇率（自定义） ,否则提交单据的时候会报错
     "standardNumCode": "156", //本币数字编码
     "standardScale": 2,       //本币小数位
