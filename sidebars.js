@@ -66,6 +66,8 @@ const sidebars = {
         "open-api/corporation/get-staff-backLog",
         "open-api/contacts/get-allCustomeProperty",
         "open-api/contacts/update-staffs-customFields",
+        "open-api/contacts/get-certificate-byStaffId",
+        "open-api/contacts/update-certificate-byStaffId",
         "open-api/corporation/get-roles-group",
         "open-api/corporation/create-roledefs",
         "open-api/corporation/update-roledefs",

@@ -14,6 +14,8 @@ url="/api/openapi/v2.2/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.26.0**](/docs/open-api/notice/update-log#1260)&emsp;-> 🐞 修复了费用明细模板的 **发票** 字段配置必填，接口传了值也会检验报错的BUG。<br/>
+  [**1.25.0**](/docs/open-api/notice/update-log#1250)&emsp;-> 🐞 修复了费用明细模板配置 **分组** 字段后，接口校验报错的BUG。<br/>
   [**1.24.0**](/docs/open-api/notice/update-log#1240)&emsp;-> 🐞 修改了单据明细字段校验逻辑，当明细字段设置为必填项+默认值，参数传空情况下会优先校验必填项，提示字段不能为空。调整为：优先默认值赋值后，再做必填项校验。<br/>
   [**1.22.0**](/docs/open-api/notice/update-log#1220)&emsp;-> 🐞 新增了支持 **行程规划** 类型参数。<br/>
   [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>

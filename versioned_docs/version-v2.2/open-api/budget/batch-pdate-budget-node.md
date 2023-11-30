@@ -45,7 +45,7 @@ url="/api/openapi/v2.1/budgets/$`budgetId`/batchUpdate"
 |**&emsp; &emsp; ∟ dimensionId**   | String | 维度种类的标识ID          | 必填  | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : 通过 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 获取，见下方 **TIP**<br/>STAFF : `submitterId` | 
 |**&emsp; &emsp; ∟ mustLeaf**      | boolean | 维度是否必定为叶子节点(本部) | 必填  | false | `true` : 非本级 &emsp; `false` : 本级<br/>[什么是“维度是否必定为叶子节点(本部)”？](/docs/open-api/budget/question-answer#问题一) | 
 |**&emsp; &emsp; ∟ contentId**     | String | 维度内容ID               | 必填  | - | 对应维度种类下实例项的 **ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>例如：部门维度就是 **部门ID/CODE**，扩展档案维度就是 **档案项ID/CODE** | 
-|**&emsp; ∟ moneys**               | Array  | 节点金额                 | 必填  | - | 子预算项对应的预算金额 | 
+|**&emsp; ∟ moneys**               | Array  | 节点金额                 | 必填  | - | 子预算项对应的预算金额<br/>**变更节点时，所有周期都必须传入，只传入某一个周期变更不生效** | 
 |**&emsp; &emsp; ∟ budgetMoney**   | String | 预算金额                 | 必填  | - | [周期](/docs/open-api/budget/question-answer#问题二) 预算金额，非最末级节点传 `0` 即可，由系统自动累加此维度下子预算额度求和 | 
 |**&emsp; &emsp; ∟ nodeId**        | String | 预算节点ID               | 必填  | - | 与上面预算节点ID保持一致，即一个预算节点下包含 **节点信息** 和 **预算金额** 两部分属性 | 
 |**&emsp; &emsp; ∟ periodTime**    | String | 第几个周期                | 必填  | - | 年度和自定义区间: `1`<br/>半年度: `1`、`2`<br/>季度: `1`、`2`、`3`、`4`<br/>月度: `1~12`<br/>根据控制周期类型填写，例如：预算包控制周期是 **季度** 类型，每个子预算节点的 `moneys` 数组数据，就包含4个对象，表示每个季度对应的预算金额 | 
@@ -598,6 +598,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | :--- | :--- | :--- | :--- |
 | **200** | - | 不存在的预算树 | 请确认 `budgetId`（预算包ID）是否正确 | 
+| **200** | - | "success": false,"errmsg": null | 请确认 `moneys`（节点金额）的周期是否全部传入 |  
 | **200** | - | 节点维度不统一, code=根节点 | 请确认新增节点与同一层级节点维度是否一致 | 
 | **200** | - | 节点金额数量不匹配 | 请确认 `moneys`（节点金额）数量与预算包设置周期数是否匹配 | 
 | **200** | - | 该预算已经变更请重新获取最新数据 | 请确认 `version`（预算版本）参数与当前预算包版本是否一致 | 

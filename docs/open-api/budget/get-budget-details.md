@@ -8,6 +8,15 @@ method="GET"
 url="/api/openapi/v2/budgets/$`budgetId`"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  [**1.25.0**](/docs/open-api/notice/update-log#1250) -> 🐞 修复了响应数据中 `tree` 节点下 `name` 属性为空的BUG。<br/>
+
+  </div>
+</details>
+
 :::caution
 - 请注意本接口依赖于服务的性能，当后台判定要查询的预算包超过2000个节点时，此接口会返回 **“该预算包数据过大暂不支持查看”**。
 :::

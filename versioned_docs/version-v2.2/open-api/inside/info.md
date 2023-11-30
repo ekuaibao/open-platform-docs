@@ -38,13 +38,14 @@ authors: [冯继成]
 ### [获取业务对象台账字段](/docs/open-api/inside/get-entity-ledgerConfig)
 ### [创建业务对象台账字段](/docs/open-api/inside/inside-createLedger)
 ### [获取业务对象台账数据(自动化专用)](/docs/open-api/inside/get-entity-ledger)
-### [获取业务对象实例信息(自定义字段)--(自动化专用)](/docs/open-api/inside/get-entity-object-searchAnslysis)
+### [获取业务对象实例列表(条件查询)--(自动化专用)](/docs/open-api/inside/get-entity-object-searchAnslysis)
 ### [获取业务对象实例列表(排序)--(自动化专用)](/docs/open-api/inside/get-entity-object-search-order)
 ### [获取【行程管理/订单管理】业务对象数据](/docs/open-api/inside/get-entity-travelManager)
 
 ---
 ## 基础数据
 ### [根据ID查询城市信息](/docs/open-api/basedata/get-basedata-cityById)
+### [根据单据编号查询CBS7银行信息](/docs/open-api/inside/get-cbs7-byCode)
 
 ---
 ## 工具接口

@@ -17,6 +17,7 @@ url="/api/openapi/v1.1/docs/getApplyList"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.25.0**](/docs/open-api/notice/update-log#1250) -> 🐞 修复了当 `start` != `0` 时，响应数据中 `count` 总条数变成 `0` 的BUG。<br/>
   [**1.18.0**](/docs/open-api/notice/update-log#1180) -> 🐞 修复了单据到达 `PROCESSING`（支付中）状态时，再执行评论或打印等操作后，接口返回的是 `paying`（待支付）状态的BUG。<br/>
   [**1.10.1**](/docs/open-api/notice/update-log#1101) -> 🐞 修复了根据 `specificationId`（单据模板ID）查询时，部分模板无法获取到单据数据的BUG。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180)&emsp;-> 🐞 修复了 `orderBy` = `payDate` 时，`start` 和 `count` 分页参数不生效的BUG。<br/>
