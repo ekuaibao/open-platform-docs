@@ -1,6 +1,8 @@
 # 访问临时授权
 
 import Control from "@theme/Control";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Control
 method="POST"
@@ -42,9 +44,9 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 | **isApplet**                | Boolean | 是否跳转APP端  | 非必填 | `false` | `true` : 跳转APP端<br/>`false` : 跳转WEB端                                                                                                                                                                                                                                                                                   |
 | **flowId**                  | String  | 单据ID      | 非必填 | - | 当「 `pageType` = `form` 或 `backlogDetail` 或 `edit` 」时必填，表示需要访问的单据详情页                                                                                                                                                                                                                                                    |
 | **approvalUrl**             | String  | 审批完成后跳转地址 | 非必填 | - | 当「 `pageType` = `form` 或 `backlogDetail` 」时参数有效，表示单据审批完成后跳转的地址<br/>不要携带特殊字符，例如：`#`                                                                                                                                                                                                                                     |
-| **action**                  | String  | 审批按钮类型    | 非必填 | - | 仅当「 `pageType` = `backlogDetail` 」时参数有效，表示审批待办时想要显示的按钮类型                                                                                                                                                                                                                                                               |
+| **action**                  | String  | 审批按钮类型    | 非必填 | - | 仅当「 `pageType` = `backlogDetail` 」时参数有效，表示审批待办时想要显示的按钮类型，多个值用 `,` 分隔<br/>**不传时根据当前单据状态显示默认审批按钮**<br/>**传值后只显示所传按钮，不会显示默认按钮**<br/>                                                                                                                                                                                                                                                         |
 | **pathname**                | String  | 授权路径      | 非必填 | - | 当 `pageType` = `new` 时，填值视平台而定<br/>`/web/billentry.html` : WEB端<br/>`/applet/thirdparty.html` : APP端                                                                                                                                                                                                                   |
-| **specificationOriginalId** | String  | 单据模板ID    | 非必填 | - | 当 `pageType` = `new` 时，此参数必填                                                                                                                                                                                                                                                                                           |
+| **specificationOriginalId** | String  | 单据模板ID    | 非必填 | - | 当 `pageType` = `new` 时，此参数必填<br/>可通过 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 获取<br/>**单据模板ID不包含 `:` 之后的小版本号**                                                                                                                                                                                                                                                                                            |
 | **assistId**                | String  | 授权码ID     | 非必填 | - | 当 `pageType` = `assistPlatform` 时，此参数必填<br/>**通过出站消息获取**                                                                                                                                                                                                                                                               |
 
 :::tip
@@ -54,7 +56,7 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
  - 当 `pageType` = `edit` 时，`flowId` 参数必填；
  - 当 `pageType` = `mall` 时，用户必须已开通商城，否则该接口会返回错误提示；<br/>
  且只需要传递 `uid`（或者 `userId` ）、 `isApplet` = `false`（不支持移动端）和 `expireDate` 3个参数即可，其他均可不传；
- - 当 `pageType` = `backlogDetail` 时，`isApplet` = `false`（不支持移动端），`flowId` 参数必填，`approvalUrl`、`action` 参数选填（`action` 不传显示默认的审批按钮，多个值用 `,` 分隔）。
+ - 当 `pageType` = `backlogDetail` 时，`isApplet` = `false`（不支持移动端），`flowId` 参数必填，`approvalUrl`、`action` 参数选填（`action` 不传时根据当前状态显示默认审批按钮，传值后只显示所传按钮，多个值用 `,` 分隔）。
 
  ![image](images/审批按钮显示效果.png)
  
@@ -83,20 +85,179 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
 | **freeflow.addSignNode**  | 加签审批    |
 
 ## CURL
+
+<Tabs>
+<TabItem value="frontPage" label="首页" default>
+
 ```json
-curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=cxEbrzNJSA3A00' \
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=ID01vbeK5DmKUn%3ATsI3tt8KjF4S7M' \
 --header 'Content-Type: application/json' \
---data-raw '{
-    "uid": "34A73EyI8A0w00:Kh0bnmDTrU9g00",
-    //"userId": "",
-    "pageType": "home",
-    //"flowId": "",
-    "expireDate": "120",
-    "isApplet": true,
-    //"action": "",
-    "overdueTokenRedirect": "https://www.ekuaibao.com"
+--data '{
+    "uid": "TsI3tt8KjF4S7M:ID_3ruBvlxx7m0",
+    //"userId": "",        
+    "pageType": "frontPage",
+    // "authType": "CODE",    
+    "expireDate": "86400",
+    "overdueTokenRedirect": "https://app.ekuaibao.com/web/app.html",
+    "isApplet": false
 }'
 ```
+</TabItem>
+<TabItem value="home" label="我的单据">
+
+```json
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=ID01vbeK5DmKUn%3ATsI3tt8KjF4S7M' \
+--header 'Content-Type: application/json' \
+--data '{
+    "uid": "TsI3tt8KjF4S7M:ID_3ruBvlxx7m0",
+    //"userId": "", 
+    "pageType": "home",
+    // "authType": "CODE", 
+    "expireDate": "86400",
+    "overdueTokenRedirect": "https://app.ekuaibao.com/web/app.html",
+    "isApplet": false
+}'
+```
+</TabItem>
+<TabItem value="approve" label="待我审批">
+
+```json
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=ID01vbogZ2j4Jx%3ATsI3tt8KjF4S7M' \
+--header 'Content-Type: application/json' \
+--data '{
+    "uid": "TsI3tt8KjF4S7M:ID_3ruBvlxx7m0",
+    //"userId": "", 
+    "pageType": "approve",
+    // "authType": "CODE", 
+    "expireDate": "86400",
+    "overdueTokenRedirect": "https://app.ekuaibao.com/web/app.html",
+    "isApplet": false
+}'
+```
+</TabItem>
+<TabItem value="payment" label="待我支付">
+
+```json
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=ID01vbogZ2j4Jx%3ATsI3tt8KjF4S7M' \
+--header 'Content-Type: application/json' \
+--data '{
+    "uid": "TsI3tt8KjF4S7M:ID_3ruBvlxx7m0",
+    //"userId": "", 
+    "pageType": "payment",
+    // "authType": "CODE", 
+    "expireDate": "86400",
+    "overdueTokenRedirect": "https://app.ekuaibao.com/web/app.html",
+    "isApplet": false
+}'
+```
+</TabItem>
+<TabItem value="form" label="单据详情">
+
+```json
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=ID01vbogZ2j4Jx%3ATsI3tt8KjF4S7M' \
+--header 'Content-Type: application/json' \
+--data '{
+    "uid": "TsI3tt8KjF4S7M:ID_3ruBvlxx7m0",
+    //"userId": "", 
+    "pageType": "form",
+    // "authType": "CODE", 
+    "expireDate": "86400",
+    "overdueTokenRedirect": "https://app.ekuaibao.com/web/app.html",
+    "isApplet": false,
+    "flowId": "ID01v88t2v84PY",
+    "approvalUrl": "https://app.ekuaibao.com/web/app.html"
+}'
+```
+</TabItem>
+<TabItem value="new" label="新建单据">
+
+```json
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=ID01vbogZ2j4Jx%3ATsI3tt8KjF4S7M' \
+--header 'Content-Type: application/json' \
+--data '{
+    "uid": "TsI3tt8KjF4S7M:ID_3ruBvlxx7m0",
+    //"userId": "", 
+    "pageType": "new",
+    // "authType": "CODE", 
+    "expireDate": "86400",
+    "overdueTokenRedirect": "https://app.ekuaibao.com/web/app.html",
+    "isApplet": false,
+    "pathname": "/web/billentry.html",
+    "specificationOriginalId": "ID01lk93AVICQv"
+    
+}'
+```
+</TabItem>
+<TabItem value="edit" label="提交单据">
+
+```json
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=ID01vbogZ2j4Jx%3ATsI3tt8KjF4S7M' \
+--header 'Content-Type: application/json' \
+--data '{
+    "uid": "TsI3tt8KjF4S7M:ID_3ruBvlxx7m0",
+    //"userId": "", 
+    "pageType": "edit",
+    // "authType": "CODE", 
+    "expireDate": "86400",
+    "overdueTokenRedirect": "https://app.ekuaibao.com/web/app.html",
+    "isApplet": false,
+    "flowId": "ID01uCwngdzSTt"
+}'
+```
+</TabItem>
+<TabItem value="mall" label="商城">
+
+```json
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=ID01vbogZ2j4Jx%3ATsI3tt8KjF4S7M' \
+--header 'Content-Type: application/json' \
+--data '{
+    "uid": "TsI3tt8KjF4S7M:ID_3ruBvlxx7m0",
+    //"userId": "", 
+    "pageType": "mall",
+    // "authType": "CODE", 
+    "expireDate": "86400",
+    "overdueTokenRedirect": "https://app.ekuaibao.com/web/app.html",
+    "isApplet": false
+}'
+```
+</TabItem>
+<TabItem value="backlogDetail" label="待办详情">
+
+```json
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=ID01vbogZ2j4Jx%3ATsI3tt8KjF4S7M' \
+--header 'Content-Type: application/json' \
+--data '{
+    "uid": "TsI3tt8KjF4S7M:ID_3ruBvlxx7m0",
+    //"userId": "", 
+    "pageType": "backlogDetail",
+    // "authType": "CODE", 
+    "expireDate": "86400",
+    "overdueTokenRedirect": "https://app.ekuaibao.com/web/app.html",
+    "isApplet": false,
+    "flowId": "ID01v88t2v84PY",
+    "approvalUrl": "https://app.ekuaibao.com/web/app.html",
+    "action": "freeflow.agree,freeflow.reject,freeflow.printed"
+}'
+```
+</TabItem>
+<TabItem value="assistPlatform" label="协助链接授权">
+
+```json
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvisionalAuth?accessToken=ID01vbogZ2j4Jx%3ATsI3tt8KjF4S7M' \
+--header 'Content-Type: application/json' \
+--data '{
+    "uid": "TsI3tt8KjF4S7M:ID_3ruBvlxx7m0",
+    //"userId": "", 
+    "pageType": "assistPlatform",
+    // "authType": "CODE",
+    "expireDate": "86400",
+    "overdueTokenRedirect": "https://app.ekuaibao.com/web/app.html",
+    "isApplet": true,
+    "assistId": "CX3Phg00005q0M"
+}'
+```
+</TabItem>
+</Tabs>
 
 ## 成功响应
 ```json
