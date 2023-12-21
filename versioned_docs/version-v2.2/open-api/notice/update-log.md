@@ -11,6 +11,14 @@ timeline: true
 - 次版本号：每月发布一个带有新特性的向下兼容的版本。
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
+## 1.27.0
+
+`2023-12-xx`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
+
+- 🐞 更新 [根据企业ID获取单据模板列表](/docs/open-api/forms/get-template-list) 接口
+  - 新增了支持返回 `corpPayment`（对公付款单）、`reimbursement`（报账单、发票录入单）类型的单据模板。
+
+---
 ## 1.26.0
 
 `2023-11-30`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.124.14`

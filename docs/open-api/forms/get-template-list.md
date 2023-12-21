@@ -7,6 +7,16 @@ method="GET"
 url="/api/openapi/v2/specifications"
 />
 
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  [**1.27.0**](/docs/open-api/notice/update-log#1270) -> 🐞 新增了支持返回 `corpPayment`（对公付款单）、`reimbursement`（报账单、发票录入单）类型的单据模板。 <br/>
+
+  </div>
+</details>
+
+
 :::caution
 - 只返回未停用、未删除的模板信息。
 :::
@@ -31,7 +41,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifica
         {
             "id": "Kk09lCDmlg3Q00",  //单据模板ID
             "name": "日常报销单",     //单据模板名称
-            "type": "expense"        //单据类型：requisition：申请单、 expense：报销单、 loan：借款单、 custom：通用审批单(基础单据)、 payment：付款单
+            "type": "expense"        //单据类型  requisition：申请单、 expense：报销单、 loan：借款单、 custom：通用审批单(基础单据)、 payment：付款单、corpPayment：对公付款单、reimbursement：报账单/发票录入单
         },
         {
             "id": "MZU9pMXIVQ8M00",
@@ -62,6 +72,21 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/specifica
             "id": "sZc9lCDmlg4000",
             "name": "差旅申请单",
             "type": "requisition"
+        },
+        {
+            "id": "ID01vve2SdYWHdcorpPayment",
+            "name": "对公付款单",
+            "type": "corpPayment"  //对公付款单
+        },
+        {
+            "id": "ID01vvdUEZ379J",
+            "name": "发票录入单",     
+            "type": "reimbursement" //发票录入单
+        },
+        {
+            "id": "ID01vvdUEZ37GL",
+            "name": "报账单",
+            "type": "reimbursement" //报账单
         }
     ]
 }

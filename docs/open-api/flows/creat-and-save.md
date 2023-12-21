@@ -968,7 +968,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
         "dataLinkId": null,
         "dataLinkTemplateId": "ID01iTAGu7263J",
         "dataLinkForm": {
-            "E_ac0dd823890c7d2a1800_name": "北京市/北京市区 - 上海市/上海市区",
+            "E_ac0dd823890c7d2a1800_name": "北京市/北京市区 - 上海市/上海市区",  //必填
             "E_ac0dd823890c7d2a1800_出发地": "[{\"key\":\"2\",\"label\":\"北京市/北京市区\"}]",
             "E_ac0dd823890c7d2a1800_目的地": "[{\"key\":\"858\",\"label\":\"上海市/上海市区\"}]",
             "E_ac0dd823890c7d2a1800_行程日期": 1691424000000
@@ -985,7 +985,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
         "dataLinkId": null,
         "dataLinkTemplateId": "ID_3twzygNZxxw",
         "dataLinkForm": {
-            "E_ac0dd823890c7d2a1800_name": "北京市/北京市区",
+            "E_ac0dd823890c7d2a1800_name": "北京市/北京市区",  //必填
             "E_ac0dd823890c7d2a1800_住宿地": "[{\"key\":\"2\",\"label\":\"北京市/北京市区\"}]",
             "E_ac0dd823890c7d2a1800_入住日期":1691424000000,
             "E_ac0dd823890c7d2a1800_离店日期": 1691424000000
@@ -1002,7 +1002,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
         "dataLinkId": null,
         "dataLinkTemplateId": "ID_3twzygNZDxw",
         "dataLinkForm": {
-            "E_ac0dd823890c7d2a1800_name": "广东省/广州市/广州市区 - 广东省/广州市/广州市区",
+            "E_ac0dd823890c7d2a1800_name": "广东省/广州市/广州市区 - 广东省/广州市/广州市区",  //必填
             "E_ac0dd823890c7d2a1800_出发地": "[{\"key\":\"2123\",\"label\":\"广东省/广州市/广州市区\"}]",
             "E_ac0dd823890c7d2a1800_目的地": "[{\"key\":\"2123\",\"label\":\"广东省/广州市/广州市区\"}]",
             "E_ac0dd823890c7d2a1800_行程日期": 1691424000000
@@ -1019,7 +1019,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
         "dataLinkId": null,
         "dataLinkTemplateId": "ID_3twzygNZJxw",
         "dataLinkForm": {
-            "E_ac0dd823890c7d2a1800_name": "四川省/成都市/成都市区",
+            "E_ac0dd823890c7d2a1800_name": "四川省/成都市/成都市区",  //必填
             "E_ac0dd823890c7d2a1800_住宿地": "[{\"key\":\"2494\",\"label\":\"四川省/成都市/成都市区\"}]",
             "E_ac0dd823890c7d2a1800_入住日期":1691424000000,
             "E_ac0dd823890c7d2a1800_离店日期": 1691424000000
@@ -1036,7 +1036,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
         "dataLinkId": null,
         "dataLinkTemplateId": "ID_3twzygNZPxw",
         "dataLinkForm": {
-            "E_ac0dd823890c7d2a1800_name": "重庆市/重庆市区",
+            "E_ac0dd823890c7d2a1800_name": "重庆市/重庆市区",  //必填
             "E_ac0dd823890c7d2a1800_住宿地": "[{\"key\":\"2452\",\"label\":\"重庆市/重庆市区\"}]",
             "E_ac0dd823890c7d2a1800_入住日期":1691424000000,
             "E_ac0dd823890c7d2a1800_离店日期": 1691424000000
@@ -1053,7 +1053,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
         "dataLinkId": null,
         "dataLinkTemplateId": "ID_3twzygNZVxw",
         "dataLinkForm": {
-            "E_ac0dd823890c7d2a1800_name": "浙江省/杭州市/杭州市区",
+            "E_ac0dd823890c7d2a1800_name": "浙江省/杭州市/杭州市区",  //必填
             "E_ac0dd823890c7d2a1800_住宿地": "[{\"key\":\"1000\",\"label\":\"浙江省/杭州市/杭州市区\"}]",
             "E_ac0dd823890c7d2a1800_入住日期":1691424000000,
             "E_ac0dd823890c7d2a1800_离店日期": 1691424000000

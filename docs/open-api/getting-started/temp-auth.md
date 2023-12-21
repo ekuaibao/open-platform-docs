@@ -260,15 +260,20 @@ curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvis
 </Tabs>
 
 ## 成功响应
+<Tabs>
+<TabItem value="frontPage" label="首页" default>
+
 ```json
 {
-    "value": {
-      "message": "https://app.ekuaibao.com/applet/thirdparty.html?accessToken=SGYqVpXcuhIIYQJkd0w2G0&ekbCorpId=34A73EyI8A0w00&pageType=home&overdueTokenRedirect=[https://www.ekuaibao.com](https://www.ekuaibao.com)", //第三方临时访问合思URL
-      "code": "true" // 请求状态
+    "value": {  //首页、我的单据、待我审批、待我支付、单据详情、新建单据、提交单据、待办详情
+        "message": "https://app.ekuaibao.com/applet/thirdparty.html?accessToken=SGYqVpXcuhIIYQJkd0w2G0&ekbCorpId=34A73EyI8A0w00&pageType=home&overdueTokenRedirect=[https://www.ekuaibao.com](https://www.ekuaibao.com)", //第三方临时访问合思URL
+        "code": "true" // 请求状态
     }
 }
 ```
-跳转商城返回信息：
+</TabItem>
+<TabItem value="mall" label="商城">
+
 ```json
 {
     "value": {
@@ -277,6 +282,8 @@ curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/provisional/getProvis
     }
 }
 ```
+</TabItem>
+</Tabs>
 
 ## 失败响应
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |

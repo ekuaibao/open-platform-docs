@@ -2,17 +2,19 @@
 
 ## 单据类型(单据详情中的 `formType` 字段)
 
-| 名称 | 类型 | 描述 |
-| :--- | :--- | :--- |
-| **expense**     | String  | 报销单 |
-| **requisition** | String  | 申请单 |
-| **application** | String  | 申请事项 |
-| **loan**        | String  | 借款单 |
-| **repayment**   | String  | 还款记录 |
-| **payment**     | String  | 付款单 |
-| **receipt**     | String  | 收款单 |
-| **permit**      | String  | 授权单 |
-| **custom**      | String  | 通用审批单 |
+| 名称                    | 类型 | 描述        |
+|:----------------------| :--- |:----------|
+| **expense**           | String  | 报销单       |
+| **requisition**       | String  | 申请单       |
+| **application**       | String  | 申请事项      |
+| **loan**              | String  | 借款单       |
+| **repayment**         | String  | 还款记录      |
+| **payment**           | String  | 付款单       |
+| **receipt**           | String  | 收款单       |
+| **permit**            | String  | 授权单       |
+| **custom**            | String  | 通用审批单     |
+| **corpPayment**       | String  | 对公付款单     |
+| **reimbursement**     | String  | 报账单、发票录入单 |
 
 ## 单据状态(单据详情中的 `state` 字段)
 
