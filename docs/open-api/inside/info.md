@@ -35,6 +35,7 @@ authors: [冯继成]
 
 ---
 ## 业务对象
+### [根据业务对象ID获取业务对象实体](/docs/open-api/inside/get-entity-byId)
 ### [获取业务对象台账字段](/docs/open-api/inside/get-entity-ledgerConfig)
 ### [创建业务对象台账字段](/docs/open-api/inside/inside-createLedger)
 ### [获取业务对象台账数据(自动化专用)](/docs/open-api/inside/get-entity-ledger)
