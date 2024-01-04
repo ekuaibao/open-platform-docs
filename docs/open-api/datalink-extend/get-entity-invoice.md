@@ -43,18 +43,18 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 ### 发票类型(`objectId`)
 可通过 [根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice) 接口得到的 `invoiceType` 参数确定
 
-| objectId | 发票类型 | 
-| :--- | :--- |
-| **invoice**         | 发票（包含下述 **发票类别**）|
-| **other**           | 其他 |
-| **taxi**            | 出租车票 |
-| **fixed**           | 定额发票 |
-| **passengerCar**    | 客运汽车发票 |
-| **machinePrint**    | 机打发票 |
-| **shopping**        | 消费小票 |
-| **train**           | 火车票 |
-| **flightItinerary** | 航空运输电子客票行程单 |
-| **tolls**           | 过路费发票 |
+| objectId | 发票类型                                                                                    | 
+| :--- |:----------------------------------------------------------------------------------------|
+| **invoice**         | 发票（详见 [发票类别](/docs/open-api/datalink-extend/get-entity-invoice#发票类别e_system_发票主体_发票类别)） |
+| **other**           | 其他发票                                                                                    |
+| **taxi**            | 出租车票                                                                                    |
+| **fixed**           | 定额发票                                                                                    |
+| **passengerCar**    | 客运汽车票                                                                                   |
+| **machinePrint**    | 机打发票（机打电子发票、机打纸质发票）                                                                     |
+| **shopping**        | 消费小票                                                                                    |
+| **train**           | 火车票                                                                                     |
+| **flightItinerary** | 航空运输电子客票行程单                                                                             |
+| **tolls**           | 过路费发票                                                                                   |
 
 ### 发票类别(`E_system_发票主体_发票类别`)
 
@@ -63,21 +63,21 @@ url="/api/openapi/v2/extension/INVOICE/object/`objectId`/search"
 - **非增值税发票** 无法保存发票明细信息
 :::
 
-| 字段名                      | 对应发票类型        |
-|:-------------------------|:--------------|
-| **FULL_DIGITAl_NORMAL**       | 电子发票（普通发票）         |
-| **FULL_DIGITAl_SPECIAL**      | 电子发票（增值税专用发票）    |
+| 字段名                      | 对应发票类型          |
+|:-------------------------|:----------------|
+| **FULL_DIGITAl_NORMAL**       | 电子发票（普通发票）      |
+| **FULL_DIGITAl_SPECIAL**      | 电子发票（增值税专用发票）   |
 | **FULL_DIGITAl_PAPER**        | 全电纸质发票（增值税专用发票） |
 | **FULL_DIGITAl_PAPER_NORMAL** | 全电纸质发票（增值税普通发票） |
-| **DIGITAL_NORMAL**            | 增值税电子普通发票     |
-| **DIGITAL_SPECIAL**           | 增值税电子专用发票     |
-| **PAPER_NORMAL**              | 增值税普通发票        |
-| **PAPER_ROLL**                | 增值税普通发票（卷式）  |
-| **PAPER_SPECIAL**             | 增值税专用发票        |
-| **PAPER_CAR**                 | 机动车销售统一发票     |
-| **SECOND_CAR**                | 二手车销售统一发票     |
+| **DIGITAL_NORMAL**            | 增值税电子普通发票       |
+| **DIGITAL_SPECIAL**           | 增值税电子专用发票       |
+| **PAPER_NORMAL**              | 增值税普通发票         |
+| **PAPER_ROLL**                | 增值税普通发票（卷式）     |
+| **PAPER_SPECIAL**             | 增值税专用发票         |
+| **PAPER_CAR**                 | 机动车销售统一发票       |
+| **SECOND_CAR**                | 二手车销售统一发票       |
 | **PAPER_FEE**                 | 通行费发票           |
-| **BLOCK_CHAIN**               | 区块链发票           |
+| **BLOCK_CHAIN**               | 区块链电子发票         |
 
 ## CURL
 ```json

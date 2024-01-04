@@ -68,7 +68,26 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/dimension
                 ],
                 "departmentsIncludeChildren": true
             },
-            "payAccountIds": null  //支付账户ID
+            "payAccountIds": [],        //“法人实体”档案额外参数，可用支付账户
+            "form": {
+                "taxpayerType": "",     //“法人实体”档案额外参数，纳税人类型，GeneralTaxpayer：一般纳税人；SmallScaleTaxpayer：小规模纳税人
+                "postType": "",         //“岗位预置”档案额外参数，岗位类型，值为【岗位类型预置】档案实例ID
+                "rankType": "",         //“职级预置”档案额外参数，职级类型，值为【职级类型预置】档案实例ID
+                "baseCurrencyId": "",   //“法人实体”档案额外参数，法人实体本位币数字代码，开通【法人实体多币种】功能并配置后此参数才有值。
+                "projectBase": "",      //“项目” 档案额外参数，项目所在地
+                "projectType": "",      //“项目” 档案额外参数，项目类型，值为【项目类型预置】档案实例ID
+                "projectManager": "",   //“项目” 档案额外参数，项目经理，值为员工ID
+                "projectInspector": ""  //“项目” 档案额外参数，项目总监，值为员工ID
+            },
+            "sourceCorpId": null,
+            "taxpayerType": null,
+            "permissions": [
+                {
+                    "name": "ALL",
+                    "auth": true
+                }
+            ],
+            "leaf": true
         }
     ]
 }

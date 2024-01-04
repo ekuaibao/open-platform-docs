@@ -42,10 +42,10 @@ const sidebars = {
         "open-api/getting-started/postman-use",
         "open-api/getting-started/origin",
         "open-api/getting-started/auth",
+        "open-api/getting-started/auth-getAppAccessToken",
         "open-api/getting-started/refresh-auth",
-          "open-api/getting-started/refresh-auth-expireDate",
-          "open-api/getting-started/auth-getAppAccessToken",
-          "open-api/getting-started/temp-auth",
+        "open-api/getting-started/refresh-auth-expireDate",
+        "open-api/getting-started/temp-auth",
         "open-api/getting-started/question-answer"
       ],
     },
@@ -204,6 +204,15 @@ const sidebars = {
         "open-api/flows/get-carboncopy",
         "open-api/flows/get-flow-by-checkingId",
         "open-api/flows/question-answer"
+      ],
+    },
+    {
+      type: "category",
+      label: "审批矩阵",
+      items: [
+        "open-api/matrix/info",
+        "open-api/matrix/get-matrixs",
+        "open-api/matrix/question-answer"
       ],
     },
     {
