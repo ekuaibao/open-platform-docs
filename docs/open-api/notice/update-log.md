@@ -13,10 +13,19 @@ timeline: true
 
 ## 1.27.0
 
-`2023-12-xx`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
+`2024-01-xx`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
 
 - 🐞 更新 [根据企业ID获取单据模板列表](/docs/open-api/forms/get-template-list) 接口
   - 新增了支持返回 `corpPayment`（对公付款单）、`reimbursement`（报账单、发票录入单）类型的单据模板。
+- 🐞 更新 [获取发票图片链接地址](/docs/open-api/datalink-extend/get-entity-invoice-img) 接口
+  - 修复了获取的OFD文件链接打开报错的BUG。
+- 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
+  - 响应信息中新增了 `customFields`（自定义字段）。
+- 🐞 更新 [根据员工ID获取已审批单据](/docs/open-api/flows/get-approved-byStaff) 接口
+  - 新增了 `startDate` 和 `endDate` 参数，根据 **审批时间** 过滤列表数据。
+- 🐞 更新 [访问临时授权](/docs/open-api/getting-started/temp-auth) 接口
+  - 新增了所有 `pageType` 的 **CURL** 传参示例。
+
 
 ---
 ## 1.26.0
@@ -24,7 +33,7 @@ timeline: true
 `2023-11-30`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.124.14`
 
 - 🆕 新增 [查询员工证件信息](/docs/open-api/contacts/get-certificate-byStaffId) 接口。
-- 🆕 新增 [更新员工证件信息](/docs/open-api/contacts/update-certificate-byStaffId) 接口。
+- 🆕 新增 [新增或更新员工证件信息](/docs/open-api/contacts/update-certificate-byStaffId) 接口。
 - 🐞 更新 [创建单据](/docs/open-api/flows/creat-and-save) 接口
   - 修复了费用明细模板的 **发票** 字段配置必填，接口传了值也会检验报错的BUG。
 - 🐞 更新 [获取单据附件](/docs/open-api/flows/get-flows-attachment) 接口
@@ -122,8 +131,6 @@ timeline: true
     - 接口支持传入 `customFields`（自定义字段），且响应信息中新增了该字段。
 - 🐞 更新 [新增收款账户](/docs/open-api/pay/new-payeeInfo) 接口
     - 接口支持传入 `customFields`（自定义字段）。
-- 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
-    - 响应信息中新增了 `customFields`（自定义字段）。
 - 🐞 更新 [获取当前版本单据模板列表](/docs/open-api/forms/get-specifications-latest) 接口
     - 响应信息中新增了 `visibility`（可见范围）字段。
 

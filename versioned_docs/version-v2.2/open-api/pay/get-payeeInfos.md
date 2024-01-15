@@ -12,7 +12,7 @@ url="/api/openapi/v2.1/payeeInfos"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.20.0**](/docs/open-api/notice/update-log#1200)&emsp;-> 🐞 响应信息中新增了 `customFields`（自定义字段）。<br/>
+  [**1.27.0**](/docs/open-api/notice/update-log#1270)&emsp;-> 🐞 响应信息中新增了 `customFields`（自定义字段）。<br/>
   [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🚀 接口升级 `v2.1` 版本，接口 **成功响应** 中新增了 `nationCode`（银行所在地区代码（海外账户））参数，参数介绍见 [新增收款账户](/docs/open-api/pay/new-payeeInfo)。<br/>
   [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180) &emsp; -> 🐞 修复了获取 `WEIXIN`（微信）、`OTHER`（其他）类型收款账户时，`certificateType`（证件类型 ）、`certificateNo`（证件号码）返回空的BUG。<br/>

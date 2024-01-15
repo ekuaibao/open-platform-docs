@@ -52,14 +52,14 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/staffs/
             "sourceCorporationId": null,
             "dataCorporationId": null,
             "staffId": "Tdk3tgber501v0:88881009", //员工ID
-            "type": "ID_CARD",                    //证件类型，参数释义详见【更新员工证件信息】接口
+            "type": "ID_CARD",                    //证件类型，参数释义详见【新增或更新员工证件信息】接口
             "number": "130824199911110451",       //证件号码
             "validDate": 0,                       //证件有效期
             "extended": false,                    //是否长期有效，true：是  false：否
             "birthDate": 942249600000,            //出生日期，毫秒级时间戳
             "gender": "MALE",                     //性别，MALE：男  FEMALE：女
-            "nationality": "",                    //国籍，参数释义详见【更新员工证件信息】接口
-            "issuancePlace": "",                  //签发地，参数释义详见【更新员工证件信息】接口
+            "nationality": "",                    //国籍，参数释义详见【新增或更新员工证件信息】接口
+            "issuancePlace": "",                  //签发地，参数释义详见【新增或更新员工证件信息】接口
             "modifyCount": 0,                     //更新次数，单一证件类型仅限更新1次
             "lastEngName": "",                    //英文姓(拼音)
             "firstEngName": ""                    //英文名(拼音)

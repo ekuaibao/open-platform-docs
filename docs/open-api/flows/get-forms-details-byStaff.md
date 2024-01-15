@@ -36,20 +36,20 @@ url="/api/openapi/v1.1/docs/getApplyList"
 
 ## Query Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token    | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
-| **type**        | String  | 单据类型      | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单<br/>`permit` : 授权单(商城超标审批申请单) |
-| **uid**         | String  | 员工ID       | 非必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-staff-ids)，**不传查企业下全部单据** |
-| **state**       | Array   | 单据状态      | 非必填 | - | [状态类型](/docs/open-api/flows/forms-state#单据状态单据详情中的-state-字段)，支持多种状态，用 `,` 分隔<br/>**不传查全部状态单据** |
-| **start**       | Number  | 分页查询起始值 | 必填 | - | 从 `0` 开始 |
-| **count**       | Number  | 查询数据条数   | 必填 | - | `0` < **count** ≤ `100` |
-| **orderBy**     | String  | 查询字段      | 非必填 | createTime | `createTime` : 创建时间<br/>`updateTime` : 更新时间<br/>`submitDate` : 提交时间<br/>`payDate` : 支付时间（单据为 `paid` 、`archived` <br/>状态且 **经过出纳支付节点** 时有效）|
-| **orderByType** | String  | 排序方式      | 非必填 | desc | `asc` ：正序<br/>`desc` ：倒序|
-| **startDate**   | String  | 查询起始时间   | 非必填 | - | 格式：`yyyy-MM-dd HH:mm:ss` |
-| **endDate**     | String  | 查询结束时间   | 非必填 | - | 格式：`yyyy-MM-dd HH:mm:ss` |
+| 名称 | 类型 | 描述                    | 是否必填 | 默认值 | 备注 |
+| :--- | :--- |:----------------------| :--- |:--- | :--- |
+| **accessToken** | String  | 认证token               | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+| **type**        | String  | 单据类型                  | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单<br/>`permit` : 授权单(商城超标审批申请单) |
+| **uid**         | String  | 员工ID                  | 非必填 | - | 值为 [员工ID](/docs/open-api/corporation/get-staff-ids)，**不传查企业下全部单据** |
+| **state**       | Array   | 单据状态                  | 非必填 | - | [状态类型](/docs/open-api/flows/forms-state#单据状态单据详情中的-state-字段)，支持多种状态，用 `,` 分隔<br/>**不传查全部状态单据** |
+| **start**       | Number  | 分页查询起始值               | 必填 | - | 从 `0` 开始 |
+| **count**       | Number  | 查询数据条数                | 必填 | - | `0` < **count** ≤ `100` |
+| **orderBy**     | String  | 查询字段                  | 非必填 | createTime | `createTime` : 创建时间<br/>`updateTime` : 更新时间<br/>`submitDate` : 提交时间<br/>`payDate` : 支付时间（单据为 `paid` 、`archived` <br/>状态且 **经过出纳支付节点** 时有效）|
+| **orderByType** | String  | 排序方式                  | 非必填 | desc | `asc` ：正序<br/>`desc` ：倒序|
+| **startDate**   | String  | 查询开始时间                | 非必填 | - | 格式：`yyyy-MM-dd HH:mm:ss` |
+| **endDate**     | String  | 查询结束时间                | 非必填 | - | 格式：`yyyy-MM-dd HH:mm:ss` |
 | **specificationId** | String | 单据模板ID<br/>**不带小版本号** | 非必填 | - | 支持多个，用 `,` 分割，**不传查所有模板**<br/>通过 [根据企业ID获取单据模板列表](/docs/open-api/forms/get-template-list) 获取<br/>例："Kk09lCDmlg3Q00" |
-| **active** | Boolean  |  查询条件：单据是否删除   | 非必填 | false | `true` : 未删除 &emsp; `false` : 已删除 |
+| **active** | Boolean  | 查询条件：单据是否删除           | 非必填 | false | `true` : 未删除 &emsp; `false` : 已删除 |
 
 :::tip
 - `active` 参数传值分三种情况：

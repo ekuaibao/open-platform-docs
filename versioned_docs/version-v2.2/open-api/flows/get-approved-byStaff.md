@@ -19,7 +19,8 @@ url="/api/openapi/v1.1/docs/approved/$`approverId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-[**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🆕 新增了本接口。<br/>
+  [**1.27.0**](/docs/open-api/notice/update-log#1270) -> 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **审批时间** 过滤列表数据。<br/>
+  [**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>
@@ -32,15 +33,17 @@ url="/api/openapi/v1.1/docs/approved/$`approverId`"
 
 ## Query Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- |:-----|:----| :--- |
-| **accessToken**   | String  | 认证token     | 必填   | -   | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
-| **index**         | Number  | 分页查询的起始值 | 非必填  | 0   | 起始值从 `0` 开始 |
-| **count**         | Number  | 查询数据条数    | 必填   | -   | 最大不能超过 `100`，**大于 `100` 按 `100` 返回** |
+| 名称 | 类型 | 描述       | 是否必填 | 默认值 | 备注                                                              |
+| :--- | :--- |:---------|:-----|:----|:----------------------------------------------------------------|
+| **accessToken**   | String  | 认证token  | 必填   | -   | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+| **index**         | Number  | 分页查询的起始值 | 非必填  | 0   | 起始值从 `0` 开始                                                     |
+| **count**         | Number  | 查询数据条数   | 非必填  | 100 | 最大不能超过 `100`，**大于 `100` 按 `100` 返回**                            |
+| **startDate**   | String  | 查询开始时间   | 非必填  | -   | 按数据 **审批时间** 查询，格式：`yyyy-MM-dd HH:mm:ss`                        |
+| **endDate**     | String  | 查询结束时间   | 非必填  | -   | 按数据 **审批时间** 查询，格式：`yyyy-MM-dd HH:mm:ss`                        |
 
 ## CURL
 ```shell
-curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/docs/approved/$xgJ3wajigF25H0:dbc3wajigF1UH0?accessToken=ID01w4CAZC7P6n%3AxgJ3wajigF25H0&index=0&count=10'
+curl --location 'https://app.ekuaibao.com/api/openapi/v1.1/docs/approved/$xgJ3wajigF25H0:dbc3wajigF1UH0?accessToken=ID01w4CAZC7P6n%3AxgJ3wajigF25H0&index=0&count=10&startDate=2023-11-01%2000%3A00%3A00&endDate=2024-01-11%2000%3A00%3A00'
 ```
 
 ## 成功响应

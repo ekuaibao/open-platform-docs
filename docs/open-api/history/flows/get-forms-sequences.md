@@ -11,6 +11,7 @@ url="/api/openapi/v1/docSequences"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**1.27.0**](/docs/open-api/notice/update-log#1270)&emsp;-> 🐞 新增支持了 `corpPayment`（对公付款单）、`reimbursement`（报账单、发票录入单）类型单据的获取。<br/>
   [**1.16.0**](/docs/open-api/notice/update-log#1160)&emsp;-> 🐞 接口响应 `items` 下，新增 `orgSumAmount`（报销金额（原币））、`orgWriteOffAmount`（核销金额（原币））参数，需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空。<br/>
   [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
   [**0.7.128**](/docs/open-api/notice/update-log#07128) -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
@@ -26,13 +27,13 @@ url="/api/openapi/v1/docSequences"
 
 ## Query Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **accessToken** | String  | 认证token          | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
-| **powerCode**   | String  | 功能授权码，传入<br/>219902或者219904即可 | 必填 | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新) |       
-| **type**        | String  | 单据类型            | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`repayment` : 还款记录<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单 |
-| **index**       | Number  | 分页查询的起始索引序号 | 必填 | - | 例如 : 当 `index` = `1484498318240` 时，会查询所有<br/>`index` > `1484498318240` 的单据 |
-| **count**       | Number  | 查询数据条数         | 必填 | - | 最大不能超过 `100` |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                                                                                                                |
+| :--- | :--- | :--- | :--- |:--- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accessToken** | String  | 认证token          | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken`                                                                                                                                   |
+| **powerCode**   | String  | 功能授权码，传入<br/>219902或者219904即可 | 必填 | - | `219902` : 开放接口 &emsp; `219904` : 开放接口(新)                                                                                                                                                         |       
+| **type**        | String  | 单据类型            | 必填 | - | `expense` : 报销单<br/>`loan` : 借款单<br/>`repayment` : 还款记录<br/>`payment` : 付款单<br/>`requisition` : 申请单<br/>`custom` : 通用审批单<br/>`receipt` : 收款单<br/>`corpPayment` : 对公付款单<br/>`reimbursement` : 报账单、发票录入单 |
+| **index**       | Number  | 分页查询的起始索引序号 | 必填 | - | 例如 : 当 `index` = `1484498318240` 时，会查询所有<br/>`index` > `1484498318240` 的单据                                                                                                                        |
+| **count**       | Number  | 查询数据条数         | 必填 | - | 最大不能超过 `100`                                                                                                                                                                                      |
 
 :::tip
 - **index 这个值实际是一个时间戳（毫秒级），是单据状态改变的时间**，即单据审批后，单据状态变更为 `rejected` 已驳回、`paying` 待支付、`PROCESSING` 支付中、`paid` 已支付，四种状态中任意一种的时间。最开始查询可以根据自己需求设定的 **时间范围** 查询，大概从什么时间开始，会返回大于该时间的单据。

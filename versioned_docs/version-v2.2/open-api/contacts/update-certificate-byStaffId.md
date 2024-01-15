@@ -1,4 +1,4 @@
-# 更新员工证件信息
+# 新增或更新员工证件信息
 
 import Control from "@theme/Control";
 

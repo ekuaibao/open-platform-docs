@@ -25,11 +25,11 @@ url="/api/openapi/v2/attachment/downloadurls"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                                                                                                    |
-| :--- | :--- | :--- | :--- |:--- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **--**                   | Array  | 外层数组       | 必填  | - | 外层数组                                                                                                                                                                                  |
-| **&emsp; ∟ id**         | String | 文件fileId    | 必填 | - | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `fileId` 字段<br/>**接口下载单据上的附件时**，可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取 `attachments` 字段的 `fileId` 值 |
-| **&emsp; ∟ key**        | String | 文件key       | 必填 | - | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `key` 字段<br/>**接口下载单据上的附件时**，可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取 `attachments` 字段的 `key` 值       |
+| 名称 | 类型 | 描述       | 是否必填 | 默认值 | 备注                                                                                                                                                                                    |
+| :--- | :--- |:---------| :--- |:--- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **--**                   | Array  | 数组参数     | 必填  | - | 数组参数，**最大支持 `100` 个参数**                                                                                                                                                               |
+| **&emsp; ∟ id**         | String | 文件fileId | 必填 | - | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `fileId` 字段<br/>**接口下载单据上的附件时**，可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取 `attachments` 字段的 `fileId` 值 |
+| **&emsp; ∟ key**        | String | 文件key    | 必填 | - | [上传附件](/docs/open-api/attachment/attachment-upload) 接口返回的 `key` 字段<br/>**接口下载单据上的附件时**，可通过 [获取单据详情](/docs/open-api/flows/get-forms-details-byCode) 获取 `attachments` 字段的 `key` 值       |
 | **&emsp; ∟ expiration** | Number | 下载链接有效时间 | 必填 | - | 下载链接在多长时间内有效，单位：秒，最大 `1800` 秒                                                                                                                                                         |
 
 ## CURL

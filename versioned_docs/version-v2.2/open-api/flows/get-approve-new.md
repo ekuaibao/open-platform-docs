@@ -12,7 +12,7 @@ import Control from "@theme/Control";
 
 <Control
 method="GET"
-url="/api/openapi/v1/docs/byFlowId/$`approverId`"
+url="/api/openapi/v1.1/docs/byFlowId/$`approverId`"
 />
 
 <details>
@@ -34,14 +34,14 @@ url="/api/openapi/v1/docs/byFlowId/$`approverId`"
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- |:-----|:--- | :--- |
-| **accessToken**   | String  | 认证token     | 必填   | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
-| **index**         | Number  | 分页查询的起始值 | 非必填  | 0 | 起始值从 `0` 开始 |
-| **count**         | Number  | 查询数据条数    | 必填   | -  | 最大不能超过 `100`，**大于 `100` 按 `100` 返回** |
+| :--- | :--- | :--- |:-----|:----| :--- |
+| **accessToken**   | String  | 认证token     | 必填   | -   | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+| **index**         | Number  | 分页查询的起始值 | 非必填  | 0   | 起始值从 `0` 开始 |
+| **count**         | Number  | 查询数据条数    | 非必填  | 100 | 最大不能超过 `100`，**大于 `100` 按 `100` 返回** |
 
 ## CURL
 ```shell
-curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1/docs/byFlowId/$bwa3wajigF0WH0:ID_3lokDfb1p5w?accessToken=ID_3GIu1pV0diM:bwa3wajigF0WH0&index=0&count=10'
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v1.1/docs/byFlowId/$bwa3wajigF0WH0:ID_3lokDfb1p5w?accessToken=ID_3GIu1pV0diM:bwa3wajigF0WH0&index=0&count=10'
 ```
 
 ## 成功响应
