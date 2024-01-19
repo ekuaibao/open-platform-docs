@@ -46,6 +46,7 @@ url="/api/openapi/v2.1/payeeInfos"
 | **bankName**        | String | 银行名称<br/>**『海外账号』专属参数** | 非必填  | -     | 银行名称(Bank Name)                                                                                                                                                                                                                                                                       |
 | **swiftCode**       | String | 银行国际代码<br/>**『海外账号』专属参数** | 必填   | -     | 银行国际代码(Swift Code)                                                                                                                                                                                                                                                                    |
 | **nationCode**      | String | 银行所在地区代码<br/>**『海外账号』专属参数** | 必填   | -     | 银行所在地区代码(Nation Code)<br/>传参为 [国家地区代码](https://baike.baidu.com/item/%E4%B8%96%E7%95%8C%E5%90%84%E5%9B%BD%E5%92%8C%E5%9C%B0%E5%8C%BA%E5%90%8D%E7%A7%B0%E4%BB%A3%E7%A0%81/6560023?fromtitle=%E5%9B%BD%E5%AE%B6%E5%9C%B0%E5%8C%BA%E4%BB%A3%E7%A0%81&fromid=52038508&fr=aladdin#2 ) 的数字代码 |
+| **receiverAddress** | String | 收款人地址<br/>**『海外账号』专属参数** | 非必填  | -     | 收款人地址(Receiver Address)                                                                                                                                                                                                                                                                   |
 | **routingNumber**   | String | 汇款路线号码<br/>**『海外账号』专属参数** | 非必填  | -     | 汇款路线号码(Routing No.)                                                                                                                                                                                                                                                                   |
 | **bankCode**        | String | 联行号<br/>**『海外账号』专属参数** | 非必填  | -     | 联行号(Bank Code)                                                                                                                                                                                                                                                                        |
 | **branchCode**      | String | 支行号<br/>**『海外账号』专属参数** | 非必填  | -     | 支行号(Branch Code)                                                                                                                                                                                                                                                                      |
@@ -175,7 +176,8 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/payeeI
     "cardNo":"77131234",                       //银行账号(Account No.)
     "bankName": "海外银行名称",                //银行名称(Bank Name)
     "swiftCode": "海外银行国际代码",           //银行国际代码(Swift Code)
-    "nationCode": "840",                      //银行所在地区代码(Nation Code)，传参为国家数字代码，840：美国
+    "nationCode": "840",                     //银行所在地区代码(Nation Code)，传参为国家数字代码，840：美国
+    "receiverAddress": "53"              //收款人地址(Receiver Address)
     "routingNumber": "99999",                 //汇款路线号码(Routing No.)
     "bankCode": "88888",                      //联行号(Bank Code)
     "branchCode": "777777",                   //支行号(Branch Code)

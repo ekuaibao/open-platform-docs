@@ -212,6 +212,12 @@ const sidebars = {
       items: [
         "open-api/matrix/info",
         "open-api/matrix/get-matrixs",
+        "open-api/matrix/get-matrix-byId",
+        "open-api/matrix/batch-update-matrixRuleCommon",
+        "open-api/matrix/update-matrixRule-byId",
+        "open-api/matrix/batch-update-matrixRule-byId",
+        "open-api/matrix/delete-matrixRule",
+        "open-api/matrix/active-matrix",
         "open-api/matrix/question-answer"
       ],
     },

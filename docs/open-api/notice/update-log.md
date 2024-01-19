@@ -13,8 +13,15 @@ timeline: true
 
 ## 1.27.0
 
-`2024-01-xx`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
+`2024-01-19`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.128.10`
 
+- 🆕 新增 [查询企业下所有审批矩阵](/docs/open-api/matrix/get-matrixs) 接口。
+- 🆕 新增 [根据矩阵ID查询审批矩阵](/docs/open-api/matrix/get-matrix-byId) 接口。
+- 🆕 新增 [批量更新矩阵明细中单个公共属性字段](/docs/open-api/matrix/batch-update-matrixRuleCommon) 接口。
+- 🆕 新增 [新增或更新矩阵明细](/docs/open-api/matrix/update-matrixRule-byId) 接口。
+- 🆕 新增 [批量新增或更新矩阵明细](/docs/open-api/matrix/batch-update-matrixRule-byId) 接口。
+- 🆕 新增 [批量删除规则明细](/docs/open-api/matrix/delete-matrixRule) 接口。
+- 🆕 新增 [停启用审批矩阵](/docs/open-api/matrix/active-matrix) 接口。
 - 🐞 更新 [根据企业ID获取单据模板列表](/docs/open-api/forms/get-template-list) 接口
   - 新增了支持返回 `corpPayment`（对公付款单）、`reimbursement`（报账单、发票录入单）类型的单据模板。
 - 🐞 更新 [获取发票图片链接地址](/docs/open-api/datalink-extend/get-entity-invoice-img) 接口
