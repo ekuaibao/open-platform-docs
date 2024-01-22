@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="1080px" viewBox="0 0 800 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>思维导图</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="192" height="97" rx="12"></rect>
+        <filter x="-12.0%" y="-16.5%" width="124.0%" height="147.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.19569493 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-3" x="3" y="0" width="160" height="85" rx="12"></rect>
+        <filter x="-14.4%" y="-18.8%" width="128.8%" height="154.1%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.19569493 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-5" x="3" y="0" width="160" height="85" rx="12"></rect>
+        <filter x="-14.4%" y="-18.8%" width="128.8%" height="154.1%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.19569493 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-7" x="0" y="0" width="160" height="85" rx="12"></rect>
+        <filter x="-14.4%" y="-18.8%" width="128.8%" height="154.1%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.19569493 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-9" x="5" y="0" width="142" height="100" rx="12"></rect>
+        <filter x="-14.1%" y="-13.0%" width="128.2%" height="140.0%" filterUnits="objectBoundingBox" id="filter-10">
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="7" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.197940793   0 0 0 0 0.654441438   0 0 0 0 0.710626132  0 0 0 0.264641608 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-11" x="0" y="0" width="142" height="100" rx="12"></rect>
+        <filter x="-14.1%" y="-13.0%" width="128.2%" height="140.0%" filterUnits="objectBoundingBox" id="filter-12">
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="7" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.197940793   0 0 0 0 0.654441438   0 0 0 0 0.710626132  0 0 0 0.264641608 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-13" x="0" y="0" width="142" height="100" rx="12"></rect>
+        <filter x="-14.1%" y="-13.0%" width="128.2%" height="140.0%" filterUnits="objectBoundingBox" id="filter-14">
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="7" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.197940793   0 0 0 0 0.654441438   0 0 0 0 0.710626132  0 0 0 0.264641608 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-15" x="0" y="0" width="142" height="100" rx="12"></rect>
+        <filter x="-14.1%" y="-13.0%" width="128.2%" height="140.0%" filterUnits="objectBoundingBox" id="filter-16">
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="7" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.197940793   0 0 0 0 0.654441438   0 0 0 0 0.710626132  0 0 0 0.264641608 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-17" x="0" y="0" width="142" height="100" rx="12"></rect>
+        <filter x="-14.1%" y="-13.0%" width="128.2%" height="140.0%" filterUnits="objectBoundingBox" id="filter-18">
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="7" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.197940793   0 0 0 0 0.654441438   0 0 0 0 0.710626132  0 0 0 0.264641608 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-19" x="0" y="0" width="160" height="85" rx="12"></rect>
+        <filter x="-14.4%" y="-18.8%" width="128.8%" height="154.1%" filterUnits="objectBoundingBox" id="filter-20">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.19569493 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-32.5%" y="-25.0%" width="165.0%" height="150.0%" filterUnits="objectBoundingBox" id="filter-21">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.19569493 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-22" x="0" y="15" width="160" height="85" rx="12"></rect>
+        <filter x="-14.4%" y="-18.8%" width="128.8%" height="154.1%" filterUnits="objectBoundingBox" id="filter-23">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.19569493 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="0%" y1="50%" x2="103.1626%" y2="50%" id="linearGradient-24">
+            <stop stop-color="#61DBE4" offset="0%"></stop>
+            <stop stop-color="#32B4C4" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-25" x="0" y="0" width="160" height="58" rx="29"></rect>
+        <filter x="-14.4%" y="-27.6%" width="128.8%" height="179.3%" filterUnits="objectBoundingBox" id="filter-26">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-27" x="0" y="0" width="192" height="134" rx="12"></rect>
+        <filter x="-12.0%" y="-11.9%" width="124.0%" height="134.3%" filterUnits="objectBoundingBox" id="filter-28">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.19569493 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-29" x="0" y="0" width="192" height="97" rx="12"></rect>
+        <filter x="-12.0%" y="-16.5%" width="124.0%" height="147.4%" filterUnits="objectBoundingBox" id="filter-30">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.19569493 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-31" x="0" y="0" width="192" height="134" rx="12"></rect>
+        <filter x="-12.0%" y="-11.9%" width="124.0%" height="134.3%" filterUnits="objectBoundingBox" id="filter-32">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.19569493 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-33" x="0" y="0" width="160" height="58" rx="29"></rect>
+        <filter x="-14.4%" y="-27.6%" width="128.8%" height="179.3%" filterUnits="objectBoundingBox" id="filter-34">
+            <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.705882353   0 0 0 0 0.768627451  0 0 0 0.195995411 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="思维导图" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="800" height="1080"></rect>
+        <polyline id="形状" stroke="#32B4C4" stroke-width="5" points="698 303 698 678 306 678"></polyline>
+        <path d="M482,538 L482,563 C482,576.807119 470.807119,588 457,588 C403.868647,588 366.924637,588 346.167969,588 M280.007812,588 C248.450521,588 201.114583,588 138,588 C124.192881,588 113,576.807119 113,563 L113,538" id="形状" stroke="#32B4C4" stroke-width="5"></path>
+        <path d="M482.498638,319 L482.498638,407 M115.501362,407 L115.501362,319 L115.501362,319" id="形状" stroke="#32B4C4" stroke-width="5"></path>
+        <path d="M98,857 C84.1928813,857 73,845.807119 73,832 L73,805 C73,791.192881 84.1928813,780 98,780 C177.255208,780 236.696615,780 276.324219,780 M348.171875,780 C403.17741,780 510.786785,780 671,780 C684.807119,780 696,791.192881 696,805 L696,827.246094 L696,832 C696,845.807119 684.807119,857 671,857" id="形状" stroke="#32B4C4" stroke-width="3"></path>
+        <path d="M366,780 L369,780 C382.807119,780 394,791.192881 394,805 L394,846 M369,871 L366,871" id="形状" stroke="#32B4C4" stroke-width="3"></path>
+        <path d="M255,863 C241.192881,863 230,851.807119 230,838 L230,830.958984 L230,805 C230,791.192881 241.192881,780 255,780 C267.043403,780 276.075955,780 282.097656,780 M335.349609,780 C368.360395,780 431.577191,780 525,780 C538.807119,780 550,791.192881 550,805 L550,829.865234 L550,838 C550,851.807119 538.807119,863 525,863" id="形状" stroke="#32B4C4" stroke-width="3"></path>
+        <g id="编组" transform="translate(19.000000, 227.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <rect stroke="#32B4C4" stroke-width="6" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="3" y="3" width="186" height="91" rx="12"></rect>
+            </g>
+            <text id="获取企业费用模版-列表" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#32B4C4">
+                <tspan x="32.5" y="44">获取企业费用类型</tspan>
+                <tspan x="66.5" y="66">模版列表</tspan>
+            </text>
+            <polygon id="多边形" fill="#16CBE1" points="96.5 83 108.191343 90 108.191343 104 96.5 111 84.808657 104 84.808657 90"></polygon>
+        </g>
+        <g id="编组备份-4" transform="translate(232.000000, 635.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                <rect stroke="#32B4C4" stroke-width="6" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="6" y="3" width="154" height="79" rx="12"></rect>
+            </g>
+            <text id="填写单据信息" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#32B4C4">
+                <tspan x="34.5" y="49">填写单据信息</tspan>
+            </text>
+            <polygon id="多边形" fill="#16CBE1" transform="translate(163.500000, 42.000000) rotate(90.000000) translate(-163.500000, -42.000000) " points="163.5 28 175.191343 35 175.191343 49 163.5 56 151.808657 49 151.808657 35"></polygon>
+        </g>
+        <g id="编组备份-5" transform="translate(425.000000, 635.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                <rect stroke="#32B4C4" stroke-width="6" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="6" y="3" width="154" height="79" rx="12"></rect>
+            </g>
+            <text id="保存单据" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#32B4C4">
+                <tspan x="50.5" y="49">保存单据</tspan>
+            </text>
+            <polygon id="多边形" fill="#16CBE1" transform="translate(163.500000, 42.000000) rotate(90.000000) translate(-163.500000, -42.000000) " points="163.5 28 175.191343 35 175.191343 49 163.5 56 151.808657 49 151.808657 35"></polygon>
+        </g>
+        <g id="编组备份-6" transform="translate(618.000000, 635.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                <rect stroke="#32B4C4" stroke-width="6" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="3" y="3" width="154" height="79" rx="12"></rect>
+            </g>
+            <text id="根据单据id获取流程实例" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#32B4C4">
+                <tspan x="9.048" y="38">根据单据id获取流程</tspan>
+                <tspan x="64" y="60">实例</tspan>
+            </text>
+        </g>
+        <g id="编组备份-9" transform="translate(13.000000, 827.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                <rect stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="5" y="0" width="142" height="100" rx="12"></rect>
+            </g>
+            <text id="获取部门列表" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#32B4C4">
+                <tspan x="23" y="56">获取部门列表</tspan>
+            </text>
+        </g>
+        <g id="编组备份-14" transform="translate(172.000000, 827.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use>
+                <rect stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="142" height="100" rx="12"></rect>
+            </g>
+            <text id="获取员工列表/-查询员工" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#32B4C4">
+                <tspan x="19" y="45">获取员工列表/</tspan>
+                <tspan x="39" y="67">查询员工</tspan>
+            </text>
+        </g>
+        <g id="编组备份-15" transform="translate(327.000000, 827.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-14)" xlink:href="#path-13"></use>
+                <rect stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="142" height="100" rx="12"></rect>
+            </g>
+            <text id="获取自定义-档案值" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#32B4C4">
+                <tspan x="31" y="45">获取自定义</tspan>
+                <tspan x="47" y="67">档案值</tspan>
+            </text>
+        </g>
+        <g id="编组备份-16" transform="translate(481.000000, 827.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-16)" xlink:href="#path-15"></use>
+                <rect stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="142" height="100" rx="12"></rect>
+            </g>
+            <text id="根据银行账号或者账户名称获取帐号信息" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#32B4C4">
+                <tspan x="23" y="32">根据银行账号</tspan>
+                <tspan x="23" y="54">或者账户名称</tspan>
+                <tspan x="23" y="76">获取帐号信息</tspan>
+            </text>
+        </g>
+        <g id="编组备份-17" transform="translate(636.000000, 827.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-18)" xlink:href="#path-17"></use>
+                <rect stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="142" height="100" rx="12"></rect>
+            </g>
+            <text id="……" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#32B4C4">
+                <tspan x="55" y="50">……</tspan>
+            </text>
+        </g>
+        <g id="编组备份-7" transform="translate(619.000000, 506.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-20)" xlink:href="#path-19"></use>
+                <rect stroke="#32B4C4" stroke-width="6" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="3" y="3" width="154" height="79" rx="12"></rect>
+            </g>
+            <text id="填写流程" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#32B4C4">
+                <tspan x="48" y="49">填写流程</tspan>
+            </text>
+            <polygon id="多边形" fill="#16CBE1" points="79.5 113 91.191343 120 91.191343 134 79.5 141 67.808657 134 67.808657 120"></polygon>
+        </g>
+        <g id="编组备份-8" filter="url(#filter-21)" transform="translate(619.000000, 362.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-23)" xlink:href="#path-22"></use>
+                <rect stroke="#32B4C4" stroke-width="6" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="3" y="18" width="154" height="79" rx="12"></rect>
+            </g>
+            <text id="提交单据" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#32B4C4">
+                <tspan x="48" y="64">提交单据</tspan>
+            </text>
+            <polygon id="多边形" fill="#16CBE1" points="79.5 128 91.191343 135 91.191343 149 79.5 156 67.808657 149 67.808657 135"></polygon>
+            <polygon id="多边形备份" fill="#16CBE1" points="79.5 0 91.191343 7 91.191343 21 79.5 28 67.808657 21 67.808657 7"></polygon>
+        </g>
+        <g id="编组-2" transform="translate(619.000000, 290.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-26)" xlink:href="#path-25"></use>
+                <use fill="url(#linearGradient-24)" fill-rule="evenodd" xlink:href="#path-25"></use>
+            </g>
+            <text id="结束" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                <tspan x="56" y="38">结束</tspan>
+            </text>
+        </g>
+        <g id="编组备份-2" transform="translate(19.000000, 392.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-28)" xlink:href="#path-27"></use>
+                <rect stroke="#32B4C4" stroke-width="6" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="3" y="3" width="186" height="128" rx="12"></rect>
+            </g>
+            <text id="根据费用类型【IDS】或编码类型【cod" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#32B4C4">
+                <tspan x="19.572" y="44">根据费用类型【IDS】</tspan>
+                <tspan x="17.804" y="66">或编码类型【codes】</tspan>
+                <tspan x="17.5" y="88">获取费用类型模板信息</tspan>
+            </text>
+            <polygon id="多边形" fill="#16CBE1" points="95.5 120 107.191343 127 107.191343 141 95.5 148 83.808657 141 83.808657 127"></polygon>
+        </g>
+        <g id="编组备份" transform="translate(387.000000, 228.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-30)" xlink:href="#path-29"></use>
+                <rect stroke="#32B4C4" stroke-width="6" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="3" y="3" width="186" height="91" rx="12"></rect>
+            </g>
+            <text id="获取企业费用模版-列表" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#32B4C4">
+                <tspan x="32.5" y="44">获取企业单据模版</tspan>
+                <tspan x="80.5" y="66">列表</tspan>
+            </text>
+            <polygon id="多边形" fill="#16CBE1" points="95.5 85 107.191343 92 107.191343 106 95.5 113 83.808657 106 83.808657 92"></polygon>
+        </g>
+        <g id="编组备份-3" transform="translate(387.000000, 393.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-32)" xlink:href="#path-31"></use>
+                <rect stroke="#32B4C4" stroke-width="6" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" x="3" y="3" width="186" height="128" rx="12"></rect>
+            </g>
+            <text id="根据单据列表模版IDS获取单据信息" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#32B4C4">
+                <tspan x="18.572" y="62">根据单据列表模版IDS</tspan>
+                <tspan x="47.5" y="84">获取单据信息</tspan>
+            </text>
+            <polygon id="多边形" fill="#16CBE1" points="95.5 120 107.191343 127 107.191343 141 95.5 148 83.808657 141 83.808657 127"></polygon>
+        </g>
+        <path d="M106,227 L106,211.267908 C106,196.760543 115.804283,185 127.898479,185 C190.165821,185 236.866329,185 268,185 M331,185 C354.849314,185 398.198607,185 461.047878,185 C473.1717,185 483,196.993564 483,211.788374 C483,218.993541 483,224.397416 483,228" id="形状" stroke="#32B4C4" stroke-width="5"></path>
+        <path d="M428,185 L337,185 C318.222319,185 303,169.777681 303,151 L303,131.773438 L303,109" id="路径" stroke="#32B4C4" stroke-width="5"></path>
+        <path d="M302,185 L211,185 C192.222319,185 177,169.777681 177,151 L177,131.773438 L177,109" id="路径备份" stroke="#32B4C4" stroke-width="5" transform="translate(239.500000, 147.000000) scale(-1, 1) translate(-239.500000, -147.000000) "></path>
+        <g id="编组-3" transform="translate(222.000000, 77.000000)">
+            <g id="矩形">
+                <use fill="black" fill-opacity="1" filter="url(#filter-34)" xlink:href="#path-33"></use>
+                <use fill="url(#linearGradient-24)" fill-rule="evenodd" xlink:href="#path-33"></use>
+            </g>
+            <text id="开始" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                <tspan x="56" y="38">开始</tspan>
+            </text>
+        </g>
+        <path d="M312,720 L312,748.75 C312,766.008898 300.807119,780 287,780 L234,780" id="路径" stroke="#32B4C4" stroke-width="3"></path>
+        <path d="M389.5,720 L390,755 C390,768.807119 378.807119,780 365,780 L312,780" id="路径" stroke="#32B4C4" stroke-width="3" transform="translate(351.000000, 750.000000) scale(-1, 1) translate(-351.000000, -750.000000) "></path>
+        <path d="M272,588 L287,588 C300.807119,588 312,599.192881 312,613 L312,638" id="路径" stroke="#32B4C4" stroke-width="5"></path>
+        <path d="M312,588 L327,588 C340.807119,588 352,599.192881 352,613 L352,638" id="路径" stroke="#32B4C4" stroke-width="5" transform="translate(332.000000, 613.000000) scale(-1, 1) translate(-332.000000, -613.000000) "></path>
+    </g>
+</svg>

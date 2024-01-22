@@ -1,0 +1,90 @@
+# 获取企业下档案关系列表
+
+import Control from "@theme/Control";
+
+<Control
+method="POST"
+url="/api/openapi/v2.1/recordLink/getRoleGroups"
+/>
+
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  [**1.3.0**](/docs/open-api/notice/update-log#130) -> 🚀 接口升级 `v2.1` 版本，优化了报错输出。<br/>
+
+  </div>
+</details>
+
+## Query Parameters
+
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+
+## CURL
+```shell
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/recordLink/getRoleGroups?accessToken=4vkbY22qkocU00'
+```
+
+## 成功响应
+```json
+{
+    "items": [
+        {
+            "id": "gf4bVQSClE3g00",                          //档案关系ID
+            "name": "1与12",                                 //档案关系名称
+            "sourceType": "basedata.Dimension.项目",         //源维度类型
+            "purposeType": "basedata.Dimension.固定资产类目" //目标维度类型
+        },
+        {
+            "id": "4GAbXLhPP0go00",
+            "name": "收款与档案类别蔡",
+            "sourceType": "pay.PayeeInfo",
+            "purposeType": "basedata.Dimension.自档案类别蔡"
+        },
+        {
+            "id": "5W8bXsoZl8gw00",
+            "name": "所属部门与所在员工",
+            "sourceType": "organization.Department",
+            "purposeType": "organization.Staff"
+        },
+        {
+            "id": "76EbVvwlyke400",
+            "name": "项目与法人",
+            "sourceType": "basedata.Dimension.自档案类别蔡",
+            "purposeType": "basedata.Dimension.法人实体"
+        },
+        {
+            "id": "8IUbVR8ccckw00",
+            "name": "项目与部门",
+            "sourceType": "basedata.Dimension.项目",
+            "purposeType": "organization.Department"
+        },
+        {
+            "id": "k1IbYjF-GIvw00",
+            "name": "法人与部门",
+            "sourceType": "basedata.Dimension.法人实体",
+            "purposeType": "organization.Department"
+        },
+        {
+            "id": "qyMbXMvgBgaU00",
+            "name": "费用类型与员工",
+            "sourceType": "flow.FeeType",
+            "purposeType": "organization.Staff"
+        },
+        {
+            "id": "sG4bXpOQIE0I00",
+            "name": "部门与法人",
+            "sourceType": "organization.Department",
+            "purposeType": "basedata.Dimension.法人实体"
+        }
+    ]
+}
+```
+
+## 失败响应
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **400** | - | 查询结果不存在 | 请确认企业下是否有档案关系 | 
+

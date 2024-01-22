@@ -1,0 +1,99 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: rgb(33, 175, 144);
+  --ifm-color-primary-darker: rgb(31, 165, 136);
+  --ifm-color-primary-darkest: rgb(26, 136, 112);
+  --ifm-color-primary-light: rgb(70, 203, 174);
+  --ifm-color-primary-lighter: rgb(102, 212, 189);
+  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-code-font-size: 95%;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.theme-doc-footer-edit-meta-row {
+  display: none;
+}
+
+html[data-theme="dark"] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+table {
+  display: table;
+  border-collapse: collapse;
+  position: relative;
+  font-size: 90%;
+  width: 100%;
+  line-height: 1.5;
+  table-layout: auto;
+}
+
+table thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+table td {
+  padding: 0.75rem 0.5rem;
+  border: 0;
+  vertical-align: top;
+}
+
+table tr {
+  border-top: 1px solid #373e47;
+}
+
+table th {
+  font-weight: 600;
+  text-align: left;
+  fontsize: 18px;
+  position: -webkit-sticky;
+  position: sticky;
+  vertical-align: top;
+  z-index: 1;
+  top: 0;
+  padding: 0.75rem 0.5rem;
+  border: 0;
+}
+
+table thead tr {
+  border: 0;
+}
+
+table td {
+  padding: 0.75rem 0.5rem;
+  border: 0;
+  vertical-align: top;
+}
+
+table thead th {
+  white-space: nowrap;
+}
+
+table tbody tr td {
+  white-space: nowrap;
+}
+
+table tbody tr td:nth-child(3),
+table tbody tr td:last-child {
+  white-space: normal;
+}
+
+.prism-code {
+  max-height: 480px;
+  verflow: auto;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="组件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="P-menu/main-menu" transform="translate(-8.000000, -10.000000)">
+            <g id="logo" transform="translate(8.000000, 10.000000)">
+                <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="40" height="40"></rect>
+                <polygon id="Fill-1" fill="#22b2cc" points="20.126625 4 20.126625 11.1111111 26.405125 14.6666667 32.683625 11.1111111"></polygon>
+                <polygon id="Fill-2" fill="#22b2cc" points="6 27.9995556 12.2785 24.444 12.2785 15.5551111 6 12.0004444"></polygon>
+                <polygon id="Fill-3" fill="#119AB2" points="6 27.9995556 6 28.0004444 20.126625 36.0004444 20.126625 28.8884444 12.2785 24.444"></polygon>
+                <polygon id="Fill-4" fill="#22b2cc" points="20.126625 28.9072 20.126625 28.8885333 20.126625 35.9996444 34.26775 28.0076444 27.9910625 24.4538667"></polygon>
+                <polygon id="Fill-5" fill="#3CCDDC" points="20.126625 4 6 11.9991111 6 12.0008889 12.2785 15.5555556 20.126625 11.1111111"></polygon>
+                <polygon id="Fill-6" fill="#3CCDDC" points="16.9870125 19.9999111 32.6841687 11.1110222 32.6841687 18.2221333 23.2664187 23.5554667"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

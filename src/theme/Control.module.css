@@ -1,0 +1,105 @@
+:root {
+  --method-post-color: #49cc90;
+  --method-post-bgcolor: rgba(73, 204, 144, 0.1);
+  --method-get-color: #61affe;
+  --method-get-bgcolor: rgba(97, 175, 255, 0.1);
+  --method-put-color: #fca130;
+  --method-put-bgcolor: rgba(252, 161, 48, 0.1);
+  --method-delete-color: #f93e3e;
+  --method-delete-bgcolor: rgba(249, 62, 62, 0.1);
+}
+
+.control {
+  border-radius: 4px;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  padding: 5px;
+  margin: 8px 0;
+}
+
+.POST {
+  border: 1px solid var(--method-post-color);
+  background: var(--method-post-bgcolor);
+}
+
+.GET {
+  border: 1px solid var(--method-get-color);
+  background: var(--method-get-bgcolor);
+}
+
+.PUT {
+  border: 1px solid var(--method-put-color);
+  background: var(--method-put-bgcolor);
+}
+
+.DELETE {
+  border: 1px solid var(--method-delete-color);
+  background: var(--method-delete-bgcolor);
+}
+
+.POST .method {
+  background: var(--method-post-color);
+}
+
+.GET .method {
+  background: var(--method-get-color);
+}
+
+.PUT .method {
+  background: var(--method-put-color);
+}
+
+.DELETE .method {
+  background: var(--method-delete-color);
+}
+
+.POST strong span {
+  border: 1px solid var(--method-post-color);
+  background: var(--method-post-bgcolor);
+}
+
+.GET strong span {
+  border: 1px solid var(--method-get-color);
+  background: var(--method-get-bgcolor);
+}
+
+.PUT strong span {
+  border: 1px solid var(--method-put-color);
+  background: var(--method-put-bgcolor);
+}
+
+.DELETE strong span {
+  border: 1px solid var(--method-delete-color);
+  background: var(--method-delete-bgcolor);
+}
+
+.method {
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 80px;
+  padding: 6px 0;
+  text-align: center;
+  border-radius: 3px;
+  color: #fff;
+  background: var(--method-post-color);
+}
+
+.control strong {
+  align-items: center;
+  color: #3b4151;
+  display: flex;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 10px;
+  word-break: break-word;
+}
+
+.control strong span {
+  display: inline-block;
+  font-size: 15px;
+  padding: 2px 4px;
+  line-height: 1;
+  border-radius: 4px;
+}

@@ -1,0 +1,64 @@
+# 根据发起人ID获取委托审批授权数据
+
+import Control from "@theme/Control";
+
+<Control
+method="GET"
+url="/api/openapi/v2/organization/delegate/approve/$`staffId`"
+/>
+
+## Path Parameters
+
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **staffId** | String | 授权发起人ID | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
+
+## Query Parameters
+
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- | :--- | :--- | :--- |:--- | :--- |
+| **accessToken** | String | 认证token | 必填 | - | 通过 [获取授权](/docs/open-api/getting-started/auth) 获取 `accessToken` |
+
+## CURL
+```shell
+curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/organization/delegate/approve/$34A73EyI8A0w00:VV89AHfyJo2E00?accessToken=MwAcih69ycDo00'
+```
+
+## 成功响应
+```json
+{
+    "items": [
+        {
+            "corporationId": "34A73EyI8A0w00",              //企业ID
+            "staffId": "34A73EyI8A0w00:VV89AHfyJo2E00",     //授权发起人ID
+            "delegateeId": "34A73EyI8A0w00:rgobwK3yUoqw00", //被委托人ID
+            "name": "委托授权",                             //授权名称
+            "remark": "备注",                               //授权备注
+            "startTime": 1612339282021,                     //授权开始时间
+            "endTime": null,                                //授权结束时间
+            "originalIds": [                                //授权的单据源模板ID集合
+                "ms0cgHfmF1fU00",
+                "U7IcgM1h6ZEo00"
+            ],
+            "id": "jSIcih1RiNHg00"                          //委托关系数据ID
+        },
+        {
+            "corporationId": "34A73EyI8A0w00",
+            "staffId": "34A73EyI8A0w00:HiQbwK3q-Qsw00",
+            "delegateeId": "34A73EyI8A0w00:qD0bKunErwug00",
+            "name": "",
+            "remark": "",
+            "startTime": null,
+            "endTime": null,
+            "originalIds": [],
+            "id": "f_0cfEDrblSY00"
+        }
+    ]
+}
+```
+
+## 失败响应
+
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| :--- | :--- | :--- | :--- |
+| **200** | - | `{"items": []}` | 返回空表示没有查询到数据<br/>请确认 `staffId`（授权发起人ID）是否正确或该用户下是否有委托审批授权数据 |
