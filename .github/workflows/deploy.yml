@@ -28,6 +28,8 @@ jobs:
       - name: Build Docusaurus website
         run: |
           ls -lsh
+          npm config set sharp_binary_host "https://npmmirror.com/mirrors/sharp"  
+          npm config set sharp_libvips_binary_host "https://npmmirror.com/mirrors/sharp_libvips" 
           npm install 
           npm run build
       - name: Deploy to GitHub Pages
