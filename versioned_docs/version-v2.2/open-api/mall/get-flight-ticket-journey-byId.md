@@ -93,7 +93,7 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/mall-openapi/open
 | **errorMsg**  | String  | 否 | 失败原因，示例：`人员信息不存在` |
 | **requestId** | String  | 是 | 请求标识 |
 | **time**      | Long    | 是 | 接口响应时间(单位：毫秒) |
-| **data**      | List<TicketJourney\> | 否 | 客票行程信息集合，存在多航段的情况，故此字段为集合类型，**请求失败时为空** |
+| **data**      | List | 否 | 客票行程信息集合，存在多航段的情况，故此字段为集合类型，**请求失败时为空** |
 | **&emsp; ∟ ticketNo**         | String  | 是 | 票号，示例：`000-2233777777` |
 | **&emsp; ∟ ticketStatus**     | Integer | 是 | 客票状态，见【**客票状态对照表**】，示例：`1` |
 | **&emsp; ∟ ticketStatusDesc** | String  | 是 | 客票状态文字描述，示例：`未出票` |

@@ -29,25 +29,25 @@ url="/api/openapi/v1.1/staffs/batch/update"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **staffList**                          | Array  | 批量修改的员工         | 必填  | - | 员工信息数组, **最大不能超过 `100` 条** |
-| **&emsp; ∟ id**                        | String  | 员工ID             | 必填   | - | 可以通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
-| **&emsp; ∟ name**                      | String  | 员工姓名            | 必填   | - | 员工姓名 |
-| **&emsp; ∟ nickName**                  | String  | 员工别名            | 非必填 | - | 员工别名 |
-| **&emsp; ∟ code**                      | String  | 工号               | 非必填  | - | 工号 |
-| **&emsp; ∟ cellphone**                 | String  | 手机号             | 非必填  | - | 如果手机号为国外手机号，那么应为 : "(区号)手机号" |
-| **&emsp; ∟ email**                     | String  | 邮箱	            | 非必填  | - | 可以不传，但是不可以传 `""` |
-| **&emsp; ∟ note**                      | String  | 备注	            | 非必填  | - | 备注 |
-| **&emsp; ∟ defaultDepartment**         | String  | 默认部门ID或CODE    | 非必填  | - | 所传默认部门必须在 `departments` 里 |
-| **&emsp; ∟ departments**               | Array   | 所在部门ID或CODE，至少1个	| 非必填  | - | 与 `defaultDepartment` 参数须同时存在，都传或都不传 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                          |
+| :--- | :--- | :--- | :--- |:--- |:------------------------------------------------------------------------------------------------------------|
+| **staffList**                          | Array  | 批量修改的员工         | 必填  | - | 员工信息数组, **最大不能超过 `100` 条**                                                                                  |
+| **&emsp; ∟ id**                        | String  | 员工ID             | 必填   | - | 可以通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取                                                 |
+| **&emsp; ∟ name**                      | String  | 员工姓名            | 必填   | - | 员工姓名                                                                                                        |
+| **&emsp; ∟ nickName**                  | String  | 员工别名            | 非必填 | - | 员工别名                                                                                                        |
+| **&emsp; ∟ code**                      | String  | 工号               | 非必填  | - | 工号                                                                                                          |
+| **&emsp; ∟ cellphone**                 | String  | 手机号             | 非必填  | - | 如果手机号为国外手机号，那么应为 : "(区号)手机号"                                                                                |
+| **&emsp; ∟ email**                     | String  | 邮箱	            | 非必填  | - | 可以不传，但是不可以传 `""`                                                                                            |
+| **&emsp; ∟ note**                      | String  | 备注	            | 非必填  | - | 备注                                                                                                          |
+| **&emsp; ∟ defaultDepartment**         | String  | 默认部门ID或CODE    | 非必填  | - | 所传默认部门必须在 `departments` 里                                                                                   |
+| **&emsp; ∟ departments**               | Array   | 所在部门ID或CODE，至少1个	| 非必填  | - | 与 `defaultDepartment` 参数须同时存在，都传或都不传                                                                        |
 | **&emsp; ∟ modifyAccountPhone**        | Boolean | 是否修改登录手机号	| 非必填  | false | `true` : 是，修改后手机号为 `cellphone`<br/>**不可修改成已注册企业且企业启用中的手机号**<br/><!--可以修改成未注册企业或企业均解散的手机号<br/>-->`false` : 否 |
-| **&emsp; ∟ modifyAccountEmail**        | Boolean | 是否修改登录邮箱	    | 非必填  | false | `true` : 是，修改后邮箱为 `email`<br/>**不可修改成已注册企业且企业启用中的邮箱**<br/><!--可以修改成未注册企业或企业均解散的邮箱<br/>-->`false` : 否 |
-| **&emsp; ∟ staffCustomForm**           | Object  | 自定义字段	        | 非必填  | - | 员工自定义字段 |
-| **&emsp;&emsp; ∟ rankType**            | String  | 职级	            | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
-| **&emsp;&emsp; ∟ postType**            | String  | 岗位	            | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
-| **&emsp;&emsp; ∟ base**                | String  | 常驻地             | 非必填  | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
-| **&emsp;&emsp; ∟ u_字段名**             | String  | 自定义字段	        | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目<br/>可通过 [获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty) 获取字段名 |
+| **&emsp; ∟ modifyAccountEmail**        | Boolean | 是否修改登录邮箱	    | 非必填  | false | `true` : 是，修改后邮箱为 `email`<br/>**不可修改成已注册企业且企业启用中的邮箱**<br/><!--可以修改成未注册企业或企业均解散的邮箱<br/>-->`false` : 否        |
+| **&emsp; ∟ staffCustomForm**           | Object  | 自定义字段	        | 非必填  | - | 员工自定义字段                                                                                                     |
+| **&emsp;&emsp; ∟ rankType**            | String  | 职级	            | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取                                             |
+| **&emsp;&emsp; ∟ postType**            | String  | 岗位	            | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取                                             |
+| **&emsp;&emsp; ∟ base**                | String  | 常驻地             | 非必填  | - | 参考格式 : "\[\{\"key\":\"8\",\"label\":\"北京市/海淀区\"\}\]"                                                        |
+| **&emsp;&emsp; ∟ u_字段名**             | String  | 自定义字段	        | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目<br/>可通过 [获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty) 获取字段名      |
 
 :::tip
 - `base`（常驻地）参数拼接说明：<br/>

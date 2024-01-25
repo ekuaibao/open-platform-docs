@@ -32,23 +32,23 @@ url="/api/openapi/v1.1/staffs"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **name**                      | String    | 员工姓名           | 必填  | - | 员工姓名 |
-| **code**                      | String    | 工号              | 非必填 | - | 工号 |
-| **cellphone**                 | String    | 手机号            | 非必填 | - | 如果手机号为国外手机号，传参示例 : "(区号)手机号"<br/>原生环境手机号或邮箱必须至少填一个<br/>**只允许传英文括号和数字** |
-| **email**                     | String    | 邮箱              | 非必填 | - | 可以不传，但是不可以传 `""`<br/>原生环境手机号或邮箱必须至少填一个 |
-| **note**                      | String    | 备注              | 非必填 | - | 备注 |
-| **defaultDepartment**         | String    | 默认部门ID         | 必填   | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门 |
-| **departments**               | Array     | 所在部门ID，至少1个  | 必填  | - | 兼职部门，请确保至少包含默认部门 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                |
+| :--- | :--- | :--- | :--- |:--- |:--------------------------------------------------------------------------------------------------|
+| **name**                      | String    | 员工姓名           | 必填  | - | 员工姓名                                                                                              |
+| **code**                      | String    | 工号              | 非必填 | - | 工号                                                                                                |
+| **cellphone**                 | String    | 手机号            | 非必填 | - | 如果手机号为国外手机号，传参示例 : "(区号)手机号"<br/>原生环境手机号或邮箱必须至少填一个<br/>**只允许传英文括号和数字**                            |
+| **email**                     | String    | 邮箱              | 非必填 | - | 可以不传，但是不可以传 `""`<br/>原生环境手机号或邮箱必须至少填一个                                                            |
+| **note**                      | String    | 备注              | 非必填 | - | 备注                                                                                                |
+| **defaultDepartment**         | String    | 默认部门ID         | 必填   | - | 请确保默认部门在 `departments` 里。如果不在，系统会自动将departments的第一个元素视为默认部门                                       |
+| **departments**               | Array     | 所在部门ID，至少1个  | 必填  | - | 兼职部门，请确保至少包含默认部门                                                                                  |
 | **userid**                    | String    | 第三方平台的人员ID   | 非必填 | - | 如需要同步钉钉、企业微信等第三方平台人员，需要加上此参数<br/>**如果 `cellphone` 参数在系统中已注册，本参数不生效，会返回 `cellphone` 对应的 `userid`** |
-| **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | `true` : 启用 &emsp; `false` : 不启用 |
-| **useSendEmail**              | Boolean   | 是否禁止发送邮件通知 | 非必填  | false | `true` : 禁止 &emsp; `false` : 不禁止 |
-| **staffCustomForm**           | Object    | 自定义字段         | 非必填  | - | 自定义字段 |
-| **&emsp; ∟ rankType**  | String    | 职级档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
-| **&emsp; ∟ postType**  | String    | 岗位档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
-| **&emsp; ∟ base**      | String    | 常驻地            | 非必填  | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
-| **&emsp; ∟ u_字段名**   | String    | 自定义字段         | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目 |
+| **useNewAccount**             | Boolean   | 是否强制启用新用户   | 非必填 | false | `true` : 启用 &emsp; `false` : 不启用                                                                  |
+| **useSendEmail**              | Boolean   | 是否禁止发送邮件通知 | 非必填  | false | `true` : 禁止 &emsp; `false` : 不禁止                                                                  |
+| **staffCustomForm**           | Object    | 自定义字段         | 非必填  | - | 自定义字段                                                                                             |
+| **&emsp; ∟ rankType**  | String    | 职级档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取                                   |
+| **&emsp; ∟ postType**  | String    | 岗位档案项ID       | 非必填  | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取                                   |
+| **&emsp; ∟ base**      | String    | 常驻地            | 非必填  | - | 参考格式 : "\[\{\"key\":\"8\",\"label\":\"北京市/海淀区\"\}\]"                                              |
+| **&emsp; ∟ u_字段名**   | String    | 自定义字段         | 非必填  | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目                                                                      |
 
 :::tip
 - `base`（常驻地）参数拼接说明：<br/>

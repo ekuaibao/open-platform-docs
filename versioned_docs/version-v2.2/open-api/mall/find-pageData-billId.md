@@ -83,15 +83,15 @@ curl --location --request POST 'https://unity.ekuaibao.com/api/mall-openapi/open
 ```
 
 ### 返回参数列表
-| 字段名称 | 类型 | 是否必返回 | 备注 |
-| :--- | :--- | :--- | :--- |
-| **status**              | String | 是 | "00000"表示成功，其余标识均为失败 |
-| **msg**                 | String | 是 | 响应描述，例如："请求成功" |
-| **data**                | Data | 是 | 企业对账单ID集合 |
+| 字段名称 | 类型      | 是否必返回 | 备注 |
+| :--- |:--------| :--- | :--- |
+| **status**              | String  | 是 | "00000"表示成功，其余标识均为失败 |
+| **msg**                 | String  | 是 | 响应描述，例如："请求成功" |
+| **data**                | Data    | 是 | 企业对账单ID集合 |
 | **&emsp; ∟ totalCount**| Integer | 是 | 总数量 |
-| **&emsp; ∟ items**     | List<Long\> | 是 | 对账单ID，totalCount=0时，返回空数组 |
-| **time**                | Long | 是 | 接口响应时间(单位：毫秒) |
-| **requestId**           | String | 是 | 请求标识 |
+| **&emsp; ∟ items**     | List    | 是 | 对账单ID，totalCount=0时，返回空数组 |
+| **time**                | Long    | 是 | 接口响应时间(单位：毫秒) |
+| **requestId**           | String  | 是 | 请求标识 |
 
 ## 失败响应
 

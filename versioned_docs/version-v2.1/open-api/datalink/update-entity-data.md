@@ -29,21 +29,21 @@ url="/api/openapi/v2.1/datalink/add"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **entityId**                                   | String  | 业务对象ID    | 必填   | -     | [业务对象ID获取](/docs/open-api/datalink/question-answer#问题一) |
-| **importPart**                                 | Boolean | 是否部分导入   | 非必填 | false | 当有一条数据导入失败后，其他数据是否继续导入。<br/>**当导入附件时，此项必填为 `true`** |
-| **dataLinks**                                  | Array   | 更新数据数组   | 必填  | -      | 要新增或修改的业务对象数据，**最大不能超过 `100` 条** |
-| **&emsp; ∟ count**                             | Number  | 最大引用次数  | 非必填 | 0      | 限制引用次数时必填。若设置的值小于已引用次数，则合思系统会自动修正到已引用次数  |
-| **&emsp; ∟ disabled**                          | Boolean | 是否停用     | 非必填 | true   | `true` : 停用 &emsp; `false` : 启用|
-| **&emsp; ∟ ownerId**                           | String  | 负责人ID     | 非必填 | -      | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
-| **&emsp; ∟ data**                              | Object  | 字段值       | 必填   | -     | 格式为 { 字段名称 : 字段值 }。**字段名称** 是 [获取业务对象](/docs/open-api/datalink/get-entity-list) 返回值中 `fields` 里面的 `name` 值 |
-| **&emsp; ∟ visible**                           | Object  | 参与人配置    | 非必填 | -      | 业务对象**”参与人配置“**为**”部分人员参与“**时此参数才 **有效**，为**“全员参与”**时此参数 **不生效** |
-| **&emsp; &emsp; ∟ fullVisible**                | Boolean | 全员可见性    | 非必填 | false | `true` : 全部可见 &emsp; `false` : 参与人可见 |
-| **&emsp; &emsp; ∟ staffs**                     | Array   | 参与人ID     | 非必填 | -     | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
-| **&emsp; &emsp; ∟ roles**                      | Array   | 参与角色ID    | 非必填 | -     | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
-| **&emsp; &emsp; ∟ departments**                | Array   | 参与部门ID    | 非必填 | -     | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取 |
-| **&emsp; &emsp; ∟ departmentsIncludeChildren** | Boolean | 子部门是否可见 | 非必填 | true   | `true` : 可见 &emsp; `false` : 不可见 |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                           |
+| :--- | :--- | :--- | :--- |:--- |:-------------------------------------------------------------------------------------------------------------|
+| **entityId**                                   | String  | 业务对象ID    | 必填   | -     | [业务对象ID获取](/docs/open-api/datalink/question-answer#问题一)                                                      |
+| **importPart**                                 | Boolean | 是否部分导入   | 非必填 | false | 当有一条数据导入失败后，其他数据是否继续导入。<br/>**当导入附件时，此项必填为 `true`**                                                          |
+| **dataLinks**                                  | Array   | 更新数据数组   | 必填  | -      | 要新增或修改的业务对象数据，**最大不能超过 `100` 条**                                                                             |
+| **&emsp; ∟ count**                             | Number  | 最大引用次数  | 非必填 | 0      | 限制引用次数时必填。若设置的值小于已引用次数，则合思系统会自动修正到已引用次数                                                                      |
+| **&emsp; ∟ disabled**                          | Boolean | 是否停用     | 非必填 | true   | `true` : 停用 &emsp; `false` : 启用                                                                              |
+| **&emsp; ∟ ownerId**                           | String  | 负责人ID     | 非必填 | -      | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取                                                    |
+| **&emsp; ∟ data**                              | Object  | 字段值       | 必填   | -     | 格式为 \{ 字段名称 : 字段值 \}。**字段名称** 是 [获取业务对象](/docs/open-api/datalink/get-entity-list) 返回值中 `fields` 里面的 `name` 值 |
+| **&emsp; ∟ visible**                           | Object  | 参与人配置    | 非必填 | -      | 业务对象**”参与人配置“**为**”部分人员参与“**时此参数才 **有效**，为**“全员参与”**时此参数 **不生效**                                             |
+| **&emsp; &emsp; ∟ fullVisible**                | Boolean | 全员可见性    | 非必填 | false | `true` : 全部可见 &emsp; `false` : 参与人可见                                                                         |
+| **&emsp; &emsp; ∟ staffs**                     | Array   | 参与人ID     | 非必填 | -     | 通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取                                                    |
+| **&emsp; &emsp; ∟ roles**                      | Array   | 参与角色ID    | 非必填 | -     | 通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取                                                 |
+| **&emsp; &emsp; ∟ departments**                | Array   | 参与部门ID    | 非必填 | -     | 通过 [获取部门列表](/docs/open-api/corporation/get-departments) 获取                                                   |
+| **&emsp; &emsp; ∟ departmentsIncludeChildren** | Boolean | 子部门是否可见 | 非必填 | true   | `true` : 可见 &emsp; `false` : 不可见                                                                             |
 
 :::caution
 - 新增或更新业务对象数据最大不能超过 **100** 条。
@@ -58,18 +58,18 @@ url="/api/openapi/v2.1/datalink/add"
 :::
 
 ### 各类型字段值传参示例
-| 类型 | 传参示例 | 备注 |
-| :--- | :--- | :--- |
-| 文本 | "数据1" |  |
-| 日期 | "1528276414283" |  |
-| 日期范围 | "1528276414283-1528276414283" |  |
-| 数字 | "1.2234" |  |
-| 金额 | "12.35" |  |
-| 金额(多币种) | "USD12.35" | 拼接结构：货币字母代码 + 金额值<br/>需要开通【**币种设置**】功能 |
-| 开关 | true |  |
-| 附件 | "{\"key\": \"openapib9e51730-f778-4b81-b108-d6ca27d44ad9-登录密码.txt\",<br/> \"fileId\": \"zEIb-kGNMsoc00\", \"fileName\": \"登录密码.txt\"}" | 转义后的json格式字符串<br/>多个附件时用 `;` 分隔<br/>**`fileName` 要避免使用 `;`，否则无法成功上传** |
-| 人员(多选) | "Urf3lsFgBp00gw:Msy3lYjbQ103KM,Urf3lsFgBp00gw:mRI3oQU9lg02q0" | 多个人员时用 `,` 分隔 |
-| 业务对象(多选) | "ID_3Cy8NYL4rnM,ID_3Cy8NYL4BnM,ID_3Cy8NYL4wnM" | 多个业务对象时用 `,` 分隔   |
+| 类型 | 传参示例                                                                                                                                     | 备注 |
+| :--- |:-----------------------------------------------------------------------------------------------------------------------------------------| :--- |
+| 文本 | "数据1"                                                                                                                                    |  |
+| 日期 | "1528276414283"                                                                                                                          |  |
+| 日期范围 | "1528276414283-1528276414283"                                                                                                            |  |
+| 数字 | "1.2234"                                                                                                                                 |  |
+| 金额 | "12.35"                                                                                                                                  |  |
+| 金额(多币种) | "USD12.35"                                                                                                                               | 拼接结构：货币字母代码 + 金额值<br/>需要开通【**币种设置**】功能 |
+| 开关 | true                                                                                                                                     |  |
+| 附件 | "\{\"key\": \"openapib9e51730-f778-4b81-b108-d6ca27d44ad9-登录密码.txt\",<br/> \"fileId\": \"zEIb-kGNMsoc00\", \"fileName\": \"登录密码.txt\"\}" | 转义后的json格式字符串<br/>多个附件时用 `;` 分隔<br/>**`fileName` 要避免使用 `;`，否则无法成功上传** |
+| 人员(多选) | "Urf3lsFgBp00gw:Msy3lYjbQ103KM,Urf3lsFgBp00gw:mRI3oQU9lg02q0"                                                                            | 多个人员时用 `,` 分隔 |
+| 业务对象(多选) | "ID_3Cy8NYL4rnM,ID_3Cy8NYL4BnM,ID_3Cy8NYL4wnM"                                                                                           | 多个业务对象时用 `,` 分隔   |
 
 ## CURL
 根据业务对象的 **数据权限**、**停用方式** 配置不同，所需Body Parameters的数据结构略有差异，请根据配置选择合适的示例。

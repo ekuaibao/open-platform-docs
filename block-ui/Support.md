@@ -152,7 +152,7 @@ curl --location -g --request GET 'https://unity.ekuaibao.com/api/openapi/v1/appr
 
 1. header 下 Authorization 格式为：Bearer+空格+jwtToken, 其中 jwtToken 为调用获取授权接口后应用中心返回的。
 2. corporationId： 企业 Id
-3. 无需区分环境，统一调用应用中心（<https://unity.ekuaibao.com>）地址，由应用中心转发调用开放接口。
+3. 无需区分环境，统一调用应用中心（[https://unity.ekuaibao.com](https://unity.ekuaibao.com)）地址，由应用中心转发调用开放接口。
 
 :::
 

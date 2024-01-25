@@ -35,12 +35,12 @@ url="/api/openapi/v1.1/staffs/$`staffId`/customFields"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **rankType** | String | 职级	    | 非必填 | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
-| **postType** | String | 岗位	    | 非必填 | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取 |
-| **base**     | String | 常驻地     | 非必填 | - | 参考格式 : "[{\"key\":\"8\",\"label\":\"北京市/海淀区\"}]" |
-| **u_字段名**  | String | 自定义字段	| 非必填 | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目<br/>可通过 [获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty) 获取字段名|
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                     |
+| :--- | :--- | :--- | :--- |:--- |:-------------------------------------------------------------------------------------------------------|
+| **rankType** | String | 职级	    | 非必填 | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取                                        |
+| **postType** | String | 岗位	    | 非必填 | - | 通过 [获取自定义档案项](/docs/open-api/dimensions/get-dimension-items) 获取                                        |
+| **base**     | String | 常驻地     | 非必填 | - | 参考格式 : "\[\{\"key\":\"8\",\"label\":\"北京市/海淀区\"\}\]"                                                   |
+| **u_字段名**  | String | 自定义字段	| 非必填 | - | 自定义字段，格式为"u\_字段名"，例如 : u\_项目<br/>可通过 [获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty) 获取字段名 |
 
 :::tip
 - **若 `type` 参数为 `code` ，则『自定义档案』类型字段，必须传 `code` 值。**

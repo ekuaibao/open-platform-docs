@@ -29,10 +29,10 @@ url="/api/mall-openapi/open-api/finance/bill/findBillDetailById"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **data**      | List<Long\> | 企业对账单ID集合 | 必填 | - | 对账单ID为数值类型 |
-| **requestId** | String     | 请求标识     | 必填 | - | 任意填写即可，用于接口查询出错时，记录日志 |
+| 名称 | 类型     | 描述 | 是否必填 | 默认值 | 备注 |
+| :--- |:-------| :--- | :--- |:--- | :--- |
+| **data**      | List   | 企业对账单ID集合 | 必填 | - | 对账单ID为数值类型 |
+| **requestId** | String | 请求标识     | 必填 | - | 任意填写即可，用于接口查询出错时，记录日志 |
 
 ## CURL
 :::caution
