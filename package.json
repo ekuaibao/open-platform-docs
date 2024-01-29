@@ -23,25 +23,25 @@
     "@mdx-js/react": "^3.0.0",
     "@node-rs/jieba": "1.9.2",
     "@saucelabs/theme-github-codeblock": "^0.2.3",
-    "@svgr/webpack": "^5.5.0",
-    "clsx": "^1.1.1",
+    "@svgr/webpack": "^8.1.0",
+    "clsx": "^2.1.0",
     "file-loader": "^6.2.0",
     "nrm": "^1.2.6",
-    "prism-react-renderer": "^1.2.1",
+    "prism-react-renderer": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.33.0",
+    "sharp": "^0.33.2",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.1.0",
     "@docusaurus/plugin-content-docs": "^3.1.0",
-    "@docusaurus/tsconfig": "^3.0.0",
+    "@docusaurus/tsconfig": "^3.1.1",
     "@docusaurus/types": "^3.1.0",
     "@types/react": "^18.2.29",
-    "coa": "2.0.2",
+    "coa": "^2.0.2",
     "prop-types": "^15.8.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=18.0"
