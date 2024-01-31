@@ -53,19 +53,39 @@ const config = {
       },
     ],
     "@docusaurus/plugin-ideal-image",
-    [
-      "@easyops-cn/docusaurus-search-local",
-      {
-        id: "search-local",
-        hashed: true,
-        language: ["en", "zh"],
-        highlightSearchTermsOnTargetPage: true,
-        // docsPluginIdForPreferredVersion: "v2.2",
-        ignoreFiles: ["/docs/next/*","/docs/v2.0/*","/docs/v2.1/*"]
-      },
-    ],
+    // [
+    //   "@easyops-cn/docusaurus-search-local",
+    //   {
+    //     id: "search-local",
+    //     hashed: true,
+    //     language: ["en", "zh"],
+    //     highlightSearchTermsOnTargetPage: true,
+    //     docsPluginIdForPreferredVersion: "v2.2",
+    //     // ignoreFiles: ["/docs/next/*","/docs/v2.0/*","/docs/v2.1/*"]
+    //   },
+    // ],
   ],
-  themes: ["@saucelabs/theme-github-codeblock"],
+  themes: ["@saucelabs/theme-github-codeblock",
+      [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+          /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+          ({
+            // ... Your options.
+            // `hashed` is recommended as long-term-cache of index file is possible.
+            id: "search-local",
+            hashed: true,
+            language: ["en", "zh"],
+            highlightSearchTermsOnTargetPage: true,
+            // docsPluginIdForPreferredVersion: "v2.2",
+            searchContextByPaths:["docs/open-api"],
+            ignoreFiles: ["docs/open-api/inside"],
+            // For Docs using Chinese, The `language` is recommended to set to:
+            // ```
+            // language: ["en", "zh"],
+            // ```
+          })
+      ],
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -135,8 +155,9 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Open-Platform Team, Ekuaibao Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: prismThemes.dracula,
-        // darkTheme:prismThemes.github,
+        additionalLanguages: ['json'],
+        theme: prismThemes.github,
+        darkTheme:prismThemes.dracula,
         // theme: lightCodeTheme,
         // darkTheme: darkCodeTheme,
       },
