@@ -12,7 +12,7 @@ url="/api/openapi/v2/budgets/$`budgetId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.25.0**](/docs/open-api/notice/update-log#1250) -> 🐞 修复了响应数据中 `tree` 节点下 `name` 属性为空的BUG。<br/>
+  [**1.25.0**](/updateLog/update-log#1250) -> 🐞 修复了响应数据中 `tree` 节点下 `name` 属性为空的BUG。<br/>
 
   </div>
 </details>

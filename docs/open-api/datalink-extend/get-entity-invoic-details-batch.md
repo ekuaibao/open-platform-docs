@@ -11,7 +11,7 @@ url="/api/openapi/v2/extension/INVOICE/object/invoice/detailBatch"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.138**](/docs/open-api/notice/update-log#07138) -> 🆕 新增了本接口。<br/>
+  [**0.7.138**](/updateLog/update-log#07138) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

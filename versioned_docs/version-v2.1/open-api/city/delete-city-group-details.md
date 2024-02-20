@@ -11,8 +11,8 @@ url="/api/openapi/v1.1/cityGroup/detail/delete"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `staffIds`（员工ID）与 `roleIds`（角色ID）列表不能同时为空的校验。<br/>
-  [**0.7.135**](/docs/open-api/notice/update-log#07135) -> 🆕 新增了本接口。<br/>
+  [**1.2.0**](/updateLog/update-log#120) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `staffIds`（员工ID）与 `roleIds`（角色ID）列表不能同时为空的校验。<br/>
+  [**0.7.135**](/updateLog/update-log#07135) -> 🆕 新增了本接口。<br/>
   </div>
 </details>
 

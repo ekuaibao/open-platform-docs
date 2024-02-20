@@ -11,8 +11,8 @@ url="/api/openapi/v1.1/staffs/batch/update"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🐞 接口支持传入 `nickName`（员工别名）字段，且响应信息中新增了该字段。<br/>
-  [**1.19.0**](/docs/open-api/notice/update-log#1190) -> 🆕 新增了本接口。<br/>
+  [**1.20.0**](/updateLog/update-log#1200) -> 🐞 接口支持传入 `nickName`（员工别名）字段，且响应信息中新增了该字段。<br/>
+  [**1.19.0**](/updateLog/update-log#1190) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

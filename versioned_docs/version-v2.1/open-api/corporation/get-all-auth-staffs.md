@@ -17,7 +17,7 @@ url="/api/openapi/v1/staffs/authorized"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.161**](/docs/open-api/notice/update-log#07161) -> 🆕 新增了本接口。<br/>
+  [**0.7.161**](/updateLog/update-log#07161) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

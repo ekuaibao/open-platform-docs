@@ -11,8 +11,8 @@ url="/api/openapi/v2.1/payeeInfos/batch/create"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.1**](/docs/open-api/notice/update-log#171) -> 🐞 优化了接口支持部分账户校验不通过时，其他账户可继续新增成功。<br/>
-  [**1.6.3**](/docs/open-api/notice/update-log#163) -> 🆕 新增了本接口。<br/>
+  [**1.7.1**](/updateLog/update-log#171) -> 🐞 优化了接口支持部分账户校验不通过时，其他账户可继续新增成功。<br/>
+  [**1.6.3**](/updateLog/update-log#163) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

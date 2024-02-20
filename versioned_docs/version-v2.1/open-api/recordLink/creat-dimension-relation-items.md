@@ -11,12 +11,12 @@ url="/api/openapi/v2.1/recordLink/add/$`id`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.4.0**](/docs/open-api/notice/update-log#140) -> 🐞 更新了校验逻辑，档案关系类型共六种，全都做参数校验，若传入已删除参数则报错<br/>
+  [**1.4.0**](/updateLog/update-log#140) -> 🐞 更新了校验逻辑，档案关系类型共六种，全都做参数校验，若传入已删除参数则报错<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● **未激活/已移除** 员工，不能进行任何档案关系数据操作。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● body参数里传多个值时，校验参数任意一个不存在则报错。<br/>
   &emsp; &emsp; -> 🐞 无效果的新增返回信息提示。<br/>
-  [**1.3.0**](/docs/open-api/notice/update-log#130) -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🚀 接口升级 `v2.1` 版本，修复了传其他类型自定义档案项ID（非档案关系配置的类型）可以创建成功数据的问题。<br/>
+  [**1.3.0**](/updateLog/update-log#130) -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**1.2.0**](/updateLog/update-log#120) -> 🚀 接口升级 `v2.1` 版本，修复了传其他类型自定义档案项ID（非档案关系配置的类型）可以创建成功数据的问题。<br/>
 
   </div>
 </details>

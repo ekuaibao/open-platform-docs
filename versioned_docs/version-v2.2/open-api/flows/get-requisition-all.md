@@ -12,10 +12,10 @@ url="/api/openapi/v1/requisition/getData"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.18.0**](/docs/open-api/notice/update-log#1180) -> 🐞 接口 **成功响应** `details` 下新增了 `writtenOffAmount`（核销金额）、`unwrittenOffAmount`（未核销金额）字段，用于报销单【按申请明细分别报销】时关联使用。<br/>
-  [**1.15.0**](/docs/open-api/notice/update-log#1150) -> 🐞 接口 **成功响应** `details` 下新增了 `linkDetailEntityId`（费用明细实例ID）字段，用于报销单【按申请明细分别报销】时关联使用。<br/>
-  [**1.12.0**](/docs/open-api/notice/update-log#1120) -> 🐞 接口 **成功响应** 新增了 `details`（申请事项费用明细信息）字段。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120)&emsp;-> 🆕 新增了本接口。
+  [**1.18.0**](/updateLog/update-log#1180) -> 🐞 接口 **成功响应** `details` 下新增了 `writtenOffAmount`（核销金额）、`unwrittenOffAmount`（未核销金额）字段，用于报销单【按申请明细分别报销】时关联使用。<br/>
+  [**1.15.0**](/updateLog/update-log#1150) -> 🐞 接口 **成功响应** `details` 下新增了 `linkDetailEntityId`（费用明细实例ID）字段，用于报销单【按申请明细分别报销】时关联使用。<br/>
+  [**1.12.0**](/updateLog/update-log#1120) -> 🐞 接口 **成功响应** 新增了 `details`（申请事项费用明细信息）字段。<br/>
+  [**1.2.0**](/updateLog/update-log#120)&emsp;-> 🆕 新增了本接口。
 
   </div>
 </details>

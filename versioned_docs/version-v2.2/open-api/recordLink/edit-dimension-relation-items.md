@@ -11,12 +11,12 @@ url="/api/openapi/v2.1/recordLink/editSingle/$`id`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🐞 更新了校验逻辑，档案关系类型共六种，全都做参数校验，若传入已删除参数则报错<br/>
+  [**1.4.0**](/updateLog/update-log#140) &emsp; -> 🐞 更新了校验逻辑，档案关系类型共六种，全都做参数校验，若传入已删除参数则报错<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● **未激活/已移除** 员工，不能进行任何档案关系数据操作。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● body参数里传多个值时，校验参数任意一个不存在则报错。<br/>
   &emsp; &emsp; &emsp; -> 🐞 无效果的编辑返回信息提示。<br/>
-  [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
-  [**0.7.125**](/docs/open-api/notice/update-log#07125) -> 🆕 新增了本接口。<br/>
+  [**1.3.0**](/updateLog/update-log#130) &emsp; -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**0.7.125**](/updateLog/update-log#07125) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

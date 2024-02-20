@@ -11,7 +11,7 @@ url="/api/openapi/v2/datalink/TRAVEL_MANAGEMENT/searchOrders"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.123**](/docs/open-api/notice/update-log#07123) -> 🆕 新增了本接口。
+  [**0.7.123**](/updateLog/update-log#07123) -> 🆕 新增了本接口。
 
   </div>
 </details>

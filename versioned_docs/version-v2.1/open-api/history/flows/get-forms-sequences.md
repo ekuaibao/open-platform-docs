@@ -11,8 +11,8 @@ url="/api/openapi/v1/docSequences"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
-  [**0.7.128**](/docs/open-api/notice/update-log#07128) -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
+  [**1.7.0**](/updateLog/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
+  [**0.7.128**](/updateLog/update-log#07128) -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
 
   </div>
 </details>

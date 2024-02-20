@@ -12,8 +12,8 @@ url="/api/openapi/v1/roledefs/$`roledefId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.12.0**](/docs/open-api/notice/update-log#1120) -> 🆕 新增了 `pathType`（查询角色路径信息类型）参数，支持 `id`、`name`、`code` 3种参数类型。<br/>
-  [**1.3.0**](/docs/open-api/notice/update-log#130)&emsp;-> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
+  [**1.12.0**](/updateLog/update-log#1120) -> 🆕 新增了 `pathType`（查询角色路径信息类型）参数，支持 `id`、`name`、`code` 3种参数类型。<br/>
+  [**1.3.0**](/updateLog/update-log#130)&emsp;-> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
 
   </div>
 </details>

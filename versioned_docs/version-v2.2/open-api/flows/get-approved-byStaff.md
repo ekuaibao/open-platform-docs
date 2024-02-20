@@ -19,8 +19,8 @@ url="/api/openapi/v1.1/docs/approved/$`approverId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.27.0**](/docs/open-api/notice/update-log#1270) -> 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **审批时间** 过滤列表数据。<br/>
-  [**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🆕 新增了本接口。<br/>
+  [**1.27.0**](/updateLog/update-log#1270) -> 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **审批时间** 过滤列表数据。<br/>
+  [**1.20.0**](/updateLog/update-log#1200) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

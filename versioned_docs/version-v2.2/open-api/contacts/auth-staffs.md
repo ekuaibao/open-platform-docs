@@ -12,7 +12,7 @@ url="/api/openapi/v1/charge/powers/authStaff"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.134**](/docs/open-api/notice/update-log#07134) -> 🆕 新增了本接口。<br/>
+  [**0.7.134**](/updateLog/update-log#07134) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

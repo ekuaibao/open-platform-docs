@@ -18,7 +18,7 @@ url="/api/openapi/v2.1/flow/data/$`flowId`/`action`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.21.0**](/docs/open-api/notice/update-log#1210) -> 🚀 接口升级 `v2.1` 版本，新增了支持申请单 **变更申请** 操作。<br/>
+  [**1.21.0**](/updateLog/update-log#1210) -> 🚀 接口升级 `v2.1` 版本，新增了支持申请单 **变更申请** 操作。<br/>
   </div>
 </details>
 

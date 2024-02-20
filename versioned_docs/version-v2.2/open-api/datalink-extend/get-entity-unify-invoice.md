@@ -12,8 +12,8 @@ url="/api/openapi/v2.1/invoice/unify"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.24.0**](/docs/open-api/notice/update-log#1240)&emsp;-> 🚀 接口升级 `v2.1` 版本，新增了支持拉取所有统一开票发票信息（火车票、机票等），`v1` 只支持拉取统一开票的增值税发票信息。<br/>
-  [**0.7.131**](/docs/open-api/notice/update-log#07131) -> 🆕 新增了本接口。<br/>
+  [**1.24.0**](/updateLog/update-log#1240)&emsp;-> 🚀 接口升级 `v2.1` 版本，新增了支持拉取所有统一开票发票信息（火车票、机票等），`v1` 只支持拉取统一开票的增值税发票信息。<br/>
+  [**0.7.131**](/updateLog/update-log#07131) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

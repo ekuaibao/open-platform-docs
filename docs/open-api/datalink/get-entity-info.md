@@ -11,7 +11,7 @@ url="/api/openapi/v2.1/datalink"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.24.0**](/docs/open-api/notice/update-log#1240) -> 🚀 接口升级 `v2.1` 版本，新增了 `active`（是否启用）参数过滤业务对象数据。<br/>
+  [**1.24.0**](/updateLog/update-log#1240) -> 🚀 接口升级 `v2.1` 版本，新增了 `active`（是否启用）参数过滤业务对象数据。<br/>
 
   </div>
 </details>

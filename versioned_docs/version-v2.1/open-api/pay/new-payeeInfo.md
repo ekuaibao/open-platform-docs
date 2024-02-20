@@ -11,7 +11,7 @@ url="/api/openapi/v2.1/payeeInfos"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.3**](/docs/open-api/notice/update-log#163) -> 🚀 接口升级 `v2.1` 版本，新增了 `sort`（账号类别）参数，额外支持新增 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。<br/>
+  [**1.6.3**](/updateLog/update-log#163) -> 🚀 接口升级 `v2.1` 版本，新增了 `sort`（账号类别）参数，额外支持新增 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。<br/>
 
   </div>
 </details>

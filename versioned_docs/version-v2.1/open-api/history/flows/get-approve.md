@@ -11,8 +11,8 @@ url="/api/openapi/v1/docs/byApproverId/$`approverId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.0**](/docs/open-api/notice/update-log#160) -> ❌ 接口废弃。<br/>
-  [**1.4.1**](/docs/open-api/notice/update-log#141) -> 🐞 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。<br/>
+  [**1.6.0**](/updateLog/update-log#160) -> ❌ 接口废弃。<br/>
+  [**1.4.1**](/updateLog/update-log#141) -> 🐞 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。<br/>
 
   </div>
 </details>

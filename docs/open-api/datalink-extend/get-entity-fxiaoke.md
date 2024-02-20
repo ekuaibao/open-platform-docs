@@ -12,7 +12,7 @@ url="/api/openapi/v2/extension/FXIAOKE/object/`entityId`/search"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.11.0**](/docs/open-api/notice/update-log#1110) -> 🆕 新增了本接口。<br/>
+  [**1.11.0**](/updateLog/update-log#1110) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

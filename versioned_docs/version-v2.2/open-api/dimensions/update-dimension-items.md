@@ -11,8 +11,8 @@ url="/api/openapi/v1.1/dimensions/items/$`id`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🆕 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。<br/>
-  [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🚀 接口升级 `v1.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**1.8.0**](/updateLog/update-log#180) -> 🆕 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。<br/>
+  [**1.5.0**](/updateLog/update-log#150) -> 🚀 接口升级 `v1.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
 
   </div>
 </details>

@@ -11,7 +11,7 @@ url="/api/openapi/v2.1/datalink/ledger/createLedger"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.1.0**](/docs/open-api/notice/update-log#110) -> 🚀 接口升级 `v2.1` 版本，新增了 `sumFieldName`（统计字段）、`statisticsEntityId`（关联业务对象ID）、`ataLinkEntityId`（业务对象ID）校验。<br/>
+  [**1.1.0**](/updateLog/update-log#110) -> 🚀 接口升级 `v2.1` 版本，新增了 `sumFieldName`（统计字段）、`statisticsEntityId`（关联业务对象ID）、`ataLinkEntityId`（业务对象ID）校验。<br/>
 
   </div>
 </details>

@@ -12,7 +12,7 @@ url="/api/openapi/v1/banks/getAllBranch"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.2.2**](/docs/open-api/notice/update-log#122) -> 🆕 新增了本接口。<br/>
+  [**1.2.2**](/updateLog/update-log#122) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

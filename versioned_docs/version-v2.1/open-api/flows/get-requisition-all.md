@@ -12,7 +12,7 @@ url="/api/openapi/v1/requisition/getData"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🆕 新增了本接口。
+  [**1.2.0**](/updateLog/update-log#120) -> 🆕 新增了本接口。
 
   </div>
 </details>

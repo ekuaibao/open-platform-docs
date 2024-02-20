@@ -11,7 +11,7 @@ url="/api/openapi/v1.1/flowDetails/outerCode"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.15.0**](/docs/open-api/notice/update-log#1150) -> 🆕 新增了本接口。<br/>
+  [**1.15.0**](/updateLog/update-log#1150) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

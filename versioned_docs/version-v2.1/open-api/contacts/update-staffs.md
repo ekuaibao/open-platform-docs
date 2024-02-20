@@ -12,13 +12,13 @@ url="/api/openapi/v1.1/staffs/update/$`staffId`"
   <div>
 
 <!--
-  [**1.9.0**](/docs/open-api/notice/update-log#190) -> 🐞 优化了修改登录手机号、邮箱逻辑<br/>
+  [**1.9.0**](/updateLog/update-log#190) -> 🐞 优化了修改登录手机号、邮箱逻辑<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● 若传参的登录手机号、邮箱没有注册任何企业或所有企业均解散，则允许修改成功。<br/>
 -->
-  [**1.7.1**](/docs/open-api/notice/update-log#171) -> 🐞 修复了更改登录邮箱后，手机号无法登录的BUG。<br/>
-  [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🐞 修复了登录邮箱中包含大写字母，更新后无法登录的BUG。<br/>
-  [**1.4.0**](/docs/open-api/notice/update-log#140) -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
-  [**1.2.1**](/docs/open-api/notice/update-log#121) -> 🚀 接口升级 `v1.1` 版本，员工自定义字段值的保存做增量更新（`v1` 版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。<br/>
+  [**1.7.1**](/updateLog/update-log#171) -> 🐞 修复了更改登录邮箱后，手机号无法登录的BUG。<br/>
+  [**1.5.0**](/updateLog/update-log#150) -> 🐞 修复了登录邮箱中包含大写字母，更新后无法登录的BUG。<br/>
+  [**1.4.0**](/updateLog/update-log#140) -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**1.2.1**](/updateLog/update-log#121) -> 🚀 接口升级 `v1.1` 版本，员工自定义字段值的保存做增量更新（`v1` 版本为全量更新，不传的字段置空处理），并添加员工自定义字段真实性校验。<br/>
 
   </div>
 </details>

@@ -11,7 +11,7 @@ import Control from "@theme/Control";
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.1**](/docs/open-api/notice/update-log#161) -> 🆕 新增了本接口。<br/>
+  [**1.6.1**](/updateLog/update-log#161) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

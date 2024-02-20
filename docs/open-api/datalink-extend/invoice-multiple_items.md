@@ -13,7 +13,7 @@ url="/api/openapi/v2/invoice/multiple_items"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.22.0**](/docs/open-api/notice/update-log#1220) -> 🆕 新增了本接口。<br/>
+  [**1.22.0**](/updateLog/update-log#1220) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

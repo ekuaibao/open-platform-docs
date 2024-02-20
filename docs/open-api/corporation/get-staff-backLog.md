@@ -12,7 +12,7 @@ url="/api/openapi/v1.1/staffs/getBacklogCount/$`type`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🚀 接口升级 `v1.1` 版本，新增了响应数据中返回详细待办类型及数量。<br/>
+  [**1.2.0**](/updateLog/update-log#120) -> 🚀 接口升级 `v1.1` 版本，新增了响应数据中返回详细待办类型及数量。<br/>
 
   </div>
 </details>

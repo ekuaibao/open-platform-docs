@@ -12,8 +12,8 @@ url="/api/openapi/v1.1/approveStates/[`ids`]"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.2**](/docs/open-api/notice/update-log#172) -> 🐞 修复了 **会签** 节点响应数据中返回全部审批人列表的问题，实际应只返回待审批人列表。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) -> 🚀 接口升级 `v1.1` 版本，新增了能获取到已删除的单据，并且显示 “**已删除**” 状态。<br/>
+  [**1.7.2**](/updateLog/update-log#172) -> 🐞 修复了 **会签** 节点响应数据中返回全部审批人列表的问题，实际应只返回待审批人列表。<br/>
+  [**1.2.0**](/updateLog/update-log#120) -> 🚀 接口升级 `v1.1` 版本，新增了能获取到已删除的单据，并且显示 “**已删除**” 状态。<br/>
 
   </div>
 </details>

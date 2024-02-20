@@ -11,7 +11,7 @@ url="/api/openapi/v1/specifications/latestByType"
   <summary><b>更新日志</b></summary>
   <div>
 
-[**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🐞 响应信息中新增了 `visibility`（可见范围）字段。<br/>
+[**1.20.0**](/updateLog/update-log#1200) -> 🐞 响应信息中新增了 `visibility`（可见范围）字段。<br/>
 
   </div>
 </details>

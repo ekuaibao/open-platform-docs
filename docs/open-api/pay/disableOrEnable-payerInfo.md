@@ -11,7 +11,7 @@ url="/api/openapi/v4/payerInfos/$`id`/disableOrEnableAccount"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.0**](/docs/open-api/notice/update-log#160) -> 🆕 新增了本接口。<br/>
+  [**1.6.0**](/updateLog/update-log#160) -> 🆕 新增了本接口。<br/>
     
   </div>
 </details>

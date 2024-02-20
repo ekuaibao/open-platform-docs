@@ -12,7 +12,7 @@ url="/api/openapi/v2/auth/refreshToken/expireDate"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.162**](/docs/open-api/notice/update-log#07162) -> 🆕 新增了本接口。<br/>
+  [**0.7.162**](/updateLog/update-log#07162) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

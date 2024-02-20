@@ -18,8 +18,8 @@ url="/api/openapi/v1/docSequences"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
-  [**0.7.158**](/docs/open-api/notice/update-log#07158) -> 🆕 新增了本接口。<br/>
+  [**1.7.0**](/updateLog/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
+  [**0.7.158**](/updateLog/update-log#07158) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

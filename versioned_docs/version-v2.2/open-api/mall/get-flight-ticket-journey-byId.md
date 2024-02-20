@@ -12,7 +12,7 @@ url="/api/mall-openapi/open-api/flight/ticket/journey/query"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.10.1**](/docs/open-api/notice/update-log#1101) -> 🆕 新增了本接口。<br/>
+  [**1.10.1**](/updateLog/update-log#1101) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

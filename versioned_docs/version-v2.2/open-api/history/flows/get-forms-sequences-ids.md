@@ -12,11 +12,11 @@ url="/api/openapi/v1/docs/[`ids`]"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.16.0**](/docs/open-api/notice/update-log#1160)&emsp;-> 🐞 接口响应 `items` 下，新增 `orgSumAmount`（报销金额（原币））、`orgWriteOffAmount`（核销金额（原币））参数，需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空。<br/>
-  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
-  [**1.4.1**](/docs/open-api/notice/update-log#141) &emsp; -> 🐞 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。<br/>
-  [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🐞 优化了单据费用明细和发票过多导致的 **HTTP 504** 超时问题。<br/>
-  [**0.7.128**](/docs/open-api/notice/update-log#07128) -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
+  [**1.16.0**](/updateLog/update-log#1160)&emsp;-> 🐞 接口响应 `items` 下，新增 `orgSumAmount`（报销金额（原币））、`orgWriteOffAmount`（核销金额（原币））参数，需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空。<br/>
+  [**1.7.0**](/updateLog/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
+  [**1.4.1**](/updateLog/update-log#141) &emsp; -> 🐞 优化了接口 **HTTP 500** 错误，更新接口 **失败响应** 示例。<br/>
+  [**1.4.0**](/updateLog/update-log#140) &emsp; -> 🐞 优化了单据费用明细和发票过多导致的 **HTTP 504** 超时问题。<br/>
+  [**0.7.128**](/updateLog/update-log#07128) -> 🐞 相关单据响应中收款信息新增备注字段。<br/>
 
   </div>
 </details>

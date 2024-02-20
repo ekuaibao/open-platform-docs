@@ -11,7 +11,7 @@ url="/api/openapi/v2/datalink/getPlatform"
   <summary><b>更新日志</b></summary>
   <div>
 
-[**1.7.0**](/docs/open-api/notice/update-log#170) -> 🆕 新增了本接口。<br/>
+[**1.7.0**](/updateLog/update-log#170) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

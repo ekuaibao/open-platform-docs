@@ -14,35 +14,35 @@ url="/api/openapi/v2.2/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.26.0**](/docs/open-api/notice/update-log#1260)&emsp;-> 🐞 修复了费用明细模板的 **发票** 字段配置必填，接口传了值也会检验报错的BUG。<br/>
-  [**1.25.0**](/docs/open-api/notice/update-log#1250)&emsp;-> 🐞 修复了费用明细模板配置 **分组** 字段后，接口校验报错的BUG。<br/>
-  [**1.24.0**](/docs/open-api/notice/update-log#1240)&emsp;-> 🐞 修改了单据明细字段校验逻辑，当明细字段设置为必填项+默认值，参数传空情况下会优先校验必填项，提示字段不能为空。调整为：优先默认值赋值后，再做必填项校验。<br/>
-  [**1.22.0**](/docs/open-api/notice/update-log#1220)&emsp;-> 🐞 新增了支持 **行程规划** 类型参数。<br/>
-  [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>
+  [**1.26.0**](/updateLog/update-log#1260)&emsp;-> 🐞 修复了费用明细模板的 **发票** 字段配置必填，接口传了值也会检验报错的BUG。<br/>
+  [**1.25.0**](/updateLog/update-log#1250)&emsp;-> 🐞 修复了费用明细模板配置 **分组** 字段后，接口校验报错的BUG。<br/>
+  [**1.24.0**](/updateLog/update-log#1240)&emsp;-> 🐞 修改了单据明细字段校验逻辑，当明细字段设置为必填项+默认值，参数传空情况下会优先校验必填项，提示字段不能为空。调整为：优先默认值赋值后，再做必填项校验。<br/>
+  [**1.22.0**](/updateLog/update-log#1220)&emsp;-> 🐞 新增了支持 **行程规划** 类型参数。<br/>
+  [**1.18.0**](/updateLog/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>
   &emsp; &emsp; &emsp; -> 🐞 优化了 **金额** 类型字段的传参格式检验和报错信息。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了支持 [按申请明细分别报销](/docs/open-api/flows/creat-and-save#14-关联申请字段) 类型的关联申请自动赋值规则。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 `submitterId`（提交人）未激活时，可创建单据的BUG。<br/>
-  [**1.17.0**](/docs/open-api/notice/update-log#1170)&emsp;-> 🐞 完善了 **发票字段** 传参示例。<br/>
-  [**1.15.0**](/docs/open-api/notice/update-log#1150)&emsp;-> 🐞 新增了 **报销单关联申请** 传参示例。<br/>
-  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 **创建草稿状态单据**（`isCommit` = `false`）时，`payeeId`（收款账户ID）允许非必填的场景。<br/>
+  [**1.17.0**](/updateLog/update-log#1170)&emsp;-> 🐞 完善了 **发票字段** 传参示例。<br/>
+  [**1.15.0**](/updateLog/update-log#1150)&emsp;-> 🐞 新增了 **报销单关联申请** 传参示例。<br/>
+  [**1.11.0**](/updateLog/update-log#1110)&emsp;-> 🐞 新增了 **创建草稿状态单据**（`isCommit` = `false`）时，`payeeId`（收款账户ID）允许非必填的场景。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，校验不生效的BUG。<br/>
-  [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🚀 接口升级 `v2.2` 版本，新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。<br/>
-  [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 优化了部分场景下，失败响应信息不明确的问题。<br/>
+  [**1.10.0**](/updateLog/update-log#1100)&emsp;-> 🚀 接口升级 `v2.2` 版本，新增了 `outerCode`（外部系统单据编号）参数，实现不可创建 `outerCode` 重复的单据。<br/>
+  [**1.9.0**](/updateLog/update-log#190) &emsp; -> 🐞 优化了部分场景下，失败响应信息不明确的问题。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● 文本、日期类型必填字段不传时，优化失败响应提示信息<br/>
-  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。<br/>
+  [**1.7.0**](/updateLog/update-log#170) &emsp; -> 🐞 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 `code` 传值可以创建重复单据编号的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 `detailId` 传值可以创建重复费用明细ID的BUG。<br/>
-  [**1.6.0**](/docs/open-api/notice/update-log#160) &emsp; -> 🐞 新增了支持 **多收款人** 类型参数。<br/>
-  [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了单据配置 **必须关联申请单** 且 **关联申请** 字段已传值时，报 “**关联申请单不存在，请补充申请单ID！**” 的BUG。<br/>
+  [**1.6.0**](/updateLog/update-log#160) &emsp; -> 🐞 新增了支持 **多收款人** 类型参数。<br/>
+  [**1.5.0**](/updateLog/update-log#150) &emsp; -> 🐞 修复了单据配置 **必须关联申请单** 且 **关联申请** 字段已传值时，报 “**关联申请单不存在，请补充申请单ID！**” 的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了业务对象类型字段 **联动赋值** 规则不生效的BUG。<br/>
-  [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🆕 新增了只允许用 **单据模板**、**费用类型模板** 最新的模板ID创建单据的校验。<br/>
+  [**1.3.0**](/updateLog/update-log#130) &emsp; -> 🆕 新增了只允许用 **单据模板**、**费用类型模板** 最新的模板ID创建单据的校验。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了费用类型必填字段传 `""` 可通过校验的BUG，共16种数据类型。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了申请单开启借款金额字段并配置了 **系统计算** 时，计算结果小数位超过2位的BUG。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🐞 修复了 `submitterId`（提交人）已移除时，可创建单据的BUG。<br/>
-  [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🐞 修复了部门类型字段设置取值规则为 **使用字段依赖性**，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
+  [**1.2.0**](/updateLog/update-log#120) &emsp; -> 🐞 修复了 `submitterId`（提交人）已移除时，可创建单据的BUG。<br/>
+  [**1.1.0**](/updateLog/update-log#110) &emsp; -> 🐞 修复了部门类型字段设置取值规则为 **使用字段依赖性**，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了字段配置计算规则为 **从关联申请单中取值**，**关联申请** 字段为非必填且未传值时，无法通过校验的BUG。<br/>
-  [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v2.1` 版本，修复了费用类型里的必填字段类型是 **自定义档案** 时，传 `""` 可通过校验的BUG，增加了非空校验。<br/>
-  [**0.7.130**](/docs/open-api/notice/update-log#07138) -> 🆕 新增了支持 **直接提审** 能力。<br/>
+  [**1.0.0**](/updateLog/update-log#100) &emsp; -> 🚀 接口升级 `v2.1` 版本，修复了费用类型里的必填字段类型是 **自定义档案** 时，传 `""` 可通过校验的BUG，增加了非空校验。<br/>
+  [**0.7.130**](/updateLog/update-log#07138) -> 🆕 新增了支持 **直接提审** 能力。<br/>
 
   </div>
 </details>

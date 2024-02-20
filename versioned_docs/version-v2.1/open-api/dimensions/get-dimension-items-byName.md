@@ -12,7 +12,7 @@ url="/api/openapi/v1/dimensions/getDimensionByName"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🐞 **成功响应** 中可获取新增的 `channel`（数据来源）字段。<br/>
+  [**1.8.0**](/updateLog/update-log#180) -> 🐞 **成功响应** 中可获取新增的 `channel`（数据来源）字段。<br/>
 
   </div>
 </details>

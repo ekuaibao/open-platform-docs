@@ -11,7 +11,7 @@ url="/api/openapi/v1.1/dimensions/items/$`id`/disable"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.2**](/docs/open-api/notice/update-log#172) -> 🚀 接口升级 `v1.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**1.7.2**](/updateLog/update-log#172) -> 🚀 接口升级 `v1.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
 
   </div>
 </details>

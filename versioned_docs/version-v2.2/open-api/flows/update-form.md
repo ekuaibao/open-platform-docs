@@ -12,21 +12,21 @@ url="/api/openapi/v2.2/flow/data/$`flowId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.24.0**](/docs/open-api/notice/update-log#1240)&emsp;-> 🐞 修改了单据明细字段校验逻辑，当明细字段设置为必填项+默认值，参数传空情况下会优先校验必填项，提示字段不能为空。调整为：优先默认值赋值后，再做必填项校验。<br/>
-  [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>
+  [**1.24.0**](/updateLog/update-log#1240)&emsp;-> 🐞 修改了单据明细字段校验逻辑，当明细字段设置为必填项+默认值，参数传空情况下会优先校验必填项，提示字段不能为空。调整为：优先默认值赋值后，再做必填项校验。<br/>
+  [**1.18.0**](/updateLog/update-log#1180)&emsp;-> 🐞 更新了允许 `apportionPercent`（分摊比例）设置负数。<br/>
   &emsp; &emsp; &emsp; -> 🐞 优化了 **金额** 类型字段的传参格式检验和报错信息。<br/>
   &emsp; &emsp; &emsp; -> 🐞 更新了支持 [按申请明细分别报销](/docs/open-api/flows/creat-and-save#14-关联申请字段) 类型的关联申请自动赋值规则。<br/>
-  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 修复了 `editFlag` = `increment`（增量更新）时，`loanWrittenOff`（核销借款）参数不传，数据会被清空的BUG。<br/>
-  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🚀 接口升级 `v2.2` 版本，修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，非必填的计算结果被接口拦截为必填并报错的BUG。<br/>
-  [**1.10.0**](/docs/open-api/notice/update-log#1100)&emsp;-> 🐞 修复了业务对象 **赋值规则** 中配置了当前单据模板不存在的字段时更新单据报错的问题。<br/>
-  [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
-  [**1.8.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 优化了审批日志描述：`editorId` 不传时，默认记录为 **OpenAPI** 修改了单据。<br/>
+  [**1.11.0**](/updateLog/update-log#1110)&emsp;-> 🐞 修复了 `editFlag` = `increment`（增量更新）时，`loanWrittenOff`（核销借款）参数不传，数据会被清空的BUG。<br/>
+  [**1.11.0**](/updateLog/update-log#1110)&emsp;-> 🚀 接口升级 `v2.2` 版本，修复了 **费用明细** 中，字段设置了 **必填条件配置** 时，非必填的计算结果被接口拦截为必填并报错的BUG。<br/>
+  [**1.10.0**](/updateLog/update-log#1100)&emsp;-> 🐞 修复了业务对象 **赋值规则** 中配置了当前单据模板不存在的字段时更新单据报错的问题。<br/>
+  [**1.9.0**](/updateLog/update-log#190) &emsp; -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
+  [**1.8.0**](/updateLog/update-log#170) &emsp; -> 🐞 优化了审批日志描述：`editorId` 不传时，默认记录为 **OpenAPI** 修改了单据。<br/>
   &emsp;&emsp;&emsp;&emsp;-> 🐞 修复了多个字段配置多层级的【字段依赖性】后（例：A->B->C->D），**待审批、待支付** 状态更新单据时偶发报错的BUG。<br/>
-  [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了 **待支付** 状态更新单据后，审批日志中无记录生成的BUG。<br/>
-  [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🆕 新增了 `editorId`（单据修改人）参数，修复了部分情况下无法更新单据的BUG<br/>
+  [**1.5.0**](/updateLog/update-log#150) &emsp; -> 🐞 修复了 **待支付** 状态更新单据后，审批日志中无记录生成的BUG。<br/>
+  [**1.4.0**](/updateLog/update-log#140) &emsp; -> 🆕 新增了 `editorId`（单据修改人）参数，修复了部分情况下无法更新单据的BUG<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; ● `editorId` 传参时，审批日志记录为 **单据修改人** 修改了单据。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; ● `editorId` 不传时，审批日志默认记录为 **节点审批人（会签节点任选其一）** 修改了单据。<br/>
-  [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🚀 接口升级 `v2.1` 版本，新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**`paying`（待支付）**】状态更新单据。<br/>
+  [**1.3.0**](/updateLog/update-log#130) &emsp; -> 🚀 接口升级 `v2.1` 版本，新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**`paying`（待支付）**】状态更新单据。<br/>
   &emsp; &emsp;&emsp;&emsp;-> 🐞 修复了单据模板中配置【**必须关联申请单**】，**关联申请** 字段设置【**允许关联多个申请事项**】后，提示 **“关联申请单不存在，请补充申请单ID！“** 的BUG。<br/>
 
   </div>

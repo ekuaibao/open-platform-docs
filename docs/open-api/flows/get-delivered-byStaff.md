@@ -19,7 +19,7 @@ url="/api/openapi/v1.1/docs/delivered/$`approverId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-[**1.20.0**](/docs/open-api/notice/update-log#1200) -> 🆕 新增了本接口。<br/>
+[**1.20.0**](/updateLog/update-log#1200) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

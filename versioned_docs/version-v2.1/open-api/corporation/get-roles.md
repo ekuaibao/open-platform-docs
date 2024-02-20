@@ -12,7 +12,7 @@ url="/api/openapi/v1/roledefs/$`roledefId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.3.0**](/docs/open-api/notice/update-log#130) -> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
+  [**1.3.0**](/updateLog/update-log#130) -> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
 
   </div>
 </details>

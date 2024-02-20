@@ -13,7 +13,7 @@ url="/api/openapi/v1/docs/backlog"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.18.0**](/docs/open-api/notice/update-log#1180) -> 🆕 新增了本接口。<br/>
+  [**1.18.0**](/updateLog/update-log#1180) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

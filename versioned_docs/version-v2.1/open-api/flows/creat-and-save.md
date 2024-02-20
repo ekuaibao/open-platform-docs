@@ -12,22 +12,22 @@ url="/api/openapi/v2.1/flow/data"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 优化了部分场景下，失败响应信息不明确的问题。<br/>
+  [**1.9.0**](/updateLog/update-log#190) &emsp; -> 🐞 优化了部分场景下，失败响应信息不明确的问题。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ● 文本、日期类型必填字段不传时，优化失败响应提示信息<br/>
-  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。<br/>
+  [**1.7.0**](/updateLog/update-log#170) &emsp; -> 🐞 修复了 **多收款人（按明细）** 类型，多个费用明细参数一致时，创建的单据无法支付的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 `code` 传值可以创建重复单据编号的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了 `detailId` 传值可以创建重复费用明细ID的BUG。<br/>
-  [**1.6.0**](/docs/open-api/notice/update-log#160) &emsp; -> 🆕 新增了支持 **多收款人** 类型参数。<br/>
-  [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了单据配置 **必须关联申请单** 且 **关联申请** 字段已传值时，报 “**关联申请单不存在，请补充申请单ID！**” 的BUG。<br/>
+  [**1.6.0**](/updateLog/update-log#160) &emsp; -> 🆕 新增了支持 **多收款人** 类型参数。<br/>
+  [**1.5.0**](/updateLog/update-log#150) &emsp; -> 🐞 修复了单据配置 **必须关联申请单** 且 **关联申请** 字段已传值时，报 “**关联申请单不存在，请补充申请单ID！**” 的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了业务对象类型字段 **联动赋值** 规则不生效的BUG。<br/>
-  [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🆕 新增了只允许用 **单据模板**、**费用类型模板** 最新的模板ID创建单据的校验。<br/>
+  [**1.3.0**](/updateLog/update-log#130) &emsp; -> 🆕 新增了只允许用 **单据模板**、**费用类型模板** 最新的模板ID创建单据的校验。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了费用类型必填字段传 `""` 可通过校验的BUG，共16种数据类型。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了申请单开启借款金额字段并配置了 **系统计算** 时，计算结果小数位超过2位的BUG。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🐞 修复了 **离职人员** 可以成功创建单据的问题。<br/>
-  [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🐞 修复了部门类型字段设置取值规则为 **使用字段依赖性**，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
+  [**1.2.0**](/updateLog/update-log#120) &emsp; -> 🐞 修复了 **离职人员** 可以成功创建单据的问题。<br/>
+  [**1.1.0**](/updateLog/update-log#110) &emsp; -> 🐞 修复了部门类型字段设置取值规则为 **使用字段依赖性**，传值为档案关系中维护部门的子部门时，无法通过校验的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了字段配置计算规则为 **从关联申请单中取值**，**关联申请** 字段为非必填但未传值时，无法通过校验的BUG。<br/>
-  [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v2.1` 版本，修复了费用类型里的必填字段类型是 **自定义档案** 时，传 `""` 可通过校验的BUG，增加了非空校验。<br/>
-  [**0.7.130**](/docs/open-api/notice/update-log#07138) -> 🆕 新增了支持 **直接提审** 能力。<br/>
+  [**1.0.0**](/updateLog/update-log#100) &emsp; -> 🚀 接口升级 `v2.1` 版本，修复了费用类型里的必填字段类型是 **自定义档案** 时，传 `""` 可通过校验的BUG，增加了非空校验。<br/>
+  [**0.7.130**](/updateLog/update-log#07138) -> 🆕 新增了支持 **直接提审** 能力。<br/>
 
   </div>
 </details>

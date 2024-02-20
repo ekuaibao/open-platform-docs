@@ -11,8 +11,8 @@ url="/api/openapi/v2/specifications/byIds/[`ids`]"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `visibility`（可见性范围）字段。<br/>
-  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🐞 修复了部分模板ID因为版本过多导致接口返回空的BUG。<br/>
+  [**1.19.0**](/updateLog/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `visibility`（可见性范围）字段。<br/>
+  [**1.7.0**](/updateLog/update-log#170) &emsp; -> 🐞 修复了部分模板ID因为版本过多导致接口返回空的BUG。<br/>
 
   </div>
 </details>

@@ -11,7 +11,7 @@ url="/api/openapi/v2/specifications"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.27.0**](/docs/open-api/notice/update-log#1270) -> 🐞 新增了支持返回 `corpPayment`（对公付款单）、`reimbursement`（报账单、发票录入单）类型的单据模板。 <br/>
+  [**1.27.0**](/updateLog/update-log#1270) -> 🐞 新增了支持返回 `corpPayment`（对公付款单）、`reimbursement`（报账单、发票录入单）类型的单据模板。 <br/>
 
   </div>
 </details>

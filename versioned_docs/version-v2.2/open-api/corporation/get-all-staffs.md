@@ -11,12 +11,12 @@ url="/api/openapi/v1.1/staffs"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.20.0**](/docs/open-api/notice/update-log#1200)&emsp;-> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
-  [**1.19.0**](/docs/open-api/notice/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
-  [**1.11.1**](/docs/open-api/notice/update-log#1111)&emsp;-> 🚀 接口升级 `v1.1` 版本，新增了 `external`（是否外部员工）过滤参数，支持按照 **是否外部员工** 过滤。<br/>
-  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
-  [**1.1.0**](/docs/open-api/notice/update-log#110) &emsp; -> 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
-  [**0.7.155**](/docs/open-api/notice/update-log#07155) -> 🆕 新增了 `active`（是否启用）参数过滤员工列表。<br/>
+  [**1.20.0**](/updateLog/update-log#1200)&emsp;-> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
+  [**1.19.0**](/updateLog/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
+  [**1.11.1**](/updateLog/update-log#1111)&emsp;-> 🚀 接口升级 `v1.1` 版本，新增了 `external`（是否外部员工）过滤参数，支持按照 **是否外部员工** 过滤。<br/>
+  [**1.11.0**](/updateLog/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
+  [**1.1.0**](/updateLog/update-log#110) &emsp; -> 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
+  [**0.7.155**](/updateLog/update-log#07155) -> 🆕 新增了 `active`（是否启用）参数过滤员工列表。<br/>
 
   </div>
 </details>

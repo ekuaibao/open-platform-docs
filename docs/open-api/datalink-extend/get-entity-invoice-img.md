@@ -11,7 +11,7 @@ url="/api/openapi/v2/extension/INVOICE/url"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.27.0**](/docs/open-api/notice/update-log#1270) -> 🐞 修复了获取的OFD文件链接打开报错的BUG。<br/>
+  [**1.27.0**](/updateLog/update-log#1270) -> 🐞 修复了获取的OFD文件链接打开报错的BUG。<br/>
 
   </div>
 </details>

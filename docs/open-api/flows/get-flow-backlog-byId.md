@@ -11,14 +11,14 @@ url="/api/openapi/v1.1/flowDetails/allLogs"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.11.1**](/docs/open-api/notice/update-log#1111)&emsp;-> 🐞 修复了管理员回退单据到上一节点，上一节点审批人驳回单据，接口报 **HTTP 400** 的BUG。<br/>
-  [**1.11.0**](/docs/open-api/notice/update-log#1110)&emsp;-> 🐞 修复了申请单变更申请，接口报 **HTTP 400** 的BUG。<br/>
-  [**1.8.1**](/docs/open-api/notice/update-log#172) &emsp; -> 🐞 修复了单据撤回再提交，接口报 **HTTP 400** 的BUG。<br/>
+  [**1.11.1**](/updateLog/update-log#1111)&emsp;-> 🐞 修复了管理员回退单据到上一节点，上一节点审批人驳回单据，接口报 **HTTP 400** 的BUG。<br/>
+  [**1.11.0**](/updateLog/update-log#1110)&emsp;-> 🐞 修复了申请单变更申请，接口报 **HTTP 400** 的BUG。<br/>
+  [**1.8.1**](/updateLog/update-log#172) &emsp; -> 🐞 修复了单据撤回再提交，接口报 **HTTP 400** 的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了单据由管理员转交给他人后审批同意，接口报 **HTTP 500** 的BUG。<br/>
   &emsp; &emsp; &emsp; -> 🐞 修复了单据支付中和支付完成状态缺失 `action` 的BUG。<br/>
-  [**1.7.2**](/docs/open-api/notice/update-log#172) &emsp; -> 🐞 修复了待办任务自动同意时，接口报错 **HTTP 400** 的BUG。<br/>
-  [**1.7.0**](/docs/open-api/notice/update-log#170) &emsp; -> 🚀 接口升级 `v1.1` 版本，**成功响应** 中新增了 `action`（已办动作）参数。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🆕 新增了本接口。<br/>
+  [**1.7.2**](/updateLog/update-log#172) &emsp; -> 🐞 修复了待办任务自动同意时，接口报错 **HTTP 400** 的BUG。<br/>
+  [**1.7.0**](/updateLog/update-log#170) &emsp; -> 🚀 接口升级 `v1.1` 版本，**成功响应** 中新增了 `action`（已办动作）参数。<br/>
+  [**1.2.0**](/updateLog/update-log#120) &emsp; -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

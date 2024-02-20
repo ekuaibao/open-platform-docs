@@ -11,12 +11,12 @@ url="/api/openapi/v1/roledefs/$`roledefId`/staffs"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.9.0**](/docs/open-api/notice/update-log#190) &emsp; -> 🐞 修复了首次调用接口报错后，使用相同错误参数再次调用时，返回成功响应的BUG。<br/>
-  [**1.3.0**](/docs/open-api/notice/update-log#130) &emsp; -> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
+  [**1.9.0**](/updateLog/update-log#190) &emsp; -> 🐞 修复了首次调用接口报错后，使用相同错误参数再次调用时，返回成功响应的BUG。<br/>
+  [**1.3.0**](/updateLog/update-log#130) &emsp; -> 🆕 `staffBy`（员工参数格式）新增了支持 `code`、`cellphone`、`email` 3种参数类型。<br/>
   &emsp; &emsp; &emsp; -> 🐞 兼容老版本，更新「**普通角色**」时 `path` 参数非必填。<br/>
-  [**1.2.0**](/docs/open-api/notice/update-log#120) &emsp; -> 🐞 修复了接口 **HTTP 500** 报错问题，增加了 `path`、`staffs` 不允许传 `null` 的校验。<br/>
-  [**1.1.1**](/docs/open-api/notice/update-log#111) &emsp; -> 🆕 新增了 `pathType` 参数支持 `id` 类型。<br/>
-  [**0.7.137**](/docs/open-api/notice/update-log#07137) -> 🆕 新增了 `pathType`（路径类型）参数。<br/>
+  [**1.2.0**](/updateLog/update-log#120) &emsp; -> 🐞 修复了接口 **HTTP 500** 报错问题，增加了 `path`、`staffs` 不允许传 `null` 的校验。<br/>
+  [**1.1.1**](/updateLog/update-log#111) &emsp; -> 🆕 新增了 `pathType` 参数支持 `id` 类型。<br/>
+  [**0.7.137**](/updateLog/update-log#07137) -> 🆕 新增了 `pathType`（路径类型）参数。<br/>
 
   </div>
 </details>

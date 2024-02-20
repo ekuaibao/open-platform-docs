@@ -11,7 +11,7 @@ url="/api/openapi/v1/staffs/getAllCustomeProperty"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.140**](/docs/open-api/notice/update-log#07140) -> 🆕 新增了本接口。<br/>
+  [**0.7.140**](/updateLog/update-log#07140) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

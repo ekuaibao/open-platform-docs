@@ -12,9 +12,9 @@ url="/api/openapi/v2.1/flows/relay"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.18.0**](/docs/open-api/notice/update-log#1180)&emsp;-> 🐞 接口新增了 `entityIds`（业务对象ID）、`ids`（业务对象实例ID）参数，可交接指定业务对象下全部实例或指定实例数据的参与人和负责人。 <br/>
-  [**1.4.0**](/docs/open-api/notice/update-log#140) &emsp; -> 🚀 接口升级 `v2.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
-  [**0.7.156**](/docs/open-api/notice/update-log#07156) -> 🆕 新增了本接口。<br/>
+  [**1.18.0**](/updateLog/update-log#1180)&emsp;-> 🐞 接口新增了 `entityIds`（业务对象ID）、`ids`（业务对象实例ID）参数，可交接指定业务对象下全部实例或指定实例数据的参与人和负责人。 <br/>
+  [**1.4.0**](/updateLog/update-log#140) &emsp; -> 🚀 接口升级 `v2.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+  [**0.7.156**](/updateLog/update-log#07156) -> 🆕 新增了本接口。<br/>
 
   </div>
 </details>

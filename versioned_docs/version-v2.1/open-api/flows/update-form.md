@@ -12,14 +12,14 @@ url="/api/openapi/v2.1/flow/data/$`flowId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.9.0**](/docs/open-api/notice/update-log#190) -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
-  [**1.8.0**](/docs/open-api/notice/update-log#170) -> 🐞 优化了审批日志描述：`editorId` 不传时，默认记录为 **OpenAPI** 修改了单据。<br/>
+  [**1.9.0**](/updateLog/update-log#190) -> 🆕 新增了 `editFlag`（更新标志）参数，默认为 `cover`（全量覆盖）可配置为 `increment`（增量更新）。<br/>
+  [**1.8.0**](/updateLog/update-log#170) -> 🐞 优化了审批日志描述：`editorId` 不传时，默认记录为 **OpenAPI** 修改了单据。<br/>
   &emsp; &emsp;  -> 🐞 修复了多个字段配置多层级的【字段依赖性】后（例：A->B->C->D），**待审批、待支付** 状态更新单据时偶发报错的BUG。<br/>
-  [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🐞 修复了 **待支付** 状态更新单据后，审批日志中无记录生成的BUG。<br/>
-  [**1.4.0**](/docs/open-api/notice/update-log#140) -> 🆕 新增了 `editorId`（单据修改人）参数，修复了部分情况下无法更新单据的BUG<br/>
+  [**1.5.0**](/updateLog/update-log#150) -> 🐞 修复了 **待支付** 状态更新单据后，审批日志中无记录生成的BUG。<br/>
+  [**1.4.0**](/updateLog/update-log#140) -> 🆕 新增了 `editorId`（单据修改人）参数，修复了部分情况下无法更新单据的BUG<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● `editorId` 传参时，审批日志记录为 **单据修改人** 修改了单据。<br/>
   &emsp; &emsp; &emsp; &emsp; &emsp; ● `editorId` 不传时，审批日志默认记录为 **节点审批人（会签节点任选其一）** 修改了单据。<br/>
-  [**1.3.0**](/docs/open-api/notice/update-log#130) -> 🚀 接口升级 `v2.1` 版本，新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**`paying`（待支付）**】状态更新单据。<br/>
+  [**1.3.0**](/updateLog/update-log#130) -> 🚀 接口升级 `v2.1` 版本，新增了校验审批流节点是否配置【**允许审批人修改单据**】，支持【**`paying`（待支付）**】状态更新单据。<br/>
   &emsp; &emsp; -> 🐞 修复了单据模板中配置【**必须关联申请单**】，**关联申请** 字段设置【**允许关联多个申请事项**】后，提示 **“关联申请单不存在，请补充申请单ID！“** 的BUG。<br/>
 
   </div>

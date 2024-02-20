@@ -11,10 +11,10 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.1**](/docs/open-api/notice/update-log#171) &emsp; -> 🆕 新增了 `authType`（授权方式）参数，控制单点链接可用次数。<br/>
-  [**1.5.0**](/docs/open-api/notice/update-log#150) &emsp; -> 🐞 修复了被委托人审批会签节点的单据（`pageType` = `form`）时，无审批按钮的BUG。 <br/>
-  [**1.0.0**](/docs/open-api/notice/update-log#100) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `pageType` = `frontPage` 类型，进入合思 **首页**。<br/>
-  [**0.7.163**](/docs/open-api/notice/update-log#07163) -> 🆕 新增了 `approvalUrl`（审批完成后跳转地址）参数。<br/>
+  [**1.7.1**](/updateLog/update-log#171) &emsp; -> 🆕 新增了 `authType`（授权方式）参数，控制单点链接可用次数。<br/>
+  [**1.5.0**](/updateLog/update-log#150) &emsp; -> 🐞 修复了被委托人审批会签节点的单据（`pageType` = `form`）时，无审批按钮的BUG。 <br/>
+  [**1.0.0**](/updateLog/update-log#100) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `pageType` = `frontPage` 类型，进入合思 **首页**。<br/>
+  [**0.7.163**](/updateLog/update-log#07163) -> 🆕 新增了 `approvalUrl`（审批完成后跳转地址）参数。<br/>
 
   </div>
 </details>
