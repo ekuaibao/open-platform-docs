@@ -1,5 +1,5 @@
 # 外部服务回调审批
-EBot调用出站消息后，目标服务器收到消息并进行外部处理，处理后调用此接口（目前只支持EBot节点的审批），通知Ebot执行**"同意"**或**"驳回"**操作。
+EBot调用出站消息后，目标服务器收到消息并进行外部处理，处理后调用此接口（目前只支持EBot节点的审批），通知Ebot执行 **同意** 或 **驳回** 操作。
 
 import Control from "@theme/Control";
 
@@ -7,6 +7,16 @@ import Control from "@theme/Control";
 method="POST"
 url="/api/outbound/v1/approval"
 />
+
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+  - [**2.0.0**](/docs/open-api/notice/update-log#200) 
+    - 🐞 新增了 `resubmitMethod`（驳回后再次提交送审方式）参数，支持选择驳回后送审方式。
+
+  </div>
+</details>
 
 ## Query Parameters
 
@@ -16,14 +26,16 @@ url="/api/outbound/v1/approval"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **signKey**  | String | 签名秘钥(系统分配) | 必填  | - | 通过出站消息配置上获取 |
-| **flowId**   | String | 单据ID	          | 必填  | - | 通过出站消息获取 |
-| **nodeId**   | String | 节点ID	          | 必填  | - | 通过出站消息获取 |
-| **action**   | String | 审批动作	      | 必填  | - | `accept` : 同意 &emsp; `refuse` : 驳回 |
-| **comment**  | String | 审批意见          | 必填  | - | 审批意见 |
-| **rejectTo** | String | 驳回的节点ID      | 非必填 | - | 填写需要驳回的节点ID，可根据单据ID<br/>通过 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details) 中的 `logs`（审批日志）获取<br/>**不传时按照审批流节点驳回配置执行，见下方TIP** |
+| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注                                                                                                                                   |
+| :--- | :--- | :--- | :--- |:----|:-------------------------------------------------------------------------------------------------------------------------------------|
+| **signKey**  | String | 签名秘钥(系统分配) | 必填  | -   | 通过出站消息配置上获取                                                                                                                          |
+| **flowId**   | String | 单据ID	          | 必填  | -   | 通过出站消息获取                                                                                                                             |
+| **nodeId**   | String | 节点ID	          | 必填  | -   | 通过出站消息获取                                                                                                                             |
+| **action**   | String | 审批动作	      | 必填  | -   | `accept` : 同意 &emsp; `refuse` : 驳回                                                                                                   |
+| **comment**  | String | 审批意见          | 必填  | -   | 审批意见                                                                                                                                 |
+| **rejectTo** | String | 驳回的节点ID      | 非必填 | -   | 填写需要驳回的节点ID，可根据单据ID<br/>通过 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details) 中的 `logs`（审批日志）获取<br/>**不传时按照EBot节点驳回配置执行，见下方TIP** |
+| **resubmitMethod** | String | 驳回后再次提交送审方式 | 非必填 | -   | `FROM_START` : 重新走审批流<br/>`TO_REJECTOR` : 直接送审至此节点<br/>**不传时按EBot节点驳回配置执行，见下方TIP**                                                          |
+
 
 [//记录文档，该参数不对外展示 2022年11月28日上线该参数]: # (| **ebotNodeOnly** | Boolean | 是否仅审批EBOT节点 | 非必填 | false | `true` : 可审批人工节点（仅支持 `action` = `accept` 的同意动作） <br/> `false` : 仅审批EBOT节点                           |)
 
@@ -42,8 +54,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/outbound/v1/approva
     "flowId":"MK48h7s2yQ6Y00",
     "nodeId":"FLOW:251847192:631543649",
     "action":"accept",
-    "comment":"同意",
-    "rejectTo": ""
+    "comment":"同意"
+    //"rejectTo": "",
+    //"resubmitMethod": ""
 }'
 ```
 

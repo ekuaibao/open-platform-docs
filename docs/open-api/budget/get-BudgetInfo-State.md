@@ -34,7 +34,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
     "value": {
         "status": "DONE",              //预算执行状态，DONE：完成；PROCESSING：计算中；ERROR：上次执行错误
         "errorMessage": null,          //错误消息
-        "budgetInfo": {                //状态不是错误时返回预算包信息（预算包信息，同“获取预算包详细信息”接口）
+        "budgetInfo": {                //状态不是错误时返回预算包信息（预算包信息，同【获取预算包详细信息】接口）
             "pipeline": 1,
             "grayver": "9.25.0.0:A",
             "id": "ID_3D$8ov23ECg",    //预算ID
@@ -47,11 +47,12 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
             "corporationId": "bwa3wajigF0WH0",  //企业ID
             "sourceCorporationId": null,
             "dataCorporationId": null,
-            "period": {                //预算年度
-                "annual": "2022",      //控制年度
-                "period": "SEASON",    //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
-                "startTime": 1641028769360,  //非周期控制开始时间
-                "endTime": 1672478369360     //非周期控制结束时间
+            "period": {                      //预算年度
+                "annual": "2022",            //控制年度
+                "period": "SEASON",          //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
+                "periodControl": "NATURAL_SEASON", //自然期间拆解（跨财年预算包需要关注）
+                "startTime": 1641028769360,  //非周期控制开始时间/自定义财年区间-开始时间
+                "endTime": 1672478369360     //非周期控制结束时间/自定义财年区间-截止时间
             },
             "tree": null,
             "delete": false,           //预算是否删除
@@ -64,6 +65,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                 "E_system_post": "PROJECT",
                 "E_system_rank": "PROJECT"
             },
+            "isFiscalYear": true,      //是否跨财年
             "isCustom": false,         //预算周期是否是自定义
             "isRollCalc": false,       //预算是否是滚动预算
             "isEdit": false            //预算包编制状态

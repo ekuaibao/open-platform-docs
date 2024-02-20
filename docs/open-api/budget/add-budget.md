@@ -11,6 +11,7 @@ url="/api/openapi/v2.1/budgets/create"
   <summary><b>更新日志</b></summary>
   <div>
 
+  [**2.0.0**](/docs/open-api/notice/update-log#200) -> 🐞 新增了 `budgetInfo.isFiscalYear`（是否跨财年）、`budgetInfo.period.periodControl`（自然期间拆解）、`addNodes.moneys[x].periodStartTime`（跨财年第x个周期开始时间）、`addNodes.moneys[x].periodEndTime`（跨财年第x个周期结束时间）参数支持创建 **跨财年** 的预算包。<br/>
   [**1.8.0**](/docs/open-api/notice/update-log#180) -> 🐞 修复了新增预算包同一层级节点是不同的自定义档案维度时可以调用成功的BUG。<br/>
   [**1.5.0**](/docs/open-api/notice/update-log#150) -> 🚀 接口升级 `v2.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
 
@@ -26,68 +27,70 @@ url="/api/openapi/v2.1/budgets/create"
 
 ## Body Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-|**budgetInfo**                     | Object  | 预算包信息               | 必填   | - | 预算包信息 |
-|**&emsp; ∟ active**               | Boolean | 是否激活                 | 必填   | false | `true` : 发布 &emsp; `false` : 草稿 | 
-|**&emsp; ∟ name**                 | String  | 预算包名称               | 必填   | - | 预算包名称 | 
-|**&emsp; ∟ corporationId**        | String  | 企业ID                  | 必填   | - | [企业ID如何获取](/docs/open-api/getting-started/origin#query-parameters) | 
-|**&emsp; ∟ isCustom**             | Boolean | 是否自定义区间            | 必填   | false | `true` : 自定义时间区间（需要 `period（控制周期）`= `null` ）<br/> `false` : 周期控制，周期累计控制均为 **false** | 
-|**&emsp; ∟ isRollCalc**           | Boolean | 是否滚动预算             | 必填   | false | `true` : 周期累计控制 &emsp; `false` : 周期控制 | 
-|**&emsp; ∟ period**               | Object  | 预算年度                | 必填   | - | 预算年度 | 
-|**&emsp; &emsp; ∟ annual**        | String  | 年份                   | 必填   | - | 例如 : 2022 | 
-|**&emsp; &emsp; ∟ period**        | String  | 控制周期                | 必填   | - | 年度内分割方式：<br/> `YEAR` : 年度<br/>`HALF_YEAR` : 半年度<br/>`SEASON` : 季度<br/> `MONTH` : 月度<br/>`null` : 非周期控制 | 
-|**&emsp; &emsp; ∟ startTime**     | Long    | 非周期控制开始时间        | 非必填 | - | 毫秒级时间戳，是否自定义区间参数：<br/> `isCustom` = `true` 时必填，`isCustom` = `false` 时传 `null` | 
-|**&emsp; &emsp; ∟ endTime**       | Long    | 非周期控制结束时间        | 非必填 | - | 毫秒级时间戳，是否自定义区间参数：<br/> `isCustom` = `true` 时必填，`isCustom` = `false` 时传 `null` | 
-|**addNodes**                       | Array   | 追加节点信息            | 必填   | - | 添加预算包下子预算项 | 
-|**&emsp; ∟ id**                   | String  | 预算节点ID              | 必填   | - | 不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID | 
-|**&emsp; ∟ code**                 | String  | 节点编码                | 必填   | - | 可传 `""`，**长度不能超过20个字符** | 
-|**&emsp; ∟ content**              | Array   | 节点维度                | 必填   | - | 预算分解依据，例如根据"费用类型"、"部门"分解<br/>**只有根节点允许有多个维度，其他子级节点有且仅有一个维度信息** | 
-|**&emsp; &emsp; ∟ dimensionType** | String  | 维度种类                | 必填   | - | `DEPART` : 费用承担部门<br/>`PROJECT` : 扩展档案<br/>`FEE_TYPE` : 费用类型<br/>`STAFF` : 员工 | 
-|**&emsp; &emsp; ∟ dimensionId**   | String  | 维度种类的标识ID         | 必填   | - | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : 通过 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 获取，见下方 **TIP**<br/>STAFF : `submitterId` | 
-|**&emsp; &emsp; ∟ mustLeaf**      | Boolean | 维度是否必定为叶子节点(本部) | 必填   | false | `true` : 非本级 &emsp; `false` : 本级<br/>[什么是“维度是否必定为叶子节点(本部)”？](/docs/open-api/budget/question-answer#问题一) | 
-|**&emsp; &emsp; ∟ contentId**     | String  | 维度内容ID              | 必填   | - | 对应维度种类下实例项的 **ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>例如：部门维度就是 **部门ID/CODE**，扩展档案维度就是 **档案项ID/CODE** | 
-|**&emsp; ∟ moneys**               | Array   | 节点金额信息             | 必填   | - | 子预算项对应的预算金额 | 
-|**&emsp; &emsp; ∟ budgetMoney**   | String  | 预算金额                | 必填   | - | [周期](/docs/open-api/budget/question-answer#问题二) 预算金额，非最末级节点传 `null` 即可，由系统自动累加此维度下子预算额度求和 | 
-|**&emsp; &emsp; ∟ nodeId**        | String  | 预算节点ID              | 必填   | - | 与上面预算节点ID保持一致，即一个预算节点下包含 **节点信息** 和 **预算金额** 两部分属性 | 
-|**&emsp; &emsp; ∟ periodTime**    | String  | 第几个周期               | 必填   | - | 年度和自定义区间: `1`<br/>半年度: `1`、`2`<br/>季度: `1`、`2`、`3`、`4`<br/>月度: `1~12`<br/>根据控制周期类型填写，例如：预算包控制周期是 **季度** 类型，每个子预算节点的 `moneys` 数组数据，就包含4个对象，表示每个季度对应的预算金额 | 
-|**&emsp; ∟ overControllerRate**   | String  | 超标比例                | 非必填  | 100 | 预算超标比例（百分比），`1` ≤ 传参 ≤ `1000` | 
-|**&emsp; ∟ control**              | String  | 节点控制方式             | 必填   | ALLOW | 当预算超额时的控制方式<br/> `ALLOW` : 允许单据提交，并显示警告<br/>`FORBID` : 禁止提交单据<br/>`IGNORED` : 允许单据提交，不显示警告 | 
-|**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 必填   | - | 与上面预算节点ID保持一致 | 
-|**&emsp; ∟ parentId**             | String  | 父节点ID                | 非必填 | - | 父节点ID，传 `""` 表示根节点 | 
-|**visibilities**                   | Array   | 节点负责人              | 非必填 | - | 负责人能在相关报销单和预算报表中查看该预算节点的进度 |
-|**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 非必填 | - | 与上面预算节点ID保持一致 |
-|**&emsp; ∟ staffIds**             | Array   | 员工ID                 | 非必填 | - | **员工ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
-|**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 | - | **角色ID** 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**<br/>通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
-|**editInChargers**                 | Array   | 预算编制负责人           | 非必填 | - | 负责该节点的预算编制，如不填写则默认与上级节点相同<br/>需开通【**预算编制**】功能方可见此字段 |
-|**&emsp; ∟ nodeId**               | String  | 预算节点ID              | 非必填 | - | 与上面预算节点ID保持一致 |
-|**&emsp; ∟ staffIds**             | Array   | 员工ID                 | 非必填 | - | **员工ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取 |
-|**&emsp; ∟ roleDefIds**           | Array   | 角色ID                 | 非必填 | - | **角色ID** 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**<br/>通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取 |
-|**version**                       | Long    | 预算包版本               | 非必填 | 1 | 不填写此参数默认为 `1` |
+| 名称                                            | 类型 | 描述                 | 是否必填 | 默认值   | 备注                                                                                                                                                                                                                                      |
+|:----------------------------------------------| :--- |:-------------------|:-----|:------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **budgetInfo**                                | Object  | 预算包信息              | 必填   | -     | 预算包信息                                                                                                                                                                                                                                   |
+| **&emsp; ∟ active**                           | Boolean | 是否激活               | 必填   | false | `true` : 发布 &emsp; `false` : 草稿                                                                                                                                                                                                         | 
+| **&emsp; ∟ name**                             | String  | 预算包名称              | 必填   | -     | 预算包名称                                                                                                                                                                                                                                   | 
+| **&emsp; ∟ isCustom**                         | Boolean | 是否自定义区间            | 非必填  | false | `true` : 自定义时间区间（需要 `period（控制周期）`= `null` ）<br/> `false` : 周期控制，周期累计控制均为 **false**                                                                                                                                                     | 
+| **&emsp; ∟ isRollCalc**                       | Boolean | 是否滚动预算             | 非必填  | false | `true` : 周期累计控制 &emsp; `false` : 周期控制                                                                                                                                                                                                   | 
+| **&emsp; ∟ isFiscalYear**                     | Boolean | 是否跨财年              | 非必填  | false | `true` : 跨财年 &emsp; `false` : 非跨财年                                                                                                                                                                                                      | 
+| **&emsp; ∟ period**                           | Object  | 预算年度               | 必填   | -     | 预算年度                                                                                                                                                                                                                                    | 
+| **&emsp; &emsp; ∟ annual**                    | String  | 年份                 | 必填   | -     | 例如 : 2022                                                                                                                                                                                                                               | 
+| **&emsp; &emsp; ∟ period**                    | String  | 控制周期               | 必填   | -     | 年度内分割方式：<br/> `YEAR` : 年度<br/>`HALF_YEAR` : 半年度<br/>`SEASON` : 季度<br/> `MONTH` : 月度<br/>`null` : 非周期控制                                                                                                                                  | 
+| **&emsp; &emsp; ∟ periodControl**             | String  | 自然期间拆解             | 非必填  | -     | **跨财年** 时必填，表示周期是自然周期还是非自然周期：<br/> `NATURAL_YEAR` : 自然年<br/>`NATURAL_HALF_YEAR` : 自然半年<br/>`NATURAL_SEASON` : 自然季度<br/> `NATURAL_MONTH` : 自然月<br/>`NOT_NATURAL_HALF_YEAR` : 非自然半年<br/>`NOT_NATURAL_SEASON` : 非自然季度                      | 
+| **&emsp; &emsp; ∟ startTime**                 | Long    | 非周期控制开始时间/跨财年开始时间  | 非必填  | -     | 毫秒级时间戳：<br/> `isCustom` 或 `isFiscalYear` = `true` 时必填，`isCustom` 或 `isFiscalYear` = `false` 时传 `null`                                                                                                                                   | 
+| **&emsp; &emsp; ∟ endTime**                   | Long    | 非周期控制结束时间/跨财年截止时间  | 非必填  | -     | 毫秒级时间戳：<br/> `isCustom` 或 `isFiscalYear` = `true` 时必填，`isCustom` 或 `isFiscalYear` = `false` 时传 `null`                                                                                                                                   | 
+| **addNodes**                                  | Array   | 追加节点信息             | 必填   | -     | 添加预算包下子预算项                                                                                                                                                                                                                              | 
+| **&emsp; ∟ id**                               | String  | 预算节点ID             | 必填   | -     | 不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID                                                                                                                                                                                                              | 
+| **&emsp; ∟ code**                             | String  | 节点编码               | 必填   | -     | 可传 `""`，**长度不能超过20个字符**                                                                                                                                                                                                                 | 
+| **&emsp; ∟ content**                          | Array   | 节点维度               | 必填   | -     | 预算分解依据，例如根据"费用类型"、"部门"分解<br/>**只有根节点允许有多个维度，其他子级节点有且仅有一个维度信息**                                                                                                                                                                          | 
+| **&emsp; &emsp; ∟ dimensionType**             | String  | 维度种类               | 必填   | -     | `DEPART` : 费用承担部门<br/>`PROJECT` : 扩展档案<br/>`FEE_TYPE` : 费用类型<br/>`STAFF` : 员工                                                                                                                                                           | 
+| **&emsp; &emsp; ∟ dimensionId**               | String  | 维度种类的标识ID          | 必填   | -     | 参数为冒号之后的部分：<br/>DEPART : `expenseDepartment`<br/>FEE_TYPE : `feeTypeId`<br/>PROJECT : 通过 [获取全局字段列表](/docs/open-api/forms/get-customs-param) 获取，见下方 **TIP**<br/>STAFF : `submitterId`                                                    | 
+| **&emsp; &emsp; ∟ mustLeaf**                  | Boolean | 维度是否必定为叶子节点(本部)    | 必填   | false | `true` : 非本级 &emsp; `false` : 本级<br/>[什么是“维度是否必定为叶子节点(本部)”？](/docs/open-api/budget/question-answer#问题一)                                                                                                                                 | 
+| **&emsp; &emsp; ∟ contentId**                 | String  | 维度内容ID             | 必填   | -     | 对应维度种类下实例项的 **ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>例如：部门维度就是 **部门ID/CODE**，扩展档案维度就是 **档案项ID/CODE**                                                                                                                                   | 
+| **&emsp; ∟ moneys**                           | Array   | 节点金额信息             | 必填   | -     | 子预算项对应的预算金额                                                                                                                                                                                                                             | 
+| **&emsp; &emsp; ∟ budgetMoney**               | String  | 预算金额               | 必填   | -     | [周期](/docs/open-api/budget/question-answer#问题二) 预算金额，非最末级节点传 `null` 即可，由系统自动累加此维度下子预算额度求和                                                                                                                                               | 
+| **&emsp; &emsp; ∟ nodeId**                    | String  | 预算节点ID             | 必填   | -     | 与上面预算节点ID保持一致，即一个预算节点下包含 **节点信息** 和 **预算金额** 两部分属性                                                                                                                                                                                      | 
+| **&emsp; &emsp; ∟ periodTime**                | String  | 第几个周期              | 必填   | -     | 年度和自定义区间: `1`<br/>半年度: `1`、`2`<br/>季度: `1`、`2`、`3`、`4`<br/>月度: `1~12`<br/>根据控制周期类型填写，例如：预算包控制周期是 **季度** 类型，每个子预算节点的 `moneys` 数组数据，就包含4个对象，表示每个季度对应的预算金额                                                                                 | 
+| **&emsp; &emsp; ∟ periodStartTime**           | Long  | 周期开始时间(跨财年参数)      | 非必填  | -     | 表示跨财年每个周期按自然或非自然周期方式计算出来的开始日期<br/>**无需填写，系统会自动计算赋值**                                                                                                                                                                                    | 
+| **&emsp; &emsp; ∟ periodEndTime**             | Long  | 周期结束时间(跨财年参数)      | 非必填  | -     | 表示跨财年每个周期按自然或非自然周期方式计算出来的结束日期<br/>**无需填写，系统会自动计算赋值**                                                                                                                                                                                    | 
+| **&emsp; ∟ overControllerRate**               | String  | 超标比例               | 非必填  | 100   | 预算超标比例（百分比），`1` ≤ 传参 ≤ `1000`                                                                                                                                                                                                           | 
+| **&emsp; ∟ control**                          | String  | 节点控制方式             | 必填   | ALLOW | 当预算超额时的控制方式<br/> `ALLOW` : 允许单据提交，并显示警告<br/>`FORBID` : 禁止提交单据<br/>`IGNORED` : 允许单据提交，不显示警告                                                                                                                                              | 
+| **&emsp; ∟ nodeId**                           | String  | 预算节点ID             | 必填   | -     | 与上面预算节点ID保持一致                                                                                                                                                                                                                           | 
+| **&emsp; ∟ parentId**                         | String  | 父节点ID              | 非必填  | -     | 父节点ID，传 `""` 表示根节点                                                                                                                                                                                                                      | 
+| **visibilities**                              | Array   | 节点负责人              | 非必填  | -     | 负责人能在相关报销单和预算报表中查看该预算节点的进度                                                                                                                                                                                                              |
+| **&emsp; ∟ nodeId**                           | String  | 预算节点ID             | 非必填  | -     | 与上面预算节点ID保持一致                                                                                                                                                                                                                           |
+| **&emsp; ∟ staffIds**                         | Array   | 员工ID               | 非必填  | -     | **员工ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取                                                                                                                                   |
+| **&emsp; ∟ roleDefIds**                       | Array   | 角色ID               | 非必填  | -     | **角色ID** 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**<br/>通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取                                                                                  |
+| **editInChargers**                            | Array   | 预算编制负责人            | 非必填  | -     | 负责该节点的预算编制，如不填写则默认与上级节点相同<br/>需开通【**预算编制**】功能方可见此字段                                                                                                                                                                                     |
+| **&emsp; ∟ nodeId**                           | String  | 预算节点ID             | 非必填  | -     | 与上面预算节点ID保持一致                                                                                                                                                                                                                           |
+| **&emsp; ∟ staffIds**                         | Array   | 员工ID               | 非必填  | -     | **员工ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取                                                                                                                                   |
+| **&emsp; ∟ roleDefIds**                       | Array   | 角色ID               | 非必填  | -     | **角色ID** 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**<br/>通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取                                                                                  |
+
+[//]: # (|**&emsp; ∟ corporationId**        | String  | 企业ID                  | 必填   | - | [企业ID如何获取]&#40;/docs/open-api/getting-started/origin#query-parameters&#41; |)
+[//]: # (|**version**                       | Long    | 预算包版本               | 非必填 | 1 | 不填写此参数默认为 `1` |)
 
 :::tip
- - **节点维度** 如下图所示，是预算节点的划分依据<br/>
- &emsp; `dimensionType（维度种类）` 传参见参数介绍，四种类型固定；<br/>
- &emsp; `dimensionId（维度种类的标识ID）` 传参为对应维度种类的 [全局字段名称](/docs/open-api/forms/get-customs-param)；例如：<br/>
- &emsp; &emsp; - 职级预置 : `E_system_rank` <br/>
- &emsp; &emsp; - 岗位预置 : `E_system_post` <br/>
- &emsp; &emsp; - 成本中心预置 : `E_system_costcenter `<br/>
- &emsp; &emsp; - 品类 : `品类` <br/>
- &emsp; &emsp; - 法人实体 : `法人实体` <br/>
- &emsp; &emsp; - 项目 : `项目` <br/>
- &emsp; &emsp; - 提交人 : `submitterId` <br/>
- &emsp; &emsp; - 费用承担部门 : `expenseDepartment` <br/>
- &emsp; &emsp; - 费用类型 : `feeTypeId` <br/>
- &emsp; &emsp; - 自建的扩展档案字段，例如“国家”，传参为 `u_国家` <br/>
-
-  ![image](images/节点维度信息.png)
+- **节点维度** 如下图所示，是预算节点的划分依据<br/>
+  - `dimensionType（维度种类）` 传参见参数介绍，四种类型固定；
+  - `dimensionId（维度种类的标识ID）` 传参为对应维度种类的 [全局字段名称](/docs/open-api/forms/get-customs-param)；例如：
+    - 职级预置 : `E_system_rank` 
+    - 岗位预置 : `E_system_post` 
+    - 成本中心预置 : `E_system_costcenter `
+    - 品类 : `品类` 
+    - 法人实体 : `法人实体` 
+    - 项目 : `项目` 
+    - 提交人 : `submitterId` 
+    - 费用承担部门 : `expenseDepartment` 
+    - 费用类型 : `feeTypeId` 
+    - 自建的扩展档案字段，例如“国家”，传参为 `u_国家` 
+   ![image](images/节点维度信息.png)
 
  - 如果只是创建预算包，不增加预算节点 `addNodes` 对象参数可不传，系统自动创建预算包根节点。
  - 系统中新建预算时 **“添加预算控制条件”** 表示预算包根节点的节点维度信息。**示例见请求CURL**。
-
- ![image](images/添加预算控制条件.png)
-
- ![image](images/预算树的控制条件释义.png)
+  ![image](images/添加预算控制条件.png)
+  ![image](images/预算树的控制条件释义.png)
 :::
 
 ## CURL
@@ -104,7 +107,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
     "budgetInfo": {                         //预算包信息
         "active": true,                     //是否激活 true : 发布  false : 草稿
         "name": "测试预算-1",               //预算包名称
-        "corporationId": "bwa3wajigF0WH0",  //企业ID
         "isCustom": false,                  //是否自定义区间 true : 自定义时间区间（需要 period（控制周期）= null ） false : 周期控制，周期累计控制均为 false
         "isRollCalc": false,                //是否滚动预算  true : 周期累计控制   false : 周期控制
         "period": {                         //预算年度 
@@ -154,7 +156,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
                     "periodTime": "4"
                 }
             ],
-            "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
             "nodeId": "20220419",      //与上面预算节点ID保持一致
             "parentId": ""             //父节点ID,传""表示根节点
         },
@@ -191,7 +193,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
                     "periodTime": "4"
                 }
             ],
-            "control": "FORBID",    //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "control": "FORBID",    //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
             "nodeId": "20220419-1", //节点ID
             "parentId": "20220419"  //父节点ID,传""表示根节点
         },
@@ -228,7 +230,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
                     "periodTime": "4"
                 }
             ],
-            "control": "IGNORED",    //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "control": "IGNORED",    //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
             "nodeId": "20220419-2",
             "parentId": "20220419"   //父节点ID,传""表示根节点
         },
@@ -265,7 +267,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
                     "periodTime": "4"
                 }
             ],
-            "control": "ALLOW",         //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "control": "ALLOW",         //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
             "nodeId": "20220419-1-1",
             "parentId": "20220419-1"    //父节点ID,传""表示根节点
         }
@@ -329,8 +331,323 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
             ],
             "roleDefIds": []
         }
+    ]
+}'
+```
+</TabItem>
+<TabItem value="id-跨财年" label="id-跨财年">
+
+```json
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budgets/create?accessToken=ID01wLfbKesbr9%3ATdk3tgber501v0&type=id' \
+--header 'Content-Type: application/json' \
+--data '{
+    "budgetInfo": {                        //预算包信息
+        "active": false,                   //是否激活 true : 发布  false : 草稿
+        "name": "测试预算-跨财年-自然季度", //预算包名称
+        "isCustom": false,                 //是否自定义区间 true : 自定义时间区间（需要 period（控制周期）= null ） false : 周期控制，周期累计控制均为 false
+        "isRollCalc": false,               //是否滚动预算  true : 周期累计控制   false : 周期控制
+        "isFiscalYear": true,              //跨财年设置，true : 跨财年   false : 非跨财年
+        "period": {                        //预算年度 
+            "annual": "2024",              //控制年度
+            "period": "SEASON",            //年度内分割方式，SEASON: 按季度, MONTH: 按月份, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制。
+            "periodControl": "NATURAL_SEASON", //自然期间拆解枚举：自然年、自然月、自然季度、自然半年、非自然半年、非自然季度
+            "startTime": 1711036800000,     //非周期控制开始时间/自定义财年区间-开始时间，可为空
+            "endTime": 1738944000000        //非周期控制结束时间/自定义财年区间-截止时间，可为空
+        }
+    },
+    "addNodes": [             //追加节点
+        {
+            "id": "20240120", //不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID
+            "code": "根节点", //节点编码
+            "content": [],    //节点维度信息，根节点可传空，也可添加预算包控制条件，根节点允许传多个
+            "moneys": [       //子预算项对应的预算金额
+                {
+                    "budgetMoney": null,  //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20240120", //预算节点ID
+                    "periodTime": "1"     //第1个控制周期，根据预算包中period.period判断是1月、1季度还是上半年
+                    // "periodStartTime":1711036800000, //跨财年周期区间，可为空，系统自动根据配置计算。例：开始时间：2023-04-01；结束时间：2023-06-31
+                    // "periodEndTime":1718035200000     
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20240120",
+                    "periodTime": "2"
+                    // "periodStartTime":1718035200000, //跨财年周期区间，可为空，系统自动根据配置计算。
+                    // "periodEndTime":1726848000000     
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20240120",
+                    "periodTime": "3"
+                    // "periodStartTime":1726934400000, 
+                    // "periodEndTime":1734710400000     
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20240120",
+                    "periodTime": "4"
+                    // "periodStartTime":1734796800000, 
+                    // "periodEndTime":1738944000000     
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20240120",
+                    "periodTime": "5"
+                    // "periodStartTime":1734796800000, 
+                    // "periodEndTime":1738944000000     
+                }
+            ],
+            "overControllerRate": 100, //超标比例
+            "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "nodeId": "20240120",      //与上面预算节点ID保持一致
+            "parentId": ""             //父节点ID为空就是根节点
+        },
+        {
+            "id": "20240120-1", //不重复的唯一id，例如:可用毫秒级时间戳作为节点ID
+            "code": "维度-1",
+            "content": [
+                {
+                    "dimensionType": "PROJECT",   //DEPART：费用承担部门，PROJECT：扩展档案，FEE_TYPE：费用类型，STAFF：员工
+                    "dimensionId": "项目",        //DEPART：expenseDepartment，PROJECT：项目（档案名称，例如：项目、法人实体），FEE_TYPE：feeTypeId，STAFF：submitterId，参数为冒号之后的部分
+                    "mustLeaf": true,             //true：非本级，false：本级
+                    "contentId": "ID_3tqvxwgjD6w" //对应维度种类下的项ID，例如：部门维度就是部门ID，扩展档案维度就是档案项ID
+                }
+            ],
+            "moneys": [
+                {
+                    "budgetMoney": null,     //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20240120-1",
+                    "periodTime": "1"        //第1个控制周期，根据预算包中period.period判断是1月、1季度还是上半年
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。例：开始时间：2023-04-01；结束时间：2023-06-31
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": null,     //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20240120-1",
+                    "periodTime": "2"
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": null,     //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20240120-1",
+                    "periodTime": "3"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": null,     //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20240120-1",
+                    "periodTime": "4"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": null,     //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20240120-1",
+                    "periodTime": "5"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                }
+            ],
+            "overControllerRate": 100, //超标比例
+            "control": "FORBID",       //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "nodeId": "20240120-1",
+            "parentId": "20240120"     //父节点ID为空就是根节点
+        },
+        {
+            "id": "20240120-2",
+            "code": "维度-2",
+            "content": [
+                {
+                    "dimensionType": "PROJECT", //同一层级预算节点维度必须一致
+                    "dimensionId": "项目",
+                    "mustLeaf": true,
+                    "contentId": "ID_3tqvxwgjB6w"
+                }
+            ],
+            "moneys": [
+                {
+                    "budgetMoney": "11.00", //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-2",
+                    "periodTime": "1"       //第1个控制周期，根据预算包中period.period判断是1月、1季度还是上半年
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。例：开始时间：2023-04-01；结束时间：2023-06-31
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "22.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-2",
+                    "periodTime": "2"
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "33.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-2",
+                    "periodTime": "3"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "44.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-2",
+                    "periodTime": "4"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "55.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-2",
+                    "periodTime": "5"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                }
+            ],
+            "overControllerRate": 100, //超标比例
+            "control": "IGNORED",      //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "nodeId": "20240120-2",
+            "parentId": "20240120"     //父节点ID为空就是根节点
+        },
+        {
+            "id": "20240120-1-1",
+            "code": "维度-1-1",
+            "content": [
+                {
+                    "dimensionType": "DEPART",
+                    "dimensionId": "expenseDepartment",
+                    "mustLeaf": true,
+                    "contentId": "Tdk3tgber501v0:ID01wiTvXawnRJ"
+                }
+            ],
+            "moneys": [
+                {
+                    "budgetMoney": "10.00", //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-1-1",
+                    "periodTime": "1"       //第1个控制周期，根据预算包中period.period判断是1月、1季度还是上半年
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。例：开始时间：2023-04-01；结束时间：2023-06-31
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "20.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-1-1",
+                    "periodTime": "2"
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "30.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-1-1",
+                    "periodTime": "3"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "40.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-1-1",
+                    "periodTime": "4"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "50.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-1-1",
+                    "periodTime": "5"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                }
+            ],
+            "overControllerRate": 100, //超标比例
+            "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "nodeId": "20240120-1-1",
+            "parentId": "20240120-1"   //父节点ID为空就是根节点
+        }
     ],
-    "version":1  //预算包版本
+    "visibilities": [             //节点负责人
+        {
+            "nodeId": "20240120", //预算节点ID
+            "staffIds": [
+                "Tdk3tgber501v0:ID01wiSZ2gDamr",
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V"
+            ],
+            "roleDefIds": [
+                "ID_3tf_vxO0WJg",
+                "ID01rULc95JyFN"
+            ]
+        },
+        {
+            "nodeId": "20240120-1",
+            "staffIds": [
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V",
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V"
+            ],
+            "roleDefIds": [
+                "ID_3tf_vxO0WJg",
+                "ID01rULc95JyFN"
+            ]
+        },
+        {
+            "nodeId": "20240120-2",
+            "staffIds": [
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V",
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V"
+            ],
+            "roleDefIds": [
+                "ID_3tf_vxO0WJg"
+            ]
+        },
+        {
+            "nodeId": "20240120-1-1",
+            "staffIds": [
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V"
+            ],
+            "roleDefIds": [
+                "ID_3tf_vxO0WJg"
+            ]
+        }
+    ],
+    "editInChargers": [ //预算编制负责人，负责该节点的预算编制，如不填写则默认与上级节点相同，需开通【预算编制】功能方可见此字段
+        {
+            "nodeId": "20240120", //预算节点ID
+            "staffIds": [
+                "Tdk3tgber501v0:ID01wiSZ2gDamr",
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V"
+            ],
+            "roleDefIds": [
+                "ID_3tf_vxO0WJg",
+                "ID01rULc95JyFN"
+            ]
+        },
+        {
+            "nodeId": "20240120-1",
+            "staffIds": [
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V",
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V"
+            ],
+            "roleDefIds": [
+                "ID_3tf_vxO0WJg",
+                "ID01rULc95JyFN"
+            ]
+        },
+        {
+            "nodeId": "20240120-2",
+            "staffIds": [
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V",
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V"
+            ],
+            "roleDefIds": [
+                "ID_3tf_vxO0WJg"
+            ]
+        },
+        {
+            "nodeId": "20240120-1-1",
+            "staffIds": [
+                "Tdk3tgber501v0:ID01wiSZ2gDa5V"
+            ],
+            "roleDefIds": [
+                "ID_3tf_vxO0WJg"
+            ]
+        }
+    ]
 }'
 ```
 </TabItem>
@@ -343,7 +660,6 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
     "budgetInfo": {                         //预算包信息
         "active": true,                     //是否激活 true : 发布  false : 草稿
         "name": "测试预算-1",               //预算包名称
-        "corporationId": "bwa3wajigF0WH0",  //企业ID
         "isCustom": false,                  //是否自定义区间 true : 自定义时间区间（需要 period（控制周期）= null ） false : 周期控制，周期累计控制均为 false
         "isRollCalc": false,                //是否滚动预算  true : 周期累计控制   false : 周期控制
         "period": {                         //预算年度 
@@ -393,7 +709,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
                     "periodTime": "4"
                 }
             ],
-            "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
             "nodeId": "20220419",      //与上面预算节点ID保持一致
             "parentId": ""             //父节点ID,传""表示根节点
         },
@@ -430,7 +746,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
                     "periodTime": "4"
                 }
             ],
-            "control": "FORBID",    //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "control": "FORBID",    //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
             "nodeId": "20220419-1", //节点ID
             "parentId": "20220419"  //父节点ID,传""表示根节点
         },
@@ -467,7 +783,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
                     "periodTime": "4"
                 }
             ],
-            "control": "IGNORED",    //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "control": "IGNORED",    //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
             "nodeId": "20220419-2",
             "parentId": "20220419"   //父节点ID,传""表示根节点
         },
@@ -504,7 +820,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
                     "periodTime": "4"
                 }
             ],
-            "control": "ALLOW",         //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
+            "control": "ALLOW",         //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
             "nodeId": "20220419-1-1",
             "parentId": "20220419-1"    //父节点ID,传""表示根节点
         }
@@ -568,8 +884,320 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budget
             ],
             "roleDefIds": []
         }
+    ]
+}'
+```
+</TabItem>
+<TabItem value="code-跨财年" label="code-跨财年">
+
+```json
+curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.1/budgets/create?accessToken=ID01wLfbKesd2f%3ATdk3tgber501v0&type=code' \
+--header 'Content-Type: application/json' \
+--data '{
+    "budgetInfo": {                        //预算包信息
+        "active": false,                   //是否激活 true : 发布  false : 草稿
+        "name": "测试预算-跨财年-自然季度2", //预算包名称
+        "isCustom": false,                 //是否自定义区间 true : 自定义时间区间（需要 period（控制周期）= null ） false : 周期控制，周期累计控制均为 false
+        "isRollCalc": false,               //是否滚动预算  true : 周期累计控制   false : 周期控制
+        "isFiscalYear": true,              //跨财年设置，true : 跨财年   false : 非跨财年
+        "period": {                        //预算年度 
+            "annual": "2024",              //控制年度
+            "period": "SEASON",            //年度内分割方式，SEASON: 按季度, MONTH: 按月份, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制。
+            "periodControl": "NATURAL_SEASON", //自然期间拆解枚举：自然年、自然月、自然季度、自然半年、非自然半年、非自然季度
+            "startTime": 1711036800000,     //非周期控制开始时间/自定义财年区间-开始时间，可为空
+            "endTime": 1738944000000        //非周期控制结束时间/自定义财年区间-截止时间，可为空
+        }
+    },
+    "addNodes": [             //追加节点
+        {
+            "id": "20240120", //不重复的唯一ID，例如：可用毫秒级时间戳作为节点ID
+            "code": "根节点", //节点编码
+            "content": [],    //节点维度信息，根节点可传空，也可添加预算包控制条件，根节点允许传多个
+            "moneys": [       //子预算项对应的预算金额
+                {
+                    "budgetMoney": null,  //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20240120", //预算节点ID
+                    "periodTime": "1"     //第1个控制周期，根据预算包中period.period判断是1月、1季度还是上半年
+                    // "periodStartTime":1711036800000, //跨财年周期区间，可为空，系统自动根据配置计算。例：开始时间：2023-04-01；结束时间：2023-06-31
+                    // "periodEndTime":1718035200000     
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20240120",
+                    "periodTime": "2"
+                    // "periodStartTime":1718035200000, //跨财年周期区间，可为空，系统自动根据配置计算。
+                    // "periodEndTime":1726848000000     
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20240120",
+                    "periodTime": "3"
+                    // "periodStartTime":1726934400000, 
+                    // "periodEndTime":1734710400000     
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20240120",
+                    "periodTime": "4"
+                    // "periodStartTime":1734796800000, 
+                    // "periodEndTime":1738944000000     
+                },
+                {
+                    "budgetMoney": null, //根节点传空，由系统自动累加子预算额度合计
+                    "nodeId": "20240120",
+                    "periodTime": "5"
+                    // "periodStartTime":1734796800000, 
+                    // "periodEndTime":1738944000000     
+                }
+            ],
+            "overControllerRate": 100, //超标比例
+            "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "nodeId": "20240120",      //与上面预算节点ID保持一致
+            "parentId": ""             //父节点ID为空就是根节点
+        },
+        {
+            "id": "20240120-1", //不重复的唯一id，例如:可用毫秒级时间戳作为节点ID
+            "code": "维度-1",
+            "content": [
+                {
+                    "dimensionType": "PROJECT",   //DEPART：费用承担部门，PROJECT：扩展档案，FEE_TYPE：费用类型，STAFF：员工
+                    "dimensionId": "项目",        //DEPART：expenseDepartment，PROJECT：项目（档案名称，例如：项目、法人实体），FEE_TYPE：feeTypeId，STAFF：submitterId，参数为冒号之后的部分
+                    "mustLeaf": true,             //true：非本级，false：本级
+                    "contentId": "CODE1"          //对应维度种类下的项ID，例如：部门维度就是部门ID，扩展档案维度就是档案项ID
+                }
+            ],
+            "moneys": [
+                {
+                    "budgetMoney": null,     //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20240120-1",
+                    "periodTime": "1"        //第1个控制周期，根据预算包中period.period判断是1月、1季度还是上半年
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。例：开始时间：2023-04-01；结束时间：2023-06-31
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": null,     //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20240120-1",
+                    "periodTime": "2"
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": null,     //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20240120-1",
+                    "periodTime": "3"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": null,     //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20240120-1",
+                    "periodTime": "4"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": null,     //非最末级节点传空即可，由系统自动累加此维度下子预算额度合计
+                    "nodeId": "20240120-1",
+                    "periodTime": "5"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                }
+            ],
+            "overControllerRate": 100, //超标比例
+            "control": "FORBID",       //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "nodeId": "20240120-1",
+            "parentId": "20240120"     //父节点ID为空就是根节点
+        },
+        {
+            "id": "20240120-2",
+            "code": "维度-2",
+            "content": [
+                {
+                    "dimensionType": "PROJECT", //同一层级预算节点维度必须一致
+                    "dimensionId": "项目",
+                    "mustLeaf": true,
+                    "contentId": "CODE2"
+                }
+            ],
+            "moneys": [
+                {
+                    "budgetMoney": "11.00", //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-2",
+                    "periodTime": "1"       //第1个控制周期，根据预算包中period.period判断是1月、1季度还是上半年
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。例：开始时间：2023-04-01；结束时间：2023-06-31
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "22.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-2",
+                    "periodTime": "2"
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "33.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-2",
+                    "periodTime": "3"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "44.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-2",
+                    "periodTime": "4"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "55.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-2",
+                    "periodTime": "5"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                }
+            ],
+            "overControllerRate": 100, //超标比例
+            "control": "IGNORED",      //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "nodeId": "20240120-2",
+            "parentId": "20240120"     //父节点ID为空就是根节点
+        },
+        {
+            "id": "20240120-1-1",
+            "code": "维度-1-1",
+            "content": [
+                {
+                    "dimensionType": "DEPART",
+                    "dimensionId": "expenseDepartment",
+                    "mustLeaf": true,
+                    "contentId": "fenzhen"
+                }
+            ],
+            "moneys": [
+                {
+                    "budgetMoney": "10.00", //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-1-1",
+                    "periodTime": "1"       //第1个控制周期，根据预算包中period.period判断是1月、1季度还是上半年
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。例：开始时间：2023-04-01；结束时间：2023-06-31
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "20.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-1-1",
+                    "periodTime": "2"
+                    // "periodStartTime":"", //跨财年周期区间，可为空，系统自动根据配置计算。
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "30.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-1-1",
+                    "periodTime": "3"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "40.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-1-1",
+                    "periodTime": "4"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                },
+                {
+                    "budgetMoney": "50.00",  //维度下没有子预算，需要传入预算金额
+                    "nodeId": "20240120-1-1",
+                    "periodTime": "5"
+                    // "periodStartTime":"", 
+                    // "periodEndTime":""     
+                }
+            ],
+            "overControllerRate": 100, //超标比例
+            "control": "ALLOW",        //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "nodeId": "20240120-1-1",
+            "parentId": "20240120-1"   //父节点ID为空就是根节点
+        }
     ],
-    "version":1  //预算包版本
+    "visibilities": [             //节点负责人
+        {
+            "nodeId": "20240120", //预算节点ID
+            "staffIds": [
+                "huang",
+                "dong"
+            ],
+            "roleDefIds": [
+                "ROLE3"
+            ]
+        },
+        {
+            "nodeId": "20240120-1",
+            "staffIds": [
+                "huang",
+                "dong"
+            ],
+            "roleDefIds": [
+                "ROLE3"
+            ]
+        },
+        {
+            "nodeId": "20240120-2",
+            "staffIds": [
+                "huang",
+                "dong"
+            ],
+            "roleDefIds": [
+                "ROLE3"
+            ]
+        },
+        {
+            "nodeId": "20240120-1-1",
+            "staffIds": [
+                "huang"
+            ],
+            "roleDefIds": [
+                "ROLE3"
+            ]
+        }
+    ],
+    "editInChargers": [ //预算编制负责人，负责该节点的预算编制，如不填写则默认与上级节点相同，需开通【预算编制】功能方可见此字段
+        {
+            "nodeId": "20240120", //预算节点ID
+            "staffIds": [
+                "huang",
+                "dong"
+            ],
+            "roleDefIds": [
+                "ROLE3"
+            ]
+        },
+        {
+            "nodeId": "20240120-1",
+            "staffIds": [
+                "huang",
+                "dong"
+            ],
+            "roleDefIds": [
+                "ROLE3"
+            ]
+        },
+        {
+            "nodeId": "20240120-2",
+            "staffIds": [
+                "huang",
+                "dong"
+            ],
+            "roleDefIds": [
+                "ROLE3"
+            ]
+        },
+        {
+            "nodeId": "20240120-1-1",
+            "staffIds": [
+                "huang",
+                "dong"
+            ],
+            "roleDefIds": [
+                "ROLE3"
+            ]
+        }
+    ]
 }'
 ```
 </TabItem>

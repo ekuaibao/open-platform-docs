@@ -36,8 +36,8 @@ curl --location 'https://app.ekuaibao.com/api/openapi/v1/docs/backlog?accessToke
 可以参考 [根据单据ID获取单据详情](/docs/open-api/flows/get-forms-details) 返回信息，单据数据结构是一样的：
 ```json
 {
-    "count": 20,                                     //待办总数
-    "items": [
+    "count": 20,              //待办总数
+    "items": [                //待办的单据数据，因为会签节点的待办属于同一个单据，所以数组的大小 ≤ count 
         {
             "pipeline": 1,
             "grayver": "9.18.0.0:A",

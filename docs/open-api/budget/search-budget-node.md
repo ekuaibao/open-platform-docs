@@ -68,7 +68,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                     }
                 ],
                 "moneys": null,        
-                "control": "ALLOW",           //预算节点的控制方式（ALLOW：允许，WARN：警告，FORBID：禁止，IGNORED：什么都不做）
+                "control": "ALLOW",           //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
                 "children": null,             
                 "name": null,
                 "overControllerRate": 100.0,  //预算超标比例
@@ -86,7 +86,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                         "confirmedMoney": 0,       //已确认金额（已支付和已完成的单据）
                         "budgetMoneyRoll": 0,      //预算金额（滚动）
                         "occupiedMoneyRoll": 0,    //已占用金额（滚动）
-                        "confirmedMoneyRoll": 0    //已确认金额（滚动）
+                        "confirmedMoneyRoll": 0,   //已确认金额（滚动）
+                        "periodStartTime": null,   //跨财年周期区间开始时间
+                        "periodEndTime": null      //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220422-1-1",
@@ -97,7 +99,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                         "confirmedMoney": 0,
                         "budgetMoneyRoll": 0,
                         "occupiedMoneyRoll": 0,
-                        "confirmedMoneyRoll": 0
+                        "confirmedMoneyRoll": 0,
+                        "periodStartTime": null, //跨财年周期区间开始时间
+                        "periodEndTime": null    //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220422-1-1",
@@ -108,7 +112,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                         "confirmedMoney": 0,
                         "budgetMoneyRoll": 0,
                         "occupiedMoneyRoll": 0,
-                        "confirmedMoneyRoll": 0
+                        "confirmedMoneyRoll": 0,
+                        "periodStartTime": null, //跨财年周期区间开始时间
+                        "periodEndTime": null    //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220422-1-1",
@@ -119,7 +125,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                         "confirmedMoney": 0,
                         "budgetMoneyRoll": 0,
                         "occupiedMoneyRoll": 0,
-                        "confirmedMoneyRoll": 0
+                        "confirmedMoneyRoll": 0,
+                        "periodStartTime": null, //跨财年周期区间开始时间
+                        "periodEndTime": null    //跨财年周期区间结束时间
                     }
                 ],
                 "freeze": false    //节点是否冻结预算
@@ -161,7 +169,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         },
                         {
                             "nodeId": "20220419",
@@ -172,7 +182,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         },
                         {
                             "nodeId": "20220419",
@@ -183,7 +195,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         },
                         {
                             "nodeId": "20220419",
@@ -194,7 +208,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         }
                     ],
                     "freeze": false
@@ -229,7 +245,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         },
                         {
                             "nodeId": "20220422-1",
@@ -240,7 +258,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         },
                         {
                             "nodeId": "20220422-1",
@@ -251,7 +271,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         },
                         {
                             "nodeId": "20220422-1",
@@ -262,7 +284,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         }
                     ],
                     "freeze": false
@@ -297,7 +321,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         },
                         {
                             "nodeId": "20220422-1-1",
@@ -308,7 +334,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         },
                         {
                             "nodeId": "20220422-1-1",
@@ -319,7 +347,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         },
                         {
                             "nodeId": "20220422-1-1",
@@ -330,7 +360,9 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2/budgets/
                             "confirmedMoney": 0,
                             "budgetMoneyRoll": 0,
                             "occupiedMoneyRoll": 0,
-                            "confirmedMoneyRoll": 0
+                            "confirmedMoneyRoll": 0,
+                            "periodStartTime": null, //跨财年周期区间开始时间
+                            "periodEndTime": null    //跨财年周期区间结束时间
                         }
                     ],
                     "freeze": false

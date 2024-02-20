@@ -7,6 +7,18 @@ method="POST"
 url="/api/openapi/v2/extension/flow/INVOICE/search"
 />
 
+
+<details>
+  <summary><b>更新日志</b></summary>
+  <div>
+
+- [**2.0.0**](/updateLog/update-log#200)
+  - 🐞 修复了 `invoiceType`（发票类型）无法返回 **医疗发票** 和 **财政票据** 类型的BUG。
+
+    
+</div>
+</details>
+
 ## Query Parameters
 
 | 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |

@@ -52,6 +52,15 @@ const config = {
         sidebarPath: require.resolve("./sidebarsCommunity.js"),
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "updateLog",
+        path: "updateLog",
+        routeBasePath: "updateLog",
+        // sidebarPath: require.resolve("./sidebarsCommunity.js"),
+      },
+    ],
     "@docusaurus/plugin-ideal-image",
     // [
     //   "@easyops-cn/docusaurus-search-local",
@@ -77,12 +86,8 @@ const config = {
             language: ["en", "zh"],
             highlightSearchTermsOnTargetPage: true,
             // docsPluginIdForPreferredVersion: "v2.2",
-            searchContextByPaths:["docs/open-api"],
-            ignoreFiles: ["docs/open-api/inside"],
-            // For Docs using Chinese, The `language` is recommended to set to:
-            // ```
-            // language: ["en", "zh"],
-            // ```
+            // searchContextByPaths:["docs/open-api"],
+            // ignoreFiles: ["/docs/next/open-api/inside/info"],
           })
       ],
   ],
@@ -108,6 +113,12 @@ const config = {
             label: "开放UI",
             position: "left",
             activeBaseRegex: "/block-ui/",
+          },
+          {
+            to: "/updateLog/update-log",
+            label: "更新日志",
+            position: "left",
+            activeBaseRegex: "/updateLog/",
           },
           // { to: "/blog", label: "Blog", position: "left" },
           {

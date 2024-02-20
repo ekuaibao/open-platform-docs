@@ -6,7 +6,7 @@ authors: [张国阳]
 
 # 根据员工ID获取已支付单据
 
-根据单据更新时间 **倒序** 排序返回已支付单据详情。
+根据 **支付员工** 查询已支付单据详情，结果按更新时间 **倒序** 返回。
 
 import Control from "@theme/Control";
 
@@ -26,9 +26,9 @@ url="/api/openapi/v1.1/docs/delivered/$`approverId`"
 
 ## Path Parameters
 
-| 名称 | 类型 | 描述 | 是否必填 | 默认值 | 备注 |
-| :--- | :--- | :--- | :--- |:--- | :--- |
-| **approverId** | String | 员工ID | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
+| 名称 | 类型 | 描述           | 是否必填 | 默认值 | 备注 |
+| :--- | :--- |:-------------| :--- |:--- | :--- |
+| **approverId** | String | 支付员工ID，例如：出纳 | 必填 | - | 通过 [查询员工](/docs/open-api/corporation/get-staff-ids) 获取 |
 
 ## Query Parameters
 

@@ -34,7 +34,7 @@ url="/api/openapi/v1/backlog/data/[`flowIds`]"
 | **&emsp; ∟ comment**        | String | 备注               | 非必填 | -    | 备注信息 |
 | **&emsp; ∟ name**           | String | 执行动作            | 必填   | -    |  `freeflow.agree` : 同意<br/>`freeflow.reject` : 驳回<br/>`freeflow.nullify` : 作废 |
 | **&emsp; ∟ rejectTo**       | String | 驳回目标节点         | 非必填 | NULL | 节点实例ID，通过 [获取单据详情](/docs/open-api/flows/get-forms-details) 获取<br/>如果忽略此参数，则驳回给提交人 |
-| **&emsp; ∟ resubmitMethod** | String | 驳回后再次提交送审方式 | 非必填 | -    | **驳回时必填**<br/>`FROM_START` : 从头开始走审批流程<br/>`TO_REJECTOR` : 直接提交给驳回者 |
+| **&emsp; ∟ resubmitMethod** | String | 驳回后再次提交送审方式 | 非必填 | -    | **驳回时必填**<br/>`FROM_START` : 重新走审批流<br/>`TO_REJECTOR` : 直接送审至此节点 |
 
 ## CURL
 ```json
@@ -43,10 +43,10 @@ curl --location -g --request POST 'https://app.ekuaibao.com/api/openapi/v1/backl
 --data-raw '{
     "approveId": "djg8LshfUkfM00:ID_3kpneISgylw",
     "action": {
-            "comment": "测试1223",
-            "name": "freeflow.agree"   
-            //"rejectTo":"FLOW:1177147692E9:53411358E7"
-            //"resubmitMethod":"TO_REJECTOR"
+        "comment": "测试1223",
+        "name": "freeflow.agree"   
+        //"rejectTo":"FLOW:1177147692E9:53411358E7"
+        //"resubmitMethod":"TO_REJECTOR"
     }
 }'
 ```

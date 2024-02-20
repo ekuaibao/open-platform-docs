@@ -59,6 +59,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                 "period": {                            //预算年度
                     "annual": "2022",                  //控制年度
                     "period": "SEASON",                //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
+                    "periodControl": "NATURAL_SEASON", //自然期间拆解（跨财年预算包需要关注）
                     "startTime": 1641028769360,        //非周期控制开始时间
                     "endTime": 1672478369360           //非周期控制结束时间
                 },
@@ -73,8 +74,9 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                     "E_system_rank": "PROJECT",
                     "expenseDepartment": "DEPART"
                 },
-                "isCustom": false,            //预算周期是否是自定义
-                "isRollCalc": false,          //预算是否是滚动预算
+                "isFiscalYear": true,         //是否跨财年
+                "isCustom": false,            //是否自定义区间
+                "isRollCalc": false,          //是否滚动预算
                 "isEdit": false               //预算包编制状态
             },
             "tree": {
@@ -99,25 +101,33 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                         "nodeId": "20220419",     //预算节点ID
                         "periodTime": "1",        //第几个周期
                         "budgetMoney": 21.0,      //预算总额
-                        "extendMoneys": {}        //参考金额
+                        "extendMoneys": {},       //参考金额
+                        "periodStartTime": null,  //跨财年周期区间开始时间
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220419",
                         "periodTime": "2",
                         "budgetMoney": 42.0,
-                        "extendMoneys": {}
+                        "extendMoneys": {},
+                        "periodStartTime": null,  //跨财年周期区间开始时间 
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220419",
                         "periodTime": "3",
                         "budgetMoney": 63.0,
-                        "extendMoneys": {}
+                        "extendMoneys": {},
+                        "periodStartTime": null,  //跨财年周期区间开始时间
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220419",
                         "periodTime": "4",
                         "budgetMoney": 84.0,
-                        "extendMoneys": {}
+                        "extendMoneys": {},
+                        "periodStartTime": null,  //跨财年周期区间开始时间
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     }
                 ],
                 "control": "ALLOW",            //预算节点的控制方式
@@ -138,25 +148,33 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                                 "nodeId": "20220419-1",
                                 "periodTime": "1",
                                 "budgetMoney": 10.0,
-                                "extendMoneys": {}
+                                "extendMoneys": {},
+                                "periodStartTime": null,  //跨财年周期区间开始时间
+                                "periodEndTime": null     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-1",
                                 "periodTime": "2",
                                 "budgetMoney": 20.0,
-                                "extendMoneys": {}
+                                "extendMoneys": {},
+                                "periodStartTime": null,  //跨财年周期区间开始时间
+                                "periodEndTime": null     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-1",
                                 "periodTime": "3",
                                 "budgetMoney": 30.0,
-                                "extendMoneys": {}
+                                "extendMoneys": {},
+                                "periodStartTime": null,  //跨财年周期区间开始时间
+                                "periodEndTime": null     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-1",
                                 "periodTime": "4",
                                 "budgetMoney": 40.0,
-                                "extendMoneys": {}
+                                "extendMoneys": {},
+                                "periodStartTime": null,  //跨财年周期区间开始时间
+                                "periodEndTime": null     //跨财年周期区间结束时间
                             }
                         ],
                         "control": "FORBID",
@@ -177,34 +195,42 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                                         "nodeId": "20220419-1-1",
                                         "periodTime": "1",
                                         "budgetMoney": 10.0,
-                                        "extendMoneys": {}
+                                        "extendMoneys": {},
+                                        "periodStartTime": null,  //跨财年周期区间开始时间
+                                        "periodEndTime": null     //跨财年周期区间结束时间
                                     },
                                     {
                                         "nodeId": "20220419-1-1",
                                         "periodTime": "2",
                                         "budgetMoney": 20.0,
-                                        "extendMoneys": {}
+                                        "extendMoneys": {},
+                                        "periodStartTime": null,  //跨财年周期区间开始时间
+                                        "periodEndTime": null     //跨财年周期区间结束时间
                                     },
                                     {
                                         "nodeId": "20220419-1-1",
                                         "periodTime": "3",
                                         "budgetMoney": 30.0,
-                                        "extendMoneys": {}
+                                        "extendMoneys": {},
+                                        "periodStartTime": null,  //跨财年周期区间开始时间
+                                        "periodEndTime": null     //跨财年周期区间结束时间
                                     },
                                     {
                                         "nodeId": "20220419-1-1",
                                         "periodTime": "4",
                                         "budgetMoney": 40.0,
-                                        "extendMoneys": {}
+                                        "extendMoneys": {},
+                                        "periodStartTime": null,  //跨财年周期区间开始时间
+                                        "periodEndTime": null     //跨财年周期区间结束时间
                                     }
                                 ],
                                 "control": "ALLOW",
                                 "children": [],
-                                "name": "",
+                                "name": "部门1",
                                 "overControllerRate": 100
                             }
                         ],
-                        "name": "",
+                        "name": "项目2",
                         "overControllerRate": 100
                     },
                     {
@@ -223,34 +249,42 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                                 "nodeId": "20220419-2",
                                 "periodTime": "1",
                                 "budgetMoney": 11.0,
-                                "extendMoneys": {}
+                                "extendMoneys": {},
+                                "periodStartTime": null,  //跨财年周期区间开始时间
+                                "periodEndTime": null     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-2",
                                 "periodTime": "2",
                                 "budgetMoney": 22.0,
-                                "extendMoneys": {}
+                                "extendMoneys": {},
+                                "periodStartTime": null,  //跨财年周期区间开始时间
+                                "periodEndTime": null     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-2",
                                 "periodTime": "3",
                                 "budgetMoney": 33.0,
-                                "extendMoneys": {}
+                                "extendMoneys": {},
+                                "periodStartTime": null,  //跨财年周期区间开始时间
+                                "periodEndTime": null     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-2",
                                 "periodTime": "4",
                                 "budgetMoney": 44.0,
-                                "extendMoneys": {}
+                                "extendMoneys": {},
+                                "periodStartTime": null,  //跨财年周期区间开始时间
+                                "periodEndTime": null     //跨财年周期区间结束时间
                             }
                         ],
                         "control": "IGNORED",
                         "children": [],
-                        "name": "",
+                        "name": "项目3",
                         "overControllerRate": 100
                     }
                 ], 
-                "name": "",                       
+                "name": "测试预算-1",                       
                 "overControllerRate": 100         //预算超标比例
             }
         },

@@ -61,28 +61,36 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                         "nodeId": "20220422-1",  //预算节点ID
                         "periodTime": "1",       //第几个周期
                         "budgetMoney": 100.0,    //预算总额
-                        "extendMoneys": {}       //参考金额
+                        "extendMoneys": {},      //参考金额
+                        "periodStartTime": null, //跨财年周期区间开始时间
+                        "periodEndTime": null    //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220422-1",
                         "periodTime": "2",
                         "budgetMoney": 200.0,
-                        "extendMoneys": {}
+                        "extendMoneys": {},
+                        "periodStartTime": null,  //跨财年周期区间开始时间
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220422-1",
                         "periodTime": "3",
                         "budgetMoney": 300.0,
-                        "extendMoneys": {}
+                        "extendMoneys": {},
+                        "periodStartTime": null,  //跨财年周期区间开始时间
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220422-1",
                         "periodTime": "4",
                         "budgetMoney": 400.0,
-                        "extendMoneys": {}
+                        "extendMoneys": {},
+                        "periodStartTime": null,  //跨财年周期区间开始时间
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     }
                 ],
-                "control": "ALLOW",          //预算节点的控制方式（ALLOW：允许，WARN：警告，FORBID：禁止，IGNORED：什么都不做）
+                "control": "ALLOW",          //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
                 "overControllerRate": 100.0, //预算超标比例
                 "freeze": false, 
                 "budgetId": "ID_3D$8ov23ECg",//预算包ID
@@ -118,25 +126,33 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                         "nodeId": "20220422-1-1",
                         "periodTime": "1",
                         "budgetMoney": 100.0,
-                        "extendMoneys": {}
+                        "extendMoneys": {},
+                        "periodStartTime": null,  //跨财年周期区间开始时间
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220422-1-1",
                         "periodTime": "2",
                         "budgetMoney": 200.0,
-                        "extendMoneys": {}
+                        "extendMoneys": {},
+                        "periodStartTime": null,  //跨财年周期区间开始时间
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220422-1-1",
                         "periodTime": "3",
                         "budgetMoney": 300.0,
-                        "extendMoneys": {}
+                        "extendMoneys": {},
+                        "periodStartTime": null,  //跨财年周期区间开始时间
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220422-1-1",
                         "periodTime": "4",
                         "budgetMoney": 400.0,
-                        "extendMoneys": {}
+                        "extendMoneys": {},
+                        "periodStartTime": null,  //跨财年周期区间开始时间
+                        "periodEndTime": null     //跨财年周期区间结束时间
                     }
                 ],
                 "control": "ALLOW",

@@ -14,14 +14,15 @@ timeline: true
 
 ## 2.0.0
 
-`2024-02-06`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
+`2024-02-20`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.128.14`
 
 - 🚀 文档中心升级。
 - 🐞 更新 [新增预算包](/docs/open-api/budget/add-budget) 接口
   - 新增了 `budgetInfo.isFiscalYear`（是否跨财年）、`budgetInfo.period.periodControl`（自然期间拆解）、`addNodes.moneys[x].periodStartTime`（跨财年第x个周期开始时间）、`addNodes.moneys[x].periodEndTime`（跨财年第x个周期结束时间）参数支持创建 **跨财年** 的预算包。
 - 🐞 更新 [外部服务回调审批](/docs/open-api/outbound-message/outbound-callback) 接口
   - 新增了 `resubmitMethod`（驳回后再次提交送审方式）参数，支持选择驳回后送审方式。
-
+- 🐞 更新 [根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice) 接口
+  - 修复了 `invoiceType`（发票类型）无法返回 **医疗发票** 和 **财政票据** 类型的BUG。
 
 ---
 ## 1.27.0
@@ -144,7 +145,7 @@ timeline: true
 - 🆕 新增 [根据员工ID获取已支付单据](/docs/open-api/flows/get-delivered-byStaff) 接口。
 - 🐞 更新 [新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs)、[修改员工](/docs/open-api/contacts/update-staffs)、[批量修改员工](/docs/open-api/contacts/batch-update-staffs) 接口
     - 接口支持传入 `nickName`（员工别名）字段，且响应信息中新增了该字段。
-- 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取已激活员工列表](/docs/open-api/corporation/get-all-auth-staffs)、[查询员工](/docs/open-api/corporation/get-staff-ids)、[修改员工自定义字段(全环境)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口
+- 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取已激活员工列表](/docs/open-api/corporation/get-all-auth-staffs)、[查询员工](/docs/open-api/corporation/get-staff-ids)、[更新员工自定义字段(全环境)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口
     - 响应信息中新增了 `nickName`（员工别名）字段。
 - 🐞 更新 [批量新增收款账户](/docs/open-api/pay/batch-new-payeeInfo)、[更新收款账户](/docs/open-api/pay/edit-payeeInfo) 接口
     - 接口支持传入 `customFields`（自定义字段），且响应信息中新增了该字段。
@@ -161,7 +162,7 @@ timeline: true
 - 🐞 更新 [新增委托审批授权](/docs/open-api/delegate/create-delegate)、[更新委托审批授权](/docs/open-api/delegate/update-delegate) 接口
     - 优化了 `name`（授权名称） 必填问题。
     - 修复了 `delegateeId`（被委托人ID）未校验是否本企业员工的BUG。
-- 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取已激活员工列表](/docs/open-api/corporation/get-all-auth-staffs)、[查询员工](/docs/open-api/corporation/get-staff-ids)、[修改员工自定义字段(全环境)](/docs/open-api/contacts/update-staffs-customFields)、[新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs)、[修改员工](/docs/open-api/contacts/update-staffs)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口
+- 🐞 更新 [获取员工列表](/docs/open-api/corporation/get-all-staffs)、[获取已激活员工列表](/docs/open-api/corporation/get-all-auth-staffs)、[查询员工](/docs/open-api/corporation/get-staff-ids)、[更新员工自定义字段(全环境)](/docs/open-api/contacts/update-staffs-customFields)、[新增员工](/docs/open-api/contacts/add-staffs)、[批量新增员工](/docs/open-api/contacts/batch-add-staffs)、[修改员工](/docs/open-api/contacts/update-staffs)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口
     - 响应信息中新增了 `globalRoaming`（国际区号）字段。
 - 🐞 更新 [根据模板ID获取模板信息](/docs/open-api/forms/get-template-byId) 接口
     - 响应信息中新增了 `visibility`（可见性范围）字段。
@@ -431,7 +432,7 @@ timeline: true
   - 更新了注意事项。
 - 🐞 更新 [下载附件](/docs/open-api/attachment/attachment-download) 接口
     - 更新了注意事项。
-- 🐞 更新 [根据部门ID或编码获取部门信息](/docs/open-api/contacts/get-departments-idOrCode)、[根据部门名称获取部门信息](/docs/open-api/contacts/get-department-byName)、[根据部门路径获取部门信息](/docs/open-api/contacts/get-department-byPath)、[获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty)、[修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields) 接口
+- 🐞 更新 [根据部门ID或编码获取部门信息](/docs/open-api/contacts/get-departments-idOrCode)、[根据部门名称获取部门信息](/docs/open-api/contacts/get-department-byName)、[根据部门路径获取部门信息](/docs/open-api/contacts/get-department-byPath)、[获取员工自定义字段](/docs/open-api/contacts/get-allCustomeProperty)、[更新员工自定义字段(全环境)](/docs/open-api/contacts/update-staffs-customFields) 接口
   - 以上接口从【**通讯录同步**】模块迁移到【**企业通讯录**】模块。
     - 【**通讯录同步**】模块下接口需要开通【**通讯录接口**】功能方可使用
 
@@ -663,7 +664,7 @@ timeline: true
 
 `2022-04-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.23.1`
 
-- 🚀 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口 `v1.1` 版本
+- 🚀 新增 [更新员工自定义字段(全环境)](/docs/open-api/contacts/update-staffs-customFields)、[停启用员工](/docs/open-api/contacts/active-staffs) 接口 `v1.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
 - 🚀 新增 [员工离职交接](/docs/open-api/contacts/relay-staff) 接口 `v2.1` 版本
   - 新增了 `type` 类型参数，支持 `id` 或 `code` 传参。
@@ -1020,7 +1021,7 @@ timeline: true
 
 `2021-10-20`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.7.11`
 
-- 🆕 新增 [修改员工自定义字段(所有平台)](/docs/open-api/contacts/update-staffs-customFields) 接口。	
+- 🆕 新增 [更新员工自定义字段(全环境)](/docs/open-api/contacts/update-staffs-customFields) 接口。	
 
 ---
 ## 0.7.148

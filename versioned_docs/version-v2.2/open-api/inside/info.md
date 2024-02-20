@@ -59,9 +59,20 @@ authors: [冯继成]
 
 :::tip
 - [新增或更新业务对象数据](/docs/open-api/datalink/update-entity-data)
-  - [**1.6.3**](/docs/open-api/notice/update-log#163) 版本，业务对象、业务对象（多选）类型字段支持 `code` 传参。
+  - [**1.6.3**](/docs/open-api/notice/update-log#163) 
+    - 业务对象、业务对象（多选）类型字段支持 `code` 传参。 —— @邓加昌
+  
 - [修改员工信息](/docs/open-api/contacts/update-staffs) 
-  - [**1.10.0**](/docs/open-api/notice/update-log#1100) 版本，支持非原生环境使用，需要研发添加 `redis` 的白名单。
+  - [**1.10.0**](/docs/open-api/notice/update-log#1100) 
+    - 支持非原生环境使用，需要研发添加 `redis` 白名单。 —— @郭敏
+
+- [创建单据](/docs/open-api/flows/creat-and-save)
+  - [**2.0.0**](/docs/open-api/notice/update-log#200) 
+    - **Query Parameters** 增加 `needDetailId `（是否自定义明细ID，默认为 `false`）参数，为 `true` 时支持调用方传明细ID。 —— @郑永欠
+    - 新增了支持 **提交人联动赋值**，全局开关，默认关闭。 —— @苏强
+
+- [外部服务回调审批](/docs/open-api/outbound-message/outbound-callback)
+  - 2022年11月28日上线该参数，`ebotNodeOnly`（是否仅审批EBot节点，默认为 `false`）为 `true` 时可审批人工节点（仅支持 `action` = `accept` 的同意动作），为 `false` 时仅审批EBot节点。
 
 :::
 

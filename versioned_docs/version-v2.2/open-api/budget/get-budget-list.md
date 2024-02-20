@@ -37,17 +37,19 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets?a
             "corporationId": "bwa3wajigF0WH0", //企业ID
             "sourceCorporationId": null,
             "dataCorporationId": null,
-            "period": {                    //预算年度
-                "annual": "2022",          //控制年度
-                "period": "YEAR",          //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
-                "startTime": 1641020760104,//非周期控制开始时间
-                "endTime": 1672470360104   //非周期控制结束时间
+            "period": {                          //预算年度
+                "annual": "2022",                //控制年度
+                "period": "YEAR",                //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
+                "periodControl": "NATURAL_YEAR", //自然期间拆解（跨财年预算包需要关注）
+                "startTime": 1641020760104,      //非周期控制开始时间
+                "endTime": 1672470360104         //非周期控制结束时间
             },
             "tree": null,
             "delete": false,               //预算是否删除
             "extendMoneys": null,
             "legalEntityIds": [],
             "budgetCurrency": null,
+            "isFiscalYear": false,         //是否跨财年
             "isCustom": false,             //是否自定义区间
             "isRollCalc": false,           //是否滚动预算
             "isEdit": false,               //预算包编制状态

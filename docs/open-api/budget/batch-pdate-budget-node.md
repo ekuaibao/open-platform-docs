@@ -57,18 +57,10 @@ url="/api/openapi/v2.1/budgets/$`budgetId`/batchUpdate"
 |**updateNodes**                    | Array  | 变更节点                 | 非必填 |- | 数据格式与 `addNodes`（追加节点）保持一致<br/>**节点维度无法变更，可不传**<br/>**节点预算金额不变更时，可不传** |
 |**deleteNodes**                    | Array  | 删除节点                 | 非必填 |- | 预算节点ID |
 |**visibilities**                   | Array  | 预算负责人数组            | 非必填 |- | 预算负责人能在相关报销单和预算报表中查看该预算节点的进度 |
-|**&emsp; ∟ id**                    | String | 预算负责人配置ID           | 非必填 |- | 更新已有预算负责人时需要传入，新增的节点传 `""`<br/>通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
-|**&emsp; ∟ corporationId**         | String | 企业ID                   | 非必填 |- | [企业ID如何获取](/docs/open-api/getting-started/origin#query-parameters) |
-|**&emsp; ∟ budgetId**              | String | 预算包ID                 | 非必填 |- | 通过 [获取预算包列表](/docs/open-api/budget/get-budget-list) 获取 |
-|**&emsp; ∟ budgetVersion**         | String | 预算版本                 | 非必填 |- | 通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
 |**&emsp; ∟ nodeId**                | String | 预算节点ID               | 非必填 |- | 要设置可见性的预算节点ID<br/>**配置 `visibilities`（预算负责人）时必填** |
 |**&emsp; ∟ staffIds**              | Array  | 员工ID                  | 非必填 |- | **员工ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取<br/>**传 `[]` 空数组表示清空原数据** |
 |**&emsp; ∟ roleDefIds**            | Array  | 角色ID                  | 非必填 |- | **角色ID** 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**<br/>通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取<br/>**传 `[]` 空数组表示清空原数据** |
 |**editInChargers**                 | Array  | 预算编制人数组            | 非必填 |- | 负责该节点的预算编制<br/>需开通【**预算编制**】功能方可见此字段 |
-|**&emsp; ∟ id**                    | String | 预算编制人配置ID           | 非必填 |- | 更新已有预算编制人时需要传入，新增的节点传 `""`<br/>通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
-|**&emsp; ∟ corporationId**         | String | 企业ID                   | 非必填 |- | [企业ID如何获取](/docs/open-api/getting-started/origin#query-parameters) |
-|**&emsp; ∟ budgetId**              | String | 预算包ID                 | 非必填 |- | 通过 [获取预算包列表](/docs/open-api/budget/get-budget-list) 获取 |
-|**&emsp; ∟ budgetVersion**         | String | 预算版本                 | 非必填 |- | 通过 [获取预算包详细信息](/docs/open-api/budget/get-budget-details) 获取 |
 |**&emsp; ∟ nodeId**                | String | 预算节点ID               | 非必填 |- | 要设置可见性的预算节点ID<br/>**配置 `editInChargers`（预算编制人）时必填** |
 |**&emsp; ∟ staffIds**              | Array  | 员工ID                  | 非必填 |- | **员工ID** 或 **CODE**，**与 `type` 参数保持一致**<br/>通过 [获取员工列表](/docs/open-api/corporation/get-all-staffs) 获取<br/>**传 `[]` 空数组表示清空原数据** |
 |**&emsp; ∟ roleDefIds**            | Array  | 角色ID                  | 非必填 |- | **角色ID** 或 [CODE](/docs/open-api/corporation/question-answer#问题三)，**与 `type` 参数保持一致**<br/>通过 [查询角色组和角色](/docs/open-api/corporation/get-roles-group) 获取<br/>**传 `[]` 空数组表示清空原数据** |
@@ -79,20 +71,19 @@ url="/api/openapi/v2.1/budgets/$`budgetId`/batchUpdate"
 :::tip
 - 除了 **变更预算包状态（发布/草稿）**场景外，`addNodes`（追加节点）、`updateNodes`（变更节点）、`deleteNodes`（删除节点）三个对象参数至少填写一个。
 - **节点维度** 如下图所示，是预算节点的划分依据<br/>
-  &emsp; `dimensionType（维度种类）` 传参见参数介绍，四种类型固定；<br/>
-  &emsp; `dimensionId（维度种类的标识ID）` 传参为对应维度种类的 [全局字段名称](/docs/open-api/forms/get-customs-param)；例如：<br/>
-  &emsp; &emsp; - 职级预置 : `E_system_rank` <br/>
-  &emsp; &emsp; - 岗位预置 : `E_system_post` <br/>
-  &emsp; &emsp; - 成本中心预置 : `E_system_costcenter `<br/>
-  &emsp; &emsp; - 品类 : `品类` <br/>
-  &emsp; &emsp; - 法人实体 : `法人实体` <br/>
-  &emsp; &emsp; - 项目 : `项目` <br/>
-  &emsp; &emsp; - 提交人 : `submitterId` <br/>
-  &emsp; &emsp; - 费用承担部门 : `expenseDepartment` <br/>
-  &emsp; &emsp; - 费用类型 : `feeTypeId` <br/>
-  &emsp; &emsp; - 自建的扩展档案字段，例如“国家”，传参为 `u_国家` <br/>
-
-![image](images/节点维度信息.png)
+  - `dimensionType（维度种类）` 传参见参数介绍，四种类型固定；
+  - `dimensionId（维度种类的标识ID）` 传参为对应维度种类的 [全局字段名称](/docs/open-api/forms/get-customs-param)；例如：
+    - 职级预置 : `E_system_rank`
+    - 岗位预置 : `E_system_post`
+    - 成本中心预置 : `E_system_costcenter `
+    - 品类 : `品类`
+    - 法人实体 : `法人实体`
+    - 项目 : `项目`
+    - 提交人 : `submitterId`
+    - 费用承担部门 : `expenseDepartment`
+    - 费用类型 : `feeTypeId`
+    - 自建的扩展档案字段，例如“国家”，传参为 `u_国家`
+    ![image](images/节点维度信息.png)
 :::
 
 ## CURL
@@ -109,7 +100,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     "addNodes":[
         {
             "id":"20220422-1",                 //节点ID
-            "code":"批量新增-1",               //节点编码
+            "code":"批量新增-1",                //节点编码
             "content":[                        //节点维度，以何种类型分解预算，与同级预算要保持一致
                 {
                     "dimensionType": "PROJECT",   //DEPART：费用承担部门，PROJECT：扩展档案，FEE_TYPE：费用类型，STAFF：员工
@@ -140,8 +131,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
                     "periodTime":"4"
                 }
             ],
-            "control":"ALLOW",          //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
-            "freeze": false,            //预算冻结，默认值false，不冻结
+            "control":"ALLOW",          //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "freeze": false,            //预算是否冻结，false：不冻结  true：冻结
             "nodeId":"20220422-1",      //节点ID
             "parentId":"20220419"       //父节点ID
         },
@@ -178,8 +169,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
                     "periodTime":"4"
                 }
             ],
-            "control":"ALLOW",      //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
-            "freeze": false,        //预算冻结，默认值false，不冻结
+            "control":"ALLOW",      //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "freeze": false,        //预算是否冻结，false：不冻结  true：冻结
             "nodeId":"20220422-1-1",//节点ID
             "parentId":"20220422-1" //父节点ID
         }
@@ -188,10 +179,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     // "deleteNodes":[],  //删除节点
     "visibilities":[                          //预算负责人数组
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"1",              //预算版本
             "nodeId":"20220422-1",            //预算节点ID
             "staffIds":[                      //员工ID
                 "bwa3wajigF0WH0:ID_3lokDfb1p5w"
@@ -199,10 +186,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
             "roleDefIds":[]
         },
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"1",              //预算版本
             "nodeId":"20220422-1-1",          //预算节点ID
             "staffIds":[                      //员工ID
                 "bwa3wajigF0WH0:ID_3lokDfb1p5w"
@@ -212,10 +195,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     ],
     "editInChargers":[                        //预算编制人数组
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"1",              //预算版本
             "nodeId":"20220422-1",            //预算节点ID
             "staffIds":[                      //员工ID
                 "bwa3wajigF0WH0:ID_3lokDfb1p5w"
@@ -223,10 +202,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
             "roleDefIds":[]
         },
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"1",              //预算版本
             "nodeId":"20220422-1-1",          //预算节点ID
             "staffIds":[                      //员工ID
                 "bwa3wajigF0WH0:ID_3lokDfb1p5w"
@@ -249,7 +224,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     "addNodes":[
         {
             "id":"20220422-1",                 //节点ID
-            "code":"批量新增-1",               //节点编码
+            "code":"批量新增-1",                //节点编码
             "content":[                        //节点维度，以何种类型分解预算，与同级预算要保持一致
                 {
                     "dimensionType": "PROJECT",   //DEPART：费用承担部门，PROJECT：扩展档案，FEE_TYPE：费用类型，STAFF：员工
@@ -280,8 +255,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
                     "periodTime":"4"
                 }
             ],
-            "control":"ALLOW",          //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
-            "freeze": false,            //预算冻结，默认值false，不冻结
+            "control":"ALLOW",          //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "freeze": false,            //预算是否冻结，false：不冻结  true：冻结
             "nodeId":"20220422-1",      //节点ID
             "parentId":"20220419"       //父节点ID
         },
@@ -318,8 +293,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
                     "periodTime":"4"
                 }
             ],
-            "control":"ALLOW",      //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
-            "freeze": false,        //预算冻结，默认值false，不冻结
+            "control":"ALLOW",      //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "freeze": false,        //预算是否冻结，false：不冻结  true：冻结
             "nodeId":"20220422-1-1",//节点ID
             "parentId":"20220422-1" //父节点ID
         }
@@ -328,10 +303,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     // "deleteNodes":[],  //删除节点
     "visibilities":[                          //预算负责人数组
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"1",              //预算版本
             "nodeId":"20220422-1",            //预算节点ID
             "staffIds":[                      //员工CODE（工号）
                 "1001"
@@ -339,10 +310,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
             "roleDefIds":[]
         },
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"1",              //预算版本
             "nodeId":"20220422-1-1",          //预算节点ID
             "staffIds":[                      //员工CODE（工号）
                 "1002"
@@ -352,10 +319,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     ],
     "editInChargers":[                        //预算编制人数组
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"1",              //预算版本
             "nodeId":"20220422-1",            //预算节点ID
             "staffIds":[                      //员工CODE（工号）
                 "1001"
@@ -363,10 +326,6 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
             "roleDefIds":[]
         },
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"1",              //预算版本
             "nodeId":"20220422-1-1",          //预算节点ID
             "staffIds":[                      //员工CODE（工号）
                 "1002"
@@ -390,7 +349,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     "updateNodes":[       //变更节点
         {
             "id":"20220419-1",       //节点ID
-            "code":"维度-1-更新",    //节点编码
+            "code":"维度-1-更新",     //节点编码
             "content":[],            //节点维度无法变更
             "moneys":[
                 {
@@ -414,8 +373,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
                     "periodTime":"4"
                 }
             ],
-            "control":"ALLOW",      //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
-            "freeze": false,        //预算冻结，默认值false，不冻结
+            "control":"ALLOW",      //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "freeze": false,        //预算是否冻结，false：不冻结  true：冻结
             "nodeId":"20220419-1",  //节点ID
             "parentId":"20220419"   //父节点ID
         }
@@ -423,26 +382,20 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     // "deleteNodes":[],                      //删除节点
     "visibilities":[                          //预算负责人数组
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"2",              //预算版本，节点变更后，版本 +1
             "nodeId":"20220419-1",            //预算节点ID
             "staffIds":[                      //员工ID
-                "bwa3wajigF0WH0:ID_3lokDfb1p5w","bwa3wajigF0WH0:qKZ3wlg6bv9OGg"
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                "bwa3wajigF0WH0:qKZ3wlg6bv9OGg"
             ],
             "roleDefIds":[]
         }
     ],
     "editInChargers":[                        //预算编制人数组
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"2",              //预算版本，节点变更后，版本 +1
             "nodeId":"20220419-1",            //预算节点ID
             "staffIds":[                      //员工ID
-                "bwa3wajigF0WH0:ID_3lokDfb1p5w","bwa3wajigF0WH0:qKZ3wlg6bv9OGg"
+                "bwa3wajigF0WH0:ID_3lokDfb1p5w",
+                "bwa3wajigF0WH0:qKZ3wlg6bv9OGg"
             ],
             "roleDefIds":[]
         }
@@ -463,7 +416,7 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     "updateNodes":[       //变更节点
         {
             "id":"20220419-1",       //节点ID
-            "code":"维度-1-更新",    //节点编码
+            "code":"维度-1-更新",     //节点编码
             "content":[],            //节点维度无法变更
             "moneys":[
                 {
@@ -487,8 +440,8 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
                     "periodTime":"4"
                 }
             ],
-            "control":"ALLOW",      //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
-            "freeze": false,        //预算冻结，默认值false，不冻结
+            "control":"ALLOW",      //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "freeze": false,        //预算是否冻结，false：不冻结  true：冻结
             "nodeId":"20220419-1",  //节点ID
             "parentId":"20220419"   //父节点ID
         }
@@ -496,26 +449,20 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     // "deleteNodes":[],                      //删除节点
     "visibilities":[                          //预算负责人数组
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"2",              //预算版本，节点变更后，版本 +1
             "nodeId":"20220419-1",            //预算节点ID
             "staffIds":[                      //员工CODE（工号）
-                "1001","1002"
+                "1001",
+                "1002"
             ],
             "roleDefIds":[]
         }
     ],
     "editInChargers":[                        //预算编制人数组
         {
-            "id":"",                          //更新已有预算负责人时需要传入，新增的节点传 ""
-            "corporationId":"bwa3wajigF0WH0", //企业ID
-            "budgetId":"ID_3D$8ov23ECg",      //预算包ID
-            "budgetVersion":"2",              //预算版本，节点变更后，版本 +1
             "nodeId":"20220419-1",            //预算节点ID
             "staffIds":[                      //员工CODE（工号）
-                "1001","1002"
+                "1001",
+                "1002"
             ],
             "roleDefIds":[]
         }
@@ -536,9 +483,9 @@ curl --location --request PUT 'https://app.ekuaibao.com/api/openapi/v2.1/budgets
     "updateNodes":[       //变更节点
         {
             "id":"20220419-1",        //节点ID
-            "code":"维度-1-更新",     //节点编码
-            "control":"ALLOW",        //当预算超额时，控制方式(ALLOW：允许提交单据 FORBID：禁止提交单据 IGNORED：什么都不做)
-            "freeze": true,           //预算冻结，默认值false，不冻结
+            "code":"维度-1-更新",      //节点编码
+            "control":"ALLOW",        //当预算超额时，控制方式(ALLOW：允许单据提交，并显示警告 FORBID：禁止提交单据 IGNORED：允许单据提交，不显示警告)
+            "freeze": true,           //预算是否冻结，false：不冻结  true：冻结
             "nodeId":"20220419-1",    //节点ID
             "parentId":"20220419"     //父节点ID
         }
