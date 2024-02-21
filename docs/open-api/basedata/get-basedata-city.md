@@ -8,12 +8,13 @@ url="/api/openapi/v1/city/getCityList"
 />
 
 <details>
-  <summary><b>更新日志</b></summary>
-  <div>
+<summary><b>更新日志</b></summary>
+<div>
 
-  [**0.7.124**](/updateLog/update-log#07124) -> 🆕 新增了本接口。<br/>
+- [**0.7.124**](/updateLog/update-log#07124) 
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

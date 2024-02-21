@@ -21,7 +21,7 @@ timeline: true
   - 新增了 `budgetInfo.isFiscalYear`（是否跨财年）、`budgetInfo.period.periodControl`（自然期间拆解）、`addNodes.moneys[x].periodStartTime`（跨财年第x个周期开始时间）、`addNodes.moneys[x].periodEndTime`（跨财年第x个周期结束时间）参数支持创建 **跨财年** 的预算包。
 - 🐞 更新 [外部服务回调审批](/docs/open-api/outbound-message/outbound-callback) 接口
   - 新增了 `resubmitMethod`（驳回后再次提交送审方式）参数，支持选择驳回后送审方式。
-- 🐞 更新 [根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datalink-extend/get-flow-invoice) 接口
+- 🐞 更新 [根据单据编号或ID查询发票ID和明细ID](/docs/open-api/datali11nk-extend/get-flow-invoice) 接口
   - 修复了 `invoiceType`（发票类型）无法返回 **医疗发票** 和 **财政票据** 类型的BUG。
 
 ---

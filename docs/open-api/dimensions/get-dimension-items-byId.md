@@ -12,10 +12,12 @@ url="/api/openapi/v1/dimensions/getDimensionById"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.8.0**](/updateLog/update-log#180) &emsp; -> 🐞 **成功响应** 中可获取新增的 `channel`（数据来源）字段。<br/>
-  [**0.7.159**](/updateLog/update-log#07159) -> 🆕 新增了本接口。<br/>
+- [**1.8.0**](/updateLog/update-log#180)
+  - 🐞 **成功响应** 中可获取新增的 `channel`（数据来源）字段。
+- [**0.7.159**](/updateLog/update-log#07159)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

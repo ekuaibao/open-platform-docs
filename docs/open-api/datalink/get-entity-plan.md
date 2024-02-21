@@ -11,9 +11,10 @@ url="/api/openapi/v2/datalink/plan/getPlan/$`dataId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.153**](/updateLog/update-log#07153) -> 🆕 新增了本接口。<br/>
+- [**0.7.153**](/updateLog/update-log#07153)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Path Parameters

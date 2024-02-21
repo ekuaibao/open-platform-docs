@@ -11,10 +11,12 @@ url="/api/openapi/v1.1/roledefs/$`roledefId`/staffs"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.13.0**](/updateLog/update-log#1122)&emsp;-> 🚀 接口升级 `v1.1` 版本，开放了接口可以删除数据来源为 **【手动管理】** 的角色数据的权限，系统页面仍保留无法手动删除数据来源为 **【API导入】** 的角色数据。<br/>
-  [**1.8.0**](/updateLog/update-log#180) &emsp; -> 🆕 新增了本接口。<br/>
+- [**1.13.0**](/updateLog/update-log#1122)
+  - 🚀 接口升级 `v1.1` 版本，开放了接口可以删除数据来源为 **【手动管理】** 的角色数据的权限，系统页面仍保留无法手动删除数据来源为 **【API导入】** 的角色数据。
+- [**1.8.0**](/updateLog/update-log#180)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Path Parameters

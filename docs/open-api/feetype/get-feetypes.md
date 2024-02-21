@@ -12,9 +12,10 @@ url="/api/openapi/v2/specifications/feeType/byIdsAndCodes"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.1**](/updateLog/update-log#171) -> 🆕 **成功响应** 中新增了 `code`（费用类型编码）参数 。<br/>
+- [**1.7.1**](/updateLog/update-log#171)
+  - 🆕 **成功响应** 中新增了 `code`（费用类型编码）参数 。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

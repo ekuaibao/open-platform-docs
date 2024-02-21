@@ -11,10 +11,11 @@ url="/api/openapi/v2/organization/delegate/approve"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.19.0**](/updateLog/update-log#1190)&emsp;-> 🐞 优化了 `name`（授权名称） 必填问题。<br/>
-  &emsp; &emsp; &emsp; -> 🐞 修复了 `delegateeId`（被委托人ID）未校验是否本企业员工的BUG。<br/>
+- [**1.19.0**](/updateLog/update-log#1190)
+  - 🐞 优化了 `name`（授权名称） 必填问题。
+  - 🐞 修复了 `delegateeId`（被委托人ID）未校验是否本企业员工的BUG。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

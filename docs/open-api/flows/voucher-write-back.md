@@ -12,10 +12,12 @@ url="/api/openapi/v2.1/flow/data/erpVoucher"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.0**](/updateLog/update-log#160) &emsp; -> 🚀 接口升级 `v2.1` 版本，新增了业务校验只允许 `paid`（已支付/审批完成）状态回写单据凭证。<br/>
-  [**0.7.132**](/updateLog/update-log#07132) -> 🐞 修复了回写凭证信息清除凭证号时，凭证状态、生成时间未能正确回写的BUG。<br/>
+- [**1.6.0**](/updateLog/update-log#160)
+  - 🚀 接口升级 `v2.1` 版本，新增了业务校验只允许 `paid`（已支付/审批完成）状态回写单据凭证。
+- [**0.7.132**](/updateLog/update-log#07132)
+  - 🐞 修复了回写凭证信息清除凭证号时，凭证状态、生成时间未能正确回写的BUG。
 
-  </div>
+</div>
 </details>
 
 :::caution

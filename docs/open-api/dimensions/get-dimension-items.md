@@ -11,11 +11,14 @@ url="/api/openapi/v1/dimensions/items"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.11.0**](/updateLog/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
-  [**1.1.0**](/updateLog/update-log#110) &emsp; -> 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
-  [**0.7.136**](/updateLog/update-log#07136) -> 🆕 新增了支持按 `dimensionId`（档案类别ID）参数过滤数据。<br/>
+- [**1.11.0**](/updateLog/update-log#1110)
+  - 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。
+- [**1.1.0**](/updateLog/update-log#110)
+  - 🐞 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。
+- [**0.7.136**](/updateLog/update-log#07136)
+  - 🆕 新增了支持按 `dimensionId`（档案类别ID）参数过滤数据。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

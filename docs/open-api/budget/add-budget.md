@@ -11,11 +11,14 @@ url="/api/openapi/v2.1/budgets/create"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**2.0.0**](/updateLog/update-log#200) -> 🐞 新增了 `budgetInfo.isFiscalYear`（是否跨财年）、`budgetInfo.period.periodControl`（自然期间拆解）、`addNodes.moneys[x].periodStartTime`（跨财年第x个周期开始时间）、`addNodes.moneys[x].periodEndTime`（跨财年第x个周期结束时间）参数支持创建 **跨财年** 的预算包。<br/>
-  [**1.8.0**](/updateLog/update-log#180) -> 🐞 修复了新增预算包同一层级节点是不同的自定义档案维度时可以调用成功的BUG。<br/>
-  [**1.5.0**](/updateLog/update-log#150) -> 🚀 接口升级 `v2.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
+- [**2.0.0**](/updateLog/update-log#200) 
+  - 🐞 新增了 `budgetInfo.isFiscalYear`（是否跨财年）、`budgetInfo.period.periodControl`（自然期间拆解）、`addNodes.moneys[x].periodStartTime`（跨财年第x个周期开始时间）、`addNodes.moneys[x].periodEndTime`（跨财年第x个周期结束时间）参数支持创建 **跨财年** 的预算包。
+- [**1.8.0**](/updateLog/update-log#180) 
+  - 🐞 修复了新增预算包同一层级节点是不同的自定义档案维度时可以调用成功的BUG。
+- [**1.5.0**](/updateLog/update-log#150) 
+  - 🚀 接口升级 `v2.1` 版本，新增 `type` 类型参数，支持 `id` 或 `code` 传参。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

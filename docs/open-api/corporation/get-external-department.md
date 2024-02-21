@@ -11,9 +11,10 @@ url="/api/openapi/v1/departments/external/department"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.23.0**](/updateLog/update-log#1230) -> 🆕 新增了本接口。<br/>
+- [**1.23.0**](/updateLog/update-log#1230)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

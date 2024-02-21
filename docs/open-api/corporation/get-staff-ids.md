@@ -12,12 +12,16 @@ url="/api/openapi/v1/staffs/getStaffIds"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.24.0**](/updateLog/update-log#1240) -> 🐞 响应信息中新增了 `roles`（角色信息）字段。<br/>
-  [**1.20.0**](/updateLog/update-log#1200) -> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
-  [**1.19.0**](/updateLog/update-log#1190) -> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
-  [**1.10.0**](/updateLog/update-log#1100) -> 🐞 新增了 `authState`（激活状态）成功响应返回参数。<br/>
+- [**1.24.0**](/updateLog/update-log#1240)
+  - 🐞 响应信息中新增了 `roles`（角色信息）字段。
+- [**1.20.0**](/updateLog/update-log#1200)
+  - 🐞 响应信息中新增了 `nickName`（员工别名）字段。
+- [**1.19.0**](/updateLog/update-log#1190)
+  - 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。
+- [**1.10.0**](/updateLog/update-log#1100)
+  - 🐞 新增了 `authState`（激活状态）成功响应返回参数。
 
-  </div>
+</div>
 </details>
 
 :::caution

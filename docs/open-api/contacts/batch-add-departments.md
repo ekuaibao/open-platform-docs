@@ -11,11 +11,14 @@ url="/api/openapi/v1/departments/batch/create"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.14.0**](/updateLog/update-log#1140)&emsp;-> 🐞 新增了 `form` 参数，支持传入 **部门自定义字段**。<br/>
-  [**1.6.0**](/updateLog/update-log#160) &emsp; -> 🐞 **成功响应** 中增加 `order`（排序序号）参数。<br/>
-  [**0.7.125**](/updateLog/update-log#07125) -> 🆕 新增了本接口。
+- [**1.14.0**](/updateLog/update-log#1140)
+  - 🐞 新增了 `form` 参数，支持传入 **部门自定义字段**。
+- [**1.6.0**](/updateLog/update-log#160) 
+  - 🐞 **成功响应** 中增加 `order`（排序序号）参数。
+- [**0.7.125**](/updateLog/update-log#07125) 
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

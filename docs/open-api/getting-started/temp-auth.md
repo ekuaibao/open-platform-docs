@@ -13,16 +13,23 @@ url="/api/openapi/v1.1/provisional/getProvisionalAuth"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.17.0**](/updateLog/update-log#1170)&emsp;-> 🆕 新增了 `pageType` = `edit` 类型，单据处于 **草稿、驳回** 状态时可 **编辑/提交**。<br/>
-  [**1.15.0**](/updateLog/update-log#1150)&emsp;-> 🆕 新增了 `pageType` = `assistPlatform` 类型，进入合思 **协助授权链接** 页面。<br/>
-  [**1.12.0**](/updateLog/update-log#1120)&emsp;-> 🆕 新增了 `pageType` = `payment` 类型，进入合思 **待我支付** 页面。<br/>
-  &emsp; &emsp; &emsp; -> 🐞 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。<br/>
-  [**1.7.1**](/updateLog/update-log#171) &emsp; -> 🆕 新增了 `authType`（授权方式）参数，控制单点链接可用次数。<br/>
-  [**1.5.0**](/updateLog/update-log#150) &emsp; -> 🐞 修复了被委托人审批会签节点的单据（`pageType` = `form`）时，无审批按钮的BUG。 <br/>
-  [**1.0.0**](/updateLog/update-log#100) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `pageType` = `frontPage` 类型，进入合思 **首页**。<br/>
-  [**0.7.163**](/updateLog/update-log#07163) -> 🆕 新增了 `approvalUrl`（审批完成后跳转地址）参数。<br/>
+- [**1.17.0**](/updateLog/update-log#1170)
+  - 🆕 新增了 `pageType` = `edit` 类型，单据处于 **草稿、驳回** 状态时可 **编辑/提交**。
+- [**1.15.0**](/updateLog/update-log#1150)
+  - 🆕 新增了 `pageType` = `assistPlatform` 类型，进入合思 **协助授权链接** 页面。
+- [**1.12.0**](/updateLog/update-log#1120)
+  - 🆕 新增了 `pageType` = `payment` 类型，进入合思 **待我支付** 页面。
+  - 🐞 更新了 `authType`（授权方式）支持 `payment`、`new`、`mall`、`backlogDetail` 类型。
+- [**1.7.1**](/updateLog/update-log#171)
+  - 🆕 新增了 `authType`（授权方式）参数，控制单点链接可用次数。
+- [**1.5.0**](/updateLog/update-log#150)
+  - 🐞 修复了被委托人审批会签节点的单据（`pageType` = `form`）时，无审批按钮的BUG。
+- [**1.0.0**](/updateLog/update-log#100)
+  - 🚀 接口升级 `v1.1` 版本，新增了 `pageType` = `frontPage` 类型，进入合思 **首页**。
+- [**0.7.163**](/updateLog/update-log#07163)
+  - 🆕 新增了 `approvalUrl`（审批完成后跳转地址）参数。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

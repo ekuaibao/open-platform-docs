@@ -12,9 +12,10 @@ url="/api/openapi/v2/budgets/searchBudgetNode/$`budgetInfoId`/$`budgetInfoVersio
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.141**](/updateLog/update-log#07141) -> 🆕 新增了本接口。<br/>
+- [**0.7.141**](/updateLog/update-log#07141) 
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Path Parameters

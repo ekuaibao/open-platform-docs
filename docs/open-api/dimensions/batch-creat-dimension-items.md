@@ -11,12 +11,16 @@ url="/api/openapi/v1.1/dimensions/items/batch"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.2**](/updateLog/update-log#172) &emsp; -> 🆕 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。<br/>
-  [**1.5.0**](/updateLog/update-log#150) &emsp; -> 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。<br/>
-  [**1.1.0**](/updateLog/update-log#110) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了当 `fullVisible` = `fals` 时，对 `staffs`、`roles`、`departments` 三个参数的必填及有效性校验。<br/>
-  [**0.7.125**](/updateLog/update-log#07125) -> 🆕 新增了本接口。<br/>
+- [**1.7.2**](/updateLog/update-log#172)
+  - 🆕 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。
+- [**1.5.0**](/updateLog/update-log#150)
+  - 🆕 新增 `type` 类型参数，支持 `id` 或 `code` 传参。
+- [**1.1.0**](/updateLog/update-log#110)
+  - 🚀 接口升级 `v1.1` 版本，新增了当 `fullVisible` = `fals` 时，对 `staffs`、`roles`、`departments` 三个参数的必填及有效性校验。
+- [**0.7.125**](/updateLog/update-log#07125)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

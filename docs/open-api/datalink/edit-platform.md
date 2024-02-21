@@ -11,9 +11,10 @@ url="/api/openapi/v2.1/datalink/editPlatform"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.2.0**](/updateLog/update-log#120) -> 🚀 接口升级 `v2.1` 版本，新增了支持更新应用名称，对 `adminIds`（管理员ID）做参数真实性校验。<br/>
+- [**1.2.0**](/updateLog/update-log#120)
+  - 🚀 接口升级 `v2.1` 版本，新增了支持更新应用名称，对 `adminIds`（管理员ID）做参数真实性校验。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

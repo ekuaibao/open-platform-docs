@@ -11,11 +11,14 @@ url="/api/openapi/v1.1/flowDetails/byCode"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.0**](/updateLog/update-log#170) &emsp; -> 🐞 **报销单、收款单** 类型返回数据中新增了 `writtenOffRecords`（核销借款记录）参数。<br/>
-  [**1.5.0**](/updateLog/update-log#150) &emsp; -> 🚀 接口升级 `v1.1` 版本，报销单类型返回数据中新增了 `expenseLink`（费用明细关联的申请单ID）参数。<br/>
-  [**0.7.160**](/updateLog/update-log#07160) -> 🆕 新增了本接口。<br/>
+- [**1.7.0**](/updateLog/update-log#170)
+  - 🐞 **报销单、收款单** 类型返回数据中新增了 `writtenOffRecords`（核销借款记录）参数。
+- [**1.5.0**](/updateLog/update-log#150)
+  - 🚀 接口升级 `v1.1` 版本，报销单类型返回数据中新增了 `expenseLink`（费用明细关联的申请单ID）参数。
+- [**0.7.160**](/updateLog/update-log#07160)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 :::caution

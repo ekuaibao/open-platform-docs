@@ -12,9 +12,10 @@ url="/api/openapi/v2/location"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.138**](/updateLog/update-log#07138) -> 🆕 新增了飞书地址前缀。<br/>
+- [**0.7.138**](/updateLog/update-log#07138)
+  - 🆕 新增了飞书地址前缀。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

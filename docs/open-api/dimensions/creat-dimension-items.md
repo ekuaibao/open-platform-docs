@@ -11,11 +11,14 @@ url="/api/openapi/v1.1/dimensions/items"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.9.0**](/updateLog/update-log#190) -> 🆕 修复了不传 `visibility`（可见范围）非必填参数报错的BUG。<br/>
-  [**1.7.2**](/updateLog/update-log#172) -> 🆕 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。<br/>
-  [**1.1.0**](/updateLog/update-log#110) -> 🚀 接口升级 `v1.1` 版本，新增了当 `fullVisible` = `fals` 时，对 `staffs`、`roles`、`departments` 三个参数的必填及有效性校验。<br/>
+- [**1.9.0**](/updateLog/update-log#190)
+  - 🆕 修复了不传 `visibility`（可见范围）非必填参数报错的BUG。
+- [**1.7.2**](/updateLog/update-log#172)
+  - 🆕 新增了 `baseCurrencyId`（法人实体本位币）参数，使用此参数需要开通【**法人实体多币种**】功能，传参示例见CURL。
+- [**1.1.0**](/updateLog/update-log#110)
+  - 🚀 接口升级 `v1.1` 版本，新增了当 `fullVisible` = `fals` 时，对 `staffs`、`roles`、`departments` 三个参数的必填及有效性校验。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

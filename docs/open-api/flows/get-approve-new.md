@@ -19,10 +19,12 @@ url="/api/openapi/v1.1/docs/byFlowId/$`approverId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.7.0**](/updateLog/update-log#170) -> 🐞 **成功响应** 中新增了 `count` 待办总数，用于分页。<br/>
-  [**1.6.0**](/updateLog/update-log#160) -> 🆕 新增了本接口。<br/>
+- [**1.7.0**](/updateLog/update-log#170)
+  - 🐞 **成功响应** 中新增了 `count` 待办总数，用于分页。
+- [**1.6.0**](/updateLog/update-log#160)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Path Parameters

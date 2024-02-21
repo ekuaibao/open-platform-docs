@@ -13,9 +13,10 @@ url="/api/openapi/v1.1/flowDetails/stuckFlow"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.1.0**](/updateLog/update-log#110) -> 🆕 新增 `isForce` 字段，表示是否重复触发，默认为 `false`。当该值为 `true` 时，会将 `flow_flow` 表的 `version`（版本号）修改为 `1`，再修改为 `999`。<br/>
+- [**1.1.0**](/updateLog/update-log#110)
+  - 🆕 新增 `isForce` 字段，表示是否重复触发，默认为 `false`。当该值为 `true` 时，会将 `flow_flow` 表的 `version`（版本号）修改为 `1`，再修改为 `999`。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

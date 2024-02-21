@@ -11,9 +11,10 @@ url="/api/openapi/v1/dimensions"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.143**](/updateLog/update-log#07143) -> 🆕 新增了本接口。<br/>
+- [**0.7.143**](/updateLog/update-log#07143)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters
