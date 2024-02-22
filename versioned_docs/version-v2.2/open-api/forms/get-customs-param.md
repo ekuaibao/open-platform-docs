@@ -11,10 +11,12 @@ url="/api/openapi/v1.1/property"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.0.3**](/updateLog/update-log#103) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增对 `type`（全局字段类型）的参数校验，非备注类型时，报错 **”type参数不合法“**。<br/>
-  [**0.7.131**](/updateLog/update-log#07131) -> 🆕 新增了本接口。<br/>
+- [**1.0.3**](/updateLog/update-log#103)
+  - 🚀 接口升级 `v1.1` 版本，新增对 `type`（全局字段类型）的参数校验，非备注类型时，报错 **”type参数不合法“**。
+- [**0.7.131**](/updateLog/update-log#07131)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

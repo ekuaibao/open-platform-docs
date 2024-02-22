@@ -12,10 +12,10 @@ url="/api/outbound/v1/approval"
   <summary><b>更新日志</b></summary>
   <div>
 
-  - [**2.0.0**](/updateLog/update-log#200) 
-    - 🐞 新增了 `resubmitMethod`（驳回后再次提交送审方式）参数，支持选择驳回后送审方式。
+- [**2.0.0**](/updateLog/update-log#200) 
+  - 🐞 新增了 `resubmitMethod`（驳回后再次提交送审方式）参数，支持选择驳回后送审方式。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

@@ -11,9 +11,10 @@ url="/api/openapi/v1/dimensions/items/withVisibility"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.136**](/updateLog/update-log#07136) -> 🆕 新增了支持按 `dimensionId`（档案类别ID）参数过滤数据。<br/>
+- [**0.7.136**](/updateLog/update-log#07136)
+  - 🆕 新增了支持按 `dimensionId`（档案类别ID）参数过滤数据。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

@@ -9,12 +9,13 @@ url="/api/openapi/v2/attachment/downloadurls"
 />
 
 <details>
-  <summary><b>更新日志</b></summary>
-  <div>
+<summary><b>更新日志</b></summary>
+<div>
 
-  [**1.6.3**](/updateLog/update-log#163) -> 🐞 优化了接口 **HTTP 500** 错误，输出报错信息。<br/>
+- [**1.6.3**](/updateLog/update-log#163) 
+    - 🐞 优化了接口 **HTTP 500** 错误，输出报错信息。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

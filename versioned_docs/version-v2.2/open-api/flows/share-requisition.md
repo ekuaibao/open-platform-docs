@@ -11,9 +11,10 @@ url="/api/openapi/v1/requisition/$`flowId`/share/[`staffIds`]"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.146**](/updateLog/update-log#07146) -> 🆕 新增了本接口。<br/>
+- [**0.7.146**](/updateLog/update-log#07146)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 :::caution

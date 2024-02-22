@@ -11,9 +11,10 @@ url="/api/openapi/v1/departments/disableOrEnableDepartment/$`departmentId`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.0**](/updateLog/update-log#160) -> 🐞 **成功响应** 中增加 `order`（排序序号）参数。<br/>
+- [**1.6.0**](/updateLog/update-log#160) 
+  - 🐞 **成功响应** 中增加 `order`（排序序号）参数。
 
-  </div>
+</div>
 </details>
 
 :::caution

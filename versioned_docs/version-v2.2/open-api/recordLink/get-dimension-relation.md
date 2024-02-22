@@ -11,9 +11,10 @@ url="/api/openapi/v2.1/recordLink/getRoleGroups"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.3.0**](/updateLog/update-log#130) -> 🚀 接口升级 `v2.1` 版本，优化了报错输出。<br/>
+- [**1.3.0**](/updateLog/update-log#130)
+  - 🚀 接口升级 `v2.1` 版本，优化了报错输出。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

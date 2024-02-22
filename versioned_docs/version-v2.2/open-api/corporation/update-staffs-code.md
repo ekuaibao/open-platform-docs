@@ -11,9 +11,10 @@ url="/api/openapi/v1/staffs/$`staffId`/code"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.10.0**](/updateLog/update-log#1100) -> 🆕 新增了本接口。<br/>
+- [**1.10.0**](/updateLog/update-log#1100)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Path Parameters

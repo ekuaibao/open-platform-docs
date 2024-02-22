@@ -11,11 +11,14 @@ url="/api/openapi/v2.1/payeeInfos"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.20.0**](/updateLog/update-log#1200) -> 🐞 接口支持传入 `customFields`（自定义字段）。<br/>
-  [**1.14.0**](/updateLog/update-log#1140) -> 🐞 新增了 `nationCode`（银行所在地区代码）参数描述。<br/>
-  [**1.6.3**](/updateLog/update-log#163)&emsp;-> 🚀 接口升级 `v2.1` 版本，新增了 `sort`（账号类别）参数，额外支持新增 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。<br/>
+- [**1.20.0**](/updateLog/update-log#1200)
+  - 🐞 接口支持传入 `customFields`（自定义字段）。
+- [**1.14.0**](/updateLog/update-log#1140)
+  - 🐞 新增了 `nationCode`（银行所在地区代码）参数描述。
+- [**1.6.3**](/updateLog/update-log#163)
+  - 🚀 接口升级 `v2.1` 版本，新增了 `sort`（账号类别）参数，额外支持新增 **支付宝**、**海外账号**、**微信**、**其他** 4种类型收款账户。
 
-  </div>
+</div>
 </details>
 
 :::caution

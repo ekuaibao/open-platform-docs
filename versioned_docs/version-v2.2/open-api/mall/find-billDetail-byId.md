@@ -11,10 +11,12 @@ url="/api/mall-openapi/open-api/finance/bill/findBillDetailById"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.11.0**](/updateLog/update-log#1110)&emsp;-> 🐞 接口【**成功响应**】新增了 `bookerPhone`（预订人手机号）、`realTicketStart`（用车实际上车点）、`realTicketEnd`（用车实际下车点）、`costProject`（成本归属项目）4个非必返回参数。<br/>
-  [**1.6.1**](/updateLog/update-log#161) &emsp; -> 🆕 新增了本接口。<br/>
+- [**1.11.0**](/updateLog/update-log#1110)
+  - 🐞 接口【**成功响应**】新增了 `bookerPhone`（预订人手机号）、`realTicketStart`（用车实际上车点）、`realTicketEnd`（用车实际下车点）、`costProject`（成本归属项目）4个非必返回参数。
+- [**1.6.1**](/updateLog/update-log#161)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 :::caution

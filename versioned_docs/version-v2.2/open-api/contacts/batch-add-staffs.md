@@ -12,14 +12,20 @@ url="/api/openapi/v1.1/staffs/batch/create"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.20.0**](/updateLog/update-log#1200)&emsp;-> 🐞 接口支持传入 `nickName`（员工别名）字段，且响应信息中新增了该字段。<br/>
-  [**1.19.0**](/updateLog/update-log#1190)&emsp;-> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
-  [**1.8.0**](/updateLog/update-log#180) &emsp; -> 🚀 接口升级 `v1.1` 版本，新增了 `cellphone`（手机号）参数校验，只允许传英文括号和数字。<br/>
-  [**0.7.140**](/updateLog/update-log#07140) -> 🆕 新增了支持自定义字段保存。<br/>
-  [**0.7.133**](/updateLog/update-log#07133) -> 🆕 新增了控制发送邮件标识参数。<br/>
-  [**0.7.125**](/updateLog/update-log#07125) -> 🆕 新增了本接口。<br/>
+- [**1.20.0**](/updateLog/update-log#1200)
+  - 🐞 接口支持传入 `nickName`（员工别名）字段，且响应信息中新增了该字段。
+- [**1.19.0**](/updateLog/update-log#1190)
+  - 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。
+- [**1.8.0**](/updateLog/update-log#180)
+  - 🚀 接口升级 `v1.1` 版本，新增了 `cellphone`（手机号）参数校验，只允许传英文括号和数字。
+- [**0.7.140**](/updateLog/update-log#07140)
+  - 🆕 新增了支持自定义字段保存。
+- [**0.7.133**](/updateLog/update-log#07133)
+  - 🆕 新增了控制发送邮件标识参数。
+- [**0.7.125**](/updateLog/update-log#07125)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 :::caution

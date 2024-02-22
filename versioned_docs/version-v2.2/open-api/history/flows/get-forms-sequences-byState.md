@@ -12,11 +12,14 @@ url="/api/openapi/v1/docSequences"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.16.0**](/updateLog/update-log#1160)&emsp;-> 🐞 接口响应 `items` 下，新增 `orgSumAmount`（报销金额（原币））、`orgWriteOffAmount`（核销金额（原币））参数，需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空。<br/>
-  [**1.7.0**](/updateLog/update-log#170) &emsp; -> ❌ 接口废弃。<br/>
-  [**0.7.158**](/updateLog/update-log#07158) -> 🆕 新增了本接口。<br/>
+- [**1.16.0**](/updateLog/update-log#1160)
+  - 🐞 接口响应 `items` 下，新增 `orgSumAmount`（报销金额（原币））、`orgWriteOffAmount`（核销金额（原币））参数，需开通【币种设置】、【多币种核销】功能，并且是原币核销时才有值，否则为空。
+- [**1.7.0**](/updateLog/update-log#170)
+  - ❌ 接口废弃。
+- [**0.7.158**](/updateLog/update-log#07158)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 :::danger

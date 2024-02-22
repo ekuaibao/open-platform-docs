@@ -11,10 +11,15 @@ url="/api/openapi/v1/departments/getDepartmentByPath"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.6.0**](/updateLog/update-log#160) -> 🐞 **成功响应** 中增加 `order`（排序序号）参数。<br/>
+- [**1.6.0**](/updateLog/update-log#160)
+  - 🐞 **成功响应** 中增加 `order`（排序序号）参数。
 
-  </div>
+</div>
 </details>
+
+:::caution
+- 本接口只能查询到 **启用** 的部门信息，如果需要查询已停用的部门信息，请通过 [获取部门列表(包含停用部门)](/docs/open-api/corporation/get-departments) 查询到全部的部门列表，再进行匹配。
+:::
 
 ## Query Parameters
 

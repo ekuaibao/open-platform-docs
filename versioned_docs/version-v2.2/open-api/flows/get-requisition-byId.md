@@ -11,10 +11,12 @@ url="/api/openapi/v1/requisition/$`id`"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.18.0**](/updateLog/update-log#1180) -> 🐞 接口 **成功响应** `details` 下新增了 `writtenOffAmount`（核销金额）、`unwrittenOffAmount`（未核销金额）字段，用于报销单【按申请明细分别报销】时关联使用。<br/>
-  [**1.15.0**](/updateLog/update-log#1150) -> 🆕 新增了本接口。
+- [**1.18.0**](/updateLog/update-log#1180)
+  - 🐞 接口 **成功响应** `details` 下新增了 `writtenOffAmount`（核销金额）、`unwrittenOffAmount`（未核销金额）字段，用于报销单【按申请明细分别报销】时关联使用。
+- [**1.15.0**](/updateLog/update-log#1150)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Path Parameters

@@ -11,9 +11,10 @@ url="/api/openapi/v1.1/staffs/staffCustom"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.16.0**](/updateLog/update-log#1160) -> 🆕 新增了本接口。<br/>
+- [**1.16.0**](/updateLog/update-log#1160)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 :::caution

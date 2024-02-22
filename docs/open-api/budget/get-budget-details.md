@@ -58,11 +58,11 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                 "sourceCorporationId": null,
                 "dataCorporationId": null,
                 "period": {                            //预算年度
-                    "annual": "2022",                  //控制年度
+                    "annual": "2024",                  //控制年度
                     "period": "SEASON",                //年度内分割方式，MONTH: 按月份, SEASON: 按季度, HALF_YEAR: 半年, YEAR: 整年, null: 非周期控制
-                    "periodControl": "NATURAL_SEASON", //自然期间拆解（跨财年预算包需要关注）
-                    "startTime": 1641028769360,        //非周期控制开始时间
-                    "endTime": 1672478369360           //非周期控制结束时间
+                    "periodControl": "NOT_NATURAL_SEASON", //自然期间拆解（跨财年预算包需要关注）
+                    "startTime": 1710432000000,        //非周期控制开始时间
+                    "endTime": 1741967999999           //非周期控制结束时间
                 },
                 "tree": null,
                 "delete": false,                       //预算是否删除
@@ -103,32 +103,32 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                         "periodTime": "1",        //第几个周期
                         "budgetMoney": 21.0,      //预算总额
                         "extendMoneys": {},       //参考金额
-                        "periodStartTime": null,  //跨财年周期区间开始时间
-                        "periodEndTime": null     //跨财年周期区间结束时间
+                        "periodStartTime": 1710432000000,  //跨财年周期区间开始时间
+                        "periodEndTime": 1718380799999     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220419",
                         "periodTime": "2",
                         "budgetMoney": 42.0,
                         "extendMoneys": {},
-                        "periodStartTime": null,  //跨财年周期区间开始时间 
-                        "periodEndTime": null     //跨财年周期区间结束时间
+                        "periodStartTime": 1718380800000,  //跨财年周期区间开始时间 
+                        "periodEndTime": 1726329599999     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220419",
                         "periodTime": "3",
                         "budgetMoney": 63.0,
                         "extendMoneys": {},
-                        "periodStartTime": null,  //跨财年周期区间开始时间
-                        "periodEndTime": null     //跨财年周期区间结束时间
+                        "periodStartTime": 1726329600000,  //跨财年周期区间开始时间
+                        "periodEndTime": 1734191999999     //跨财年周期区间结束时间
                     },
                     {
                         "nodeId": "20220419",
                         "periodTime": "4",
                         "budgetMoney": 84.0,
                         "extendMoneys": {},
-                        "periodStartTime": null,  //跨财年周期区间开始时间
-                        "periodEndTime": null     //跨财年周期区间结束时间
+                        "periodStartTime": 1734192000000,  //跨财年周期区间开始时间
+                        "periodEndTime": 1741967999999     //跨财年周期区间结束时间
                     }
                 ],
                 "control": "ALLOW",            //预算节点的控制方式
@@ -150,32 +150,32 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                                 "periodTime": "1",
                                 "budgetMoney": 10.0,
                                 "extendMoneys": {},
-                                "periodStartTime": null,  //跨财年周期区间开始时间
-                                "periodEndTime": null     //跨财年周期区间结束时间
+                                "periodStartTime": 1710432000000,  //跨财年周期区间开始时间
+                                "periodEndTime": 1718380799999     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-1",
                                 "periodTime": "2",
                                 "budgetMoney": 20.0,
                                 "extendMoneys": {},
-                                "periodStartTime": null,  //跨财年周期区间开始时间
-                                "periodEndTime": null     //跨财年周期区间结束时间
+                                "periodStartTime": 1718380800000,  //跨财年周期区间开始时间 
+                                "periodEndTime": 1726329599999     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-1",
                                 "periodTime": "3",
                                 "budgetMoney": 30.0,
                                 "extendMoneys": {},
-                                "periodStartTime": null,  //跨财年周期区间开始时间
-                                "periodEndTime": null     //跨财年周期区间结束时间
+                                "periodStartTime": 1726329600000,  //跨财年周期区间开始时间
+                                "periodEndTime": 1734191999999     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-1",
                                 "periodTime": "4",
                                 "budgetMoney": 40.0,
                                 "extendMoneys": {},
-                                "periodStartTime": null,  //跨财年周期区间开始时间
-                                "periodEndTime": null     //跨财年周期区间结束时间
+                                "periodStartTime": 1734192000000,  //跨财年周期区间开始时间
+                                "periodEndTime": 1741967999999     //跨财年周期区间结束时间
                             }
                         ],
                         "control": "FORBID",
@@ -197,32 +197,32 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                                         "periodTime": "1",
                                         "budgetMoney": 10.0,
                                         "extendMoneys": {},
-                                        "periodStartTime": null,  //跨财年周期区间开始时间
-                                        "periodEndTime": null     //跨财年周期区间结束时间
+                                        "periodStartTime": 1710432000000,  //跨财年周期区间开始时间
+                                        "periodEndTime": 1718380799999     //跨财年周期区间结束时间
                                     },
                                     {
                                         "nodeId": "20220419-1-1",
                                         "periodTime": "2",
                                         "budgetMoney": 20.0,
                                         "extendMoneys": {},
-                                        "periodStartTime": null,  //跨财年周期区间开始时间
-                                        "periodEndTime": null     //跨财年周期区间结束时间
+                                        "periodStartTime": 1718380800000,  //跨财年周期区间开始时间 
+                                        "periodEndTime": 1726329599999     //跨财年周期区间结束时间
                                     },
                                     {
                                         "nodeId": "20220419-1-1",
                                         "periodTime": "3",
                                         "budgetMoney": 30.0,
                                         "extendMoneys": {},
-                                        "periodStartTime": null,  //跨财年周期区间开始时间
-                                        "periodEndTime": null     //跨财年周期区间结束时间
+                                        "periodStartTime": 1726329600000,  //跨财年周期区间开始时间
+                                        "periodEndTime": 1734191999999     //跨财年周期区间结束时间
                                     },
                                     {
                                         "nodeId": "20220419-1-1",
                                         "periodTime": "4",
                                         "budgetMoney": 40.0,
                                         "extendMoneys": {},
-                                        "periodStartTime": null,  //跨财年周期区间开始时间
-                                        "periodEndTime": null     //跨财年周期区间结束时间
+                                        "periodStartTime": 1734192000000,  //跨财年周期区间开始时间
+                                        "periodEndTime": 1741967999999     //跨财年周期区间结束时间
                                     }
                                 ],
                                 "control": "ALLOW",
@@ -251,32 +251,32 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/budgets/$
                                 "periodTime": "1",
                                 "budgetMoney": 11.0,
                                 "extendMoneys": {},
-                                "periodStartTime": null,  //跨财年周期区间开始时间
-                                "periodEndTime": null     //跨财年周期区间结束时间
+                                "periodStartTime": 1710432000000,  //跨财年周期区间开始时间
+                                "periodEndTime": 1718380799999     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-2",
                                 "periodTime": "2",
                                 "budgetMoney": 22.0,
                                 "extendMoneys": {},
-                                "periodStartTime": null,  //跨财年周期区间开始时间
-                                "periodEndTime": null     //跨财年周期区间结束时间
+                                "periodStartTime": 1718380800000,  //跨财年周期区间开始时间 
+                                "periodEndTime": 1726329599999     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-2",
                                 "periodTime": "3",
                                 "budgetMoney": 33.0,
                                 "extendMoneys": {},
-                                "periodStartTime": null,  //跨财年周期区间开始时间
-                                "periodEndTime": null     //跨财年周期区间结束时间
+                                "periodStartTime": 1726329600000,  //跨财年周期区间开始时间
+                                "periodEndTime": 1734191999999     //跨财年周期区间结束时间
                             },
                             {
                                 "nodeId": "20220419-2",
                                 "periodTime": "4",
                                 "budgetMoney": 44.0,
                                 "extendMoneys": {},
-                                "periodStartTime": null,  //跨财年周期区间开始时间
-                                "periodEndTime": null     //跨财年周期区间结束时间
+                                "periodStartTime": 1734192000000,  //跨财年周期区间开始时间
+                                "periodEndTime": 1741967999999     //跨财年周期区间结束时间
                             }
                         ],
                         "control": "IGNORED",

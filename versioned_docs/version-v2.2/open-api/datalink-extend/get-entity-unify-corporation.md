@@ -12,9 +12,10 @@ url="/api/openapi/v1/invoice/unify/corporation/list"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.131**](/updateLog/update-log#07131) -> 🆕 新增了本接口。<br/>
+- [**0.7.131**](/updateLog/update-log#07131)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

@@ -12,15 +12,22 @@ url="/api/openapi/v2.1/payeeInfos"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.27.0**](/updateLog/update-log#1270)&emsp;-> 🐞 响应信息中新增了 `customFields`（自定义字段）。<br/>
-  [**1.18.0**](/updateLog/update-log#1180)&emsp;-> 🚀 接口升级 `v2.1` 版本，接口 **成功响应** 中新增了 `nationCode`（银行所在地区代码（海外账户））参数，参数介绍见 [新增收款账户](/docs/open-api/pay/new-payeeInfo)。<br/>
-  [**1.11.0**](/updateLog/update-log#1110)&emsp;-> 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。<br/>
-  [**1.8.0**](/updateLog/update-log#180) &emsp; -> 🐞 修复了获取 `WEIXIN`（微信）、`OTHER`（其他）类型收款账户时，`certificateType`（证件类型 ）、`certificateNo`（证件号码）返回空的BUG。<br/>
-  [**1.2.0**](/updateLog/update-log#120) &emsp; -> 🆕 新增了 `active` 参数描述，并且接口 **成功响应** 中增加了 `active` 参数。<br/>
-  [**1.1.0**](/updateLog/update-log#110) &emsp; -> 🆕 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。<br/>
-  [**0.7.160**](/updateLog/update-log#07160) -> 🆕 新增了 `active`（账户是否启用）参数过滤收款账户信息。<br/>
+- [**1.27.0**](/updateLog/update-log#1270)
+  - 🐞 响应信息中新增了 `customFields`（自定义字段）。
+- [**1.18.0**](/updateLog/update-log#1180)
+  - 🚀 接口升级 `v2.1` 版本，接口 **成功响应** 中新增了 `nationCode`（银行所在地区代码（海外账户））参数，参数介绍见 [新增收款账户](/docs/open-api/pay/new-payeeInfo)。
+- [**1.11.0**](/updateLog/update-log#1110)
+  - 🐞 新增了 `orderBy` 和 `orderByType` 参数，接口【**成功响应**】数据可按照 `updateTime`（更新时间）排序。
+- [**1.8.0**](/updateLog/update-log#180)
+  - 🐞 修复了获取 `WEIXIN`（微信）、`OTHER`（其他）类型收款账户时，`certificateType`（证件类型 ）、`certificateNo`（证件号码）返回空的BUG。
+- [**1.2.0**](/updateLog/update-log#120)
+  - 🆕 新增了 `active` 参数描述，并且接口 **成功响应** 中增加了 `active` 参数。
+- [**1.1.0**](/updateLog/update-log#110)
+  - 🆕 新增了 `startDate` 和 `endDate` 参数，根据 **更新时间** 过滤列表数据，并且返回值中增加 `createTime` 和 `updateTime` 参数。
+- [**0.7.160**](/updateLog/update-log#07160)
+  - 🆕 新增了 `active`（账户是否启用）参数过滤收款账户信息。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

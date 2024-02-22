@@ -17,11 +17,14 @@ url="/api/openapi/v1/staffs/authorized"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**1.20.0**](/updateLog/update-log#1200) &emsp; -> 🐞 响应信息中新增了 `nickName`（员工别名）字段。<br/>
-  [**1.19.0**](/updateLog/update-log#1190) &emsp; -> 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。<br/>
-  [**0.7.161**](/updateLog/update-log#07161)&emsp;-> 🆕 新增了本接口。<br/>
+- [**1.20.0**](/updateLog/update-log#1200)
+  - 🐞 响应信息中新增了 `nickName`（员工别名）字段。
+- [**1.19.0**](/updateLog/update-log#1190)
+  - 🐞 响应信息中新增了 `globalRoaming`（国际区号）字段。
+- [**0.7.161**](/updateLog/update-log#07161)
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters

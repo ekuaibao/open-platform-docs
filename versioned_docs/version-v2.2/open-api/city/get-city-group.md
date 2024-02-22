@@ -11,9 +11,10 @@ url="/api/openapi/v1/cityGroup/search"
   <summary><b>更新日志</b></summary>
   <div>
 
-  [**0.7.135**](/updateLog/update-log#07135) -> 🆕 新增了本接口。<br/>
+- [**0.7.135**](/updateLog/update-log#07135) 
+  - 🆕 新增了本接口。
 
-  </div>
+</div>
 </details>
 
 ## Query Parameters
