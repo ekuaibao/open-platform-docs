@@ -34,6 +34,11 @@ authors: [冯继成]
 ### [根据ID获取单据详情(可返回关联数据)(新)--(电子档案专用)](/docs/open-api/inside/get-forms-details-linkdeData-byId-new)
 
 ---
+## 发票
+### [获取浙里办票平台发票数据](/docs/open-api/inside/get-invoice-ZLBP-list)
+### [获取发票xml原件链接地址](/docs/open-api/inside/get-invoice-xmlUrl)
+
+---
 ## 业务对象
 ### [根据业务对象ID获取业务对象实体](/docs/open-api/inside/get-entity-byId)
 ### [获取业务对象台账字段](/docs/open-api/inside/get-entity-ledgerConfig)
