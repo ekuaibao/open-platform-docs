@@ -49,6 +49,12 @@ authors: [冯继成]
 ### [获取【行程管理/订单管理】业务对象数据](/docs/open-api/inside/get-entity-travelManager)
 
 ---
+## 对账结算
+### [获取供应商账户及其品类](/docs/open-api/checkingBill/get-supplier-account)
+### [创建账期](/docs/open-api/checkingBill/create-checkingBill)
+### [新增或更新账单数据](/docs/open-api/checkingBill/import-checkingBill)
+
+---
 ## 基础数据
 ### [根据ID查询城市信息](/docs/open-api/basedata/get-basedata-cityById)
 ### [根据单据编号查询CBS7银行信息](/docs/open-api/inside/get-cbs7-byCode)

@@ -38,7 +38,7 @@ curl --location --request GET 'https://app.ekuaibao.com/api/openapi/v2/location?
 | 平台 | 地址 |
 | :--- | :--- |
 | 合思独立版     | `https://app.ekuaibao.com` |
-| 钉钉           | `https://dd2.ekuaibao.com` |
+| 钉钉           | `https://dd2.hosecloud.com` |
 | 企业微信        | `https://wx2.ekuaibao.com` |
 | 云之家          | `https://kdcloud2.ekuaibao.com` |
 | 钉钉企业自建应用  | `https://ddenterprise.ekuaibao.com` |
