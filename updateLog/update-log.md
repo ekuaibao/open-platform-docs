@@ -12,6 +12,16 @@ timeline: true
 - 次版本号：每月发布一个带有新特性的向下兼容的版本。
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
+
+## 2.0.1
+
+`2024-03-15`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.xxx.xx`
+
+- 🐞 更新 [更新币种汇率](/docs/open-api/currency/update-currency-rate) 接口
+  - 新增了接口并发控制，修复并发调用时导致的主键重复问题。
+  
+
+---
 ## 2.0.0
 
 `2024-02-20`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`代码版本：9.128.14`
@@ -38,7 +48,7 @@ timeline: true
 - 🆕 新增 [停启用审批矩阵](/docs/open-api/matrix/active-matrix) 接口。
 - 🐞 更新 [根据企业ID获取单据模板列表](/docs/open-api/forms/get-template-list) 接口
   - 新增了支持返回 `corpPayment`（对公付款单）、`reimbursement`（报账单、发票录入单）类型的单据模板。
-- 🐞 更新 [获取发票图片链接地址](/docs/open-api/datalink-extend/get-entity-invoice-img) 接口
+- 🐞 更新 [获取发票附件下载地址](/docs/open-api/datalink-extend/get-entity-invoice-img) 接口
   - 修复了获取的OFD文件链接打开报错的BUG。
 - 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
   - 响应信息中新增了 `customFields`（自定义字段）。
@@ -506,7 +516,7 @@ timeline: true
   - 修复了部分模板ID因为版本过多导致接口返回空的BUG。
 - 🐞 更新 [获取发票主体信息](/docs/open-api/datalink-extend/get-entity-invoice) 接口
   - 优化了 **发票类别介绍** 注意事项。
-- 🐞 更新 [获取发票图片链接地址](/docs/open-api/datalink-extend/get-entity-invoice-img) 接口
+- 🐞 更新 [获取发票附件下载地址](/docs/open-api/datalink-extend/get-entity-invoice-img) 接口
   - 优化了接口注意事项描述：**图片链接有效期为一个小时**。
 - 🐞 更新 所有接口的【**更新日志**】
   - 跳转方式优化，从 **新标签页打开** 调整为 **本页面内跳转**，并可准确跳转到对应文档版本。

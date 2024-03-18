@@ -11,6 +11,8 @@ url="/api/openapi/v1/docSequences"
   <summary><b>更新日志</b></summary>
   <div>
 
+- [**2.0.1**](/updateLog/update-log#201)
+  - 🐞 **响应数据** 新增返回 `otherApportionMoney_{全局属性}`（其他分摊金额）字段。
 - [**1.27.0**](/updateLog/update-log#1270)
   - 🐞 新增支持了 `corpPayment`（对公付款单）、`reimbursement`（报账单、发票录入单）类型单据的获取。
 - [**1.16.0**](/updateLog/update-log#1160)
