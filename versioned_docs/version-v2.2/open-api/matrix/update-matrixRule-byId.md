@@ -38,7 +38,7 @@ url="/api/openapi/v2/matrix/updateRule/$`id`"
 
 | 名称         | 类型     | 描述    | 是否必填 | 默认值 | 备注       |
 |:-----------|:-------|:------| :--- |:----|:---------|
-| **id**                         | String | 矩阵明细ID      | 必填  | -  | 通过 [根据矩阵ID获取矩阵明细](/docs/open-api/matrix/get-matrix-byId) 获取 |
+| **id**                         | String | 矩阵明细ID     | 非必填 | -  | **更新矩阵明细时必填**<br/>通过 [根据矩阵ID获取矩阵明细](/docs/open-api/matrix/get-matrix-byId) 获取 |
 | **rule**                       | Array | 条件字段信息     | 必填  | -  | 条件字段信息 |
 | **&emsp; ∟ fieldConfigId**    | String | 条件字段配置ID	  | 必填  | -  | 条件字段配置ID |
 | **&emsp; ∟ ids**              | Array  | 条件字段匹配值	  | 必填  | -  | 条件字段匹配值具体信息 |

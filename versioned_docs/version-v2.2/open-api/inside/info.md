@@ -49,6 +49,12 @@ authors: [冯继成]
 ### [获取【行程管理/订单管理】业务对象数据](/docs/open-api/inside/get-entity-travelManager)
 
 ---
+## 对账结算
+### [获取供应商账户及其品类](/docs/open-api/checkingBill/get-supplier-account)
+### [创建账期](/docs/open-api/checkingBill/create-checkingBill)
+### [新增或更新账单数据](/docs/open-api/checkingBill/import-checkingBill)
+
+---
 ## 基础数据
 ### [根据ID查询城市信息](/docs/open-api/basedata/get-basedata-cityById)
 ### [根据单据编号查询CBS7银行信息](/docs/open-api/inside/get-cbs7-byCode)
@@ -75,6 +81,8 @@ authors: [冯继成]
   - [**2.0.0**](/updateLog/update-log#200) 
     - **Query Parameters** 增加 `needDetailId `（是否自定义明细ID，默认为 `false`）参数，为 `true` 时支持调用方传明细ID。 —— @郑永欠
     - 新增了支持 **提交人联动赋值**，全局开关，默认关闭。 —— @苏强
+  - [**2.0.1**](/updateLog/update-log#201)
+    - 修复了 **日期** 字段配置员工联动赋值，接口报错”**日期类型应当是Long**“的BUG。
 
 - [外部服务回调审批](/docs/open-api/outbound-message/outbound-callback)
   - 2022年11月28日上线该参数，`ebotNodeOnly`（是否仅审批EBot节点，默认为 `false`）为 `true` 时可审批人工节点（仅支持 `action` = `accept` 的同意动作），为 `false` 时仅审批EBot节点。

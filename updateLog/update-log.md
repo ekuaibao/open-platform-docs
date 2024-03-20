@@ -20,7 +20,7 @@ timeline: true
 - 🐞 更新 [更新币种汇率](/docs/open-api/currency/update-currency-rate) 接口
   - 新增了接口并发控制，修复并发调用时导致的主键重复问题。
 - 🐞 更新 [获取收款账户](/docs/open-api/pay/get-payeeInfos) 接口
-    - 修复了账户类别为【微信、承兑汇票、其他】时，响应信息中 `certificateType`（证件类型）返回空的BUG。
+  - 修复了账户类别为 **微信**、**承兑汇票**、**其他** 时，响应信息中 `certificateType`（证件类型）返回空的BUG。
   
 
 ---

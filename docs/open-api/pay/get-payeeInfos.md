@@ -13,7 +13,7 @@ url="/api/openapi/v2.1/payeeInfos"
   <div>
 
 - [**2.0.1**](/updateLog/update-log#201)
-  - 🐞 修复了账户类别为【微信、承兑汇票、其他】时，响应信息中 `certificateType`（证件类型）返回空的BUG。
+  - 🐞 修复了账户类别为 **微信**、**承兑汇票**、**其他** 时，响应信息中 `certificateType`（证件类型）返回空的BUG。
 - [**1.27.0**](/updateLog/update-log#1270)
   - 🐞 响应信息中新增了 `customFields`（自定义字段）。
 - [**1.18.0**](/updateLog/update-log#1180)
