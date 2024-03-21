@@ -33,7 +33,7 @@ url="/api/openapi/v1/checking/importCheckingBill"
 | **&emsp; ∟ 对账单ID**     | String | 对账单ID          | 必填   | - | 账单明细数据唯一标识<br/>**不存在时则新增账单明细，已存在则更新原数据**                                                                                                                  |
 | **&emsp; ∟ ---**         | String | 品类模板中的其他字段显示名称 | 非必填  | - | 格式为 `{ "显示名称" : "字段值" }`<br/>**显示名称** 是 [获取供应商账户及其品类](/docs/open-api/checkingBill/get-supplier-account) 响应信息 `categoryIds` 中的 `fields` 里面的 `label` 值 |
 
-:::caution
+:::tip
 - **品类模板中的其他字段显示名称** 不同字段类型入参说明： 
   - 文本：字符串 
   - 城市：城市名称 
