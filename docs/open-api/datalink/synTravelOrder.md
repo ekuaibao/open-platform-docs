@@ -30,17 +30,17 @@ url="/api/openapi/v1/travel/costCenter/synTravelOrder"
 | 名称                                  | 类型     | 描述           | 是否必填 | 默认值 | 备注                                                                             |
 |:------------------------------------|:-------|:-------------|:-----|:----|:-------------------------------------------------------------------------------| 
 | **data**                            | Array  | 第三方商城订单数组    | 必填   | -   | 第三方商城订单数组                                                                      |
-| **&emsp; ∟ initialOriginalOrderNo** | String | 商城拆分前的最原始订单号 | 非必填  | -   | 商城拆分前的最原始订单号	                                                                  |
-| **&emsp; ∟ initialParentOrderNo**   | String | 商城拆分前的父订单号   | 非必填  | -   | 商城拆分前的父订单号	                                                                    |
-| **&emsp; ∟ initialOrderNo**         | String | 商城拆分前的订单号	   | 非必填  | -   | 商城拆分前的订单号		                                                                    |
-| **&emsp; ∟ originalOrderNo**        | String | 最原始票号	       | 非必填  | -   | 最原始票号		                                                                        |
-| **&emsp; ∟ parentOrderNo**          | String | 父订单号	        | 非必填  | -   | 父订单号		                                                                         |
+| **&emsp; ∟ initialOriginalOrderNo** | String | 商城拆分前的最原始订单号 | 必填   | -   | 商城拆分前的最原始订单号	                                                                  |
+| **&emsp; ∟ initialParentOrderNo**   | String | 商城拆分前的父订单号   | 必填   | -   | 商城拆分前的父订单号	                                                                    |
+| **&emsp; ∟ initialOrderNo**         | String | 商城拆分前的订单号	   | 必填   | -   | 商城拆分前的订单号		                                                                    |
+| **&emsp; ∟ originalOrderNo**        | String | 最原始票号	       | 必填   | -   | 订单明细编号		                                                                        |
+| **&emsp; ∟ parentOrderNo**          | String | 父订单号	        | 必填   | -   | 父订单号		                                                                         |
 | **&emsp; ∟ travelInfoId**           | String | 行程id	        | 非必填  | -   | 行程id		                                                                         |
-| **&emsp; ∟ orderNo**                | String | 订单号          | 非必填  | -   | 商城拆分后的订单号		                                                                    |
-| **&emsp; ∟ orderSummary**           | String | 订单概述	        | 非必填  | -   | 取值：`出发地-达到地`	                                                                  |
-| **&emsp; ∟ orderDate**              | String | 订单日期         | 非必填  | -   | 毫秒级时间戳	                                                                        |
+| **&emsp; ∟ orderNo**                | String | 订单号          | 必填   | -   | 商城拆分后的订单号		                                                                    |
+| **&emsp; ∟ orderSummary**           | String | 订单概述	        | 必填   | -   | 取值：`出发地-达到地`	                                                                  |
+| **&emsp; ∟ orderDate**              | String | 订单日期         | 必填   | -   | 毫秒级时间戳	                                                                        |
 | **&emsp; ∟ orderAmount**            | String | 订单金额         | 非必填  | -   | 取值：`实付金额`	                                                                     |
-| **&emsp; ∟ orderStatus**            | String | 订单状态         | 非必填  | -   | 出票、改签、退票、确认订单、退订、离店	                                                           |
+| **&emsp; ∟ orderStatus**            | String | 订单状态         | 必填   | -   | 出票、改签、退票、确认订单、退订、离店	                                                           |
 | **&emsp; ∟ ticketNumber**           | String | 票号           | 非必填  | -   | 票号	                                                                            |
 | **&emsp; ∟ certificateType**        | String | 证件类型         | 非必填  | -   | 身份证、护照等	                                                                       |
 | **&emsp; ∟ certificateInfo**        | String | 证件信息         | 非必填  | -   | 证件号	                                                                           |
@@ -67,11 +67,11 @@ url="/api/openapi/v1/travel/costCenter/synTravelOrder"
 | **&emsp; ∟ accommodation**          | String | 住宿地          | 非必填  | -   | 城市code                                                                         |
 | **&emsp; ∟ checkInDate**            | String | 入住日期         | 非必填  | -   | 毫秒级时间戳	                                                                        |
 | **&emsp; ∟ departureDate**          | String | 离店日期         | 非必填  | -   | 毫秒级时间戳	                                                                        |
-| **&emsp; ∟ orderCategory**          | String | 订单类别	        | 非必填  | -   | 主订单、改签、退订、（酒店）确认订单、退订、离店		                                                     |
+| **&emsp; ∟ orderCategory**          | String | 订单类别	        | 必填   | -   | 主订单、改签、退订、（酒店）确认订单、退订、离店		                                                     |
 | **&emsp; ∟ applicationNo**          | String | 申请单编号	       | 非必填  | -   | 有就传		                                                                          |
 | **&emsp; ∟ isExcess**               | String | 是否超标         | 非必填  | -   | 是、否（汉字）	                                                                       |
 | **&emsp; ∟ excessReason**           | String | 超标原因	        | 非必填  | -   | 超标原因		                                                                         |
-| **&emsp; ∟ travelType**             | String | 出行类型         | 非必填  | -   | 因私、因公	                                                                         |
+| **&emsp; ∟ travelType**             | String | 出行类型         | 必填   | -   | 因私、因公	                                                                         |
 | **&emsp; ∟ paymentMethod**          | String | 支付方式         | 非必填  | -   | 个人支付、企业支付                                                                      |
 | **&emsp; ∟ orderRemark**            | String | 订单备注	        | 非必填  | -   | 可为空	                                                                           |
 | **&emsp; ∟ carNumber**              | String | 车牌号          | 非必填  | -   | 用车车牌号                                                                          |
@@ -109,14 +109,14 @@ url="/api/openapi/v1/travel/costCenter/synTravelOrder"
 | **&emsp; ∟ insuranceNumber**        | String | 保险份数         | 非必填  | -   | 保险份数	                                                                          |
 | **&emsp; ∟ insuranceFee**           | String | 保险费	         | 非必填  | -   | 保险费		                                                                          |
 | **&emsp; ∟ amount**                 | String | 应付金额	        | 非必填  | -   | 应付金额		                                                                         |
-| **&emsp; ∟ realAmount**             | String | 实付金额	        | 非必填  | -   | 实付金额		                                                                         |
+| **&emsp; ∟ realAmount**             | String | 实付金额	        | 必填   | -   | 实付金额		                                                                         |
 | **&emsp; ∟ personalAmount**         | String | 个人支付金额	      | 非必填  | -   | 个人支付金额		                                                                       |
 | **&emsp; ∟ deliveryFee**            | String | 配送费	         | 非必填  | -   | 配送费		                                                                          |
 | **&emsp; ∟ tripType**               | String | 出行人类型        | 非必填  | -   | 内部或外部，不传	                                                                      |
-| **&emsp; ∟ bookingPlatform**        | String | 订票平台         | 非必填  | -   | 例如：`合思商城`	                                                                     |
+| **&emsp; ∟ bookingPlatform**        | String | 订票平台         | 必填   | -   | 例如：`合思商城`	                                                                     |
 | **&emsp; ∟ planGetOnTime**          | String | 计划出发时间	      | 非必填  | -   | 毫秒级时间戳		                                                                       |
 | **&emsp; ∟ planGetOnDeparture**     | String | 计划上车地点	      | 非必填  | -   | 计划上车地点		                                                                       |
-| **&emsp; ∟ planGetOffArrive	**      | String | 计划下车地点	      | 非必填  | -   | 计划下车地点		                                                                       |
+| **&emsp; ∟ planGetOffArrive**       | String | 计划下车地点	      | 非必填  | -   | 计划下车地点		                                                                       |
 | **&emsp; ∟ realGetOnDeparture**     | String | 实际出发地点	      | 非必填  | -   | 实际出发地点		                                                                       |
 | **&emsp; ∟ realGetOffArrive**       | String | 实际到达地点		     | 非必填  | -   | 实际到达地点			                                                                      |
 | **&emsp; ∟ extensionInfo**          | Object | 扩展字段         | 非必填  | -   | json格式	                                                                        |
