@@ -27,103 +27,103 @@ url="/api/openapi/v1/travel/costCenter/synTravelOrder"
 
 ##  Body Parameters
 
-| 名称                                  | 类型     | 描述           | 是否必填 | 默认值 | 备注                                                                             |
-|:------------------------------------|:-------|:-------------|:-----|:----|:-------------------------------------------------------------------------------| 
-| **data**                            | Array  | 第三方商城订单数组    | 必填   | -   | 第三方商城订单数组                                                                      |
-| **&emsp; ∟ initialOriginalOrderNo** | String | 商城拆分前的最原始订单号 | 必填   | -   | 商城拆分前的最原始订单号	                                                                  |
-| **&emsp; ∟ initialParentOrderNo**   | String | 商城拆分前的父订单号   | 必填   | -   | 商城拆分前的父订单号	                                                                    |
-| **&emsp; ∟ initialOrderNo**         | String | 商城拆分前的订单号	   | 必填   | -   | 商城拆分前的订单号		                                                                    |
-| **&emsp; ∟ originalOrderNo**        | String | 最原始票号	       | 必填   | -   | 订单明细编号		                                                                        |
-| **&emsp; ∟ parentOrderNo**          | String | 父订单号	        | 必填   | -   | 父订单号		                                                                         |
-| **&emsp; ∟ travelInfoId**           | String | 行程id	        | 非必填  | -   | 行程id		                                                                         |
-| **&emsp; ∟ orderNo**                | String | 订单号          | 必填   | -   | 商城拆分后的订单号		                                                                    |
-| **&emsp; ∟ orderSummary**           | String | 订单概述	        | 必填   | -   | 取值：`出发地-达到地`	                                                                  |
-| **&emsp; ∟ orderDate**              | String | 订单日期         | 必填   | -   | 毫秒级时间戳	                                                                        |
-| **&emsp; ∟ orderAmount**            | String | 订单金额         | 非必填  | -   | 取值：`实付金额`	                                                                     |
-| **&emsp; ∟ orderStatus**            | String | 订单状态         | 必填   | -   | 出票、改签、退票、确认订单、退订、离店	                                                           |
-| **&emsp; ∟ ticketNumber**           | String | 票号           | 非必填  | -   | 票号	                                                                            |
-| **&emsp; ∟ certificateType**        | String | 证件类型         | 非必填  | -   | 身份证、护照等	                                                                       |
-| **&emsp; ∟ certificateInfo**        | String | 证件信息         | 非必填  | -   | 证件号	                                                                           |
-| **&emsp; ∟ airlineCompany**         | String | 航空公司         | 非必填  | -   | 航空公司	                                                                          |
-| **&emsp; ∟ flightNumber**           | String | 航班号          | 非必填  | -   | 航班号	                                                                           |
-| **&emsp; ∟ placeOfDeparture**       | String | 出发地          | 非必填  | -   | 城市code	                                                                        |
-| **&emsp; ∟ destination**            | String | 到达地          | 非必填  | -   | 城市code	                                                                        |
-| **&emsp; ∟ departureTime**          | String | 出发时间         | 非必填  | -   | 出发时间	                                                                          |
-| **&emsp; ∟ arrivalTime**            | String | 到达时间         | 非必填  | -   | 到达时间	                                                                          |
-| **&emsp; ∟ departureAirport**       | String | 出发机场         | 非必填  | -   | 机场名字	                                                                          |
-| **&emsp; ∟ arrivalAirport**         | String | 到达机场         | 非必填  | -   | 机场名字	                                                                          |
-| **&emsp; ∟ cabinType**              | String | 舱位类型         | 非必填  | -   | 头等舱等	                                                                          |
-| **&emsp; ∟ vehicleType**            | String | 车型           | 非必填  | -   | 经济型、舒适型、商务型、豪华型	                                                               |
-| **&emsp; ∟ trainSeat**              | String | 火车席位         | 非必填  | -   | 一等座、二等座、卧铺等	                                                                   |
-| **&emsp; ∟ hotelName**              | String | 酒店名称         | 非必填  | -   | 例如：`七天酒店`	                                                                     |
-| **&emsp; ∟ hotelAddress**           | String | 酒店地址         | 非必填  | -   | 例如：`北京中关村七天酒店`	                                                                |
-| **&emsp; ∟ roomType**               | String | 房型           | 非必填  | -   | 大床、标准等	                                                                        |
-| **&emsp; ∟ departureStation**       | String | 出发车站         | 非必填  | -   | 例如：`北京西`	                                                                      |
-| **&emsp; ∟ arrivalStation**         | String | 到达车站         | 非必填  | -   | 例如：`南昌站`	                                                                      |
-| **&emsp; ∟ trainNumber**            | String | 火车车次         | 非必填  | -   | 例如：`G2020`、`K180`	                                                             |
-| **&emsp; ∟ orderType**              | String | 订单类型         | 非必填  | -   | 通用：`common`<br/>酒店：`hotel`<br/>飞机：`flight`<br/>火车：`train`<br/>用车：`taxi`<br/>用餐：`meal`	 |
-| **&emsp; ∟ bookingPeople**          | String | 订票人          | 非必填  | -   | 订票人saasid                                                                      |
-| **&emsp; ∟ travelPeople**           | Array  | 出行人          | 非必填  | -   | saasid数组，例如：`["id1", "id2", "id3"]`                                            |
-| **&emsp; ∟ accommodation**          | String | 住宿地          | 非必填  | -   | 城市code                                                                         |
-| **&emsp; ∟ checkInDate**            | String | 入住日期         | 非必填  | -   | 毫秒级时间戳	                                                                        |
-| **&emsp; ∟ departureDate**          | String | 离店日期         | 非必填  | -   | 毫秒级时间戳	                                                                        |
-| **&emsp; ∟ orderCategory**          | String | 订单类别	        | 必填   | -   | 主订单、改签、退订、（酒店）确认订单、退订、离店		                                                     |
-| **&emsp; ∟ applicationNo**          | String | 申请单编号	       | 非必填  | -   | 有就传		                                                                          |
-| **&emsp; ∟ isExcess**               | String | 是否超标         | 非必填  | -   | 是、否（汉字）	                                                                       |
-| **&emsp; ∟ excessReason**           | String | 超标原因	        | 非必填  | -   | 超标原因		                                                                         |
-| **&emsp; ∟ travelType**             | String | 出行类型         | 必填   | -   | 因私、因公	                                                                         |
-| **&emsp; ∟ paymentMethod**          | String | 支付方式         | 非必填  | -   | 个人支付、企业支付                                                                      |
-| **&emsp; ∟ orderRemark**            | String | 订单备注	        | 非必填  | -   | 可为空	                                                                           |
-| **&emsp; ∟ carNumber**              | String | 车牌号          | 非必填  | -   | 用车车牌号                                                                          |
-| **&emsp; ∟ travelMode**             | String | 出行方式         | 非必填  | -   | 立即用车、预约用车、接机、送机、接站、送站、包车	                                                      |
-| **&emsp; ∟ creativeTime**           | String | 创建时间         | 非必填  | -   | 订单创建时间	                                                                        |
-| **&emsp; ∟ productStatus**          | String | 产品状态	        | 非必填  | -   | 不传，订单状态		                                                                      |
-| **&emsp; ∟ ticketType**             | String | 票种类型         | 非必填  | -   | 国内或国际	                                                                         |
-| **&emsp; ∟ tripCode**               | String | 行程代码         | 非必填  | -   | 三字码	                                                                           |
-| **&emsp; ∟ cabinDetail**            | String | 舱位描述         | 非必填  | -   | 针对舱位、坐席或房间的附加描述信息	                                                             |
-| **&emsp; ∟ ticketPrice**            | String | 票面价          | 非必填  | -   | 票面价	                                                                           |
-| **&emsp; ∟ roomPrice**              | String | 房间价          | 非必填  | -   | 房间价	                                                                           |
-| **&emsp; ∟ coupon**                 | String | 优惠金额         | 非必填  | -   | 优惠券金额	                                                                         |
-| **&emsp; ∟ oilFee**                 | String | 燃油费          | 非必填  | -   | 燃油费	                                                                           |
-| **&emsp; ∟ airportBuildFee**        | String | 机建费	         | 非必填  | -   | 机建费		                                                                          |
-| **&emsp; ∟ taxTotalPrice**          | String | 税费小计         | 非必填  | -   | 先不传	                                                                           |
-| **&emsp; ∟ ticketTotalPrice**       | String | 票面小计         | 非必填  | -   | 票价+服务费+基建燃油费	                                                                  |
-| **&emsp; ∟ ticketSureTime**         | String | 出票时间	        | 非必填  | -   | 出票时间（确认时间）		                                                                   |
-| **&emsp; ∟ totalPrice**             | String | 全价价格	        | 非必填  | -   | 先不传		                                                                          |
-| **&emsp; ∟ roomQuantity**           | String | 房间数量         | 非必填  | -   | 房间数量	                                                                          |
-| **&emsp; ∟ liveDay**                | String | 入住天数	        | 非必填  | -   | 入住天数		                                                                         |
-| **&emsp; ∟ roomDays**               | String | 间夜数          | 非必填  | -   | 间夜数 = 入住天数 * 房间数量	                                                             |
-| **&emsp; ∟ phoneNo**                | String | 出行人电话        | 非必填  | -   | 出行人电话（酒店没有）	                                                                   |
-| **&emsp; ∟ invoiceSide**            | String | 开票方	         | 非必填  | -   | 开票方		                                                                          |
-| **&emsp; ∟ productDetail**          | String | 产品具体内容	      | 非必填  | -   | 产品具体内容		                                                                       |
-| **&emsp; ∟ productName**            | String | 产品名称         | 非必填  | -   | 产品名称	                                                                          |
-| **&emsp; ∟ isInvoice**              | String | 是否已开票        | 非必填  | -   | 是否已开票	                                                                         |
-| **&emsp; ∟ invoiceType**            | String | 开票类型         | 非必填  | -   | 开票类型	                                                                          |
-| **&emsp; ∟ refundServiceFee**       | String | 退票服务费        | 非必填  | -   | 退票服务费（商城不传）	                                                                   |
-| **&emsp; ∟ reBookingServiceFee**    | String | 改签服务费        | 非必填  | -   | 改签服务费（商城不传）	                                                                   |
-| **&emsp; ∟ refund**                 | String | 应退金额	        | 非必填  | -   | 应退金额		                                                                         |
-| **&emsp; ∟ rebookQueryFee**         | String | 改签金额         | 非必填  | -   | 改签金额（差价）	                                                                      |
-| **&emsp; ∟ dealType**               | String | 支付科目         | 非必填  | -   | 个人或企业	                                                                         |
-| **&emsp; ∟ payType**                | String | 结算方式	        | 非必填  | -   | 月结、现付		                                                                        |
-| **&emsp; ∟ serviceFee**             | String | 服务费          | 非必填  | -   | 出票服务费	                                                                         |
-| **&emsp; ∟ insuranceNumber**        | String | 保险份数         | 非必填  | -   | 保险份数	                                                                          |
-| **&emsp; ∟ insuranceFee**           | String | 保险费	         | 非必填  | -   | 保险费		                                                                          |
-| **&emsp; ∟ amount**                 | String | 应付金额	        | 非必填  | -   | 应付金额		                                                                         |
-| **&emsp; ∟ realAmount**             | String | 实付金额	        | 必填   | -   | 实付金额		                                                                         |
-| **&emsp; ∟ personalAmount**         | String | 个人支付金额	      | 非必填  | -   | 个人支付金额		                                                                       |
-| **&emsp; ∟ deliveryFee**            | String | 配送费	         | 非必填  | -   | 配送费		                                                                          |
-| **&emsp; ∟ tripType**               | String | 出行人类型        | 非必填  | -   | 内部或外部，不传	                                                                      |
-| **&emsp; ∟ bookingPlatform**        | String | 订票平台         | 必填   | -   | 例如：`合思商城`	                                                                     |
-| **&emsp; ∟ planGetOnTime**          | String | 计划出发时间	      | 非必填  | -   | 毫秒级时间戳		                                                                       |
-| **&emsp; ∟ planGetOnDeparture**     | String | 计划上车地点	      | 非必填  | -   | 计划上车地点		                                                                       |
-| **&emsp; ∟ planGetOffArrive**       | String | 计划下车地点	      | 非必填  | -   | 计划下车地点		                                                                       |
-| **&emsp; ∟ realGetOnDeparture**     | String | 实际出发地点	      | 非必填  | -   | 实际出发地点		                                                                       |
-| **&emsp; ∟ realGetOffArrive**       | String | 实际到达地点		     | 非必填  | -   | 实际到达地点			                                                                      |
-| **&emsp; ∟ extensionInfo**          | Object | 扩展字段         | 非必填  | -   | json格式	                                                                        |
-| **&emsp; ∟ flightGrade**            | String | 机票舱等         | 非必填  | -   | 机票舱等                                                                           |
-| **&emsp; ∟ trainGrade**             | String | 火车坐席         | 非必填  | -   | 火车坐席	                                                                          |
-| **&emsp; ∟ discount**               | String | 机票折扣         | 非必填  | -   | 机票折扣	                                                                          |
-| **&emsp; ∟ hotelStar**              | String | 酒店星级         | 非必填  | -   | 酒店星级	                                                                          |
+| 名称                                  | 类型     | 描述           | 是否必填 | 默认值 | 备注                                                                                            |
+|:------------------------------------|:-------|:-------------|:-----|:----|:----------------------------------------------------------------------------------------------| 
+| **data**                            | Array  | 第三方商城订单数组    | 必填   | -   | 第三方商城订单数组                                                                                     |
+| **&emsp; ∟ initialOriginalOrderNo** | String | 商城拆分前的最原始订单号 | 必填   | -   | 商城拆分前的最原始订单号	                                                                                 |
+| **&emsp; ∟ initialParentOrderNo**   | String | 商城拆分前的父订单号   | 必填   | -   | 商城拆分前的父订单号	                                                                                   |
+| **&emsp; ∟ initialOrderNo**         | String | 商城拆分前的订单号	   | 必填   | -   | 商城拆分前的订单号		                                                                                   |
+| **&emsp; ∟ originalOrderNo**        | String | 最原始票号	       | 必填   | -   | 订单明细编号		                                                                                      |
+| **&emsp; ∟ parentOrderNo**          | String | 父订单号	        | 必填   | -   | 父订单号		                                                                                        |
+| **&emsp; ∟ travelInfoId**           | String | 行程id	        | 非必填  | -   | 行程id		                                                                                        |
+| **&emsp; ∟ orderNo**                | String | 订单号          | 必填   | -   | 商城拆分后的订单号		                                                                                   |
+| **&emsp; ∟ orderSummary**           | String | 订单概述	        | 必填   | -   | 取值：`出发地-达到地`	                                                                                 |
+| **&emsp; ∟ orderDate**              | String | 订单日期         | 必填   | -   | 毫秒级时间戳	                                                                                       |
+| **&emsp; ∟ orderAmount**            | String | 订单金额         | 非必填  | -   | 取值：`实付金额`	                                                                                    |
+| **&emsp; ∟ orderStatus**            | String | 订单状态         | 必填   | -   | 出票、改签、退票、确认订单、退订、离店	                                                                          |
+| **&emsp; ∟ ticketNumber**           | String | 票号           | 非必填  | -   | 票号	                                                                                           |
+| **&emsp; ∟ certificateType**        | String | 证件类型         | 非必填  | -   | 身份证、护照等	                                                                                      |
+| **&emsp; ∟ certificateInfo**        | String | 证件信息         | 非必填  | -   | 证件号	                                                                                          |
+| **&emsp; ∟ airlineCompany**         | String | 航空公司         | 非必填  | -   | 航空公司	                                                                                         |
+| **&emsp; ∟ flightNumber**           | String | 航班号          | 非必填  | -   | 航班号	                                                                                          |
+| **&emsp; ∟ placeOfDeparture**       | String | 出发地          | 非必填  | -   | 城市编码，可通过 [获取城市列表数据](/docs/open-api/basedata/get-basedata-city) 获取 `code`<br/>例如：`110100` 表示北京 |
+| **&emsp; ∟ destination**            | String | 到达地          | 非必填  | -   | 城市编码，可通过 [获取城市列表数据](/docs/open-api/basedata/get-basedata-city) 获取 `code`<br/>例如：`110100` 表示北京	                     |
+| **&emsp; ∟ departureTime**          | String | 出发时间         | 非必填  | -   | 出发时间	                                                                                         |
+| **&emsp; ∟ arrivalTime**            | String | 到达时间         | 非必填  | -   | 到达时间	                                                                                         |
+| **&emsp; ∟ departureAirport**       | String | 出发机场         | 非必填  | -   | 机场名字	                                                                                         |
+| **&emsp; ∟ arrivalAirport**         | String | 到达机场         | 非必填  | -   | 机场名字	                                                                                         |
+| **&emsp; ∟ cabinType**              | String | 舱位类型         | 非必填  | -   | 头等舱等	                                                                                         |
+| **&emsp; ∟ vehicleType**            | String | 车型           | 非必填  | -   | 经济型、舒适型、商务型、豪华型	                                                                              |
+| **&emsp; ∟ trainSeat**              | String | 火车席位         | 非必填  | -   | 一等座、二等座、卧铺等	                                                                                  |
+| **&emsp; ∟ hotelName**              | String | 酒店名称         | 非必填  | -   | 例如：`七天酒店`	                                                                                    |
+| **&emsp; ∟ hotelAddress**           | String | 酒店地址         | 非必填  | -   | 例如：`北京中关村七天酒店`	                                                                               |
+| **&emsp; ∟ roomType**               | String | 房型           | 非必填  | -   | 大床、标准等	                                                                                       |
+| **&emsp; ∟ departureStation**       | String | 出发车站         | 非必填  | -   | 例如：`北京西`	                                                                                     |
+| **&emsp; ∟ arrivalStation**         | String | 到达车站         | 非必填  | -   | 例如：`南昌站`	                                                                                     |
+| **&emsp; ∟ trainNumber**            | String | 火车车次         | 非必填  | -   | 例如：`G2020`、`K180`	                                                                            |
+| **&emsp; ∟ orderType**              | String | 订单类型         | 非必填  | -   | 通用：`common`<br/>酒店：`hotel`<br/>飞机：`flight`<br/>火车：`train`<br/>用车：`taxi`<br/>用餐：`meal`	        |
+| **&emsp; ∟ bookingPeople**          | String | 订票人          | 非必填  | -   | 订票人saasid                                                                                     |
+| **&emsp; ∟ travelPeople**           | Array  | 出行人          | 非必填  | -   | saasid数组，例如：`["id1", "id2", "id3"]`                                                           |
+| **&emsp; ∟ accommodation**          | String | 住宿地          | 非必填  | -   | 城市编码，可通过 [获取城市列表数据](/docs/open-api/basedata/get-basedata-city) 获取 `code`<br/>例如：`110100` 表示北京                      |
+| **&emsp; ∟ checkInDate**            | String | 入住日期         | 非必填  | -   | 毫秒级时间戳	                                                                                       |
+| **&emsp; ∟ departureDate**          | String | 离店日期         | 非必填  | -   | 毫秒级时间戳	                                                                                       |
+| **&emsp; ∟ orderCategory**          | String | 订单类别	        | 必填   | -   | 主订单、改签、退订、（酒店）确认订单、退订、离店		                                                                    |
+| **&emsp; ∟ applicationNo**          | String | 申请单编号	       | 非必填  | -   | 有就传		                                                                                         |
+| **&emsp; ∟ isExcess**               | String | 是否超标         | 非必填  | -   | 是、否（汉字）	                                                                                      |
+| **&emsp; ∟ excessReason**           | String | 超标原因	        | 非必填  | -   | 超标原因		                                                                                        |
+| **&emsp; ∟ travelType**             | String | 出行类型         | 必填   | -   | 因私、因公	                                                                                        |
+| **&emsp; ∟ paymentMethod**          | String | 支付方式         | 非必填  | -   | 个人支付、企业支付                                                                                     |
+| **&emsp; ∟ orderRemark**            | String | 订单备注	        | 非必填  | -   | 可为空	                                                                                          |
+| **&emsp; ∟ carNumber**              | String | 车牌号          | 非必填  | -   | 用车车牌号                                                                                         |
+| **&emsp; ∟ travelMode**             | String | 出行方式         | 非必填  | -   | 立即用车、预约用车、接机、送机、接站、送站、包车	                                                                     |
+| **&emsp; ∟ creativeTime**           | String | 创建时间         | 非必填  | -   | 订单创建时间	                                                                                       |
+| **&emsp; ∟ productStatus**          | String | 产品状态	        | 非必填  | -   | 不传，订单状态		                                                                                     |
+| **&emsp; ∟ ticketType**             | String | 票种类型         | 非必填  | -   | 国内或国际	                                                                                        |
+| **&emsp; ∟ tripCode**               | String | 行程代码         | 非必填  | -   | 三字码	                                                                                          |
+| **&emsp; ∟ cabinDetail**            | String | 舱位描述         | 非必填  | -   | 针对舱位、坐席或房间的附加描述信息	                                                                            |
+| **&emsp; ∟ ticketPrice**            | String | 票面价          | 非必填  | -   | 票面价	                                                                                          |
+| **&emsp; ∟ roomPrice**              | String | 房间价          | 非必填  | -   | 房间价	                                                                                          |
+| **&emsp; ∟ coupon**                 | String | 优惠金额         | 非必填  | -   | 优惠券金额	                                                                                        |
+| **&emsp; ∟ oilFee**                 | String | 燃油费          | 非必填  | -   | 燃油费	                                                                                          |
+| **&emsp; ∟ airportBuildFee**        | String | 机建费	         | 非必填  | -   | 机建费		                                                                                         |
+| **&emsp; ∟ taxTotalPrice**          | String | 税费小计         | 非必填  | -   | 先不传	                                                                                          |
+| **&emsp; ∟ ticketTotalPrice**       | String | 票面小计         | 非必填  | -   | 票价+服务费+基建燃油费	                                                                                 |
+| **&emsp; ∟ ticketSureTime**         | String | 出票时间	        | 非必填  | -   | 出票时间（确认时间）		                                                                                  |
+| **&emsp; ∟ totalPrice**             | String | 全价价格	        | 非必填  | -   | 先不传		                                                                                         |
+| **&emsp; ∟ roomQuantity**           | String | 房间数量         | 非必填  | -   | 房间数量	                                                                                         |
+| **&emsp; ∟ liveDay**                | String | 入住天数	        | 非必填  | -   | 入住天数		                                                                                        |
+| **&emsp; ∟ roomDays**               | String | 间夜数          | 非必填  | -   | 间夜数 = 入住天数 * 房间数量	                                                                            |
+| **&emsp; ∟ phoneNo**                | String | 出行人电话        | 非必填  | -   | 出行人电话（酒店没有）	                                                                                  |
+| **&emsp; ∟ invoiceSide**            | String | 开票方	         | 非必填  | -   | 开票方		                                                                                         |
+| **&emsp; ∟ productDetail**          | String | 产品具体内容	      | 非必填  | -   | 产品具体内容		                                                                                      |
+| **&emsp; ∟ productName**            | String | 产品名称         | 非必填  | -   | 产品名称	                                                                                         |
+| **&emsp; ∟ isInvoice**              | String | 是否已开票        | 非必填  | -   | 是否已开票	                                                                                        |
+| **&emsp; ∟ invoiceType**            | String | 开票类型         | 非必填  | -   | 开票类型	                                                                                         |
+| **&emsp; ∟ refundServiceFee**       | String | 退票服务费        | 非必填  | -   | 退票服务费（商城不传）	                                                                                  |
+| **&emsp; ∟ reBookingServiceFee**    | String | 改签服务费        | 非必填  | -   | 改签服务费（商城不传）	                                                                                  |
+| **&emsp; ∟ refund**                 | String | 应退金额	        | 非必填  | -   | 应退金额		                                                                                        |
+| **&emsp; ∟ rebookQueryFee**         | String | 改签金额         | 非必填  | -   | 改签金额（差价）	                                                                                     |
+| **&emsp; ∟ dealType**               | String | 支付科目         | 非必填  | -   | 个人或企业	                                                                                        |
+| **&emsp; ∟ payType**                | String | 结算方式	        | 非必填  | -   | 月结、现付		                                                                                       |
+| **&emsp; ∟ serviceFee**             | String | 服务费          | 非必填  | -   | 出票服务费	                                                                                        |
+| **&emsp; ∟ insuranceNumber**        | String | 保险份数         | 非必填  | -   | 保险份数	                                                                                         |
+| **&emsp; ∟ insuranceFee**           | String | 保险费	         | 非必填  | -   | 保险费		                                                                                         |
+| **&emsp; ∟ amount**                 | String | 应付金额	        | 非必填  | -   | 应付金额		                                                                                        |
+| **&emsp; ∟ realAmount**             | String | 实付金额	        | 必填   | -   | 实付金额		                                                                                        |
+| **&emsp; ∟ personalAmount**         | String | 个人支付金额	      | 非必填  | -   | 个人支付金额		                                                                                      |
+| **&emsp; ∟ deliveryFee**            | String | 配送费	         | 非必填  | -   | 配送费		                                                                                         |
+| **&emsp; ∟ tripType**               | String | 出行人类型        | 非必填  | -   | 内部或外部，不传	                                                                                     |
+| **&emsp; ∟ bookingPlatform**        | String | 订票平台         | 必填   | -   | 例如：`合思商城`	                                                                                    |
+| **&emsp; ∟ planGetOnTime**          | String | 计划出发时间	      | 非必填  | -   | 毫秒级时间戳		                                                                                      |
+| **&emsp; ∟ planGetOnDeparture**     | String | 计划上车地点	      | 非必填  | -   | 计划上车地点		                                                                                      |
+| **&emsp; ∟ planGetOffArrive**       | String | 计划下车地点	      | 非必填  | -   | 计划下车地点		                                                                                      |
+| **&emsp; ∟ realGetOnDeparture**     | String | 实际出发地点	      | 非必填  | -   | 实际出发地点		                                                                                      |
+| **&emsp; ∟ realGetOffArrive**       | String | 实际到达地点		     | 非必填  | -   | 实际到达地点			                                                                                     |
+| **&emsp; ∟ extensionInfo**          | Object | 扩展字段         | 非必填  | -   | json格式	                                                                                       |
+| **&emsp; ∟ flightGrade**            | String | 机票舱等         | 非必填  | -   | 机票舱等                                                                                          |
+| **&emsp; ∟ trainGrade**             | String | 火车坐席         | 非必填  | -   | 火车坐席	                                                                                         |
+| **&emsp; ∟ discount**               | String | 机票折扣         | 非必填  | -   | 机票折扣	                                                                                         |
+| **&emsp; ∟ hotelStar**              | String | 酒店星级         | 非必填  | -   | 酒店星级	                                                                                         |
 
 
 ## CURL
