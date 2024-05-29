@@ -19,11 +19,11 @@ url="/api/openapi/v1/property/checkProperty"
 :::tip
  - 目前系统中存在 **单据**、**业务对象**、**人员** 类型的全局字段页面，**自定义档案**、**部门** 类型的全局字段无系统页面。
  - **单据** 类型全局字段位置：
-   ![单据类型全局字段](../forms/images/单据类型全局字段.png)
+   ![单据类型全局字段](../docs/open-api/forms/images/单据类型全局字段.png)
  - **业务对象** 类型全局字段位置：
-   ![业务对象类型全局字段](../forms/images/业务对象类型全局字段.png)
+   ![业务对象类型全局字段](../docs/open-api/forms/images/业务对象类型全局字段.png)
  - **员工** 类型全局字段位置：
-   ![员工类型全局字段](../forms/images/员工类型全局字段.png)
+   ![员工类型全局字段](../docs/open-api/forms/images/员工类型全局字段.png)
 :::
 
 ## CURL
