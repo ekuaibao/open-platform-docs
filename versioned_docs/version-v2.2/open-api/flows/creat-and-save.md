@@ -225,13 +225,13 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
      "params":{                                //当需要添加核销借款时添加该参数
         "loanWrittenOff":[                     //表示报销单中的核销借款字段
             {
-              "loanInfoId":"ID_3sJUjsRJUrw",   //借款包ID
-              "title":"测试",                  //借款单标题
-              "repaymentDate":1641724500000,   //还款日期
-              "fromApply":false,
-              "flowId":"ID_3seTcgi0qrg",       //借款单ID
-              "hasImported":false,
-              "amount":"222"                   //核销金额
+              "loanInfoId":"ID_3sJUjsRJUrw",   //借款包ID，必填
+              "title":"测试",                  //借款单标题，必填
+              "repaymentDate":1641724500000,   //还款日期，必填
+              "fromApply":false,               //必填
+              "flowId":"ID_3seTcgi0qrg",       //借款单ID，必填
+              "hasImported":false,             //必填
+              "amount":"222"                   //核销金额，必填
             }
         ]
     }
@@ -437,6 +437,7 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 | **400** | - | Character f is neither a decimal digit number, decimal point, nor "e" notation exponential mark.                      | 请确认单据模板上配置了 **必填** 且 **从明细中选取下述字段求和** 的金额字段是否传参                                                                                       |
 | **400** | - | '超标多选'类型应当是Array                                                                                                      | 请确认数组类型字段（多选字段）是否按数组格式传参                                                                                                              |
 | **400** | - | '超标类型'字段参数类型错误，非'array'类型                                                                                             | 请确认对象类型字段（单选字段）是否按正确格式传参                                                                                                              |
+| **400** | - | 提交的流程节点与流程模板不一致                                                                                             | 请确认 `loanWrittenOff.flowId` 传参正确，报错是因为核销的借款不存在导致                                                                                      |
 | **412** | - | 你无法使用当前选择的"单据模板"，请重选                                                                                                  | 请确认 `submitterId`（单据提交人ID）字段对应员工是否在该单据模板可见范围内                                                                                         |
 | **412** | - | '发票金额'值不符合金额格式                                                                                                        | 请确认 `发票金额` 字段传参符合 [金额类型字段](/docs/open-api/flows/creat-and-save#2-金额类型字段) 标准格式                                                         |
 | **412** | - | 单据字段【发票金额】计算不正确，请检查                                                                                                   | 请确认 `发票金额` 字段传参与配置的计算公式计算结果是否一致                                                                                                       |
@@ -863,9 +864,10 @@ curl --location --request POST 'https://app.ekuaibao.com/api/openapi/v2.2/flow/d
 ]
 ```
 
-- apportionMoney：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系合思技术客服，除「standard」外，其他内容请与示例保持一致。
-- 项目：是自定义档案--项目中的档案项ID，即 [获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items) 中返回的 id。
-- specificationId：费用分摊模板ID，即 [根据企业ID获取分摊模板列表](/docs/open-api/forms/get-apportion-template-list) 中返回的 id，再调用 [根据模板ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取最新版本的分摊模板 id。
+- `apportionForm.apportionPercent`：为分摊比例，**最后一个分摊比例要手动调整，使分摊比例求和等于100**。
+- `apportionForm.apportionMoney`：为金额类型字段，金额字段换算为本位币(人民币)传入，如需其他币种请联系合思技术客服，除「standard」外，其他内容请与示例保持一致。
+- `apportionForm.项目`：是自定义档案--项目中的档案项ID，即 [获取自定义档案项(不带可见范围)](/docs/open-api/dimensions/get-dimension-items) 中返回的 id。
+- `specificationId`：费用分摊模板ID，即 [根据企业ID获取分摊模板列表](/docs/open-api/forms/get-apportion-template-list) 中返回的 id，再调用 [根据模板ID获取模板信息](/docs/open-api/forms/get-template-byId) 获取最新版本的分摊模板 id。
 
 ### (17) 多收款人字段
 单据的 `payPlan` 字段为 **多收款人** 模式的 **支付计划** 字段，传参示例如下：

@@ -10,20 +10,20 @@ authors: [冯继成]
 
 ---
 ## 单据模板
-### [查询全局字段是否存在](/docs/open-api/inside/get-customs-param-checkProperty)
+### [查询全局字段是否存在](/inside/get-customs-param-checkProperty)
 
 ## 单据
-### [根据ID获取单据详情(可返回关联数据)](/docs/open-api/inside/get-forms-details-linkdeData-byId)
+### [根据ID获取单据详情(可返回关联数据)](/inside/get-forms-details-linkdeData-byId)
 
 ## 业务对象
-### [创建业务对象台账](/docs/open-api/inside/inside-createLedger)
-### [获取业务对象实例信息(自定义字段)](/docs/open-api/inside/get-entity-object-searchAnslysis)
+### [创建业务对象台账](/inside/inside-createLedger)
+### [获取业务对象实例信息(自定义字段)](/inside/get-entity-object-searchAnslysis)
 
 ---
 ## 工具接口
-### [处理EAI插件拉取不到单据最终态问题（已完成、单据当前状态）](/docs/open-api/inside/flowDetails-stuckFlow) 
+### [处理EAI插件拉取不到单据最终态问题（已完成、单据当前状态）](/inside/flowDetails-stuckFlow) 
 
-### [处理EAI插件拉取不到单据中间态问题（待支付、支付中）](/docs/open-api/inside/setDataBase)
+### [处理EAI插件拉取不到单据中间态问题（待支付、支付中）](/inside/setDataBase)
 
 ---
 ## 对外接口更新（暂不公布）

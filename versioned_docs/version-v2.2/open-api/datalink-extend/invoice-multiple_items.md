@@ -185,7 +185,7 @@ import TabItem from '@theme/TabItem';
                 "flowCounts":{},
                 "sourceMessage":""
             },
-            "details":[           //发票明细数据
+            "details":[           //发票明细数据，【发票被单据关联时，不返回明细数据】
                 {
                     "pipeline":1,
                     "grayver":"9.69.0.0-prd",
@@ -261,7 +261,7 @@ import TabItem from '@theme/TabItem';
                     "sourceMessage":""
                 }
             ],
-            "message":"该发票在单据[B22001240]中已经关联",
+            "message":"购方信息与企业开票信息不符，未找到<br>企业名称：xxxx<br>纳税人识别号：xxxxx",  
             "status":"NO_RESULT",
             "ischeck":false
         }

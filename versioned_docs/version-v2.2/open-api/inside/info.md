@@ -15,38 +15,38 @@ authors: [冯继成]
 ---
 ## 企业通讯录
 ### [修改员工工号(全环境)](/docs/open-api/corporation/update-staffs-code)
-### [根据自定义字段查询员工信息(易桥专用)](/docs/open-api/inside/get-staffs-staffCustom)
-### [根据自定义字段查询部门信息(易桥专用)](/docs/open-api/inside/get-departments-deptCustom)
-### [获取权限配置员工列表](/docs/open-api/inside/get-permission-staffIds)
+### [根据自定义字段查询员工信息(易桥专用)](/inside/get-staffs-staffCustom)
+### [根据自定义字段查询部门信息(易桥专用)](/inside/get-departments-deptCustom)
+### [获取权限配置员工列表](/inside/get-permission-staffIds)
 
 ---
 ## 通讯录同步
-### [修改员工登录手机号](/docs/open-api/inside/update-staffs-phone)
-### [新增员工/部门扩展字段(易桥专用)](/docs/open-api/inside/create-custom-field-staffOrDepearment)
+### [修改员工登录手机号](/inside/update-staffs-phone)
+### [新增员工/部门扩展字段(易桥专用)](/inside/create-custom-field-staffOrDepearment)
 
 ---
 ## 单据模板
-### [查询全局字段是否存在(自动化专用)](/docs/open-api/inside/get-customs-param-checkProperty)
+### [查询全局字段是否存在(自动化专用)](/inside/get-customs-param-checkProperty)
 
 ---
 ## 单据
-### [根据ID获取单据详情(可返回关联数据)--(电子档案专用)](/docs/open-api/inside/get-forms-details-linkdeData-byId)
-### [根据ID获取单据详情(可返回关联数据)(新)--(电子档案专用)](/docs/open-api/inside/get-forms-details-linkdeData-byId-new)
+### [根据ID获取单据详情(可返回关联数据)--(电子档案专用)](/inside/get-forms-details-linkdeData-byId)
+### [根据ID获取单据详情(可返回关联数据)(新)--(电子档案专用)](/inside/get-forms-details-linkdeData-byId-new)
 
 ---
 ## 发票
-### [获取浙里办票平台发票数据](/docs/open-api/inside/get-invoice-ZLBP-list)
-### [获取发票xml原件链接地址](/docs/open-api/inside/get-invoice-xmlUrl)
+### [获取浙里办票平台发票数据](/inside/get-invoice-ZLBP-list)
+### [获取发票xml原件链接地址](/inside/get-invoice-xmlUrl)
 
 ---
 ## 业务对象
-### [根据业务对象ID获取业务对象实体](/docs/open-api/inside/get-entity-byId)
-### [获取业务对象台账字段](/docs/open-api/inside/get-entity-ledgerConfig)
-### [创建业务对象台账字段](/docs/open-api/inside/inside-createLedger)
-### [获取业务对象台账数据(自动化专用)](/docs/open-api/inside/get-entity-ledger)
-### [获取业务对象实例列表(条件查询)--(自动化专用)](/docs/open-api/inside/get-entity-object-searchAnslysis)
-### [获取业务对象实例列表(排序)--(自动化专用)](/docs/open-api/inside/get-entity-object-search-order)
-### [获取【行程管理/订单管理】业务对象数据](/docs/open-api/inside/get-entity-travelManager)
+### [根据业务对象ID获取业务对象实体](/inside/get-entity-byId)
+### [获取业务对象台账字段](/inside/get-entity-ledgerConfig)
+### [创建业务对象台账字段](/inside/inside-createLedger)
+### [获取业务对象台账数据(自动化专用)](/inside/get-entity-ledger)
+### [获取业务对象实例列表(条件查询)--(自动化专用)](/inside/get-entity-object-searchAnslysis)
+### [获取业务对象实例列表(排序)--(自动化专用)](/inside/get-entity-object-search-order)
+### [获取【行程管理/订单管理】业务对象数据](/inside/get-entity-travelManager)
 
 ---
 ## 对账结算
@@ -57,13 +57,13 @@ authors: [冯继成]
 ---
 ## 基础数据
 ### [根据ID查询城市信息](/docs/open-api/basedata/get-basedata-cityById)
-### [根据单据编号查询CBS7银行信息](/docs/open-api/inside/get-cbs7-byCode)
+### [根据单据编号查询CBS7银行信息](/inside/get-cbs7-byCode)
 
 ---
 ## 工具接口
-### [处理EAI插件拉取不到单据最终态问题(已完成、单据当前状态)](/docs/open-api/inside/flowDetails-stuckFlow)
-### [处理EAI插件拉取不到单据中间态问题(待支付、支付中)](/docs/open-api/inside/setDataBase)
-### [新增或更新企微单点原生授权配置信息(易桥专用)](/docs/open-api/inside/create-yibridge-byqyweixin)
+### [处理EAI插件拉取不到单据最终态问题(已完成、单据当前状态)](/inside/flowDetails-stuckFlow)
+### [处理EAI插件拉取不到单据中间态问题(待支付、支付中)](/inside/setDataBase)
+### [新增或更新企微单点原生授权配置信息(易桥专用)](/inside/create-yibridge-byqyweixin)
 
 ---
 ## 对外接口更新（暂不公布）
